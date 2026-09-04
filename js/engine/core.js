@@ -104,6 +104,10 @@ export class GameEngine {
         // Forward compatibility aliases for audio
         this.audio = this.audioManager;
 
+        // Footstep tracking parameters
+        this._lastFootstepX = this.playerWorldPos.x;
+        this._lastFootstepY = this.playerWorldPos.y;
+
         // Wire EventBus listeners for decoupling
         this._setupEventSubscriptions();
     }
@@ -275,7 +279,23 @@ export class GameEngine {
             lightingRgba: this.worldSimulation.getLightingRgba()
         };
 
+        // Sync weather audio
+        this.audioManager.updateWeatherAudio(this.worldSimulation.weather, 0.8);
+
+        // Update audio spatial listener position
+        this.audioManager.setListenerPosition(this.playerWorldPos.x, this.playerWorldPos.y);
+
         this.cameraManager.update(dt);
+
+        if (moved) {
+            const stepDist = Math.hypot(this.playerWorldPos.x - this._lastFootstepX, this.playerWorldPos.y - this._lastFootstepY);
+            if (stepDist > 30) {
+                const surface = (this.state.currentLocationId && this.state.currentLocationId.includes('apartment')) ? 'wood' : 'stone';
+                this.audioManager.playFootstep(surface, 1.0);
+                this._lastFootstepX = this.playerWorldPos.x;
+                this._lastFootstepY = this.playerWorldPos.y;
+            }
+        }
 
         if (moved) {
             // Check boundary crossing into adjacent district without loading screens

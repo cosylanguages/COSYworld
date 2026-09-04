@@ -10,13 +10,32 @@
       "it": "Porta",
       "es": "Puerta",
       "de": "Tür",
-      "ru": "Дверь"
+      "ru": "Дверь",
+      "el": "Πόρτα",
+      "pt": "Porta",
+      "hy": "Դուռ",
+      "ka": "კარი",
+      "br": "Dor",
+      "tt": "Ишек",
+      "ba": "Ишек",
+      "cv": "Ашӑк"
     },
     "collocations": ["open the door", "close the door", "lock the door", "front door"],
     "exampleSentences": {
       "en": "Please close the door when you leave.",
       "fr": "Fermez la porte s'il vous plaît.",
-      "es": "Por favor abre la puerta."
+      "es": "Por favor abre la puerta.",
+      "it": "Per favore chiudi la porta.",
+      "de": "Bitte schließen Sie die Tür.",
+      "ru": "Пожалуйста, закройте дверь.",
+      "el": "Παρακαλώ κλείστε την πόρτα.",
+      "pt": "Por favor, feche a porta.",
+      "hy": "Խնդրում եմ փակեք դուռը:",
+      "ka": "გთხოვთ, დახურეთ კარი.",
+      "br": "Perrasit an dor mar plij.",
+      "tt": "Ишекне ябыгыз, зинһар.",
+      "ba": "Ишекте ябығыҙ, зинһар.",
+      "cv": "Алӑка хупӑр, тархасшӑн."
     },
     "relatedQuests": ["q1_key_door"],
     "relatedScenes": ["apartment_living", "town_square", "bakery", "cafe"]
@@ -32,12 +51,32 @@
       "it": "Chiave",
       "es": "Llave",
       "de": "Schlüssel",
-      "ru": "Ключ"
+      "ru": "Ключ",
+      "el": "Κλειδί",
+      "pt": "Chave",
+      "hy": "Բանալի",
+      "ka": "გასაღები",
+      "br": "Alc'hwez",
+      "tt": "Ачкыч",
+      "ba": "Асҡыс",
+      "cv": "Уҫҫӑ"
     },
     "collocations": ["turn the key", "house key", "lost key"],
     "exampleSentences": {
       "en": "Use the key to unlock the door.",
-      "fr": "Utilisez la clé pour déverrouiller la porte."
+      "fr": "Utilisez la clé pour déverrouiller la porte.",
+      "es": "Usa la llave para abrir la puerta.",
+      "it": "Usa la chiave per aprire la porta.",
+      "de": "Benutzen Sie den Schlüssel, um die Tür zu öffnen.",
+      "ru": "Используйте ключ, чтобы открыть дверь.",
+      "el": "Χρησιμοποιήστε το κλειδί για να ξεκλειδώσετε την πόρτα.",
+      "pt": "Use a chave para abrir a porta.",
+      "hy": "Օգտագործեք բանալին դուռը բացելու համար:",
+      "ka": "გამოიყენეთ გასაღები კარის გასაღებად.",
+      "br": "Grit gant an alc'hwez evit digeriñ an dor.",
+      "tt": "Ишекне ачу өчен ачкычны кулланыгыз.",
+      "ba": "Ишекте асыу өсөн асҡысты ҡулланығыҙ.",
+      "cv": "Алӑка уҫмашкӑн уҫҫӑпа усӑ кунӑ."
     },
     "relatedQuests": ["q1_key_door"],
     "relatedScenes": ["apartment_living"]
@@ -53,12 +92,32 @@
       "it": "Divano",
       "es": "Sofá",
       "de": "Sofa",
-      "ru": "Диван"
+      "ru": "Диван",
+      "el": "Καναπές",
+      "pt": "Sofá",
+      "hy": "Բազմոց",
+      "ka": "დივანი",
+      "br": "Gwelenn-goazez",
+      "tt": "Диван",
+      "ba": "Диван",
+      "cv": "Диван"
     },
     "collocations": ["sit on the sofa", "comfortable sofa"],
     "exampleSentences": {
       "en": "The sofa is very comfortable.",
-      "fr": "Le canapé est très confortable."
+      "fr": "Le canapé est très confortable.",
+      "es": "El sofá es muy cómodo.",
+      "it": "Il divano è molto comodo.",
+      "de": "Das Sofa ist sehr bequem.",
+      "ru": "Диван очень удобный.",
+      "el": "Ο καναπές είναι πολύ άνετος.",
+      "pt": "O sofá é muito confortável.",
+      "hy": "Բազմոցը շատ հարմարավետ է:",
+      "ka": "დივანი بسیار კომფორტულია.",
+      "br": "Aviset mat eo ar welenn-goazez-mañ.",
+      "tt": "Диван бик уңайлы.",
+      "ba": "Диван бик уңайлы.",
+      "cv": "Диван питӗ ҫӑмӑл."
     },
     "relatedQuests": [],
     "relatedScenes": ["apartment_living"]
@@ -74,12 +133,32 @@
       "it": "Tazza",
       "es": "Taza",
       "de": "Tasse",
-      "ru": "Чашка"
+      "ru": "Чашка",
+      "el": "Φλιτζάνι",
+      "pt": "Chávena",
+      "hy": "Գավաթ",
+      "ka": "ჭიქა",
+      "br": "Kopenn",
+      "tt": "Чәшкә",
+      "ba": "Чәшкә",
+      "cv": "Фарфор финјан"
     },
     "collocations": ["a cup of coffee", "tea cup", "fill the cup"],
     "exampleSentences": {
       "en": "I would like a cup of coffee.",
-      "fr": "Je voudrais une tasse de café."
+      "fr": "Je voudrais une tasse de café.",
+      "es": "Me gustaría una taza de café.",
+      "it": "Vorrei una tazza di caffè.",
+      "de": "Ich hätte gerne eine Tasse Kaffee.",
+      "ru": "Я хотел бы чашку кофе.",
+      "el": "Θα ήθελα ένα φλιτζάνι καφέ.",
+      "pt": "Gostaria de uma chávena de café.",
+      "hy": "Ես կցանկանայի մեկ գավաթ սուրճ:",
+      "ka": "მსურს ერთი ჭიქა ყავა.",
+      "br": "Kemer a rafen ur gopenn kafe.",
+      "tt": "Миңа бер чәшкә кофе кирәк иде.",
+      "ba": "Миңә бер чәшкә кофе кәрәк ине.",
+      "cv": "Мана пӗр финјан кофе кирлӗ."
     },
     "relatedQuests": ["q_coffee_break"],
     "relatedScenes": ["apartment_kitchen", "cafe"]
@@ -95,12 +174,32 @@
       "it": "Caffè",
       "es": "Café",
       "de": "Kaffee",
-      "ru": "Кофе"
+      "ru": "Кофе",
+      "el": "Καφές",
+      "pt": "Café",
+      "hy": "Սուրճ",
+      "ka": "ყავა",
+      "br": "Kafe",
+      "tt": "Кофе",
+      "ba": "Кофе",
+      "cv": "Кофе"
     },
     "collocations": ["hot coffee", "black coffee", "brew coffee"],
     "exampleSentences": {
       "en": "Fresh hot coffee is ready.",
-      "fr": "Le café chaud est prêt."
+      "fr": "Le café chaud est prêt.",
+      "es": "El café caliente está listo.",
+      "it": "Il caffè caldo è pronto.",
+      "de": "Heißer Kaffee ist fertig.",
+      "ru": "Горячий кофе готов.",
+      "el": "Ο ζεστός καφές είναι έτοιμος.",
+      "pt": "O café quente está pronto.",
+      "hy": "Թարմ տաք սուրճը պատրաստ է:",
+      "ka": "ცხელი ყავა მზადაა.",
+      "br": "Krenndomm eo ar c'hafe.",
+      "tt": "Иссe кофе әзер.",
+      "ba": "Ҡынe кофе әҙер.",
+      "cv": "Вӗри кофе хатӗр."
     },
     "relatedQuests": ["q_coffee_break"],
     "relatedScenes": ["cafe"]
@@ -116,12 +215,32 @@
       "it": "Pane / Baguette",
       "es": "Pan / Baguette",
       "de": "Brot / Baguette",
-      "ru": "Хлеб / Багет"
+      "ru": "Хлеб / Багет",
+      "el": "Ψωμί",
+      "pt": "Pão / Baguete",
+      "hy": "Հաց",
+      "ka": "პური",
+      "br": "Bara",
+      "tt": "Икмәк",
+      "ba": "Икмәк",
+      "cv": "Ҫӑкӑр"
     },
     "collocations": ["fresh bread", "slice of bread", "buy bread"],
     "exampleSentences": {
       "en": "The bakery sells fresh baguette every morning.",
-      "fr": "La boulangerie vend des baguettes fraîches."
+      "fr": "La boulangerie vend des baguettes fraîches.",
+      "es": "La panadería vende baguettes frescas.",
+      "it": "La panetteria vende baguette fresche.",
+      "de": "Die Bäckerei verkauft jeden Morgen frisches Brot.",
+      "ru": "Пекарня продает свежий багет каждое утро.",
+      "el": "Ο φούρνος πουλάει φρέσκο ψωμί κάθε πρωί.",
+      "pt": "A padaria vende pão fresco todas as manhãs.",
+      "hy": "Թխվածքաբլիթների խանութը թարմ հաց է վաճառում:",
+      "ka": "საცხობი ყოველ დილით ახალ პურს ყიდის.",
+      "br": "Ar stal-vara a venn bara fresk bep mintin.",
+      "tt": "Икмәкханә һәр иртә яңа икмәк сата.",
+      "ba": "Икмәкхана һәр иртә яңы икмәк һата.",
+      "cv": "Ҫӑкӑр лавкки кашнинпек ирпе ҫӗнӗ ҫӑкӑр сутать."
     },
     "relatedQuests": ["q_bakery_order"],
     "relatedScenes": ["bakery"]
