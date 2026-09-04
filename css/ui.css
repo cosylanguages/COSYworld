@@ -1,0 +1,156 @@
+/* COSY World — UI Components, HUD, Controls & Modal Stylesheet */
+
+/* Stats & Controls Bar */
+.cw-player-stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cw-stat-badge {
+  background-color: #f3f4f6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.cw-xp-bar-wrap {
+  width: 120px;
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.cw-xp-track {
+  width: 100%;
+  height: 100%;
+}
+
+.cw-xp-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.3s ease;
+}
+
+.cw-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cw-btn-toggle {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cw-btn-toggle:hover {
+  border-color: var(--sage);
+  color: var(--sage);
+}
+
+.cw-sel {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* HUD Sidebar Card */
+.cw-hud-card {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cw-hud-nav {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cw-hud-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.cw-hud-btn.active, .cw-hud-btn:hover {
+  background-color: #f0fdf4;
+  color: var(--sage);
+}
+
+.cw-hud-content {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+/* Modals */
+.cw-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cw-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cw-modal-card {
+  background: white;
+  width: 90%;
+  max-width: 550px;
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.cw-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f3f4f6;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+}
