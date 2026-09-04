@@ -1,199 +1,726 @@
 [
   {
     "id": "q_explore_living",
+    "category": "exploration",
     "type": "exploration",
     "title": "🛋️ Apartment Exploration",
     "description": "Explore the Apartment Living Room and discover its surroundings.",
     "difficulty": "A0",
     "NPC": "james_york",
     "requirements": {
+      "level": 1,
       "targetLocation": "apartment_living"
     },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Walk into the Apartment Living Room",
+        "target": "apartment_living"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter apartment_living",
+        "targetLocation": "apartment_living",
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 40,
       "vocabulary": ["sofa"],
       "grammar": "gt_greetings"
     },
-    "unlockConditions": {
-      "level": 1
+    "rewards": {
+      "xp": 40,
+      "vocabulary": ["sofa"],
+      "grammar": "gt_greetings"
     },
+    "dialogues": {
+      "start": "Welcome home! Take a look around the living room.",
+      "progress": "Look around the living room.",
+      "complete": "Great job exploring the living room!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "action": "enter"
+      }
+    ],
     "nextQuestId": "q_collect_key"
   },
   {
     "id": "q_collect_key",
+    "category": "vocabulary",
     "type": "collect",
     "title": "🔑 Find the Table Key",
     "description": "Inspect and collect the Key on the coffee table.",
     "difficulty": "A0",
     "NPC": "james_york",
     "requirements": {
+      "prerequisiteQuest": "q_explore_living",
       "targetObjects": ["key"]
     },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_explore_living"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Locate and inspect the key on the table",
+        "target": "key"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect key",
+        "targetObjects": ["key"],
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 50,
       "vocabulary": ["key"],
       "grammar": "gt_greetings"
     },
-    "unlockConditions": {
-      "prerequisiteQuest": "q_explore_living"
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["key"],
+      "grammar": "gt_greetings"
     },
+    "dialogues": {
+      "start": "There's a key on the coffee table.",
+      "progress": "Check the coffee table for the key.",
+      "complete": "You found the key!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "hotspotId": "key",
+        "action": "inspect"
+      }
+    ],
     "nextQuestId": "q_grammar_imperative"
   },
   {
     "id": "q_grammar_imperative",
+    "category": "grammar",
     "type": "grammar",
     "title": "🧩 Master Imperatives",
     "description": "Complete the 'Greetings & Imperative Actions' grammar exercise.",
     "difficulty": "A0",
     "NPC": "james_york",
     "requirements": {
+      "prerequisiteQuest": "q_collect_key",
       "targetGrammarId": "gt_greetings",
       "exerciseId": "ex_greetings_1"
     },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_collect_key"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Solve the interactive imperative grammar exercise",
+        "target": "ex_greetings_1"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "grammar",
+        "description": "Complete exercise ex_greetings_1",
+        "exerciseId": "ex_greetings_1",
+        "targetGrammarId": "gt_greetings",
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 60,
       "vocabulary": ["door_lock"],
       "grammar": "gt_greetings"
     },
-    "unlockConditions": {
-      "prerequisiteQuest": "q_collect_key"
-    }
+    "rewards": {
+      "xp": 60,
+      "vocabulary": ["door_lock"],
+      "grammar": "gt_greetings"
+    },
+    "dialogues": {
+      "start": "Let's learn how to form imperative commands.",
+      "progress": "Open the grammar tab to complete the exercise.",
+      "complete": "Imperative grammar point mastered!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "grammar_lesson"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "action": "inspect"
+      }
+    ]
   },
   {
     "id": "q_photo_fountain",
+    "category": "photography",
     "type": "photograph",
     "title": "📸 Photograph the Clock Tower",
     "description": "Snap a photo inspection of the historic Clock Tower in Town Square.",
     "difficulty": "A0",
     "NPC": "ella_bronx",
     "requirements": {
+      "level": 1,
       "targetObjects": ["clock_tower"]
     },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Photograph and inspect the Clock Tower",
+        "target": "clock_tower"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "photography",
+        "description": "Photograph clock_tower",
+        "targetObjects": ["clock_tower"],
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 50,
       "vocabulary": ["clock_tower"],
       "grammar": "gt_there_is"
     },
-    "unlockConditions": {
-      "level": 1
-    }
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["clock_tower"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Take a photo of the clock tower in Town Square!",
+      "progress": "Find the clock tower in Town Square.",
+      "complete": "What a beautiful photograph!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_square",
+        "hotspotId": "clock_tower",
+        "action": "photograph"
+      }
+    ]
   },
   {
     "id": "q_convo_ella",
+    "category": "speaking",
     "type": "conversation",
     "title": "💬 Meet Ella Bronx",
     "description": "Have a conversation with Ella Bronx in the Town Square.",
     "difficulty": "A0",
     "NPC": "ella_bronx",
     "requirements": {
+      "level": 1,
       "targetNpc": "ella_bronx"
     },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Talk with Ella Bronx",
+        "target": "ella_bronx"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Converse with ella_bronx",
+        "targetNpc": "ella_bronx",
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 55,
       "vocabulary": ["fountain"],
       "grammar": "gt_there_is"
     },
-    "unlockConditions": {
-      "level": 1
-    }
+    "rewards": {
+      "xp": 55,
+      "vocabulary": ["fountain"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Say hello to Ella in Town Square.",
+      "progress": "Walk up to Ella Bronx and introduce yourself.",
+      "complete": "Nice to meet you, traveler!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_square",
+        "action": "enter"
+      }
+    ]
   },
   {
     "id": "q_pronunciation_ella",
+    "category": "speaking",
     "type": "pronunciation",
     "title": "🗣️ Speech Articulation Clinic",
     "description": "Practice aloud speech repetition with Ella Bronx.",
     "difficulty": "A0",
     "NPC": "ella_bronx",
     "requirements": {
+      "prerequisiteQuest": "q_convo_ella",
       "targetNpc": "ella_bronx",
       "action": "repeat_speech"
     },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_convo_ella"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Practice repeating phrases aloud with Ella Bronx",
+        "target": "ella_bronx"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Practice pronunciation with ella_bronx",
+        "targetNpc": "ella_bronx",
+        "action": "repeat_speech",
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 60,
       "vocabulary": ["bench"],
       "grammar": "gt_there_is"
     },
-    "unlockConditions": {
-      "prerequisiteQuest": "q_convo_ella"
-    }
+    "rewards": {
+      "xp": 60,
+      "vocabulary": ["bench"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Let me hear you practice your speech aloud!",
+      "progress": "Use the speech repeat button to practice.",
+      "complete": "Your pronunciation is getting much clearer!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "repeat_speech"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_square",
+        "action": "speak"
+      }
+    ]
   },
   {
     "id": "q_listening_fountain",
+    "category": "listening",
     "type": "listening",
     "title": "👂 Listen to Ambient Sounds",
     "description": "Listen to the natural fountain speech in Town Square.",
     "difficulty": "A0",
     "NPC": "ella_bronx",
     "requirements": {
+      "level": 1,
       "targetObjects": ["fountain"],
       "action": "listen"
     },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Listen to the ambient fountain speech and soundscape",
+        "target": "fountain"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "listening",
+        "description": "Listen to fountain",
+        "targetObjects": ["fountain"],
+        "action": "listen",
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 50,
       "vocabulary": ["fountain"],
       "grammar": "gt_there_is"
     },
-    "unlockConditions": {
-      "level": 1
-    }
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["fountain"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Close your eyes and listen to the water fountain.",
+      "progress": "Inspect the fountain and listen to its sound.",
+      "complete": "Listening practice complete!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_square",
+        "hotspotId": "fountain",
+        "action": "listen"
+      }
+    ]
   },
   {
     "id": "q_directions_bakery",
+    "category": "travel",
     "type": "directions",
     "title": "🧭 Navigate to the Bakery",
     "description": "Follow town directions to travel from Town Square into the Bakery.",
     "difficulty": "A1",
     "NPC": "lucas_baker",
     "requirements": {
+      "level": 1,
       "targetLocation": "bakery"
     },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Travel from Town Square to the Bakery",
+        "target": "bakery"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "travel",
+        "description": "Travel to bakery",
+        "targetLocation": "bakery",
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 65,
       "vocabulary": ["baguette"],
       "grammar": "gt_likes"
     },
-    "unlockConditions": {
-      "level": 1
+    "rewards": {
+      "xp": 65,
+      "vocabulary": ["baguette"],
+      "grammar": "gt_likes"
     },
+    "dialogues": {
+      "start": "Head east along Central Avenue to reach the Bakery.",
+      "progress": "Walk into the Bakery.",
+      "complete": "You have arrived at Lucas's Bakery!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "lucas_baker",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bakery",
+        "action": "enter"
+      }
+    ],
     "nextQuestId": "q_shop_baguette"
   },
   {
     "id": "q_shop_baguette",
+    "category": "shopping",
     "type": "shopping",
     "title": "🥖 Purchase Warm Baguette",
     "description": "Order a warm baguette from Lucas at the Bakery.",
     "difficulty": "A1",
     "NPC": "lucas_baker",
     "requirements": {
+      "prerequisiteQuest": "q_directions_bakery",
       "targetObjects": ["baguette"]
     },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_directions_bakery"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Order and buy a warm baguette",
+        "target": "baguette"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Purchase baguette",
+        "targetObjects": ["baguette"],
+        "requiredCount": 1
+      }
+    ],
     "reward": {
       "xp": 75,
       "vocabulary": ["baguette", "croissant"],
       "grammar": "gt_likes"
     },
+    "rewards": {
+      "xp": 75,
+      "vocabulary": ["baguette", "croissant"],
+      "grammar": "gt_likes"
+    },
+    "dialogues": {
+      "start": "Fresh baguettes are right out of the oven!",
+      "progress": "Order a baguette from Lucas.",
+      "complete": "Here is your fresh, warm baguette!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "lucas_baker",
+        "action": "shop"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bakery",
+        "hotspotId": "baguette",
+        "action": "buy"
+      }
+    ],
+    "nextQuestId": "q_cooking_bread"
+  },
+  {
+    "id": "q_cooking_bread",
+    "category": "cooking",
+    "type": "cooking",
+    "title": "🧑‍🍳 Bake Bakery Bread",
+    "description": "Learn the traditional bread recipe with Lucas in the bakery kitchen.",
+    "difficulty": "A1",
+    "NPC": "lucas_baker",
+    "requirements": {
+      "prerequisiteQuest": "q_shop_baguette",
+      "targetObjects": ["oven", "flour"]
+    },
     "unlockConditions": {
-      "prerequisiteQuest": "q_directions_bakery"
-    }
+      "prerequisiteQuest": "q_shop_baguette"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect oven and flour ingredients",
+        "target": "oven, flour"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "cooking",
+        "description": "Cook using oven and flour",
+        "targetObjects": ["oven", "flour"],
+        "requiredCount": 2
+      }
+    ],
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["oven", "flour"],
+      "grammar": "gt_likes"
+    },
+    "rewards": {
+      "xp": 80,
+      "vocabulary": ["oven", "flour"],
+      "grammar": "gt_likes"
+    },
+    "dialogues": {
+      "start": "Let's step into the kitchen and prepare fresh dough!",
+      "progress": "Inspect the flour and the hot oven.",
+      "complete": "Mmm! Smells like freshly baked artisan bread!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "lucas_baker",
+        "action": "cook_lesson"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bakery",
+        "hotspotId": "oven",
+        "action": "cook"
+      }
+    ]
+  },
+  {
+    "id": "q_reading_noticeboard",
+    "category": "reading",
+    "type": "reading",
+    "title": "📜 Read Town Announcements",
+    "description": "Read the community bulletin notice board in Town Square.",
+    "difficulty": "A1",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "level": 1,
+      "targetObjects": ["notice_board"]
+    },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Read the community bulletin board",
+        "target": "notice_board"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "reading",
+        "description": "Read notice_board",
+        "targetObjects": ["notice_board"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 45,
+      "vocabulary": ["notice_board"],
+      "grammar": "gt_there_is"
+    },
+    "rewards": {
+      "xp": 45,
+      "vocabulary": ["notice_board"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Check out the new town announcements on the board.",
+      "progress": "Inspect the notice board in Town Square.",
+      "complete": "You read all the local notices!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_square",
+        "hotspotId": "notice_board",
+        "action": "read"
+      }
+    ]
   },
   {
     "id": "q_timed_anna",
+    "category": "exploration",
     "type": "timed challenge",
     "title": "⚡ 60-Second Item Blitz",
     "description": "Discover 3 objects in COSY Town before the timer runs out!",
     "difficulty": "A1",
     "NPC": "anna",
     "requirements": {
+      "level": 2,
       "targetCount": 3,
       "timeLimitSeconds": 60
     },
+    "unlockConditions": {
+      "level": 2
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Discover 3 objects within 60 seconds",
+        "target": "discovered_objects"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Discover 3 objects in 60s",
+        "requiredCount": 3
+      }
+    ],
     "reward": {
       "xp": 90,
       "vocabulary": ["lamp", "tv", "bookshelf"],
       "grammar": "gt_present_simple"
     },
-    "unlockConditions": {
-      "level": 2
-    }
+    "rewards": {
+      "xp": 90,
+      "vocabulary": ["lamp", "tv", "bookshelf"],
+      "grammar": "gt_present_simple"
+    },
+    "dialogues": {
+      "start": "Quick! Discover 3 items in town before time runs out!",
+      "progress": "Hurry, timer is ticking!",
+      "complete": "Lightning fast! Challenge completed!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "anna",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_square",
+        "action": "enter"
+      }
+    ]
   }
 ]

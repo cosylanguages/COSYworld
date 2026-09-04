@@ -1,40 +1,38 @@
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "/home/jules/.pyenv/versions/3.12.13/lib/python3.12/http/server.py", line 1329, in <module>
-    test(
-  File "/home/jules/.pyenv/versions/3.12.13/lib/python3.12/http/server.py", line 1276, in test
-    with ServerClass(addr, HandlerClass) as httpd:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jules/.pyenv/versions/3.12.13/lib/python3.12/socketserver.py", line 457, in __init__
-    self.server_bind()
-  File "/home/jules/.pyenv/versions/3.12.13/lib/python3.12/http/server.py", line 1323, in server_bind
-    return super().server_bind()
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jules/.pyenv/versions/3.12.13/lib/python3.12/http/server.py", line 140, in server_bind
-    socketserver.TCPServer.server_bind(self)
-  File "/home/jules/.pyenv/versions/3.12.13/lib/python3.12/socketserver.py", line 478, in server_bind
-    self.socket.bind(self.server_address)
-OSError: [Errno 98] Address already in use
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /css/main.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /css/ui.css HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/main.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/engine/core.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/save/save_system.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/audio/audio.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/player/stats.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/scenes/scene_renderer.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/scenes/streaming_manager.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/inventory/inventory.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/grammar/grammar_engine.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/quests/quest_manager.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/dialogue/dialogue.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/ui/hud.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /js/ui/modal.js HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /data/scenes/districts.json HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /data/quests/quests.json HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /data/npcs/npcs.json HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /data/languages/languages.json HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /data/vocabulary/objects.json HTTP/1.1" 200 -
-127.0.0.1 - - [04/Sep/2026 18:54:14] "GET /data/grammar/grammar.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /css/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /css/ui.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/engine/core.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/engine/event_bus.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/input/input_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/save/save_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/camera/camera_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/engine/asset_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/localization/localization_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/scenes/scene_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/audio/audio_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/scenes/streaming_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/world/world_builder.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/world/building_system.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/world/interior_engine.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/vocabulary/vocabulary_engine.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/npc/npc_ai_engine.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/player/stats.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/scenes/scene_renderer.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/inventory/inventory.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/dialogue/dialogue.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/quests/quest_engine.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/quests/quest_manager.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/grammar/grammar_engine.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/ui/modal.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/ui/hud.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /js/utils/math.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/scenes/districts.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/languages/languages.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/npcs/npcs.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/grammar/grammar.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/quests/quests.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/buildings/buildings.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/vocabulary/objects.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/interiors/rooms.json HTTP/1.1" 200 -
+127.0.0.1 - - [04/Sep/2026 20:47:41] "GET /data/vocabulary/vocabulary_database.json HTTP/1.1" 200 -

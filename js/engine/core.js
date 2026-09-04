@@ -21,6 +21,7 @@ import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
 import { DialogueManager } from '../dialogue/dialogue.js';
+import { QuestEngine } from '../quests/quest_engine.js';
 import { QuestManager } from '../quests/quest_manager.js';
 import { GrammarEngine } from '../grammar/grammar_engine.js';
 import { ModalManager } from '../ui/modal.js';
@@ -75,6 +76,7 @@ export class GameEngine {
         });
 
         this.grammarEngine = new GrammarEngine(this);
+        this.questEngine = new QuestEngine({ gameEngine: this, eventBus: this.eventBus });
 
         this.data = {
             languages: [],
@@ -182,6 +184,7 @@ export class GameEngine {
         this.data.objects = objectsRes;
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
+        this.questEngine.loadQuestsFromJson(questsRes);
         this.data.grammarTree = grammarRes;
 
         // Check grammar unlocks on load
