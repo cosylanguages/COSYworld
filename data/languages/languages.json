@@ -1,0 +1,16 @@
+[
+  { "code": "en", "label": "English", "flag": "🇬🇧" },
+  { "code": "fr", "label": "Français", "flag": "🇫🇷" },
+  { "code": "it", "label": "Italiano", "flag": "🇮🇹" },
+  { "code": "es", "label": "Español", "flag": "🇪🇸" },
+  { "code": "de", "label": "Deutsch", "flag": "🇩🇪" },
+  { "code": "ru", "label": "Русский", "flag": "🇷🇺" },
+  { "code": "el", "label": "Ελληνικά", "flag": "🇬🇷" },
+  { "code": "pt", "label": "Português", "flag": "🇵🇹" },
+  { "code": "hy", "label": "Հայերեն", "flag": "🇦🇲" },
+  { "code": "ka", "label": "ქართული", "flag": "🇬🇪" },
+  { "code": "br", "label": "Brezhoneg", "flag": "🏴󠁧󠁢󠁷󠁬󠁳󠁿" },
+  { "code": "tt", "label": "Татарча", "flag": "🐺" },
+  { "code": "ba", "label": "Башҡортса", "flag": "🏹" },
+  { "code": "cv", "label": "Чӑвашла", "flag": "🌸" }
+]
