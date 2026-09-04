@@ -1,0 +1,23 @@
+{
+  "dialogues_A0": [
+    {
+      "id": "dlg_door_A0",
+      "npcId": "james_york",
+      "cefr": "A0",
+      "line": "Open the door.",
+      "gestures": ["point_door"],
+      "highlights": ["door_lock"],
+      "speechRate": 0.65
+    }
+  ],
+  "dialogues_A1": [
+    {
+      "id": "dlg_bakery_A1",
+      "npcId": "ella_baker",
+      "cefr": "A1",
+      "line": "Would you like fresh bread?",
+      "gestures": ["offer_bread"],
+      "speechRate": 0.8
+    }
+  ]
+}

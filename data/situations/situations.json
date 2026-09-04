@@ -1,0 +1,43 @@
+{
+  "A0_situations": [
+    {
+      "id": "sit_kitchen_apple",
+      "cefr": "A0",
+      "visualSupport": "high",
+      "speechRate": 0.65,
+      "highlighting": true,
+      "context": "kitchen_table",
+      "actionSequence": ["point_apple", "highlight_apple", "eat_animation"]
+    }
+  ],
+  "A1_situations": [
+    {
+      "id": "sit_bakery_order",
+      "cefr": "A1",
+      "visualSupport": "medium",
+      "speechRate": 0.8,
+      "highlighting": true,
+      "context": "bakery_counter"
+    }
+  ],
+  "A2_situations": [
+    {
+      "id": "sit_town_chat",
+      "cefr": "A2",
+      "visualSupport": "low",
+      "speechRate": 0.95,
+      "highlighting": false,
+      "context": "town_square"
+    }
+  ],
+  "B1_situations": [
+    {
+      "id": "sit_abstract_discussion",
+      "cefr": "B1+",
+      "visualSupport": "none",
+      "speechRate": 1.0,
+      "highlighting": false,
+      "context": "cafe_lounge"
+    }
+  ]
+}

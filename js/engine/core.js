@@ -159,10 +159,10 @@ export class GameEngine {
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes, dialoguesRes, grammarPatternsRes, situationsRes] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
-            this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
+            this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/npcs/npcs.json`),
             this.assetManager.loadJson(`${basePath}/quests/quests.json`),
             this.assetManager.loadJson(`${basePath}/grammar/grammar.json`),
@@ -170,7 +170,10 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/minigames/minigames.json`).catch(() => ([])),
-            this.assetManager.loadJson(`${basePath}/world/world_simulation.json`).catch(() => ({}))
+            this.assetManager.loadJson(`${basePath}/world/world_simulation.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/dialogues/dialogues.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/grammar_patterns/grammar_patterns.json`).catch(() => ([])),
+            this.assetManager.loadJson(`${basePath}/situations/situations.json`).catch(() => ({}))
         ]);
 
         if (npcsRes) {
@@ -197,9 +200,12 @@ export class GameEngine {
         this.data.languages = languagesRes;
         this.data.districts = this.worldBuilder.exportDistrictsObject();
         this.data.buildings = buildingsRes || {};
-        this.data.objects = objectsRes;
+        this.data.objects = objectsRes || {};
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
+        this.data.dialogues = dialoguesRes;
+        this.data.grammarPatterns = grammarPatternsRes;
+        this.data.situations = situationsRes;
         this.questEngine.loadQuestsFromJson(questsRes);
         this.data.grammarTree = grammarRes;
 
