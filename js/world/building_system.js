@@ -5,15 +5,19 @@
  * and ambient audio with independent room loading and memory optimization.
  */
 
+import { InteriorEngine } from './interior_engine.js';
+
 export class BuildingManager {
     /**
      * @param {Object} [options]
      * @param {import('../engine/asset_manager.js').AssetManager} [options.assetManager]
      * @param {import('../engine/event_bus.js').EventBus} [options.eventBus]
+     * @param {InteriorEngine} [options.interiorEngine]
      */
     constructor(options = {}) {
         this.assetManager = options.assetManager || null;
         this.eventBus = options.eventBus || null;
+        this.interiorEngine = options.interiorEngine || new InteriorEngine({ eventBus: this.eventBus });
 
         /** @type {Map<string, Object>} Registered buildings keyed by building ID */
         this.buildings = new Map();
@@ -125,21 +129,26 @@ export class BuildingManager {
             return this.loadedRooms.get(cacheKey);
         }
 
-        const normalizedRoom = {
-            id: roomDef.id,
+        // Check if modular interior template exists in InteriorEngine
+        const template = this.interiorEngine.getRoom(roomDef.templateId || roomDef.id);
+
+        const normalizedRoom = this.interiorEngine.normalizeRoom(roomDef.id, {
+            ...template,
+            ...roomDef,
             buildingId: building.id,
-            name: roomDef.name || building.name,
-            image: roomDef.image || building.image,
-            viewBox: roomDef.viewBox || '0 0 800 500',
-            ambientAudio: roomDef.ambientAudio || building.ambientAudio,
-            exits: roomDef.exits || [{ targetDistrictId: building.districtId, x: 20, y: 180, width: 70, height: 220 }],
-            npcs: roomDef.npcs || building.npcs || [],
-            npcSpawns: roomDef.npcSpawns || (building.npcs ? building.npcs.map((n, i) => ({ npcId: n, x: 200 + i * 120, y: 300 })) : []),
-            interactiveObjects: roomDef.interactiveObjects || roomDef.objects || building.interactiveObjects || [],
-            quests: roomDef.quests || building.quests || [],
-            walls: roomDef.walls || [],
-            floors: roomDef.floors || []
-        };
+            name: roomDef.name || template?.name || building.name,
+            image: roomDef.image || template?.image || building.image,
+            ambientAudio: roomDef.ambientAudio || template?.ambientSounds?.[0] || building.ambientAudio,
+            ambientSounds: roomDef.ambientSounds || template?.ambientSounds || [building.ambientAudio || 'piano'],
+            lightingProfile: roomDef.lightingProfile || template?.lightingProfile || { color: 'rgba(254, 243, 199, 0.1)', opacity: 0.1 },
+            background: roomDef.background || template?.background || { wallColor: '#f8fafc', floorColor: '#e2e8f0', dividerColor: '#cbd5e1', decorations: [] },
+            hotspots: roomDef.hotspots || template?.hotspots || [],
+            npcs: roomDef.npcs || template?.npcs || building.npcs || [],
+            npcSpawns: roomDef.npcSpawns || template?.npcSpawns || (building.npcs ? building.npcs.map((n, i) => ({ npcId: n, x: 200 + i * 120, y: 300 })) : []),
+            interactiveObjects: roomDef.interactiveObjects || roomDef.objects || template?.interactiveObjects || building.interactiveObjects || [],
+            quests: roomDef.quests || template?.quests || building.quests || [],
+            exits: roomDef.exits || [{ targetDistrictId: building.districtId, x: 20, y: 180, width: 70, height: 220 }]
+        });
 
         // Memory optimization: unload unused rooms if limit reached (e.g. max 5 active rooms)
         if (this.loadedRooms.size >= 5) {

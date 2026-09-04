@@ -14,6 +14,7 @@ import { SceneManager } from '../scenes/scene_manager.js';
 import { StreamingWorldManager } from '../scenes/streaming_manager.js';
 import { WorldBuilder } from '../world/world_builder.js';
 import { BuildingManager } from '../world/building_system.js';
+import { InteriorEngine } from '../world/interior_engine.js';
 import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
@@ -40,6 +41,11 @@ export class GameEngine {
         this.cameraManager = new CameraManager({ eventBus: this.eventBus });
         this.audioManager = new AudioManager({ eventBus: this.eventBus });
 
+        this.interiorEngine = new InteriorEngine({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus
+        });
+
         this.worldBuilder = new WorldBuilder({
             assetManager: this.assetManager,
             eventBus: this.eventBus
@@ -47,7 +53,8 @@ export class GameEngine {
 
         this.buildingManager = new BuildingManager({
             assetManager: this.assetManager,
-            eventBus: this.eventBus
+            eventBus: this.eventBus,
+            interiorEngine: this.interiorEngine
         });
 
         this.streamingManager = new StreamingWorldManager();
@@ -127,15 +134,20 @@ export class GameEngine {
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
             this.assetManager.loadJson(`${basePath}/npcs/npcs.json`),
             this.assetManager.loadJson(`${basePath}/quests/quests.json`),
             this.assetManager.loadJson(`${basePath}/grammar/grammar.json`),
-            this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({}))
+            this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({}))
         ]);
+
+        if (roomsRes) {
+            this.interiorEngine.registerRooms(roomsRes);
+        }
 
         this.worldBuilder.registerDistricts(districtsRes);
         if (buildingsRes) {

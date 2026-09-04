@@ -38,11 +38,16 @@ export class SceneRenderer {
             if (titleEl) titleEl.textContent = `${room.image || '🚪'} ${roomName}`;
             if (districtEl) districtEl.textContent = activeBuilding.buildingName?.en || 'Building Interior';
 
+            const bg = room.background || {};
+            const wallFill = bg.wallColor || '#f8fafc';
+            const floorFill = bg.floorColor || '#e2e8f0';
+            const dividerFill = bg.dividerColor || '#cbd5e1';
+
             let roomHtml = `
                 <g id="building-room-${room.id}">
-                    <rect x="0" y="0" width="800" height="340" fill="#f8fafc" />
-                    <rect x="0" y="340" width="800" height="160" fill="#e2e8f0" />
-                    <line x1="0" y1="340" x2="800" y2="340" stroke="#cbd5e1" stroke-width="4" />
+                    <rect x="0" y="0" width="800" height="340" fill="${wallFill}" />
+                    <rect x="0" y="340" width="800" height="160" fill="${floorFill}" />
+                    <line x1="0" y1="340" x2="800" y2="340" stroke="${dividerFill}" stroke-width="4" />
 
                     <!-- Exit Door -->
                     <g class="cw-door-portal" tabindex="0" role="button" aria-label="Exit Building" onclick="COSY_WORLD.exitBuilding()" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.exitBuilding();}">
@@ -51,6 +56,18 @@ export class SceneRenderer {
                         <text x="55" y="170" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Exit 🚪</text>
                     </g>
             `;
+
+            // Render Hotspots in room
+            if (room.hotspots) {
+                room.hotspots.forEach(hs => {
+                    roomHtml += `
+                        <g class="cw-obj-hotspot" tabindex="0" role="button" aria-label="${hs.label || 'Hotspot'}" onclick="COSY_WORLD.inspectObject('${hs.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.inspectObject('${hs.id}');}">
+                            <rect class="hit-box" x="${hs.x}" y="${hs.y}" width="${hs.width}" height="${hs.height}" fill="rgba(99, 102, 241, 0.2)" rx="6" stroke="#6366f1" stroke-dasharray="4 2" />
+                            <text x="${hs.x + hs.width / 2}" y="${hs.y + hs.height / 2 + 5}" fill="#1e293b" font-size="12" font-weight="bold" text-anchor="middle">${hs.label || '📍'}</text>
+                        </g>
+                    `;
+                });
+            }
 
             // Interactive objects in room
             if (room.interactiveObjects) {
@@ -86,6 +103,11 @@ export class SceneRenderer {
                     `;
                 });
             }
+
+            // Room Lighting Overlay Profile
+            const lp = room.lightingProfile || {};
+            const lightTint = lp.color || 'rgba(0,0,0,0)';
+            roomHtml += `<rect x="0" y="0" width="800" height="500" fill="${lightTint}" pointer-events="none" />`;
 
             roomHtml += `</g>`;
             svg.innerHTML = roomHtml;

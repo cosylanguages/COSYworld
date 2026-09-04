@@ -1,0 +1,206 @@
+{
+  "living_room": {
+    "id": "living_room",
+    "type": "living_room",
+    "name": { "en": "Living Room", "fr": "Salon", "it": "Salotto", "es": "Salón", "de": "Wohnzimmer", "ru": "Гостиная" },
+    "image": "🛋️",
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#d97706",
+      "dividerColor": "#b45309"
+    },
+    "hotspots": [
+      { "id": "sofa_zone", "label": "Sofa Area", "x": 200, "y": 220, "width": 160, "height": 80 }
+    ],
+    "interactiveObjects": ["sofa", "tv", "coffee_table", "bookshelf", "lamp"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 200, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm", "color": "rgba(251, 191, 36, 0.15)", "opacity": 0.15 }
+  },
+  "kitchen": {
+    "id": "kitchen",
+    "type": "kitchen",
+    "name": { "en": "Kitchen", "fr": "Cuisine", "it": "Cucina", "es": "Cocina", "de": "Küche", "ru": "Кухня" },
+    "image": "🍳",
+    "background": {
+      "wallColor": "#f1f5f9",
+      "floorColor": "#94a3b8",
+      "dividerColor": "#64748b"
+    },
+    "hotspots": [
+      { "id": "counter_zone", "label": "Kitchen Counter", "x": 280, "y": 200, "width": 200, "height": 80 }
+    ],
+    "interactiveObjects": ["fridge", "kettle", "cup"],
+    "npcs": [],
+    "npcSpawns": [],
+    "ambientSounds": ["cafe"],
+    "lightingProfile": { "type": "bright", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "bedroom": {
+    "id": "bedroom",
+    "type": "bedroom",
+    "name": { "en": "Bedroom", "fr": "Chambre", "it": "Camera", "es": "Dormitorio", "de": "Schlafzimmer", "ru": "Спальня" },
+    "image": "🛏️",
+    "background": {
+      "wallColor": "#e0e7ff",
+      "floorColor": "#6366f1",
+      "dividerColor": "#4338ca"
+    },
+    "hotspots": [
+      { "id": "bed_zone", "label": "Sleeping Area", "x": 200, "y": 200, "width": 180, "height": 90 }
+    ],
+    "interactiveObjects": ["lamp", "bookshelf"],
+    "npcs": [],
+    "npcSpawns": [],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "cozy_night", "color": "rgba(30, 41, 59, 0.35)", "opacity": 0.35 }
+  },
+  "bathroom": {
+    "id": "bathroom",
+    "type": "bathroom",
+    "name": { "en": "Bathroom", "fr": "Salle de bain", "it": "Bagno", "es": "Baño", "de": "Badezimmer", "ru": "Ванная комната" },
+    "image": "🛁",
+    "background": {
+      "wallColor": "#ecfeff",
+      "floorColor": "#06b6d4",
+      "dividerColor": "#0891b2"
+    },
+    "hotspots": [
+      { "id": "sink_zone", "label": "Vanity Mirror", "x": 300, "y": 180, "width": 120, "height": 80 }
+    ],
+    "interactiveObjects": ["towel", "soap"],
+    "npcs": [],
+    "npcSpawns": [],
+    "ambientSounds": ["rain"],
+    "lightingProfile": { "type": "cool", "color": "rgba(6, 182, 212, 0.1)", "opacity": 0.1 }
+  },
+  "cafe": {
+    "id": "cafe",
+    "type": "cafe",
+    "name": { "en": "Coffee Shop Lounge", "fr": "Salon du café", "it": "Salone del caffè", "es": "Salón del café", "de": "Café Lounge", "ru": "Зал кафе" },
+    "image": "☕",
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#78350f",
+      "dividerColor": "#451a03"
+    },
+    "hotspots": [
+      { "id": "bar_counter_zone", "label": "Bar Counter", "x": 240, "y": 180, "width": 240, "height": 100 }
+    ],
+    "interactiveObjects": ["espresso_machine", "coffee_cup"],
+    "npcs": ["marco_barista"],
+    "npcSpawns": [
+      { "npcId": "marco_barista", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["cafe"],
+    "lightingProfile": { "type": "amber_warm", "color": "rgba(245, 158, 11, 0.2)", "opacity": 0.2 }
+  },
+  "restaurant": {
+    "id": "restaurant",
+    "type": "restaurant",
+    "name": { "en": "Gourmet Restaurant", "fr": "Restaurant Gastronomique", "it": "Ristorante", "es": "Restaurante", "de": "Restaurant", "ru": "Ресторан" },
+    "image": "🍽️",
+    "background": {
+      "wallColor": "#fdf2f8",
+      "floorColor": "#9d174d",
+      "dividerColor": "#831843"
+    },
+    "hotspots": [
+      { "id": "dining_table_zone", "label": "Dining Table", "x": 250, "y": 200, "width": 200, "height": 100 }
+    ],
+    "interactiveObjects": ["menu_card", "wine_glass"],
+    "npcs": ["chef_pierre"],
+    "npcSpawns": [
+      { "npcId": "chef_pierre", "x": 350, "y": 300 }
+    ],
+    "ambientSounds": ["cafe"],
+    "lightingProfile": { "type": "intimate", "color": "rgba(157, 23, 77, 0.15)", "opacity": 0.15 }
+  },
+  "classroom": {
+    "id": "classroom",
+    "type": "classroom",
+    "name": { "en": "Language Classroom", "fr": "Salle de classe", "it": "Aula", "es": "Aula de idiomas", "de": "Klassenzimmer", "ru": "Учебный класс" },
+    "image": "🏫",
+    "background": {
+      "wallColor": "#f0fdf4",
+      "floorColor": "#15803d",
+      "dividerColor": "#166534"
+    },
+    "hotspots": [
+      { "id": "blackboard_zone", "label": "Blackboard", "x": 200, "y": 100, "width": 300, "height": 120 }
+    ],
+    "interactiveObjects": ["blackboard", "textbook"],
+    "npcs": ["teacher_maria"],
+    "npcSpawns": [
+      { "npcId": "teacher_maria", "x": 400, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0)", "opacity": 0 }
+  },
+  "office": {
+    "id": "office",
+    "type": "office",
+    "name": { "en": "Executive Office", "fr": "Bureau", "it": "Ufficio", "es": "Oficina", "de": "Büro", "ru": "Офис" },
+    "image": "💼",
+    "background": {
+      "wallColor": "#f1f5f9",
+      "floorColor": "#334155",
+      "dividerColor": "#1e293b"
+    },
+    "hotspots": [
+      { "id": "desk_zone", "label": "Workstation Desk", "x": 260, "y": 180, "width": 200, "height": 90 }
+    ],
+    "interactiveObjects": ["laptop", "filing_cabinet"],
+    "npcs": ["manager_alex"],
+    "npcSpawns": [
+      { "npcId": "manager_alex", "x": 360, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "modern_office", "color": "rgba(203, 213, 225, 0.1)", "opacity": 0.1 }
+  },
+  "hospital": {
+    "id": "hospital",
+    "type": "hospital",
+    "name": { "en": "Medical Center Ward", "fr": "Hôpital", "it": "Ospedale", "es": "Hospital", "de": "Krankenhaus", "ru": "Больничная палата" },
+    "image": "🏥",
+    "background": {
+      "wallColor": "#f0fdfa",
+      "floorColor": "#0f766e",
+      "dividerColor": "#115e59"
+    },
+    "hotspots": [
+      { "id": "reception_desk_zone", "label": "Nurse Station", "x": 220, "y": 180, "width": 220, "height": 90 }
+    ],
+    "interactiveObjects": ["first_aid_kit", "stethoscope"],
+    "npcs": ["dr_sarah"],
+    "npcSpawns": [
+      { "npcId": "dr_sarah", "x": 320, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "sterile_bright", "color": "rgba(240, 253, 250, 0.05)", "opacity": 0.05 }
+  },
+  "library": {
+    "id": "library",
+    "type": "library",
+    "name": { "en": "Town Library", "fr": "Bibliothèque", "it": "Biblioteca", "es": "Biblioteca", "de": "Bibliothek", "ru": "Библиотека" },
+    "image": "📚",
+    "background": {
+      "wallColor": "#fffbe3",
+      "floorColor": "#854d0e",
+      "dividerColor": "#713f12"
+    },
+    "hotspots": [
+      { "id": "reading_desk_zone", "label": "Quiet Reading Nook", "x": 240, "y": 180, "width": 200, "height": 90 }
+    ],
+    "interactiveObjects": ["dictionary", "reading_lamp"],
+    "npcs": ["librarian_clara"],
+    "npcSpawns": [
+      { "npcId": "librarian_clara", "x": 350, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "warm_sepia", "color": "rgba(202, 138, 4, 0.12)", "opacity": 0.12 }
+  }
+}
