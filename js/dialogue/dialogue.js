@@ -1,16 +1,15 @@
 /**
- * games/cosy_world/js/dialogue/dialogue.js
- * Professional Dialogue Engine for COSY World.
+ * @file js/dialogue/dialogue.js
+ * @description Professional JSON-driven Dialogue Engine for COSY World.
  * Features:
- * - Branching dialogue tree node graphs
- * - Choice handlers with vocabulary rewards and grammar checks
+ * - Branching dialogue tree graphs loaded entirely from JSON
+ * - Choice consequences (XP rewards, relationship/friendship changes, quest triggers)
  * - Voice speech playback with speed control (0.8x, 1.0x, 1.3x), slow toggle, and audio repeat
  * - Typing animation effect with configurable speed
- * - Animated portrait reactions (.cw-portrait-bounce)
- * - Relationship & friendship point system (+10 FP per chat, level tiers)
- * - Quest trigger integration
+ * - Emotion portraits (happy, excited, curious, busy, neutral)
+ * - Future AI integration hook (`generateAIDialogue`)
  * - Dialogue history log array
- * - Future voice recognition input hooks (SpeechRecognition / webkitSpeechRecognition API)
+ * - Multilingual support across target languages
  */
 
 export class DialogueManager {
@@ -19,11 +18,35 @@ export class DialogueManager {
     static currentDialogueText = '';
     static dialogueHistory = [];
 
+    /**
+     * Future AI integration hook for dynamic NPC response generation.
+     * Can be extended to connect to an external LLM/AI dialogue service.
+     *
+     * @param {string} npcId
+     * @param {string} userPrompt
+     * @param {Object} context
+     * @returns {Promise<Object>}
+     */
+    static async generateAIDialogue(npcId, userPrompt, context = {}) {
+        return {
+            text: `[AI NPC Response] That's fascinating! Let's continue exploring ${context.locationId || 'COSY Town'}.`,
+            emotion: 'curious',
+            options: [
+                { label: '👍 Tell me more!', next: 0, rewardXP: 10 }
+            ]
+        };
+    }
+
+    /**
+     * Open interactive dialogue session with an NPC.
+     */
     static interactNPC(npcId, state, gameData, openModalFn, nodeIndex = 0) {
+        if (!gameData || !gameData.npcs) return;
         const npc = gameData.npcs[npcId];
         if (!npc) return;
 
         const npcAIEngine = typeof window !== 'undefined' && window.COSY_WORLD && window.COSY_WORLD.npcAIEngine;
+
         if (npcAIEngine) {
             npcAIEngine.recordConversation(npcId, 'Interacted with player', 10);
             state.npcRelationships[npcId] = npcAIEngine.getNPC(npcId)?.friendshipPoints || (state.npcRelationships[npcId] || 0) + 10;
@@ -34,9 +57,19 @@ export class DialogueManager {
         const currentFP = state.npcRelationships[npcId];
         const currentLvl = Math.floor(currentFP / 50) + 1;
 
-        const lang = state.currentLang;
-        const dialogues = (npc.dialogues && npc.dialogues[lang]) || npc.dialogues.en || [];
-        const dlg = dialogues[nodeIndex] || dialogues[0] || { text: '👋 Hello!', options: [] };
+        const lang = state.currentLang || 'en';
+        const dialogues = (npc.dialogues && (npc.dialogues[lang] || npc.dialogues.en)) || [];
+        const dlg = dialogues[nodeIndex] || dialogues[0] || { text: '👋 Hello!', options: [], emotion: 'happy' };
+
+        // Determine emotion portrait (happy, excited, curious, neutral)
+        const emotionPortraits = {
+            happy: '😊',
+            excited: '😄',
+            curious: '🤔',
+            busy: '💼',
+            neutral: '😐'
+        };
+        const emotionEmoji = emotionPortraits[dlg.emotion || npc.currentMood] || npc.portrait || npc.avatar || '👤';
 
         // Determine AI reaction greeting if at root node
         const aiReaction = npcAIEngine ? npcAIEngine.getReactionToPlayer(npcId, state) : null;
@@ -51,20 +84,24 @@ export class DialogueManager {
             timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         });
 
-        // Auto-speak text using speech synthesis
+        // Auto-speak text using Web Speech API TTS
         this.speakText(dlg.text, lang, this.currentPlaybackRate);
 
-        const body = document.getElementById('cw-modal-body');
+        const body = typeof document !== 'undefined' ? document.getElementById('cw-modal-body') : null;
         if (body) {
             body.innerHTML = `
                 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-                    <div class="cw-portrait-bounce" style="font-size:3rem; background:var(--tan-light); padding:0.5rem; border-radius:50%; border:2px solid var(--border);">${npc.portrait || npc.avatar}</div>
+                    <div class="cw-portrait-bounce" style="font-size:3rem; background:var(--tan-light); padding:0.5rem; border-radius:50%; border:2px solid var(--border);">
+                        ${emotionEmoji} ${npc.portrait || npc.avatar}
+                    </div>
                     <div style="flex:1;">
                         <div style="display:flex; align-items:center; justify-content:space-between;">
                             <h2 style="font-family:'Fraunces',serif; font-size:1.5rem; color:var(--ink); margin:0;">${npc.name}</h2>
-                            <span style="font-size:0.8rem; background:#fef3c7; color:#b45309; padding:0.25rem 0.6rem; border-radius:12px; font-weight:700;">❤️ Level ${currentLvl} (${currentFP} FP)</span>
+                            <span style="font-size:0.8rem; background:#fef3c7; color:#b45309; padding:0.25rem 0.6rem; border-radius:12px; font-weight:700;">
+                                ❤️ Level ${currentLvl} (${currentFP} FP)
+                            </span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--teal); font-weight:700; margin-top:0.2rem;">${npc.role}</div>
+                        <div style="font-size:0.85rem; color:var(--teal); font-weight:700; margin-top:0.2rem;">${npc.role || npc.occupation}</div>
                         ${npc.teachingRole ? `<div style="font-size:0.8rem; color:var(--ink-muted);">🎓 ${npc.teachingRole}</div>` : ''}
                     </div>
                 </div>
@@ -100,23 +137,10 @@ export class DialogueManager {
                     </div>
                 ` : ''}
 
-                ${npc.shopInventory && npc.shopInventory.length > 0 ? `
-                    <div style="margin-bottom:1rem; padding:0.75rem; background:var(--tan-light); border-radius:12px; border:1px solid var(--border);">
-                        <div style="font-weight:700; font-size:0.9rem; color:var(--ink); margin-bottom:0.5rem;">🛍️ Shop Inventory</div>
-                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
-                            ${npc.shopInventory.map(item => `
-                                <div style="background:white; padding:0.4rem 0.75rem; border-radius:10px; border:1px solid var(--border); font-size:0.85rem; font-weight:700;">
-                                    ${item.emoji} ${item.name} (${item.price} XP)
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                ` : ''}
-
                 <div id="cw-dialogue-options" style="display:none;">
                     ${dlg.options ? dlg.options.map(opt => `
-                        <button class="btn-g-primary" type="button" style="width:100%; margin-bottom:0.5rem; font-size:1.05rem;" onclick="COSY_WORLD.handleBranchNode('${npcId}', ${opt.next !== undefined ? opt.next : -1}, '${opt.questId || ''}', ${opt.rewardXP || 0})">
-                            ${opt.label} ${opt.rewardXP ? `(+${opt.rewardXP} XP ⭐)` : ''}
+                        <button class="btn-g-primary" type="button" style="width:100%; margin-bottom:0.5rem; font-size:1.05rem;" onclick="COSY_WORLD.handleBranchNode('${npcId}', ${opt.next !== undefined ? opt.next : -1}, '${opt.questId || ''}', ${opt.rewardXP || 0}, ${opt.friendshipGain || 0})">
+                            ${opt.label} ${opt.rewardXP ? `(+${opt.rewardXP} XP ⭐)` : ''} ${opt.friendshipGain ? `(+${opt.friendshipGain} ❤️)` : ''}
                         </button>
                     `).join('') : ''}
 
@@ -140,24 +164,40 @@ export class DialogueManager {
         if (openModalFn) openModalFn();
     }
 
-    static handleBranchNode(npcId, nextNode, questId, rewardXP, engine) {
-        if (rewardXP > 0 && engine) {
+    /**
+     * Handle choice consequences (XP, friendship gains, quest completions, branching nodes).
+     */
+    static handleBranchNode(npcId, nextNode, questId, rewardXP, friendshipGain = 0, engine = null) {
+        if (!engine && typeof window !== 'undefined' && window.COSY_WORLD) {
+            engine = window.COSY_WORLD.engine || window.COSY_WORLD;
+        }
+
+        if (rewardXP > 0 && engine && typeof engine.addXP === 'function') {
             engine.addXP(rewardXP);
         }
 
-        if (questId && engine) {
+        if (friendshipGain > 0 && engine && engine.state) {
+            engine.state.npcRelationships[npcId] = (engine.state.npcRelationships[npcId] || 0) + friendshipGain;
+            if (engine.npcAIEngine) {
+                const npc = engine.npcAIEngine.getNPC(npcId);
+                if (npc) npc.friendshipPoints += friendshipGain;
+            }
+        }
+
+        if (questId && engine && typeof engine.completeQuest === 'function') {
             engine.completeQuest(questId);
         }
 
         if (nextNode >= 0 && engine) {
             this.interactNPC(npcId, engine.state, engine.data, () => engine.openModal(), nextNode);
-        } else if (engine) {
+        } else if (engine && typeof engine.closeModal === 'function') {
             engine.closeModal();
         }
     }
 
     static typeText(fullText) {
         if (this.typingInterval) clearInterval(this.typingInterval);
+        if (typeof document === 'undefined') return;
         const box = document.getElementById('cw-typing-box');
         const opts = document.getElementById('cw-dialogue-options');
         if (!box) return;
@@ -177,7 +217,7 @@ export class DialogueManager {
     }
 
     static speakText(text, lang, rate = 1.0) {
-        if (!('speechSynthesis' in window)) return;
+        if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
         window.speechSynthesis.cancel();
 
         const langCodes = { en: 'en-US', fr: 'fr-FR', it: 'it-IT', es: 'es-ES', de: 'de-DE', ru: 'ru-RU', el: 'el-GR' };
@@ -211,6 +251,7 @@ export class DialogueManager {
     }
 
     static startVoiceRecognition() {
+        if (typeof window === 'undefined') return;
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (!SpeechRec) {
             alert('Voice recognition speech input requires a Web Speech API compatible browser.');

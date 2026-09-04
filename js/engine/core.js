@@ -91,6 +91,8 @@ export class GameEngine {
         this.isLoopRunning = false;
         this.lastFrameTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
 
+        this.dialogueManager = DialogueManager;
+
         // Forward compatibility aliases for audio
         this.audio = this.audioManager;
 
@@ -422,8 +424,8 @@ export class GameEngine {
         this.closeModal();
     }
 
-    handleBranchNode(npcId, nextNode, questId, rewardXP) {
-        DialogueManager.handleBranchNode(npcId, nextNode, questId, rewardXP, this);
+    handleBranchNode(npcId, nextNode, questId, rewardXP, friendshipGain = 0) {
+        DialogueManager.handleBranchNode(npcId, nextNode, questId, rewardXP, friendshipGain, this);
     }
 
     repeatSpeech() {
