@@ -1,0 +1,42 @@
+[
+  {
+    "id": "q1_key_door",
+    "title": "🔑 Key ➔ 🚪 Door",
+    "description": "Discover the Key on the table and unlock the Door!",
+    "district": "Residential District",
+    "targetObjects": ["key", "door_lock"],
+    "type": "Action Chain",
+    "xpReward": 50,
+    "grammarUnlock": "gt_greetings"
+  },
+  {
+    "id": "q2_pronunciation",
+    "title": "👂 Listen & 🗣️ Repeat",
+    "description": "Visit Ella Bronx and practice native speech out loud!",
+    "district": "City Centre",
+    "targetNpc": "ella_bronx",
+    "type": "Speaking Mission",
+    "xpReward": 60,
+    "grammarUnlock": "gt_there_is"
+  },
+  {
+    "id": "q3_anna_challenge",
+    "title": "⚡ Discover 3 Items",
+    "description": "Explore rooms and discover 3 objects in COSY Town!",
+    "district": "Residential District",
+    "targetCount": 3,
+    "type": "Vocabulary Hunt",
+    "xpReward": 70,
+    "grammarUnlock": "gt_present_simple"
+  },
+  {
+    "id": "q4_bakery_bread",
+    "title": "🥖 Bakery Freshness",
+    "description": "Visit Lucas at the Bakery and inspect the fresh Baguette!",
+    "district": "City Centre",
+    "targetObjects": ["baguette"],
+    "type": "Shopping Mission",
+    "xpReward": 80,
+    "grammarUnlock": "gt_likes"
+  }
+]
