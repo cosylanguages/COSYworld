@@ -1,5 +1,235 @@
 [
   {
+    "id": "gt_to_be",
+    "title": "Verb 'To Be' (Identity & State) 👤",
+    "difficulty": "A0",
+    "rule": "The verb 'to be' connects a subject to a name, identity, or state. [Subject] + [am/is/are] + [Name/Noun].",
+    "examples": [
+      {
+        "text": "I am James.",
+        "targetLang": {
+          "en": "I am James.",
+          "fr": "Je suis James.",
+          "es": "Yo soy James.",
+          "it": "Io sono James.",
+          "de": "Ich bin James.",
+          "ru": "Я Джеймс."
+        },
+        "context": "Introducing yourself to someone."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_to_be_1",
+        "type": "multiple_choice",
+        "question": "Choose the correct form: 'I ___ a teacher.'",
+        "options": ["am", "is", "are"],
+        "correct": 0,
+        "explanation": "Use 'am' with 'I'.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "Hello! I am James York.",
+        "grammarUsage": "Introducing oneself using 'to be'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "town_entrance",
+      "objects": ["welcome_sign"],
+      "npcs": ["james_york"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "To be verb usage." },
+    "unlockRequirements": { "quests": ["q_ch1_follow_james"], "level": 1, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_personal_pronouns",
+    "title": "Personal Pronouns (I / You / He / She) 👥",
+    "difficulty": "A0",
+    "rule": "Personal pronouns replace specific nouns to refer to speakers, listeners, or others. Example: 'I', 'You'.",
+    "examples": [
+      {
+        "text": "I am a friend. You are a teacher.",
+        "targetLang": {
+          "en": "I am a friend. You are a teacher.",
+          "fr": "Je suis un ami. Tu es un professeur.",
+          "es": "Yo soy un amigo. Tú eres un maestro.",
+          "it": "Io sono un amico. Tu sei un insegnante.",
+          "de": "Ich bin ein Freund. Du bist ein Lehrer.",
+          "ru": "Я друг. Ты учитель."
+        },
+        "context": "Identifying participants in dialogue."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_pronouns_1",
+        "type": "multiple_choice",
+        "question": "Which pronoun refers to yourself?",
+        "options": ["I", "You", "He"],
+        "correct": 0,
+        "explanation": "'I' is the first-person singular pronoun.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "receptionist",
+        "prompt": "I am the receptionist. Who are you?",
+        "grammarUsage": "Using personal pronouns in dialogue."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "reception",
+      "objects": ["reception_desk"],
+      "npcs": ["receptionist"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Personal pronouns." },
+    "unlockRequirements": { "quests": ["q_ch1_meet_receptionist"], "level": 1, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_this_is",
+    "title": "Demonstrative 'This is' 👈",
+    "difficulty": "A0",
+    "rule": "Use 'This is' to introduce people, places, or objects close to you. [This is] + [a/an/my] + [Noun].",
+    "examples": [
+      {
+        "text": "This is COSYlanguages Headquarters.",
+        "targetLang": {
+          "en": "This is COSYlanguages Headquarters.",
+          "fr": "C'est le siège de COSYlanguages.",
+          "es": "Esta es la sede de COSYlanguages.",
+          "it": "Questa è la sede di COSYlanguages.",
+          "de": "Das ist die COSYlanguages-Zentrale.",
+          "ru": "Это штаб-квартира COSYlanguages."
+        },
+        "context": "Introducing a location."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_this_is_1",
+        "type": "multiple_choice",
+        "question": "How do you introduce your friend?",
+        "options": ["This is my friend", "This am my friend", "This are my friend"],
+        "correct": 0,
+        "explanation": "Use 'This is' for singular introductions.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "This is the reception desk!",
+        "grammarUsage": "Introducing places and items."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "cosylanguages_hq",
+      "objects": ["welcome_desk"],
+      "npcs": ["james_york"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "This is introductions." },
+    "unlockRequirements": { "quests": ["q_ch1_follow_james"], "level": 1, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_my_your",
+    "title": "Possessive Adjectives (My / Your) 🔑",
+    "difficulty": "A0",
+    "rule": "Possessives show ownership or relationship. [My/Your] + [Noun]. Example: 'My name', 'Your key'.",
+    "examples": [
+      {
+        "text": "Here is your key.",
+        "targetLang": {
+          "en": "Here is your key.",
+          "fr": "Voici votre clé.",
+          "es": "Aquí está tu llave.",
+          "it": "Ecco la tua chiave.",
+          "de": "Hier ist Ihr Schlüssel.",
+          "ru": "Вот ваш ключ."
+        },
+        "context": "Handing an item to someone."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_my_your_1",
+        "type": "multiple_choice",
+        "question": "Complete the sentence: 'What is ___ name?'",
+        "options": ["your", "my", "you"],
+        "correct": 0,
+        "explanation": "Use 'your' when asking someone about their name.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "receptionist",
+        "prompt": "Here is your key for your new apartment!",
+        "grammarUsage": "Using possessives in item handoffs."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "reception",
+      "objects": ["apartment_key"],
+      "npcs": ["receptionist"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Possessives my and your." },
+    "unlockRequirements": { "quests": ["q_ch1_pick_up_key"], "level": 1, "discoveredObjects": ["apartment_key"] }
+  },
+  {
+    "id": "gt_articles",
+    "title": "Indefinite Articles (A / An) 🚪",
+    "difficulty": "A0",
+    "rule": "Use 'a' before consonant sounds and 'an' before vowel sounds for singular countable nouns. [a/an] + [Noun].",
+    "examples": [
+      {
+        "text": "This is a key. This is an apartment.",
+        "targetLang": {
+          "en": "This is a key. This is an apartment.",
+          "fr": "C'est une clé. C'est un appartement.",
+          "es": "Esta es una llave. Este es un apartamento.",
+          "it": "Questa è una chiave. Questo è un appartamento.",
+          "de": "Das ist ein Schlüssel. Das ist eine Wohnung.",
+          "ru": "Это ключ. Это квартира."
+        },
+        "context": "Describing objects and places."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_articles_1",
+        "type": "multiple_choice",
+        "question": "Which is correct before 'apartment'?",
+        "options": ["an apartment", "a apartment", "the an apartment"],
+        "correct": 0,
+        "explanation": "'Apartment' starts with a vowel sound, so use 'an'.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "This is a door to an apartment!",
+        "grammarUsage": "Using a vs an."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_entrance",
+      "objects": ["apartment_door"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Articles a and an." },
+    "unlockRequirements": { "quests": ["q_ch1_open_apartment"], "level": 1, "discoveredObjects": ["apartment_door"] }
+  },
+  {
     "id": "gt_greetings",
     "title": "Greetings & Imperative Actions 👋",
     "difficulty": "A0",

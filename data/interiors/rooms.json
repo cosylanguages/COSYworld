@@ -161,6 +161,49 @@
     "ambientSounds": ["piano"],
     "lightingProfile": { "type": "modern_office", "color": "rgba(203, 213, 225, 0.1)", "opacity": 0.1 }
   },
+  "reception": {
+    "id": "reception",
+    "type": "reception",
+    "name": { "en": "Reception", "fr": "Réception", "it": "Reception", "es": "Recepción", "de": "Empfang", "ru": "Рецепция" },
+    "image": "💁",
+    "background": {
+      "wallColor": "#ccfbf1",
+      "floorColor": "#0d9488",
+      "dividerColor": "#0f766e"
+    },
+    "hotspots": [
+      { "id": "reception_desk_zone", "label": "Reception Desk", "x": 220, "y": 180, "width": 360, "height": 140 }
+    ],
+    "interactiveObjects": ["reception_desk", "apartment_key", "registration_form"],
+    "npcs": ["receptionist", "james_york"],
+    "npcSpawns": [
+      { "npcId": "receptionist", "x": 380, "y": 280 },
+      { "npcId": "james_york", "x": 180, "y": 300 }
+    ],
+    "ambientSounds": ["cafe"],
+    "lightingProfile": { "type": "bright_indoor", "color": "rgba(20, 184, 166, 0.1)", "opacity": 0.1 }
+  },
+  "hallway": {
+    "id": "hallway",
+    "type": "hallway",
+    "name": { "en": "Hallway", "fr": "Couloir", "it": "Corridoio", "es": "Pasillo", "de": "Flur", "ru": "Коридор" },
+    "image": "🚶",
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#b45309",
+      "dividerColor": "#78350f"
+    },
+    "hotspots": [
+      { "id": "corridor_zone", "label": "Apartment Corridor", "x": 200, "y": 180, "width": 400, "height": 100 }
+    ],
+    "interactiveObjects": ["hallway_light", "door_number_101", "hallway_carpet"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 250, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm", "color": "rgba(245, 158, 11, 0.15)", "opacity": 0.15 }
+  },
   "hospital": {
     "id": "hospital",
     "type": "hospital",

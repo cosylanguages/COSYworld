@@ -1,4 +1,230 @@
 {
+  "town_entrance": {
+    "id": "town_entrance",
+    "district": "City Centre",
+    "level": "A0",
+    "icon": "🏙️",
+    "weather": "clear",
+    "music": "nature",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": -1600,
+    "worldY": 0,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["cosylanguages_hq", "town_square"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "Town Entrance",
+      "fr": "Entrée de la ville",
+      "it": "Ingresso della città",
+      "es": "Entrada de la ciudad",
+      "de": "Stadteingang",
+      "ru": "Вход в город"
+    },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 320, "width": 800, "height": 180, "type": "cobblestone" }
+    ],
+    "buildings": [
+      { "id": "welcome_sign_bldg", "x": 100, "y": 120, "width": 180, "height": 200, "color": "#0284c7", "label": "Welcome Sign 🪧" },
+      { "id": "hq_facade", "x": 450, "y": 80, "width": 260, "height": 240, "color": "#4f46e5", "label": "COSYlanguages HQ 🏫" }
+    ],
+    "doors": [
+      { "targetId": "cosylanguages_hq", "x": 520, "y": 180, "width": 100, "height": 140, "labelY": 160, "labels": { "en": "COSYlanguages HQ 🏫", "fr": "QG COSYlanguages 🏫", "it": "HQ COSYlanguages 🏫", "es": "Sede COSYlanguages 🏫", "de": "COSYlanguages Zentrale 🏫", "ru": "Штаб-квартира COSYlanguages 🏫" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 240, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["welcome_sign", "town_gate", "flower_bed"]
+  },
+  "cosylanguages_hq": {
+    "id": "cosylanguages_hq",
+    "district": "Education Quarter",
+    "level": "A0",
+    "icon": "🏫",
+    "weather": "clear",
+    "music": "piano",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": -800,
+    "worldY": -500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["town_entrance", "reception"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "COSYlanguages Headquarters",
+      "fr": "Siège COSYlanguages",
+      "it": "Sede COSYlanguages",
+      "es": "Sede Central COSYlanguages",
+      "de": "COSYlanguages Hauptgebäude",
+      "ru": "Главный офис COSYlanguages"
+    },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "polished_marble" }
+    ],
+    "buildings": [
+      { "id": "hq_lobby_arch", "x": 150, "y": 100, "width": 500, "height": 240, "color": "#3b82f6", "label": "HQ Atrium 🏛️" }
+    ],
+    "doors": [
+      { "targetId": "town_entrance", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Town Entrance 🏙️", "fr": "Entrée de la ville 🏙️", "it": "Ingresso città 🏙️", "es": "Entrada 🏙️", "de": "Stadteingang 🏙️", "ru": "Вход в город 🏙️" } },
+      { "targetId": "reception", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Reception 💁", "fr": "Réception 💁", "it": "Reception 💁", "es": "Recepción 💁", "de": "Empfang 💁", "ru": "Рецепция 💁" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["hq_banner", "language_chart", "welcome_desk"]
+  },
+  "reception": {
+    "id": "reception",
+    "district": "Education Quarter",
+    "level": "A0",
+    "icon": "💁",
+    "weather": "clear",
+    "music": "cafe",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": 0,
+    "worldY": -500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["cosylanguages_hq", "hallway"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "Reception",
+      "fr": "Réception",
+      "it": "Reception",
+      "es": "Recepción",
+      "de": "Empfang",
+      "ru": "Рецепция"
+    },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "carpet_floor" }
+    ],
+    "buildings": [
+      { "id": "reception_counter", "x": 220, "y": 180, "width": 360, "height": 140, "color": "#0d9488", "label": "Reception Desk 🛎️" }
+    ],
+    "doors": [
+      { "targetId": "cosylanguages_hq", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "HQ Atrium 🏫", "fr": "Atrium QG 🏫", "it": "Atrio HQ 🏫", "es": "Atrio HQ 🏫", "de": "Atrium 🏫", "ru": "Атриум 🏫" } },
+      { "targetId": "hallway", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Hallway 🚶", "fr": "Couloir 🚶", "it": "Corridoio 🚶", "es": "Pasillo 🚶", "de": "Flur 🚶", "ru": "Коридор 🚶" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "receptionist", "x": 380, "y": 280 },
+      { "npcId": "james_york", "x": 180, "y": 300 }
+    ],
+    "npcs": ["receptionist", "james_york"],
+    "objects": ["reception_desk", "apartment_key", "registration_form"]
+  },
+  "hallway": {
+    "id": "hallway",
+    "district": "Residential District",
+    "level": "A0",
+    "icon": "🚶",
+    "weather": "clear",
+    "music": "piano",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": 800,
+    "worldY": -500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["reception", "apartment_entrance"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "Hallway",
+      "fr": "Couloir",
+      "it": "Corridoio",
+      "es": "Pasillo",
+      "de": "Flur",
+      "ru": "Коридор"
+    },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "wooden_carpet" }
+    ],
+    "buildings": [
+      { "id": "apartment_doors_wall", "x": 120, "y": 140, "width": 560, "height": 200, "color": "#78350f", "label": "Apartments Corridor 🚪" }
+    ],
+    "doors": [
+      { "targetId": "reception", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Reception 💁", "fr": "Réception 💁", "it": "Reception 💁", "es": "Recepción 💁", "de": "Empfang 💁", "ru": "Рецепция 💁" } },
+      { "targetId": "apartment_entrance", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Apartment Entrance 🚪", "fr": "Entrée de l'appartement 🚪", "it": "Ingresso appartamento 🚪", "es": "Entrada apartamento 🚪", "de": "Wohnungseingang 🚪", "ru": "Вход в квартиру 🚪" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 250, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["hallway_light", "door_number_101", "hallway_carpet"]
+  },
+  "apartment_entrance": {
+    "id": "apartment_entrance",
+    "district": "Residential District",
+    "level": "A0",
+    "icon": "🚪",
+    "weather": "clear",
+    "music": "piano",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": 800,
+    "worldY": 0,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["hallway", "apartment_living"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "Apartment Entrance",
+      "fr": "Entrée de l'appartement",
+      "it": "Ingresso dell'appartamento",
+      "es": "Entrada del apartamento",
+      "de": "Wohnungseingang",
+      "ru": "Прихожая квартиры"
+    },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "wooden_floor" }
+    ],
+    "buildings": [
+      { "id": "front_door_structure", "x": 280, "y": 120, "width": 240, "height": 220, "color": "#92400e", "label": "Apartment Door #101 🚪" }
+    ],
+    "doors": [
+      { "targetId": "hallway", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Hallway 🚶", "fr": "Couloir 🚶", "it": "Corridoio 🚶", "es": "Pasillo 🚶", "de": "Flur 🚶", "ru": "Коридор 🚶" } },
+      { "targetId": "apartment_living", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Living Room 🛋️", "fr": "Salon 🛋️", "it": "Salotto 🛋️", "es": "Salón 🛋️", "de": "Wohnzimmer 🛋️", "ru": "Гостиная 🛋️" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 200, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["apartment_door", "keyhole", "welcome_mat"]
+  },
   "apartment_living": {
     "id": "apartment_living",
     "district": "Residential District",
@@ -12,7 +238,7 @@
     "worldY": 0,
     "worldWidth": 800,
     "worldHeight": 500,
-    "neighbors": ["apartment_kitchen", "apartment_bedroom", "town_square"],
+    "neighbors": ["apartment_kitchen", "apartment_bedroom", "town_square", "apartment_entrance"],
     "assets": {
       "scene": "data/scenes/districts.json",
       "hotspots": "data/vocabulary/objects.json",

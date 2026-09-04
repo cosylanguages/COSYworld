@@ -114,9 +114,9 @@ test('GrammarEngine - query scene, NPC, and object integration', () => {
 
     const jamesGrammar = engine.getGrammarForNPC('james_york', gameData);
     assert.ok(jamesGrammar.length >= 1);
-    assert.equal(jamesGrammar[0].id, 'gt_greetings');
+    assert.ok(jamesGrammar.some(g => g.id === 'gt_greetings'));
 
     const keyGrammar = engine.getGrammarForObject('key', gameData);
     assert.ok(keyGrammar.length >= 1);
-    assert.equal(keyGrammar[0].id, 'gt_greetings');
+    assert.ok(keyGrammar.some(g => g.id === 'gt_greetings'));
 });

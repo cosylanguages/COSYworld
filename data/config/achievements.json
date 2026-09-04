@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ach_welcome_town",
+    "title": "🏙️ Welcome to COSY Town",
+    "description": "Arrive in COSY Town and complete your first journey with James York.",
+    "category": "chapter_1",
+    "icon": "🏙️",
+    "xpReward": 50,
+    "unlockCondition": {
+      "questId": "q_ch1_follow_james"
+    }
+  },
+  {
+    "id": "ach_first_introduction",
+    "title": "🤝 First Introductions",
+    "description": "Introduce yourself and say your name to the receptionist.",
+    "category": "chapter_1",
+    "icon": "🗣️",
+    "xpReward": 50,
+    "unlockCondition": {
+      "questId": "q_ch1_first_dialogue"
+    }
+  },
+  {
+    "id": "ach_key_collector",
+    "title": "🔑 Key Holder",
+    "description": "Pick up your apartment key from the reception desk.",
+    "category": "chapter_1",
+    "icon": "🔑",
+    "xpReward": 50,
+    "unlockCondition": {
+      "questId": "q_ch1_pick_up_key"
+    }
+  },
+  {
+    "id": "ach_home_sweet_home",
+    "title": "🏡 Home Sweet Home",
+    "description": "Unlock and enter your new apartment to complete Chapter 1.",
+    "category": "chapter_1",
+    "icon": "🛋️",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch1_open_apartment"
+    }
+  }
+]

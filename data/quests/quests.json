@@ -1,5 +1,306 @@
 [
   {
+    "id": "q_ch1_follow_james",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🚶 Follow James York",
+    "description": "Follow James York from the Town Entrance to COSYlanguages Headquarters.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "level": 1,
+      "targetLocation": "cosylanguages_hq"
+    },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Walk with James York into COSYlanguages Headquarters",
+        "target": "cosylanguages_hq"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter cosylanguages_hq",
+        "targetLocation": "cosylanguages_hq",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["hello", "friend", "teacher"],
+      "grammar": "gt_to_be"
+    },
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["hello", "friend", "teacher"],
+      "grammar": "gt_to_be"
+    },
+    "dialogues": {
+      "start": "Welcome to COSY Town! Follow me to COSYlanguages Headquarters.",
+      "progress": "Head inside COSYlanguages Headquarters with James.",
+      "complete": "You made it to Headquarters!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "cosylanguages_hq",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch1_meet_receptionist"
+  },
+  {
+    "id": "q_ch1_meet_receptionist",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "💁 Meet the Receptionist",
+    "description": "Enter the Reception area and approach the receptionist.",
+    "difficulty": "A0",
+    "NPC": "receptionist",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_follow_james",
+      "targetLocation": "reception"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_follow_james"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Enter the Reception room",
+        "target": "reception"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter reception room",
+        "targetLocation": "reception",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["please", "thank you", "woman"],
+      "grammar": "gt_this_is"
+    },
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["please", "thank you", "woman"],
+      "grammar": "gt_this_is"
+    },
+    "dialogues": {
+      "start": "Go meet the receptionist at the front desk.",
+      "progress": "Walk into the Reception area.",
+      "complete": "You met the receptionist!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "receptionist",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "reception",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch1_first_dialogue"
+  },
+  {
+    "id": "q_ch1_first_dialogue",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "💬 Complete Your First Dialogue",
+    "description": "Introduce yourself and say your name to the receptionist.",
+    "difficulty": "A0",
+    "NPC": "receptionist",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_meet_receptionist",
+      "targetNpc": "receptionist"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_meet_receptionist"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with the receptionist and introduce yourself",
+        "target": "receptionist"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Converse with receptionist",
+        "targetNpc": "receptionist",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["name", "I", "you", "yes", "no"],
+      "grammar": "gt_personal_pronouns"
+    },
+    "rewards": {
+      "xp": 60,
+      "vocabulary": ["name", "I", "you", "yes", "no"],
+      "grammar": "gt_personal_pronouns"
+    },
+    "dialogues": {
+      "start": "Introduce yourself to the receptionist!",
+      "progress": "Say your name to the receptionist.",
+      "complete": "First dialogue completed successfully!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "receptionist",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "reception",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch1_pick_up_key"
+  },
+  {
+    "id": "q_ch1_pick_up_key",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🔑 Pick Up Your Key",
+    "description": "Pick up your apartment key from the reception desk.",
+    "difficulty": "A0",
+    "NPC": "receptionist",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_first_dialogue",
+      "targetObjects": ["apartment_key"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_first_dialogue"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Collect your key at reception",
+        "target": "apartment_key"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Collect apartment_key",
+        "targetObjects": ["apartment_key"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["key", "my", "your"],
+      "grammar": "gt_my_your"
+    },
+    "rewards": {
+      "xp": 60,
+      "vocabulary": ["key", "my", "your"],
+      "grammar": "gt_my_your"
+    },
+    "dialogues": {
+      "start": "Pick up your new apartment key!",
+      "progress": "Inspect the key on the desk.",
+      "complete": "You picked up your apartment key!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "receptionist",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "reception",
+        "hotspotId": "apartment_key",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch1_open_apartment"
+  },
+  {
+    "id": "q_ch1_open_apartment",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🚪 Open Your Apartment",
+    "description": "Walk through the hallway to your apartment door and unlock it.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_pick_up_key",
+      "targetLocation": "apartment_living"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_pick_up_key"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Unlock and enter your apartment living room",
+        "target": "apartment_living"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter apartment_living",
+        "targetLocation": "apartment_living",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": ["door", "house", "home", "goodbye"],
+      "grammar": "gt_articles"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": ["door", "house", "home", "goodbye"],
+      "grammar": "gt_articles"
+    },
+    "dialogues": {
+      "start": "Head through the hallway and open your apartment door!",
+      "progress": "Unlock your apartment door.",
+      "complete": "Welcome home! Chapter 1 Complete!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_explore_living"
+  },
+  {
     "id": "q_explore_living",
     "category": "exploration",
     "type": "exploration",

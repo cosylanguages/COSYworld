@@ -1,6 +1,24 @@
 {
   "dialogues_A0": [
     {
+      "id": "dlg_ch1_james_welcome",
+      "npcId": "james_york",
+      "cefr": "A0",
+      "line": "Hello! Welcome to COSY Town. I am James York.",
+      "gestures": ["wave", "point_hq"],
+      "highlights": ["welcome_sign"],
+      "speechRate": 0.65
+    },
+    {
+      "id": "dlg_ch1_reception_intro",
+      "npcId": "receptionist",
+      "cefr": "A0",
+      "line": "Hello! What is your name? I am the receptionist.",
+      "gestures": ["wave", "offer_key"],
+      "highlights": ["reception_desk", "apartment_key"],
+      "speechRate": 0.65
+    },
+    {
       "id": "dlg_door_A0",
       "npcId": "james_york",
       "cefr": "A0",
