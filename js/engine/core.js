@@ -16,6 +16,7 @@ import { WorldBuilder } from '../world/world_builder.js';
 import { BuildingManager } from '../world/building_system.js';
 import { InteriorEngine } from '../world/interior_engine.js';
 import { VocabularyEngine } from '../vocabulary/vocabulary_engine.js';
+import { NPCAIEngine } from '../npc/npc_ai_engine.js';
 import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
@@ -41,6 +42,10 @@ export class GameEngine {
         this.inputManager = new InputManager({ eventBus: this.eventBus });
         this.cameraManager = new CameraManager({ eventBus: this.eventBus });
         this.audioManager = new AudioManager({ eventBus: this.eventBus });
+
+        this.npcAIEngine = new NPCAIEngine({
+            eventBus: this.eventBus
+        });
 
         this.vocabularyEngine = new VocabularyEngine({
             assetManager: this.assetManager,
@@ -151,6 +156,10 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({}))
         ]);
+
+        if (npcsRes) {
+            this.npcAIEngine.registerNPCsDict(npcsRes);
+        }
 
         if (vocabDbRes) {
             this.vocabularyEngine.registerVocabularyDict(vocabDbRes);

@@ -23,8 +23,14 @@ export class DialogueManager {
         const npc = gameData.npcs[npcId];
         if (!npc) return;
 
-        // Increase friendship points on interaction
-        state.npcRelationships[npcId] = (state.npcRelationships[npcId] || 0) + 10;
+        const npcAIEngine = typeof window !== 'undefined' && window.COSY_WORLD && window.COSY_WORLD.npcAIEngine;
+        if (npcAIEngine) {
+            npcAIEngine.recordConversation(npcId, 'Interacted with player', 10);
+            state.npcRelationships[npcId] = npcAIEngine.getNPC(npcId)?.friendshipPoints || (state.npcRelationships[npcId] || 0) + 10;
+        } else {
+            state.npcRelationships[npcId] = (state.npcRelationships[npcId] || 0) + 10;
+        }
+
         const currentFP = state.npcRelationships[npcId];
         const currentLvl = Math.floor(currentFP / 50) + 1;
 
@@ -32,12 +38,16 @@ export class DialogueManager {
         const dialogues = (npc.dialogues && npc.dialogues[lang]) || npc.dialogues.en || [];
         const dlg = dialogues[nodeIndex] || dialogues[0] || { text: '👋 Hello!', options: [] };
 
-        this.currentDialogueText = dlg.text;
+        // Determine AI reaction greeting if at root node
+        const aiReaction = npcAIEngine ? npcAIEngine.getReactionToPlayer(npcId, state) : null;
+        const dialogueText = (nodeIndex === 0 && aiReaction) ? `${aiReaction.greeting} ${dlg.text}` : dlg.text;
+
+        this.currentDialogueText = dialogueText;
 
         // Record dialogue history
         this.dialogueHistory.push({
             npcName: npc.name,
-            text: dlg.text,
+            text: dialogueText,
             timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         });
 
