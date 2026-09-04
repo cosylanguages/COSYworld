@@ -14,6 +14,7 @@
  * - LocalStorage save/load state persistence
  * - Multi-lingual localization across 14 target languages
  * - Dynamic World Manager (roads, buildings, weather, ambient music, time of day)
+ * - Modular Inductive Grammar Engine (mission-driven grammar unlocks, interactive exercises, scene integration, audio voice synthesis)
  */
 
 import { SaveSystem } from '../save/save_system.js';
@@ -23,6 +24,7 @@ import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
 import { DialogueManager } from '../dialogue/dialogue.js';
 import { QuestManager } from '../quests/quest_manager.js';
+import { GrammarEngine } from '../grammar/grammar_engine.js';
 import { ModalManager } from '../ui/modal.js';
 import { HUDManager } from '../ui/hud.js';
 
@@ -38,6 +40,7 @@ export class GameEngine {
             grammarTree: []
         };
         this.audio = new AudioManager();
+        this.grammarEngine = new GrammarEngine(this);
         this.eventListeners = {};
         this.camera = { x: 0, y: 0, zoom: 1 };
         this.keysPressed = {};
@@ -93,6 +96,9 @@ export class GameEngine {
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
         this.data.grammarTree = grammarRes;
+
+        // Check grammar unlocks on load
+        this.grammarEngine.checkGrammarUnlocks(this.state, this.data);
 
         window.COSY_WORLD_DATA = this.data;
         this.emit('dataLoaded', this.data);
@@ -310,7 +316,8 @@ export class GameEngine {
             (amount) => this.addXP(amount),
             () => this.saveState(),
             () => this.renderHudTab(),
-            (msg) => this.showToast(msg)
+            (msg) => this.showToast(msg),
+            this.grammarEngine
         );
     }
 
@@ -320,6 +327,122 @@ export class GameEngine {
             this.data,
             (qid) => this.completeQuest(qid)
         );
+    }
+
+    /* Grammar Engine Integration Methods */
+    speakGrammarExample(text, lang = null) {
+        const targetLang = lang || this.state.currentLang;
+        this.grammarEngine.speakExample(text, targetLang);
+    }
+
+    openGrammarExercise(exerciseId) {
+        const found = this.grammarEngine.findExercise(exerciseId, this.data);
+        if (!found) return;
+
+        const { exercise, grammarPoint } = found;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        if (exercise.type === 'multiple_choice') {
+            body.innerHTML = `
+                <div style="padding:0.5rem;">
+                    <div style="font-size:0.85rem; font-weight:700; color:var(--teal); margin-bottom:0.25rem;">
+                        🧩 Interactive Grammar Practice • ${grammarPoint.title}
+                    </div>
+                    <h2 style="font-family:'Fraunces',serif; font-size:1.4rem; color:var(--ink); margin-bottom:1rem;">
+                        ${exercise.question}
+                    </h2>
+
+                    <div style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.25rem;">
+                        ${exercise.options.map((opt, idx) => `
+                            <button class="btn-g-secondary" type="button" style="text-align:left; font-size:1rem; padding:0.75rem 1rem;" onclick="COSY_WORLD.submitGrammarExercise('${exercise.id}', ${idx})">
+                                ${['A', 'B', 'C', 'D'][idx]}. ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div id="cw-exercise-feedback" style="display:none; padding:0.75rem; border-radius:10px; font-size:0.9rem; font-weight:600;"></div>
+                </div>
+            `;
+        } else if (exercise.type === 'word_order') {
+            const words = exercise.words || [];
+            body.innerHTML = `
+                <div style="padding:0.5rem;">
+                    <div style="font-size:0.85rem; font-weight:700; color:var(--teal); margin-bottom:0.25rem;">
+                        🧩 Word Reordering Exercise • ${grammarPoint.title}
+                    </div>
+                    <h2 style="font-family:'Fraunces',serif; font-size:1.4rem; color:var(--ink); margin-bottom:1rem;">
+                        ${exercise.question}
+                    </h2>
+
+                    <div style="background:var(--tan-light); padding:1rem; border-radius:12px; margin-bottom:1rem;">
+                        <div id="cw-word-bank" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+                            ${words.map(w => `
+                                <button type="button" class="cw-btn-toggle" style="font-size:1rem; padding:0.4rem 0.8rem;" onclick="COSY_WORLD.addWordToAnswer('${w.replace(/'/g, "\\'")}')">${w}</button>
+                            `).join('')}
+                        </div>
+                        <div style="font-size:0.85rem; font-weight:700; color:var(--ink-muted); margin-bottom:0.4rem;">Your Sentence:</div>
+                        <div id="cw-sentence-builder" style="min-height:40px; background:white; border:2px dashed var(--border); border-radius:8px; padding:0.5rem; font-size:1.1rem; font-weight:700; color:var(--ink);"></div>
+                    </div>
+
+                    <div style="display:flex; gap:0.5rem;">
+                        <button type="button" class="cw-btn-toggle" style="flex:1;" onclick="COSY_WORLD.clearWordBuilder()">Clear 🔄</button>
+                        <button type="button" class="btn-g-primary" style="flex:2;" onclick="COSY_WORLD.submitWordOrderExercise('${exercise.id}')">Submit Answer ✨</button>
+                    </div>
+
+                    <div id="cw-exercise-feedback" style="display:none; margin-top:1rem; padding:0.75rem; border-radius:10px; font-size:0.9rem; font-weight:600;"></div>
+                </div>
+            `;
+            window._cwWordOrderAnswer = [];
+        }
+
+        this.openModal();
+    }
+
+    addWordToAnswer(word) {
+        if (!window._cwWordOrderAnswer) window._cwWordOrderAnswer = [];
+        window._cwWordOrderAnswer.push(word);
+        const sb = document.getElementById('cw-sentence-builder');
+        if (sb) sb.textContent = window._cwWordOrderAnswer.join(' ');
+    }
+
+    clearWordBuilder() {
+        window._cwWordOrderAnswer = [];
+        const sb = document.getElementById('cw-sentence-builder');
+        if (sb) sb.textContent = '';
+    }
+
+    submitWordOrderExercise(exerciseId) {
+        const answer = window._cwWordOrderAnswer ? window._cwWordOrderAnswer.join(' ') : '';
+        this.submitGrammarExercise(exerciseId, answer);
+    }
+
+    submitGrammarExercise(exerciseId, userAnswer) {
+        const result = this.grammarEngine.evaluateExercise(exerciseId, userAnswer, this.state, this.data);
+        const fb = document.getElementById('cw-exercise-feedback');
+
+        if (fb) {
+            fb.style.display = 'block';
+            if (result.success) {
+                fb.style.background = '#d1fae5';
+                fb.style.color = '#065f46';
+                fb.style.border = '1px solid #34d399';
+                fb.innerHTML = `🎉 Correct! +${result.xpReward} XP ⭐<br><span style="font-weight:normal; font-size:0.85rem;">${result.explanation}</span>`;
+            } else {
+                fb.style.background = '#fee2e2';
+                fb.style.color = '#991b1b';
+                fb.style.border = '1px solid #f87171';
+                fb.innerHTML = `❌ Try again!<br><span style="font-weight:normal; font-size:0.85rem;">${result.explanation}</span>`;
+            }
+        }
+
+        if (result.success) {
+            this.saveState();
+            this.renderHudTab();
+            setTimeout(() => {
+                this.closeModal();
+            }, 1800);
+        }
     }
 
     speakText(text, lang) {

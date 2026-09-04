@@ -16,6 +16,7 @@ export class SaveSystem {
             completedQuests: new Set(),
             activeQuests: new Set(['q1_key_door']),
             unlockedGrammar: new Set(['gt_greetings']),
+            completedExercises: new Set(),
             npcRelationships: {
                 james_york: 0,
                 ella_bronx: 0,
@@ -43,6 +44,7 @@ export class SaveSystem {
                 completedQuests: new Set(parsed.completedQuests || []),
                 activeQuests: new Set(parsed.activeQuests || ['q1_key_door']),
                 unlockedGrammar: new Set(parsed.unlockedGrammar || ['gt_greetings']),
+                completedExercises: new Set(parsed.completedExercises || []),
                 npcRelationships: parsed.npcRelationships || defaultState.npcRelationships,
                 showGuidePointers: parsed.showGuidePointers !== undefined ? parsed.showGuidePointers : true,
                 showTranslations: parsed.showTranslations !== undefined ? parsed.showTranslations : false
@@ -59,10 +61,11 @@ export class SaveSystem {
             citizenLvl: state.citizenLvl,
             currentLocationId: state.currentLocationId,
             currentLang: state.currentLang,
-            discoveredObjects: Array.from(state.discoveredObjects),
-            completedQuests: Array.from(state.completedQuests),
-            activeQuests: Array.from(state.activeQuests),
-            unlockedGrammar: Array.from(state.unlockedGrammar),
+            discoveredObjects: Array.from(state.discoveredObjects || []),
+            completedQuests: Array.from(state.completedQuests || []),
+            activeQuests: Array.from(state.activeQuests || []),
+            unlockedGrammar: Array.from(state.unlockedGrammar || []),
+            completedExercises: Array.from(state.completedExercises || []),
             npcRelationships: state.npcRelationships,
             showGuidePointers: state.showGuidePointers,
             showTranslations: state.showTranslations
