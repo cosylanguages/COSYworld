@@ -1,0 +1,6 @@
+[
+  { "id": "gt_greetings", "title": "Greetings & Actions 👋", "cefr": "A0", "desc": "Hello, Open, Sit, Listen", "unlocked": true },
+  { "id": "gt_there_is", "title": "Objects & Placement 🛋️", "cefr": "A0", "desc": "Key, Door, Sofa, Table", "unlocked": false },
+  { "id": "gt_present_simple", "title": "Daily Actions 🏃", "cefr": "A1", "desc": "I walk, I open, I drink", "unlocked": false },
+  { "id": "gt_likes", "title": "Preferences & Desires ❤️", "cefr": "A1", "desc": "I like bread, I want coffee", "unlocked": false }
+]
