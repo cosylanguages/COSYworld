@@ -1,6 +1,279 @@
 [
-  { "id": "gt_greetings", "title": "Greetings & Actions 👋", "cefr": "A0", "desc": "Hello, Open, Sit, Listen", "unlocked": true },
-  { "id": "gt_there_is", "title": "Objects & Placement 🛋️", "cefr": "A0", "desc": "Key, Door, Sofa, Table", "unlocked": false },
-  { "id": "gt_present_simple", "title": "Daily Actions 🏃", "cefr": "A1", "desc": "I walk, I open, I drink", "unlocked": false },
-  { "id": "gt_likes", "title": "Preferences & Desires ❤️", "cefr": "A1", "desc": "I like bread, I want coffee", "unlocked": false }
+  {
+    "id": "gt_greetings",
+    "title": "Greetings & Imperative Actions 👋",
+    "difficulty": "A0",
+    "rule": "Imperative Actions: Use base verb forms directly to express direct actions or commands ([Verb] + [Object]). Example: 'Open the door'. Greetings combine an opening word with an action.",
+    "examples": [
+      {
+        "text": "👋 Hello, open the door!",
+        "targetLang": {
+          "en": "👋 Hello, open the door!",
+          "fr": "👋 Bonjour, ouvrez la porte !",
+          "es": "👋 ¡Hola, abre la puerta!",
+          "it": "👋 Ciao, apri la porta!",
+          "de": "👋 Hallo, öffne die Tür!",
+          "ru": "👋 Здравствуйте, откройте дверь!"
+        },
+        "context": "Greeting an NPC and taking immediate action on an object."
+      },
+      {
+        "text": "🔑 Take the key and open the door.",
+        "targetLang": {
+          "en": "🔑 Take the key and open the door.",
+          "fr": "🔑 Prenez la clé et ouvrez la porte.",
+          "es": "🔑 Toma la llave y abre la puerta.",
+          "it": "🔑 Prendi la chiave e apri la porta!",
+          "de": "🔑 Nimm den Schlüssel und öffne die Tür.",
+          "ru": "🔑 Возьмите ключ и откройте дверь."
+        },
+        "context": "Executing direct action sequences in cause-and-effect chains."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_greetings_1",
+        "type": "multiple_choice",
+        "question": "Which imperative phrase tells someone to unlock the entrance?",
+        "options": ["Open the door", "Opening door", "Opened door"],
+        "correct": 0,
+        "explanation": "Imperative verbs start with the base form of the verb without suffixes.",
+        "xpReward": 25
+      },
+      {
+        "id": "ex_greetings_2",
+        "type": "word_order",
+        "question": "Reorder words to form a polite imperative greeting:",
+        "words": ["the", "door", "Hello", "open"],
+        "correctOrder": ["Hello", "open", "the", "door"],
+        "explanation": "Start with greeting, followed by base verb and direct object.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "👋 Look! 👉 Key ➔ Door ➔ Open!",
+        "grammarUsage": "Imperative direct command used in living room tutorial."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_living",
+      "objects": ["key", "door_lock"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Greetings and imperative commands."
+    },
+    "unlockRequirements": {
+      "quests": ["q1_key_door"],
+      "level": 1,
+      "discoveredObjects": ["key"]
+    }
+  },
+  {
+    "id": "gt_there_is",
+    "title": "Existential Placement & Identification 🛋️",
+    "difficulty": "A0",
+    "rule": "Existential Statements: Use 'There is' (+ singular) or 'There are' (+ plural) to point out the presence of objects in a scene. Pattern: [There is/are] + [Article] + [Noun] + [Location].",
+    "examples": [
+      {
+        "text": "🛋️ There is a comfortable sofa in the living room.",
+        "targetLang": {
+          "en": "🛋️ There is a comfortable sofa in the living room.",
+          "fr": "🛋️ Il y a un canapé confortable dans le salon.",
+          "es": "🛋️ Hay un sofá cómodo en el salón.",
+          "it": "🛋️ C'è un divano comodo nel salotto.",
+          "de": "🛋️ Es gibt ein bequemes Sofa im Wohnzimmer.",
+          "ru": "🛋️ В гостиной есть удобный диван."
+        },
+        "context": "Identifying furniture in residential spaces."
+      },
+      {
+        "text": "☕ There is a hot espresso on the table.",
+        "targetLang": {
+          "en": "☕ There is a hot espresso on the table.",
+          "fr": "☕ Il y a un café chaud sur la table.",
+          "es": "☕ Hay un café caliente sobre la mesa.",
+          "it": "☕ C'è un caffè caldo sul tavolo.",
+          "de": "☕ Es gibt einen heißen Kaffee auf dem Tisch.",
+          "ru": "☕ На столе стоит горячий эспрессо."
+        },
+        "context": "Observing items on surfaces."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_there_is_1",
+        "type": "multiple_choice",
+        "question": "Choose the correct phrase to identify one object on the table:",
+        "options": ["There is a key on the table", "There are a key on table", "Key is there table"],
+        "correct": 0,
+        "explanation": "Use 'There is' for singular items.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "ella_bronx",
+        "prompt": "👂 Listen... 🗣️ There is a fountain in the town square!",
+        "grammarUsage": "Pointing out landmarks using existential verbs."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_living",
+      "objects": ["sofa", "coffee_table", "lamp"],
+      "npcs": ["ella_bronx"],
+      "district": "Residential District"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 0.9,
+      "pitch": 1.0,
+      "audioPrompt": "Existential placement structures."
+    },
+    "unlockRequirements": {
+      "quests": ["q2_pronunciation"],
+      "level": 1,
+      "discoveredObjects": ["sofa"]
+    }
+  },
+  {
+    "id": "gt_present_simple",
+    "title": "Daily Actions & Habitual Routines 🏃",
+    "difficulty": "A1",
+    "rule": "Present Simple Tense: Used for habitual routines and direct current states. Structure: [Subject] + [Base Verb/S-form]. Example: 'I walk to the town square every morning'.",
+    "examples": [
+      {
+        "text": "🏃 I explore COSY Town every day.",
+        "targetLang": {
+          "en": "🏃 I explore COSY Town every day.",
+          "fr": "🏃 J'explore COSY Town chaque jour.",
+          "es": "🏃 Exploro COSY Town todos los días.",
+          "it": "🏃 Esploro COSY Town ogni giorno.",
+          "de": "🏃 Ich erkunde COSY Town jeden Tag.",
+          "ru": "🏃 Я исследую COSY Town каждый день."
+        },
+        "context": "Expressing daily learning habits."
+      },
+      {
+        "text": "☕ Lucas bakes fresh baguettes in the morning.",
+        "targetLang": {
+          "en": "☕ Lucas bakes fresh baguettes in the morning.",
+          "fr": "☕ Lucas cuit des baguettes fraîches le matin.",
+          "es": "☕ Lucas hornea baguettes frescas por la mañana.",
+          "it": "☕ Lucas prepara baguette fresche la mattina.",
+          "de": "☕ Lucas bäckt morgens frische Baguettes.",
+          "ru": "☕ Лукас печет свежие багеты по утрам."
+        },
+        "context": "Describing NPC schedules."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_present_simple_1",
+        "type": "multiple_choice",
+        "question": "Which sentence correctly describes finding 3 objects?",
+        "options": ["I discover three objects in the city", "I discovers three objects", "I discovering three objects"],
+        "correct": 0,
+        "explanation": "First person singular 'I' uses the base verb form without 's'.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "anna",
+        "prompt": "⚡ I discover items quickly! How many can you find?",
+        "grammarUsage": "Present simple challenge dialogue."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "town_square",
+      "objects": ["clock_tower", "fountain"],
+      "npcs": ["anna"],
+      "district": "City Centre"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Present simple tense actions."
+    },
+    "unlockRequirements": {
+      "quests": ["q3_anna_challenge"],
+      "level": 2,
+      "discoveredObjects": ["clock_tower"]
+    }
+  },
+  {
+    "id": "gt_likes",
+    "title": "Preferences & Requests ❤️",
+    "difficulty": "A1",
+    "rule": "Expressing Desires and Preferences: Use 'I like [Noun]' for general preference and 'I would like [Noun]' or 'I want [Noun]' for polite orders. Pattern: [Subject] + [Verb of Preference] + [Object].",
+    "examples": [
+      {
+        "text": "🥖 I like fresh warm baguette from the bakery.",
+        "targetLang": {
+          "en": "🥖 I like fresh warm baguette from the bakery.",
+          "fr": "🥖 J'aime la baguette fraîche de la boulangerie.",
+          "es": "🥖 Me gusta la baguette fresca de la panadería.",
+          "it": "🥖 Mi piace la baguette fresca della panetteria.",
+          "de": "🥖 Ich mag frisches warmes Baguette aus der Bäckerei.",
+          "ru": "🥖 Мне нравится свежий теплый багет из пекарни."
+        },
+        "context": "Expressing food preferences in shop contexts."
+      },
+      {
+        "text": "☕ I want a hot espresso, please.",
+        "targetLang": {
+          "en": "☕ I want a hot espresso, please.",
+          "fr": "☕ Je voudrais un café chaud, s'il vous plaît.",
+          "es": "☕ Quiero un café caliente, por favor.",
+          "it": "☕ Vorrei un caffè caldo, per favore.",
+          "de": "☕ Ich hätte gerne einen heißen Espresso, bitte.",
+          "ru": "☕ Я бы хотел горячий эспрессо, пожалуйста."
+        },
+        "context": "Ordering drinks politely at the cafe."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_likes_1",
+        "type": "multiple_choice",
+        "question": "How do you express a preference for bakery bread?",
+        "options": ["I like warm baguette", "I liking warm baguette", "I likes warm baguette"],
+        "correct": 0,
+        "explanation": "First-person 'I' takes 'like' in the present tense.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "🥖 Warm baguette! 😋 Do you like fresh bread?",
+        "grammarUsage": "Asking and answering preference questions."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "bakery",
+      "objects": ["baguette", "croissant"],
+      "npcs": ["lucas_baker", "marco_barista"],
+      "district": "City Centre"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Preferences and polite requests."
+    },
+    "unlockRequirements": {
+      "quests": ["q4_bakery_bread"],
+      "level": 2,
+      "discoveredObjects": ["baguette"]
+    }
+  }
 ]
