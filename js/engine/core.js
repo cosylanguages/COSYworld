@@ -15,6 +15,7 @@
  * - Multi-lingual localization across 14 target languages
  * - Dynamic World Manager (roads, buildings, weather, ambient music, time of day)
  * - Modular Inductive Grammar Engine (mission-driven grammar unlocks, interactive exercises, scene integration, audio voice synthesis)
+ * - Comprehensive Quest Manager (10 quest types, unlock conditions, quest chains, XP/vocab/grammar rewards)
  */
 
 import { SaveSystem } from '../save/save_system.js';
@@ -99,6 +100,9 @@ export class GameEngine {
 
         // Check grammar unlocks on load
         this.grammarEngine.checkGrammarUnlocks(this.state, this.data);
+
+        // Evaluate quests on load
+        this.checkQuests('init');
 
         window.COSY_WORLD_DATA = this.data;
         this.emit('dataLoaded', this.data);
@@ -231,6 +235,7 @@ export class GameEngine {
 
         await this.renderWorldViewport();
         this.showToast(`Entered ${loc.name[this.state.currentLang] || loc.name.en} 🚪`);
+        this.checkQuests('location_changed', { locationId });
         this.emit('locationChanged', locationId);
     }
 
@@ -244,12 +249,13 @@ export class GameEngine {
             this.state,
             this.data,
             (amount) => this.addXP(amount),
-            () => this.checkQuests(),
+            () => this.checkQuests('object_inspected', { objId }),
             (text, lang) => this.speakText(text, lang),
             () => this.openModal(),
             () => this.renderWorldViewport(),
             () => this.renderHudTab()
         );
+        this.checkQuests('object_inspected', { objId });
         this.emit('hotspotInspected', objId);
     }
 
@@ -262,6 +268,7 @@ export class GameEngine {
 
         if (obj.actionChain.nextObject === 'door_lock') {
             this.completeQuest('q1_key_door');
+            this.completeQuest('q_collect_key');
         }
     }
 
@@ -272,6 +279,7 @@ export class GameEngine {
             this.data,
             () => this.openModal()
         );
+        this.checkQuests('npc_interacted', { npcId });
     }
 
     handleDialogueOption(npcId, questId) {
@@ -290,6 +298,10 @@ export class GameEngine {
 
     repeatSpeech() {
         DialogueManager.repeatSpeech(this.state.currentLang);
+        if (this.data && this.data.npcs) {
+            const currentNpc = Object.keys(this.data.npcs)[0];
+            this.checkQuests('pronunciation_practiced', { npcId: currentNpc });
+        }
     }
 
     toggleSlowSpeech() {
@@ -321,8 +333,10 @@ export class GameEngine {
         );
     }
 
-    checkQuests() {
-        QuestManager.checkQuests(
+    checkQuests(eventType = 'general', payload = {}) {
+        QuestManager.evaluateEvent(
+            eventType,
+            payload,
             this.state,
             this.data,
             (qid) => this.completeQuest(qid)
@@ -346,10 +360,10 @@ export class GameEngine {
         if (exercise.type === 'multiple_choice') {
             body.innerHTML = `
                 <div style="padding:0.5rem;">
-                    <div style="font-size:0.85rem; font-weight:700; color:var(--teal); margin-bottom:0.25rem;">
+                    <div style="font-size:0.85rem; font-weight:700; color:var(--blue-primary); margin-bottom:0.25rem;">
                         🧩 Interactive Grammar Practice • ${grammarPoint.title}
                     </div>
-                    <h2 style="font-family:'Fraunces',serif; font-size:1.4rem; color:var(--ink); margin-bottom:1rem;">
+                    <h2 style="font-family:'Fraunces',serif; font-size:1.4rem; color:var(--text-main); margin-bottom:1rem;">
                         ${exercise.question}
                     </h2>
 
@@ -368,21 +382,21 @@ export class GameEngine {
             const words = exercise.words || [];
             body.innerHTML = `
                 <div style="padding:0.5rem;">
-                    <div style="font-size:0.85rem; font-weight:700; color:var(--teal); margin-bottom:0.25rem;">
+                    <div style="font-size:0.85rem; font-weight:700; color:var(--blue-primary); margin-bottom:0.25rem;">
                         🧩 Word Reordering Exercise • ${grammarPoint.title}
                     </div>
-                    <h2 style="font-family:'Fraunces',serif; font-size:1.4rem; color:var(--ink); margin-bottom:1rem;">
+                    <h2 style="font-family:'Fraunces',serif; font-size:1.4rem; color:var(--text-main); margin-bottom:1rem;">
                         ${exercise.question}
                     </h2>
 
-                    <div style="background:var(--tan-light); padding:1rem; border-radius:12px; margin-bottom:1rem;">
+                    <div style="background:var(--blue-light); padding:1rem; border-radius:12px; margin-bottom:1rem;">
                         <div id="cw-word-bank" style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
                             ${words.map(w => `
                                 <button type="button" class="cw-btn-toggle" style="font-size:1rem; padding:0.4rem 0.8rem;" onclick="COSY_WORLD.addWordToAnswer('${w.replace(/'/g, "\\'")}')">${w}</button>
                             `).join('')}
                         </div>
-                        <div style="font-size:0.85rem; font-weight:700; color:var(--ink-muted); margin-bottom:0.4rem;">Your Sentence:</div>
-                        <div id="cw-sentence-builder" style="min-height:40px; background:white; border:2px dashed var(--border); border-radius:8px; padding:0.5rem; font-size:1.1rem; font-weight:700; color:var(--ink);"></div>
+                        <div style="font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-bottom:0.4rem;">Your Sentence:</div>
+                        <div id="cw-sentence-builder" style="min-height:40px; background:white; border:2px dashed var(--border-subtle); border-radius:8px; padding:0.5rem; font-size:1.1rem; font-weight:700; color:var(--text-main);"></div>
                     </div>
 
                     <div style="display:flex; gap:0.5rem;">
@@ -437,6 +451,7 @@ export class GameEngine {
         }
 
         if (result.success) {
+            this.checkQuests('exercise_completed', { exerciseId });
             this.saveState();
             this.renderHudTab();
             setTimeout(() => {

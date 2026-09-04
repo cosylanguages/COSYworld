@@ -18,27 +18,78 @@ export class HUDManager {
         const lang = state.currentLang;
 
         if (state.activeTab === 'quests') {
+            if (!gameData.quests || gameData.quests.length === 0) {
+                body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No quests loaded.</div>`;
+                return;
+            }
+
+            const typeIcons = {
+                exploration: '🗺️',
+                collect: '📦',
+                photograph: '📸',
+                conversation: '💬',
+                shopping: '🛍️',
+                grammar: '🧩',
+                pronunciation: '🗣️',
+                listening: '👂',
+                directions: '🧭',
+                'timed challenge': '⚡'
+            };
+
             body.innerHTML = gameData.quests.map(q => {
-                const isDone = state.completedQuests.has(q.id);
+                const isDone = state.completedQuests && state.completedQuests.has(q.id);
+                const isActive = state.activeQuests && state.activeQuests.has(q.id);
+                const typeIcon = typeIcons[q.type] || '📜';
+                const npc = q.NPC ? gameData.npcs[q.NPC] : null;
+
+                const xpReward = (q.reward && q.reward.xp) || q.xpReward || 50;
+                const vocabReward = (q.reward && q.reward.vocabulary) ? q.reward.vocabulary.length : 0;
+                const grammarReward = (q.reward && q.reward.grammar) || q.grammarUnlock;
+
+                const nextQuest = q.nextQuestId ? gameData.quests.find(item => item.id === q.nextQuestId) : null;
+
                 return `
-                    <div class="cw-item-card" style="${isDone ? 'opacity:0.6;' : ''}">
-                        <div class="cw-item-title">
-                            <span>${q.title}</span>
-                            <span>${isDone ? '✅ Done' : `⭐ ${q.xpReward} XP`}</span>
+                    <div class="cw-item-card" style="${isDone ? 'opacity:0.65;' : (isActive ? 'border-left: 4px solid var(--blue-primary);' : '')}">
+                        <div class="cw-item-title" style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
+                            <span style="font-weight:700; color:var(--text-main);">${q.title}</span>
+                            <div style="display:flex; gap:0.3rem; flex-wrap:wrap;">
+                                <span style="font-size:0.75rem; background:var(--blue-light); color:var(--blue-primary); padding:0.2rem 0.5rem; border-radius:10px; font-weight:700;">
+                                    ${typeIcon} ${q.type || 'Quest'}
+                                </span>
+                                <span style="font-size:0.75rem; background:${isDone ? '#d1fae5' : (isActive ? '#dbeafe' : '#fef3c7')}; color:${isDone ? '#065f46' : (isActive ? '#1e40af' : '#92400e')}; padding:0.2rem 0.5rem; border-radius:10px; font-weight:700;">
+                                    ${isDone ? '✅ Complete' : (isActive ? '🔥 Active' : '📜 Available')}
+                                </span>
+                            </div>
                         </div>
-                        <div class="cw-item-desc">${q.description}</div>
-                        ${q.grammarUnlock ? `
-                            <div style="margin-top:0.4rem; font-size:0.75rem; color:var(--teal); font-weight:700;">
-                                🌳 Unlocks Grammar Point
+
+                        <div class="cw-item-desc" style="margin-top:0.4rem;">
+                            ${q.description}
+                        </div>
+
+                        ${npc ? `
+                            <div style="margin-top:0.4rem; font-size:0.8rem; font-weight:600; color:var(--text-muted);">
+                                👤 NPC Mentor: ${npc.avatar || '👤'} ${npc.name} (${npc.role})
+                            </div>
+                        ` : ''}
+
+                        <div style="margin-top:0.5rem; display:flex; gap:0.5rem; flex-wrap:wrap; font-size:0.75rem; font-weight:700;">
+                            <span style="background:#f3f4f6; padding:0.2rem 0.5rem; border-radius:8px; color:var(--text-main);">⭐ +${xpReward} XP</span>
+                            ${vocabReward > 0 ? `<span style="background:#eff6ff; color:#1d4ed8; padding:0.2rem 0.5rem; border-radius:8px;">📚 +${vocabReward} Vocab</span>` : ''}
+                            ${grammarReward ? `<span style="background:#f0fdf4; color:#15803d; padding:0.2rem 0.5rem; border-radius:8px;">🌳 Unlocks Grammar</span>` : ''}
+                        </div>
+
+                        ${nextQuest ? `
+                            <div style="margin-top:0.5rem; font-size:0.75rem; color:var(--blue-primary); font-weight:600;">
+                                🔗 Quest Chain: Leads to "${nextQuest.title}"
                             </div>
                         ` : ''}
                     </div>
                 `;
             }).join('');
         } else if (state.activeTab === 'vocab') {
-            const disc = Array.from(state.discoveredObjects);
+            const disc = Array.from(state.discoveredObjects || []);
             if (disc.length === 0) {
-                body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--ink-muted);">No objects discovered yet! Click items in rooms to build your visual encyclopedia.</div>`;
+                body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No objects discovered yet! Click items in rooms to build your visual encyclopedia.</div>`;
                 return;
             }
             body.innerHTML = disc.map(objId => {
@@ -49,14 +100,14 @@ export class HUDManager {
                     <div class="cw-item-card" style="cursor:pointer;" onclick="COSY_WORLD.inspectObject('${objId}')">
                         <div class="cw-item-title">
                             <span>${obj.emoji} ${word}</span>
-                            <span style="font-size:0.8rem; color:var(--teal);">🔊 Speak</span>
+                            <span style="font-size:0.8rem; color:var(--blue-primary);">🔊 Speak</span>
                         </div>
                     </div>
                 `;
             }).join('');
         } else if (state.activeTab === 'grammar') {
             if (!gameData.grammarTree || gameData.grammarTree.length === 0) {
-                body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--ink-muted);">No grammar points loaded.</div>`;
+                body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No grammar points loaded.</div>`;
                 return;
             }
 
@@ -77,37 +128,37 @@ export class HUDManager {
                 const completedExCount = g.interactiveExercises ? g.interactiveExercises.filter(e => state.completedExercises && state.completedExercises.has(e.id)).length : 0;
 
                 return `
-                    <div class="cw-item-card" style="${!isUnlocked ? 'opacity:0.75; background:#f3f4f6;' : 'border-left: 4px solid var(--teal);'}">
+                    <div class="cw-item-card" style="${!isUnlocked ? 'opacity:0.75; background:#f8fafc;' : 'border-left: 4px solid var(--blue-primary);'}">
                         <div class="cw-item-title" style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                            <span style="font-weight:700; color:var(--ink);">${g.title}</span>
+                            <span style="font-weight:700; color:var(--text-main);">${g.title}</span>
                             <div style="display:flex; gap:0.3rem;">
-                                <span style="font-size:0.75rem; background:var(--tan-light); padding:0.2rem 0.5rem; border-radius:10px; font-weight:700;">${cefrLevel}</span>
+                                <span style="font-size:0.75rem; background:var(--blue-light); color:var(--blue-primary); padding:0.2rem 0.5rem; border-radius:10px; font-weight:700;">${cefrLevel}</span>
                                 <span style="font-size:0.75rem; background:${isUnlocked ? '#d1fae5' : '#fee2e2'}; color:${isUnlocked ? '#065f46' : '#991b1b'}; padding:0.2rem 0.5rem; border-radius:10px; font-weight:700;">
                                     ${isUnlocked ? '✅ Unlocked' : '🔒 Locked'}
                                 </span>
                             </div>
                         </div>
 
-                        <div class="cw-item-desc" style="margin-top:0.5rem; font-size:0.85rem; color:var(--ink);">
+                        <div class="cw-item-desc" style="margin-top:0.5rem; font-size:0.85rem; color:var(--text-main);">
                             <strong>Rule:</strong> ${g.rule || g.desc || ''}
                         </div>
 
                         ${isUnlocked && g.examples && g.examples.length > 0 ? `
-                            <div style="margin-top:0.6rem; background:var(--tan-light); padding:0.5rem; border-radius:8px; font-size:0.8rem;">
-                                <div style="font-weight:700; color:var(--teal); margin-bottom:0.2rem;">💬 Example:</div>
+                            <div style="margin-top:0.6rem; background:var(--blue-light); padding:0.5rem; border-radius:8px; font-size:0.8rem;">
+                                <div style="font-weight:700; color:var(--blue-primary); margin-bottom:0.2rem;">💬 Example:</div>
                                 <div style="display:flex; justify-content:space-between; align-items:center;">
                                     <span>${g.examples[0].text}</span>
                                     <button type="button" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem;" onclick="COSY_WORLD.speakGrammarExample('${g.examples[0].text.replace(/'/g, "\\'")}', '${state.currentLang}')">🔊</button>
                                 </div>
                                 ${g.examples[0].targetLang && g.examples[0].targetLang[lang] ? `
-                                    <div style="font-size:0.75rem; color:var(--ink-muted); margin-top:0.28rem;">${g.examples[0].targetLang[lang]}</div>
+                                    <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.28rem;">${g.examples[0].targetLang[lang]}</div>
                                 ` : ''}
                             </div>
                         ` : ''}
 
                         ${isUnlocked && exCount > 0 ? `
                             <div style="margin-top:0.6rem; display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-size:0.75rem; font-weight:700; color:var(--ink-muted);">Exercises: ${completedExCount}/${exCount} Done</span>
+                                <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted);">Exercises: ${completedExCount}/${exCount} Done</span>
                                 <button type="button" class="btn-g-primary" style="padding:0.25rem 0.6rem; font-size:0.8rem;" onclick="COSY_WORLD.openGrammarExercise('${g.interactiveExercises[0].id}')">
                                     🧩 Practice Exercise
                                 </button>
@@ -121,7 +172,7 @@ export class HUDManager {
                         ` : ''}
 
                         ${g.sceneIntegration ? `
-                            <div style="margin-top:0.5rem; font-size:0.75rem; color:var(--teal); font-weight:600; cursor:pointer;" onclick="COSY_WORLD.switchLocation('${g.sceneIntegration.locationId}')">
+                            <div style="margin-top:0.5rem; font-size:0.75rem; color:var(--blue-primary); font-weight:600; cursor:pointer;" onclick="COSY_WORLD.switchLocation('${g.sceneIntegration.locationId}')">
                                 📍 Integrated in ${g.sceneIntegration.district || 'COSY Town'} (${g.sceneIntegration.locationId}) ➔
                             </div>
                         ` : ''}
@@ -135,7 +186,7 @@ export class HUDManager {
                     <div class="cw-item-card" style="cursor:pointer;" onclick="COSY_WORLD.switchLocation('town_square')">
                         <div class="cw-item-title">
                             <span>${npc.avatar} ${npc.name}</span>
-                            <span style="font-size:0.8rem; color:var(--teal);">Talk 💬</span>
+                            <span style="font-size:0.8rem; color:var(--blue-primary);">Talk 💬</span>
                         </div>
                         <div class="cw-item-desc">${npc.role}</div>
                     </div>
