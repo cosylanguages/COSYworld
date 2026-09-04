@@ -67,6 +67,16 @@ export class AudioManager {
      * Play or change background ambience synthesis.
      * @param {string} type - 'piano', 'cafe', 'nature', 'rain', or 'none'.
      */
+    /**
+     * Set active district audio parameters (music + ambient sounds list).
+     * @param {string} music
+     * @param {string[]} [ambientSounds=[]]
+     */
+    setDistrictAudio(music, ambientSounds = []) {
+        const audioType = music || (ambientSounds.length > 0 ? ambientSounds[0] : 'none');
+        this.playAmbience(audioType);
+    }
+
     playAmbience(type) {
         this.currentAmbienceType = type;
 

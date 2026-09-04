@@ -12,6 +12,7 @@ import { CameraManager } from '../camera/camera_manager.js';
 import { AudioManager } from '../audio/audio_manager.js';
 import { SceneManager } from '../scenes/scene_manager.js';
 import { StreamingWorldManager } from '../scenes/streaming_manager.js';
+import { WorldBuilder } from '../world/world_builder.js';
 import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
@@ -37,6 +38,11 @@ export class GameEngine {
         this.inputManager = new InputManager({ eventBus: this.eventBus });
         this.cameraManager = new CameraManager({ eventBus: this.eventBus });
         this.audioManager = new AudioManager({ eventBus: this.eventBus });
+
+        this.worldBuilder = new WorldBuilder({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus
+        });
 
         this.streamingManager = new StreamingWorldManager();
         this.sceneManager = new SceneManager({
@@ -112,7 +118,7 @@ export class GameEngine {
         this.eventBus.emit(event, payload);
     }
 
-    /* Asset & JSON Preloader using AssetManager */
+    /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
         const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes] = await Promise.all([
@@ -124,8 +130,10 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/grammar/grammar.json`)
         ]);
 
+        this.worldBuilder.registerDistricts(districtsRes);
+
         this.data.languages = languagesRes;
-        this.data.districts = districtsRes;
+        this.data.districts = this.worldBuilder.exportDistrictsObject();
         this.data.objects = objectsRes;
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
@@ -274,12 +282,12 @@ export class GameEngine {
 
         this.saveState();
 
-        if (loc.music) {
+        if (loc.music || loc.ambientSounds) {
             if (typeof document !== 'undefined') {
                 const soundSel = document.getElementById('cw-sound-sel');
-                if (soundSel) soundSel.value = loc.music;
+                if (soundSel) soundSel.value = loc.music || (loc.ambientSounds && loc.ambientSounds[0]) || 'none';
             }
-            this.playAmbience(loc.music);
+            this.audioManager.setDistrictAudio(loc.music, loc.ambientSounds);
         }
 
         await this.renderWorldViewport();

@@ -85,10 +85,11 @@ export class SceneRenderer {
                 });
             }
 
-            // Render Doors / Portals dynamically from JSON
-            if (dist.doors) {
-                dist.doors.forEach(d => {
-                    const doorLabel = d.labels[lang] || d.labels.en || 'Door';
+            // Render Connections / Doors dynamically from JSON
+            const connectionsList = dist.connections || dist.doors || [];
+            if (connectionsList) {
+                connectionsList.forEach(d => {
+                    const doorLabel = (d.labels && (d.labels[lang] || d.labels.en)) || d.label || 'Door';
                     html += `
                         <g class="cw-door-portal" tabindex="0" role="button" aria-label="Enter ${doorLabel}" onclick="COSY_WORLD.switchLocation('${d.targetId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.switchLocation('${d.targetId}');}">
                             <rect x="${d.x}" y="${d.y}" width="${d.width}" height="${d.height}" rx="6" />
