@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COSY World 🌍 — Open-World Language Learning RPG</title>
+    <meta name="description" content="Explore COSY Town, talk with NPCs, discover everyday objects, unlock grammar trees, and master 14 languages in a realistic, peaceful open world.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+
+    <!-- Standalone CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/ui.css">
+</head>
+<body class="game-standalone">
+    <header class="cw-nav">
+      <a class="cw-logo" href="index.html">
+        <span>🌍</span> COSY World
+      </a>
+      <div class="cw-nav-links">
+        <a href="https://cosylanguages.com" target="_blank" rel="noopener">Official Website ↗</a>
+        <a href="docs/contributing.md" target="_blank" rel="noopener">Contribute 🤝</a>
+      </div>
+    </header>
+
+    <main class="cw-container">
+      <!-- Topbar Stats & Controls -->
+      <div class="cw-topbar-card">
+        <div class="cw-player-stats">
+          <div class="cw-stat-badge">🏛️ Citizen Level: <span id="cw-citizen-lvl">1 (Novice)</span></div>
+          <div class="cw-stat-badge">⭐ XP: <span id="cw-xp-num">0</span></div>
+          <div class="cw-xp-bar-wrap">
+            <div class="cw-xp-track">
+              <div class="cw-xp-fill" id="cw-xp-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cw-controls">
+          <button class="cw-btn-toggle" type="button" onclick="COSY_WORLD.toggleGuidePointers()">👉 Guide Pointers</button>
+          <button class="cw-btn-toggle" type="button" onclick="COSY_WORLD.toggleTranslations()">🌐 Translation Mode</button>
+
+          <label for="cw-lang-sel" style="font-size:0.85rem; font-weight:700;">Target Language:</label>
+          <select class="cw-sel" id="cw-lang-sel" onchange="COSY_WORLD.changeLanguage(this.value)">
+            <!-- Generated dynamically -->
+          </select>
+
+          <label for="cw-sound-sel" style="font-size:0.85rem; font-weight:700;">Ambience 🎵:</label>
+          <select class="cw-sel" id="cw-sound-sel" onchange="COSY_WORLD.playAmbience(this.value)">
+            <option value="none">Mute Ambient</option>
+            <option value="piano" selected>Relaxing Piano 🎹</option>
+            <option value="cafe">Coffee Shop ☕</option>
+            <option value="nature">Nature Breeze 🍃</option>
+            <option value="rain">Gentle Rain 🌧️</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Main Game Layout -->
+      <div class="cw-viewport-layout">
+
+        <!-- Left Column: Open-World Viewport -->
+        <div class="cw-stage-card">
+          <div class="cw-stage-header">
+            <div class="cw-district-title" id="cw-location-title">🛋️ Apartment Living Room</div>
+            <div style="font-size:0.85rem; font-weight:700; color:var(--ink-muted);" id="cw-district-name">Residential District</div>
+          </div>
+
+          <!-- SVG Canvas World Stage -->
+          <svg class="cw-svg-view" id="cw-world-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+            <!-- SVG elements generated dynamically in engine -->
+          </svg>
+        </div>
+
+        <!-- Right Column: HUD Sidebar (Quests, Encyclopedia, Grammar Tree, NPCs) -->
+        <div class="cw-hud-card">
+          <div class="cw-hud-nav">
+            <button class="cw-hud-btn active" type="button" onclick="COSY_WORLD.switchTab('quests', this)">Quests 📜</button>
+            <button class="cw-hud-btn" type="button" onclick="COSY_WORLD.switchTab('vocab', this)">Encyclopedia 📚</button>
+            <button class="cw-hud-btn" type="button" onclick="COSY_WORLD.switchTab('grammar', this)">Grammar 🌳</button>
+            <button class="cw-hud-btn" type="button" onclick="COSY_WORLD.switchTab('npcs', this)">NPCs 💬</button>
+          </div>
+
+          <div class="cw-hud-content" id="cw-hud-tab-body">
+            <!-- Tab contents loaded dynamically -->
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Modal for Object Inspector & Dialogue -->
+    <div class="cw-modal-overlay" id="cw-modal">
+      <div class="cw-modal-card" id="cw-modal-card">
+        <button class="cw-modal-close" type="button" onclick="COSY_WORLD.closeModal()">✕</button>
+        <div id="cw-modal-body"></div>
+      </div>
+    </div>
+
+    <!-- COSY World ES Module Entry Point -->
+    <script type="module" src="js/main.js"></script>
+
+    <div id="toast" style="position: fixed; bottom: 2rem; right: 2rem; background: var(--ink); color: #fff; padding: 12px 24px; border-radius: 12px; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 3000; font-size: .85rem; font-weight: 500;"></div>
+</body>
+</html>
