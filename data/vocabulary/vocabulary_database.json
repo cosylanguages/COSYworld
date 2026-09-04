@@ -1,0 +1,129 @@
+{
+  "vocab_door": {
+    "vocabId": "vocab_door",
+    "difficulty": "A0",
+    "audio": "door_open",
+    "grammar": "gt_there_is",
+    "translations": {
+      "en": "Door",
+      "fr": "Porte",
+      "it": "Porta",
+      "es": "Puerta",
+      "de": "Tür",
+      "ru": "Дверь"
+    },
+    "collocations": ["open the door", "close the door", "lock the door", "front door"],
+    "exampleSentences": {
+      "en": "Please close the door when you leave.",
+      "fr": "Fermez la porte s'il vous plaît.",
+      "es": "Por favor abre la puerta."
+    },
+    "relatedQuests": ["q1_key_door"],
+    "relatedScenes": ["apartment_living", "town_square", "bakery", "cafe"]
+  },
+  "vocab_key": {
+    "vocabId": "vocab_key",
+    "difficulty": "A0",
+    "audio": "key_clink",
+    "grammar": "gt_greetings",
+    "translations": {
+      "en": "Key",
+      "fr": "Clé",
+      "it": "Chiave",
+      "es": "Llave",
+      "de": "Schlüssel",
+      "ru": "Ключ"
+    },
+    "collocations": ["turn the key", "house key", "lost key"],
+    "exampleSentences": {
+      "en": "Use the key to unlock the door.",
+      "fr": "Utilisez la clé pour déverrouiller la porte."
+    },
+    "relatedQuests": ["q1_key_door"],
+    "relatedScenes": ["apartment_living"]
+  },
+  "vocab_sofa": {
+    "vocabId": "vocab_sofa",
+    "difficulty": "A0",
+    "audio": "soft_cushion",
+    "grammar": "gt_there_is",
+    "translations": {
+      "en": "Sofa",
+      "fr": "Canapé",
+      "it": "Divano",
+      "es": "Sofá",
+      "de": "Sofa",
+      "ru": "Диван"
+    },
+    "collocations": ["sit on the sofa", "comfortable sofa"],
+    "exampleSentences": {
+      "en": "The sofa is very comfortable.",
+      "fr": "Le canapé est très confortable."
+    },
+    "relatedQuests": [],
+    "relatedScenes": ["apartment_living"]
+  },
+  "vocab_cup": {
+    "vocabId": "vocab_cup",
+    "difficulty": "A0",
+    "audio": "cup_clink",
+    "grammar": "gt_likes",
+    "translations": {
+      "en": "Cup",
+      "fr": "Tasse",
+      "it": "Tazza",
+      "es": "Taza",
+      "de": "Tasse",
+      "ru": "Чашка"
+    },
+    "collocations": ["a cup of coffee", "tea cup", "fill the cup"],
+    "exampleSentences": {
+      "en": "I would like a cup of coffee.",
+      "fr": "Je voudrais une tasse de café."
+    },
+    "relatedQuests": ["q_coffee_break"],
+    "relatedScenes": ["apartment_kitchen", "cafe"]
+  },
+  "vocab_coffee": {
+    "vocabId": "vocab_coffee",
+    "difficulty": "A0",
+    "audio": "coffee_brew",
+    "grammar": "gt_likes",
+    "translations": {
+      "en": "Coffee",
+      "fr": "Café",
+      "it": "Caffè",
+      "es": "Café",
+      "de": "Kaffee",
+      "ru": "Кофе"
+    },
+    "collocations": ["hot coffee", "black coffee", "brew coffee"],
+    "exampleSentences": {
+      "en": "Fresh hot coffee is ready.",
+      "fr": "Le café chaud est prêt."
+    },
+    "relatedQuests": ["q_coffee_break"],
+    "relatedScenes": ["cafe"]
+  },
+  "vocab_bread": {
+    "vocabId": "vocab_bread",
+    "difficulty": "A0",
+    "audio": "bread_crunch",
+    "grammar": "gt_likes",
+    "translations": {
+      "en": "Bread / Baguette",
+      "fr": "Pain / Baguette",
+      "it": "Pane / Baguette",
+      "es": "Pan / Baguette",
+      "de": "Brot / Baguette",
+      "ru": "Хлеб / Багет"
+    },
+    "collocations": ["fresh bread", "slice of bread", "buy bread"],
+    "exampleSentences": {
+      "en": "The bakery sells fresh baguette every morning.",
+      "fr": "La boulangerie vend des baguettes fraîches."
+    },
+    "relatedQuests": ["q_bakery_order"],
+    "relatedScenes": ["bakery"]
+  }
+}

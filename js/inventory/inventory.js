@@ -18,6 +18,11 @@ export class InventoryManager {
             if (checkQuestsFn) checkQuestsFn();
         }
 
+        // Find rich vocabulary entry details if available
+        const vocabEngine = typeof window !== 'undefined' && window.COSY_WORLD && window.COSY_WORLD.vocabularyEngine;
+        const vocabEntry = obj.vocabId && vocabEngine ? vocabEngine.getVocabulary(obj.vocabId) : null;
+        const vocabStats = obj.vocabId && vocabEngine ? vocabEngine.getStats(obj.vocabId) : null;
+
         // Find integrated grammar points for this object
         const integratedGrammar = (gameData.grammarTree || []).filter(gp =>
             gp.sceneIntegration && gp.sceneIntegration.objects && gp.sceneIntegration.objects.includes(objId)
@@ -41,6 +46,24 @@ export class InventoryManager {
                         <div class="cw-item-title" style="font-size:1rem; color:var(--teal);">🎬 Visual Action Chain</div>
                         <div style="font-size:1.1rem; font-weight:700; color:var(--ink); margin-top:0.4rem;">${sequence}</div>
                     </div>
+
+                    ${vocabEntry ? `
+                        <div class="cw-item-card" style="text-align:left; background:#eff6ff; border:1px solid #bfdbfe; padding:0.75rem; border-radius:12px; margin-bottom:1rem;">
+                            <div style="font-size:0.85rem; font-weight:700; color:#1e40af;">
+                                🧠 Spaced Repetition Mastery: ${vocabStats?.masteryLevel || 0}% (CEFR ${vocabEntry.difficulty})
+                            </div>
+                            ${vocabEntry.collocations && vocabEntry.collocations.length > 0 ? `
+                                <div style="font-size:0.8rem; color:#1e3a8a; margin-top:0.3rem;">
+                                    <strong>Collocations:</strong> ${vocabEntry.collocations.join(', ')}
+                                </div>
+                            ` : ''}
+                            ${vocabEntry.exampleSentences && (vocabEntry.exampleSentences[lang] || vocabEntry.exampleSentences.en) ? `
+                                <div style="font-size:0.8rem; italic; color:#1e3a8a; margin-top:0.3rem;">
+                                    "${vocabEntry.exampleSentences[lang] || vocabEntry.exampleSentences.en}"
+                                </div>
+                            ` : ''}
+                        </div>
+                    ` : ''}
 
                     ${integratedGrammar.length > 0 ? integratedGrammar.map(gp => {
                         const isUnlocked = state.unlockedGrammar && state.unlockedGrammar.has(gp.id);
