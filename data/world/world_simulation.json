@@ -1,0 +1,90 @@
+{
+  "timeOfDay": {
+    "morning": {
+      "name": "Morning",
+      "icon": "🌅",
+      "startHour": 6,
+      "color": "rgba(254, 243, 199, 0.25)",
+      "ambientSound": "morning_birds"
+    },
+    "afternoon": {
+      "name": "Afternoon",
+      "icon": "☀️",
+      "startHour": 12,
+      "color": "rgba(255, 255, 255, 0.0)",
+      "ambientSound": "nature"
+    },
+    "evening": {
+      "name": "Evening",
+      "icon": "🌆",
+      "startHour": 18,
+      "color": "rgba(251, 146, 60, 0.28)",
+      "ambientSound": "evening_breeze"
+    },
+    "night": {
+      "name": "Night",
+      "icon": "🌙",
+      "startHour": 22,
+      "color": "rgba(30, 41, 59, 0.55)",
+      "ambientSound": "night_crickets"
+    }
+  },
+  "seasons": {
+    "spring": {
+      "name": "Spring",
+      "icon": "🌸",
+      "tint": "rgba(236, 253, 245, 0.1)",
+      "ambientSound": "spring_breeze"
+    },
+    "summer": {
+      "name": "Summer",
+      "icon": "🌻",
+      "tint": "rgba(254, 240, 138, 0.15)",
+      "ambientSound": "summer_cicadas"
+    },
+    "autumn": {
+      "name": "Autumn",
+      "icon": "🍁",
+      "tint": "rgba(254, 215, 170, 0.2)",
+      "ambientSound": "autumn_wind"
+    },
+    "winter": {
+      "name": "Winter",
+      "icon": "❄️",
+      "tint": "rgba(224, 242, 254, 0.25)",
+      "ambientSound": "winter_wind"
+    }
+  },
+  "weathers": {
+    "clear": {
+      "name": "Clear",
+      "icon": "☀️",
+      "overlayOpacity": 0.0,
+      "ambientSound": "none"
+    },
+    "rain": {
+      "name": "Rain",
+      "icon": "🌧️",
+      "overlayOpacity": 0.35,
+      "ambientSound": "rain"
+    },
+    "snow": {
+      "name": "Snow",
+      "icon": "🌨️",
+      "overlayOpacity": 0.3,
+      "ambientSound": "winter_wind"
+    },
+    "fog": {
+      "name": "Fog",
+      "icon": "🌫️",
+      "overlayOpacity": 0.45,
+      "ambientSound": "fog_horn"
+    },
+    "clouds": {
+      "name": "Clouds",
+      "icon": "☁️",
+      "overlayOpacity": 0.2,
+      "ambientSound": "cloud_breeze"
+    }
+  }
+}

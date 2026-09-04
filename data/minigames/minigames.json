@@ -1,0 +1,177 @@
+[
+  {
+    "id": "mg_scene_match_1",
+    "type": "scene_match",
+    "title": "🖼️ Scene Matching Challenge",
+    "description": "Identify which room or scene contains the coffee table and sofa.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["sofa", "coffee_table"]
+    },
+    "content": {
+      "prompt": "Where do you find a coffee table and sofa?",
+      "options": ["apartment_living", "bakery", "apartment_kitchen", "cafe"],
+      "correctMatch": "apartment_living"
+    }
+  },
+  {
+    "id": "mg_memory_1",
+    "type": "memory",
+    "title": "🧠 Vocabulary Memory Match",
+    "description": "Flip and match pairs of target vocabulary cards.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["key", "clock_tower", "fountain"]
+    },
+    "content": {
+      "pairsCount": 3,
+      "pairs": [
+        { "id": "key", "word": "Key", "emoji": "🔑" },
+        { "id": "fountain", "word": "Fountain", "emoji": "⛲" },
+        { "id": "clock_tower", "word": "Clock Tower", "emoji": "🕰️" }
+      ]
+    }
+  },
+  {
+    "id": "mg_word_search_1",
+    "type": "word_search",
+    "title": "🔤 Town Square Word Search",
+    "description": "Find target vocabulary words hidden in the letter grid.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 70,
+      "vocabulary": ["bench", "fountain", "clock_tower"]
+    },
+    "content": {
+      "gridSize": 8,
+      "words": ["bench", "fountain", "clock"]
+    }
+  },
+  {
+    "id": "mg_pronunciation_1",
+    "type": "pronunciation",
+    "title": "🗣️ Speech Articulation Clinic",
+    "description": "Practice repeating greeting phrases aloud.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 55,
+      "vocabulary": ["bench"]
+    },
+    "content": {
+      "phrase": "Hello! Nice to meet you in Town Square.",
+      "npcId": "ella_bronx"
+    }
+  },
+  {
+    "id": "mg_listening_1",
+    "type": "listening",
+    "title": "👂 Audio Comprehension Challenge",
+    "description": "Listen to the spoken audio and choose the correct matching item.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["fountain"]
+    },
+    "content": {
+      "audioText": "The water fountain is in the center of Town Square.",
+      "options": ["Fountain ⛲", "Oven 🧑‍🍳", "Bookshelf 📚"],
+      "correctOption": 0
+    }
+  },
+  {
+    "id": "mg_dialogue_1",
+    "type": "dialogue",
+    "title": "💬 Bakery Customer Roleplay",
+    "description": "Select polite dialogue choices while ordering bread from Lucas.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 65,
+      "vocabulary": ["baguette"]
+    },
+    "content": {
+      "npcId": "lucas_baker",
+      "prompt": "Lucas says: 'Good morning! What can I get for you today?'",
+      "options": [
+        "I'd like a fresh warm baguette, please!",
+        "Give me bread now.",
+        "Nothing."
+      ],
+      "targetChoice": 0
+    }
+  },
+  {
+    "id": "mg_crossword_1",
+    "type": "crossword",
+    "title": "📝 COSY Town Crossword",
+    "description": "Fill in the vocabulary puzzle based on room clues.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 75,
+      "vocabulary": ["lamp", "tv"]
+    },
+    "content": {
+      "clues": [
+        { "id": "c1", "clue": "Light source on a table", "answer": "lamp" },
+        { "id": "c2", "clue": "Screen for watching broadcasts", "answer": "tv" }
+      ],
+      "answers": {
+        "c1": "lamp",
+        "c2": "tv"
+      }
+    }
+  },
+  {
+    "id": "mg_object_hunt_1",
+    "type": "object_hunt",
+    "title": "🔍 Kitchen Object Hunt",
+    "description": "Find target kitchen items in the room before time expires.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["fridge", "kettle"]
+    },
+    "content": {
+      "timeLimitSeconds": 45,
+      "targetObjects": ["fridge", "kettle"]
+    }
+  },
+  {
+    "id": "mg_drag_drop_1",
+    "type": "drag_drop",
+    "title": "🧩 Furniture Drag & Drop",
+    "description": "Drag word tiles onto matching room drop zones.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 65,
+      "vocabulary": ["sofa", "lamp"]
+    },
+    "content": {
+      "items": [
+        { "id": "item_sofa", "label": "Sofa", "targetZone": "living_room" },
+        { "id": "item_oven", "label": "Oven", "targetZone": "bakery" }
+      ],
+      "matches": {
+        "item_sofa": "living_room",
+        "item_oven": "bakery"
+      }
+    }
+  },
+  {
+    "id": "mg_sentence_builder_1",
+    "type": "sentence_builder",
+    "title": "🏗️ Sentence Builder Practice",
+    "description": "Construct a complete sentence by ordering word blocks.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 60,
+      "grammar": "gt_greetings"
+    },
+    "content": {
+      "question": "Arrange words to form: 'Where is the bakery?'",
+      "words": ["is", "the", "Where", "bakery?"],
+      "correctOrder": ["Where", "is", "the", "bakery?"]
+    }
+  }
+]

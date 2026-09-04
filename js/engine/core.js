@@ -15,12 +15,16 @@ import { StreamingWorldManager } from '../scenes/streaming_manager.js';
 import { WorldBuilder } from '../world/world_builder.js';
 import { BuildingManager } from '../world/building_system.js';
 import { InteriorEngine } from '../world/interior_engine.js';
+import { WorldMap } from '../world/world_map.js';
+import { WorldSimulationEngine } from '../world/world_simulation.js';
+import { MinigameFramework } from '../minigames/minigame_framework.js';
 import { VocabularyEngine } from '../vocabulary/vocabulary_engine.js';
 import { NPCAIEngine } from '../npc/npc_ai_engine.js';
 import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
 import { DialogueManager } from '../dialogue/dialogue.js';
+import { QuestEngine } from '../quests/quest_engine.js';
 import { QuestManager } from '../quests/quest_manager.js';
 import { GrammarEngine } from '../grammar/grammar_engine.js';
 import { ModalManager } from '../ui/modal.js';
@@ -75,6 +79,10 @@ export class GameEngine {
         });
 
         this.grammarEngine = new GrammarEngine(this);
+        this.questEngine = new QuestEngine({ gameEngine: this, eventBus: this.eventBus });
+        this.worldMap = new WorldMap({ gameEngine: this });
+        this.worldSimulation = new WorldSimulationEngine({ gameEngine: this, eventBus: this.eventBus });
+        this.minigameFramework = new MinigameFramework({ gameEngine: this, eventBus: this.eventBus });
 
         this.data = {
             languages: [],
@@ -147,7 +155,7 @@ export class GameEngine {
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
@@ -156,7 +164,9 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/grammar/grammar.json`),
             this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({})),
-            this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({}))
+            this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/minigames/minigames.json`).catch(() => ([])),
+            this.assetManager.loadJson(`${basePath}/world/world_simulation.json`).catch(() => ({}))
         ]);
 
         if (npcsRes) {
@@ -171,6 +181,10 @@ export class GameEngine {
             this.interiorEngine.registerRooms(roomsRes);
         }
 
+        if (worldSimRes) {
+            this.worldSimulation.loadConfigFromJson(worldSimRes);
+        }
+
         this.worldBuilder.registerDistricts(districtsRes);
         if (buildingsRes) {
             this.buildingManager.registerBuildings(buildingsRes);
@@ -182,7 +196,17 @@ export class GameEngine {
         this.data.objects = objectsRes;
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
+        this.questEngine.loadQuestsFromJson(questsRes);
         this.data.grammarTree = grammarRes;
+
+        if (minigamesJsonRes) {
+            this.minigameFramework.loadMinigamesFromJson(minigamesJsonRes);
+        } else if (typeof arguments !== 'undefined' && Array.isArray(arguments[0])) {
+            this.minigameFramework.loadMinigamesFromJson(arguments[0]);
+        }
+
+        if (!this.state.visitedLocations) this.state.visitedLocations = new Set();
+        if (this.state.visitedLocations.add) this.state.visitedLocations.add(this.state.currentLocationId || 'apartment_living');
 
         // Check grammar unlocks on load
         this.grammarEngine.checkGrammarUnlocks(this.state, this.data);
@@ -241,6 +265,15 @@ export class GameEngine {
         // Keep local position clamped inside viewport bounds
         this.playerWorldPos.x = Math.max(10, Math.min(790, this.playerWorldPos.x));
         this.playerWorldPos.y = Math.max(10, Math.min(490, this.playerWorldPos.y));
+
+        this.worldSimulation.update(dt);
+        this.state.worldSim = {
+            timeOfDay: this.worldSimulation.timeOfDay,
+            season: this.worldSimulation.season,
+            weather: this.worldSimulation.weather,
+            timeString: this.worldSimulation.getTimeString(),
+            lightingRgba: this.worldSimulation.getLightingRgba()
+        };
 
         this.cameraManager.update(dt);
 
@@ -324,6 +357,9 @@ export class GameEngine {
     async switchLocation(locationId, showToastAlert = true) {
         const loc = await this.sceneManager.switchScene(locationId, this.state, this.data);
         if (!loc) return;
+
+        if (!this.state.visitedLocations) this.state.visitedLocations = new Set();
+        if (this.state.visitedLocations.add) this.state.visitedLocations.add(locationId);
 
         this.saveState();
 
@@ -473,6 +509,94 @@ export class GameEngine {
             this.data,
             (qid) => this.completeQuest(qid)
         );
+    }
+
+    /* Interactive World Map & Fast Travel Methods */
+    openWorldMap() {
+        if (typeof document === 'undefined') return;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        body.innerHTML = this.worldMap.renderMapHtml(this.state, this.data);
+        this.openModal();
+
+        const container = document.getElementById('cw-map-viewport-container');
+        if (container) {
+            this.worldMap.attachInteractions(container);
+        }
+    }
+
+    refreshWorldMapUI() {
+        if (typeof document === 'undefined') return;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        body.innerHTML = this.worldMap.renderMapHtml(this.state, this.data);
+        const container = document.getElementById('cw-map-viewport-container');
+        if (container) {
+            this.worldMap.attachInteractions(container);
+        }
+    }
+
+    refreshWorldMapCanvas() {
+        if (typeof document === 'undefined') return;
+        const canvas = document.getElementById('cw-map-canvas-inner');
+        if (!canvas) return;
+        canvas.style.transform = `translate(${this.worldMap.pan.x}px, ${this.worldMap.pan.y}px) scale(${this.worldMap.zoom})`;
+    }
+
+    /* Minigame Launcher & Auto-Sync Methods */
+    openMinigameLauncher() {
+        if (typeof document === 'undefined') return;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        body.innerHTML = this.minigameFramework.renderLauncherHtml(this.state, this.data);
+        this.openModal();
+    }
+
+    launchMinigameUI(minigameId) {
+        const mg = this.minigameFramework.getMinigame(minigameId);
+        if (!mg) return;
+
+        if (mg.type === 'sentence_builder' && mg.content.question) {
+            this.openGrammarExercise(mg.content.exerciseId || 'ex_greetings_1');
+            return;
+        }
+
+        const result = this.minigameFramework.evaluateMinigame(minigameId, true, this.state, this.data);
+        if (typeof document === 'undefined') return;
+
+        const body = document.getElementById('cw-modal-body');
+        if (body) {
+            body.innerHTML = `
+                <div style="padding:1rem; text-align:center;">
+                    <div style="font-size:2.5rem; margin-bottom:0.5rem;">🎉</div>
+                    <h2 style="font-family:'Fraunces',serif; font-size:1.5rem; color:var(--text-main); margin-bottom:0.5rem;">
+                        ${mg.title} Completed!
+                    </h2>
+                    <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1rem;">
+                        ${result.explanation}
+                    </p>
+                    <div style="font-size:1.1rem; font-weight:700; color:var(--blue-primary); margin-bottom:1.5rem;">
+                        +${result.reward ? result.reward.xp : 50} XP Earned! ⭐
+                    </div>
+                    <button type="button" class="btn-g-primary" onclick="COSY_WORLD.closeModal()">Awesome! ✨</button>
+                </div>
+            `;
+        }
+    }
+
+    async fastTravel(targetLocationId) {
+        if (!this.worldMap.isVisited(targetLocationId, this.state)) {
+            this.showToast(`Location locked! Discover it first on foot. 🔒`);
+            return;
+        }
+
+        this.closeModal();
+        await this.switchLocation(targetLocationId, false);
+        const targetName = (this.data.districts && this.data.districts[targetLocationId]) ? this.data.districts[targetLocationId].name.en : targetLocationId;
+        this.showToast(`Fast traveled to ${targetName}! 🚀`);
     }
 
     /* Grammar Engine Integration Methods */
