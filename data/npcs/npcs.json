@@ -1,0 +1,397 @@
+{
+  "dylan_chef": {
+    "id": "dylan_chef",
+    "name": "Dylan",
+    "portrait": "👨‍🍳",
+    "avatar": "👨‍🍳",
+    "role": "Restaurant Owner & Executive Chef",
+    "teachingRole": "Culinary & Dining Vocabulary Mentor",
+    "position3D": { "x": 300, "y": 280, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 0,
+    "voice": "en-US-Standard-B",
+    "animations": {
+      "idle": "🧍 Standing by kitchen counter",
+      "walking": "🚶 Pacing around dining tables",
+      "thinking": "🤔 Pondering today's special menu",
+      "pointing": "👉 Pointing to gourmet dishes",
+      "waving": "👋 Welcoming guests to the restaurant",
+      "speaking": "🗣️ Explaining recipe ingredients",
+      "laughing": "😄 Cheerful hearty laugh",
+      "sitting": "🪑 Sitting at tasting table",
+      "reading": "📖 Reading recipe ledger",
+      "drinking_coffee": "☕ Sipping espresso",
+      "looking_around": "👀 Inspecting dining hall cleanliness"
+    },
+    "dailySchedule": [
+      { "time": "08:00", "location": "restaurant", "activity": "Prepping fresh ingredients" },
+      { "time": "12:00", "location": "restaurant", "activity": "Cooking lunch specials" }
+    ],
+    "shopInventory": [
+      { "id": "baguette", "name": "Baguette", "price": 10, "emoji": "🥖" },
+      { "id": "soup", "name": "Vegetable Soup", "price": 20, "emoji": "🍲" }
+    ],
+    "quests": ["q_dylan_menu"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👨‍🍳 Welcome to my restaurant! 🍲 Today's special is fresh vegetable soup with 🥖 warm baguette!",
+          "visualAction": "👨‍🍳 ➔ 🍲 ➔ 😋",
+          "grammarCheck": "Subject + Verb + Direct Object (I order soup)",
+          "options": [
+            { "label": "🍲 Order today's special!", "next": 1, "rewardXP": 20, "questId": "q_dylan_menu" },
+            { "label": "🥖 Inspect fresh baguette recipe", "next": 2, "rewardXP": 15 }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🍲 Excellent choice! One warm bowl of vegetable soup coming right up!",
+          "visualAction": "🍲 ➔ 😋",
+          "options": [{ "label": "😋 Yum! Thank you Dylan!", "next": 0 }]
+        },
+        {
+          "id": 2,
+          "text": "🥖 Our baguette uses organic wheat from Thomas's farm!",
+          "visualAction": "🌾 ➔ 🥖",
+          "options": [{ "label": "🌾 Learn about Thomas's farm", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "thomas_farmer": {
+    "id": "thomas_farmer",
+    "name": "Thomas",
+    "portrait": "👨‍🌾",
+    "avatar": "👨‍🌾",
+    "role": "Farm Owner & Master Agriculturist",
+    "teachingRole": "Nature, Agriculture & Seasons Teacher",
+    "position3D": { "x": 150, "y": 310, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 0,
+    "voice": "en-US-Standard-D",
+    "animations": {
+      "idle": "🧍 Leaning on pitchfork",
+      "walking": "🚶 Walking across wheat fields",
+      "thinking": "🤔 Inspecting soil weather conditions",
+      "pointing": "👉 Pointing to ripe crops",
+      "waving": "👋 Waving from tractor",
+      "speaking": "🗣️ Explaining organic farming",
+      "laughing": "😄 Warm rural chuckle",
+      "sitting": "🪑 Sitting on hay bale",
+      "reading": "📖 Reading weather almanac",
+      "drinking_coffee": "☕ Drinking herbal tea",
+      "looking_around": "👀 Surveying green pastures"
+    },
+    "dailySchedule": [
+      { "time": "06:00", "location": "farm", "activity": "Tending livestock & crops" }
+    ],
+    "shopInventory": [
+      { "id": "apple", "name": "Fresh Apple", "price": 5, "emoji": "🍎" },
+      { "id": "milk", "name": "Organic Milk", "price": 12, "emoji": "🥛" }
+    ],
+    "quests": ["q_thomas_harvest"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👨‍🌾 Good day! 🍎 Fresh apples & 🥛 organic milk straight from the green pastures!",
+          "visualAction": "👨‍🌾 ➔ 🍎 ➔ 🚜",
+          "grammarCheck": "Plural Nouns (Apples, Fields, Crops)",
+          "options": [
+            { "label": "🍎 Taste farm apple!", "next": 1, "rewardXP": 20, "questId": "q_thomas_harvest" }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🍎 Crisp and sweet! Grown with fresh rainwater and sunshine!",
+          "visualAction": "☀️ ➔ 🌧️ ➔ 🍎",
+          "options": [{ "label": "👍 Thank you Thomas!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "diana_voyager": {
+    "id": "diana_voyager",
+    "name": "Diana",
+    "portrait": "👩‍🎨",
+    "avatar": "👩‍🎨",
+    "role": "Mysterious Polyglot Voyager",
+    "teachingRole": "Advanced Pragmatics & Idioms Guide",
+    "position3D": { "x": 650, "y": 290, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 0,
+    "voice": "en-US-Standard-F",
+    "animations": {
+      "idle": "🧍 Sketching in travel journal",
+      "walking": "🚶 Exploring city alleys",
+      "thinking": "🤔 Deciphering ancient map notes",
+      "pointing": "👉 Pointing to distant horizons",
+      "waving": "👋 Mysterious subtle wave",
+      "speaking": "🗣️ Reciting poetic proverbs",
+      "laughing": "😄 Gentle enigmatic smile",
+      "sitting": "🪑 Sitting by town fountain",
+      "reading": "📖 Reading foreign literature",
+      "drinking_coffee": "☕ Sipping espresso gracefully",
+      "looking_around": "👀 Observing town architectural details"
+    },
+    "dailySchedule": [
+      { "time": "10:00", "location": "town_square", "activity": "Observing fountain & sketching" }
+    ],
+    "shopInventory": [],
+    "quests": ["q_diana_mystery"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👩‍🎨 Every corner of COSY Town holds a secret... 🗝️ Shall we unravel it together?", "visualAction": "👩‍🎨 ➔ 📖 ➔ 🌟",
+          "grammarCheck": "Modal Auxiliaries (Shall we, Could you, Would you)",
+          "options": [
+            { "label": "🗝️ Listen to Diana's traveler story!", "next": 1, "rewardXP": 25, "questId": "q_diana_mystery" }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🌟 Words are like keys. The more words you discover, the wider the world opens before you!",
+          "visualAction": "🗝️ ➔ 🌍 ➔ 🔓",
+          "options": [{ "label": "🌍 Continue my voyage!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "james_york": {
+    "id": "james_york",
+    "name": "James York",
+    "portrait": "👨‍💼",
+    "avatar": "👨‍💼",
+    "role": "Explorer Mentor",
+    "teachingRole": "A0-A1 Foundation Mentor",
+    "position3D": { "x": 200, "y": 300, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "voice": "en-US-Standard-C",
+    "animations": {
+      "idle": "🧍 Standing attentively",
+      "walking": "🚶 Guiding players to room doors",
+      "thinking": "🤔 Thinking about next lesson",
+      "pointing": "👉 Pointing to key and door",
+      "waving": "👋 Waving welcomingly",
+      "speaking": "🗣️ Explaining cause and effect",
+      "laughing": "😄 Warm encouraging smile",
+      "sitting": "🪑 Sitting on sofa",
+      "reading": "📖 Reading explorer guide",
+      "drinking_coffee": "☕ Sipping hot coffee",
+      "looking_around": "👀 Looking around living room"
+    },
+    "dailySchedule": [
+      { "time": "09:00", "location": "apartment_living", "activity": "Mentoring new residents" }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👋 Look! 👉 🔑 Key ➔ 🚪 Door ➔ 🔓 Open!",
+          "visualAction": "🔑 ➔ 🚪",
+          "grammarCheck": "Imperative Action Verbs (Look, Open, Turn)",
+          "options": [
+            { "label": "👉 Try opening door!", "next": 1, "rewardXP": 15, "questId": "q1_key_door" }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🎉 Excellent! Cause and effect is the essence of direct language learning!",
+          "visualAction": "🔓 ➔ 🎉",
+          "options": [{ "label": "🚀 Continue exploring!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "ella_bronx": {
+    "id": "ella_bronx",
+    "name": "Ella Bronx",
+    "portrait": "👩‍🏫",
+    "avatar": "👩‍🏫",
+    "role": "Pronunciation Teacher",
+    "teachingRole": "Phonetics & Oral Interaction Specialist",
+    "position3D": { "x": 350, "y": 300, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "voice": "en-US-Standard-E",
+    "animations": {
+      "idle": "🧍 Standing poised",
+      "walking": "🚶 Walking in rhythm",
+      "thinking": "🤔 Analyzing phonetic sounds",
+      "pointing": "👉 Pointing to audio wave chart",
+      "waving": "👋 Friendly greeting gesture",
+      "speaking": "🗣️ Modeling native speech",
+      "laughing": "😄 Cheerful laugh",
+      "sitting": "🪑 Sitting on plaza bench",
+      "reading": "📖 Reading phonetics book",
+      "drinking_coffee": "☕ Drinking tea",
+      "looking_around": "👀 Listening to acoustic sounds"
+    },
+    "dailySchedule": [
+      { "time": "10:00", "location": "town_square", "activity": "Conducting pronunciation clinic" }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👂 Listen... 🗣️ Repeat out loud!",
+          "visualAction": "👂 ➔ 🗣️",
+          "grammarCheck": "Listen & Repeat Audio Mimicry",
+          "options": [
+            { "label": "🔊 Practice speaking out loud!", "next": 1, "rewardXP": 20, "questId": "q2_pronunciation" }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "👏 Clear articulation! Practice aloud every day to build speech confidence!",
+          "visualAction": "🗣️ ➔ ⭐",
+          "options": [{ "label": "👍 Thank you Ella!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "anna": {
+    "id": "anna",
+    "name": "Anna",
+    "portrait": "👩‍🎓",
+    "avatar": "👩‍🎓",
+    "role": "Friendly Competitor",
+    "teachingRole": "Vocabulary Speed & Precision Mentor",
+    "position3D": { "x": 500, "y": 300, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "voice": "en-US-Standard-G",
+    "animations": {
+      "idle": "🧍 Standing with energy",
+      "walking": "🚶 Quick energetic walk",
+      "thinking": "🤔 Calculating score",
+      "pointing": "👉 Pointing to leaderboard",
+      "waving": "👋 Energetic wave",
+      "speaking": "🗣️ Challenging player",
+      "laughing": "😄 Cheerful victorious laugh",
+      "sitting": "🪑 Sitting with tablet",
+      "reading": "📖 Reviewing vocabulary deck",
+      "drinking_coffee": "☕ Drinking iced latte",
+      "looking_around": "👀 Looking for new objects"
+    },
+    "dailySchedule": [
+      { "time": "11:00", "location": "town_square", "activity": "Hosting item discovery challenges" }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "⚡ 🔑 + 🥖 = 2 objects! Can you find 3 objects in COSY Town?",
+          "visualAction": "🔍 Find 3 items",
+          "grammarCheck": "Counting & Cardinal Numbers (1, 2, 3)",
+          "options": [
+            { "label": "⚡ Accept vocabulary challenge!", "next": 1, "rewardXP": 25, "questId": "q3_anna_challenge" }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🔥 Challenge accepted! Show me your visual encyclopedia progress!",
+          "visualAction": "📚 ➔ 🏆",
+          "options": [{ "label": "🏆 Let's go!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "lucas_baker": {
+    "id": "lucas_baker",
+    "name": "Lucas",
+    "portrait": "👨‍🍳",
+    "avatar": "👨‍🍳",
+    "role": "Artisan Baker",
+    "teachingRole": "Food & Baking Terminology Master",
+    "position3D": { "x": 200, "y": 300, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "voice": "en-US-Standard-A",
+    "animations": {
+      "idle": "🧍 Standing at bakery counter",
+      "walking": "🚶 Carrying baking tray",
+      "thinking": "🤔 Flour ratio calculation",
+      "pointing": "👉 Pointing to fresh croissants",
+      "waving": "👋 Floury hand wave",
+      "speaking": "🗣️ Describing sourdough process",
+      "laughing": "😄 Warm baker laugh",
+      "sitting": "🪑 Sitting on stool",
+      "reading": "📖 Reading recipe ledger",
+      "drinking_coffee": "☕ Drinking morning espresso",
+      "looking_around": "👀 Checking oven timer"
+    },
+    "dailySchedule": [
+      { "time": "05:00", "location": "bakery", "activity": "Baking fresh bread" }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🥖 Warm baguette! 😋 Yum!",
+          "visualAction": "🥖 ➔ 😋",
+          "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
+          "options": [
+            { "label": "🥖 Take warm baguette!", "next": 1, "rewardXP": 20, "questId": "q4_bakery_bread" }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🥖 Baked fresh with organic flour! Enjoy your meal!",
+          "visualAction": "😋 ➔ 👍",
+          "options": [{ "label": "😋 Yum!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "marco_barista": {
+    "id": "marco_barista",
+    "name": "Marco",
+    "portrait": "☕",
+    "avatar": "☕",
+    "role": "Master Barista",
+    "teachingRole": "Cafe Culture & Ordering Specialist",
+    "position3D": { "x": 200, "y": 300, "z": 0 },
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "voice": "it-IT-Standard-A",
+    "animations": {
+      "idle": "🧍 Standing behind espresso machine",
+      "walking": "🚶 Serving coffee cups",
+      "thinking": "🤔 Selecting coffee beans",
+      "pointing": "👉 Pointing to espresso cup",
+      "waving": "👋 Welcoming coffee lovers",
+      "speaking": "🗣️ Explaining latte art",
+      "laughing": "😄 Joyful barista laugh",
+      "sitting": "🪑 Sitting on bar stool",
+      "reading": "📖 Reading coffee origin guide",
+      "drinking_coffee": "☕ Tasting double espresso",
+      "looking_around": "👀 Checking coffee machine pressure"
+    },
+    "dailySchedule": [
+      { "time": "07:00", "location": "cafe", "activity": "Brewing morning espresso" }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "☕ Fresh espresso! ♨️ Hot!",
+          "visualAction": "☕ ➔ ♨️",
+          "grammarCheck": "Polite Requests (Please, May I have)",
+          "options": [
+            { "label": "☕ Sip fresh coffee!", "next": 1, "rewardXP": 15 }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "☕ Rich and aromatic! The best coffee in COSY Town!",
+          "visualAction": "☕ ➔ 😊",
+          "options": [{ "label": "☕ Grazie Marco!", "next": 0 }]
+        }
+      ]
+    }
+  }
+}
