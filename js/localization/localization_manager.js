@@ -1,7 +1,7 @@
 /**
  * @file js/localization/localization_manager.js
  * @description Localization Manager for COSY World.
- * Manages 14 target languages, language datasets, fallback resolution, and text interpolation without modifying game engine core.
+ * Monolingual Learning Architecture: resolves content in target language directly without bilingual translations.
  */
 
 export class LocalizationManager {
@@ -46,7 +46,7 @@ export class LocalizationManager {
     }
 
     /**
-     * Get active language code.
+     * Get active target language code.
      * @returns {string}
      */
     getLanguage() {
@@ -54,10 +54,10 @@ export class LocalizationManager {
     }
 
     /**
-     * Resolve localized text object for a given key or object map.
-     * Handles fallback to default language 'en' if preferred language string is missing.
-     * @param {Object<string, string>|string} textObj - e.g. { en: "Door", fr: "Porte" } or string
-     * @param {string} [targetLang] - Optional override language
+     * Resolve target language string directly.
+     * Monolingual principle: No fallback to native language dictionaries or translations.
+     * @param {Object<string, string>|string} textObj
+     * @param {string} [targetLang]
      * @returns {string}
      */
     getText(textObj, targetLang) {

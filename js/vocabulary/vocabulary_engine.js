@@ -1,8 +1,8 @@
 /**
  * @file js/vocabulary/vocabulary_engine.js
- * @description JSON-driven Vocabulary Engine for COSY World.
- * Manages vocabulary entries indexed by unique vocabId, tracking multi-scene appearances,
- * SM-2 spaced repetition memory scheduling, and comprehensive learning statistics.
+ * @description Vocabulary Engine for COSY World.
+ * Enforces Monolingual Learning Architecture without translation dictionaries.
+ * Tracks SM-2 spaced-repetition statistics, scene vocabulary queries, and example sentences.
  */
 
 export class VocabularyEngine {
@@ -15,203 +15,133 @@ export class VocabularyEngine {
         this.assetManager = options.assetManager || null;
         this.eventBus = options.eventBus || null;
 
-        /** @type {Map<string, Object>} Vocabulary entries database keyed by vocabId */
+        /** @type {Map<string, Object>} */
         this.vocabDatabase = new Map();
 
-        /** @type {Map<string, Object>} Learning statistics and SM-2 state keyed by vocabId */
-        this.learningStats = new Map();
+        /** @type {Map<string, { interval: number, repetition: number, efactor: number, lastReviewed: number, mastery: number }>} */
+        this.spacedRepetitionState = new Map();
     }
 
     /**
-     * Normalizes a raw vocabulary entry to ensure all required fields are present.
-     * Required fields: vocabId, translations, audio, difficulty, grammar, collocations,
-     * exampleSentences, relatedQuests, relatedScenes, masteryLevel.
-     *
-     * @param {string} vocabId
-     * @param {Object} rawData
-     * @returns {Object} Normalized vocabulary entry
+     * Register vocabulary database object.
+     * @param {Object<string, Object>} vocabDict
      */
-    normalizeVocabularyEntry(vocabId, rawData) {
-        if (!rawData || typeof rawData !== 'object') {
-            throw new Error(`Invalid vocabulary data for ID: ${vocabId}`);
+    registerVocabularyDict(vocabDict) {
+        if (!vocabDict || typeof vocabDict !== 'object') return;
+
+        for (const [key, rawEntry] of Object.entries(vocabDict)) {
+            const entry = this.normalizeEntry(key, rawEntry);
+            this.vocabDatabase.set(entry.id, entry);
         }
 
-        const normalized = {
-            vocabId: rawData.vocabId || rawData.id || vocabId,
-            translations: rawData.translations || rawData.words || { en: vocabId },
-            audio: rawData.audio || rawData.soundCue || 'default_click',
-            difficulty: rawData.difficulty || 'A0',
-            grammar: rawData.grammar || rawData.grammarId || 'gt_there_is',
-            collocations: Array.isArray(rawData.collocations) ? rawData.collocations : [],
-            exampleSentences: rawData.exampleSentences || rawData.examples || {
-                en: `This is a ${rawData.words?.en || 'word'}.`
-            },
-            relatedQuests: Array.isArray(rawData.relatedQuests) ? rawData.relatedQuests : (rawData.questId ? [rawData.questId] : []),
-            relatedScenes: Array.isArray(rawData.relatedScenes)
-                ? rawData.relatedScenes
-                : (rawData.locationId ? [rawData.locationId] : ['apartment_living']),
-            masteryLevel: typeof rawData.masteryLevel === 'number' ? rawData.masteryLevel : 0
-        };
-
-        return normalized;
+        if (this.eventBus) {
+            this.eventBus.emit('vocabularyDatabaseLoaded', { count: this.vocabDatabase.size });
+        }
     }
 
     /**
-     * Register a single vocabulary entry.
-     * @param {string} vocabId
-     * @param {Object} data
+     * Normalize raw JSON item to the Monolingual Learning Architecture schema.
+     * @param {string} key
+     * @param {Object} raw
      * @returns {Object}
      */
-    registerVocabulary(vocabId, data) {
-        const entry = this.normalizeVocabularyEntry(vocabId, data);
-        this.vocabDatabase.set(entry.vocabId, entry);
-
-        // Initialize learning statistics state if not already initialized
-        if (!this.learningStats.has(entry.vocabId)) {
-            this.learningStats.set(entry.vocabId, {
-                vocabId: entry.vocabId,
-                reviewCount: 0,
-                correctCount: 0,
-                streak: 0,
-                interval: 1, // days
-                easeFactor: 2.5,
-                masteryLevel: entry.masteryLevel,
-                lastReviewed: null,
-                nextReviewDue: null
-            });
-        }
-
-        return entry;
+    normalizeEntry(key, raw = {}) {
+        return {
+            id: raw.id || key,
+            word: raw.word || key.replace(/^vocab_/, ''),
+            cefr: raw.cefr || raw.difficulty || 'A0',
+            category: raw.category || 'general',
+            scene: raw.scene || (raw.relatedScenes ? raw.relatedScenes[0] : 'general'),
+            audio: raw.audio || `${raw.id || key}.mp3`,
+            image: raw.image || `${raw.id || key}.webp`,
+            examples: Array.isArray(raw.examples) ? raw.examples : (raw.exampleSentences ? Object.values(raw.exampleSentences) : []),
+            related_words: Array.isArray(raw.related_words) ? raw.related_words : (raw.collocations || []),
+            actions: Array.isArray(raw.actions) ? raw.actions : ['inspect', 'interact']
+        };
     }
 
     /**
-     * Bulk register multiple vocabulary entries.
-     * @param {Object.<string, Object>} dict
-     */
-    registerVocabularyDict(dict) {
-        if (!dict || typeof dict !== 'object') return;
-        for (const [id, data] of Object.entries(dict)) {
-            this.registerVocabulary(id, data);
-        }
-    }
-
-    /**
-     * Get a vocabulary item by vocabId.
+     * Get vocabulary entry by ID.
      * @param {string} vocabId
      * @returns {Object|null}
      */
-    getVocabulary(vocabId) {
+    getEntry(vocabId) {
         return this.vocabDatabase.get(vocabId) || null;
     }
 
     /**
-     * Record a review/interaction attempt for spaced repetition learning using SM-2 algorithm.
-     *
-     * @param {string} vocabId
-     * @param {number} quality Grade quality from 0 (forgot completely) to 5 (perfect recall)
-     * @returns {Object} Updated learning stats
+     * Get all registered vocabulary entries.
+     * @returns {Object[]}
      */
-    recordReview(vocabId, quality = 4) {
-        const stats = this.learningStats.get(vocabId) || {
-            vocabId,
-            reviewCount: 0,
-            correctCount: 0,
-            streak: 0,
-            interval: 1,
-            easeFactor: 2.5,
-            masteryLevel: 0,
-            lastReviewed: null,
-            nextReviewDue: null
-        };
-
-        const now = Date.now();
-        stats.reviewCount++;
-        stats.lastReviewed = now;
-
-        if (quality >= 3) {
-            stats.correctCount++;
-            stats.streak++;
-
-            if (stats.streak === 1) {
-                stats.interval = 1;
-            } else if (stats.streak === 2) {
-                stats.interval = 6;
-            } else {
-                stats.interval = Math.round(stats.interval * stats.easeFactor);
-            }
-        } else {
-            stats.streak = 0;
-            stats.interval = 1;
-        }
-
-        // Adjust SM-2 Ease Factor: EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
-        stats.easeFactor = Math.max(1.3, stats.easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
-
-        // Calculate mastery level from 0 to 100
-        stats.masteryLevel = Math.min(100, Math.round((stats.streak * 20) + (stats.correctCount * 5)));
-
-        // Calculate next review timestamp
-        stats.nextReviewDue = now + stats.interval * 86400000;
-
-        this.learningStats.set(vocabId, stats);
-
-        // Update entry's masteryLevel
-        const entry = this.vocabDatabase.get(vocabId);
-        if (entry) {
-            entry.masteryLevel = stats.masteryLevel;
-        }
-
-        if (this.eventBus) {
-            this.eventBus.emit('vocabularyReviewed', { vocabId, stats, quality });
-        }
-
-        return { ...stats };
+    getAllEntries() {
+        return Array.from(this.vocabDatabase.values());
     }
 
     /**
-     * Get learning statistics for a specific vocabulary item or overall stats.
-     * @param {string} [vocabId]
-     * @returns {Object}
-     */
-    getStats(vocabId = null) {
-        if (vocabId) {
-            return this.learningStats.get(vocabId) || null;
-        }
-
-        let totalReviews = 0;
-        let totalMastery = 0;
-        let masteredCount = 0;
-
-        for (const stats of this.learningStats.values()) {
-            totalReviews += stats.reviewCount;
-            totalMastery += stats.masteryLevel;
-            if (stats.masteryLevel >= 80) {
-                masteredCount++;
-            }
-        }
-
-        const count = this.learningStats.size || 1;
-
-        return {
-            totalVocabulary: this.vocabDatabase.size,
-            totalReviews,
-            masteredCount,
-            averageMastery: Math.round(totalMastery / count)
-        };
-    }
-
-    /**
-     * Find vocabulary entries present in a given scene/district.
+     * Filter vocabulary entries present in a specific scene.
      * @param {string} sceneId
      * @returns {Object[]}
      */
     getVocabularyForScene(sceneId) {
-        const matches = [];
-        for (const entry of this.vocabDatabase.values()) {
-            if (entry.relatedScenes && entry.relatedScenes.includes(sceneId)) {
-                matches.push(entry);
+        if (!sceneId) return [];
+        return Array.from(this.vocabDatabase.values()).filter(entry => entry.scene === sceneId);
+    }
+
+    /**
+     * Update SuperMemo-2 (SM-2) spaced repetition parameters on review.
+     * @param {string} vocabId
+     * @param {number} quality - 0 to 5 scale rating.
+     */
+    recordReview(vocabId, quality = 4) {
+        let state = this.spacedRepetitionState.get(vocabId) || {
+            interval: 1,
+            repetition: 0,
+            efactor: 2.5,
+            lastReviewed: Date.now(),
+            mastery: 0
+        };
+
+        const q = Math.max(0, Math.min(5, quality));
+
+        if (q >= 3) {
+            if (state.repetition === 0) {
+                state.interval = 1;
+            } else if (state.repetition === 1) {
+                state.interval = 6;
+            } else {
+                state.interval = Math.round(state.interval * state.efactor);
             }
+            state.repetition += 1;
+        } else {
+            state.repetition = 0;
+            state.interval = 1;
         }
-        return matches;
+
+        state.efactor = Math.max(1.3, state.efactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02)));
+        state.mastery = Math.min(100, Math.round((state.repetition / 5) * 100));
+        state.lastReviewed = Date.now();
+
+        this.spacedRepetitionState.set(vocabId, state);
+
+        if (this.eventBus) {
+            this.eventBus.emit('vocabularyReviewed', {
+                vocabId,
+                quality: q,
+                mastery: state.mastery,
+                interval: state.interval
+            });
+        }
+
+        return state;
+    }
+
+    /**
+     * Get mastery percentage for a vocabulary item.
+     * @param {string} vocabId
+     * @returns {number}
+     */
+    getVocabularyMastery(vocabId) {
+        const state = this.spacedRepetitionState.get(vocabId);
+        return state ? state.mastery : 0;
     }
 }
