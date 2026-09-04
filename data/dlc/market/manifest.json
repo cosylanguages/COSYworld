@@ -1,0 +1,9 @@
+{
+  "id": "dlc_city_market",
+  "name": "City Market DLC",
+  "version": "1.0.0",
+  "description": "Expands COSY Town with the vibrant City Market district.",
+  "districts": [
+    "district.json"
+  ]
+}

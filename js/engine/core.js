@@ -12,6 +12,11 @@ import { CameraManager } from '../camera/camera_manager.js';
 import { AudioManager } from '../audio/audio_manager.js';
 import { SceneManager } from '../scenes/scene_manager.js';
 import { StreamingWorldManager } from '../scenes/streaming_manager.js';
+import { WorldBuilder } from '../world/world_builder.js';
+import { BuildingManager } from '../world/building_system.js';
+import { InteriorEngine } from '../world/interior_engine.js';
+import { VocabularyEngine } from '../vocabulary/vocabulary_engine.js';
+import { NPCAIEngine } from '../npc/npc_ai_engine.js';
 import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
@@ -38,6 +43,31 @@ export class GameEngine {
         this.cameraManager = new CameraManager({ eventBus: this.eventBus });
         this.audioManager = new AudioManager({ eventBus: this.eventBus });
 
+        this.npcAIEngine = new NPCAIEngine({
+            eventBus: this.eventBus
+        });
+
+        this.vocabularyEngine = new VocabularyEngine({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus
+        });
+
+        this.interiorEngine = new InteriorEngine({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus
+        });
+
+        this.worldBuilder = new WorldBuilder({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus
+        });
+
+        this.buildingManager = new BuildingManager({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus,
+            interiorEngine: this.interiorEngine
+        });
+
         this.streamingManager = new StreamingWorldManager();
         this.sceneManager = new SceneManager({
             eventBus: this.eventBus,
@@ -60,6 +90,8 @@ export class GameEngine {
         this.cameraManager.setTarget(this.playerWorldPos);
         this.isLoopRunning = false;
         this.lastFrameTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
+
+        this.dialogueManager = DialogueManager;
 
         // Forward compatibility aliases for audio
         this.audio = this.audioManager;
@@ -112,20 +144,41 @@ export class GameEngine {
         this.eventBus.emit(event, payload);
     }
 
-    /* Asset & JSON Preloader using AssetManager */
+    /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
             this.assetManager.loadJson(`${basePath}/npcs/npcs.json`),
             this.assetManager.loadJson(`${basePath}/quests/quests.json`),
-            this.assetManager.loadJson(`${basePath}/grammar/grammar.json`)
+            this.assetManager.loadJson(`${basePath}/grammar/grammar.json`),
+            this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({}))
         ]);
 
+        if (npcsRes) {
+            this.npcAIEngine.registerNPCsDict(npcsRes);
+        }
+
+        if (vocabDbRes) {
+            this.vocabularyEngine.registerVocabularyDict(vocabDbRes);
+        }
+
+        if (roomsRes) {
+            this.interiorEngine.registerRooms(roomsRes);
+        }
+
+        this.worldBuilder.registerDistricts(districtsRes);
+        if (buildingsRes) {
+            this.buildingManager.registerBuildings(buildingsRes);
+        }
+
         this.data.languages = languagesRes;
-        this.data.districts = districtsRes;
+        this.data.districts = this.worldBuilder.exportDistrictsObject();
+        this.data.buildings = buildingsRes || {};
         this.data.objects = objectsRes;
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
@@ -274,12 +327,12 @@ export class GameEngine {
 
         this.saveState();
 
-        if (loc.music) {
+        if (loc.music || loc.ambientSounds) {
             if (typeof document !== 'undefined') {
                 const soundSel = document.getElementById('cw-sound-sel');
-                if (soundSel) soundSel.value = loc.music;
+                if (soundSel) soundSel.value = loc.music || (loc.ambientSounds && loc.ambientSounds[0]) || 'none';
             }
-            this.playAmbience(loc.music);
+            this.audioManager.setDistrictAudio(loc.music, loc.ambientSounds);
         }
 
         await this.renderWorldViewport();
@@ -291,11 +344,38 @@ export class GameEngine {
         this.emit('locationChanged', locationId);
     }
 
+    async enterBuilding(buildingId, entranceId = null) {
+        const activeState = this.buildingManager.enterBuilding(buildingId, entranceId);
+        if (!activeState) return;
+
+        this.audioManager.setDistrictAudio(activeState.room.ambientAudio);
+        await this.renderWorldViewport();
+        const roomName = this.localizationManager.getText(activeState.room.name);
+        this.showToast(`Entered ${roomName} 🚪`);
+    }
+
+    async exitBuilding() {
+        const exited = this.buildingManager.exitBuilding();
+        if (!exited) return;
+
+        const loc = this.data.districts[this.state.currentLocationId];
+        if (loc) {
+            this.audioManager.setDistrictAudio(loc.music, loc.ambientSounds);
+        }
+        await this.renderWorldViewport();
+        this.showToast(`Stepped Outside 🌤️`);
+    }
+
     async renderWorldViewport() {
-        await this.sceneManager.render(this.state, this.data);
+        await this.sceneManager.render(this.state, this.data, this.buildingManager);
     }
 
     inspectObject(objId) {
+        const obj = this.data.objects[objId];
+        if (obj && obj.vocabId) {
+            this.vocabularyEngine.recordReview(obj.vocabId, 4);
+        }
+
         InventoryManager.inspectObject(
             objId,
             this.state,
@@ -344,8 +424,8 @@ export class GameEngine {
         this.closeModal();
     }
 
-    handleBranchNode(npcId, nextNode, questId, rewardXP) {
-        DialogueManager.handleBranchNode(npcId, nextNode, questId, rewardXP, this);
+    handleBranchNode(npcId, nextNode, questId, rewardXP, friendshipGain = 0) {
+        DialogueManager.handleBranchNode(npcId, nextNode, questId, rewardXP, friendshipGain, this);
     }
 
     repeatSpeech() {

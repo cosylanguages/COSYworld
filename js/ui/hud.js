@@ -92,19 +92,48 @@ export class HUDManager {
                 body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No objects discovered yet! Click items in rooms to build your visual encyclopedia.</div>`;
                 return;
             }
-            body.innerHTML = disc.map(objId => {
+
+            const vocabEngine = typeof window !== 'undefined' && window.COSY_WORLD && window.COSY_WORLD.vocabularyEngine;
+            const overallStats = vocabEngine ? vocabEngine.getStats() : null;
+
+            let html = ``;
+            if (overallStats) {
+                html += `
+                    <div style="background:#eff6ff; border:1px solid #bfdbfe; padding:0.75rem; border-radius:12px; margin-bottom:1rem; font-size:0.85rem; color:#1e40af;">
+                        <div style="font-weight:700; margin-bottom:0.25rem;">📊 Spaced Repetition Overview</div>
+                        <div>Mastered Words: <strong>${overallStats.masteredCount} / ${overallStats.totalVocabulary}</strong> • Avg Mastery: <strong>${overallStats.averageMastery}%</strong></div>
+                    </div>
+                `;
+            }
+
+            html += disc.map(objId => {
                 const obj = gameData.objects[objId];
                 if (!obj) return '';
                 const word = obj.words[lang] || obj.words.en || objId;
+                const vocabEntry = obj.vocabId && vocabEngine ? vocabEngine.getVocabulary(obj.vocabId) : null;
+                const vocabStats = obj.vocabId && vocabEngine ? vocabEngine.getStats(obj.vocabId) : null;
+
                 return `
                     <div class="cw-item-card" style="cursor:pointer;" onclick="COSY_WORLD.inspectObject('${objId}')">
-                        <div class="cw-item-title">
+                        <div class="cw-item-title" style="display:flex; justify-content:space-between; align-items:center;">
                             <span>${obj.emoji} ${word}</span>
-                            <span style="font-size:0.8rem; color:var(--blue-primary);">🔊 Speak</span>
+                            <span style="font-size:0.8rem; color:var(--blue-primary);">🔊 Review</span>
                         </div>
+                        ${vocabEntry ? `
+                            <div style="margin-top:0.4rem; font-size:0.75rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+                                <span style="background:#dbeafe; color:#1e40af; padding:0.15rem 0.4rem; border-radius:6px; font-weight:700;">
+                                    🧠 ${vocabStats?.masteryLevel || 0}% Mastery
+                                </span>
+                                <span style="background:#f3f4f6; color:#374151; padding:0.15rem 0.4rem; border-radius:6px; font-weight:700;">
+                                    CEFR ${vocabEntry.difficulty}
+                                </span>
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             }).join('');
+
+            body.innerHTML = html;
         } else if (state.activeTab === 'grammar') {
             if (!gameData.grammarTree || gameData.grammarTree.length === 0) {
                 body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No grammar points loaded.</div>`;
