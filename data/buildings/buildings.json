@@ -1,0 +1,116 @@
+{
+  "bakery_facade": {
+    "id": "bakery_facade",
+    "name": {
+      "en": "Cosy Bakery",
+      "fr": "Boulangerie Cosy",
+      "it": "Panetteria Cosy",
+      "es": "Panadería Cosy",
+      "de": "Gemütliche Bäckerei",
+      "ru": "Уютная пекарня"
+    },
+    "image": "🥖",
+    "districtId": "town_square",
+    "ambientAudio": "piano",
+    "exterior": {
+      "x": 200,
+      "y": 100,
+      "width": 130,
+      "height": 220,
+      "color": "#f59e0b",
+      "label": "Bakery 🥖"
+    },
+    "entrances": [
+      {
+        "id": "bakery_front_door",
+        "label": "Front Entrance",
+        "targetRoomId": "bakery_interior",
+        "x": 240,
+        "y": 280,
+        "width": 50,
+        "height": 40
+      }
+    ],
+    "rooms": [
+      {
+        "id": "bakery_interior",
+        "name": {
+          "en": "Bakery Interior",
+          "fr": "Intérieur de la boulangerie",
+          "it": "Interno della panetteria",
+          "es": "Interior de la panadería",
+          "de": "Bäckerei Innenraum",
+          "ru": "Интерьер пекарни"
+        },
+        "image": "🥖",
+        "ambientAudio": "piano",
+        "interactiveObjects": ["croissant", "baguette"],
+        "npcs": ["lucas_baker"],
+        "npcSpawns": [
+          { "npcId": "lucas_baker", "x": 300, "y": 300 }
+        ],
+        "quests": ["q_bakery_order"]
+      }
+    ],
+    "npcs": ["lucas_baker"],
+    "interactiveObjects": ["croissant", "baguette"],
+    "quests": ["q_bakery_order"]
+  },
+  "cafe_facade": {
+    "id": "cafe_facade",
+    "name": {
+      "en": "Central Cafe",
+      "fr": "Café Central",
+      "it": "Caffè Centrale",
+      "es": "Café Central",
+      "de": "Zentrales Café",
+      "ru": "Центральное кафе"
+    },
+    "image": "☕",
+    "districtId": "town_square",
+    "ambientAudio": "cafe",
+    "exterior": {
+      "x": 360,
+      "y": 100,
+      "width": 130,
+      "height": 220,
+      "color": "#0ea5e9",
+      "label": "Cafe ☕"
+    },
+    "entrances": [
+      {
+        "id": "cafe_door",
+        "label": "Cafe Door",
+        "targetRoomId": "cafe_main_hall",
+        "x": 400,
+        "y": 280,
+        "width": 50,
+        "height": 40
+      }
+    ],
+    "rooms": [
+      {
+        "id": "cafe_main_hall",
+        "name": {
+          "en": "Cafe Lounge",
+          "fr": "Salon du café",
+          "it": "Salone del caffè",
+          "es": "Salón del café",
+          "de": "Café Loungebereich",
+          "ru": "Зал кафе"
+        },
+        "image": "☕",
+        "ambientAudio": "cafe",
+        "interactiveObjects": ["espresso_machine", "coffee_cup"],
+        "npcs": ["marco_barista"],
+        "npcSpawns": [
+          { "npcId": "marco_barista", "x": 350, "y": 300 }
+        ],
+        "quests": ["q_coffee_break"]
+      }
+    ],
+    "npcs": ["marco_barista"],
+    "interactiveObjects": ["espresso_machine", "coffee_cup"],
+    "quests": ["q_coffee_break"]
+  }
+}

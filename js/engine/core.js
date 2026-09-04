@@ -13,6 +13,7 @@ import { AudioManager } from '../audio/audio_manager.js';
 import { SceneManager } from '../scenes/scene_manager.js';
 import { StreamingWorldManager } from '../scenes/streaming_manager.js';
 import { WorldBuilder } from '../world/world_builder.js';
+import { BuildingManager } from '../world/building_system.js';
 import { StatsManager } from '../player/stats.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
@@ -40,6 +41,11 @@ export class GameEngine {
         this.audioManager = new AudioManager({ eventBus: this.eventBus });
 
         this.worldBuilder = new WorldBuilder({
+            assetManager: this.assetManager,
+            eventBus: this.eventBus
+        });
+
+        this.buildingManager = new BuildingManager({
             assetManager: this.assetManager,
             eventBus: this.eventBus
         });
@@ -121,19 +127,24 @@ export class GameEngine {
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
             this.assetManager.loadJson(`${basePath}/npcs/npcs.json`),
             this.assetManager.loadJson(`${basePath}/quests/quests.json`),
-            this.assetManager.loadJson(`${basePath}/grammar/grammar.json`)
+            this.assetManager.loadJson(`${basePath}/grammar/grammar.json`),
+            this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({}))
         ]);
 
         this.worldBuilder.registerDistricts(districtsRes);
+        if (buildingsRes) {
+            this.buildingManager.registerBuildings(buildingsRes);
+        }
 
         this.data.languages = languagesRes;
         this.data.districts = this.worldBuilder.exportDistrictsObject();
+        this.data.buildings = buildingsRes || {};
         this.data.objects = objectsRes;
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
@@ -299,8 +310,30 @@ export class GameEngine {
         this.emit('locationChanged', locationId);
     }
 
+    async enterBuilding(buildingId, entranceId = null) {
+        const activeState = this.buildingManager.enterBuilding(buildingId, entranceId);
+        if (!activeState) return;
+
+        this.audioManager.setDistrictAudio(activeState.room.ambientAudio);
+        await this.renderWorldViewport();
+        const roomName = this.localizationManager.getText(activeState.room.name);
+        this.showToast(`Entered ${roomName} 🚪`);
+    }
+
+    async exitBuilding() {
+        const exited = this.buildingManager.exitBuilding();
+        if (!exited) return;
+
+        const loc = this.data.districts[this.state.currentLocationId];
+        if (loc) {
+            this.audioManager.setDistrictAudio(loc.music, loc.ambientSounds);
+        }
+        await this.renderWorldViewport();
+        this.showToast(`Stepped Outside 🌤️`);
+    }
+
     async renderWorldViewport() {
-        await this.sceneManager.render(this.state, this.data);
+        await this.sceneManager.render(this.state, this.data, this.buildingManager);
     }
 
     inspectObject(objId) {

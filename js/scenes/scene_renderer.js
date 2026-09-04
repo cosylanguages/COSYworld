@@ -20,12 +20,78 @@ export class SceneRenderer {
         return loc;
     }
 
-    static async renderWorldViewport(state, gameData, streamingManager = null) {
+    static async renderWorldViewport(state, gameData, streamingManager = null, buildingManager = null) {
         const svg = document.getElementById('cw-world-svg');
         const titleEl = document.getElementById('cw-location-title');
         const districtEl = document.getElementById('cw-district-name');
 
         if (!svg || !gameData) return;
+
+        const activeBuilding = buildingManager ? buildingManager.getActiveBuildingState() : null;
+
+        // Render Interior Room if player is inside a building
+        if (activeBuilding && activeBuilding.isInterior && activeBuilding.room) {
+            const room = activeBuilding.room;
+            const lang = state.currentLang;
+            const roomName = (room.name && (room.name[lang] || room.name.en)) || room.name || 'Building Interior';
+
+            if (titleEl) titleEl.textContent = `${room.image || '🚪'} ${roomName}`;
+            if (districtEl) districtEl.textContent = activeBuilding.buildingName?.en || 'Building Interior';
+
+            let roomHtml = `
+                <g id="building-room-${room.id}">
+                    <rect x="0" y="0" width="800" height="340" fill="#f8fafc" />
+                    <rect x="0" y="340" width="800" height="160" fill="#e2e8f0" />
+                    <line x1="0" y1="340" x2="800" y2="340" stroke="#cbd5e1" stroke-width="4" />
+
+                    <!-- Exit Door -->
+                    <g class="cw-door-portal" tabindex="0" role="button" aria-label="Exit Building" onclick="COSY_WORLD.exitBuilding()" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.exitBuilding();}">
+                        <rect x="20" y="180" width="70" height="220" rx="6" fill="#475569" />
+                        <rect x="25" y="155" width="60" height="22" rx="4" fill="#1e293b" />
+                        <text x="55" y="170" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Exit 🚪</text>
+                    </g>
+            `;
+
+            // Interactive objects in room
+            if (room.interactiveObjects) {
+                room.interactiveObjects.forEach(objId => {
+                    const obj = gameData.objects[objId];
+                    if (!obj) return;
+                    const word = obj.words[lang] || obj.words.en || objId;
+                    const isDiscovered = state.discoveredObjects.has(objId);
+
+                    roomHtml += `
+                        <g class="cw-obj-hotspot" tabindex="0" role="button" aria-label="Inspect ${word}" onclick="COSY_WORLD.inspectObject('${objId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.inspectObject('${objId}');}">
+                            <rect class="hit-box" x="${obj.x}" y="${obj.y}" width="${obj.width}" height="${obj.height}" />
+                            <text x="${obj.x + obj.width / 2}" y="${obj.y + obj.height / 2 + 8}" font-size="28" text-anchor="middle">${obj.emoji}</text>
+                            <rect x="${obj.labelX - word.length * 4 - 8}" y="${obj.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
+                            <text x="${obj.labelX}" y="${obj.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
+                        </g>
+                    `;
+                });
+            }
+
+            // NPCs in room
+            if (room.npcSpawns) {
+                room.npcSpawns.forEach(spawn => {
+                    const npc = gameData.npcs[spawn.npcId];
+                    if (!npc) return;
+                    roomHtml += `
+                        <g class="cw-npc-hotspot" tabindex="0" role="button" aria-label="Talk to ${npc.name}" onclick="COSY_WORLD.interactNPC('${spawn.npcId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.interactNPC('${spawn.npcId}');}">
+                            <circle class="npc-hit" cx="${spawn.x}" cy="${spawn.y}" r="32" />
+                            <text x="${spawn.x}" y="${spawn.y + 10}" font-size="32" text-anchor="middle">${npc.portrait || npc.avatar}</text>
+                            <rect x="${spawn.x - 40}" y="${spawn.y + 38}" width="80" height="20" rx="10" fill="#f59e0b" />
+                            <text x="${spawn.x}" y="${spawn.y + 52}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${npc.name}</text>
+                        </g>
+                    `;
+                });
+            }
+
+            roomHtml += `</g>`;
+            svg.innerHTML = roomHtml;
+            svg.style.opacity = '1';
+            return;
+        }
 
         const activeId = state.currentLocationId;
         const loc = await this.lazyLoadScene(activeId, gameData);
@@ -76,10 +142,19 @@ export class SceneRenderer {
             // Render Buildings dynamically from JSON
             if (dist.buildings) {
                 dist.buildings.forEach(b => {
+                    const hasBuildingSystem = buildingManager && buildingManager.getBuilding(b.id);
+                    const clickableAttr = hasBuildingSystem
+                        ? `tabindex="0" role="button" aria-label="Enter ${b.label}" onclick="COSY_WORLD.enterBuilding('${b.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.enterBuilding('${b.id}');}" style="cursor:pointer;"`
+                        : ``;
+
                     html += `
-                        <g class="cw-building-group">
+                        <g class="cw-building-group" ${clickableAttr}>
                             <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="${b.color}" rx="8" opacity="0.85" stroke="#1e293b" stroke-width="2" />
-                            <text x="${b.x + b.width / 2}" y="${b.y + b.height / 2}" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">${b.label}</text>
+                            <text x="${b.x + b.width / 2}" y="${b.y + b.height / 2 - 10}" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">${b.label}</text>
+                            ${hasBuildingSystem ? `
+                                <rect x="${b.x + b.width / 2 - 20}" y="${b.y + b.height - 35}" width="40" height="30" fill="#1e293b" rx="4" />
+                                <text x="${b.x + b.width / 2}" y="${b.y + b.height - 16}" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">ENTER</text>
+                            ` : ''}
                         </g>
                     `;
                 });

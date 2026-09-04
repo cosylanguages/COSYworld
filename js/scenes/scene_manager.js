@@ -75,8 +75,8 @@ export class SceneManager {
      * @param {Object} state
      * @param {Object} gameData
      */
-    async render(state, gameData) {
-        await SceneRenderer.renderWorldViewport(state, gameData, this.streamingManager);
+    async render(state, gameData, buildingManager = null) {
+        await SceneRenderer.renderWorldViewport(state, gameData, this.streamingManager, buildingManager);
     }
 
     /**
