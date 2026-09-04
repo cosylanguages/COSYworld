@@ -1,0 +1,16 @@
+[
+  {
+    "id": "gp_present_simple_A0",
+    "pattern": "I eat {food}.",
+    "cefr": "A0",
+    "visualClue": "eating_animation",
+    "examples": ["I eat an apple.", "I eat bread."]
+  },
+  {
+    "id": "gp_past_simple_A1",
+    "pattern": "I visited {place}.",
+    "cefr": "A1",
+    "visualClue": "calendar_yesterday_highlight",
+    "examples": ["I visited the museum.", "I visited the bakery."]
+  }
+]

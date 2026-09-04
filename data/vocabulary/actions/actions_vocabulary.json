@@ -1,0 +1,20 @@
+{
+  "actions": {
+    "eat": {
+      "id": "eat",
+      "word": "eat",
+      "cefr": "A0",
+      "category": "action",
+      "examples": ["I eat bread."],
+      "related_words": ["food", "drink"]
+    },
+    "open": {
+      "id": "open",
+      "word": "open",
+      "cefr": "A0",
+      "category": "action",
+      "examples": ["Open the door."],
+      "related_words": ["close", "door"]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "adjectives": {
+    "red": {
+      "id": "red",
+      "word": "red",
+      "cefr": "A0",
+      "category": "color",
+      "examples": ["The apple is red."],
+      "related_words": ["color", "bright"]
+    },
+    "wooden": {
+      "id": "wooden",
+      "word": "wooden",
+      "cefr": "A0",
+      "category": "material",
+      "examples": ["A wooden door."],
+      "related_words": ["wood", "brown"]
+    }
+  }
+}
