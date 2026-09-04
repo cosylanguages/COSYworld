@@ -15,6 +15,7 @@ import { StreamingWorldManager } from '../scenes/streaming_manager.js';
 import { WorldBuilder } from '../world/world_builder.js';
 import { BuildingManager } from '../world/building_system.js';
 import { InteriorEngine } from '../world/interior_engine.js';
+import { WorldMap } from '../world/world_map.js';
 import { VocabularyEngine } from '../vocabulary/vocabulary_engine.js';
 import { NPCAIEngine } from '../npc/npc_ai_engine.js';
 import { StatsManager } from '../player/stats.js';
@@ -77,6 +78,7 @@ export class GameEngine {
 
         this.grammarEngine = new GrammarEngine(this);
         this.questEngine = new QuestEngine({ gameEngine: this, eventBus: this.eventBus });
+        this.worldMap = new WorldMap({ gameEngine: this });
 
         this.data = {
             languages: [],
@@ -186,6 +188,9 @@ export class GameEngine {
         this.data.quests = questsRes;
         this.questEngine.loadQuestsFromJson(questsRes);
         this.data.grammarTree = grammarRes;
+
+        if (!this.state.visitedLocations) this.state.visitedLocations = new Set();
+        if (this.state.visitedLocations.add) this.state.visitedLocations.add(this.state.currentLocationId || 'apartment_living');
 
         // Check grammar unlocks on load
         this.grammarEngine.checkGrammarUnlocks(this.state, this.data);
@@ -327,6 +332,9 @@ export class GameEngine {
     async switchLocation(locationId, showToastAlert = true) {
         const loc = await this.sceneManager.switchScene(locationId, this.state, this.data);
         if (!loc) return;
+
+        if (!this.state.visitedLocations) this.state.visitedLocations = new Set();
+        if (this.state.visitedLocations.add) this.state.visitedLocations.add(locationId);
 
         this.saveState();
 
@@ -476,6 +484,52 @@ export class GameEngine {
             this.data,
             (qid) => this.completeQuest(qid)
         );
+    }
+
+    /* Interactive World Map & Fast Travel Methods */
+    openWorldMap() {
+        if (typeof document === 'undefined') return;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        body.innerHTML = this.worldMap.renderMapHtml(this.state, this.data);
+        this.openModal();
+
+        const container = document.getElementById('cw-map-viewport-container');
+        if (container) {
+            this.worldMap.attachInteractions(container);
+        }
+    }
+
+    refreshWorldMapUI() {
+        if (typeof document === 'undefined') return;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        body.innerHTML = this.worldMap.renderMapHtml(this.state, this.data);
+        const container = document.getElementById('cw-map-viewport-container');
+        if (container) {
+            this.worldMap.attachInteractions(container);
+        }
+    }
+
+    refreshWorldMapCanvas() {
+        if (typeof document === 'undefined') return;
+        const canvas = document.getElementById('cw-map-canvas-inner');
+        if (!canvas) return;
+        canvas.style.transform = `translate(${this.worldMap.pan.x}px, ${this.worldMap.pan.y}px) scale(${this.worldMap.zoom})`;
+    }
+
+    async fastTravel(targetLocationId) {
+        if (!this.worldMap.isVisited(targetLocationId, this.state)) {
+            this.showToast(`Location locked! Discover it first on foot. 🔒`);
+            return;
+        }
+
+        this.closeModal();
+        await this.switchLocation(targetLocationId, false);
+        const targetName = (this.data.districts && this.data.districts[targetLocationId]) ? this.data.districts[targetLocationId].name.en : targetLocationId;
+        this.showToast(`Fast traveled to ${targetName}! 🚀`);
     }
 
     /* Grammar Engine Integration Methods */

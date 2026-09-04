@@ -283,3 +283,44 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 3000;
 }
+
+/* Interactive World Map Styles */
+.cw-world-map-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cw-map-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cw-map-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cw-map-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cw-beacon-pulse {
+  animation: cwPulseBeacon 1.8s infinite;
+}
+
+@keyframes cwPulseBeacon {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
