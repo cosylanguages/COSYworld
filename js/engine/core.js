@@ -3,6 +3,7 @@
  * Core engine orchestrator that fetches JSON game datasets and coordinates components.
  *
  * Engine Capabilities Supported:
+ * - Streaming Open-World System (lazy loading adjacent districts, purging distant assets, 60 FPS, continuous movement)
  * - Professional Dialogue Engine (branching tree nodes, speech rate 0.8x/1.0x/1.3x, repeat, slow toggle, typing animation, history log, speech rec input)
  * - Hotspot Engine (glow, pulse, ARIA accessibility, keyboard & click interaction)
  * - Scene loading & transition (100% data-driven from JSON with lazy loading)
@@ -22,6 +23,7 @@ import { SaveSystem } from '../save/save_system.js';
 import { StatsManager } from '../player/stats.js';
 import { AudioManager } from '../audio/audio.js';
 import { SceneRenderer } from '../scenes/scene_renderer.js';
+import { StreamingWorldManager } from '../scenes/streaming_manager.js';
 import { InventoryManager } from '../inventory/inventory.js';
 import { DialogueManager } from '../dialogue/dialogue.js';
 import { QuestManager } from '../quests/quest_manager.js';
@@ -41,9 +43,11 @@ export class GameEngine {
             grammarTree: []
         };
         this.audio = new AudioManager();
+        this.streamingManager = new StreamingWorldManager();
         this.grammarEngine = new GrammarEngine(this);
         this.eventListeners = {};
         this.camera = { x: 0, y: 0, zoom: 1 };
+        this.playerWorldPos = { x: 400, y: 250 };
         this.keysPressed = {};
         this.isLoopRunning = false;
         this.lastFrameTime = performance.now();
@@ -52,6 +56,7 @@ export class GameEngine {
     async init() {
         try {
             await this.loadData();
+            await this.streamingManager.initStreaming(this.state.currentLocationId, this.data);
             this.bindInputListeners();
             this.startGameLoop();
             this.populateLanguageSelector();
@@ -108,7 +113,7 @@ export class GameEngine {
         this.emit('dataLoaded', this.data);
     }
 
-    /* Game Loop & Delta Time */
+    /* Game Loop & Delta Time (Maintaining 60 FPS continuous streaming) */
     startGameLoop() {
         if (this.isLoopRunning) return;
         this.isLoopRunning = true;
@@ -117,6 +122,7 @@ export class GameEngine {
         const loop = (now) => {
             const dt = (now - this.lastFrameTime) / 1000;
             this.lastFrameTime = now;
+            this.streamingManager.updateFPS(now);
             this.update(dt);
             if (this.isLoopRunning) {
                 requestAnimationFrame(loop);
@@ -126,10 +132,45 @@ export class GameEngine {
     }
 
     update(dt) {
-        if (this.keysPressed['ArrowLeft'] || this.keysPressed['a']) this.camera.x = Math.max(this.camera.x - 200 * dt, -50);
-        if (this.keysPressed['ArrowRight'] || this.keysPressed['d']) this.camera.x = Math.min(this.camera.x + 200 * dt, 50);
-        if (this.keysPressed['ArrowUp'] || this.keysPressed['w']) this.camera.y = Math.max(this.camera.y - 200 * dt, -50);
-        if (this.keysPressed['ArrowDown'] || this.keysPressed['s']) this.camera.y = Math.min(this.camera.y + 200 * dt, 50);
+        let moved = false;
+        const speed = 250 * dt;
+
+        if (this.keysPressed['ArrowLeft'] || this.keysPressed['a']) {
+            this.playerWorldPos.x -= speed;
+            moved = true;
+        }
+        if (this.keysPressed['ArrowRight'] || this.keysPressed['d']) {
+            this.playerWorldPos.x += speed;
+            moved = true;
+        }
+        if (this.keysPressed['ArrowUp'] || this.keysPressed['w']) {
+            this.playerWorldPos.y -= speed;
+            moved = true;
+        }
+        if (this.keysPressed['ArrowDown'] || this.keysPressed['s']) {
+            this.playerWorldPos.y += speed;
+            moved = true;
+        }
+
+        // Keep local position clamped inside viewport bounds
+        this.playerWorldPos.x = Math.max(10, Math.min(790, this.playerWorldPos.x));
+        this.playerWorldPos.y = Math.max(10, Math.min(490, this.playerWorldPos.y));
+
+        if (moved) {
+            // Check boundary crossing into adjacent district without loading screens
+            const boundaryTarget = this.streamingManager.checkBoundaryCrossing(
+                this.state.currentLocationId,
+                this.playerWorldPos.x,
+                this.playerWorldPos.y,
+                this.data
+            );
+
+            if (boundaryTarget) {
+                this.switchLocation(boundaryTarget, false);
+                this.playerWorldPos.x = 400;
+                this.playerWorldPos.y = 250;
+            }
+        }
 
         this.emit('tick', dt);
     }
@@ -220,12 +261,17 @@ export class GameEngine {
         this.saveState();
     }
 
-    async switchLocation(locationId) {
+    async switchLocation(locationId, showToastAlert = true) {
         const loc = this.data.districts[locationId];
         if (!loc) return;
 
         this.state.currentLocationId = locationId;
         this.saveState();
+
+        // Continuous streaming: Load active district, pre-load adjacent, unload distant
+        await this.streamingManager.loadDistrict(locationId, this.data);
+        await this.streamingManager.preloadAdjacentDistricts(locationId, this.data);
+        this.streamingManager.unloadDistantDistricts(locationId, this.data);
 
         if (loc.music) {
             const soundSel = document.getElementById('cw-sound-sel');
@@ -234,13 +280,15 @@ export class GameEngine {
         }
 
         await this.renderWorldViewport();
-        this.showToast(`Entered ${loc.name[this.state.currentLang] || loc.name.en} 🚪`);
+        if (showToastAlert) {
+            this.showToast(`Entered ${loc.name[this.state.currentLang] || loc.name.en} 🚪`);
+        }
         this.checkQuests('location_changed', { locationId });
         this.emit('locationChanged', locationId);
     }
 
     async renderWorldViewport() {
-        await SceneRenderer.renderWorldViewport(this.state, this.data);
+        await SceneRenderer.renderWorldViewport(this.state, this.data, this.streamingManager);
     }
 
     inspectObject(objId) {
