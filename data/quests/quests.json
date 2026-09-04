@@ -1,42 +1,199 @@
 [
   {
-    "id": "q1_key_door",
-    "title": "🔑 Key ➔ 🚪 Door",
-    "description": "Discover the Key on the table and unlock the Door!",
-    "district": "Residential District",
-    "targetObjects": ["key", "door_lock"],
-    "type": "Action Chain",
-    "xpReward": 50,
-    "grammarUnlock": "gt_greetings"
+    "id": "q_explore_living",
+    "type": "exploration",
+    "title": "🛋️ Apartment Exploration",
+    "description": "Explore the Apartment Living Room and discover its surroundings.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "targetLocation": "apartment_living"
+    },
+    "reward": {
+      "xp": 40,
+      "vocabulary": ["sofa"],
+      "grammar": "gt_greetings"
+    },
+    "unlockConditions": {
+      "level": 1
+    },
+    "nextQuestId": "q_collect_key"
   },
   {
-    "id": "q2_pronunciation",
-    "title": "👂 Listen & 🗣️ Repeat",
-    "description": "Visit Ella Bronx and practice native speech out loud!",
-    "district": "City Centre",
-    "targetNpc": "ella_bronx",
-    "type": "Speaking Mission",
-    "xpReward": 60,
-    "grammarUnlock": "gt_there_is"
+    "id": "q_collect_key",
+    "type": "collect",
+    "title": "🔑 Find the Table Key",
+    "description": "Inspect and collect the Key on the coffee table.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "targetObjects": ["key"]
+    },
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["key"],
+      "grammar": "gt_greetings"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_explore_living"
+    },
+    "nextQuestId": "q_grammar_imperative"
   },
   {
-    "id": "q3_anna_challenge",
-    "title": "⚡ Discover 3 Items",
-    "description": "Explore rooms and discover 3 objects in COSY Town!",
-    "district": "Residential District",
-    "targetCount": 3,
-    "type": "Vocabulary Hunt",
-    "xpReward": 70,
-    "grammarUnlock": "gt_present_simple"
+    "id": "q_grammar_imperative",
+    "type": "grammar",
+    "title": "🧩 Master Imperatives",
+    "description": "Complete the 'Greetings & Imperative Actions' grammar exercise.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "targetGrammarId": "gt_greetings",
+      "exerciseId": "ex_greetings_1"
+    },
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["door_lock"],
+      "grammar": "gt_greetings"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_collect_key"
+    }
   },
   {
-    "id": "q4_bakery_bread",
-    "title": "🥖 Bakery Freshness",
-    "description": "Visit Lucas at the Bakery and inspect the fresh Baguette!",
-    "district": "City Centre",
-    "targetObjects": ["baguette"],
-    "type": "Shopping Mission",
-    "xpReward": 80,
-    "grammarUnlock": "gt_likes"
+    "id": "q_photo_fountain",
+    "type": "photograph",
+    "title": "📸 Photograph the Clock Tower",
+    "description": "Snap a photo inspection of the historic Clock Tower in Town Square.",
+    "difficulty": "A0",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "targetObjects": ["clock_tower"]
+    },
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["clock_tower"],
+      "grammar": "gt_there_is"
+    },
+    "unlockConditions": {
+      "level": 1
+    }
+  },
+  {
+    "id": "q_convo_ella",
+    "type": "conversation",
+    "title": "💬 Meet Ella Bronx",
+    "description": "Have a conversation with Ella Bronx in the Town Square.",
+    "difficulty": "A0",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "targetNpc": "ella_bronx"
+    },
+    "reward": {
+      "xp": 55,
+      "vocabulary": ["fountain"],
+      "grammar": "gt_there_is"
+    },
+    "unlockConditions": {
+      "level": 1
+    }
+  },
+  {
+    "id": "q_pronunciation_ella",
+    "type": "pronunciation",
+    "title": "🗣️ Speech Articulation Clinic",
+    "description": "Practice aloud speech repetition with Ella Bronx.",
+    "difficulty": "A0",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "targetNpc": "ella_bronx",
+      "action": "repeat_speech"
+    },
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["bench"],
+      "grammar": "gt_there_is"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_convo_ella"
+    }
+  },
+  {
+    "id": "q_listening_fountain",
+    "type": "listening",
+    "title": "👂 Listen to Ambient Sounds",
+    "description": "Listen to the natural fountain speech in Town Square.",
+    "difficulty": "A0",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "targetObjects": ["fountain"],
+      "action": "listen"
+    },
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["fountain"],
+      "grammar": "gt_there_is"
+    },
+    "unlockConditions": {
+      "level": 1
+    }
+  },
+  {
+    "id": "q_directions_bakery",
+    "type": "directions",
+    "title": "🧭 Navigate to the Bakery",
+    "description": "Follow town directions to travel from Town Square into the Bakery.",
+    "difficulty": "A1",
+    "NPC": "lucas_baker",
+    "requirements": {
+      "targetLocation": "bakery"
+    },
+    "reward": {
+      "xp": 65,
+      "vocabulary": ["baguette"],
+      "grammar": "gt_likes"
+    },
+    "unlockConditions": {
+      "level": 1
+    },
+    "nextQuestId": "q_shop_baguette"
+  },
+  {
+    "id": "q_shop_baguette",
+    "type": "shopping",
+    "title": "🥖 Purchase Warm Baguette",
+    "description": "Order a warm baguette from Lucas at the Bakery.",
+    "difficulty": "A1",
+    "NPC": "lucas_baker",
+    "requirements": {
+      "targetObjects": ["baguette"]
+    },
+    "reward": {
+      "xp": 75,
+      "vocabulary": ["baguette", "croissant"],
+      "grammar": "gt_likes"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_directions_bakery"
+    }
+  },
+  {
+    "id": "q_timed_anna",
+    "type": "timed challenge",
+    "title": "⚡ 60-Second Item Blitz",
+    "description": "Discover 3 objects in COSY Town before the timer runs out!",
+    "difficulty": "A1",
+    "NPC": "anna",
+    "requirements": {
+      "targetCount": 3,
+      "timeLimitSeconds": 60
+    },
+    "reward": {
+      "xp": 90,
+      "vocabulary": ["lamp", "tv", "bookshelf"],
+      "grammar": "gt_present_simple"
+    },
+    "unlockConditions": {
+      "level": 2
+    }
   }
 ]
