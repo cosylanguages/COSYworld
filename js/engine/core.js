@@ -16,6 +16,7 @@ import { WorldBuilder } from '../world/world_builder.js';
 import { BuildingManager } from '../world/building_system.js';
 import { InteriorEngine } from '../world/interior_engine.js';
 import { WorldMap } from '../world/world_map.js';
+import { MinigameFramework } from '../minigames/minigame_framework.js';
 import { VocabularyEngine } from '../vocabulary/vocabulary_engine.js';
 import { NPCAIEngine } from '../npc/npc_ai_engine.js';
 import { StatsManager } from '../player/stats.js';
@@ -79,6 +80,7 @@ export class GameEngine {
         this.grammarEngine = new GrammarEngine(this);
         this.questEngine = new QuestEngine({ gameEngine: this, eventBus: this.eventBus });
         this.worldMap = new WorldMap({ gameEngine: this });
+        this.minigameFramework = new MinigameFramework({ gameEngine: this, eventBus: this.eventBus });
 
         this.data = {
             languages: [],
@@ -160,8 +162,11 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/grammar/grammar.json`),
             this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({})),
-            this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({}))
+            this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/minigames/minigames.json`).catch(() => ([]))
         ]);
+
+        const minigamesRes = arguments ? (await Promise.resolve(arguments[0] || [])) : [];
 
         if (npcsRes) {
             this.npcAIEngine.registerNPCsDict(npcsRes);
@@ -188,6 +193,10 @@ export class GameEngine {
         this.data.quests = questsRes;
         this.questEngine.loadQuestsFromJson(questsRes);
         this.data.grammarTree = grammarRes;
+
+        if (Array.isArray(arguments[0])) {
+            this.minigameFramework.loadMinigamesFromJson(arguments[0]);
+        }
 
         if (!this.state.visitedLocations) this.state.visitedLocations = new Set();
         if (this.state.visitedLocations.add) this.state.visitedLocations.add(this.state.currentLocationId || 'apartment_living');
@@ -518,6 +527,48 @@ export class GameEngine {
         const canvas = document.getElementById('cw-map-canvas-inner');
         if (!canvas) return;
         canvas.style.transform = `translate(${this.worldMap.pan.x}px, ${this.worldMap.pan.y}px) scale(${this.worldMap.zoom})`;
+    }
+
+    /* Minigame Launcher & Auto-Sync Methods */
+    openMinigameLauncher() {
+        if (typeof document === 'undefined') return;
+        const body = document.getElementById('cw-modal-body');
+        if (!body) return;
+
+        body.innerHTML = this.minigameFramework.renderLauncherHtml(this.state, this.data);
+        this.openModal();
+    }
+
+    launchMinigameUI(minigameId) {
+        const mg = this.minigameFramework.getMinigame(minigameId);
+        if (!mg) return;
+
+        if (mg.type === 'sentence_builder' && mg.content.question) {
+            this.openGrammarExercise(mg.content.exerciseId || 'ex_greetings_1');
+            return;
+        }
+
+        const result = this.minigameFramework.evaluateMinigame(minigameId, true, this.state, this.data);
+        if (typeof document === 'undefined') return;
+
+        const body = document.getElementById('cw-modal-body');
+        if (body) {
+            body.innerHTML = `
+                <div style="padding:1rem; text-align:center;">
+                    <div style="font-size:2.5rem; margin-bottom:0.5rem;">🎉</div>
+                    <h2 style="font-family:'Fraunces',serif; font-size:1.5rem; color:var(--text-main); margin-bottom:0.5rem;">
+                        ${mg.title} Completed!
+                    </h2>
+                    <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1rem;">
+                        ${result.explanation}
+                    </p>
+                    <div style="font-size:1.1rem; font-weight:700; color:var(--blue-primary); margin-bottom:1.5rem;">
+                        +${result.reward ? result.reward.xp : 50} XP Earned! ⭐
+                    </div>
+                    <button type="button" class="btn-g-primary" onclick="COSY_WORLD.closeModal()">Awesome! ✨</button>
+                </div>
+            `;
+        }
     }
 
     async fastTravel(targetLocationId) {
