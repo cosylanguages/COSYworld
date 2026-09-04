@@ -17,9 +17,38 @@ export class HUDManager {
 
         const lang = state.currentLang;
 
+        // Environmental Simulation Header Bar
+        const worldSim = state.worldSim || { timeString: '08:00', timeOfDay: 'morning', season: 'spring', weather: 'clear' };
+        const simIcons = {
+            morning: '🌅 Morning',
+            afternoon: '☀️ Afternoon',
+            evening: '🌆 Evening',
+            night: '🌙 Night'
+        };
+        const seasonIcons = {
+            spring: '🌸 Spring',
+            summer: '🌻 Summer',
+            autumn: '🍁 Autumn',
+            winter: '❄️ Winter'
+        };
+        const weatherIcons = {
+            clear: '☀️ Clear',
+            rain: '🌧️ Rain',
+            snow: '🌨️ Snow',
+            fog: '🌫️ Fog',
+            clouds: '☁️ Clouds'
+        };
+
+        const envHeaderHtml = `
+            <div style="background:var(--blue-light); border:1px solid var(--border-subtle); padding:0.6rem 0.8rem; border-radius:12px; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; font-weight:700; color:var(--text-main);">
+                <div>⏰ ${worldSim.timeString || '08:00'} (${simIcons[worldSim.timeOfDay] || '🌅 Morning'})</div>
+                <div>${seasonIcons[worldSim.season] || '🌸 Spring'} • ${weatherIcons[worldSim.weather] || '☀️ Clear'}</div>
+            </div>
+        `;
+
         if (state.activeTab === 'quests') {
             if (!gameData.quests || gameData.quests.length === 0) {
-                body.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No quests loaded.</div>`;
+                body.innerHTML = envHeaderHtml + `<div style="text-align:center; padding:2rem; color:var(--text-muted);">No quests loaded.</div>`;
                 return;
             }
 
@@ -36,7 +65,7 @@ export class HUDManager {
                 'timed challenge': '⚡'
             };
 
-            body.innerHTML = gameData.quests.map(q => {
+            body.innerHTML = envHeaderHtml + gameData.quests.map(q => {
                 const isDone = state.completedQuests && state.completedQuests.has(q.id);
                 const isActive = state.activeQuests && state.activeQuests.has(q.id);
                 const typeIcon = typeIcons[q.type] || '📜';

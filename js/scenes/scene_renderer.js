@@ -261,14 +261,71 @@ export class SceneRenderer {
             html += `</g>`;
         });
 
-        // Time of Day Lighting Filter for Active Location
+        // Weather Visual Overlays
+        const currentWeather = (state.worldSim && state.worldSim.weather) || loc.weather || 'clear';
+        const currentSeason = (state.worldSim && state.worldSim.season) || 'spring';
+
+        if (currentWeather === 'rain') {
+            html += `
+                <g class="cw-weather-rain" opacity="0.6" pointer-events="none">
+                    <line x1="80" y1="10" x2="70" y2="130" stroke="#3b82f6" stroke-width="2" stroke-dasharray="12 24" />
+                    <line x1="220" y1="5" x2="210" y2="125" stroke="#3b82f6" stroke-width="2" stroke-dasharray="12 24" />
+                    <line x1="380" y1="20" x2="370" y2="140" stroke="#3b82f6" stroke-width="2" stroke-dasharray="12 24" />
+                    <line x1="540" y1="10" x2="530" y2="130" stroke="#3b82f6" stroke-width="2" stroke-dasharray="12 24" />
+                    <line x1="700" y1="25" x2="690" y2="145" stroke="#3b82f6" stroke-width="2" stroke-dasharray="12 24" />
+                </g>
+            `;
+        } else if (currentWeather === 'snow') {
+            html += `
+                <g class="cw-weather-snow" opacity="0.75" pointer-events="none">
+                    <circle cx="100" cy="50" r="4" fill="#ffffff" />
+                    <circle cx="260" cy="110" r="3" fill="#ffffff" />
+                    <circle cx="420" cy="70" r="5" fill="#ffffff" />
+                    <circle cx="580" cy="130" r="3" fill="#ffffff" />
+                    <circle cx="740" cy="60" r="4" fill="#ffffff" />
+                </g>
+            `;
+        } else if (currentWeather === 'fog') {
+            html += `
+                <g class="cw-weather-fog" pointer-events="none">
+                    <rect x="0" y="0" width="800" height="500" fill="rgba(241, 245, 249, 0.45)" />
+                </g>
+            `;
+        } else if (currentWeather === 'clouds') {
+            html += `
+                <g class="cw-weather-clouds" opacity="0.3" pointer-events="none">
+                    <path d="M 50 80 Q 80 50 120 80 Q 150 50 190 80 Q 220 100 190 120 L 50 120 Z" fill="#94a3b8" />
+                    <path d="M 450 60 Q 480 30 520 60 Q 550 30 590 60 Q 620 80 590 100 L 450 100 Z" fill="#94a3b8" />
+                </g>
+            `;
+        }
+
+        // Season Specific Particle Accents
+        if (currentSeason === 'spring') {
+            html += `
+                <g class="cw-season-spring" pointer-events="none" opacity="0.6">
+                    <text x="140" y="180" font-size="16">🌸</text>
+                    <text x="620" y="220" font-size="16">🌸</text>
+                </g>
+            `;
+        } else if (currentSeason === 'autumn') {
+            html += `
+                <g class="cw-season-autumn" pointer-events="none" opacity="0.7">
+                    <text x="180" y="160" font-size="16">🍁</text>
+                    <text x="540" y="240" font-size="16">🍂</text>
+                </g>
+            `;
+        }
+
         const timeOfDayColors = {
             morning: 'rgba(254, 243, 199, 0.15)',
             afternoon: 'rgba(255, 255, 255, 0)',
-            sunset: 'rgba(251, 146, 60, 0.2)',
+            evening: 'rgba(251, 146, 60, 0.2)',
             night: 'rgba(30, 41, 59, 0.45)'
         };
-        const lightingFill = timeOfDayColors[loc.timeOfDay] || 'rgba(0,0,0,0)';
+
+        // Smooth Lighting Filter Blend from WorldSimulationEngine or fallback
+        const lightingFill = (state.worldSim && state.worldSim.lightingRgba) ? state.worldSim.lightingRgba : (timeOfDayColors[loc.timeOfDay] || 'rgba(0,0,0,0)');
         html += `<rect x="0" y="0" width="800" height="500" fill="${lightingFill}" pointer-events="none" />`;
 
         svg.innerHTML = html;

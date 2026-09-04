@@ -16,6 +16,7 @@ import { WorldBuilder } from '../world/world_builder.js';
 import { BuildingManager } from '../world/building_system.js';
 import { InteriorEngine } from '../world/interior_engine.js';
 import { WorldMap } from '../world/world_map.js';
+import { WorldSimulationEngine } from '../world/world_simulation.js';
 import { MinigameFramework } from '../minigames/minigame_framework.js';
 import { VocabularyEngine } from '../vocabulary/vocabulary_engine.js';
 import { NPCAIEngine } from '../npc/npc_ai_engine.js';
@@ -80,6 +81,7 @@ export class GameEngine {
         this.grammarEngine = new GrammarEngine(this);
         this.questEngine = new QuestEngine({ gameEngine: this, eventBus: this.eventBus });
         this.worldMap = new WorldMap({ gameEngine: this });
+        this.worldSimulation = new WorldSimulationEngine({ gameEngine: this, eventBus: this.eventBus });
         this.minigameFramework = new MinigameFramework({ gameEngine: this, eventBus: this.eventBus });
 
         this.data = {
@@ -153,7 +155,7 @@ export class GameEngine {
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
@@ -163,10 +165,9 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/buildings/buildings.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/interiors/rooms.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({})),
-            this.assetManager.loadJson(`${basePath}/minigames/minigames.json`).catch(() => ([]))
+            this.assetManager.loadJson(`${basePath}/minigames/minigames.json`).catch(() => ([])),
+            this.assetManager.loadJson(`${basePath}/world/world_simulation.json`).catch(() => ({}))
         ]);
-
-        const minigamesRes = arguments ? (await Promise.resolve(arguments[0] || [])) : [];
 
         if (npcsRes) {
             this.npcAIEngine.registerNPCsDict(npcsRes);
@@ -178,6 +179,10 @@ export class GameEngine {
 
         if (roomsRes) {
             this.interiorEngine.registerRooms(roomsRes);
+        }
+
+        if (worldSimRes) {
+            this.worldSimulation.loadConfigFromJson(worldSimRes);
         }
 
         this.worldBuilder.registerDistricts(districtsRes);
@@ -194,7 +199,9 @@ export class GameEngine {
         this.questEngine.loadQuestsFromJson(questsRes);
         this.data.grammarTree = grammarRes;
 
-        if (Array.isArray(arguments[0])) {
+        if (minigamesJsonRes) {
+            this.minigameFramework.loadMinigamesFromJson(minigamesJsonRes);
+        } else if (typeof arguments !== 'undefined' && Array.isArray(arguments[0])) {
             this.minigameFramework.loadMinigamesFromJson(arguments[0]);
         }
 
@@ -258,6 +265,15 @@ export class GameEngine {
         // Keep local position clamped inside viewport bounds
         this.playerWorldPos.x = Math.max(10, Math.min(790, this.playerWorldPos.x));
         this.playerWorldPos.y = Math.max(10, Math.min(490, this.playerWorldPos.y));
+
+        this.worldSimulation.update(dt);
+        this.state.worldSim = {
+            timeOfDay: this.worldSimulation.timeOfDay,
+            season: this.worldSimulation.season,
+            weather: this.worldSimulation.weather,
+            timeString: this.worldSimulation.getTimeString(),
+            lightingRgba: this.worldSimulation.getLightingRgba()
+        };
 
         this.cameraManager.update(dt);
 
