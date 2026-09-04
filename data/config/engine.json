@@ -1,0 +1,36 @@
+{
+  "engine": {
+    "targetFps": 60,
+    "defaultLanguage": "en",
+    "playerMovementSpeed": 250,
+    "playerStartPos": { "x": 400, "y": 250 },
+    "viewportBounds": {
+      "minX": 10,
+      "maxX": 790,
+      "minY": 10,
+      "maxY": 490
+    }
+  },
+  "camera": {
+    "defaultZoom": 1,
+    "minZoom": 0.5,
+    "maxZoom": 2.5,
+    "smoothFactor": 0.1,
+    "bounds": {
+      "minX": 0,
+      "maxX": 800,
+      "minY": 0,
+      "maxY": 500
+    }
+  },
+  "audio": {
+    "defaultAmbience": "piano",
+    "ttsRate": 0.9,
+    "supportedLanguages": ["en", "fr", "it", "es", "de", "ru", "el", "pt", "hy", "ka", "br", "tt", "ba", "cv"]
+  },
+  "save": {
+    "storageKey": "COSY_WORLD_STATE",
+    "autoSaveIntervalMs": 30000,
+    "version": "1.0.0"
+  }
+}

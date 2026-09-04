@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0",
+  "basePaths": {
+    "images": "assets/images/",
+    "audio": "assets/audio/",
+    "icons": "assets/icons/",
+    "data": "data/"
+  },
+  "preload": [
+    "languages/languages.json",
+    "scenes/districts.json",
+    "vocabulary/objects.json",
+    "npcs/npcs.json",
+    "quests/quests.json",
+    "grammar/grammar.json"
+  ],
+  "assetManifest": {
+    "icons": {
+      "logo": "assets/icons/logo.svg"
+    },
+    "images": {},
+    "audio": {}
+  }
+}

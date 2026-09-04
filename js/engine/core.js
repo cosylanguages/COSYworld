@@ -1,39 +1,51 @@
 /**
- * games/cosy_world/js/engine/core.js
- * Core engine orchestrator that fetches JSON game datasets and coordinates components.
- *
- * Engine Capabilities Supported:
- * - Streaming Open-World System (lazy loading adjacent districts, purging distant assets, 60 FPS, continuous movement)
- * - Professional Dialogue Engine (branching tree nodes, speech rate 0.8x/1.0x/1.3x, repeat, slow toggle, typing animation, history log, speech rec input)
- * - Hotspot Engine (glow, pulse, ARIA accessibility, keyboard & click interaction)
- * - Scene loading & transition (100% data-driven from JSON with lazy loading)
- * - Asset preloading & JSON configuration parsing
- * - Publish-subscribe event system
- * - RequestAnimationFrame game loop & delta time
- * - Axis-Aligned Bounding Box (AABB) collision detection
- * - Camera movement, pan/zoom, and bounds clamping
- * - LocalStorage save/load state persistence
- * - Multi-lingual localization across 14 target languages
- * - Dynamic World Manager (roads, buildings, weather, ambient music, time of day)
- * - Modular Inductive Grammar Engine (mission-driven grammar unlocks, interactive exercises, scene integration, audio voice synthesis)
- * - Comprehensive Quest Manager (10 quest types, unlock conditions, quest chains, XP/vocab/grammar rewards)
+ * js/engine/core.js
+ * Core engine orchestrator connecting independent system managers.
  */
 
-import { SaveSystem } from '../save/save_system.js';
-import { StatsManager } from '../player/stats.js';
-import { AudioManager } from '../audio/audio.js';
-import { SceneRenderer } from '../scenes/scene_renderer.js';
+import { EventBus } from './event_bus.js';
+import { AssetManager } from './asset_manager.js';
+import { SaveManager } from '../save/save_manager.js';
+import { LocalizationManager } from '../localization/localization_manager.js';
+import { InputManager } from '../input/input_manager.js';
+import { CameraManager } from '../camera/camera_manager.js';
+import { AudioManager } from '../audio/audio_manager.js';
+import { SceneManager } from '../scenes/scene_manager.js';
 import { StreamingWorldManager } from '../scenes/streaming_manager.js';
+import { StatsManager } from '../player/stats.js';
+import { SceneRenderer } from '../scenes/scene_renderer.js';
 import { InventoryManager } from '../inventory/inventory.js';
 import { DialogueManager } from '../dialogue/dialogue.js';
 import { QuestManager } from '../quests/quest_manager.js';
 import { GrammarEngine } from '../grammar/grammar_engine.js';
 import { ModalManager } from '../ui/modal.js';
 import { HUDManager } from '../ui/hud.js';
+import { checkCollision as checkAABBCollision } from '../utils/math.js';
 
 export class GameEngine {
     constructor() {
-        this.state = SaveSystem.loadInitialState();
+        this.eventBus = new EventBus();
+        this.saveManager = new SaveManager({ eventBus: this.eventBus });
+        this.state = this.saveManager.loadInitialState();
+
+        this.assetManager = new AssetManager();
+        this.localizationManager = new LocalizationManager({
+            defaultLanguage: this.state.currentLang || 'en',
+            eventBus: this.eventBus
+        });
+
+        this.inputManager = new InputManager({ eventBus: this.eventBus });
+        this.cameraManager = new CameraManager({ eventBus: this.eventBus });
+        this.audioManager = new AudioManager({ eventBus: this.eventBus });
+
+        this.streamingManager = new StreamingWorldManager();
+        this.sceneManager = new SceneManager({
+            eventBus: this.eventBus,
+            streamingManager: this.streamingManager
+        });
+
+        this.grammarEngine = new GrammarEngine(this);
+
         this.data = {
             languages: [],
             districts: {},
@@ -42,21 +54,40 @@ export class GameEngine {
             quests: [],
             grammarTree: []
         };
-        this.audio = new AudioManager();
-        this.streamingManager = new StreamingWorldManager();
-        this.grammarEngine = new GrammarEngine(this);
-        this.eventListeners = {};
-        this.camera = { x: 0, y: 0, zoom: 1 };
+
+        // Player world position & loop flags
         this.playerWorldPos = { x: 400, y: 250 };
-        this.keysPressed = {};
+        this.cameraManager.setTarget(this.playerWorldPos);
         this.isLoopRunning = false;
-        this.lastFrameTime = performance.now();
+        this.lastFrameTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
+
+        // Forward compatibility aliases for audio
+        this.audio = this.audioManager;
+
+        // Wire EventBus listeners for decoupling
+        this._setupEventSubscriptions();
+    }
+
+    /**
+     * @private
+     */
+    _setupEventSubscriptions() {
+        this.eventBus.on('escapePressed', () => this.closeModal());
+        this.eventBus.on('swipe', (data) => this.emit('swipe', data));
+        this.eventBus.on('languageChanged', (evt) => {
+            if (evt && evt.current) {
+                this.state.currentLang = evt.current;
+                this.saveState();
+            }
+        });
     }
 
     async init() {
         try {
             await this.loadData();
-            await this.streamingManager.initStreaming(this.state.currentLocationId, this.data);
+            this.localizationManager.setSupportedLanguages(this.data.languages || []);
+            await this.sceneManager.init(this.state.currentLocationId, this.data);
+            this.inputManager.init();
             this.bindInputListeners();
             this.startGameLoop();
             this.populateLanguageSelector();
@@ -68,32 +99,29 @@ export class GameEngine {
         }
     }
 
-    /* Event System (Pub/Sub) */
+    /* Event System (Pub/Sub) backwards compatibility bridge */
     on(event, fn) {
-        if (!this.eventListeners[event]) this.eventListeners[event] = [];
-        this.eventListeners[event].push(fn);
+        return this.eventBus.on(event, fn);
     }
 
     off(event, fn) {
-        if (!this.eventListeners[event]) return;
-        this.eventListeners[event] = this.eventListeners[event].filter(cb => cb !== fn);
+        this.eventBus.off(event, fn);
     }
 
     emit(event, payload) {
-        if (!this.eventListeners[event]) return;
-        this.eventListeners[event].forEach(fn => fn(payload));
+        this.eventBus.emit(event, payload);
     }
 
-    /* Asset & JSON Preloader */
+    /* Asset & JSON Preloader using AssetManager */
     async loadData() {
         const basePath = 'data';
         const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes] = await Promise.all([
-            fetch(`${basePath}/languages/languages.json`).then(r => r.json()),
-            fetch(`${basePath}/scenes/districts.json`).then(r => r.json()),
-            fetch(`${basePath}/vocabulary/objects.json`).then(r => r.json()),
-            fetch(`${basePath}/npcs/npcs.json`).then(r => r.json()),
-            fetch(`${basePath}/quests/quests.json`).then(r => r.json()),
-            fetch(`${basePath}/grammar/grammar.json`).then(r => r.json())
+            this.assetManager.loadJson(`${basePath}/languages/languages.json`),
+            this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
+            this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`),
+            this.assetManager.loadJson(`${basePath}/npcs/npcs.json`),
+            this.assetManager.loadJson(`${basePath}/quests/quests.json`),
+            this.assetManager.loadJson(`${basePath}/grammar/grammar.json`)
         ]);
 
         this.data.languages = languagesRes;
@@ -109,7 +137,9 @@ export class GameEngine {
         // Evaluate quests on load
         this.checkQuests('init');
 
-        window.COSY_WORLD_DATA = this.data;
+        if (typeof window !== 'undefined') {
+            window.COSY_WORLD_DATA = this.data;
+        }
         this.emit('dataLoaded', this.data);
     }
 
@@ -117,37 +147,40 @@ export class GameEngine {
     startGameLoop() {
         if (this.isLoopRunning) return;
         this.isLoopRunning = true;
-        this.lastFrameTime = performance.now();
+        this.lastFrameTime = typeof performance !== 'undefined' ? performance.now() : Date.now();
 
         const loop = (now) => {
             const dt = (now - this.lastFrameTime) / 1000;
             this.lastFrameTime = now;
             this.streamingManager.updateFPS(now);
             this.update(dt);
-            if (this.isLoopRunning) {
+            if (this.isLoopRunning && typeof requestAnimationFrame !== 'undefined') {
                 requestAnimationFrame(loop);
             }
         };
-        requestAnimationFrame(loop);
+
+        if (typeof requestAnimationFrame !== 'undefined') {
+            requestAnimationFrame(loop);
+        }
     }
 
     update(dt) {
         let moved = false;
         const speed = 250 * dt;
 
-        if (this.keysPressed['ArrowLeft'] || this.keysPressed['a']) {
+        if (this.inputManager.isKeyDown('ArrowLeft') || this.inputManager.isKeyDown('a')) {
             this.playerWorldPos.x -= speed;
             moved = true;
         }
-        if (this.keysPressed['ArrowRight'] || this.keysPressed['d']) {
+        if (this.inputManager.isKeyDown('ArrowRight') || this.inputManager.isKeyDown('d')) {
             this.playerWorldPos.x += speed;
             moved = true;
         }
-        if (this.keysPressed['ArrowUp'] || this.keysPressed['w']) {
+        if (this.inputManager.isKeyDown('ArrowUp') || this.inputManager.isKeyDown('w')) {
             this.playerWorldPos.y -= speed;
             moved = true;
         }
-        if (this.keysPressed['ArrowDown'] || this.keysPressed['s']) {
+        if (this.inputManager.isKeyDown('ArrowDown') || this.inputManager.isKeyDown('s')) {
             this.playerWorldPos.y += speed;
             moved = true;
         }
@@ -155,6 +188,8 @@ export class GameEngine {
         // Keep local position clamped inside viewport bounds
         this.playerWorldPos.x = Math.max(10, Math.min(790, this.playerWorldPos.x));
         this.playerWorldPos.y = Math.max(10, Math.min(490, this.playerWorldPos.y));
+
+        this.cameraManager.update(dt);
 
         if (moved) {
             // Check boundary crossing into adjacent district without loading screens
@@ -175,49 +210,19 @@ export class GameEngine {
         this.emit('tick', dt);
     }
 
-    /* Keyboard & Touch Gesture Controls */
+    /* Input Listener Setup */
     bindInputListeners() {
-        window.addEventListener('keydown', (e) => {
-            this.keysPressed[e.key] = true;
-            if (e.key === 'Escape') this.closeModal();
-        });
-        window.addEventListener('keyup', (e) => {
-            this.keysPressed[e.key] = false;
-        });
-
-        let touchStartX = 0;
-        let touchStartY = 0;
-        window.addEventListener('touchstart', (e) => {
-            if (e.touches.length > 0) {
-                touchStartX = e.touches[0].clientX;
-                touchStartY = e.touches[0].clientY;
-            }
-        }, { passive: true });
-
-        window.addEventListener('touchend', (e) => {
-            if (e.changedTouches.length > 0) {
-                const dx = e.changedTouches[0].clientX - touchStartX;
-                const dy = e.changedTouches[0].clientY - touchStartY;
-                if (Math.abs(dx) > 50 || Math.abs(dy) > 50) {
-                    this.emit('swipe', { dx, dy });
-                }
-            }
-        }, { passive: true });
+        this.inputManager.init();
     }
 
-    /* Collision Detection Helper (AABB) */
+    /* Collision Detection Helper */
     checkCollision(rect1, rect2) {
-        return (
-            rect1.x < rect2.x + rect2.width &&
-            rect1.x + rect1.width > rect2.x &&
-            rect1.y < rect2.y + rect2.height &&
-            rect1.y + rect1.height > rect2.y
-        );
+        return checkAABBCollision(rect1, rect2);
     }
 
     /* Save & Load System */
     saveState() {
-        SaveSystem.saveState(this.state);
+        this.saveManager.saveState(this.state);
         this.emit('stateSaved', this.state);
     }
 
@@ -236,6 +241,7 @@ export class GameEngine {
     }
 
     populateLanguageSelector() {
+        if (typeof document === 'undefined') return;
         const sel = document.getElementById('cw-lang-sel');
         if (!sel || !this.data.languages) return;
 
@@ -245,6 +251,7 @@ export class GameEngine {
     }
 
     changeLanguage(code) {
+        this.localizationManager.setLanguage(code);
         this.state.currentLang = code;
         this.saveState();
         this.renderWorldViewport();
@@ -262,33 +269,30 @@ export class GameEngine {
     }
 
     async switchLocation(locationId, showToastAlert = true) {
-        const loc = this.data.districts[locationId];
+        const loc = await this.sceneManager.switchScene(locationId, this.state, this.data);
         if (!loc) return;
 
-        this.state.currentLocationId = locationId;
         this.saveState();
 
-        // Continuous streaming: Load active district, pre-load adjacent, unload distant
-        await this.streamingManager.loadDistrict(locationId, this.data);
-        await this.streamingManager.preloadAdjacentDistricts(locationId, this.data);
-        this.streamingManager.unloadDistantDistricts(locationId, this.data);
-
         if (loc.music) {
-            const soundSel = document.getElementById('cw-sound-sel');
-            if (soundSel) soundSel.value = loc.music;
+            if (typeof document !== 'undefined') {
+                const soundSel = document.getElementById('cw-sound-sel');
+                if (soundSel) soundSel.value = loc.music;
+            }
             this.playAmbience(loc.music);
         }
 
         await this.renderWorldViewport();
         if (showToastAlert) {
-            this.showToast(`Entered ${loc.name[this.state.currentLang] || loc.name.en} 🚪`);
+            const locName = this.localizationManager.getText(loc.name);
+            this.showToast(`Entered ${locName} 🚪`);
         }
         this.checkQuests('location_changed', { locationId });
         this.emit('locationChanged', locationId);
     }
 
     async renderWorldViewport() {
-        await SceneRenderer.renderWorldViewport(this.state, this.data, this.streamingManager);
+        await this.sceneManager.render(this.state, this.data);
     }
 
     inspectObject(objId) {
@@ -398,6 +402,7 @@ export class GameEngine {
     }
 
     openGrammarExercise(exerciseId) {
+        if (typeof document === 'undefined') return;
         const found = this.grammarEngine.findExercise(exerciseId, this.data);
         if (!found) return;
 
@@ -455,13 +460,14 @@ export class GameEngine {
                     <div id="cw-exercise-feedback" style="display:none; margin-top:1rem; padding:0.75rem; border-radius:10px; font-size:0.9rem; font-weight:600;"></div>
                 </div>
             `;
-            window._cwWordOrderAnswer = [];
+            if (typeof window !== 'undefined') window._cwWordOrderAnswer = [];
         }
 
         this.openModal();
     }
 
     addWordToAnswer(word) {
+        if (typeof window === 'undefined') return;
         if (!window._cwWordOrderAnswer) window._cwWordOrderAnswer = [];
         window._cwWordOrderAnswer.push(word);
         const sb = document.getElementById('cw-sentence-builder');
@@ -469,18 +475,21 @@ export class GameEngine {
     }
 
     clearWordBuilder() {
+        if (typeof window === 'undefined') return;
         window._cwWordOrderAnswer = [];
         const sb = document.getElementById('cw-sentence-builder');
         if (sb) sb.textContent = '';
     }
 
     submitWordOrderExercise(exerciseId) {
-        const answer = window._cwWordOrderAnswer ? window._cwWordOrderAnswer.join(' ') : '';
+        const answer = (typeof window !== 'undefined' && window._cwWordOrderAnswer) ? window._cwWordOrderAnswer.join(' ') : '';
         this.submitGrammarExercise(exerciseId, answer);
     }
 
     submitGrammarExercise(exerciseId, userAnswer) {
         const result = this.grammarEngine.evaluateExercise(exerciseId, userAnswer, this.state, this.data);
+        if (typeof document === 'undefined') return;
+
         const fb = document.getElementById('cw-exercise-feedback');
 
         if (fb) {
@@ -509,11 +518,11 @@ export class GameEngine {
     }
 
     speakText(text, lang) {
-        this.audio.speakText(text, lang);
+        this.audioManager.speakText(text, lang);
     }
 
     playAmbience(type) {
-        this.audio.playAmbience(type);
+        this.audioManager.playAmbience(type);
     }
 
     switchTab(tabName, btnEl) {
