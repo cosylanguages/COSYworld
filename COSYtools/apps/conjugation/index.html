@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗣️ Conjugation Trainer — COSYtools</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="conjugation.css">
+</head>
+<body>
+
+  <nav class="nav-bar">
+    <a href="../../index.html" class="nav-brand">🧰 COSYtools</a>
+    <div class="nav-links">
+      <a href="../../index.html">Hub Home</a>
+      <a href="../gender/index.html">Gender Classifier</a>
+      <a href="../verb-tables/index.html">Verb Tables</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header style="background: linear-gradient(135deg, #2b5c8f, #204060); border-radius: var(--radius); margin-bottom: 1.5rem;">
+      <h1>🗣️ Conjugation Trainer</h1>
+      <p>Practice verb tense endings and forms across multiple languages.</p>
+    </header>
+
+    <div class="quiz-box">
+      <div class="form-group">
+        <label for="verb-select">Select Verb:</label>
+        <select id="verb-select" class="form-control"></select>
+      </div>
+
+      <div id="conjugation-card" style="margin-top: 1.5rem;">
+        <h3 id="target-verb-title">---</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1rem;" id="pronoun-prompt">Pronoun: <strong>je</strong></p>
+
+        <div class="form-group">
+          <input type="text" id="answer-input" class="form-control" placeholder="Enter conjugated verb form..." autocomplete="off">
+        </div>
+
+        <button id="check-btn" class="btn">Check Answer</button>
+
+        <div id="feedback" class="result-feedback" style="display: none;"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="conjugation.js" type="module"></script>
+</body>
+</html>

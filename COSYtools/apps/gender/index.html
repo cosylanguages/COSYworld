@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏷️ Grammatical Gender Classifier — COSYtools</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="gender.css">
+</head>
+<body>
+
+  <nav class="nav-bar">
+    <a href="../../index.html" class="nav-brand">🧰 COSYtools</a>
+    <div class="nav-links">
+      <a href="../../index.html">Hub Home</a>
+      <a href="../conjugation/index.html">Conjugation Trainer</a>
+      <a href="../verb-tables/index.html">Verb Tables</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header style="background: linear-gradient(135deg, #e67e22, #d35400); border-radius: var(--radius); margin-bottom: 1.5rem;">
+      <h1>🏷️ Grammatical Gender Classifier</h1>
+      <p>Test your knowledge of noun genders, articles, and gender rules.</p>
+    </header>
+
+    <div class="gender-card">
+      <p style="color: var(--text-muted); text-transform: uppercase; font-size: 0.85rem; font-weight: 700;">Select Gender for Noun</p>
+      <div id="word-display" class="word-display">---</div>
+
+      <div class="gender-options">
+        <button class="gender-btn" data-gender="masculine">Masculine (el / der / le)</button>
+        <button class="gender-btn" data-gender="feminine">Feminine (la / die / la)</button>
+        <button class="gender-btn" data-gender="neuter">Neuter (das)</button>
+      </div>
+
+      <div id="gender-feedback" style="display: none; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-weight: 600;"></div>
+    </div>
+  </main>
+
+  <script src="gender.js" type="module"></script>
+</body>
+</html>

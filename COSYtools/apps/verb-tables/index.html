@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 Verb & Declension Tables — COSYtools</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="verb_tables.css">
+</head>
+<body>
+
+  <nav class="nav-bar">
+    <a href="../../index.html" class="nav-brand">🧰 COSYtools</a>
+    <div class="nav-links">
+      <a href="../../index.html">Hub Home</a>
+      <a href="../conjugation/index.html">Conjugation Trainer</a>
+      <a href="../gender/index.html">Gender Classifier</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header style="background: linear-gradient(135deg, #16a085, #1abc9c); border-radius: var(--radius); margin-bottom: 1.5rem;">
+      <h1>📊 Verb & Declension Tables</h1>
+      <p>Browse full paradigm conjugation matrices across verbs and tenses.</p>
+    </header>
+
+    <div style="background: #ffffff; padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+      <div class="form-group">
+        <label for="verb-table-select">Select Verb Matrix:</label>
+        <select id="verb-table-select" class="form-control"></select>
+      </div>
+
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Pronoun</th>
+            <th>Present Tense Form</th>
+          </tr>
+        </thead>
+        <tbody id="matrix-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="verb_tables.js" type="module"></script>
+</body>
+</html>
