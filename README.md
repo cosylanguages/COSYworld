@@ -40,25 +40,40 @@ COSYworld/
 │   ├── main.css          # Design system tokens, stage card, SVG viewport
 │   └── ui.css            # HUD sidebar, modals, controls, stats badges
 ├── js/
-│   ├── engine/           # Core orchestrator, game loop, pub-sub event bus
-│   ├── world/            # World manager, district logic, ambience
-│   ├── scenes/           # SVG scene & hotspot renderer
-│   ├── npc/              # NPC rendering & gesture handlers
+│   ├── audio/            # Spatial audio, sound synthesis, multi-channel soundscape
+│   ├── camera/           # Viewport camera pan, zoom, and dynamic target tracking
 │   ├── dialogue/         # Branching tree dialogue engine & Web Speech TTS
-│   ├── quests/           # Mission evaluator & quest progression
-│   ├── vocabulary/       # Object inspector & visual cause-effect chains
+│   ├── engine/           # Core orchestrator, game loop, pub-sub event bus
 │   ├── grammar/          # Grammar tree unlocks & CEFR progression
-│   ├── player/           # Citizen level, XP, statistics
+│   ├── input/            # Keyboard, touch, and pointer input handling
 │   ├── inventory/        # Discovered items & visual encyclopedia
+│   ├── localization/     # Dynamic target-language text resolution
+│   ├── minigames/        # Interactive mini-game framework and loaders
+│   ├── npc/              # NPC AI schedule system, rendering & gesture handlers
+│   ├── player/           # Citizen level, XP, statistics
+│   ├── quests/           # Mission evaluator & quest progression
 │   ├── save/             # LocalStorage persistence & save recovery
-│   └── utils/            # Helper functions & geometry math
+│   ├── scenes/           # SVG scene & hotspot renderer
+│   ├── ui/               # HUD interface tabs, modals, and notifications
+│   ├── utils/            # Helper functions & geometry math
+│   ├── vocabulary/       # Object inspector & visual cause-effect chains
+│   └── world/            # World manager, district streaming, simulation & maps
 ├── data/
-│   ├── languages/        # Target language definitions & flags
-│   ├── vocabulary/       # Interactive object metadata across 14 languages
+│   ├── buildings/        # Outdoor district building metadata and hotspots
+│   ├── config/           # Game configuration, achievements, and system settings
+│   ├── dialogues/        # Branching NPC dialogue tree datasets
+│   ├── dlc/              # Expansion packs and downloadable content manifests
 │   ├── grammar/          # Grammar node unlock definitions
+│   ├── grammar_patterns/ # Interactive grammar pattern exercise datasets
+│   ├── interiors/        # Modular interior room layouts and object placements
+│   ├── languages/        # Target language definitions & flags
+│   ├── minigames/        # Mini-game configuration and quiz question datasets
+│   ├── npcs/             # NPC profiles, schedules, expressions, and roles
+│   ├── quests/           # Story quests, rewards, and conditions
 │   ├── scenes/           # Spatial topology, SVG coordinates, door linkages
-│   ├── npcs/             # NPC dialogue trees, gestures, roles
-│   └── quests/           # Story quests, rewards, and conditions
+│   ├── situations/       # Contextual real-world social interaction scenarios
+│   ├── vocabulary/       # Interactive object metadata across 14 languages
+│   └── world/            # Simulation settings, time, weather, and world state
 ├── assets/
 │   ├── images/           # Scene backgrounds, custom graphics
 │   ├── audio/            # Ambient soundscapes, audio effects
