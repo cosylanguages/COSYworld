@@ -1267,6 +1267,118 @@
       ]
     }
   },
+  "doctor_chloe": {
+    "id": "doctor_chloe",
+    "name": "Doctor Chloe",
+    "portrait": "👩‍⚕️",
+    "avatar": "👩‍⚕️",
+    "role": "Medical Doctor & Health Specialist",
+    "occupation": "Medical Doctor",
+    "teachingRole": "Health, Body Parts & Needs/Feelings Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "hospital",
+    "position3D": {
+      "x": 350,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-E",
+    "dailySchedule": [
+      {
+        "time": "08:00",
+        "location": "hospital",
+        "activity": "Morning rounds in hospital lobby"
+      },
+      {
+        "time": "14:00",
+        "location": "doctor_office",
+        "activity": "Consulting patients at doctor office"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch11_doctor_visit"
+    ],
+    "quests": [
+      "q_ch11_doctor_visit"
+    ],
+    "shopInventory": [
+      {
+        "id": "stethoscope_tool",
+        "name": "Stethoscope",
+        "price": 0,
+        "emoji": "🩺"
+      },
+      {
+        "id": "thermometer_item",
+        "name": "Thermometer",
+        "price": 0,
+        "emoji": "🌡️"
+      }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👩‍⚕️ Hello! I am Doctor Chloe. How are you feeling today? What symptoms do you have?",
+          "visualAction": "🩺 ➔ 🌡️",
+          "grammarCheck": "Expressing Health & Symptoms (Have got / Need / Feel)",
+          "options": [
+            {
+              "label": "🩺 I've got a headache and I feel sick!",
+              "next": 1,
+              "rewardXP": 15,
+              "questId": "q_ch11_doctor_visit"
+            },
+            {
+              "label": "💊 I need medicine and rest!",
+              "next": 2,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🌡️ Let me check your temperature! You have got a slight fever. You need to rest and drink water!",
+          "visualAction": "🌡️ ➔ 🛏️",
+          "options": [
+            {
+              "label": "💊 I feel better now! Thank you, Doctor Chloe!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "💊 Here is your prescription medicine! Regular exercise and rest will keep you healthy!",
+          "visualAction": "💊 ➔ 🏃",
+          "options": [
+            {
+              "label": "🏃 I am going to practice sports at the gymnasium next!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "👩‍⚕️ Take good care of your health! Remember to balance exercise and rest!",
+          "visualAction": "👩‍⚕️ ➔ 👍",
+          "options": [
+            {
+              "label": "🙏 Thank you, Doctor!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
   "ticket_clerk_oliver": {
     "id": "ticket_clerk_oliver",
     "name": "Oliver",

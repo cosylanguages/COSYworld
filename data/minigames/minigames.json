@@ -292,5 +292,20 @@
       ],
       "targetChoice": 0
     }
+  },
+  {
+    "id": "mg_sports_exercise_1",
+    "type": "object_hunt",
+    "title": "🏃 Sports & Fitness Circuit Challenge",
+    "description": "Complete your fitness circuit across the football field, swimming pool, and basketball court by collecting sports equipment.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["football", "goggles", "basketball", "mat"]
+    },
+    "content": {
+      "timeLimitSeconds": 60,
+      "targetObjects": ["football_ball", "swimming_goggles", "basketball_hoop"]
+    }
   }
 ]

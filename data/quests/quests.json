@@ -2233,6 +2233,241 @@
         "locationId": "community_garden",
         "action": "enter"
       }
+    ],
+    "nextQuestId": "q_ch11_doctor_visit"
+  },
+  {
+    "id": "q_ch11_doctor_visit",
+    "chapter": "ch11",
+    "category": "conversation",
+    "type": "conversation",
+    "title": "🩺 Visit the Doctor & Express Feelings",
+    "description": "Visit Doctor Chloe at the hospital or doctor office and express health symptoms using 'I've got...' and 'I feel...'",
+    "difficulty": "A1",
+    "NPC": "doctor_chloe",
+    "requirements": {
+      "prerequisiteQuest": "q_ch10_nature_master",
+      "targetNpc": "doctor_chloe"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch10_nature_master"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with Doctor Chloe and describe symptoms (`doctor_chloe`)",
+        "target": "doctor_chloe"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "conversation",
+        "description": "Converse with Doctor Chloe using gt_have_got and gt_need_feel",
+        "targetNpc": "doctor_chloe",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 85,
+      "vocabulary": [
+        "doctor",
+        "medicine",
+        "thermometer",
+        "stethoscope"
+      ],
+      "grammar": "gt_have_got"
+    },
+    "rewards": {
+      "xp": 85,
+      "vocabulary": [
+        "doctor",
+        "medicine",
+        "thermometer",
+        "stethoscope"
+      ],
+      "grammar": "gt_have_got"
+    },
+    "dialogues": {
+      "start": "Visit Doctor Chloe at the hospital to check your health and describe your symptoms!",
+      "progress": "Talk with Doctor Chloe using 'I've got...' and 'I feel...'",
+      "complete": "Doctor visit complete! You received health advice and medicine!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "doctor_chloe",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "hospital",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch11_sports_challenge"
+  },
+  {
+    "id": "q_ch11_sports_challenge",
+    "chapter": "ch11",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🏃 Sports & Fitness Circuit",
+    "description": "Inspect sports equipment across football field (`football_ball`), swimming pool (`swimming_goggles`), and basketball court (`basketball_hoop`).",
+    "difficulty": "A1",
+    "NPC": "doctor_chloe",
+    "requirements": {
+      "prerequisiteQuest": "q_ch11_doctor_visit",
+      "targetObjects": [
+        "football_ball",
+        "swimming_goggles",
+        "basketball_hoop"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch11_doctor_visit"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect football match ball (`football_ball`)",
+        "target": "football_ball"
+      },
+      {
+        "id": "step_2",
+        "description": "Inspect swimming goggles (`swimming_goggles`)",
+        "target": "swimming_goggles"
+      },
+      {
+        "id": "step_3",
+        "description": "Inspect basketball hoop (`basketball_hoop`)",
+        "target": "basketball_hoop"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect sports equipment across football field, pool, and basketball court",
+        "targetObjects": [
+          "football_ball",
+          "swimming_goggles",
+          "basketball_hoop"
+        ],
+        "requiredCount": 3
+      }
+    ],
+    "reward": {
+      "xp": 95,
+      "vocabulary": [
+        "football",
+        "goggles",
+        "basketball",
+        "pool"
+      ],
+      "grammar": "gt_need_feel"
+    },
+    "rewards": {
+      "xp": 95,
+      "vocabulary": [
+        "football",
+        "goggles",
+        "basketball",
+        "pool"
+      ],
+      "grammar": "gt_need_feel"
+    },
+    "dialogues": {
+      "start": "Head to the sports quarter to complete your fitness circuit across the field, pool, and court!",
+      "progress": "Inspect all sports equipment.",
+      "complete": "Fitness circuit complete!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "doctor_chloe",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "football_field",
+        "hotspotId": "football_ball",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch11_health_champion"
+  },
+  {
+    "id": "q_ch11_health_champion",
+    "chapter": "ch11",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🧘 Master Health & Sports Champion",
+    "description": "Visit the yoga studio (`yoga_studio`) to stretch on the yoga mat (`yoga_mat_item`) and complete Chapter 11.",
+    "difficulty": "A1",
+    "NPC": "doctor_chloe",
+    "requirements": {
+      "prerequisiteQuest": "q_ch11_sports_challenge",
+      "targetLocation": "yoga_studio"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch11_sports_challenge"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit yoga studio (`yoga_studio`) and inspect yoga mat (`yoga_mat_item`)",
+        "target": "yoga_studio"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Visit yoga studio and stretch on yoga mat",
+        "targetLocation": "yoga_studio",
+        "targetObjects": [
+          "yoga_mat_item"
+        ],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "yoga",
+        "mat",
+        "health",
+        "body"
+      ],
+      "grammar": "gt_need_feel"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "yoga",
+        "mat",
+        "health",
+        "body"
+      ],
+      "grammar": "gt_need_feel"
+    },
+    "dialogues": {
+      "start": "Visit the yoga studio for a relaxing stretch session to complete your health tour!",
+      "progress": "Inspect the yoga mat in the yoga studio.",
+      "complete": "Chapter 11 Complete! You are a Master Health & Sports Champion in COSY Town!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "doctor_chloe",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "yoga_studio",
+        "action": "enter"
+      }
     ]
   },
   {

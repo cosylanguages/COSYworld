@@ -3157,14 +3157,21 @@
       "appointment",
       "ambulance"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "doctor_chloe",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "doctor_chloe"
+    ],
     "objects": [
+      "thermometer_item",
       "desk",
       "chair",
-      "lamp",
-      "window",
-      "plant"
+      "window"
     ],
     "chapters": [
       "ch11"
@@ -3252,13 +3259,21 @@
       "tissue",
       "appointment"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "doctor_chloe",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "doctor_chloe"
+    ],
     "objects": [
+      "stethoscope_tool",
       "desk",
       "lamp",
-      "window",
-      "chair"
+      "window"
     ],
     "chapters": [
       "ch11"
@@ -3443,10 +3458,9 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "swimming_goggles",
       "bench",
-      "window",
-      "plant",
-      "lamp"
+      "window"
     ],
     "chapters": [
       "ch11"
@@ -3537,8 +3551,8 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "football_ball",
       "bench",
-      "plant",
       "street_lamp"
     ],
     "chapters": [
@@ -3630,10 +3644,9 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "basketball_hoop",
       "bench",
-      "lamp",
-      "window",
-      "plant"
+      "window"
     ],
     "chapters": [
       "ch11"
@@ -3723,10 +3736,9 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "yoga_mat_item",
       "plant",
-      "window",
-      "lamp",
-      "bathroom_mirror"
+      "window"
     ],
     "chapters": [
       "ch11"
