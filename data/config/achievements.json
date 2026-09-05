@@ -163,5 +163,16 @@
     "unlockCondition": {
       "questId": "q_directions_bakery"
     }
+  },
+  {
+    "id": "ach_ch5_master_shopper",
+    "title": "🛍️ Master Shopper",
+    "description": "Complete your shopping list across shops, master asking prices and quantifiers, and complete Chapter 5.",
+    "category": "chapter_5",
+    "icon": "🛍️",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch5_master_shopper"
+    }
   }
 ]

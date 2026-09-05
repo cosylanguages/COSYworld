@@ -1531,7 +1531,7 @@
     "steps": [
       {
         "id": "step_1",
-        "description": "Order and buy a warm baguette",
+        "description": "Order and buy a warm baguette from Lucas",
         "target": "baguette"
       }
     ],
@@ -1552,7 +1552,7 @@
         "baguette",
         "croissant"
       ],
-      "grammar": "gt_likes"
+      "grammar": "gt_countable_uncountable"
     },
     "rewards": {
       "xp": 75,
@@ -1560,7 +1560,7 @@
         "baguette",
         "croissant"
       ],
-      "grammar": "gt_likes"
+      "grammar": "gt_countable_uncountable"
     },
     "dialogues": {
       "start": "Fresh baguettes are right out of the oven!",
@@ -1577,6 +1577,183 @@
       {
         "locationId": "bakery",
         "hotspotId": "baguette",
+        "action": "buy"
+      }
+    ],
+    "nextQuestId": "q_ch5_shopping_list"
+  },
+  {
+    "id": "q_ch5_shopping_list",
+    "chapter": "ch5",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "📋 Shopping List Challenge",
+    "description": "Buy a specific set of items across multiple shops in one session: a warm baguette from the bakery, fresh apples from the fruit market, and milk from the supermarket.",
+    "difficulty": "A1",
+    "NPC": "shopkeeper_maya",
+    "requirements": {
+      "prerequisiteQuest": "q_shop_baguette",
+      "targetObjects": [
+        "baguette",
+        "apple",
+        "milk"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_shop_baguette"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Buy a baguette at the Bakery (`baguette`)",
+        "target": "baguette"
+      },
+      {
+        "id": "step_2",
+        "description": "Buy fresh apples at the Fruit Market (`apple`)",
+        "target": "apple"
+      },
+      {
+        "id": "step_3",
+        "description": "Buy fresh milk at the Supermarket (`milk`)",
+        "target": "milk"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Complete shopping list across bakery, fruit market, and supermarket: baguette, apple, milk",
+        "targetObjects": [
+          "baguette",
+          "apple",
+          "milk"
+        ],
+        "requiredCount": 3
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": [
+        "apple",
+        "banana",
+        "milk",
+        "cheese",
+        "basket"
+      ],
+      "grammar": "gt_some_any"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": [
+        "apple",
+        "banana",
+        "milk",
+        "cheese",
+        "basket"
+      ],
+      "grammar": "gt_some_any"
+    },
+    "dialogues": {
+      "start": "Take your shopping list and visit the shops in town to purchase baguette, apples, and milk!",
+      "progress": "Check off all items on your shopping list across the market district.",
+      "complete": "Shopping list complete! You purchased all requested items!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "shopkeeper_maya",
+        "action": "shop"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "fruit_market",
+        "hotspotId": "apple",
+        "action": "buy"
+      }
+    ],
+    "nextQuestId": "q_ch5_master_shopper"
+  },
+  {
+    "id": "q_ch5_master_shopper",
+    "chapter": "ch5",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "🛍️ Master Town Shopper",
+    "description": "Explore the clothing store and bookshop to buy clothing and study materials, mastering Chapter 5 shopping vocabulary and grammar.",
+    "difficulty": "A1",
+    "NPC": "shopkeeper_maya",
+    "requirements": {
+      "prerequisiteQuest": "q_ch5_shopping_list",
+      "targetObjects": [
+        "shirt",
+        "novel_stack"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch5_shopping_list"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Purchase a shirt at the Clothing Store (`shirt`)",
+        "target": "shirt"
+      },
+      {
+        "id": "step_2",
+        "description": "Purchase a book at the Bookshop (`novel_stack`)",
+        "target": "novel_stack"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Purchase shirt and novel_stack across clothing store and bookshop",
+        "targetObjects": [
+          "shirt",
+          "novel_stack"
+        ],
+        "requiredCount": 2
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "shirt",
+        "jacket",
+        "novel",
+        "dictionary",
+        "coins"
+      ],
+      "grammar": "gt_how_much_many"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "shirt",
+        "jacket",
+        "novel",
+        "dictionary",
+        "coins"
+      ],
+      "grammar": "gt_how_much_many"
+    },
+    "dialogues": {
+      "start": "Visit the Clothing Store and Bookshop to complete your Chapter 5 shopping tour!",
+      "progress": "Buy clothing and books in the Market District.",
+      "complete": "Chapter 5 Complete! You are now a Master Town Shopper!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "shopkeeper_maya",
+        "action": "shop"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bookshop",
+        "hotspotId": "novel_stack",
         "action": "buy"
       }
     ],

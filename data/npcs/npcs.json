@@ -754,7 +754,7 @@
     "avatar": "👨‍🍳",
     "role": "Artisan Baker",
     "occupation": "Artisan Baker",
-    "teachingRole": "Food & Baking Terminology Master",
+    "teachingRole": "Food, Quantities & Shopping Mentor",
     "personality": "friendly",
     "currentMood": "happy",
     "relationshipLevel": 1,
@@ -781,31 +781,201 @@
     ],
     "conversationHistory": [],
     "questHistory": [
-      "q4_bakery_bread"
+      "q_shop_baguette"
+    ],
+    "quests": [
+      "q_shop_baguette"
+    ],
+    "shopInventory": [
+      {
+        "id": "baguette",
+        "name": "Warm Baguette",
+        "price": 10,
+        "emoji": "🥖"
+      },
+      {
+        "id": "croissant",
+        "name": "Butter Croissant",
+        "price": 5,
+        "emoji": "🥐"
+      }
     ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "🥖 Warm baguette! 😋 Yum!",
-          "visualAction": "🥖 ➔ 😋",
-          "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
+          "text": "🥖 Welcome to my bakery! Fresh baguettes and croissants are right out of the oven!",
+          "visualAction": "🥖 ➔ 🥐 ➔ 😋",
+          "grammarCheck": "Countable vs Uncountable & Prices (How much is... / How many...)",
           "options": [
             {
-              "label": "🥖 Take warm baguette!",
+              "label": "🥖 How much is a warm baguette?",
               "next": 1,
-              "rewardXP": 20,
-              "questId": "q4_bakery_bread"
+              "rewardXP": 15,
+              "questId": "q_shop_baguette"
+            },
+            {
+              "label": "🥐 Do you have any croissants?",
+              "next": 2,
+              "rewardXP": 15
             }
           ]
         },
         {
           "id": 1,
-          "text": "🥖 Baked fresh with organic flour! Enjoy your meal!",
+          "text": "🪙 A warm baguette is 10 coins. How many baguettes would you like?",
+          "visualAction": "🥖 ➔ 🪙 10",
+          "options": [
+            {
+              "label": "🥖 I would like one baguette, please!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🥐 Yes! I have some fresh croissants for 5 coins each!",
+          "visualAction": "🥐 ➔ 🪙 5",
+          "options": [
+            {
+              "label": "🥐 I will take some croissants!",
+              "next": 3,
+              "rewardXP": 15
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🥖 Thank you! Enjoy your fresh baked goods!",
           "visualAction": "😋 ➔ 👍",
           "options": [
             {
-              "label": "😋 Yum!",
+              "label": "👍 Thank you Lucas!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "shopkeeper_maya": {
+    "id": "shopkeeper_maya",
+    "name": "Maya",
+    "portrait": "👩‍🌾",
+    "avatar": "👩‍🌾",
+    "role": "Market Shopkeeper",
+    "occupation": "Shopkeeper",
+    "teachingRole": "Shopping, Currency & Some/Any Quantifiers Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "fruit_market",
+    "position3D": {
+      "x": 350,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-F",
+    "dailySchedule": [
+      {
+        "time": "08:00",
+        "location": "supermarket",
+        "activity": "Managing market shelves"
+      },
+      {
+        "time": "12:00",
+        "location": "fruit_market",
+        "activity": "Selling fresh fruits & vegetables"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch5_shopping_list"
+    ],
+    "quests": [
+      "q_ch5_shopping_list"
+    ],
+    "shopInventory": [
+      {
+        "id": "apple",
+        "name": "Red Apple",
+        "price": 3,
+        "emoji": "🍎"
+      },
+      {
+        "id": "banana",
+        "name": "Yellow Banana",
+        "price": 4,
+        "emoji": "🍌"
+      },
+      {
+        "id": "milk",
+        "name": "Fresh Milk",
+        "price": 6,
+        "emoji": "🥛"
+      },
+      {
+        "id": "cheese",
+        "name": "Artisan Cheese",
+        "price": 12,
+        "emoji": "🧀"
+      }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🍎 Hello! Welcome to the market! Are you looking for any fresh produce or groceries today?",
+          "visualAction": "🍎 ➔ 🍌 ➔ 🥛",
+          "grammarCheck": "Quantifiers (Some / Any) & Asking Prices (How much / How many)",
+          "options": [
+            {
+              "label": "🛒 Do you have any fresh apples and bananas?",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q_ch5_shopping_list"
+            },
+            {
+              "label": "💰 How much are the apples?",
+              "next": 2,
+              "rewardXP": 15
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🍎 Yes, I have some sweet red apples for 3 coins and yellow bananas for 4 coins! How many do you need?",
+          "visualAction": "🍎 🪙3 ➔ 🍌 🪙4",
+          "options": [
+            {
+              "label": "🛍️ I'll buy some apples and bananas!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "💰 Red apples are 3 coins each, and milk is 6 coins. How much money do you want to spend?",
+          "visualAction": "🪙 ➔ 🛒",
+          "options": [
+            {
+              "label": "🥛 I'll take some milk and cheese!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🛒 Here are your fresh groceries! Thank you for shopping at COSY Market!",
+          "visualAction": "🛍️ ➔ 😊",
+          "options": [
+            {
+              "label": "🙏 Thank you, Maya!",
               "next": 0
             }
           ]

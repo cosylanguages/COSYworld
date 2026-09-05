@@ -5,43 +5,84 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "🥖 Warm baguette! 😋 Do you like fresh bread?",
+      "npcLine": "🥖 Welcome to my bakery! Fresh baguettes and croissants are right out of the oven!",
       "emotion": "happy",
       "gestures": ["offer_bread"],
-      "highlights": ["baguette"],
+      "highlights": ["baguette", "croissant"],
       "speechRate": 0.8,
-      "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
-      "visualAction": "🥖 ➔ 😋",
+      "grammarCheck": "Countable vs Uncountable & Asking Prices (How much / How many)",
+      "visualAction": "🥖 ➔ 🥐 ➔ 😋",
       "playerOptions": [
         {
-          "text": "🥖 Take warm baguette!",
+          "text": "🥖 How much is a warm baguette?",
           "nextNodeId": "node_1",
           "vocabId": "baguette",
-          "grammarId": "gt_likes",
-          "rewardXP": 20,
-          "rewardQuestId": "q4_bakery_bread"
+          "grammarId": "gt_how_much_many",
+          "rewardXP": 15,
+          "rewardQuestId": "q_shop_baguette"
+        },
+        {
+          "text": "🥐 Do you have any croissants?",
+          "nextNodeId": "node_2",
+          "vocabId": "croissant",
+          "grammarId": "gt_some_any",
+          "rewardXP": 15
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     },
     {
       "id": "node_1",
-      "npcLine": "🥖 Baked fresh with organic flour! Enjoy your meal!",
+      "npcLine": "🪙 A warm baguette is 10 coins. How many baguettes would you like?",
+      "emotion": "happy",
+      "gestures": ["explain"],
+      "highlights": ["baguette"],
+      "speechRate": 0.8,
+      "grammarCheck": "How many baguettes (Countable Plural)",
+      "visualAction": "🥖 ➔ 🪙 10",
+      "playerOptions": [
+        {
+          "text": "🥖 I would like one baguette, please!",
+          "nextNodeId": "node_3",
+          "vocabId": "baguette",
+          "grammarId": "gt_countable_uncountable",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🥐 Yes! I have some fresh croissants for 5 coins each!",
       "emotion": "happy",
       "gestures": ["offer_bread"],
+      "highlights": ["croissant"],
+      "speechRate": 0.8,
+      "grammarCheck": "Quantifier 'some' with plural noun",
+      "visualAction": "🥐 ➔ 🪙 5",
+      "playerOptions": [
+        {
+          "text": "🥐 I will take some croissants!",
+          "nextNodeId": "node_3",
+          "vocabId": "croissant",
+          "grammarId": "gt_some_any",
+          "rewardXP": 15
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🥖 Thank you! Enjoy your fresh baked goods!",
+      "emotion": "happy",
+      "gestures": ["nod"],
       "highlights": [],
       "speechRate": 0.8,
-      "grammarCheck": "Adjectives",
+      "grammarCheck": "Polite Exchange",
       "visualAction": "😋 ➔ 👍",
       "playerOptions": [
         {
-          "text": "😋 Yum!",
+          "text": "👍 Thank you Lucas!",
           "nextNodeId": "node_0"
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     }
   ]
 }

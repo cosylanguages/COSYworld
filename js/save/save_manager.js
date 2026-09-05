@@ -27,6 +27,7 @@ export class SaveManager {
             currentLang: 'en',
             xp: 0,
             citizenLvl: 1,
+            coins: 100,
             visitedLocations: new Set(['apartment_living']),
             discoveredObjects: new Set(),
             completedQuests: new Set(),
@@ -70,6 +71,7 @@ export class SaveManager {
                 ...defaultState,
                 xp: typeof parsed.xp === 'number' ? parsed.xp : 0,
                 citizenLvl: typeof parsed.citizenLvl === 'number' ? parsed.citizenLvl : 1,
+                coins: typeof parsed.coins === 'number' ? parsed.coins : 100,
                 currentLocationId: parsed.currentLocationId || defaultState.currentLocationId,
                 currentLang: parsed.currentLang || defaultState.currentLang,
                 visitedLocations: new Set(parsed.visitedLocations || [parsed.currentLocationId || 'apartment_living']),
@@ -99,6 +101,7 @@ export class SaveManager {
         const dataToSave = {
             xp: state.xp,
             citizenLvl: state.citizenLvl,
+            coins: state.coins !== undefined ? state.coins : 100,
             currentLocationId: state.currentLocationId,
             currentLang: state.currentLang,
             visitedLocations: Array.from(state.visitedLocations || []),

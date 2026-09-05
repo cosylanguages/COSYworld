@@ -1,0 +1,88 @@
+{
+  "npcId": "shopkeeper_maya",
+  "sceneId": "fruit_market",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🍎 Hello! Welcome to COSY Market! Are you looking for any fresh produce or groceries today?",
+      "emotion": "happy",
+      "gestures": ["wave"],
+      "highlights": ["apple", "banana", "milk"],
+      "speechRate": 0.8,
+      "grammarCheck": "Quantifiers (Some / Any) & Asking Prices (How much / How many)",
+      "visualAction": "🍎 ➔ 🍌 ➔ 🥛",
+      "playerOptions": [
+        {
+          "text": "🛒 Do you have any fresh apples and bananas?",
+          "nextNodeId": "node_1",
+          "vocabId": "apple",
+          "grammarId": "gt_some_any",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch5_shopping_list"
+        },
+        {
+          "text": "💰 How much are the apples?",
+          "nextNodeId": "node_2",
+          "vocabId": "apple",
+          "grammarId": "gt_how_much_many",
+          "rewardXP": 15
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🍎 Yes, I have some sweet red apples for 3 coins and yellow bananas for 4 coins! How many do you need?",
+      "emotion": "excited",
+      "gestures": ["show_item"],
+      "highlights": ["apple", "banana"],
+      "speechRate": 0.8,
+      "grammarCheck": "How many + Countable Nouns",
+      "visualAction": "🍎 🪙3 ➔ 🍌 🪙4",
+      "playerOptions": [
+        {
+          "text": "🛍️ I'll buy some apples and bananas!",
+          "nextNodeId": "node_3",
+          "vocabId": "apple",
+          "grammarId": "gt_some_any",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "💰 Red apples are 3 coins each, and milk is 6 coins. How much money do you want to spend?",
+      "emotion": "happy",
+      "gestures": ["explain"],
+      "highlights": ["apple", "milk"],
+      "speechRate": 0.8,
+      "grammarCheck": "How much + Price / Uncountable Nouns",
+      "visualAction": "🪙 ➔ 🛒",
+      "playerOptions": [
+        {
+          "text": "🥛 I'll take some milk and cheese!",
+          "nextNodeId": "node_3",
+          "vocabId": "milk",
+          "grammarId": "gt_countable_uncountable",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🛒 Here are your fresh groceries! Thank you for shopping at COSY Market!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Shopping Complete",
+      "visualAction": "🛍️ ➔ 😊",
+      "playerOptions": [
+        {
+          "text": "🙏 Thank you, Maya!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    }
+  ]
+}

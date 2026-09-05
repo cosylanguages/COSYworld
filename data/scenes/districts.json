@@ -1886,12 +1886,22 @@
       "bag",
       "scale"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "shopkeeper_maya",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "shopkeeper_maya"
+    ],
     "objects": [
-      "fridge",
-      "plant",
-      "bookshelf"
+      "shopping_basket",
+      "shopping_cart",
+      "milk",
+      "cheese",
+      "coins_purse"
     ],
     "chapters": [
       "ch5"
@@ -1978,13 +1988,22 @@
       "market stall",
       "paper bag"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "shopkeeper_maya",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "shopkeeper_maya"
+    ],
     "objects": [
+      "apple",
+      "banana",
+      "orange",
       "plant",
-      "balcony_plant",
-      "bench",
-      "flower_bed"
+      "bench"
     ],
     "chapters": [
       "ch5"
@@ -2074,10 +2093,11 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "shirt",
+      "dress_rack",
+      "jacket",
       "bathroom_mirror",
-      "lamp",
-      "plant",
-      "desk"
+      "lamp"
     ],
     "chapters": [
       "ch5"
@@ -2167,11 +2187,11 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "novel_stack",
+      "dictionary_book",
+      "paper_notebook",
       "bookshelf",
-      "desk",
-      "lamp",
-      "coffee_table",
-      "plant"
+      "desk"
     ],
     "chapters": [
       "ch5"
