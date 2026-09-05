@@ -213,21 +213,22 @@
       "ru": "Прихожая квартиры"
     },
     "viewBox": "0 0 800 500",
+    "backgroundImage": "assets/images/scenes/apartment_entrance.webp",
     "roads": [
       { "x": 0, "y": 340, "width": 800, "height": 160, "type": "wooden_floor" }
     ],
     "buildings": [
-      { "id": "front_door_structure", "x": 280, "y": 120, "width": 240, "height": 220, "color": "#92400e", "label": "Apartment Door #101 🚪" }
+      { "id": "front_door_structure", "x": 280, "y": 120, "width": 240, "height": 220, "color": "transparent", "label": "Apartment Door #101 🚪" }
     ],
     "doors": [
       { "targetId": "hallway", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Hallway 🚶", "fr": "Couloir 🚶", "it": "Corridoio 🚶", "es": "Pasillo 🚶", "de": "Flur 🚶", "ru": "Коридор 🚶" } },
       { "targetId": "apartment_living", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Living Room 🛋️", "fr": "Salon 🛋️", "it": "Salotto 🛋️", "es": "Salón 🛋️", "de": "Wohnzimmer 🛋️", "ru": "Гостиная 🛋️" } }
     ],
     "npcSpawns": [
-      { "npcId": "james_york", "x": 200, "y": 300 }
+      { "npcId": "james_york", "x": 480, "y": 275 }
     ],
     "npcs": ["james_york"],
-    "objects": ["apartment_door", "keyhole", "welcome_mat"]
+    "objects": ["apartment_door", "keyhole", "welcome_mat", "wall_mailboxes", "bicycles", "staircase", "elevator", "security_camera", "apartment_door_number", "coat_rack", "shoe_rack", "wicker_basket", "key"]
   },
   "apartment_living": {
     "id": "apartment_living",
