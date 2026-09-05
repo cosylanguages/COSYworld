@@ -1780,6 +1780,227 @@
         "locationId": "language_classroom",
         "action": "speak"
       }
+    ],
+    "nextQuestId": "q_ch9_buy_tickets"
+  },
+  {
+    "id": "q_ch9_buy_tickets",
+    "chapter": "ch9",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "🎟️ Buy City Admission Tickets",
+    "description": "Buy admission tickets for the museum or cinema using coins from Oliver the ticket clerk.",
+    "difficulty": "A1",
+    "NPC": "ticket_clerk_oliver",
+    "requirements": {
+      "prerequisiteQuest": "q_ch8_study_together",
+      "targetObjects": [
+        "museum_ticket"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch8_study_together"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Purchase a museum admission ticket (`museum_ticket`) from Oliver",
+        "target": "museum_ticket"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Buy museum_ticket",
+        "targetObjects": [
+          "museum_ticket"
+        ],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 85,
+      "vocabulary": [
+        "ticket",
+        "museum",
+        "cinema",
+        "entrance"
+      ],
+      "grammar": "gt_past_simple"
+    },
+    "rewards": {
+      "xp": 85,
+      "vocabulary": [
+        "ticket",
+        "museum",
+        "cinema",
+        "entrance"
+      ],
+      "grammar": "gt_past_simple"
+    },
+    "dialogues": {
+      "start": "Visit the museum or cinema box office and purchase admission tickets with coins!",
+      "progress": "Buy a museum or cinema ticket.",
+      "complete": "Admission ticket acquired!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "action": "shop"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "museum",
+        "hotspotId": "museum_ticket",
+        "action": "buy"
+      }
+    ],
+    "nextQuestId": "q_ch9_visit_landmarks"
+  },
+  {
+    "id": "q_ch9_visit_landmarks",
+    "chapter": "ch9",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🏛️ Discover City Landmarks",
+    "description": "Explore civic landmarks across town: museum, cinema, town hall, and train station.",
+    "difficulty": "A1",
+    "NPC": "ticket_clerk_oliver",
+    "requirements": {
+      "prerequisiteQuest": "q_ch9_buy_tickets",
+      "targetLocation": "town_hall"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch9_buy_tickets"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the Town Hall (`town_hall`) and inspect the town archives (`town_archive_book`)",
+        "target": "town_hall"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Discover city landmarks in Civic Quarter",
+        "targetLocation": "town_hall",
+        "targetObjects": [
+          "town_archive_book"
+        ],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": [
+        "landmark",
+        "history",
+        "archive",
+        "statue"
+      ],
+      "grammar": "gt_time_expressions"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": [
+        "landmark",
+        "history",
+        "archive",
+        "statue"
+      ],
+      "grammar": "gt_time_expressions"
+    },
+    "dialogues": {
+      "start": "Tour the town hall and train station to discover historic city landmarks!",
+      "progress": "Inspect historic archives at the town hall.",
+      "complete": "Landmarks discovered!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_hall",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch9_city_historian"
+  },
+  {
+    "id": "q_ch9_city_historian",
+    "chapter": "ch9",
+    "category": "conversation",
+    "type": "conversation",
+    "title": "📜 Master City Historian",
+    "description": "Share past travel experiences using Past Simple and Past Time Expressions with Diana Voyager to complete Chapter 9.",
+    "difficulty": "A1",
+    "NPC": "diana_voyager",
+    "requirements": {
+      "prerequisiteQuest": "q_ch9_visit_landmarks",
+      "targetNpc": "diana_voyager"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch9_visit_landmarks"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with Diana Voyager using Past Simple tense and past time expressions",
+        "target": "diana_voyager"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "conversation",
+        "description": "Converse with Diana Voyager using Past Simple narrative",
+        "targetNpc": "diana_voyager",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "yesterday",
+        "ago",
+        "visited",
+        "arrived"
+      ],
+      "grammar": "gt_past_simple"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "yesterday",
+        "ago",
+        "visited",
+        "arrived"
+      ],
+      "grammar": "gt_past_simple"
+    },
+    "dialogues": {
+      "start": "Talk with voyager Diana Voyager about yesterday's landmark visits and past travels!",
+      "progress": "Share past simple travel stories.",
+      "complete": "Chapter 9 Complete! You are a master city explorer and historian!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "diana_voyager",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "town_hall",
+        "action": "speak"
+      }
     ]
   },
   {

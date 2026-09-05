@@ -1,0 +1,86 @@
+{
+  "npcId": "ticket_clerk_oliver",
+  "sceneId": "museum",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🎟️ Welcome! I am Oliver. Opening hours are 9:00 to 18:00! Would you like to buy an admission ticket?",
+      "emotion": "happy",
+      "gestures": ["welcome"],
+      "highlights": ["museum_ticket", "sculpture_statue"],
+      "speechRate": 0.8,
+      "grammarCheck": "Past Simple & Ticket Purchasing",
+      "visualAction": "🎟️ ➔ 🪙",
+      "playerOptions": [
+        {
+          "text": "🎟️ How much is a museum admission ticket?",
+          "nextNodeId": "node_1",
+          "vocabId": "museum_ticket",
+          "grammarId": "gt_past_simple",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch9_buy_tickets"
+        },
+        {
+          "text": "📜 Tell me about the city's history!",
+          "nextNodeId": "node_2",
+          "vocabId": "town_archive_book",
+          "grammarId": "gt_time_expressions",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🎟️ Museum tickets are 15 coins and cinema tickets are 12 coins! Yesterday, many visitors visited our historic exhibits!",
+      "emotion": "excited",
+      "gestures": ["show_ticket"],
+      "highlights": ["museum_ticket"],
+      "speechRate": 0.8,
+      "grammarCheck": "Past Simple & Time Expressions ('Yesterday', 'visited')",
+      "visualAction": "🏛️ 🪙 15 ➔ 🎬 🪙 12",
+      "playerOptions": [
+        {
+          "text": "🎟️ I will buy a museum ticket, please!",
+          "nextNodeId": "node_3",
+          "vocabId": "museum_ticket",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🏛️ Our town hall opened in 1895, and the train station opened 50 years ago! Yesterday, a voyager arrived on the morning train!",
+      "emotion": "happy",
+      "gestures": ["explain"],
+      "highlights": ["sculpture_statue"],
+      "speechRate": 0.8,
+      "grammarCheck": "Past Simple Regular & Irregular Verbs ('opened', 'arrived')",
+      "visualAction": "🏛️ 1895 ➔ 🚆 50 years ago",
+      "playerOptions": [
+        {
+          "text": "🚆 I visited the town hall archives earlier!",
+          "nextNodeId": "node_3",
+          "grammarId": "gt_past_simple",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🎫 Here is your admission ticket! Enjoy exploring COSY Town's historic landmarks!",
+      "emotion": "happy",
+      "gestures": ["hand_ticket"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Ticket Handoff Complete",
+      "visualAction": "🎫 ➔ ⭐",
+      "playerOptions": [
+        {
+          "text": "🙏 Thank you, Oliver!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    }
+  ]
+}

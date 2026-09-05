@@ -34,6 +34,7 @@ export class SaveManager {
             activeQuests: new Set(['q1_key_door']),
             unlockedGrammar: new Set(['gt_greetings']),
             unlockedRecipes: new Set(['recipe_baguette']),
+            discoveredLandmarks: new Set(),
             completedExercises: new Set(),
             npcRelationships: {
                 james_york: 0,
@@ -81,6 +82,7 @@ export class SaveManager {
                 activeQuests: new Set(parsed.activeQuests || defaultState.activeQuests),
                 unlockedGrammar: new Set(parsed.unlockedGrammar || defaultState.unlockedGrammar),
                 unlockedRecipes: new Set(parsed.unlockedRecipes || defaultState.unlockedRecipes),
+                discoveredLandmarks: new Set(parsed.discoveredLandmarks || []),
                 completedExercises: new Set(parsed.completedExercises || []),
                 npcRelationships: parsed.npcRelationships || defaultState.npcRelationships,
                 activeTab: parsed.activeTab || defaultState.activeTab,
@@ -112,6 +114,7 @@ export class SaveManager {
             activeQuests: Array.from(state.activeQuests || []),
             unlockedGrammar: Array.from(state.unlockedGrammar || []),
             unlockedRecipes: Array.from(state.unlockedRecipes || []),
+            discoveredLandmarks: Array.from(state.discoveredLandmarks || []),
             completedExercises: Array.from(state.completedExercises || []),
             npcRelationships: state.npcRelationships,
             activeTab: state.activeTab,

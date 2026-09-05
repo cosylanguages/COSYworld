@@ -4756,14 +4756,21 @@
       "camera",
       "gift shop"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "ticket_clerk_oliver"
+    ],
     "objects": [
-      "clock_tower",
+      "museum_ticket",
+      "sculpture_statue",
       "bench",
-      "window",
-      "plant",
-      "bookshelf"
+      "window"
     ],
     "chapters": [
       "ch9"
@@ -4851,13 +4858,21 @@
       "audience",
       "exit"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "ticket_clerk_oliver"
+    ],
     "objects": [
-      "coffee_table",
+      "cinema_ticket",
+      "movie_poster",
       "lamp",
-      "window",
-      "plant"
+      "window"
     ],
     "chapters": [
       "ch9"
@@ -4945,14 +4960,21 @@
       "notice board",
       "entrance"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "diana_voyager",
+        "x": 550,
+        "y": 290
+      }
+    ],
+    "npcs": [
+      "diana_voyager"
+    ],
     "objects": [
+      "town_archive_book",
       "desk",
       "lamp",
-      "window",
-      "bookshelf",
-      "clock_tower"
+      "window"
     ],
     "chapters": [
       "ch9"
@@ -5040,14 +5062,27 @@
       "shop",
       "departure"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "x": 300,
+        "y": 280
+      },
+      {
+        "npcId": "diana_voyager",
+        "x": 520,
+        "y": 290
+      }
+    ],
+    "npcs": [
+      "ticket_clerk_oliver",
+      "diana_voyager"
+    ],
     "objects": [
+      "train_ticket",
+      "train_schedule_board",
       "bench",
-      "window",
-      "desk",
-      "lamp",
-      "clock_tower"
+      "window"
     ],
     "chapters": [
       "ch9",

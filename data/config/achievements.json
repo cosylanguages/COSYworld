@@ -207,5 +207,16 @@
     "unlockCondition": {
       "questId": "q_ch8_study_together"
     }
+  },
+  {
+    "id": "ach_ch9_city_explorer",
+    "title": "🏛️ City Explorer & Historian",
+    "description": "Buy admission tickets, discover historic civic landmarks, master Past Simple and time expressions, and complete Chapter 9.",
+    "category": "chapter_9",
+    "icon": "🏛️",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch9_city_historian"
+    }
   }
 ]

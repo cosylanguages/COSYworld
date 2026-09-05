@@ -1232,6 +1232,129 @@
       ]
     }
   },
+  "ticket_clerk_oliver": {
+    "id": "ticket_clerk_oliver",
+    "name": "Oliver",
+    "portrait": "👨‍✈️",
+    "avatar": "👨‍✈️",
+    "role": "City Guide & Ticket Clerk",
+    "occupation": "Ticket Clerk & Tour Guide",
+    "teachingRole": "Cultural Admission & Past Simple Narrative Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "public_square",
+    "position3D": {
+      "x": 350,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-B",
+    "dailySchedule": [
+      {
+        "time": "09:00",
+        "location": "museum",
+        "activity": "Selling museum tickets & giving tours"
+      },
+      {
+        "time": "14:00",
+        "location": "cinema",
+        "activity": "Managing cinema ticket box office"
+      },
+      {
+        "time": "18:00",
+        "location": "train_station",
+        "activity": "Assisting train passengers"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch9_buy_tickets"
+    ],
+    "quests": [
+      "q_ch9_buy_tickets"
+    ],
+    "shopInventory": [
+      {
+        "id": "museum_ticket",
+        "name": "Museum Ticket",
+        "price": 15,
+        "emoji": "🎟️"
+      },
+      {
+        "id": "cinema_ticket",
+        "name": "Cinema Ticket",
+        "price": 12,
+        "emoji": "🎟️"
+      },
+      {
+        "id": "train_ticket",
+        "name": "Train Ticket",
+        "price": 20,
+        "emoji": "🎫"
+      }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🎟️ Welcome! I am Oliver. Opening hours are 9:00 to 18:00! Would you like to buy an admission ticket?",
+          "visualAction": "🎟️ ➔ 🪙",
+          "grammarCheck": "Past Simple & Ticket Purchasing",
+          "options": [
+            {
+              "label": "🎟️ How much is a museum admission ticket?",
+              "next": 1,
+              "rewardXP": 15,
+              "questId": "q_ch9_buy_tickets"
+            },
+            {
+              "label": "📜 Tell me about the city's history!",
+              "next": 2,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🎟️ Museum tickets are 15 coins and cinema tickets are 12 coins! Yesterday, many visitors visited our historic exhibits!",
+          "visualAction": "🏛️ 🪙 15 ➔ 🎬 🪙 12",
+          "options": [
+            {
+              "label": "🎟️ I will buy a museum ticket, please!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🏛️ Our town hall opened in 1895, and the train station opened 50 years ago! Yesterday, a voyager arrived on the morning train!",
+          "visualAction": "🏛️ 1895 ➔ 🚆 50 years ago",
+          "options": [
+            {
+              "label": "🚆 I visited the town hall archives earlier!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🎫 Here is your admission ticket! Enjoy exploring COSY Town's historic landmarks!",
+          "visualAction": "🎫 ➔ ⭐",
+          "options": [
+            {
+              "label": "🙏 Thank you, Oliver!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
   "neighbour_leo": {
     "id": "neighbour_leo",
     "name": "Leo",
