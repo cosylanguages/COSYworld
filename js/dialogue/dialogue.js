@@ -69,7 +69,8 @@ export class DialogueManager {
             busy: '💼',
             neutral: '😐'
         };
-        const emotionEmoji = emotionPortraits[dlg.emotion || npc.currentMood] || npc.portrait || npc.avatar || '👤';
+        const emotionKey = dlg.emotion || npc.currentMood;
+        const emotionEmoji = npc.expressions?.[emotionKey] || emotionPortraits[emotionKey] || npc.portrait || npc.avatar || '👤';
 
         // Determine AI reaction greeting if at root node
         const aiReaction = npcAIEngine ? npcAIEngine.getReactionToPlayer(npcId, state) : null;

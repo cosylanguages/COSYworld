@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "sceneId": "apartment_kitchen",
+  "canvas": { "width": 800, "height": 500 },
+  "layers": [
+    {
+      "id": "background",
+      "file": "background.webp",
+      "zIndex": 0,
+      "required": true,
+      "fallback": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1920&q=82"
+    },
+    {
+      "id": "counter",
+      "file": "counter.webp",
+      "zIndex": 10,
+      "required": true
+    },
+    {
+      "id": "window_light",
+      "file": "window_light.webp",
+      "zIndex": 20,
+      "opacity": 0.45,
+      "required": false
+    },
+    {
+      "id": "steam",
+      "file": "steam.webp",
+      "zIndex": 30,
+      "opacity": 0.7,
+      "animation": "float",
+      "required": false
+    }
+  ],
+  "objectsPath": "objects/",
+  "hotspotsFile": "hotspots.json"
+}

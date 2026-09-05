@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "sceneId": "apartment_kitchen",
+  "coordinateSpace": "800x500",
+  "hotspots": [
+    {
+      "id": "apple",
+      "vocabularyId": "apple",
+      "asset": "assets/images/kitchen/objects/apple.webp",
+      "x": 170,
+      "y": 300,
+      "width": 70,
+      "height": 70,
+      "labelX": 205,
+      "labelY": 290
+    },
+    {
+      "id": "cup",
+      "vocabularyId": "cup",
+      "asset": "assets/images/kitchen/objects/cup.webp",
+      "x": 430,
+      "y": 275,
+      "width": 60,
+      "height": 60,
+      "labelX": 460,
+      "labelY": 265
+    },
+    {
+      "id": "knife",
+      "vocabularyId": "knife",
+      "asset": "assets/images/kitchen/objects/knife.webp",
+      "x": 530,
+      "y": 275,
+      "width": 110,
+      "height": 35,
+      "labelX": 585,
+      "labelY": 265
+    },
+    {
+      "id": "spoon",
+      "vocabularyId": "spoon",
+      "asset": "assets/images/kitchen/objects/spoon.webp",
+      "x": 645,
+      "y": 275,
+      "width": 60,
+      "height": 35,
+      "labelX": 675,
+      "labelY": 265
+    },
+    {
+      "id": "bread",
+      "vocabularyId": "baguette",
+      "asset": "assets/images/kitchen/objects/bread.webp",
+      "x": 55,
+      "y": 300,
+      "width": 130,
+      "height": 55,
+      "labelX": 120,
+      "labelY": 290
+    },
+    {
+      "id": "milk",
+      "vocabularyId": "milk",
+      "asset": "assets/images/kitchen/objects/milk.webp",
+      "x": 700,
+      "y": 270,
+      "width": 55,
+      "height": 100,
+      "labelX": 728,
+      "labelY": 260
+    }
+  ]
+}

@@ -131,6 +131,7 @@
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
+  animation: panelReveal 560ms 120ms ease-out both;
 }
 
 .cw-hud-nav {

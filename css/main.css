@@ -1,41 +1,44 @@
 /* COSY World — Modern Responsive UI Stylesheet */
 
 :root {
-  /* Blue & White COSY Color Palette */
-  --blue-primary: #2563eb;
-  --blue-hover: #1d4ed8;
-  --blue-light: #eff6ff;
-  --blue-soft: #dbeafe;
-  --blue-border: #bfdbfe;
+  /* Warm life-sim palette: sage, paper, terracotta and ink */
+  --blue-primary: #356859;
+  --blue-hover: #274c3a;
+  --blue-light: #eef4ed;
+  --blue-soft: #dcebdd;
+  --blue-border: #b8ceb8;
 
-  --bg-app: #f8fafc;
-  --surface: #ffffff;
-  --surface-glass: rgba(255, 255, 255, 0.82);
-  --border-glass: rgba(255, 255, 255, 0.6);
-  --border-subtle: #e2e8f0;
+  --bg-app: #f2eee6;
+  --surface: #fffdf8;
+  --surface-glass: rgba(255, 253, 248, 0.86);
+  --border-glass: rgba(255, 253, 248, 0.7);
+  --border-subtle: #ded8cb;
 
-  --text-main: #0f172a;
-  --text-muted: #64748b;
+  --text-main: #2f302b;
+  --text-muted: #756f63;
   --text-inverse: #ffffff;
 
-  --accent-teal: #0d9488;
-  --accent-amber: #d97706;
-  --accent-rose: #e11d48;
+  --accent-teal: #5c8d78;
+  --accent-amber: #d8874a;
+  --accent-rose: #c96a58;
+  --scene-wall: #f2e7d5;
+  --scene-floor: #d8c4a8;
+  --scene-line: #bca98f;
 
   /* Typography */
   --font-heading: 'Fraunces', -apple-system, BlinkMacSystemFont, Georgia, serif;
   --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
 
   /* Modern Geometry & Soft Layered Shadows */
-  --radius-xl: 24px;
-  --radius-lg: 18px;
-  --radius-md: 12px;
+  --radius-xl: 18px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
   --radius-pill: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
-  --shadow-card: 0 12px 32px -4px rgba(37, 99, 235, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
-  --shadow-hover: 0 20px 40px -6px rgba(37, 99, 235, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
-  --shadow-modal: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  --shadow-sm: 0 2px 8px rgba(70, 58, 42, 0.06);
+  --shadow-card: 0 14px 30px -8px rgba(70, 58, 42, 0.13), 0 3px 10px rgba(70, 58, 42, 0.05);
+  --shadow-hover: 0 20px 40px -10px rgba(70, 58, 42, 0.2), 0 8px 16px -4px rgba(70, 58, 42, 0.08);
+  --shadow-modal: 0 25px 50px -12px rgba(47, 48, 43, 0.28);
 }
 
 * {
@@ -47,8 +50,9 @@
 body.game-standalone {
   background-color: var(--bg-app);
   background-image:
-    radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.5) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(239, 246, 255, 0.8) 0px, transparent 50%);
+    linear-gradient(rgba(255, 253, 248, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 111, 87, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: var(--font-body);
@@ -124,6 +128,7 @@ body.game-standalone {
   flex-wrap: wrap;
   gap: 1.25rem;
   margin-bottom: 1.5rem;
+  animation: panelReveal 420ms ease-out both;
 }
 
 .cw-viewport-layout {
@@ -148,6 +153,7 @@ body.game-standalone {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
+  animation: panelReveal 520ms 70ms ease-out both;
 }
 
 .cw-stage-header {
@@ -157,6 +163,29 @@ body.game-standalone {
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.cw-stage-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 4.5rem;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--accent-amber);
+}
+
+@keyframes panelReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cw-district-title {
@@ -172,10 +201,10 @@ body.game-standalone {
   width: 100%;
   height: auto;
   aspect-ratio: 8 / 5;
-  background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+  background: #ece6d9;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
-  box-shadow: inset 0 2px 6px rgba(15, 23, 42, 0.04);
+  box-shadow: inset 0 2px 8px rgba(70, 58, 42, 0.1), 0 8px 20px rgba(70, 58, 42, 0.08);
 }
 
 /* Hotspots & Interactivity */
@@ -195,8 +224,87 @@ body.game-standalone {
   100% { filter: drop-shadow(0 0 2px #3b82f6); }
 }
 
+.cw-scene-layer-float {
+  animation: sceneLayerFloat 3.8s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes sceneLayerFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(-5px); opacity: 0.8; }
+}
+
 .cw-hotspot.pulse {
   animation: hotspotGlow 2.2s infinite ease-in-out;
+}
+
+.cw-building-group {
+  filter: drop-shadow(0 7px 5px rgba(70, 58, 42, 0.22));
+  transition: filter 180ms ease, transform 180ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cw-building-group:hover {
+  filter: drop-shadow(0 11px 8px rgba(70, 58, 42, 0.3));
+  transform: translateY(-2px);
+}
+
+.cw-door-portal {
+  cursor: pointer;
+  filter: drop-shadow(0 4px 3px rgba(70, 58, 42, 0.2));
+}
+
+.cw-npc-hotspot {
+  cursor: pointer;
+  filter: drop-shadow(0 5px 4px rgba(70, 58, 42, 0.22));
+  transition: filter 180ms ease, transform 180ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cw-npc-hotspot:hover,
+.cw-npc-hotspot:focus {
+  filter: drop-shadow(0 9px 7px rgba(70, 58, 42, 0.32));
+  transform: translateY(-3px);
+}
+
+.cw-obj-hotspot .hit-box {
+  fill: rgba(53, 104, 89, 0.08);
+  stroke: rgba(53, 104, 89, 0.35);
+  stroke-dasharray: 5 4;
+  transition: fill 180ms ease, stroke 180ms ease;
+}
+
+.cw-obj-hotspot:hover .hit-box,
+.cw-obj-hotspot:focus .hit-box {
+  fill: rgba(216, 135, 74, 0.18);
+  stroke: var(--accent-amber);
+}
+
+.cw-obj-hotspot:focus,
+.cw-npc-hotspot:focus,
+.cw-door-portal:focus,
+.cw-building-group:focus {
+  outline: none;
+}
+
+.cw-obj-hotspot:focus .hit-box,
+.cw-npc-hotspot:focus .npc-hit,
+.cw-door-portal:focus rect:first-child {
+  stroke: var(--accent-amber);
+  stroke-width: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Mobile Responsiveness */

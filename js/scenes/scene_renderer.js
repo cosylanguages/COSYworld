@@ -141,10 +141,34 @@ export class SceneRenderer {
 
             // Background Wall & Base Floor
             html += `
-                <rect x="0" y="0" width="800" height="340" fill="#f5f0eb" />
-                <rect x="0" y="340" width="800" height="160" fill="#e8ded1" />
-                <line x1="0" y1="340" x2="800" y2="340" stroke="#d4c5b3" stroke-width="4" />
+                <rect x="0" y="0" width="800" height="340" fill="var(--scene-wall, #f2e7d5)" />
+                <rect x="0" y="340" width="800" height="160" fill="var(--scene-floor, #d8c4a8)" />
+                <line x1="0" y1="340" x2="800" y2="340" stroke="var(--scene-line, #bca98f)" stroke-width="4" />
             `;
+
+            if (dist.backgroundImage) {
+                const backgroundImage = dist.backgroundImage.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+                html += `
+                    <image href="${backgroundImage}" x="0" y="0" width="800" height="500" preserveAspectRatio="xMidYMid slice" opacity="0.92" pointer-events="none" />
+                    <rect x="0" y="0" width="800" height="500" fill="rgba(255, 248, 235, 0.16)" pointer-events="none" />
+                `;
+            }
+
+            if (Array.isArray(dist.imageLayers)) {
+                dist.imageLayers
+                    .slice()
+                    .sort((first, second) => (first.zIndex ?? 0) - (second.zIndex ?? 0))
+                    .forEach(layer => {
+                        const source = String(layer.src || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+                        if (!source) return;
+                        const fallback = layer.fallback
+                            ? String(layer.fallback).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&apos;')
+                            : '';
+                        const fallbackAttr = fallback ? ` onerror="this.setAttribute('href', '${fallback}')"` : '';
+                        const layerClass = layer.animation === 'float' ? 'cw-scene-layer cw-scene-layer-float' : 'cw-scene-layer';
+                        html += `<image class="${layerClass}" href="${source}"${fallbackAttr} x="0" y="0" width="800" height="500" preserveAspectRatio="xMidYMid slice" opacity="${layer.opacity ?? 1}" pointer-events="none" />`;
+                    });
+            }
 
             // Render Roads dynamically from JSON
             if (dist.roads) {
@@ -190,7 +214,7 @@ export class SceneRenderer {
                     html += `
                         <g class="cw-door-portal" tabindex="0" role="button" aria-label="Enter ${doorLabel}" onclick="COSY_WORLD.switchLocation('${d.targetId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.switchLocation('${d.targetId}');}">
                             <rect x="${d.x}" y="${d.y}" width="${d.width}" height="${d.height}" rx="6" />
-                            <rect x="${d.x + 5}" y="${d.labelY || d.y - 25}" width="${d.width - 10}" height="22" rx="4" fill="#1e293b" />
+                            <rect x="${d.x + 5}" y="${d.labelY || d.y - 25}" width="${d.width - 10}" height="22" rx="4" fill="var(--text-main, #2f302b)" />
                             <text x="${d.x + d.width / 2}" y="${(d.labelY || d.y - 25) + 15}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${doorLabel}</text>
                         </g>
                     `;
@@ -231,7 +255,7 @@ export class SceneRenderer {
                 const posY = spawn.y || (npc.position3D ? npc.position3D.y : 300);
                 const fp = state.npcRelationships[spawn.npcId] || npc.friendshipPoints || 0;
                 const lvl = Math.floor(fp / 50) + 1;
-                const moodIcon = npc.currentMood === 'happy' ? '😊' : (npc.currentMood === 'excited' ? '🔥' : '💬');
+                const moodIcon = npc.expressions?.[npc.currentMood] || (npc.currentMood === 'happy' ? '😊' : (npc.currentMood === 'excited' ? '🔥' : '💬'));
 
                 html += `
                     <g class="cw-npc-hotspot" tabindex="0" role="button" aria-label="Talk to ${npc.name}" onclick="COSY_WORLD.interactNPC('${spawn.npcId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.interactNPC('${spawn.npcId}');}">
@@ -240,7 +264,7 @@ export class SceneRenderer {
 
                         <text x="${posX + 25}" y="${posY - 20}" font-size="18" text-anchor="middle">${moodIcon}</text>
 
-                        <rect x="${posX - 40}" y="${posY + 38}" width="80" height="20" rx="10" fill="#f59e0b" />
+                        <rect x="${posX - 40}" y="${posY + 38}" width="80" height="20" rx="10" fill="var(--accent-amber, #d8874a)" />
                         <text x="${posX}" y="${posY + 52}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${npc.name} Lvl ${lvl}</text>
                     </g>
                 `;
