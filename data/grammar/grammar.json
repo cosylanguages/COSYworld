@@ -693,5 +693,255 @@
       "level": 2,
       "discoveredObjects": ["baguette"]
     }
+  },
+  {
+    "id": "gt_prepositions_place",
+    "title": "Prepositions of Place (Next to / Behind / Between) 📍",
+    "difficulty": "A1",
+    "rule": "Prepositions of Place describe where something or someone is relative to another object or location. Pattern: [Subject/Place] + [is/are] + [next to / behind / between / in front of] + [Landmark(s)].",
+    "examples": [
+      {
+        "text": "The pharmacy is next to the bakery. The park is behind the bus stop.",
+        "targetLang": {
+          "en": "The pharmacy is next to the bakery. The park is behind the bus stop.",
+          "fr": "La pharmacie est à côté de la boulangerie. Le parc est derrière l'arrêt de bus.",
+          "es": "La farmacia está al lado de la panadería. El parque está detrás de la parada de autobús.",
+          "it": "La farmacia è accanto alla panetteria. Il parco è dietro la fermata dell'autobus.",
+          "de": "Die Apotheke ist neben der Bäckerei. Der Park ist hinter der Bushaltestelle.",
+          "ru": "Аптека находится рядом с пекарней. Парк находится за автобусной остановкой."
+        },
+        "context": "Describing relative positions of neighbourhood places."
+      },
+      {
+        "text": "The pharmacy is between the bakery and the park.",
+        "targetLang": {
+          "en": "The pharmacy is between the bakery and the park.",
+          "fr": "La pharmacie est entre la boulangerie et le parc.",
+          "es": "La farmacia está entre la panadería y el parque.",
+          "it": "La farmacia è tra la panetteria e il parco.",
+          "de": "Die Apotheke ist zwischen der Bäckerei und dem Park.",
+          "ru": "Аптека находится между пекарней и парком."
+        },
+        "context": "Describing an object positioned between two landmarks."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_prepositions_1",
+        "type": "multiple_choice",
+        "question": "Which preposition means 'in the space separating two places'?",
+        "options": ["between", "behind", "next to"],
+        "correct": 0,
+        "explanation": "Use 'between' when something is located in the middle of two landmarks.",
+        "xpReward": 30
+      },
+      {
+        "id": "ex_prepositions_2",
+        "type": "word_order",
+        "question": "Reorder words to describe the pharmacy location:",
+        "words": ["pharmacy", "is", "The", "next to", "bakery", "the"],
+        "correctOrder": ["The", "pharmacy", "is", "next to", "the", "bakery"],
+        "explanation": "Subject + verb + preposition + direct object.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "The post office is next to the crosswalk and behind the park!",
+        "grammarUsage": "Stating spatial relative locations of neighbourhood buildings."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "street",
+      "objects": ["pharmacy_building", "post_office_building", "bench"],
+      "npcs": ["james_york", "postmaster_sam"],
+      "district": "City Centre"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Prepositions of place next to, behind, and between."
+    },
+    "unlockRequirements": {
+      "quests": ["q_ch4_navigate_town"],
+      "level": 2,
+      "discoveredObjects": ["bench"]
+    }
+  },
+  {
+    "id": "gt_imperatives_directions",
+    "title": "Imperatives & Directions (Go / Come / Turn left & right) 🧭",
+    "difficulty": "A1",
+    "rule": "Use imperative verbs (Go, Come, Turn) to ask for and give clear directions. Pattern: [Go straight] / [Come here] / [Turn left/right at + landmark].",
+    "examples": [
+      {
+        "text": "Go straight, turn left, and come to the pharmacy.",
+        "targetLang": {
+          "en": "Go straight, turn left, and come to the pharmacy.",
+          "fr": "Allez tout droit, tournez à gauche et venez à la pharmacie.",
+          "es": "Sigue recto, gira a la izquierda y ven a la farmacia.",
+          "it": "Vai dritto, gira a sinistra e vieni in farmacia.",
+          "de": "Gehen Sie geradeaus, biege nach links ab und komme zur Apotheke.",
+          "ru": "Идите прямо, поверните налево и придите в аптеку."
+        },
+        "context": "Giving step-by-step directions through the neighbourhood."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_directions_1",
+        "type": "multiple_choice",
+        "question": "Which command instructs someone to change direction to the left?",
+        "options": ["Turn left", "Go straight", "Turn right"],
+        "correct": 0,
+        "explanation": "'Turn left' directs someone to change heading to the left side.",
+        "xpReward": 30
+      },
+      {
+        "id": "ex_directions_2",
+        "type": "word_order",
+        "question": "Reorder words to give directions to the post office:",
+        "words": ["straight", "Go", "and", "turn", "right"],
+        "correctOrder": ["Go", "straight", "and", "turn", "right"],
+        "explanation": "Imperative action + direction + conjunction + turn action + direction.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "Excuse me! How do I get to the post office? — Go straight and turn right at the crosswalk!",
+        "grammarUsage": "Asking and giving directions using imperatives."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "crosswalk",
+      "objects": ["pedestrian_crossing", "traffic_light"],
+      "npcs": ["james_york"],
+      "district": "City Centre"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Imperatives and directional commands."
+    },
+    "unlockRequirements": {
+      "quests": ["q_ch4_help_npc_directions"],
+      "level": 2,
+      "discoveredObjects": ["pedestrian_crossing"]
+    }
+  },
+  {
+    "id": "gt_quantifiers_some_any",
+    "title": "Countable & Uncountable Nouns (Some / Any) 🛒",
+    "difficulty": "A1",
+    "rule": "Countable vs Uncountable Nouns: Use 'some' in positive statements with plural countable or uncountable nouns ('I would like some apples / some milk'). Use 'any' in questions and negative statements ('Do you have any cheese?' / 'I don't have any bananas').",
+    "examples": [
+      {
+        "text": "I would like some milk and some apples, but I do not have any cheese.",
+        "targetLang": {
+          "en": "I would like some milk and some apples, but I do not have any cheese.",
+          "fr": "Je voudrais du lait et des pommes, mais je n'ai pas de fromage.",
+          "es": "Quisiera algo de leche y algunas manzanas, pero no tengo nada de queso.",
+          "it": "Vorrei un po' di latte e alcune mele, ma non ho formaggio.",
+          "de": "Ich hätte gerne etwas Milch und einige Äpfel, aber ich habe keinen Käse.",
+          "ru": "Я хотел бы немного молока и несколько яблок, но у меня нет сыра."
+        },
+        "context": "Shopping for groceries at the supermarket."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_some_any_1",
+        "type": "multiple_choice",
+        "question": "Which word fills the gap in a negative sentence: 'We don't have ___ bananas left.'",
+        "options": ["any", "some", "a"],
+        "correct": 0,
+        "explanation": "Use 'any' in negative sentences and questions.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "Do you need any fresh bread or some warm croissants?",
+        "grammarUsage": "Using some and any in market shop inquiries."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "supermarket",
+      "objects": ["milk", "cheese", "apple"],
+      "npcs": ["james_york", "lucas_baker"],
+      "district": "Commercial Quarter"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Quantifiers some and any with countable and uncountable nouns."
+    },
+    "unlockRequirements": {
+      "quests": ["q_ch5_find_products"],
+      "level": 2,
+      "discoveredObjects": ["shopping_cart"]
+    }
+  },
+  {
+    "id": "gt_asking_prices",
+    "title": "Asking Prices & Quantities (How much / How many) 🏷️",
+    "difficulty": "A1",
+    "rule": "Use 'How much' for uncountable nouns and price queries ([How much is/are...] / [How much does it cost?]). Use 'How many' for countable items ([How many + plural noun + do you want?]).",
+    "examples": [
+      {
+        "text": "How much is this blue shirt? How many apples do you need?",
+        "targetLang": {
+          "en": "How much is this blue shirt? How many apples do you need?",
+          "fr": "Combien coûte cette chemise bleue ? De combien de pommes avez-vous besoin ?",
+          "es": "¿Cuánto cuesta esta camisa azul? ¿Cuántas manzanas necesitas?",
+          "it": "Quanto costa questa camicia blu? Quante mele ti servono?",
+          "de": "Wie viel kostet dieses blaue Hemd? Wie viele Äpfel brauchst du?",
+          "ru": "Сколько стоит эта синяя рубашка? Сколько яблок вам нужно?"
+        },
+        "context": "Asking shopkeepers for item prices and quantities."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_asking_prices_1",
+        "type": "multiple_choice",
+        "question": "How do you ask the price of a shirt?",
+        "options": ["How much is this shirt?", "How many is this shirt?", "How cost is this shirt?"],
+        "correct": 0,
+        "explanation": "Use 'How much is...' to ask for price.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "How much is the fresh baguette? — It costs two dollars!",
+        "grammarUsage": "Asking prices and stating costs in a shop."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "clothing_boutique",
+      "objects": ["shirt", "price_tag", "money"],
+      "npcs": ["james_york"],
+      "district": "Commercial Quarter"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Asking prices and quantities with how much and how many."
+    },
+    "unlockRequirements": {
+      "quests": ["q_ch5_ask_prices_pay"],
+      "level": 2,
+      "discoveredObjects": ["price_tag"]
+    }
   }
 ]

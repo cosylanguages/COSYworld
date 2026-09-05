@@ -722,6 +722,367 @@
         "action": "enter"
       }
     ],
+    "nextQuestId": "q_ch4_navigate_town"
+  },
+  {
+    "id": "q_ch4_navigate_town",
+    "category": "travel",
+    "type": "directions",
+    "title": "🗺️ Navigate the Town",
+    "description": "Explore City Streets, cross the crosswalk, and visit the Park in your neighbourhood.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch3_unlock_routine",
+      "targetLocation": "park"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch3_unlock_routine"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Navigate through City Streets and Crosswalk to enter the Park",
+        "target": "park"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "travel",
+        "description": "Travel to park",
+        "targetLocation": "park",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 110,
+      "vocabulary": ["park", "crosswalk", "pedestrian_crossing", "bench"],
+      "grammar": "gt_prepositions_place"
+    },
+    "rewards": {
+      "xp": 110,
+      "vocabulary": ["park", "crosswalk", "pedestrian_crossing", "bench"],
+      "grammar": "gt_prepositions_place"
+    },
+    "dialogues": {
+      "start": "Walk through City Streets, use the crosswalk, and arrive at the Park!",
+      "progress": "Walk into the Park.",
+      "complete": "Great job! You navigated to the Park!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "park",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch4_help_npc_directions"
+  },
+  {
+    "id": "q_ch4_help_npc_directions",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "🧭 Help NPCs Find Places",
+    "description": "Ask for and give directions to Claire at the Pharmacy using prepositions and directional commands.",
+    "difficulty": "A1",
+    "NPC": "pharmacist_claire",
+    "requirements": {
+      "prerequisiteQuest": "q_ch4_navigate_town",
+      "targetNpc": "pharmacist_claire"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch4_navigate_town"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Speak with Claire at the Pharmacy and give directions",
+        "target": "pharmacist_claire"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Converse with pharmacist_claire",
+        "targetNpc": "pharmacist_claire",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": ["left", "right", "straight", "turn", "pharmacy"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": ["left", "right", "straight", "turn", "pharmacy"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "dialogues": {
+      "start": "Visit the Pharmacy and help Claire with neighbourhood directions!",
+      "progress": "Talk with Claire at the Pharmacy.",
+      "complete": "You helped Claire navigate the neighbourhood!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "pharmacist_claire",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "pharmacy",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch4_unlock_city_map"
+  },
+  {
+    "id": "q_ch4_unlock_city_map",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🗺️ Unlock City Map",
+    "description": "Visit the Post Office and inspect the mailbox to unlock the full neighbourhood city map and complete Chapter 4.",
+    "difficulty": "A1",
+    "NPC": "postmaster_sam",
+    "requirements": {
+      "prerequisiteQuest": "q_ch4_help_npc_directions",
+      "targetLocation": "post_office"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch4_help_npc_directions"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Travel to the Post Office and inspect the mailbox",
+        "target": "post_office"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter post_office",
+        "targetLocation": "post_office",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 150,
+      "vocabulary": ["post_office", "mailbox", "city_hall", "bus_stop"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "rewards": {
+      "xp": 150,
+      "vocabulary": ["post_office", "mailbox", "city_hall", "bus_stop"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "dialogues": {
+      "start": "Head to the Post Office to claim the full Neighbourhood City Map!",
+      "progress": "Inspect the Post Office and talk to Sam.",
+      "complete": "Chapter 4 Complete! Neighbourhood City Map Unlocked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "postmaster_sam",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "post_office",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch5_find_products"
+  },
+  {
+    "id": "q_ch5_find_products",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "🛒 Buy Groceries & Find Products",
+    "description": "Find products and buy groceries at the Supermarket and Fruit shop.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch4_unlock_city_map",
+      "targetLocation": "supermarket"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch4_unlock_city_map"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the Supermarket and inspect the shopping cart",
+        "target": "supermarket"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Enter supermarket and find groceries",
+        "targetLocation": "supermarket",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": ["shopping_cart", "milk", "cheese", "pasta"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": ["shopping_cart", "milk", "cheese", "pasta"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "dialogues": {
+      "start": "Visit the Supermarket and start finding grocery products!",
+      "progress": "Walk into the Supermarket.",
+      "complete": "Great job! You found groceries in the Supermarket!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "supermarket",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch5_ask_prices_pay"
+  },
+  {
+    "id": "q_ch5_ask_prices_pay",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "🏷️ Ask Prices and Pay",
+    "description": "Ask price tags and practice paying with money for items at the shop.",
+    "difficulty": "A1",
+    "NPC": "lucas_baker",
+    "requirements": {
+      "prerequisiteQuest": "q_ch5_find_products",
+      "targetObjects": ["price_tag"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch5_find_products"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect price tags and practice asking prices and paying",
+        "target": "price_tag"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Inspect price_tag",
+        "targetObjects": ["price_tag"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 130,
+      "vocabulary": ["money", "price_tag", "receipt", "pay", "cost"],
+      "grammar": "gt_asking_prices"
+    },
+    "rewards": {
+      "xp": 130,
+      "vocabulary": ["money", "price_tag", "receipt", "pay", "cost"],
+      "grammar": "gt_asking_prices"
+    },
+    "dialogues": {
+      "start": "Ask how much items cost and pay with money!",
+      "progress": "Inspect the price tag at the shop.",
+      "complete": "You asked prices and paid for your items!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "lucas_baker",
+        "action": "shop"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bookstore",
+        "hotspotId": "price_tag",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch5_shopping_list"
+  },
+  {
+    "id": "q_ch5_shopping_list",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "📝 Complete Shopping Lists",
+    "description": "Fulfill full shopping lists across the Bookstore, Clothing Boutique, and Fruit Shop.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch5_ask_prices_pay",
+      "targetLocation": "bookstore"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch5_ask_prices_pay"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the Bookstore and complete your shopping list",
+        "target": "bookstore"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Enter bookstore to complete list",
+        "targetLocation": "bookstore",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 160,
+      "vocabulary": ["shirt", "book", "shopping_bag", "banana", "tomato"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "rewards": {
+      "xp": 160,
+      "vocabulary": ["shirt", "book", "shopping_bag", "banana", "tomato"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "dialogues": {
+      "start": "Complete your full shopping list across all 5 town shops!",
+      "progress": "Visit the Bookstore.",
+      "complete": "Chapter 5 Complete! You mastered Shopping!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bookstore",
+        "action": "enter"
+      }
+    ],
     "nextQuestId": "q_explore_living"
   },
   {

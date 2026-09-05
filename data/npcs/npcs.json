@@ -216,7 +216,7 @@
     "relationshipLevel": 1,
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
-    "favoritePark": "town_square",
+    "favoritePark": "park",
     "position3D": { "x": 200, "y": 300, "z": 0 },
     "voice": "en-US-Standard-C",
     "dailySchedule": [
@@ -224,39 +224,48 @@
       { "time": "07:30", "location": "apartment_bathroom", "activity": "Brushing teeth and washing face" },
       { "time": "08:00", "location": "apartment_kitchen", "activity": "Cooking breakfast and drinking tea" },
       { "time": "08:30", "location": "street", "activity": "Walking along City Avenue to work" },
-      { "time": "09:00", "location": "bus_stop", "activity": "Waiting for the morning bus" },
-      { "time": "12:00", "location": "apartment_living", "activity": "Midday rest in living room" },
+      { "time": "09:00", "location": "supermarket", "activity": "Buying groceries in supermarket" },
+      { "time": "12:00", "location": "park", "activity": "Relaxing on a park bench" },
+      { "time": "15:00", "location": "bookstore", "activity": "Browsing books in bookstore" },
       { "time": "18:00", "location": "street", "activity": "Evening stroll" }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
-    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
+    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine", "q_ch4_navigate_town", "q_ch4_help_npc_directions", "q_ch4_unlock_city_map", "q_ch5_find_products", "q_ch5_ask_prices_pay", "q_ch5_shopping_list"],
+    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine", "q_ch4_navigate_town", "q_ch4_help_npc_directions", "q_ch4_unlock_city_map", "q_ch5_find_products", "q_ch5_ask_prices_pay", "q_ch5_shopping_list"],
     "dialogues": {
       "en": [
         {
           "id": 0,
           "emotion": "happy",
-          "text": "⏰ Good morning! What time is it? I always start my day at seven o'clock!",
-          "visualAction": "⏰ Morning Routine",
-          "grammarCheck": "Present Simple & Time & Frequency",
+          "text": "🛒 Welcome to Chapter 5: Shopping! Let's go buy groceries and find products across town!",
+          "visualAction": "🛒 Shopping Tour",
+          "grammarCheck": "Quantifiers (Some / Any) & Asking Prices (How much / How many)",
           "options": [
-            { "label": "🌅 Complete morning routine!", "next": 1, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_morning_routine" },
-            { "label": "📅 Follow daily schedule", "next": 2, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_daily_schedule" }
+            { "label": "🥦 Find products & buy groceries!", "next": 1, "rewardXP": 30, "friendshipGain": 10, "questId": "q_ch5_find_products" },
+            { "label": "🏷️ Ask prices and pay for items!", "next": 2, "rewardXP": 30, "friendshipGain": 10, "questId": "q_ch5_ask_prices_pay" },
+            { "label": "📝 Complete full shopping list!", "next": 3, "rewardXP": 40, "friendshipGain": 10, "questId": "q_ch5_shopping_list" }
           ]
         },
         {
           "id": 1,
           "emotion": "excited",
-          "text": "🪥 First wake up, brush your teeth, wash, and eat breakfast in the kitchen!",
-          "visualAction": "🪥 Routine Actions",
-          "options": [{ "label": "🚌 Walk to the bus stop!", "next": 0, "questId": "q_ch3_unlock_routine" }]
+          "text": "🍎 Visit the supermarket, fruit shop, clothing boutique, and bookstore to find products!",
+          "visualAction": "🛒 Grocery Search",
+          "options": [{ "label": "🏷️ Ask prices with How Much and How Many!", "next": 2, "questId": "q_ch5_ask_prices_pay" }]
         },
         {
           "id": 2,
           "emotion": "curious",
-          "text": "🚌 I usually take the bus in the morning and work in the afternoon!",
-          "visualAction": "🚌 Schedule Check",
-          "options": [{ "label": "⏰ Ask the time and habits!", "next": 0 }]
+          "text": "🏷️ How much is this shirt? How many apples do you want? Pay with money and get a receipt!",
+          "visualAction": "🏷️ Price Check & Payment",
+          "options": [{ "label": "📝 Complete shopping list!", "next": 3, "questId": "q_ch5_shopping_list" }]
+        },
+        {
+          "id": 3,
+          "emotion": "excited",
+          "text": "🎉 Excellent job! You completed all shopping lists and mastered shopping vocabulary!",
+          "visualAction": "🎉 Shopping Mastered",
+          "options": [{ "label": "🌟 Chapter 5 Complete!", "next": 0 }]
         }
       ],
       "fr": [
@@ -377,23 +386,28 @@
       { "time": "13:00", "location": "town_square", "activity": "Delivering fresh pastries to market" }
     ],
     "conversationHistory": [],
-    "questHistory": ["q4_bakery_bread"],
+    "questHistory": ["q4_bakery_bread", "q_ch5_ask_prices_pay"],
+    "shopInventory": [
+      { "id": "bread", "name": "Fresh Bread", "price": 5, "emoji": "🍞" },
+      { "id": "baguette", "name": "Warm Baguette", "price": 10, "emoji": "🥖" },
+      { "id": "croissant", "name": "Butter Croissant", "price": 8, "emoji": "🥐" }
+    ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "🥖 Warm baguette! 😋 Yum!",
+          "text": "🥖 Warm baguette and fresh bread! How much bread would you like today?",
           "visualAction": "🥖 ➔ 😋",
-          "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
+          "grammarCheck": "How much & How many price inquiries",
           "options": [
-            { "label": "🥖 Take warm baguette!", "next": 1, "rewardXP": 20, "questId": "q4_bakery_bread" }
+            { "label": "🥖 Buy fresh bread and ask price!", "next": 1, "rewardXP": 20, "questId": "q_ch5_ask_prices_pay" }
           ]
         },
         {
           "id": 1,
-          "text": "🥖 Baked fresh with organic flour! Enjoy your meal!",
+          "text": "🥖 The bread costs five dollars! Thank you for buying from the bakery!",
           "visualAction": "😋 ➔ 👍",
-          "options": [{ "label": "😋 Yum!", "next": 0 }]
+          "options": [{ "label": "😋 Thank you Lucas!", "next": 0 }]
         }
       ]
     }
@@ -436,6 +450,92 @@
           "text": "☕ Rich and aromatic! The best coffee in COSY Town!",
           "visualAction": "☕ ➔ 😊",
           "options": [{ "label": "☕ Grazie Marco!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "pharmacist_claire": {
+    "id": "pharmacist_claire",
+    "name": "Claire",
+    "portrait": "👩‍⚕️",
+    "avatar": "👩‍⚕️",
+    "role": "Neighbourhood Pharmacist",
+    "occupation": "Pharmacist",
+    "teachingRole": "Health, Wellness & Directions Specialist",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "park",
+    "position3D": { "x": 300, "y": 300, "z": 0 },
+    "voice": "en-US-Standard-E",
+    "dailySchedule": [
+      { "time": "08:30", "location": "pharmacy", "activity": "Opening pharmacy and organizing medicines" },
+      { "time": "13:00", "location": "park", "activity": "Taking a walk in the park" }
+    ],
+    "conversationHistory": [],
+    "questHistory": ["q_ch4_help_npc_directions"],
+    "quests": ["q_ch4_help_npc_directions"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "💊 Hello! Welcome to the pharmacy! The pharmacy is next to the bakery.",
+          "visualAction": "💊 Pharmacy Welcome",
+          "grammarCheck": "Prepositions of Place (Next to, Between)",
+          "options": [
+            { "label": "💊 Ask for directions to the post office!", "next": 1, "rewardXP": 20 }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🏣 Go straight, turn left at the crosswalk, and the post office is on the right!",
+          "visualAction": "🧭 Directional Guidance",
+          "options": [{ "label": "🙏 Thank you Claire!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "postmaster_sam": {
+    "id": "postmaster_sam",
+    "name": "Sam",
+    "portrait": "👨‍📬",
+    "avatar": "👨‍📬",
+    "role": "Town Postmaster",
+    "occupation": "Postmaster",
+    "teachingRole": "Postal & Mail Navigation Specialist",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "park",
+    "position3D": { "x": 300, "y": 300, "z": 0 },
+    "voice": "en-US-Standard-B",
+    "dailySchedule": [
+      { "time": "08:00", "location": "post_office", "activity": "Sorting mail and packages" },
+      { "time": "14:00", "location": "bus_stop", "activity": "Collecting mail from the bus line" }
+    ],
+    "conversationHistory": [],
+    "questHistory": ["q_ch4_unlock_city_map"],
+    "quests": ["q_ch4_unlock_city_map"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🏣 Welcome to the post office! The post office is behind the park and next to the crosswalk.",
+          "visualAction": "🏣 Mail Handoff",
+          "grammarCheck": "Giving Directions & Spatial Identification",
+          "options": [
+            { "label": "📮 Ask about town navigation!", "next": 1, "rewardXP": 25 }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🗺️ Excellent work! You mastered giving directions and spatial prepositions. Here is the unlocked town map!",
+          "visualAction": "🗺️ Map Delivery",
+          "options": [{ "label": "🗺️ Open city map!", "next": 0 }]
         }
       ]
     }

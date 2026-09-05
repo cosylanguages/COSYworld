@@ -15,6 +15,86 @@
       "category": "action",
       "examples": ["Open the door."],
       "related_words": ["close", "door"]
+    },
+    "go": {
+      "id": "go",
+      "word": "go",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Go straight ahead.", "Go to the post office."],
+      "related_words": ["walk", "turn", "come"]
+    },
+    "come": {
+      "id": "come",
+      "word": "come",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Come here.", "Come to the park."],
+      "related_words": ["go", "arrive", "walk"]
+    },
+    "turn": {
+      "id": "turn",
+      "word": "turn",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Turn left at the pharmacy.", "Turn right after the crosswalk."],
+      "related_words": ["left", "right", "direction"]
+    },
+    "cross": {
+      "id": "cross",
+      "word": "cross",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Cross the street at the pedestrian crossing."],
+      "related_words": ["crosswalk", "walk", "street"]
+    },
+    "walk": {
+      "id": "walk",
+      "word": "walk",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Walk straight along City Streets."],
+      "related_words": ["go", "pedestrian", "path"]
+    },
+    "buy": {
+      "id": "buy",
+      "word": "buy",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["I buy fresh apples at the fruit shop.", "Buy groceries at the supermarket."],
+      "related_words": ["pay", "cost", "money", "shop"]
+    },
+    "pay": {
+      "id": "pay",
+      "word": "pay",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Pay ten dollars at the register.", "I pay with cash."],
+      "related_words": ["buy", "money", "receipt", "price"]
+    },
+    "cost": {
+      "id": "cost",
+      "word": "cost",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["How much does the shirt cost?", "The books cost twenty dollars."],
+      "related_words": ["price", "money", "pay", "buy"]
+    },
+    "order": {
+      "id": "order",
+      "word": "order",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["I order fresh bread at the bakery."],
+      "related_words": ["buy", "choose", "shop"]
+    },
+    "choose": {
+      "id": "choose",
+      "word": "choose",
+      "cefr": "A1",
+      "category": "action",
+      "examples": ["Choose fresh fruit and vegetables.", "I choose a blue shirt."],
+      "related_words": ["select", "buy", "find"]
     }
   }
 }
