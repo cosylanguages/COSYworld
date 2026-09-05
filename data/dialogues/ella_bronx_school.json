@@ -1,0 +1,84 @@
+{
+  "npcId": "ella_bronx",
+  "sceneId": "school",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🏫 Welcome to class! Today we are studying together in the school library! Can you help me find the textbooks?",
+      "emotion": "happy",
+      "gestures": ["welcome"],
+      "highlights": ["blackboard", "student_desk"],
+      "speechRate": 0.8,
+      "grammarCheck": "Modal Verbs 'Can' & 'Can't' (Ability & Permission)",
+      "visualAction": "🏫 ➔ 📚 ➔ 🙋",
+      "playerOptions": [
+        {
+          "text": "📚 Yes, I can help you borrow textbooks!",
+          "nextNodeId": "node_1",
+          "grammarId": "gt_can_cant",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch8_borrow_books"
+        },
+        {
+          "text": "🤝 James York and I can study together with you!",
+          "nextNodeId": "node_2",
+          "grammarId": "gt_can_cant",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch8_study_together"
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "📖 Excellent! You can borrow books at the library card catalog desk! Remember, you can't make loud noise in the reading room!",
+      "emotion": "excited",
+      "gestures": ["smile"],
+      "highlights": ["globe"],
+      "speechRate": 0.8,
+      "grammarCheck": "Expressing Ability & Prohibition (Can vs Can't)",
+      "visualAction": "📖 ➔ 🤫",
+      "playerOptions": [
+        {
+          "text": "💻 Can I use the computer terminal in the computer lab?",
+          "nextNodeId": "node_3",
+          "grammarId": "gt_can_cant",
+          "rewardXP": 15
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🤝 Wonderful! Working together with James and me makes learning much faster!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Cooperative Study & Teamwork",
+      "visualAction": "🤝 ➔ ⭐",
+      "playerOptions": [
+        {
+          "text": "🏫 Open textbook and study together now!",
+          "nextNodeId": "node_0",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "💻 Yes, you can! You can practice typing and research lessons on the computer terminal!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": ["computer_terminal"],
+      "speechRate": 0.8,
+      "grammarCheck": "Permission with 'Can'",
+      "visualAction": "💻 ➔ 👍",
+      "playerOptions": [
+        {
+          "text": "👍 Thank you, Teacher Ella!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    }
+  ]
+}

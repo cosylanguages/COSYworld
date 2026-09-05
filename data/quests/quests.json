@@ -1552,6 +1552,234 @@
         "locationId": "picnic_area",
         "action": "enter"
       }
+    ],
+    "nextQuestId": "q_ch8_school_tour"
+  },
+  {
+    "id": "q_ch8_school_tour",
+    "chapter": "ch8",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🏫 School & Classroom Tour",
+    "description": "Explore the school hall and language classroom in the Education Quarter.",
+    "difficulty": "A1",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "prerequisiteQuest": "q_ch7_family_reunion",
+      "targetLocation": "school"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch7_family_reunion"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Enter the School hall (`school`) and inspect the blackboard (`blackboard`)",
+        "target": "school"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Tour school hall and inspect blackboard",
+        "targetLocation": "school",
+        "targetObjects": [
+          "blackboard"
+        ],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 80,
+      "vocabulary": [
+        "school",
+        "classroom",
+        "blackboard",
+        "desk"
+      ],
+      "grammar": "gt_can_cant"
+    },
+    "rewards": {
+      "xp": 80,
+      "vocabulary": [
+        "school",
+        "classroom",
+        "blackboard",
+        "desk"
+      ],
+      "grammar": "gt_can_cant"
+    },
+    "dialogues": {
+      "start": "Visit the school hall and language classroom to start your learning tour!",
+      "progress": "Inspect the classroom blackboard.",
+      "complete": "School tour complete! Welcome to the Education Quarter!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "school",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch8_borrow_books"
+  },
+  {
+    "id": "q_ch8_borrow_books",
+    "chapter": "ch8",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "📚 Borrow Books & Computer Study",
+    "description": "Visit the school library to inspect textbooks and practice on the computer terminal.",
+    "difficulty": "A1",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "prerequisiteQuest": "q_ch8_school_tour",
+      "targetObjects": [
+        "globe",
+        "computer_terminal"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch8_school_tour"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect globe in the school library (`globe`)",
+        "target": "globe"
+      },
+      {
+        "id": "step_2",
+        "description": "Practice on the computer terminal in the computer lab (`computer_terminal`)",
+        "target": "computer_terminal"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect globe and computer_terminal across library and computer lab",
+        "targetObjects": [
+          "globe",
+          "computer_terminal"
+        ],
+        "requiredCount": 2
+      }
+    ],
+    "reward": {
+      "xp": 95,
+      "vocabulary": [
+        "globe",
+        "computer",
+        "terminal",
+        "pencil"
+      ],
+      "grammar": "gt_can_cant"
+    },
+    "rewards": {
+      "xp": 95,
+      "vocabulary": [
+        "globe",
+        "computer",
+        "terminal",
+        "pencil"
+      ],
+      "grammar": "gt_can_cant"
+    },
+    "dialogues": {
+      "start": "Head to the library and computer lab to borrow study materials!",
+      "progress": "Inspect the globe and computer terminal.",
+      "complete": "Study materials collected and computers ready!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "school_library",
+        "hotspotId": "globe",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch8_study_together"
+  },
+  {
+    "id": "q_ch8_study_together",
+    "chapter": "ch8",
+    "category": "conversation",
+    "type": "conversation",
+    "title": "🤝 Study Together with Ella & James",
+    "description": "Cooperate with Teacher Ella Bronx and James York in the language classroom to complete Chapter 8.",
+    "difficulty": "A1",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "prerequisiteQuest": "q_ch8_borrow_books",
+      "targetNpc": "ella_bronx"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch8_borrow_books"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse and complete cooperative study session with Ella Bronx and James York",
+        "target": "ella_bronx"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "conversation",
+        "description": "Study together with Ella Bronx and James York",
+        "targetNpc": "ella_bronx",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "teacher",
+        "student",
+        "lesson",
+        "scholar"
+      ],
+      "grammar": "gt_can_cant"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "teacher",
+        "student",
+        "lesson",
+        "scholar"
+      ],
+      "grammar": "gt_can_cant"
+    },
+    "dialogues": {
+      "start": "Join Ella Bronx and James York in the classroom to study together!",
+      "progress": "Complete the cooperative study session.",
+      "complete": "Chapter 8 Complete! You are a Master Scholar in COSY Town!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "language_classroom",
+        "action": "speak"
+      }
     ]
   },
   {

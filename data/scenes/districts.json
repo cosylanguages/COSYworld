@@ -5624,17 +5624,22 @@
         "npcId": "ella_bronx",
         "x": 350,
         "y": 300
+      },
+      {
+        "npcId": "james_york",
+        "x": 550,
+        "y": 300
       }
     ],
     "npcs": [
-      "ella_bronx"
+      "ella_bronx",
+      "james_york"
     ],
     "objects": [
+      "blackboard",
+      "student_desk",
       "window",
-      "desk",
-      "bookshelf",
-      "lamp",
-      "plant"
+      "lamp"
     ],
     "chapters": [
       "ch8"
@@ -5722,14 +5727,22 @@
       "return box",
       "reading room"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ella_bronx",
+        "x": 250,
+        "y": 300
+      }
+    ],
+    "npcs": [
+      "ella_bronx"
+    ],
     "objects": [
+      "globe",
+      "novel_stack",
+      "dictionary_book",
       "bookshelf",
-      "desk",
-      "lamp",
-      "coffee_table",
-      "window"
+      "desk"
     ],
     "chapters": [
       "ch8"
@@ -5817,12 +5830,20 @@
       "microphone",
       "student"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "james_york",
+        "x": 400,
+        "y": 300
+      }
+    ],
+    "npcs": [
+      "james_york"
+    ],
     "objects": [
+      "computer_terminal",
       "desk",
       "lamp",
-      "window",
       "chair"
     ],
     "chapters": [

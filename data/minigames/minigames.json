@@ -233,5 +233,27 @@
       ],
       "targetChoice": 0
     }
+  },
+  {
+    "id": "mg_study_together_1",
+    "type": "dialogue",
+    "title": "📚 Study Together Cooperative Challenge",
+    "description": "Cooperate with Ella Bronx and James York in the school library using 'Can' and 'Can't' to solve grammar questions.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["teacher", "student", "book", "desk"],
+      "grammar": "gt_can_cant"
+    },
+    "content": {
+      "npcId": "ella_bronx",
+      "prompt": "Ella says: 'James and I are studying together in the library. Can you help us find the grammar textbook?' How do you answer using modal verb 'can'?",
+      "options": [
+        "Yes, I can find the textbook on the bookshelf!",
+        "No, I can't speak words.",
+        "Goodbye."
+      ],
+      "targetChoice": 0
+    }
   }
 ]

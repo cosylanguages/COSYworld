@@ -196,5 +196,16 @@
     "unlockCondition": {
       "questId": "q_ch7_family_reunion"
     }
+  },
+  {
+    "id": "ach_ch8_master_scholar",
+    "title": "🎓 Master Scholar",
+    "description": "Tour the school and library, master Can and Can't modal verbs, study together with Ella & James, and complete Chapter 8.",
+    "category": "chapter_8",
+    "icon": "🎓",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch8_study_together"
+    }
   }
 ]
