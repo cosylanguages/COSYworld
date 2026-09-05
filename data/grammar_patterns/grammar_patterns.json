@@ -64,6 +64,28 @@
     ]
   },
   {
+    "id": "gp_quantifiers_some_any",
+    "pattern": "I would like some {item}. Do you have any {item}?",
+    "cefr": "A1",
+    "visualClue": "shopping_cart_icon",
+    "examples": [
+      "I would like some milk.",
+      "Do you have any apples?",
+      "I don't have any cheese."
+    ]
+  },
+  {
+    "id": "gp_asking_prices",
+    "pattern": "How much is {item}? How many {items} do you want?",
+    "cefr": "A1",
+    "visualClue": "price_tag_icon",
+    "examples": [
+      "How much is this shirt?",
+      "How much does the bread cost?",
+      "How many books do you need?"
+    ]
+  },
+  {
     "id": "gp_past_simple_A1",
     "pattern": "I visited {place}.",
     "cefr": "A1",

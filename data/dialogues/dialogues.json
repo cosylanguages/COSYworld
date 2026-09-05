@@ -99,6 +99,33 @@
       "gestures": ["thank", "show_map"],
       "highlights": ["post_office_building"],
       "speechRate": 0.75
+    },
+    {
+      "id": "dlg_ch5_ask_price",
+      "npcId": "james_york",
+      "cefr": "A1",
+      "line": "How much is this blue shirt? How much does the fresh bread cost?",
+      "gestures": ["check_price_tag", "ask_question"],
+      "highlights": ["shirt", "price_tag", "bread"],
+      "speechRate": 0.75
+    },
+    {
+      "id": "dlg_ch5_buy_product",
+      "npcId": "lucas_baker",
+      "cefr": "A1",
+      "line": "I would like some apples and a warm baguette, please. Do you have any milk?",
+      "gestures": ["select_items", "offer_bag"],
+      "highlights": ["apple", "bread", "milk"],
+      "speechRate": 0.75
+    },
+    {
+      "id": "dlg_ch5_pay_receipt",
+      "npcId": "lucas_baker",
+      "cefr": "A1",
+      "line": "That costs ten dollars. Here is your cash payment and receipt. Thank you for shopping!",
+      "gestures": ["handoff_money", "give_receipt"],
+      "highlights": ["money", "receipt"],
+      "speechRate": 0.75
     }
   ]
 }

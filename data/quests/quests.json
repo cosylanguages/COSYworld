@@ -902,6 +902,187 @@
         "action": "enter"
       }
     ],
+    "nextQuestId": "q_ch5_find_products"
+  },
+  {
+    "id": "q_ch5_find_products",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "🛒 Buy Groceries & Find Products",
+    "description": "Find products and buy groceries at the Supermarket and Fruit shop.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch4_unlock_city_map",
+      "targetLocation": "supermarket"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch4_unlock_city_map"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the Supermarket and inspect the shopping cart",
+        "target": "supermarket"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Enter supermarket and find groceries",
+        "targetLocation": "supermarket",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": ["shopping_cart", "milk", "cheese", "pasta"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": ["shopping_cart", "milk", "cheese", "pasta"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "dialogues": {
+      "start": "Visit the Supermarket and start finding grocery products!",
+      "progress": "Walk into the Supermarket.",
+      "complete": "Great job! You found groceries in the Supermarket!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "supermarket",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch5_ask_prices_pay"
+  },
+  {
+    "id": "q_ch5_ask_prices_pay",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "🏷️ Ask Prices and Pay",
+    "description": "Ask price tags and practice paying with money for items at the shop.",
+    "difficulty": "A1",
+    "NPC": "lucas_baker",
+    "requirements": {
+      "prerequisiteQuest": "q_ch5_find_products",
+      "targetObjects": ["price_tag"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch5_find_products"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect price tags and practice asking prices and paying",
+        "target": "price_tag"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Inspect price_tag",
+        "targetObjects": ["price_tag"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 130,
+      "vocabulary": ["money", "price_tag", "receipt", "pay", "cost"],
+      "grammar": "gt_asking_prices"
+    },
+    "rewards": {
+      "xp": 130,
+      "vocabulary": ["money", "price_tag", "receipt", "pay", "cost"],
+      "grammar": "gt_asking_prices"
+    },
+    "dialogues": {
+      "start": "Ask how much items cost and pay with money!",
+      "progress": "Inspect the price tag at the shop.",
+      "complete": "You asked prices and paid for your items!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "lucas_baker",
+        "action": "shop"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bookstore",
+        "hotspotId": "price_tag",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch5_shopping_list"
+  },
+  {
+    "id": "q_ch5_shopping_list",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "📝 Complete Shopping Lists",
+    "description": "Fulfill full shopping lists across the Bookstore, Clothing Boutique, and Fruit Shop.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch5_ask_prices_pay",
+      "targetLocation": "bookstore"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch5_ask_prices_pay"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the Bookstore and complete your shopping list",
+        "target": "bookstore"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Enter bookstore to complete list",
+        "targetLocation": "bookstore",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 160,
+      "vocabulary": ["shirt", "book", "shopping_bag", "banana", "tomato"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "rewards": {
+      "xp": 160,
+      "vocabulary": ["shirt", "book", "shopping_bag", "banana", "tomato"],
+      "grammar": "gt_quantifiers_some_any"
+    },
+    "dialogues": {
+      "start": "Complete your full shopping list across all 5 town shops!",
+      "progress": "Visit the Bookstore.",
+      "complete": "Chapter 5 Complete! You mastered Shopping!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bookstore",
+        "action": "enter"
+      }
+    ],
     "nextQuestId": "q_explore_living"
   },
   {

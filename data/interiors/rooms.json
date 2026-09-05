@@ -119,6 +119,90 @@
     "ambientSounds": ["piano"],
     "lightingProfile": { "type": "warm", "color": "rgba(251, 191, 36, 0.15)", "opacity": 0.15 }
   },
+  "supermarket": {
+    "id": "supermarket",
+    "type": "supermarket",
+    "name": { "en": "Supermarket", "fr": "Supermarché", "it": "Supermercato", "es": "Supermercado", "de": "Supermarkt", "ru": "Супермаркет" },
+    "image": "🛒",
+    "background": {
+      "wallColor": "#e0f2fe",
+      "floorColor": "#0284c7",
+      "dividerColor": "#0369a1"
+    },
+    "hotspots": [
+      { "id": "supermarket_aisle_zone", "label": "Grocery Aisles", "x": 200, "y": 180, "width": 400, "height": 120 }
+    ],
+    "interactiveObjects": ["shopping_cart", "grocery_shelf", "milk", "cheese", "pasta"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["cafe"],
+    "lightingProfile": { "type": "bright_indoor", "color": "rgba(2, 132, 199, 0.1)", "opacity": 0.1 }
+  },
+  "fruit_shop": {
+    "id": "fruit_shop",
+    "type": "fruit_shop",
+    "name": { "en": "Fruit Shop", "fr": "Magasin de fruits", "it": "Fruttivendolo", "es": "Frutería", "de": "Obstladen", "ru": "Фруктовый магазин" },
+    "image": "🍎",
+    "background": {
+      "wallColor": "#dcfce7",
+      "floorColor": "#16a34a",
+      "dividerColor": "#15803d"
+    },
+    "hotspots": [
+      { "id": "fruit_stand_zone", "label": "Fresh Produce Display", "x": 180, "y": 180, "width": 440, "height": 120 }
+    ],
+    "interactiveObjects": ["fruit_stand", "apple", "banana", "orange", "carrot", "tomato"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "clothing_boutique": {
+    "id": "clothing_boutique",
+    "type": "clothing_boutique",
+    "name": { "en": "Clothing Boutique", "fr": "Boutique de vêtements", "it": "Boutique di abbigliamento", "es": "Boutique de ropa", "de": "Kleidungsboutique", "ru": "Бутик одежды" },
+    "image": "👗",
+    "background": {
+      "wallColor": "#fce7f3",
+      "floorColor": "#ec4899",
+      "dividerColor": "#db2777"
+    },
+    "hotspots": [
+      { "id": "clothing_rack_zone", "label": "Fashion Clothing Racks", "x": 200, "y": 180, "width": 400, "height": 120 }
+    ],
+    "interactiveObjects": ["clothing_rack", "shirt", "pants", "jacket", "dress", "shoes"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm", "color": "rgba(236, 72, 153, 0.1)", "opacity": 0.1 }
+  },
+  "bookstore": {
+    "id": "bookstore",
+    "type": "bookstore",
+    "name": { "en": "Bookstore", "fr": "Librairie", "it": "Libreria", "es": "Librería", "de": "Buchhandlung", "ru": "Книжный магазин" },
+    "image": "📚",
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#b45309",
+      "dividerColor": "#78350f"
+    },
+    "hotspots": [
+      { "id": "bookcase_zone", "label": "Literature Bookshelves", "x": 200, "y": 180, "width": 400, "height": 120 }
+    ],
+    "interactiveObjects": ["bookcase", "reading_table", "book", "price_tag"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm_sepia", "color": "rgba(180, 83, 9, 0.12)", "opacity": 0.12 }
+  },
   "restaurant": {
     "id": "restaurant",
     "type": "restaurant",

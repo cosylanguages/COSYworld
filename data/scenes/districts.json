@@ -407,7 +407,7 @@
       { "id": "balcony_railing", "x": 100, "y": 120, "width": 600, "height": 200, "color": "#15803d", "label": "Balcony Garden 🪴" }
     ],
     "doors": [
-      { "targetId": "apartment_bedroom", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bedroom 🛏️", "fr": "Chambre 🛏️", "it": "Camera 🛏️", "es": "Dormitorio 🛏️", "de": "Balkon 🌿", "ru": "Спальня 🛏️" } }
+      { "targetId": "apartment_bedroom", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bedroom 🛏️", "fr": "Chambre 🛏️", "it": "Camera 🛏️", "es": "Dormitorio 🛏️", "de": "Schlafzimmer 🛏️", "ru": "Спальня 🛏️" } }
     ],
     "npcSpawns": [],
     "npcs": [],
@@ -617,7 +617,7 @@
     "worldY": 500,
     "worldWidth": 800,
     "worldHeight": 500,
-    "neighbors": ["crosswalk", "town_entrance"],
+    "neighbors": ["crosswalk", "town_entrance", "bookstore"],
     "assets": {
       "scene": "data/scenes/districts.json",
       "hotspots": "data/vocabulary/objects.json",
@@ -634,13 +634,165 @@
     ],
     "doors": [
       { "targetId": "crosswalk", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Crosswalk 🚸", "fr": "Passage piéton 🚸", "it": "Strisce pedonali 🚸", "es": "Paso de peatones 🚸", "de": "Zebrastreifen 🚸", "ru": "Пешеходный переход 🚸" } },
-      { "targetId": "town_entrance", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Town Entrance 🏙️", "fr": "Entrée 🏙️", "it": "Ingresso 🏙️", "es": "Entrada 🏙️", "de": "Stadteingang 🏙️", "ru": "Вход 🏙️" } }
+      { "targetId": "bookstore", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bookstore 📚", "fr": "Librairie 📚", "it": "Libreria 📚", "es": "Librería 📚", "de": "Buchhandlung 📚", "ru": "Книжный магазин 📚" } }
     ],
     "npcSpawns": [
       { "npcId": "postmaster_sam", "x": 300, "y": 300 }
     ],
     "npcs": ["postmaster_sam"],
     "objects": ["post_office_building", "mailbox", "letter"]
+  },
+  "supermarket": {
+    "id": "supermarket",
+    "district": "Commercial Quarter",
+    "level": "A1",
+    "icon": "🛒",
+    "weather": "clear",
+    "music": "cafe",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": -2400,
+    "worldY": 500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["bakery", "fruit_shop"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Supermarket", "fr": "Supermarché", "it": "Supermercato", "es": "Supermercado", "de": "Supermarkt", "ru": "Супермаркет" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "polished_marble" }
+    ],
+    "buildings": [
+      { "id": "supermarket_aisles", "x": 150, "y": 140, "width": 500, "height": 200, "color": "#0284c7", "label": "Supermarket Aisles 🛒" }
+    ],
+    "doors": [
+      { "targetId": "bakery", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bakery 🥖", "fr": "Boulangerie 🥖", "it": "Panetteria 🥖", "es": "Panadería 🥖", "de": "Bäckerei 🥖", "ru": "Пекарня 🥖" } },
+      { "targetId": "fruit_shop", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Fruit Shop 🍎", "fr": "Magasin de fruits 🍎", "it": "Fruttivendolo 🍎", "es": "Frutería 🍎", "de": "Obstladen 🍎", "ru": "Фруктовый магазин 🍎" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["shopping_cart", "grocery_shelf", "milk", "cheese", "pasta"]
+  },
+  "fruit_shop": {
+    "id": "fruit_shop",
+    "district": "Commercial Quarter",
+    "level": "A1",
+    "icon": "🍎",
+    "weather": "clear",
+    "music": "nature",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": -2400,
+    "worldY": 1000,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["supermarket", "clothing_boutique"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Fruit Shop", "fr": "Magasin de fruits", "it": "Fruttivendolo", "es": "Frutería", "de": "Obstladen", "ru": "Фруктовый магазин" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "cobblestone" }
+    ],
+    "buildings": [
+      { "id": "fruit_stand_bldg", "x": 180, "y": 140, "width": 440, "height": 200, "color": "#16a34a", "label": "Fresh Fruit & Vegetables Stand 🍎" }
+    ],
+    "doors": [
+      { "targetId": "supermarket", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Supermarket 🛒", "fr": "Supermarché 🛒", "it": "Supermercato 🛒", "es": "Supermercado 🛒", "de": "Supermarkt 🛒", "ru": "Супермаркет 🛒" } },
+      { "targetId": "clothing_boutique", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Clothing Boutique 👗", "fr": "Boutique de vêtements 👗", "it": "Boutique 👗", "es": "Boutique de ropa 👗", "de": "Kleidungsgeschäft 👗", "ru": "Магазин одежды 👗" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["fruit_stand", "apple", "banana", "orange", "carrot", "tomato"]
+  },
+  "clothing_boutique": {
+    "id": "clothing_boutique",
+    "district": "Commercial Quarter",
+    "level": "A1",
+    "icon": "👗",
+    "weather": "clear",
+    "music": "piano",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": -2400,
+    "worldY": 1500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["fruit_shop", "bookstore"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Clothing Boutique", "fr": "Boutique de vêtements", "it": "Boutique di abbigliamento", "es": "Boutique de ropa", "de": "Kleidungsboutique", "ru": "Бутик одежды" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "wooden_floor" }
+    ],
+    "buildings": [
+      { "id": "boutique_display", "x": 200, "y": 140, "width": 400, "height": 200, "color": "#ec4899", "label": "Fashion Boutique 👗" }
+    ],
+    "doors": [
+      { "targetId": "fruit_shop", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Fruit Shop 🍎", "fr": "Magasin de fruits 🍎", "it": "Fruttivendolo 🍎", "es": "Frutería 🍎", "de": "Obstladen 🍎", "ru": "Фруктовый магазин 🍎" } },
+      { "targetId": "bookstore", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bookstore 📚", "fr": "Librairie 📚", "it": "Libreria 📚", "es": "Librería 📚", "de": "Buchhandlung 📚", "ru": "Книжный магазин 📚" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["clothing_rack", "shirt", "pants", "jacket", "dress", "shoes"]
+  },
+  "bookstore": {
+    "id": "bookstore",
+    "district": "Commercial Quarter",
+    "level": "A1",
+    "icon": "📚",
+    "weather": "clear",
+    "music": "piano",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": -1600,
+    "worldY": 1500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["clothing_boutique", "post_office"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Bookstore", "fr": "Librairie", "it": "Libreria", "es": "Librería", "de": "Buchhandlung", "ru": "Книжный магазин" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "wooden_floor" }
+    ],
+    "buildings": [
+      { "id": "bookstore_shelves", "x": 200, "y": 140, "width": 400, "height": 200, "color": "#b45309", "label": "Bookstore & Literature 📚" }
+    ],
+    "doors": [
+      { "targetId": "clothing_boutique", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Clothing Boutique 👗", "fr": "Boutique de vêtements 👗", "it": "Boutique 👗", "es": "Boutique de ropa 👗", "de": "Kleidungsgeschäft 👗", "ru": "Магазин одежды 👗" } },
+      { "targetId": "post_office", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Post Office 🏣", "fr": "Bureau de poste 🏣", "it": "Ufficio postale 🏣", "es": "Oficina de correos 🏣", "de": "Postamt 🏣", "ru": "Почта 🏣" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["bookcase", "reading_table", "book", "price_tag"]
   },
   "town_square": {
     "id": "town_square",
@@ -699,7 +851,7 @@
     "worldY": 500,
     "worldWidth": 800,
     "worldHeight": 500,
-    "neighbors": ["town_square", "pharmacy"],
+    "neighbors": ["town_square", "pharmacy", "supermarket"],
     "assets": {
       "scene": "data/scenes/districts.json",
       "hotspots": "data/vocabulary/objects.json",
@@ -716,7 +868,8 @@
     ],
     "doors": [
       { "targetId": "town_square", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Town Square 🏛️", "fr": "Place 🏛️", "it": "Piazza 🏛️", "es": "Plaza 🏛️", "de": "Stadtplatz 🏛️", "ru": "Площадь 🏛️" } },
-      { "targetId": "pharmacy", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Pharmacy 💊", "fr": "Pharmacie 💊", "it": "Farmacia 💊", "es": "Farmacia 💊", "de": "Apotheke 💊", "ru": "Аптека 💊" } }
+      { "targetId": "pharmacy", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Pharmacy 💊", "fr": "Pharmacie 💊", "it": "Farmacia 💊", "es": "Farmacia 💊", "de": "Apotheke 💊", "ru": "Аптека 💊" } },
+      { "targetId": "supermarket", "x": 360, "y": 400, "width": 80, "height": 80, "labelY": 380, "labels": { "en": "Supermarket 🛒", "fr": "Supermarché 🛒", "it": "Supermercato 🛒", "es": "Supermercado 🛒", "de": "Supermarkt 🛒", "ru": "Супермаркет 🛒" } }
     ],
     "npcSpawns": [
       { "npcId": "lucas_baker", "x": 200, "y": 300 }

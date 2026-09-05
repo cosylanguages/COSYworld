@@ -833,5 +833,115 @@
       "level": 2,
       "discoveredObjects": ["pedestrian_crossing"]
     }
+  },
+  {
+    "id": "gt_quantifiers_some_any",
+    "title": "Countable & Uncountable Nouns (Some / Any) 🛒",
+    "difficulty": "A1",
+    "rule": "Countable vs Uncountable Nouns: Use 'some' in positive statements with plural countable or uncountable nouns ('I would like some apples / some milk'). Use 'any' in questions and negative statements ('Do you have any cheese?' / 'I don't have any bananas').",
+    "examples": [
+      {
+        "text": "I would like some milk and some apples, but I do not have any cheese.",
+        "targetLang": {
+          "en": "I would like some milk and some apples, but I do not have any cheese.",
+          "fr": "Je voudrais du lait et des pommes, mais je n'ai pas de fromage.",
+          "es": "Quisiera algo de leche y algunas manzanas, pero no tengo nada de queso.",
+          "it": "Vorrei un po' di latte e alcune mele, ma non ho formaggio.",
+          "de": "Ich hätte gerne etwas Milch und einige Äpfel, aber ich habe keinen Käse.",
+          "ru": "Я хотел бы немного молока и несколько яблок, но у меня нет сыра."
+        },
+        "context": "Shopping for groceries at the supermarket."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_some_any_1",
+        "type": "multiple_choice",
+        "question": "Which word fills the gap in a negative sentence: 'We don't have ___ bananas left.'",
+        "options": ["any", "some", "a"],
+        "correct": 0,
+        "explanation": "Use 'any' in negative sentences and questions.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "Do you need any fresh bread or some warm croissants?",
+        "grammarUsage": "Using some and any in market shop inquiries."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "supermarket",
+      "objects": ["milk", "cheese", "apple"],
+      "npcs": ["james_york", "lucas_baker"],
+      "district": "Commercial Quarter"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Quantifiers some and any with countable and uncountable nouns."
+    },
+    "unlockRequirements": {
+      "quests": ["q_ch5_find_products"],
+      "level": 2,
+      "discoveredObjects": ["shopping_cart"]
+    }
+  },
+  {
+    "id": "gt_asking_prices",
+    "title": "Asking Prices & Quantities (How much / How many) 🏷️",
+    "difficulty": "A1",
+    "rule": "Use 'How much' for uncountable nouns and price queries ([How much is/are...] / [How much does it cost?]). Use 'How many' for countable items ([How many + plural noun + do you want?]).",
+    "examples": [
+      {
+        "text": "How much is this blue shirt? How many apples do you need?",
+        "targetLang": {
+          "en": "How much is this blue shirt? How many apples do you need?",
+          "fr": "Combien coûte cette chemise bleue ? De combien de pommes avez-vous besoin ?",
+          "es": "¿Cuánto cuesta esta camisa azul? ¿Cuántas manzanas necesitas?",
+          "it": "Quanto costa questa camicia blu? Quante mele ti servono?",
+          "de": "Wie viel kostet dieses blaue Hemd? Wie viele Äpfel brauchst du?",
+          "ru": "Сколько стоит эта синяя рубашка? Сколько яблок вам нужно?"
+        },
+        "context": "Asking shopkeepers for item prices and quantities."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_asking_prices_1",
+        "type": "multiple_choice",
+        "question": "How do you ask the price of a shirt?",
+        "options": ["How much is this shirt?", "How many is this shirt?", "How cost is this shirt?"],
+        "correct": 0,
+        "explanation": "Use 'How much is...' to ask for price.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "How much is the fresh baguette? — It costs two dollars!",
+        "grammarUsage": "Asking prices and stating costs in a shop."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "clothing_boutique",
+      "objects": ["shirt", "price_tag", "money"],
+      "npcs": ["james_york"],
+      "district": "Commercial Quarter"
+    },
+    "voice": {
+      "lang": "en",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "audioPrompt": "Asking prices and quantities with how much and how many."
+    },
+    "unlockRequirements": {
+      "quests": ["q_ch5_ask_prices_pay"],
+      "level": 2,
+      "discoveredObjects": ["price_tag"]
+    }
   }
 ]
