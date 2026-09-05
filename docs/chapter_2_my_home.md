@@ -1,91 +1,113 @@
 # Chapter 2: My Home
 
 ## Overview
-Chapter 2 continues the player's journey in COSY Town within their newly unlocked apartment under a Monolingual Learning Architecture without bilingual translations or cards. The player explores five distinct apartment rooms (Living room, Kitchen, Bedroom, Bathroom, Balcony), interacts with household items, helps James York organize the home, and masters essential home vocabulary and demonstrative grammar.
+Chapter 2 ("My Home") immerses the player in exploring and organizing their new apartment home in COSY Town under a Monolingual Learning Architecture without bilingual translations or cards. The player visits all 5 apartment rooms (Living Room, Kitchen, Bedroom, Bathroom, Balcony), interacts with household objects, learns colors and numbers through minigames, and collaborates with James York to organize furniture placement.
 
 ---
 
-## Scenes & Room Topology (5 Scenes)
+## Learning Goals & Communication Goals
 
-1. **Living Room** (`apartment_living`)
-   - District: Residential District
-   - Features: Sofa, coffee table, television, bookshelf, lamp.
-   - Connected doors: Kitchen, Bedroom, Bathroom, Town Square, Apartment Entrance.
+### Learning Goal
+The player explores their apartment and learns how to describe rooms, identify furniture and household objects, state item presence using existential placement (`There is` / `There are`), point out objects using demonstratives (`This` / `That`), and describe items using colors and numbers.
 
-2. **Kitchen** (`apartment_kitchen`)
-   - District: Residential District
-   - Features: Refrigerator, kettle, cups.
-   - Connected doors: Living Room.
-
-3. **Bedroom** (`apartment_bedroom`)
-   - District: Residential District
-   - Features: Bed, desk, lamp, bookshelf.
-   - Connected doors: Living Room, Balcony.
-
-4. **Bathroom** (`apartment_bathroom`)
-   - District: Residential District
-   - Features: Towel, soap, vanity mirror.
-   - Connected doors: Living Room.
-
-5. **Balcony** (`apartment_balcony`)
-   - District: Residential District
-   - Features: Balcony chair, balcony plant.
-   - Connected doors: Bedroom.
+### Communication Goals
+- **Existential Placement**: Identify single items (`There is a sofa`) and plural items (`There are two lamps`).
+- **Demonstrative Pointing**: Distinguish nearby (`This is my desk`) and distant (`That is your bed`) objects.
+- **Furniture & Room Identification**: Name rooms (`living room`, `kitchen`, `bedroom`, `bathroom`, `balcony`) and furniture (`sofa`, `table`, `chair`, `bed`, `desk`, `bookshelf`).
+- **Describing Attributes**: Identify colors (`red`, `blue`, `green`, `yellow`, `white`, `black`) and quantities (`one`, `two`, `three`, `four`, `five`).
 
 ---
 
-## Vocabulary Categories
+## Chapter Topology & Scenes (5 Scenes)
 
-### 1. Rooms
-- `living room`, `kitchen`, `bedroom`, `bathroom`, `balcony`
+1. **Apartment Living Room** (`apartment_living`)
+   - District: Residential District
+   - Description: The central hub of the player's home featuring sofa, coffee table, television, bookshelf, lamp, window, and plant.
+   - Hotspots: `key`, `door_lock`, `sofa`, `coffee_table`, `tv`, `bookshelf`, `lamp`, `window`, `plant`
 
-### 2. Furniture
-- `sofa`, `table`, `chair`, `bed`, `desk`
+2. **Apartment Kitchen** (`apartment_kitchen`)
+   - District: Residential District
+   - Description: The kitchen equipped with refrigerator, kettle, counter, and cups.
+   - Hotspots: `fridge`, `kettle`, `cup`
 
-### 3. Electronics
-- `television`, `lamp`, `fridge`, `kettle`
+3. **Apartment Bedroom** (`apartment_bedroom`)
+   - District: Residential District
+   - Description: The private bedroom featuring bed, study desk, lamp, bookshelf, window, plant, and alarm clock.
+   - Hotspots: `bed`, `desk`, `lamp`, `bookshelf`, `window`, `plant`, `alarm_clock`
 
-### 4. Household Objects
-- `towel`, `soap`, `cup`, `key`
+4. **Apartment Bathroom** (`apartment_bathroom`)
+   - District: Residential District
+   - Description: The bathroom containing towels, soap, vanity mirror, and window.
+   - Hotspots: `towel`, `soap`, `bathroom_mirror`, `window`
 
-### 5. Colors
-- `red`, `blue`, `green`, `yellow`, `white`, `black`
+5. **Apartment Balcony** (`apartment_balcony`)
+   - District: Residential District
+   - Description: The outdoor balcony overlook with balcony chair and potted balcony plants.
+   - Hotspots: `balcony_chair`, `balcony_plant`
 
-### 6. Numbers
-- `one`, `two`, `three`, `four`, `five`
+---
+
+## Dialogue Trees & References
+
+Branching dialogue trees for Chapter 2 are stored as JSON files under `data/dialogues/`:
+
+- `data/dialogues/james_york_apartment_living.json`: James York guiding living room furniture organization and existential placement.
+- `data/dialogues/james_york_apartment_bedroom.json`: James York discussing bedroom items, demonstrative pointing, and alarm clock routines.
+- `data/dialogues/james_york_apartment_kitchen.json`: James York organizing kitchen appliances, cups, and kettle.
+
+---
+
+## Vocabulary & Minigames
+
+### Physical Hotspots (Household, Furniture & Electronics)
+| Word | CEFR | Category | Hotspot Object | Scene Location |
+| --- | --- | --- | --- | --- |
+| `living room` | A0 | rooms | `sofa` | `apartment_living` |
+| `kitchen` | A0 | rooms | `fridge` | `apartment_kitchen` |
+| `bedroom` | A0 | rooms | `bed` | `apartment_bedroom` |
+| `bathroom` | A0 | rooms | `towel` | `apartment_bathroom` |
+| `balcony` | A0 | rooms | `balcony_chair` | `apartment_balcony` |
+| `sofa` | A0 | furniture | `sofa` | `apartment_living` |
+| `table` | A0 | furniture | `coffee_table` | `apartment_living` |
+| `chair` | A0 | furniture | `balcony_chair` | `apartment_balcony` |
+| `bed` | A0 | furniture | `bed` | `apartment_bedroom` |
+| `desk` | A0 | furniture | `desk` | `apartment_bedroom` |
+| `television` | A0 | electronics | `tv` | `apartment_living` |
+| `lamp` | A0 | electronics | `lamp` | `apartment_living` |
+| `fridge` | A0 | appliances | `fridge` | `apartment_kitchen` |
+| `kettle` | A0 | appliances | `kettle` | `apartment_kitchen` |
+| `towel` | A0 | household | `towel` | `apartment_bathroom` |
+| `soap` | A0 | household | `soap` | `apartment_bathroom` |
+
+### Abstract Concepts & Interactive Minigames (`data/minigames/minigames.json`)
+- **Colors** (`red`, `blue`, `green`, `yellow`, `white`, `black`): Mastered through `mg_color_match_1` ("🎨 Name the Color Challenge").
+- **Numbers** (`one`, `two`, `three`, `four`, `five`): Mastered through `mg_counting_1` ("🔢 Count the Objects Challenge").
 
 ---
 
 ## Grammar Concepts & Patterns
 
-1. **`There is`** (`gt_there_is`): Pointing out singular items (`There is a sofa in the living room`).
-2. **`There are`** (`gt_there_are`): Pointing out plural items or quantities (`There are two lamps`).
-3. **`This`** (`gt_this`): Demonstrative pronoun for near singular items (`This is my desk`).
-4. **`That`** (`gt_that`): Demonstrative pronoun for distant singular items (`That is a blue bed`).
-5. **`Possessive adjectives`** (`gt_my_your`): Showing ownership (`my home`, `your room`).
-
----
-
-## Communication Goals
-
-- **Describe your room**: Identify objects and colors (`There is a red sofa in the living room`).
-- **Find objects**: Locate items using visual clues (`Where is the desk?`).
-- **Ask where something is**: Inquire about item placement (`Where is the key?`).
+1. **`there is`** (`gt_there_is`): Singular existential placement (`There is a sofa in the living room`).
+2. **`there are`** (`gt_there_are`): Plural existential placement (`There are two lamps on the desk`).
+3. **`this`** (`gt_this`): Demonstrative for nearby objects (`This is my desk`).
+4. **`that`** (`gt_that`): Demonstrative for distant objects (`That is a blue bed`).
+5. **`my` / `your`** (`gt_my_your`): Possessive adjectives (`my sofa`, `your alarm clock`).
 
 ---
 
 ## Gameplay Quest Progression (4 Steps)
 
-1. **Explore Every Room** (`q_ch2_explore_rooms`): Visit living room, kitchen, bedroom, bathroom, and balcony.
-2. **Find & Interact with Objects** (`q_ch2_interact_objects`): Discover and interact with electronics and household items across all rooms.
-3. **Help James Organize the Apartment** (`q_ch2_organize_apartment`): Converse with James York and organize furniture and room layout.
-4. **Unlock Furniture Vocabulary** (`q_ch2_unlock_furniture`): Inspect balcony furniture to master furniture, numbers, and demonstrative grammar.
+1. **Explore Every Room** (`q_ch2_explore_rooms`): Visit all 5 apartment rooms (living room, kitchen, bedroom, bathroom, balcony).
+2. **Find and Interact with Objects** (`q_ch2_interact_objects`): Inspect household objects and electronics across the apartment.
+3. **Help James Organize the Apartment** (`q_ch2_organize_apartment`): Converse with James York about furniture placement.
+4. **Unlock Furniture Vocabulary** (`q_ch2_unlock_furniture`): Complete Chapter 2 and master furniture, colors, and numbers.
 
 ---
 
-## Modular Achievements
+## Achievements
 
-- `ach_apartment_explorer`: Apartment Explorer (Explore all 5 rooms).
+- `ach_apartment_explorer`: Apartment Explorer (Visit all five apartment rooms).
 - `ach_object_finder`: Object Finder (Interact with objects in every room).
-- `ach_home_organizer`: Home Organizer (Help James organize the apartment).
+- `ach_home_organizer`: Home Organizer (Help James organize furniture).
 - `ach_furniture_master`: Furniture Master (Master furniture, color, and number vocabulary).
+- `ach_ch2_master_home`: Master of the House (Complete Chapter 2 end-to-end).

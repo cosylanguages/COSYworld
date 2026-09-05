@@ -99,6 +99,17 @@
     }
   },
   {
+    "id": "ach_ch2_master_home",
+    "title": "🏠 Master of the House",
+    "description": "Explore every room, organize furniture with James, and complete Chapter 2 end-to-end.",
+    "category": "chapter_2",
+    "icon": "🏠",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch2_unlock_furniture"
+    }
+  },
+  {
     "id": "ach_morning_master",
     "title": "🌅 Early Bird",
     "description": "Complete your full morning routine from bedroom to kitchen.",

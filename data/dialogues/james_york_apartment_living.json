@@ -5,27 +5,27 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "🛋️ Welcome home! I am James York. This is your new living room and home!",
+      "npcLine": "🛋️ Welcome to your living room! I am James. Let's organize your apartment! There is a red sofa near the window. Is this your sofa?",
       "emotion": "happy",
-      "gestures": ["wave", "point_furniture"],
+      "gestures": ["point_furniture"],
       "highlights": ["sofa", "coffee_table"],
       "speechRate": 0.65,
-      "grammarCheck": "Existential Placement & Possessives ('This is your home')",
-      "visualAction": "🛋️ Living Room Welcome",
+      "grammarCheck": "Existential Placement & Demonstratives ('There is a... Is this your...')",
+      "visualAction": "🛋️ Sofa & Furniture Placement",
       "playerOptions": [
         {
-          "text": "🛋️ Thank you James! I am happy to be home.",
+          "text": "🛋️ Yes, that is my sofa! What else is in this living room?",
           "nextNodeId": "node_1",
-          "vocabId": "vocab_home",
-          "grammarId": "gt_there_is",
-          "rewardXP": 20,
-          "friendshipGain": 10
-        },
-        {
-          "text": "🔍 What objects are in this room?",
-          "nextNodeId": "node_2",
           "vocabId": "vocab_sofa",
           "grammarId": "gt_this",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        },
+        {
+          "text": "📺 Is that your television on the desk?",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_tv",
+          "grammarId": "gt_that",
           "rewardXP": 15
         }
       ],
@@ -34,22 +34,22 @@
     },
     {
       "id": "node_1",
-      "npcLine": "🎉 You completed Chapter 1! You met your friend James, talked to the receptionist, got your key, and unlocked your home!",
+      "npcLine": "🛋️ This is my red sofa and that is your coffee table. There are two lamps on the side tables! Let's organize the bedroom next!",
       "emotion": "excited",
-      "gestures": ["wave"],
-      "highlights": ["window"],
+      "gestures": ["point_furniture"],
+      "highlights": ["lamp", "coffee_table"],
       "speechRate": 0.65,
-      "grammarCheck": "Chapter 1 Graduation & Review",
-      "visualAction": "🏆 Chapter 1 Mastery",
+      "grammarCheck": "Plural Existential Placement ('There are two lamps')",
+      "visualAction": "🛋️ Organizes Living Room",
       "playerOptions": [
         {
-          "text": "🏡 Thank you! Goodbye for now!",
+          "text": "🛏️ Let me check my bedroom next!",
           "nextNodeId": null,
-          "vocabId": "vocab_goodbye",
-          "grammarId": "gt_greetings",
-          "rewardXP": 25,
+          "vocabId": "vocab_living_room",
+          "grammarId": "gt_there_are",
+          "rewardXP": 20,
           "friendshipGain": 10,
-          "rewardQuestId": "q_ch1_open_apartment"
+          "rewardQuestId": "q_ch2_explore_rooms"
         }
       ],
       "endConditions": null,
@@ -57,21 +57,22 @@
     },
     {
       "id": "node_2",
-      "npcLine": "🛋️ There is a sofa, a table, a television, and a lamp. Explore every room in Chapter 2!",
+      "npcLine": "📺 Yes, that is my television! There are books on my bookshelf too. Everything is in its place!",
       "emotion": "happy",
       "gestures": ["point_furniture"],
-      "highlights": ["tv", "lamp", "bookshelf"],
+      "highlights": ["tv", "bookshelf"],
       "speechRate": 0.65,
-      "grammarCheck": "Existential Placement ('There is a...')",
-      "visualAction": "🛋️ Furniture Overview",
+      "grammarCheck": "Possessive Adjectives ('my television, my bookshelf')",
+      "visualAction": "🧹 Living Room Complete",
       "playerOptions": [
         {
-          "text": "🏠 Let's explore every room!",
+          "text": "🧹 Thank you James! Our living room is organized!",
           "nextNodeId": null,
-          "vocabId": "vocab_living_room",
-          "grammarId": "gt_there_is",
+          "vocabId": "vocab_table",
+          "grammarId": "gt_my_your",
           "rewardXP": 20,
-          "rewardQuestId": "q_ch2_explore_rooms"
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch2_organize_apartment"
         }
       ],
       "endConditions": null,

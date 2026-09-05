@@ -5,22 +5,28 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "I wake up at seven o'clock in the morning. I always brush my teeth and eat breakfast.",
+      "npcLine": "🛏️ Here is your bedroom! There is a blue bed and there are two lamps on your desk. Is that your alarm clock?",
       "emotion": "happy",
-      "gestures": ["stretch", "eat_breakfast"],
-      "highlights": ["alarm_clock", "kettle"],
-      "speechRate": 0.75,
-      "grammarCheck": "Daily Actions & Habitual Routines (Present Simple)",
-      "visualAction": "⏰ Morning Routine",
+      "gestures": ["point_furniture"],
+      "highlights": ["bed", "desk", "alarm_clock"],
+      "speechRate": 0.65,
+      "grammarCheck": "There is / There are & Possessive Adjectives ('There is a... There are two...')",
+      "visualAction": "🛏️ Bedroom Setup",
       "playerOptions": [
         {
-          "text": "🌅 Complete morning routine!",
+          "text": "⏰ Yes, that is my alarm clock! My desk is next to my bed.",
           "nextNodeId": "node_1",
-          "vocabId": "alarm_clock",
-          "grammarId": "gt_present_simple",
-          "rewardXP": 25,
-          "friendshipGain": 10,
-          "rewardQuestId": "q_ch3_morning_routine"
+          "vocabId": "vocab_clock",
+          "grammarId": "gt_that",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        },
+        {
+          "text": "🪑 This is my desk and that is your bookshelf.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_desk",
+          "grammarId": "gt_this",
+          "rewardXP": 15
         }
       ],
       "endConditions": null,
@@ -28,20 +34,22 @@
     },
     {
       "id": "node_1",
-      "npcLine": "Where is the key? This is the desk, and that is the bed.",
-      "emotion": "curious",
-      "gestures": ["search", "point"],
-      "highlights": ["desk", "bed", "key"],
+      "npcLine": "⏰ Your bedroom looks great! There are books on the desk and my lamp is on the table. Let me know if you need anything else!",
+      "emotion": "excited",
+      "gestures": ["wave"],
+      "highlights": ["lamp", "bookshelf"],
       "speechRate": 0.65,
-      "grammarCheck": "Demonstratives (This vs That)",
-      "visualAction": "🔍 Search Objects",
+      "grammarCheck": "Plural Placement & Possessives ('There are books... my lamp')",
+      "visualAction": "🛏️ Bedroom Complete",
       "playerOptions": [
         {
-          "text": "🔑 Check the desk and bed!",
+          "text": "🙏 Thank you, James! I am ready to explore the kitchen.",
           "nextNodeId": null,
-          "vocabId": "desk",
-          "grammarId": "gt_this",
-          "rewardXP": 15
+          "vocabId": "vocab_bedroom",
+          "grammarId": "gt_there_are",
+          "rewardXP": 20,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch2_interact_objects"
         }
       ],
       "endConditions": null,

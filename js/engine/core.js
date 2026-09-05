@@ -167,6 +167,7 @@ export class GameEngine {
             'james_york_hallway',
             'james_york_apartment_living',
             'james_york_apartment_bedroom',
+            'james_york_apartment_kitchen',
             'james_york_apartment_entrance',
             'james_york_street',
             'ella_baker_bakery',
