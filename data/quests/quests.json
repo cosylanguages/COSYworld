@@ -33,12 +33,20 @@
     ],
     "reward": {
       "xp": 50,
-      "vocabulary": ["hello", "friend", "teacher"],
+      "vocabulary": [
+        "hello",
+        "friend",
+        "teacher"
+      ],
       "grammar": "gt_to_be"
     },
     "rewards": {
       "xp": 50,
-      "vocabulary": ["hello", "friend", "teacher"],
+      "vocabulary": [
+        "hello",
+        "friend",
+        "teacher"
+      ],
       "grammar": "gt_to_be"
     },
     "dialogues": {
@@ -94,12 +102,20 @@
     ],
     "reward": {
       "xp": 50,
-      "vocabulary": ["please", "thank you", "woman"],
+      "vocabulary": [
+        "please",
+        "thank you",
+        "woman"
+      ],
       "grammar": "gt_this_is"
     },
     "rewards": {
       "xp": 50,
-      "vocabulary": ["please", "thank you", "woman"],
+      "vocabulary": [
+        "please",
+        "thank you",
+        "woman"
+      ],
       "grammar": "gt_this_is"
     },
     "dialogues": {
@@ -155,12 +171,24 @@
     ],
     "reward": {
       "xp": 60,
-      "vocabulary": ["name", "I", "you", "yes", "no"],
+      "vocabulary": [
+        "name",
+        "I",
+        "you",
+        "yes",
+        "no"
+      ],
       "grammar": "gt_personal_pronouns"
     },
     "rewards": {
       "xp": 60,
-      "vocabulary": ["name", "I", "you", "yes", "no"],
+      "vocabulary": [
+        "name",
+        "I",
+        "you",
+        "yes",
+        "no"
+      ],
       "grammar": "gt_personal_pronouns"
     },
     "dialogues": {
@@ -193,7 +221,9 @@
     "NPC": "receptionist",
     "requirements": {
       "prerequisiteQuest": "q_ch1_first_dialogue",
-      "targetObjects": ["apartment_key"]
+      "targetObjects": [
+        "apartment_key"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_ch1_first_dialogue"
@@ -210,18 +240,28 @@
         "id": "obj_1",
         "type": "vocabulary",
         "description": "Collect apartment_key",
-        "targetObjects": ["apartment_key"],
+        "targetObjects": [
+          "apartment_key"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 60,
-      "vocabulary": ["key", "my", "your"],
+      "vocabulary": [
+        "key",
+        "my",
+        "your"
+      ],
       "grammar": "gt_my_your"
     },
     "rewards": {
       "xp": 60,
-      "vocabulary": ["key", "my", "your"],
+      "vocabulary": [
+        "key",
+        "my",
+        "your"
+      ],
       "grammar": "gt_my_your"
     },
     "dialogues": {
@@ -278,12 +318,22 @@
     ],
     "reward": {
       "xp": 100,
-      "vocabulary": ["door", "house", "home", "goodbye"],
+      "vocabulary": [
+        "door",
+        "house",
+        "home",
+        "goodbye"
+      ],
       "grammar": "gt_articles"
     },
     "rewards": {
       "xp": 100,
-      "vocabulary": ["door", "house", "home", "goodbye"],
+      "vocabulary": [
+        "door",
+        "house",
+        "home",
+        "goodbye"
+      ],
       "grammar": "gt_articles"
     },
     "dialogues": {
@@ -339,12 +389,24 @@
     ],
     "reward": {
       "xp": 75,
-      "vocabulary": ["living room", "kitchen", "bedroom", "bathroom", "balcony"],
+      "vocabulary": [
+        "living room",
+        "kitchen",
+        "bedroom",
+        "bathroom",
+        "balcony"
+      ],
       "grammar": "gt_there_is"
     },
     "rewards": {
       "xp": 75,
-      "vocabulary": ["living room", "kitchen", "bedroom", "bathroom", "balcony"],
+      "vocabulary": [
+        "living room",
+        "kitchen",
+        "bedroom",
+        "bathroom",
+        "balcony"
+      ],
       "grammar": "gt_there_is"
     },
     "dialogues": {
@@ -377,7 +439,9 @@
     "NPC": "james_york",
     "requirements": {
       "prerequisiteQuest": "q_ch2_explore_rooms",
-      "targetObjects": ["desk"]
+      "targetObjects": [
+        "desk"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_ch2_explore_rooms"
@@ -394,18 +458,34 @@
         "id": "obj_1",
         "type": "vocabulary",
         "description": "Inspect desk",
-        "targetObjects": ["desk"],
+        "targetObjects": [
+          "desk"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 80,
-      "vocabulary": ["television", "lamp", "fridge", "kettle", "towel", "soap"],
+      "vocabulary": [
+        "television",
+        "lamp",
+        "fridge",
+        "kettle",
+        "towel",
+        "soap"
+      ],
       "grammar": "gt_there_are"
     },
     "rewards": {
       "xp": 80,
-      "vocabulary": ["television", "lamp", "fridge", "kettle", "towel", "soap"],
+      "vocabulary": [
+        "television",
+        "lamp",
+        "fridge",
+        "kettle",
+        "towel",
+        "soap"
+      ],
       "grammar": "gt_there_are"
     },
     "dialogues": {
@@ -462,12 +542,26 @@
     ],
     "reward": {
       "xp": 85,
-      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"],
+      "vocabulary": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "white",
+        "black"
+      ],
       "grammar": "gt_this"
     },
     "rewards": {
       "xp": 85,
-      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"],
+      "vocabulary": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "white",
+        "black"
+      ],
       "grammar": "gt_this"
     },
     "dialogues": {
@@ -500,7 +594,9 @@
     "NPC": "james_york",
     "requirements": {
       "prerequisiteQuest": "q_ch2_organize_apartment",
-      "targetObjects": ["balcony_chair"]
+      "targetObjects": [
+        "balcony_chair"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_ch2_organize_apartment"
@@ -517,18 +613,42 @@
         "id": "obj_1",
         "type": "vocabulary",
         "description": "Inspect balcony_chair",
-        "targetObjects": ["balcony_chair"],
+        "targetObjects": [
+          "balcony_chair"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 100,
-      "vocabulary": ["sofa", "table", "chair", "bed", "desk", "one", "two", "three", "four", "five"],
+      "vocabulary": [
+        "sofa",
+        "table",
+        "chair",
+        "bed",
+        "desk",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+      ],
       "grammar": "gt_that"
     },
     "rewards": {
       "xp": 100,
-      "vocabulary": ["sofa", "table", "chair", "bed", "desk", "one", "two", "three", "four", "five"],
+      "vocabulary": [
+        "sofa",
+        "table",
+        "chair",
+        "bed",
+        "desk",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+      ],
       "grammar": "gt_that"
     },
     "dialogues": {
@@ -557,12 +677,18 @@
     "category": "vocabulary",
     "type": "collect",
     "title": "🌅 Complete Your Morning Routine",
-    "description": "Wake up, brush your teeth, and check the alarm clock in your morning routine.",
+    "description": "Complete your morning routine in sequence: wake up → wash → eat → dress → leave.",
     "difficulty": "A1",
     "NPC": "james_york",
     "requirements": {
       "prerequisiteQuest": "q_ch2_unlock_furniture",
-      "targetObjects": ["alarm_clock"]
+      "targetObjects": [
+        "wake_up",
+        "wash",
+        "eat",
+        "dress",
+        "apartment_door"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_ch2_unlock_furniture"
@@ -570,33 +696,77 @@
     "steps": [
       {
         "id": "step_1",
-        "description": "Check the alarm clock in the bedroom to start your morning routine",
-        "target": "alarm_clock"
+        "description": "1. Wake up in the bedroom (`wake_up`)",
+        "target": "wake_up"
+      },
+      {
+        "id": "step_2",
+        "description": "2. Wash your face in the bathroom (`wash`)",
+        "target": "wash"
+      },
+      {
+        "id": "step_3",
+        "description": "3. Eat breakfast in the kitchen (`eat`)",
+        "target": "eat"
+      },
+      {
+        "id": "step_4",
+        "description": "4. Get dressed at the coat rack (`dress`)",
+        "target": "dress"
+      },
+      {
+        "id": "step_5",
+        "description": "5. Leave through the apartment door (`apartment_door`)",
+        "target": "apartment_door"
       }
     ],
     "objectives": [
       {
         "id": "obj_1",
         "type": "vocabulary",
-        "description": "Inspect alarm_clock",
-        "targetObjects": ["alarm_clock"],
-        "requiredCount": 1
+        "description": "Complete sequential morning routine: wake_up, wash, eat, dress, apartment_door",
+        "targetObjects": [
+          "wake_up",
+          "wash",
+          "eat",
+          "dress",
+          "apartment_door"
+        ],
+        "requiredCount": 5
       }
     ],
     "reward": {
-      "xp": 90,
-      "vocabulary": ["wake up", "brush", "wash", "eat", "drink", "cook", "clock", "morning"],
+      "xp": 100,
+      "vocabulary": [
+        "wake up",
+        "brush",
+        "wash",
+        "eat",
+        "drink",
+        "cook",
+        "clock",
+        "morning"
+      ],
       "grammar": "gt_present_simple"
     },
     "rewards": {
-      "xp": 90,
-      "vocabulary": ["wake up", "brush", "wash", "eat", "drink", "cook", "clock", "morning"],
+      "xp": 100,
+      "vocabulary": [
+        "wake up",
+        "brush",
+        "wash",
+        "eat",
+        "drink",
+        "cook",
+        "clock",
+        "morning"
+      ],
       "grammar": "gt_present_simple"
     },
     "dialogues": {
-      "start": "Start your morning routine by checking the alarm clock!",
-      "progress": "Check the alarm clock.",
-      "complete": "Morning routine completed!"
+      "start": "Start your morning routine: wake up, wash, eat, dress, and leave!",
+      "progress": "Follow the morning steps in order.",
+      "complete": "Morning routine complete! Ready to start the day!"
     },
     "npcTriggers": [
       {
@@ -607,7 +777,7 @@
     "sceneTriggers": [
       {
         "locationId": "apartment_bedroom",
-        "hotspotId": "alarm_clock",
+        "hotspotId": "wake_up",
         "action": "inspect"
       }
     ],
@@ -624,7 +794,11 @@
     "NPC": "james_york",
     "requirements": {
       "prerequisiteQuest": "q_ch3_morning_routine",
-      "targetObjects": ["street_clock"]
+      "targetObjects": [
+        "street_clock",
+        "work",
+        "afternoon"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_ch3_morning_routine"
@@ -641,18 +815,32 @@
         "id": "obj_1",
         "type": "vocabulary",
         "description": "Inspect street_clock",
-        "targetObjects": ["street_clock"],
-        "requiredCount": 1
+        "targetObjects": [
+          "street_clock",
+          "work",
+          "afternoon"
+        ],
+        "requiredCount": 3
       }
     ],
     "reward": {
       "xp": 95,
-      "vocabulary": ["work", "study", "afternoon", "evening"],
+      "vocabulary": [
+        "work",
+        "study",
+        "afternoon",
+        "evening"
+      ],
       "grammar": "gt_time"
     },
     "rewards": {
       "xp": 95,
-      "vocabulary": ["work", "study", "afternoon", "evening"],
+      "vocabulary": [
+        "work",
+        "study",
+        "afternoon",
+        "evening"
+      ],
       "grammar": "gt_time"
     },
     "dialogues": {
@@ -686,7 +874,12 @@
     "NPC": "james_york",
     "requirements": {
       "prerequisiteQuest": "q_ch3_daily_schedule",
-      "targetLocation": "bus_stop"
+      "targetLocation": "bus_stop",
+      "targetObjects": [
+        "bus_stop_sign",
+        "bus_timetable_board",
+        "evening"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_ch3_daily_schedule"
@@ -704,17 +897,32 @@
         "type": "exploration",
         "description": "Enter bus_stop",
         "targetLocation": "bus_stop",
-        "requiredCount": 1
+        "requiredCount": 3,
+        "targetObjects": [
+          "bus_stop_sign",
+          "bus_timetable_board",
+          "evening"
+        ]
       }
     ],
     "reward": {
       "xp": 100,
-      "vocabulary": ["always", "usually", "never", "sleep"],
+      "vocabulary": [
+        "always",
+        "usually",
+        "never",
+        "sleep"
+      ],
       "grammar": "gt_frequency"
     },
     "rewards": {
       "xp": 100,
-      "vocabulary": ["always", "usually", "never", "sleep"],
+      "vocabulary": [
+        "always",
+        "usually",
+        "never",
+        "sleep"
+      ],
       "grammar": "gt_frequency"
     },
     "dialogues": {
@@ -770,12 +978,16 @@
     ],
     "reward": {
       "xp": 40,
-      "vocabulary": ["sofa"],
+      "vocabulary": [
+        "sofa"
+      ],
       "grammar": "gt_greetings"
     },
     "rewards": {
       "xp": 40,
-      "vocabulary": ["sofa"],
+      "vocabulary": [
+        "sofa"
+      ],
       "grammar": "gt_greetings"
     },
     "dialogues": {
@@ -808,7 +1020,9 @@
     "NPC": "james_york",
     "requirements": {
       "prerequisiteQuest": "q_explore_living",
-      "targetObjects": ["key"]
+      "targetObjects": [
+        "key"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_explore_living"
@@ -825,18 +1039,24 @@
         "id": "obj_1",
         "type": "vocabulary",
         "description": "Inspect key",
-        "targetObjects": ["key"],
+        "targetObjects": [
+          "key"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 50,
-      "vocabulary": ["key"],
+      "vocabulary": [
+        "key"
+      ],
       "grammar": "gt_greetings"
     },
     "rewards": {
       "xp": 50,
-      "vocabulary": ["key"],
+      "vocabulary": [
+        "key"
+      ],
       "grammar": "gt_greetings"
     },
     "dialogues": {
@@ -895,12 +1115,16 @@
     ],
     "reward": {
       "xp": 60,
-      "vocabulary": ["door_lock"],
+      "vocabulary": [
+        "door_lock"
+      ],
       "grammar": "gt_greetings"
     },
     "rewards": {
       "xp": 60,
-      "vocabulary": ["door_lock"],
+      "vocabulary": [
+        "door_lock"
+      ],
       "grammar": "gt_greetings"
     },
     "dialogues": {
@@ -919,7 +1143,8 @@
         "locationId": "apartment_living",
         "action": "inspect"
       }
-    ]
+    ],
+    "nextQuestId": "q_directions_bakery"
   },
   {
     "id": "q_photo_fountain",
@@ -932,7 +1157,9 @@
     "NPC": "ella_bronx",
     "requirements": {
       "level": 1,
-      "targetObjects": ["clock_tower"]
+      "targetObjects": [
+        "clock_tower"
+      ]
     },
     "unlockConditions": {
       "level": 1
@@ -949,18 +1176,24 @@
         "id": "obj_1",
         "type": "photography",
         "description": "Photograph clock_tower",
-        "targetObjects": ["clock_tower"],
+        "targetObjects": [
+          "clock_tower"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 50,
-      "vocabulary": ["clock_tower"],
+      "vocabulary": [
+        "clock_tower"
+      ],
       "grammar": "gt_there_is"
     },
     "rewards": {
       "xp": 50,
-      "vocabulary": ["clock_tower"],
+      "vocabulary": [
+        "clock_tower"
+      ],
       "grammar": "gt_there_is"
     },
     "dialogues": {
@@ -1016,12 +1249,16 @@
     ],
     "reward": {
       "xp": 55,
-      "vocabulary": ["fountain"],
+      "vocabulary": [
+        "fountain"
+      ],
       "grammar": "gt_there_is"
     },
     "rewards": {
       "xp": 55,
-      "vocabulary": ["fountain"],
+      "vocabulary": [
+        "fountain"
+      ],
       "grammar": "gt_there_is"
     },
     "dialogues": {
@@ -1078,12 +1315,16 @@
     ],
     "reward": {
       "xp": 60,
-      "vocabulary": ["bench"],
+      "vocabulary": [
+        "bench"
+      ],
       "grammar": "gt_there_is"
     },
     "rewards": {
       "xp": 60,
-      "vocabulary": ["bench"],
+      "vocabulary": [
+        "bench"
+      ],
       "grammar": "gt_there_is"
     },
     "dialogues": {
@@ -1115,7 +1356,9 @@
     "NPC": "ella_bronx",
     "requirements": {
       "level": 1,
-      "targetObjects": ["fountain"],
+      "targetObjects": [
+        "fountain"
+      ],
       "action": "listen"
     },
     "unlockConditions": {
@@ -1133,19 +1376,25 @@
         "id": "obj_1",
         "type": "listening",
         "description": "Listen to fountain",
-        "targetObjects": ["fountain"],
+        "targetObjects": [
+          "fountain"
+        ],
         "action": "listen",
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 50,
-      "vocabulary": ["fountain"],
+      "vocabulary": [
+        "fountain"
+      ],
       "grammar": "gt_there_is"
     },
     "rewards": {
       "xp": 50,
-      "vocabulary": ["fountain"],
+      "vocabulary": [
+        "fountain"
+      ],
       "grammar": "gt_there_is"
     },
     "dialogues": {
@@ -1172,51 +1421,84 @@
     "chapter": "ch4",
     "category": "travel",
     "type": "directions",
-    "title": "🧭 Navigate to the Bakery",
-    "description": "Follow town directions to travel from Town Square into the Bakery.",
+    "title": "🧭 Give Directions to the Bakery",
+    "description": "An traveler at the crosswalk asks for directions to the bakery using imperatives: go, turn left, turn right, next to, behind, between.",
     "difficulty": "A1",
-    "NPC": "lucas_baker",
+    "NPC": "diana_voyager",
     "requirements": {
-      "level": 1,
-      "targetLocation": "bakery"
+      "prerequisiteQuest": "q_grammar_imperative",
+      "targetLocation": "bakery",
+      "targetObjects": [
+        "direction_sign",
+        "crosswalk_stripes"
+      ]
     },
     "unlockConditions": {
-      "level": 1
+      "prerequisiteQuest": "q_grammar_imperative"
     },
     "steps": [
       {
         "id": "step_1",
-        "description": "Travel from Town Square to the Bakery",
+        "description": "Meet Diana Voyager at the crosswalk and give directions using imperatives",
+        "target": "diana_voyager"
+      },
+      {
+        "id": "step_2",
+        "description": "Navigate using direction signs to reach the bakery",
         "target": "bakery"
       }
     ],
     "objectives": [
       {
         "id": "obj_1",
-        "type": "travel",
-        "description": "Travel to bakery",
+        "type": "directions",
+        "description": "Navigate to bakery using imperatives and direction signs",
         "targetLocation": "bakery",
-        "requiredCount": 1
+        "targetObjects": [
+          "direction_sign",
+          "crosswalk_stripes"
+        ],
+        "requiredCount": 2
       }
     ],
     "reward": {
-      "xp": 65,
-      "vocabulary": ["baguette"],
-      "grammar": "gt_likes"
+      "xp": 85,
+      "vocabulary": [
+        "go",
+        "turn left",
+        "turn right",
+        "next to",
+        "behind",
+        "between"
+      ],
+      "grammar": "gt_prepositions",
+      "features": [
+        "city_map"
+      ]
     },
     "rewards": {
-      "xp": 65,
-      "vocabulary": ["baguette"],
-      "grammar": "gt_likes"
+      "xp": 85,
+      "vocabulary": [
+        "go",
+        "turn left",
+        "turn right",
+        "next to",
+        "behind",
+        "between"
+      ],
+      "grammar": "gt_prepositions",
+      "features": [
+        "city_map"
+      ]
     },
     "dialogues": {
-      "start": "Head east along Central Avenue to reach the Bakery.",
-      "progress": "Walk into the Bakery.",
-      "complete": "You have arrived at Lucas's Bakery!"
+      "start": "Excuse me! Could you give me directions to the bakery? Go straight, turn left next to the crosswalk!",
+      "progress": "Follow the direction signs and navigate to the bakery.",
+      "complete": "Thank you! You gave perfect directions and unlocked the City Map!"
     },
     "npcTriggers": [
       {
-        "npcId": "lucas_baker",
+        "npcId": "diana_voyager",
         "action": "talk"
       }
     ],
@@ -1226,7 +1508,7 @@
         "action": "enter"
       }
     ],
-    "nextQuestId": "q_shop_baguette"
+    "nextQuestId": "q_ch4_city_map_master"
   },
   {
     "id": "q_shop_baguette",
@@ -1239,7 +1521,9 @@
     "NPC": "lucas_baker",
     "requirements": {
       "prerequisiteQuest": "q_directions_bakery",
-      "targetObjects": ["baguette"]
+      "targetObjects": [
+        "baguette"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_directions_bakery"
@@ -1256,18 +1540,26 @@
         "id": "obj_1",
         "type": "shopping",
         "description": "Purchase baguette",
-        "targetObjects": ["baguette"],
+        "targetObjects": [
+          "baguette"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 75,
-      "vocabulary": ["baguette", "croissant"],
+      "vocabulary": [
+        "baguette",
+        "croissant"
+      ],
       "grammar": "gt_likes"
     },
     "rewards": {
       "xp": 75,
-      "vocabulary": ["baguette", "croissant"],
+      "vocabulary": [
+        "baguette",
+        "croissant"
+      ],
       "grammar": "gt_likes"
     },
     "dialogues": {
@@ -1301,7 +1593,10 @@
     "NPC": "lucas_baker",
     "requirements": {
       "prerequisiteQuest": "q_shop_baguette",
-      "targetObjects": ["oven", "flour"]
+      "targetObjects": [
+        "oven",
+        "flour"
+      ]
     },
     "unlockConditions": {
       "prerequisiteQuest": "q_shop_baguette"
@@ -1318,18 +1613,27 @@
         "id": "obj_1",
         "type": "cooking",
         "description": "Cook using oven and flour",
-        "targetObjects": ["oven", "flour"],
+        "targetObjects": [
+          "oven",
+          "flour"
+        ],
         "requiredCount": 2
       }
     ],
     "reward": {
       "xp": 80,
-      "vocabulary": ["oven", "flour"],
+      "vocabulary": [
+        "oven",
+        "flour"
+      ],
       "grammar": "gt_likes"
     },
     "rewards": {
       "xp": 80,
-      "vocabulary": ["oven", "flour"],
+      "vocabulary": [
+        "oven",
+        "flour"
+      ],
       "grammar": "gt_likes"
     },
     "dialogues": {
@@ -1362,7 +1666,9 @@
     "NPC": "ella_bronx",
     "requirements": {
       "level": 1,
-      "targetObjects": ["notice_board"]
+      "targetObjects": [
+        "notice_board"
+      ]
     },
     "unlockConditions": {
       "level": 1
@@ -1379,18 +1685,24 @@
         "id": "obj_1",
         "type": "reading",
         "description": "Read notice_board",
-        "targetObjects": ["notice_board"],
+        "targetObjects": [
+          "notice_board"
+        ],
         "requiredCount": 1
       }
     ],
     "reward": {
       "xp": 45,
-      "vocabulary": ["notice_board"],
+      "vocabulary": [
+        "notice_board"
+      ],
       "grammar": "gt_there_is"
     },
     "rewards": {
       "xp": 45,
-      "vocabulary": ["notice_board"],
+      "vocabulary": [
+        "notice_board"
+      ],
       "grammar": "gt_there_is"
     },
     "dialogues": {
@@ -1446,12 +1758,20 @@
     ],
     "reward": {
       "xp": 90,
-      "vocabulary": ["lamp", "tv", "bookshelf"],
+      "vocabulary": [
+        "lamp",
+        "tv",
+        "bookshelf"
+      ],
       "grammar": "gt_present_simple"
     },
     "rewards": {
       "xp": 90,
-      "vocabulary": ["lamp", "tv", "bookshelf"],
+      "vocabulary": [
+        "lamp",
+        "tv",
+        "bookshelf"
+      ],
       "grammar": "gt_present_simple"
     },
     "dialogues": {
@@ -1471,5 +1791,74 @@
         "action": "enter"
       }
     ]
+  },
+  {
+    "id": "q_ch4_city_map_master",
+    "chapter": "ch4",
+    "category": "travel",
+    "type": "exploration",
+    "title": "🗺️ City Map Navigator",
+    "description": "Open the interactive World Map to navigate between neighbourhood locations: crosswalk, post office, pharmacy, and bakery.",
+    "difficulty": "A1",
+    "NPC": "diana_voyager",
+    "requirements": {
+      "prerequisiteQuest": "q_directions_bakery",
+      "targetLocation": "post_office"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_directions_bakery"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the post office and use the City Map",
+        "target": "post_office"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Navigate to post_office using city map",
+        "targetLocation": "post_office",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": [
+        "map",
+        "street",
+        "neighbourhood"
+      ],
+      "grammar": "gt_prepositions"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": [
+        "map",
+        "street",
+        "neighbourhood"
+      ],
+      "grammar": "gt_prepositions"
+    },
+    "dialogues": {
+      "start": "Use your new City Map to explore the neighbourhood!",
+      "progress": "Open the map to travel to the post office.",
+      "complete": "Chapter 4 Complete! You are a master neighbourhood navigator!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "diana_voyager",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "post_office",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_shop_baguette"
   }
 ]

@@ -278,6 +278,10 @@
       "es": "Refrigerador",
       "de": "Kühlschrank",
       "ru": "Холодильник"
+    },
+    "actionChain": {
+      "nextObject": "cook",
+      "actionIcon": "🍳 Cook Meals"
     }
   },
   "kettle": {
@@ -303,6 +307,10 @@
       "es": "Hervidor",
       "de": "Wasserkocher",
       "ru": "Чайник"
+    },
+    "actionChain": {
+      "nextObject": "drink",
+      "actionIcon": "☕ Drink Tea"
     }
   },
   "cup": {
@@ -833,6 +841,10 @@
       "tt": "Кем-кимәл элгече",
       "ba": "Кейем элеүес",
       "cv": "Тӑхӑнмалӑх ретӗ"
+    },
+    "actionChain": {
+      "nextObject": "dress",
+      "actionIcon": "🧥 Get Dressed"
     }
   },
   "umbrella_stand": {
@@ -1209,7 +1221,12 @@
       "es": "Cama",
       "de": "Bett",
       "ru": "Кровать"
-    }
+    },
+    "actionChain": {
+      "nextObject": "wake_up",
+      "actionIcon": "🌅 Wake Up"
+    },
+    "visualSequence": "🛏️ Rest in Bed ➔ ⏰ Alarm Rings ➔ 🌅 Wake Up"
   },
   "desk": {
     "id": "desk",
@@ -1234,6 +1251,10 @@
       "es": "Escritorio",
       "de": "Schreibtisch",
       "ru": "Письменный стол"
+    },
+    "actionChain": {
+      "nextObject": "study",
+      "actionIcon": "📚 Study Lessons"
     }
   },
   "towel": {
@@ -1284,6 +1305,10 @@
       "es": "Jabón",
       "de": "Seife",
       "ru": "Мыло"
+    },
+    "actionChain": {
+      "nextObject": "wash",
+      "actionIcon": "🧼 Wash Face"
     }
   },
   "bathroom_mirror": {
@@ -1309,6 +1334,10 @@
       "es": "Espejo",
       "de": "Spiegel",
       "ru": "Зеркало"
+    },
+    "actionChain": {
+      "nextObject": "brush",
+      "actionIcon": "🪥 Brush Teeth"
     }
   },
   "balcony_chair": {
@@ -1384,6 +1413,10 @@
       "es": "Despertador",
       "de": "Wecker",
       "ru": "Будильник"
+    },
+    "actionChain": {
+      "nextObject": "morning",
+      "actionIcon": "🌅 Set Morning Time"
     }
   },
   "street_clock": {
@@ -1409,6 +1442,10 @@
       "es": "Reloj de calle",
       "de": "Straßenuhr",
       "ru": "Уличные часы"
+    },
+    "actionChain": {
+      "nextObject": "work",
+      "actionIcon": "💼 Walk to Work"
     }
   },
   "bus_stop_sign": {
@@ -2262,6 +2299,702 @@
       "it": "Tappeto di benvenuto a casa",
       "de": "Zuhause-Fussmatte",
       "ru": "Домашний коврик"
+    }
+  },
+  "wake_up": {
+    "id": "wake_up",
+    "type": "action",
+    "locationId": "apartment_bedroom",
+    "emoji": "🌅",
+    "x": 280,
+    "y": 180,
+    "width": 60,
+    "height": 60,
+    "labelX": 310,
+    "labelY": 170,
+    "vocabId": "vocab_wake_up",
+    "grammarId": "gt_present_simple",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "wash",
+      "actionIcon": "🧼 Wash Face & Brush"
+    },
+    "words": {
+      "en": "Wake Up",
+      "fr": "S'éveiller",
+      "it": "Svegliarsi",
+      "es": "Despertarse",
+      "de": "Aufwachen",
+      "ru": "Просыпаться"
+    },
+    "visualSequence": "🌅 Wake Up ➔ 🛏️ Get out of bed ➔ 🛁 Head to bathroom"
+  },
+  "sleep": {
+    "id": "sleep",
+    "type": "action",
+    "locationId": "apartment_bedroom",
+    "emoji": "😴",
+    "x": 220,
+    "y": 180,
+    "width": 60,
+    "height": 60,
+    "labelX": 250,
+    "labelY": 170,
+    "vocabId": "vocab_sleep",
+    "grammarId": "gt_present_simple",
+    "soundCue": "bed_rustle",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "bed",
+      "actionIcon": "🛏️ Go to Bed"
+    },
+    "words": {
+      "en": "Sleep",
+      "fr": "Dormir",
+      "it": "Dormire",
+      "es": "Dormir",
+      "de": "Schlafen",
+      "ru": "Спать"
+    },
+    "visualSequence": "😴 Sleep ➔ 🛏️ Rest in Bed ➔ 🌙 Night Time"
+  },
+  "study": {
+    "id": "study",
+    "type": "action",
+    "locationId": "apartment_bedroom",
+    "emoji": "📚",
+    "x": 540,
+    "y": 200,
+    "width": 60,
+    "height": 60,
+    "labelX": 570,
+    "labelY": 190,
+    "vocabId": "vocab_study",
+    "grammarId": "gt_present_simple",
+    "soundCue": "page_turn",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "desk",
+      "actionIcon": "🖥️ Study at Desk"
+    },
+    "words": {
+      "en": "Study",
+      "fr": "Étudier",
+      "it": "Studiare",
+      "es": "Estudiar",
+      "de": "Studieren",
+      "ru": "Учиться"
+    },
+    "visualSequence": "📚 Open Textbook ➔ ✍️ Take Notes ➔ 🧠 Study Lessons"
+  },
+  "brush": {
+    "id": "brush",
+    "type": "action",
+    "locationId": "apartment_bathroom",
+    "emoji": "🪥",
+    "x": 400,
+    "y": 180,
+    "width": 60,
+    "height": 60,
+    "labelX": 430,
+    "labelY": 170,
+    "vocabId": "vocab_brush",
+    "grammarId": "gt_present_simple",
+    "soundCue": "water_splash",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "wash",
+      "actionIcon": "🧼 Wash Face"
+    },
+    "words": {
+      "en": "Brush Teeth",
+      "fr": "Brosser les dents",
+      "it": "Lavarsi i denti",
+      "es": "Cepillarse los dientes",
+      "de": "Zähne putzen",
+      "ru": "Чистить зубы"
+    },
+    "visualSequence": "🪥 Toothbrush & Paste ➔ 🪞 In Mirror ➔ ✨ Clean Smile"
+  },
+  "wash": {
+    "id": "wash",
+    "type": "action",
+    "locationId": "apartment_bathroom",
+    "emoji": "🧼",
+    "x": 320,
+    "y": 220,
+    "width": 60,
+    "height": 60,
+    "labelX": 350,
+    "labelY": 210,
+    "vocabId": "vocab_wash",
+    "grammarId": "gt_present_simple",
+    "soundCue": "water_splash",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "towel",
+      "actionIcon": "🧺 Dry Hands & Face"
+    },
+    "words": {
+      "en": "Wash Face",
+      "fr": "Se laver le visage",
+      "it": "Lavarsi la faccia",
+      "es": "Lavarse la cara",
+      "de": "Gesicht waschen",
+      "ru": "Умываться"
+    },
+    "visualSequence": "🧼 Lather Soap ➔ 🚿 Rinse Water ➔ 🧺 Dry with Towel"
+  },
+  "cook": {
+    "id": "cook",
+    "type": "action",
+    "locationId": "apartment_kitchen",
+    "emoji": "🍳",
+    "x": 220,
+    "y": 220,
+    "width": 60,
+    "height": 60,
+    "labelX": 250,
+    "labelY": 210,
+    "vocabId": "vocab_cook",
+    "grammarId": "gt_present_simple",
+    "soundCue": "kettle_whistle",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "eat",
+      "actionIcon": "🍽️ Eat Meal"
+    },
+    "words": {
+      "en": "Cook",
+      "fr": "Cuisiner",
+      "it": "Cucinare",
+      "es": "Cocinar",
+      "de": "Kochen",
+      "ru": "Готовить"
+    },
+    "visualSequence": "🍳 Prepare Skillet ➔ 🧊 Fresh Food ➔ 🍽️ Cook Breakfast"
+  },
+  "eat": {
+    "id": "eat",
+    "type": "action",
+    "locationId": "apartment_kitchen",
+    "emoji": "🍽️",
+    "x": 360,
+    "y": 220,
+    "width": 60,
+    "height": 60,
+    "labelX": 390,
+    "labelY": 210,
+    "vocabId": "vocab_eat",
+    "grammarId": "gt_present_simple",
+    "soundCue": "cup_clink",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "drink",
+      "actionIcon": "☕ Drink Beverage"
+    },
+    "words": {
+      "en": "Eat",
+      "fr": "Manger",
+      "it": "Mangiare",
+      "es": "Comer",
+      "de": "Essen",
+      "ru": "Есть"
+    },
+    "visualSequence": "🍽️ Prepared Plate ➔ 😋 Eat Meal ➔ ☕ Enjoy Drink"
+  },
+  "drink": {
+    "id": "drink",
+    "type": "action",
+    "locationId": "apartment_kitchen",
+    "emoji": "☕",
+    "x": 440,
+    "y": 220,
+    "width": 60,
+    "height": 60,
+    "labelX": 470,
+    "labelY": 210,
+    "vocabId": "vocab_drink",
+    "grammarId": "gt_present_simple",
+    "soundCue": "cup_clink",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "kettle",
+      "actionIcon": "🫖 Boil Kettle"
+    },
+    "words": {
+      "en": "Drink",
+      "fr": "Boire",
+      "it": "Bere",
+      "es": "Beber",
+      "de": "Trinken",
+      "ru": "Пить"
+    },
+    "visualSequence": "🫖 Pour Water ➔ ☕ Sip Cup ➔ 😋 Refreshing Drink"
+  },
+  "dress": {
+    "id": "dress",
+    "type": "action",
+    "locationId": "apartment_entrance",
+    "emoji": "🧥",
+    "x": 600,
+    "y": 320,
+    "width": 60,
+    "height": 60,
+    "labelX": 630,
+    "labelY": 310,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_present_simple",
+    "soundCue": "cloth_fold",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "apartment_door",
+      "actionIcon": "🚪 Leave Apartment"
+    },
+    "words": {
+      "en": "Get Dressed",
+      "fr": "S'habiller",
+      "it": "Vestirsi",
+      "es": "Vestirse",
+      "de": "Anziehen",
+      "ru": "Одеваться"
+    },
+    "visualSequence": "🧥 Coat Rack ➔ 👟 Shoes on ➔ 🚪 Ready to Leave"
+  },
+  "work": {
+    "id": "work",
+    "type": "action",
+    "locationId": "street",
+    "emoji": "💼",
+    "x": 480,
+    "y": 200,
+    "width": 60,
+    "height": 60,
+    "labelX": 510,
+    "labelY": 190,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_present_simple",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "bus_stop_sign",
+      "actionIcon": "🚌 Head to Bus Stop"
+    },
+    "words": {
+      "en": "Work",
+      "fr": "Travailler",
+      "it": "Lavorare",
+      "es": "Trabajar",
+      "de": "Arbeiten",
+      "ru": "Работать"
+    },
+    "visualSequence": "💼 City Avenue ➔ 🚌 Bus Commute ➔ 🏫 Arrive at Work"
+  },
+  "morning": {
+    "id": "morning",
+    "type": "time",
+    "locationId": "apartment_bedroom",
+    "emoji": "🌅",
+    "x": 700,
+    "y": 200,
+    "width": 60,
+    "height": 60,
+    "labelX": 730,
+    "labelY": 190,
+    "vocabId": "vocab_morning",
+    "grammarId": "gt_time",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "alarm_clock",
+      "actionIcon": "⏰ Check Alarm"
+    },
+    "words": {
+      "en": "Morning",
+      "fr": "Matin",
+      "it": "Mattina",
+      "es": "Mañana",
+      "de": "Morgen",
+      "ru": "Утро"
+    }
+  },
+  "afternoon": {
+    "id": "afternoon",
+    "type": "time",
+    "locationId": "street",
+    "emoji": "☀️",
+    "x": 280,
+    "y": 140,
+    "width": 60,
+    "height": 60,
+    "labelX": 310,
+    "labelY": 130,
+    "vocabId": "vocab_afternoon",
+    "grammarId": "gt_time",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "street_clock",
+      "actionIcon": "🕒 Check Street Clock"
+    },
+    "words": {
+      "en": "Afternoon",
+      "fr": "Après-midi",
+      "it": "Pomeriggio",
+      "es": "Tarde",
+      "de": "Nachmittag",
+      "ru": "День"
+    }
+  },
+  "evening": {
+    "id": "evening",
+    "type": "time",
+    "locationId": "bus_stop",
+    "emoji": "🌆",
+    "x": 600,
+    "y": 180,
+    "width": 60,
+    "height": 60,
+    "labelX": 630,
+    "labelY": 170,
+    "vocabId": "vocab_evening",
+    "grammarId": "gt_time",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "bus_timetable_board",
+      "actionIcon": "📋 Evening Bus Schedule"
+    },
+    "words": {
+      "en": "Evening",
+      "fr": "Soir",
+      "it": "Sera",
+      "es": "Noche",
+      "de": "Abend",
+      "ru": "Вечер"
+    }
+  },
+  "clock": {
+    "id": "clock",
+    "type": "time",
+    "locationId": "apartment_bedroom",
+    "emoji": "🕒",
+    "x": 660,
+    "y": 140,
+    "width": 50,
+    "height": 50,
+    "labelX": 685,
+    "labelY": 130,
+    "vocabId": "vocab_clock",
+    "grammarId": "gt_time",
+    "soundCue": "clock_chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Clock",
+      "fr": "Horloge",
+      "it": "Orologio",
+      "es": "Reloj",
+      "de": "Uhr",
+      "ru": "Часы"
+    }
+  },
+  "crosswalk_stripes": {
+    "id": "crosswalk_stripes",
+    "type": "structure",
+    "locationId": "crosswalk",
+    "emoji": "🚸",
+    "x": 200,
+    "y": 320,
+    "width": 400,
+    "height": 100,
+    "labelX": 400,
+    "labelY": 310,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_imperatives",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "traffic_light",
+      "actionIcon": "🚦 Look at Signal"
+    },
+    "words": {
+      "en": "Crosswalk Markings",
+      "fr": "Passage piéton",
+      "it": "Strisce pedonali",
+      "es": "Paso de peatones",
+      "de": "Zebrastreifen",
+      "ru": "Пешеходный переход"
+    },
+    "visualSequence": "🚸 Pedestrian Crossing ➔ 🚦 Check Traffic Light ➔ 🚶 Cross Safely"
+  },
+  "traffic_light": {
+    "id": "traffic_light",
+    "type": "appliance",
+    "locationId": "crosswalk",
+    "emoji": "🚦",
+    "x": 620,
+    "y": 120,
+    "width": 60,
+    "height": 140,
+    "labelX": 650,
+    "labelY": 110,
+    "vocabId": "vocab_lamp",
+    "grammarId": "gt_imperatives",
+    "soundCue": "chime",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "direction_sign",
+      "actionIcon": "🪧 Read Direction Sign"
+    },
+    "words": {
+      "en": "Traffic Light",
+      "fr": "Feu de circulation",
+      "it": "Semaforo",
+      "es": "Semáforo",
+      "de": "Ampel",
+      "ru": "Светофор"
+    }
+  },
+  "direction_sign": {
+    "id": "direction_sign",
+    "type": "structure",
+    "locationId": "crosswalk",
+    "emoji": "🪧",
+    "x": 120,
+    "y": 140,
+    "width": 80,
+    "height": 120,
+    "labelX": 160,
+    "labelY": 130,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_prepositions",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "crosswalk_stripes",
+      "actionIcon": "🚸 Cross the Street"
+    },
+    "words": {
+      "en": "Direction Sign",
+      "fr": "Panneau de direction",
+      "it": "Cartello stradale",
+      "es": "Señal de dirección",
+      "de": "Wegweiser",
+      "ru": "Указатель направления"
+    },
+    "visualSequence": "🪧 Turn Left ➔ 🥐 Bakery 100m ➔ 📮 Post Office Right"
+  },
+  "post_box": {
+    "id": "post_box",
+    "type": "structure",
+    "locationId": "post_office",
+    "emoji": "📮",
+    "x": 160,
+    "y": 200,
+    "width": 80,
+    "height": 120,
+    "labelX": 200,
+    "labelY": 190,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_imperatives",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "stamps",
+      "actionIcon": "✉️ Buy Postage Stamps"
+    },
+    "words": {
+      "en": "Post Box",
+      "fr": "Boîte aux lettres",
+      "it": "Cassetta postale",
+      "es": "Buzón de correos",
+      "de": "Briefkasten",
+      "ru": "Почтовый ящик"
+    }
+  },
+  "stamps": {
+    "id": "stamps",
+    "type": "item",
+    "locationId": "post_office",
+    "emoji": "✉️",
+    "x": 420,
+    "y": 220,
+    "width": 60,
+    "height": 60,
+    "labelX": 450,
+    "labelY": 210,
+    "vocabId": "vocab_name",
+    "grammarId": "gt_prepositions",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "post_counter",
+      "actionIcon": "📮 Post Counter"
+    },
+    "words": {
+      "en": "Postage Stamps",
+      "fr": "Timbres postaux",
+      "it": "Francobolli",
+      "es": "Sellos de correos",
+      "de": "Briefmarken",
+      "ru": "Почтовые марки"
+    }
+  },
+  "post_counter": {
+    "id": "post_counter",
+    "type": "furniture",
+    "locationId": "post_office",
+    "emoji": "🏢",
+    "x": 320,
+    "y": 180,
+    "width": 240,
+    "height": 120,
+    "labelX": 440,
+    "labelY": 170,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_prepositions",
+    "soundCue": "desk_tap",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "words": {
+      "en": "Post Office Counter",
+      "fr": "Guichet de poste",
+      "it": "Sportello postale",
+      "es": "Mostrador de correos",
+      "de": "Postschalter",
+      "ru": "Почтовая стойка"
+    }
+  },
+  "pharmacy_counter": {
+    "id": "pharmacy_counter",
+    "type": "furniture",
+    "locationId": "pharmacy",
+    "emoji": "💊",
+    "x": 280,
+    "y": 180,
+    "width": 280,
+    "height": 120,
+    "labelX": 420,
+    "labelY": 170,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_prepositions",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "medicine_shelf",
+      "actionIcon": "🩺 Medicine Shelf"
+    },
+    "words": {
+      "en": "Pharmacy Counter",
+      "fr": "Comptoir de pharmacie",
+      "it": "Banco farmacia",
+      "es": "Mostrador de farmacia",
+      "de": "Apothekentheke",
+      "ru": "Аптечная стойка"
+    }
+  },
+  "medicine_shelf": {
+    "id": "medicine_shelf",
+    "type": "furniture",
+    "locationId": "pharmacy",
+    "emoji": "🩺",
+    "x": 600,
+    "y": 140,
+    "width": 120,
+    "height": 200,
+    "labelX": 660,
+    "labelY": 130,
+    "vocabId": "vocab_book",
+    "grammarId": "gt_prepositions",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "first_aid_box",
+      "actionIcon": "🩹 First Aid Kit"
+    },
+    "words": {
+      "en": "Medicine Shelf",
+      "fr": "Étagère à médicaments",
+      "it": "Scaffale medicinali",
+      "es": "Estante de medicinas",
+      "de": "Medikamentenregal",
+      "ru": "Полка с лекарствами"
+    }
+  },
+  "first_aid_box": {
+    "id": "first_aid_box",
+    "type": "item",
+    "locationId": "pharmacy",
+    "emoji": "🩹",
+    "x": 180,
+    "y": 240,
+    "width": 60,
+    "height": 60,
+    "labelX": 210,
+    "labelY": 230,
+    "vocabId": "vocab_soap",
+    "grammarId": "gt_prepositions",
+    "soundCue": "chime",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "words": {
+      "en": "First Aid Kit",
+      "fr": "Trousse de secours",
+      "it": "Kit di primo soccorso",
+      "es": "Botiquín de primeros auxilios",
+      "de": "Erste-Hilfe-Set",
+      "ru": "Аптечка"
+    }
+  },
+  "oven": {
+    "id": "oven",
+    "type": "appliance",
+    "locationId": "bakery",
+    "emoji": "🧑‍🍳",
+    "x": 520,
+    "y": 160,
+    "width": 140,
+    "height": 140,
+    "labelX": 590,
+    "labelY": 150,
+    "vocabId": "vocab_bread",
+    "grammarId": "gt_imperatives",
+    "soundCue": "kettle_whistle",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "baguette",
+      "actionIcon": "🥖 Fresh Baguette"
+    },
+    "words": {
+      "en": "Bakery Oven",
+      "fr": "Four à pain",
+      "it": "Forno da panettiere",
+      "es": "Horno de panadería",
+      "de": "Backofen",
+      "ru": "Пекарская печь"
     }
   }
 }

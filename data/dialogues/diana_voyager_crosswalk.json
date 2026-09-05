@@ -1,0 +1,99 @@
+{
+  "npcId": "diana_voyager",
+  "sceneId": "crosswalk",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🚸 Excuse me! I am lost. Could you give me directions to the bakery? Is it near here?",
+      "emotion": "curious",
+      "gestures": [
+        "point_map",
+        "wave"
+      ],
+      "highlights": [
+        "crosswalk_stripes",
+        "direction_sign"
+      ],
+      "speechRate": 0.7,
+      "grammarCheck": "Asking Directions & Imperative Guidance ('Go straight... Turn left...')",
+      "visualAction": "🚸 Directions Request",
+      "playerOptions": [
+        {
+          "text": "🪧 Go straight along the street, turn left next to the crosswalk! The bakery is between the cafe and the town square.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_work",
+          "grammarId": "gt_prepositions",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_directions_bakery"
+        },
+        {
+          "text": "🗺️ Open the City Map and go straight down Central Avenue!",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_house",
+          "grammarId": "gt_imperatives",
+          "rewardXP": 20,
+          "friendshipGain": 5
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🥐 Thank you! 'Go straight, turn left, next to the crosswalk, between the cafe and town square' — those are perfect directions!",
+      "emotion": "excited",
+      "gestures": [
+        "nod",
+        "thumbs_up"
+      ],
+      "highlights": [
+        "direction_sign"
+      ],
+      "speechRate": 0.7,
+      "grammarCheck": "Prepositions of Place ('next to', 'behind', 'between') & Imperative Verbs",
+      "visualAction": "🥐 Bakery Directions Confirmed",
+      "playerOptions": [
+        {
+          "text": "🧭 You are welcome! Enjoy fresh baguettes at the bakery!",
+          "nextNodeId": null,
+          "vocabId": "vocab_hello",
+          "grammarId": "gt_imperatives",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_directions_bakery"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🗺️ The City Map is very helpful for navigating neighbourhood buildings! The post office is behind the pharmacy and the bakery is next to the square.",
+      "emotion": "happy",
+      "gestures": [
+        "point_map"
+      ],
+      "highlights": [
+        "direction_sign"
+      ],
+      "speechRate": 0.7,
+      "grammarCheck": "Prepositions of Location ('behind', 'next to')",
+      "visualAction": "🗺️ Map Navigation",
+      "playerOptions": [
+        {
+          "text": "📮 Walk to the post office and use the City Map!",
+          "nextNodeId": null,
+          "vocabId": "vocab_work",
+          "grammarId": "gt_prepositions",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch4_city_map_master"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "npcId": "commuter_sam",
+  "sceneId": "bus_stop",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🚏 Hello! Excuse me, what time is it? Do you know when the next bus arrives?",
+      "emotion": "curious",
+      "gestures": [
+        "check_watch",
+        "wave"
+      ],
+      "highlights": [
+        "bus_timetable_board",
+        "bus_stop_sign"
+      ],
+      "speechRate": 0.7,
+      "grammarCheck": "Asking Time & Polite Inquiries ('What time is it?')",
+      "visualAction": "🚏 Asking Time at Bus Stop",
+      "playerOptions": [
+        {
+          "text": "🕒 It is eight o'clock in the morning! The bus usually arrives at 8:15.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_clock",
+          "grammarId": "gt_time",
+          "rewardXP": 20,
+          "friendshipGain": 10
+        },
+        {
+          "text": "📋 Let's check the bus schedule board together!",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_evening",
+          "grammarId": "gt_present_simple",
+          "rewardXP": 20,
+          "friendshipGain": 5
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🚌 Thank you! I always take the 8:15 bus. I am usually punctual and I never miss work!",
+      "emotion": "happy",
+      "gestures": [
+        "nod",
+        "thumbs_up"
+      ],
+      "highlights": [
+        "bus_stop_sign"
+      ],
+      "speechRate": 0.7,
+      "grammarCheck": "Frequency Adverbs in Context ('always take', 'usually punctual', 'never miss')",
+      "visualAction": "🚌 Bus Arrival",
+      "playerOptions": [
+        {
+          "text": "🚌 Have a great commute! I am ready to complete Chapter 3!",
+          "nextNodeId": null,
+          "vocabId": "vocab_always",
+          "grammarId": "gt_frequency",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch3_unlock_routine"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "📋 Great idea! The timetable board shows buses in the morning, afternoon, and evening. We are right on schedule!",
+      "emotion": "excited",
+      "gestures": [
+        "point_board"
+      ],
+      "highlights": [
+        "bus_timetable_board"
+      ],
+      "speechRate": 0.7,
+      "grammarCheck": "Reading Schedules & Time of Day ('morning, afternoon, evening')",
+      "visualAction": "📋 Schedule Inspection",
+      "playerOptions": [
+        {
+          "text": "🌅 Thank you! I am ready to unlock routine achievements!",
+          "nextNodeId": null,
+          "vocabId": "vocab_usually",
+          "grammarId": "gt_frequency",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch3_unlock_routine"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}
