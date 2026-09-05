@@ -218,5 +218,16 @@
     "unlockCondition": {
       "questId": "q_ch9_city_historian"
     }
+  },
+  {
+    "id": "ach_ch10_nature_master",
+    "title": "🌾 Wildlife Explorer & Photographer",
+    "description": "Feed farm animals using comparative adjectives, complete the wildlife photography album, check weather gauges, and complete Chapter 10.",
+    "category": "chapter_10",
+    "icon": "🌾",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch10_nature_master"
+    }
   }
 ]

@@ -255,5 +255,42 @@
       ],
       "targetChoice": 0
     }
+  },
+  {
+    "id": "mg_wildlife_photo_1",
+    "type": "object_hunt",
+    "title": "📸 Wildlife Photography Challenge",
+    "description": "Snap photographs of wild deer in the forest and ducks at the lake to complete your wildlife album.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["deer", "duck", "forest", "lake"]
+    },
+    "content": {
+      "timeLimitSeconds": 60,
+      "targetObjects": ["forest_deer", "lake_duck"]
+    }
+  },
+  {
+    "id": "mg_feed_animals_1",
+    "type": "dialogue",
+    "title": "🌾 Feed Farm Animals Challenge",
+    "description": "Help Thomas Farmer feed the farm cow and sheep using comparative adjectives.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["cow", "sheep", "farm", "grass"],
+      "grammar": "gt_comparatives"
+    },
+    "content": {
+      "npcId": "thomas_farmer",
+      "prompt": "Thomas says: 'The cow is bigger than the sheep, so it needs more fresh hay! Which animal gets the larger portion?'",
+      "options": [
+        "The cow gets the larger portion because it is bigger than the sheep!",
+        "The sheep gets no food.",
+        "Animals do not eat."
+      ],
+      "targetChoice": 0
+    }
   }
 ]

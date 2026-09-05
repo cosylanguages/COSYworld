@@ -2001,6 +2001,238 @@
         "locationId": "town_hall",
         "action": "speak"
       }
+    ],
+    "nextQuestId": "q_ch10_farm_animals"
+  },
+  {
+    "id": "q_ch10_farm_animals",
+    "chapter": "ch10",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🌾 Feed Farm Animals & Comparatives",
+    "description": "Visit Thomas's farm to inspect and feed the farm cow (`farm_cow`) and woolly sheep (`farm_sheep`) using comparatives.",
+    "difficulty": "A1",
+    "NPC": "thomas_farmer",
+    "requirements": {
+      "prerequisiteQuest": "q_ch9_city_historian",
+      "targetObjects": [
+        "farm_cow",
+        "farm_sheep"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch9_city_historian"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect and feed the cow (`farm_cow`) and sheep (`farm_sheep`) on the farm",
+        "target": "farm_cow"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Feed farm_cow and farm_sheep",
+        "targetObjects": [
+          "farm_cow",
+          "farm_sheep"
+        ],
+        "requiredCount": 2
+      }
+    ],
+    "reward": {
+      "xp": 85,
+      "vocabulary": [
+        "cow",
+        "sheep",
+        "farm",
+        "grass"
+      ],
+      "grammar": "gt_comparatives"
+    },
+    "rewards": {
+      "xp": 85,
+      "vocabulary": [
+        "cow",
+        "sheep",
+        "farm",
+        "grass"
+      ],
+      "grammar": "gt_comparatives"
+    },
+    "dialogues": {
+      "start": "Visit Thomas's farm and help feed the farm animals!",
+      "progress": "Inspect and feed the cow and sheep.",
+      "complete": "Farm animals fed! You learned comparative sizes!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "thomas_farmer",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "farm",
+        "hotspotId": "farm_cow",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch10_wildlife_photo"
+  },
+  {
+    "id": "q_ch10_wildlife_photo",
+    "chapter": "ch10",
+    "category": "photography",
+    "type": "photograph",
+    "title": "📸 Wildlife Photography Tour",
+    "description": "Photograph forest deer (`forest_deer`) in the forest clearing and lakeside ducks (`lake_duck`) at the lake.",
+    "difficulty": "A1",
+    "NPC": "thomas_farmer",
+    "requirements": {
+      "prerequisiteQuest": "q_ch10_farm_animals",
+      "targetObjects": [
+        "forest_deer",
+        "lake_duck"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch10_farm_animals"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Photograph forest deer (`forest_deer`) in the forest",
+        "target": "forest_deer"
+      },
+      {
+        "id": "step_2",
+        "description": "Photograph lakeside duck (`lake_duck`) at the lake",
+        "target": "lake_duck"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "photography",
+        "description": "Photograph forest_deer and lake_duck",
+        "targetObjects": [
+          "forest_deer",
+          "lake_duck"
+        ],
+        "requiredCount": 2
+      }
+    ],
+    "reward": {
+      "xp": 95,
+      "vocabulary": [
+        "deer",
+        "duck",
+        "forest",
+        "lake"
+      ],
+      "grammar": "gt_comparatives"
+    },
+    "rewards": {
+      "xp": 95,
+      "vocabulary": [
+        "deer",
+        "duck",
+        "forest",
+        "lake"
+      ],
+      "grammar": "gt_comparatives"
+    },
+    "dialogues": {
+      "start": "Take out your camera and photograph wild deer in the forest and ducks at the lake!",
+      "progress": "Snap photos of forest deer and lake ducks.",
+      "complete": "Wildlife photography album complete!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "thomas_farmer",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "forest",
+        "hotspotId": "forest_deer",
+        "action": "photograph"
+      }
+    ],
+    "nextQuestId": "q_ch10_nature_master"
+  },
+  {
+    "id": "q_ch10_nature_master",
+    "chapter": "ch10",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🌱 Master Nature Explorer",
+    "description": "Visit the community garden to water garden flowers and check live weather to complete Chapter 10.",
+    "difficulty": "A1",
+    "NPC": "thomas_farmer",
+    "requirements": {
+      "prerequisiteQuest": "q_ch10_wildlife_photo",
+      "targetLocation": "community_garden"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch10_wildlife_photo"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit community garden (`community_garden`) and inspect weather indicator (`weather_indicator`)",
+        "target": "community_garden"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Explore community garden and check weather state",
+        "targetLocation": "community_garden",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "weather",
+        "garden",
+        "flower",
+        "nature"
+      ],
+      "grammar": "gt_comparatives"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "weather",
+        "garden",
+        "flower",
+        "nature"
+      ],
+      "grammar": "gt_comparatives"
+    },
+    "dialogues": {
+      "start": "Visit the community garden and check live weather to finish your nature tour!",
+      "progress": "Check weather and garden beds.",
+      "complete": "Chapter 10 Complete! You are a Master Nature Explorer & Wildlife Photographer!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "thomas_farmer",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "community_garden",
+        "action": "enter"
+      }
     ]
   },
   {

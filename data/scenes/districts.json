@@ -3817,13 +3817,14 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "forest_deer",
       "plant",
       "balcony_plant",
-      "flower_bed",
-      "bench"
+      "flower_bed"
     ],
     "chapters": [
-      "ch6"
+      "ch6",
+      "ch10"
     ]
   },
   "lake": {
@@ -3911,13 +3912,14 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "lake_duck",
       "bench",
       "plant",
-      "flower_bed",
-      "balcony_plant"
+      "flower_bed"
     ],
     "chapters": [
-      "ch6"
+      "ch6",
+      "ch10"
     ]
   },
   "camping_area": {
@@ -4097,16 +4099,26 @@
       "harvest",
       "weather"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "thomas_farmer",
+        "x": 300,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "thomas_farmer"
+    ],
     "objects": [
+      "farm_cow",
+      "farm_sheep",
+      "weather_indicator",
       "plant",
-      "flower_bed",
-      "bench",
-      "balcony_plant"
+      "flower_bed"
     ],
     "chapters": [
-      "ch6"
+      "ch6",
+      "ch10"
     ]
   },
   "stable": {

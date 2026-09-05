@@ -146,24 +146,24 @@
     "avatar": "👨‍🌾",
     "role": "Farm Owner & Master Agriculturist",
     "occupation": "Master Agriculturist",
-    "teachingRole": "Nature, Agriculture & Seasons Teacher",
+    "teachingRole": "Nature, Agriculture & Comparatives Mentor",
     "personality": "friendly",
     "currentMood": "happy",
     "relationshipLevel": 1,
-    "friendshipPoints": 0,
+    "friendshipPoints": 10,
     "favoriteCafe": "cafe",
-    "favoritePark": "town_square",
+    "favoritePark": "farm",
     "position3D": {
-      "x": 150,
-      "y": 310,
+      "x": 300,
+      "y": 280,
       "z": 0
     },
     "voice": "en-US-Standard-D",
     "dailySchedule": [
       {
         "time": "06:00",
-        "location": "town_square",
-        "activity": "Tending crops & morning market"
+        "location": "farm",
+        "activity": "Feeding farm animals & tending crops"
       },
       {
         "time": "12:00",
@@ -172,55 +172,90 @@
       },
       {
         "time": "18:00",
-        "location": "town_square",
-        "activity": "Surveying green pastures"
+        "location": "community_garden",
+        "activity": "Watering garden beds"
       }
     ],
     "conversationHistory": [],
     "questHistory": [
-      "q_thomas_harvest"
+      "q_ch10_farm_animals"
     ],
     "shopInventory": [
       {
         "id": "apple",
         "name": "Fresh Apple",
-        "price": 5,
+        "price": 3,
         "emoji": "🍎"
       },
       {
         "id": "milk",
         "name": "Organic Milk",
-        "price": 12,
+        "price": 6,
         "emoji": "🥛"
       }
     ],
     "quests": [
-      "q_thomas_harvest"
+      "q_ch10_farm_animals"
     ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "👨‍🌾 Good day! 🍎 Fresh apples & 🥛 organic milk straight from the green pastures!",
-          "visualAction": "👨‍🌾 ➔ 🍎 ➔ 🚜",
-          "grammarCheck": "Plural Nouns (Apples, Fields, Crops)",
+          "text": "👨‍🌾 Welcome to the farm! The weather today is fresh! Look at my farm animals — the cow is bigger than the sheep!",
+          "visualAction": "🐄 > 🐑 ➔ 🌾",
+          "grammarCheck": "Comparative Adjectives (-er than / more than) & Live Weather",
           "options": [
             {
-              "label": "🍎 Taste farm apple!",
+              "label": "🐄 Yes! The cow is bigger than the sheep!",
               "next": 1,
-              "rewardXP": 20,
-              "questId": "q_thomas_harvest"
+              "rewardXP": 15,
+              "questId": "q_ch10_farm_animals"
+            },
+            {
+              "label": "🌾 Let's feed the farm animals together!",
+              "next": 2,
+              "rewardXP": 20
+            },
+            {
+              "label": "🌦️ How is the weather on the farm today?",
+              "next": 3,
+              "rewardXP": 15
             }
           ]
         },
         {
           "id": 1,
-          "text": "🍎 Crisp and sweet! Grown with fresh rainwater and sunshine!",
-          "visualAction": "☀️ ➔ 🌧️ ➔ 🍎",
+          "text": "🐄 Correct! And the horse is taller than the cow! Comparing animal sizes helps us give them proper care!",
+          "visualAction": "🐴 > 🐄 > 🐑",
           "options": [
             {
-              "label": "👍 Thank you Thomas!",
-              "next": 0
+              "label": "🌾 I can help feed the cow and sheep!",
+              "next": 2,
+              "rewardXP": 15
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🌾 Wonderful! Take this fresh hay to feed the animals. The bigger cow gets a larger portion than the sheep!",
+          "visualAction": "🌾 ➔ 🐄 + 🐑",
+          "options": [
+            {
+              "label": "👍 Feed the farm animals now!",
+              "next": 0,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🌦️ When the sky is clear, animals graze in green pastures! When it rains, they rest inside the barn!",
+          "visualAction": "☀️ ➔ 🐄 / 🌧️ ➔ 🛖",
+          "options": [
+            {
+              "label": "📸 I am going to photograph wild deer in the forest next!",
+              "next": 0,
+              "rewardXP": 15
             }
           ]
         }
