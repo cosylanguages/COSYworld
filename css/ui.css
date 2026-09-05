@@ -8,23 +8,33 @@
 }
 
 .cw-stat-badge {
-  background-color: var(--blue-light);
-  border: 1px solid var(--blue-border);
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
   padding: 0.45rem 0.9rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.88rem;
-  color: var(--blue-primary);
+  font-size: 0.85rem;
+  color: var(--accent-crt);
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
+}
+
+.cw-stat-badge.paranoia {
+  color: var(--accent-vhs-red);
+  text-shadow: 0 0 5px rgba(255, 51, 51, 0.5);
+  border-color: rgba(255, 51, 51, 0.3);
 }
 
 .cw-xp-bar-wrap {
-  width: 130px;
+  width: 110px;
   height: 10px;
-  background-color: var(--blue-soft);
-  border-radius: var(--radius-pill);
+  background-color: #0b0c10;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
   overflow: hidden;
 }
 
@@ -36,9 +46,17 @@
 .cw-xp-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
-  border-radius: var(--radius-pill);
-  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(90deg, #00ff66, #00cc52);
+  box-shadow: 0 0 8px #00ff66;
+  transition: width 0.4s ease;
+}
+
+.cw-paranoia-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff3333, #cc0000);
+  box-shadow: 0 0 8px #ff3333;
+  transition: width 0.4s ease;
 }
 
 .cw-controls {
@@ -88,37 +106,43 @@
 
 /* Primary and Secondary Action Buttons */
 .btn-g-primary {
-  background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-hover) 100%);
-  color: var(--text-inverse);
-  border: none;
+  background: var(--blue-primary);
+  color: #000000;
+  border: 1px solid var(--blue-primary);
   padding: 0.65rem 1.25rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-g-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  background: var(--blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
 }
 
 .btn-g-secondary {
-  background: var(--blue-light);
+  background: var(--surface);
   color: var(--blue-primary);
   border: 1px solid var(--blue-border);
   padding: 0.6rem 1.1rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-g-secondary:hover {
-  background: var(--blue-soft);
+  background: var(--blue-light);
+  border-color: var(--blue-primary);
   transform: translateY(-1px);
 }
 
@@ -204,16 +228,16 @@
   line-height: 1.45;
 }
 
-/* Modals with Glassmorphism */
+/* Modals with Retro Terminal Aesthetic */
 .cw-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(5, 6, 8, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,7 +259,7 @@
   border-radius: var(--radius-xl);
   padding: 1.75rem;
   box-shadow: var(--shadow-modal);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-glass);
   position: relative;
   transform: scale(0.95);
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -249,12 +273,13 @@
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  background: var(--bg-app);
+  background: #090a0f;
   border: 1px solid var(--border-subtle);
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
   cursor: pointer;
+  font-family: var(--font-heading);
   font-weight: 700;
   color: var(--text-muted);
   display: flex;
@@ -265,8 +290,8 @@
 
 .cw-modal-close:hover {
   background: var(--blue-light);
-  color: var(--blue-primary);
-  border-color: var(--blue-border);
+  color: var(--accent-crt);
+  border-color: var(--blue-primary);
 }
 
 /* Toast Notifications */
@@ -274,15 +299,18 @@
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: var(--text-main);
-  color: var(--surface);
+  background: #0d1017;
+  color: var(--accent-crt);
+  border: 1px solid var(--border-glass);
   padding: 0.8rem 1.5rem;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-hover);
-  font-size: 0.9rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
   font-weight: 600;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 3000;
+  text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
 }
 
 /* Interactive World Map Styles */

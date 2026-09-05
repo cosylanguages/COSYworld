@@ -339,6 +339,8 @@ export class GameEngine {
 
         if (!this.state.visitedLocations) this.state.visitedLocations = new Set();
         if (this.state.visitedLocations.add) this.state.visitedLocations.add(this.state.currentLocationId || 'apartment_living');
+        if (this.state.paranoiaLevel === undefined) this.state.paranoiaLevel = 12;
+        if (this.state.showVhsShader === undefined) this.state.showVhsShader = true;
 
         // Check grammar unlocks on load
         this.grammarEngine.checkGrammarUnlocks(this.state, this.data);
@@ -413,6 +415,9 @@ export class GameEngine {
         // Update audio spatial listener position
         this.audioManager.setListenerPosition(this.playerWorldPos.x, this.playerWorldPos.y);
 
+        // Update VHS OSD live clock counter
+        this._updateVhsClockDisplay();
+
         this.cameraManager.update(dt);
 
         if (moved) {
@@ -458,6 +463,51 @@ export class GameEngine {
     saveState() {
         this.saveManager.saveState(this.state);
         this.emit('stateSaved', this.state);
+    }
+
+    toggleVhsShader() {
+        this.state.showVhsShader = !this.state.showVhsShader;
+        this.saveState();
+        if (typeof document !== 'undefined') {
+            const osd = document.getElementById('cw-vhs-osd');
+            if (osd) osd.style.display = this.state.showVhsShader ? 'flex' : 'none';
+        }
+        this.audioManager.playVhsClick();
+        this.showToast(this.state.showVhsShader ? '📹 VHS Camcorder OSD ON' : '📹 VHS Overlay OFF');
+    }
+
+    _updateVhsClockDisplay() {
+        if (typeof document === 'undefined') return;
+        const timeEl = document.getElementById('vhs-osd-time-display');
+        const counterEl = document.getElementById('vhs-osd-counter');
+        if (!timeEl && !counterEl) return;
+
+        const now = new Date();
+        const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+        const month = months[now.getMonth()];
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours() % 12 || 12).padStart(2, '0');
+        const mins = String(now.getMinutes()).padStart(2, '0');
+        const secs = String(now.getSeconds()).padStart(2, '0');
+        const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+
+        if (timeEl) {
+            timeEl.textContent = `${month} ${day}, 1998 — ${hours}:${mins}:${secs} ${ampm}`;
+        }
+        if (counterEl) {
+            const ms = Math.floor((now.getTime() % 1000000) / 1000);
+            counterEl.textContent = `00:${String(Math.floor(ms / 60)).padStart(2, '0')}:${String(ms % 60).padStart(2, '0')}`;
+        }
+    }
+
+    updateParanoiaLevel(delta) {
+        this.state.paranoiaLevel = Math.max(0, Math.min(100, (this.state.paranoiaLevel || 0) + delta));
+        if (typeof document !== 'undefined') {
+            const numEl = document.getElementById('cw-paranoia-num');
+            const fillEl = document.getElementById('cw-paranoia-fill');
+            if (numEl) numEl.textContent = `${Math.round(this.state.paranoiaLevel)}%`;
+            if (fillEl) fillEl.style.width = `${Math.round(this.state.paranoiaLevel)}%`;
+        }
     }
 
     toggleGuidePointers() {
@@ -569,6 +619,9 @@ export class GameEngine {
             this.vocabularyEngine.recordReview(obj.vocabId, 4);
         }
 
+        this.audioManager.playVhsClick();
+        this.updateParanoiaLevel(2);
+
         InventoryManager.inspectObject(
             objId,
             this.state,
@@ -598,6 +651,9 @@ export class GameEngine {
     }
 
     interactNPC(npcId) {
+        this.audioManager.playVhsClick();
+        this.updateParanoiaLevel(4);
+
         DialogueManager.interactNPC(
             npcId,
             this.state,
