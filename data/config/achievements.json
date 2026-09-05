@@ -42,5 +42,49 @@
     "unlockCondition": {
       "questId": "q_ch1_open_apartment"
     }
+  },
+  {
+    "id": "ach_apartment_explorer",
+    "title": "🏠 Apartment Explorer",
+    "description": "Explore all five rooms in your apartment.",
+    "category": "chapter_2",
+    "icon": "🚪",
+    "xpReward": 75,
+    "unlockCondition": {
+      "questId": "q_ch2_explore_rooms"
+    }
+  },
+  {
+    "id": "ach_object_finder",
+    "title": "🔍 Object Finder",
+    "description": "Find and interact with objects in every room.",
+    "category": "chapter_2",
+    "icon": "🔍",
+    "xpReward": 80,
+    "unlockCondition": {
+      "questId": "q_ch2_interact_objects"
+    }
+  },
+  {
+    "id": "ach_home_organizer",
+    "title": "🧹 Home Organizer",
+    "description": "Help James organize the apartment furniture.",
+    "category": "chapter_2",
+    "icon": "🧹",
+    "xpReward": 85,
+    "unlockCondition": {
+      "questId": "q_ch2_organize_apartment"
+    }
+  },
+  {
+    "id": "ach_furniture_master",
+    "title": "🪑 Furniture Master",
+    "description": "Master all furniture, color, and number vocabulary in Chapter 2.",
+    "category": "chapter_2",
+    "icon": "🪑",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch2_unlock_furniture"
+    }
   }
 ]

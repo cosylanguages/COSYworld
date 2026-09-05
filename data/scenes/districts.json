@@ -238,7 +238,7 @@
     "worldY": 0,
     "worldWidth": 800,
     "worldHeight": 500,
-    "neighbors": ["apartment_kitchen", "apartment_bedroom", "town_square", "apartment_entrance"],
+    "neighbors": ["apartment_kitchen", "apartment_bedroom", "apartment_bathroom", "town_square", "apartment_entrance"],
     "assets": {
       "scene": "data/scenes/districts.json",
       "hotspots": "data/vocabulary/objects.json",
@@ -285,7 +285,7 @@
     "worldY": 0,
     "worldWidth": 800,
     "worldHeight": 500,
-    "neighbors": ["apartment_living"],
+    "neighbors": ["apartment_living", "apartment_balcony"],
     "assets": {
       "scene": "data/scenes/districts.json",
       "hotspots": "data/vocabulary/objects.json",
@@ -336,11 +336,82 @@
       { "id": "bed_wall", "x": 200, "y": 200, "width": 200, "height": 140, "color": "#6366f1", "label": "Bed 🛏️" }
     ],
     "doors": [
-      { "targetId": "apartment_living", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Living Room 🛋️", "fr": "Salon 🛋️", "it": "Salotto 🛋️", "es": "Salón 🛋️", "de": "Wohnzimmer 🛋️", "ru": "Гостиная 🛋️" } }
+      { "targetId": "apartment_living", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Living Room 🛋️", "fr": "Salon 🛋️", "it": "Salotto 🛋️", "es": "Salón 🛋️", "de": "Wohnzimmer 🛋️", "ru": "Гостиная 🛋️" } },
+      { "targetId": "apartment_balcony", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Balcony 🌿", "fr": "Balcon 🌿", "it": "Balcone 🌿", "es": "Balcón 🌿", "de": "Balkon 🌿", "ru": "Балкон 🌿" } }
     ],
     "npcSpawns": [],
     "npcs": [],
-    "objects": ["lamp", "bookshelf"]
+    "objects": ["bed", "desk", "lamp", "bookshelf"]
+  },
+  "apartment_bathroom": {
+    "id": "apartment_bathroom",
+    "district": "Residential District",
+    "level": "A0",
+    "icon": "🛁",
+    "weather": "clear",
+    "music": "rain",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": -800,
+    "worldY": -500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["apartment_living"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Bathroom", "fr": "Salle de bain", "it": "Bagno", "es": "Baño", "de": "Badezimmer", "ru": "Ванная комната" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "tile_floor" }
+    ],
+    "buildings": [
+      { "id": "bathroom_vanity", "x": 260, "y": 180, "width": 280, "height": 140, "color": "#06b6d4", "label": "Vanity & Mirror 🧼" }
+    ],
+    "doors": [
+      { "targetId": "apartment_living", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Living Room 🛋️", "fr": "Salon 🛋️", "it": "Salotto 🛋️", "es": "Salón 🛋️", "de": "Wohnzimmer 🛋️", "ru": "Гостиная 🛋️" } }
+    ],
+    "npcSpawns": [],
+    "npcs": [],
+    "objects": ["towel", "soap", "bathroom_mirror"]
+  },
+  "apartment_balcony": {
+    "id": "apartment_balcony",
+    "district": "Residential District",
+    "level": "A0",
+    "icon": "🌿",
+    "weather": "clear",
+    "music": "nature",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": 1600,
+    "worldY": 0,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["apartment_bedroom"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Balcony", "fr": "Balcon", "it": "Balcone", "es": "Balcón", "de": "Balkon", "ru": "Балкон" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 340, "width": 800, "height": 160, "type": "stone_patio" }
+    ],
+    "buildings": [
+      { "id": "balcony_railing", "x": 100, "y": 120, "width": 600, "height": 200, "color": "#15803d", "label": "Balcony Garden 🪴" }
+    ],
+    "doors": [
+      { "targetId": "apartment_bedroom", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bedroom 🛏️", "fr": "Chambre 🛏️", "it": "Camera 🛏️", "es": "Dormitorio 🛏️", "de": "Schlafzimmer 🛏️", "ru": "Спальня 🛏️" } }
+    ],
+    "npcSpawns": [],
+    "npcs": [],
+    "objects": ["balcony_chair", "balcony_plant"]
   },
   "town_square": {
     "id": "town_square",

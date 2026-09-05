@@ -222,38 +222,40 @@
     "dailySchedule": [
       { "time": "08:00", "location": "town_entrance", "activity": "Greeting arriving visitors at Town Entrance" },
       { "time": "10:00", "location": "cosylanguages_hq", "activity": "Guiding students through HQ Atrium" },
-      { "time": "12:00", "location": "reception", "activity": "Assisting at Reception" },
-      { "time": "14:00", "location": "hallway", "activity": "Showing residents to Apartment Entrance" },
-      { "time": "16:00", "location": "apartment_living", "activity": "Mentoring new residents in Living Room" }
+      { "time": "12:00", "location": "apartment_living", "activity": "Helping organize the apartment" },
+      { "time": "14:00", "location": "apartment_kitchen", "activity": "Checking kitchen household objects" },
+      { "time": "16:00", "location": "apartment_bedroom", "activity": "Inspecting bedroom furniture" },
+      { "time": "18:00", "location": "apartment_balcony", "activity": "Enjoying balcony view" }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q1_key_door"],
-    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q1_key_door"],
+    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture"],
+    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture"],
     "dialogues": {
       "en": [
         {
           "id": 0,
           "emotion": "happy",
-          "text": "👋 Hello! Welcome to COSY Town! I am James York, your guide. Follow me to COSYlanguages Headquarters!",
-          "visualAction": "👋 Welcome to COSY Town",
-          "grammarCheck": "Introductions (I am James, Welcome)",
+          "text": "🏠 Welcome to your home! Let's explore every room and organize the apartment together!",
+          "visualAction": "🏠 Apartment Tour",
+          "grammarCheck": "There is / There are / Demonstratives",
           "options": [
-            { "label": "🚶 Follow James to Headquarters!", "next": 1, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch1_follow_james" },
-            { "label": "👉 Ask James about your apartment", "next": 2, "rewardXP": 10, "friendshipGain": 5 }
+            { "label": "🛋️ Describe your room & explore!", "next": 1, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch2_explore_rooms" },
+            { "label": "🧹 Help James organize apartment", "next": 2, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch2_organize_apartment" }
           ]
         },
         {
           "id": 1,
           "emotion": "excited",
-          "text": "🏫 Excellent! Here is COSYlanguages HQ. Go inside to meet the Receptionist!",
-          "visualAction": "🏫 HQ Direct",
-          "options": [{ "label": "👍 Head inside!", "next": 0 }]
+          "text": "✨ There is a red sofa in the living room and a green plant on the balcony!",
+          "visualAction": "🛋️ Room Description",
+          "options": [{ "label": "🔍 Find objects in every room!", "next": 0, "questId": "q_ch2_interact_objects" }]
         },
         {
           "id": 2,
           "emotion": "curious",
-          "text": "🚪 First meet the Receptionist in HQ to pick up your key, then head to your apartment!",
-          "options": [{ "label": "👍 Understood, thanks James!", "next": 0 }]
+          "text": "❓ Where is the desk? That desk belongs in the bedroom next to the bed!",
+          "visualAction": "🔍 Organize Furniture",
+          "options": [{ "label": "🪑 Unlock furniture vocabulary!", "next": 0, "questId": "q_ch2_unlock_furniture" }]
         }
       ],
       "fr": [

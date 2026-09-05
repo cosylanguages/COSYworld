@@ -19,6 +19,24 @@
       "speechRate": 0.65
     },
     {
+      "id": "dlg_ch2_james_home",
+      "npcId": "james_york",
+      "cefr": "A0",
+      "line": "There is a sofa in the living room and a bed in the bedroom.",
+      "gestures": ["point_furniture", "point_room"],
+      "highlights": ["sofa", "bed", "desk"],
+      "speechRate": 0.65
+    },
+    {
+      "id": "dlg_ch2_where_is",
+      "npcId": "james_york",
+      "cefr": "A0",
+      "line": "Where is the key? This is the desk, and that is the bed.",
+      "gestures": ["search", "point"],
+      "highlights": ["desk", "bed", "key"],
+      "speechRate": 0.65
+    },
+    {
       "id": "dlg_door_A0",
       "npcId": "james_york",
       "cefr": "A0",

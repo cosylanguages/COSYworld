@@ -307,40 +307,28 @@
   },
   {
     "id": "gt_there_is",
-    "title": "Existential Placement & Identification 🛋️",
+    "title": "Existential Placement & Identification (There is) 🛋️",
     "difficulty": "A0",
-    "rule": "Existential Statements: Use 'There is' (+ singular) or 'There are' (+ plural) to point out the presence of objects in a scene. Pattern: [There is/are] + [Article] + [Noun] + [Location].",
+    "rule": "Use 'There is' (+ singular noun) to point out the presence of one item. Pattern: [There is] + [a/an] + [Noun].",
     "examples": [
       {
-        "text": "🛋️ There is a comfortable sofa in the living room.",
+        "text": "There is a sofa in the living room.",
         "targetLang": {
-          "en": "🛋️ There is a comfortable sofa in the living room.",
-          "fr": "🛋️ Il y a un canapé confortable dans le salon.",
-          "es": "🛋️ Hay un sofá cómodo en el salón.",
-          "it": "🛋️ C'è un divano comodo nel salotto.",
-          "de": "🛋️ Es gibt ein bequemes Sofa im Wohnzimmer.",
-          "ru": "🛋️ В гостиной есть удобный диван."
+          "en": "There is a sofa in the living room.",
+          "fr": "Il y a un canapé dans le salon.",
+          "es": "Hay un sofá en el salón.",
+          "it": "C'è un divano nel salotto.",
+          "de": "Es gibt ein Sofa im Wohnzimmer.",
+          "ru": "В гостиной есть диван."
         },
-        "context": "Identifying furniture in residential spaces."
-      },
-      {
-        "text": "☕ There is a hot espresso on the table.",
-        "targetLang": {
-          "en": "☕ There is a hot espresso on the table.",
-          "fr": "☕ Il y a un café chaud sur la table.",
-          "es": "☕ Hay un café caliente sobre la mesa.",
-          "it": "☕ C'è un caffè caldo sul tavolo.",
-          "de": "☕ Es gibt einen heißen Kaffee auf dem Tisch.",
-          "ru": "☕ На столе стоит горячий эспрессо."
-        },
-        "context": "Observing items on surfaces."
+        "context": "Describing rooms and furniture."
       }
     ],
     "interactiveExercises": [
       {
         "id": "ex_there_is_1",
         "type": "multiple_choice",
-        "question": "Choose the correct phrase to identify one object on the table:",
+        "question": "Choose the correct phrase to identify one object:",
         "options": ["There is a key on the table", "There are a key on table", "Key is there table"],
         "correct": 0,
         "explanation": "Use 'There is' for singular items.",
@@ -349,28 +337,157 @@
     ],
     "dialogues": [
       {
-        "npcId": "ella_bronx",
-        "prompt": "👂 Listen... 🗣️ There is a fountain in the town square!",
-        "grammarUsage": "Pointing out landmarks using existential verbs."
+        "npcId": "james_york",
+        "prompt": "There is a lamp in the living room!",
+        "grammarUsage": "Pointing out singular objects in a room."
       }
     ],
     "sceneIntegration": {
       "locationId": "apartment_living",
       "objects": ["sofa", "coffee_table", "lamp"],
-      "npcs": ["ella_bronx"],
+      "npcs": ["james_york"],
       "district": "Residential District"
     },
-    "voice": {
-      "lang": "en",
-      "rate": 0.9,
-      "pitch": 1.0,
-      "audioPrompt": "Existential placement structures."
+    "voice": { "lang": "en", "rate": 0.9, "pitch": 1.0, "audioPrompt": "Existential placement structures." },
+    "unlockRequirements": { "quests": ["q_ch2_explore_rooms"], "level": 1, "discoveredObjects": ["sofa"] }
+  },
+  {
+    "id": "gt_there_are",
+    "title": "Plural Existential Placement (There are) 📚",
+    "difficulty": "A0",
+    "rule": "Use 'There are' (+ plural noun/number) to point out multiple items. Pattern: [There are] + [Number/Plural Noun].",
+    "examples": [
+      {
+        "text": "There are three cups in the kitchen.",
+        "targetLang": {
+          "en": "There are three cups in the kitchen.",
+          "fr": "Il y a trois tasses dans la cuisine.",
+          "es": "Hay tres tazas en la cocina.",
+          "it": "Ci sono tre tazze in cucina.",
+          "de": "Es gibt drei Tassen in der Küche.",
+          "ru": "На кухне есть три чашки."
+        },
+        "context": "Counting and pointing out plural objects."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_there_are_1",
+        "type": "multiple_choice",
+        "question": "How do you state the presence of multiple chairs?",
+        "options": ["There are two chairs", "There is two chairs", "There be two chairs"],
+        "correct": 0,
+        "explanation": "Use 'There are' with plural nouns.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "There are two lamps in the bedroom!",
+        "grammarUsage": "Stating plural objects in a room."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_bedroom",
+      "objects": ["bed", "desk"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
     },
-    "unlockRequirements": {
-      "quests": ["q2_pronunciation"],
-      "level": 1,
-      "discoveredObjects": ["sofa"]
-    }
+    "voice": { "lang": "en", "rate": 0.9, "pitch": 1.0, "audioPrompt": "There are plural structures." },
+    "unlockRequirements": { "quests": ["q_ch2_interact_objects"], "level": 1, "discoveredObjects": ["bed"] }
+  },
+  {
+    "id": "gt_this",
+    "title": "Demonstrative Pronoun 'This' 👈",
+    "difficulty": "A0",
+    "rule": "Use 'This' for a singular item close to the speaker. Pattern: [This] + [is] + [a/an/my] + [Noun].",
+    "examples": [
+      {
+        "text": "This is my desk.",
+        "targetLang": {
+          "en": "This is my desk.",
+          "fr": "C'est mon bureau.",
+          "es": "Este es mi escritorio.",
+          "it": "Questa è la mia scrivania.",
+          "de": "Das ist mein Schreibtisch.",
+          "ru": "Это мой письменный стол."
+        },
+        "context": "Pointing out nearby objects."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_this_1",
+        "type": "multiple_choice",
+        "question": "Which word identifies a nearby item?",
+        "options": ["This", "That", "Those"],
+        "correct": 0,
+        "explanation": "'This' refers to singular nearby items.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "This is a red sofa!",
+        "grammarUsage": "Identifying nearby object."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_living",
+      "objects": ["sofa", "desk"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Demonstrative this." },
+    "unlockRequirements": { "quests": ["q_ch2_interact_objects"], "level": 1, "discoveredObjects": ["desk"] }
+  },
+  {
+    "id": "gt_that",
+    "title": "Demonstrative Pronoun 'That' 👉",
+    "difficulty": "A0",
+    "rule": "Use 'That' for a singular item at a distance. Pattern: [That] + [is] + [a/an/your] + [Noun].",
+    "examples": [
+      {
+        "text": "That is a blue bed.",
+        "targetLang": {
+          "en": "That is a blue bed.",
+          "fr": "C'est un lit bleu.",
+          "es": "Esa es una cama azul.",
+          "it": "Quello è un letto blu.",
+          "de": "Das ist ein blaues Bett.",
+          "ru": "То синяя кровать."
+        },
+        "context": "Pointing out distant items."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_that_1",
+        "type": "multiple_choice",
+        "question": "Which word points to an object further away?",
+        "options": ["That", "This", "These"],
+        "correct": 0,
+        "explanation": "'That' refers to singular distant objects.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "That is the balcony over there!",
+        "grammarUsage": "Pointing out distant items."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_balcony",
+      "objects": ["balcony_chair", "balcony_plant"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Demonstrative that." },
+    "unlockRequirements": { "quests": ["q_ch2_organize_apartment"], "level": 1, "discoveredObjects": ["balcony_chair"] }
   },
   {
     "id": "gt_present_simple",

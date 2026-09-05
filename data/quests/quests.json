@@ -298,6 +298,248 @@
         "action": "enter"
       }
     ],
+    "nextQuestId": "q_ch2_explore_rooms"
+  },
+  {
+    "id": "q_ch2_explore_rooms",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🏠 Explore Every Room",
+    "description": "Explore all five rooms in your apartment: Living room, Kitchen, Bedroom, Bathroom, and Balcony.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_open_apartment",
+      "targetLocation": "apartment_balcony"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_open_apartment"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit living room, kitchen, bedroom, bathroom, and balcony",
+        "target": "apartment_balcony"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Explore balcony room",
+        "targetLocation": "apartment_balcony",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 75,
+      "vocabulary": ["living room", "kitchen", "bedroom", "bathroom", "balcony"],
+      "grammar": "gt_there_is"
+    },
+    "rewards": {
+      "xp": 75,
+      "vocabulary": ["living room", "kitchen", "bedroom", "bathroom", "balcony"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Explore every room in your new home!",
+      "progress": "Walk into all 5 apartment rooms.",
+      "complete": "You explored every room!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_balcony",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch2_interact_objects"
+  },
+  {
+    "id": "q_ch2_interact_objects",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🔍 Find and Interact with Objects",
+    "description": "Find and interact with household objects and electronics across your apartment.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_explore_rooms",
+      "targetObjects": ["desk"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_explore_rooms"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Interact with objects in your apartment",
+        "target": "desk"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect desk",
+        "targetObjects": ["desk"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["television", "lamp", "fridge", "kettle", "towel", "soap"],
+      "grammar": "gt_there_are"
+    },
+    "rewards": {
+      "xp": 80,
+      "vocabulary": ["television", "lamp", "fridge", "kettle", "towel", "soap"],
+      "grammar": "gt_there_are"
+    },
+    "dialogues": {
+      "start": "Interact with every object in your apartment!",
+      "progress": "Inspect items in the rooms.",
+      "complete": "Objects discovered!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_bedroom",
+        "hotspotId": "desk",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch2_organize_apartment"
+  },
+  {
+    "id": "q_ch2_organize_apartment",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "🧹 Help James Organize the Apartment",
+    "description": "Talk to James York and help him arrange and organize the apartment.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_interact_objects",
+      "targetNpc": "james_york"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_interact_objects"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with James about organizing the apartment",
+        "target": "james_york"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Talk to James York",
+        "targetNpc": "james_york",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"],
+      "grammar": "gt_this"
+    },
+    "rewards": {
+      "xp": 85,
+      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"],
+      "grammar": "gt_this"
+    },
+    "dialogues": {
+      "start": "Help James organize your apartment furniture and objects!",
+      "progress": "Talk with James about object placement.",
+      "complete": "Apartment organized!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch2_unlock_furniture"
+  },
+  {
+    "id": "q_ch2_unlock_furniture",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🪑 Unlock Furniture Vocabulary",
+    "description": "Inspect all furniture items to master furniture, numbers, and demonstratives.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_organize_apartment",
+      "targetObjects": ["balcony_chair"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_organize_apartment"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect balcony furniture to complete Chapter 2",
+        "target": "balcony_chair"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect balcony_chair",
+        "targetObjects": ["balcony_chair"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": ["sofa", "table", "chair", "bed", "desk", "one", "two", "three", "four", "five"],
+      "grammar": "gt_that"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": ["sofa", "table", "chair", "bed", "desk", "one", "two", "three", "four", "five"],
+      "grammar": "gt_that"
+    },
+    "dialogues": {
+      "start": "Inspect balcony furniture to unlock full furniture vocabulary!",
+      "progress": "Inspect the chair on the balcony.",
+      "complete": "Chapter 2 Complete! You mastered your home!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_balcony",
+        "hotspotId": "balcony_chair",
+        "action": "inspect"
+      }
+    ],
     "nextQuestId": "q_explore_living"
   },
   {

@@ -21,6 +21,20 @@
     "examples": ["Hello, what is your name?"]
   },
   {
+    "id": "gp_there_is_are",
+    "pattern": "There is {singular_object} in the {room}.",
+    "cefr": "A0",
+    "visualClue": "point_object",
+    "examples": ["There is a sofa in the living room.", "There are two lamps in the bedroom."]
+  },
+  {
+    "id": "gp_where_is",
+    "pattern": "Where is the {object}?",
+    "cefr": "A0",
+    "visualClue": "search_gesture",
+    "examples": ["Where is the key?", "Where is the desk?"]
+  },
+  {
     "id": "gp_present_simple_A0",
     "pattern": "I eat {food}.",
     "cefr": "A0",

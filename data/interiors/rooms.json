@@ -161,6 +161,25 @@
     "ambientSounds": ["piano"],
     "lightingProfile": { "type": "modern_office", "color": "rgba(203, 213, 225, 0.1)", "opacity": 0.1 }
   },
+  "balcony": {
+    "id": "balcony",
+    "type": "balcony",
+    "name": { "en": "Balcony", "fr": "Balcon", "it": "Balcone", "es": "Balcón", "de": "Balkon", "ru": "Балкон" },
+    "image": "🌿",
+    "background": {
+      "wallColor": "#dcfce7",
+      "floorColor": "#15803d",
+      "dividerColor": "#166534"
+    },
+    "hotspots": [
+      { "id": "balcony_garden_zone", "label": "Balcony Garden", "x": 200, "y": 180, "width": 400, "height": 100 }
+    ],
+    "interactiveObjects": ["balcony_chair", "balcony_plant"],
+    "npcs": [],
+    "npcSpawns": [],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
   "reception": {
     "id": "reception",
     "type": "reception",
