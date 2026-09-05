@@ -5,26 +5,27 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "👋 Hello! Welcome to COSYlanguages Headquarters! What is your name?",
+      "npcLine": "👋 Hello! Welcome to COSYlanguages Headquarters! I am the receptionist. What is your name?",
       "emotion": "happy",
       "gestures": ["wave", "offer_key"],
       "highlights": ["reception_desk", "apartment_key"],
       "speechRate": 0.65,
-      "grammarCheck": "Asking name & introducing self",
-      "visualAction": "👋 Welcome",
+      "grammarCheck": "Greetings & Asking Name ('What is your name?')",
+      "visualAction": "👋 Welcome Desk",
       "playerOptions": [
         {
-          "text": "👋 Hello! I am a new student.",
+          "text": "👋 Hello! I am a new student. My name is a traveler.",
           "nextNodeId": "node_1",
-          "vocabId": "name",
+          "vocabId": "vocab_name",
           "grammarId": "gt_personal_pronouns",
           "rewardXP": 15,
+          "friendshipGain": 10,
           "rewardQuestId": "q_ch1_first_dialogue"
         },
         {
-          "text": "🔑 Pick up apartment key",
+          "text": "🔑 Hello! Please, I am here for my apartment key.",
           "nextNodeId": "node_2",
-          "vocabId": "key",
+          "vocabId": "vocab_key",
           "grammarId": "gt_my_your",
           "rewardXP": 15,
           "rewardQuestId": "q_ch1_pick_up_key"
@@ -35,20 +36,21 @@
     },
     {
       "id": "node_1",
-      "npcLine": "😊 Pleased to meet you! I am the receptionist here.",
+      "npcLine": "😊 Pleased to meet you! I am the receptionist here. Your name is on our student list!",
       "emotion": "excited",
       "gestures": ["wave"],
       "highlights": ["reception_desk"],
       "speechRate": 0.65,
-      "grammarCheck": "Personal pronouns",
-      "visualAction": "📝 Registration",
+      "grammarCheck": "Possessives & Identity ('My name is... Your name is...')",
+      "visualAction": "📝 Registration Check",
       "playerOptions": [
         {
-          "text": "🔑 Take apartment key",
+          "text": "🔑 Thank you! Please, may I pick up my apartment key?",
           "nextNodeId": "node_2",
-          "vocabId": "key",
+          "vocabId": "vocab_please",
           "grammarId": "gt_my_your",
           "rewardXP": 15,
+          "friendshipGain": 10,
           "rewardQuestId": "q_ch1_pick_up_key"
         }
       ],
@@ -57,22 +59,26 @@
     },
     {
       "id": "node_2",
-      "npcLine": "🗝️ Here is your key! Head down the hallway to your apartment!",
+      "npcLine": "🗝️ Here is your key! This is the key to your new home. Head down the hallway to your apartment door!",
       "emotion": "happy",
       "gestures": ["offer_key"],
       "highlights": ["apartment_key"],
       "speechRate": 0.65,
-      "grammarCheck": "Possessive my / your",
+      "grammarCheck": "Possessives & Demonstratives ('This is your key')",
       "visualAction": "🔑 Key Handoff",
       "playerOptions": [
         {
-          "text": "🙏 Thank you!",
-          "nextNodeId": "node_0",
-          "rewardXP": 10
+          "text": "🙏 Thank you very much! Goodbye!",
+          "nextNodeId": null,
+          "vocabId": "vocab_thank_you",
+          "grammarId": "gt_my_your",
+          "rewardXP": 20,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch1_pick_up_key"
         }
       ],
       "endConditions": null,
-      "rewardQuestId": "q_ch1_pick_up_key"
+      "rewardQuestId": null
     }
   ]
 }

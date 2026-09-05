@@ -5,18 +5,71 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "Hello! Welcome to COSY Town. I am James York.",
+      "npcLine": "👋 Hello! Welcome to COSY Town! I am James York. What is your name?",
       "emotion": "happy",
       "gestures": ["wave", "point_hq"],
       "highlights": ["welcome_sign"],
       "speechRate": 0.65,
-      "grammarCheck": "Subject + Verb ('I am James')",
-      "visualAction": "👋 Welcome",
+      "grammarCheck": "Greeting & Asking Name ('What is your name?')",
+      "visualAction": "👋 Hello",
       "playerOptions": [
         {
-          "text": "👋 Hello James! Lead the way to Headquarters.",
+          "text": "👋 Hello! My name is a new student.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_hello",
+          "grammarId": "gt_to_be",
+          "rewardXP": 15,
+          "friendshipGain": 10
+        },
+        {
+          "text": "🚶 I am a new traveler in COSY Town.",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_i",
+          "grammarId": "gt_personal_pronouns",
+          "rewardXP": 15,
+          "friendshipGain": 10
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "😊 Pleased to meet you! I am your guide and friend. Follow me to COSYlanguages Headquarters!",
+      "emotion": "excited",
+      "gestures": ["wave", "point_hq"],
+      "highlights": ["welcome_arch"],
+      "speechRate": 0.65,
+      "grammarCheck": "Introducing Self & Identity ('I am your guide')",
+      "visualAction": "🏫 Lead Way",
+      "playerOptions": [
+        {
+          "text": "🚶 Let's go to Headquarters together, my friend!",
           "nextNodeId": null,
-          "vocabId": "hello",
+          "vocabId": "vocab_friend",
+          "grammarId": "gt_this_is",
+          "rewardXP": 20,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch1_follow_james"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🤝 Welcome, friend! I am James, a language teacher. Let's walk to COSYlanguages Headquarters!",
+      "emotion": "happy",
+      "gestures": ["wave"],
+      "highlights": ["signpost"],
+      "speechRate": 0.65,
+      "grammarCheck": "Identity & Profession ('I am a teacher')",
+      "visualAction": "👨‍🏫 Teacher Introduction",
+      "playerOptions": [
+        {
+          "text": "🏫 Lead the way to COSYlanguages Headquarters!",
+          "nextNodeId": null,
+          "vocabId": "vocab_teacher",
           "grammarId": "gt_to_be",
           "rewardXP": 20,
           "friendshipGain": 10,

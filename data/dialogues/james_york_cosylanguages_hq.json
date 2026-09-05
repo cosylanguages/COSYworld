@@ -1,0 +1,80 @@
+{
+  "npcId": "james_york",
+  "sceneId": "cosylanguages_hq",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🏫 Hello! This is COSYlanguages Headquarters. I am James York, your teacher. What is your name?",
+      "emotion": "happy",
+      "gestures": ["point_hq"],
+      "highlights": ["welcome_desk"],
+      "speechRate": 0.65,
+      "grammarCheck": "Demonstratives & Introductions ('This is HQ')",
+      "visualAction": "🏛️ HQ Atrium",
+      "playerOptions": [
+        {
+          "text": "👋 Hello! I am ready to learn.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_teacher",
+          "grammarId": "gt_this_is",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        },
+        {
+          "text": "💁 Where is the reception desk?",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_please",
+          "grammarId": "gt_personal_pronouns",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "😊 Wonderful! I am a teacher here, and you are my new student. Head into Reception to meet the receptionist!",
+      "emotion": "excited",
+      "gestures": ["wave"],
+      "highlights": ["language_chart"],
+      "speechRate": 0.65,
+      "grammarCheck": "Personal Pronouns ('I am... You are...')",
+      "visualAction": "🎓 Teacher Guidance",
+      "playerOptions": [
+        {
+          "text": "💁 Thank you, James! I am going to Reception.",
+          "nextNodeId": null,
+          "vocabId": "vocab_thank_you",
+          "grammarId": "gt_personal_pronouns",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch1_meet_receptionist"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "👉 Right this way! The reception desk is through the door on your right.",
+      "emotion": "happy",
+      "gestures": ["point_right"],
+      "highlights": ["welcome_desk"],
+      "speechRate": 0.65,
+      "grammarCheck": "Directions & Place Placement",
+      "visualAction": "👉 Pointer",
+      "playerOptions": [
+        {
+          "text": "🚶 Thank you! I am stepping into Reception.",
+          "nextNodeId": null,
+          "vocabId": "vocab_thank_you",
+          "grammarId": "gt_this_is",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch1_meet_receptionist"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

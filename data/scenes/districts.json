@@ -106,7 +106,9 @@
       "parked_car",
       "map_stand",
       "flower_bed",
-      "tree"
+      "tree",
+      "goodbye_sign",
+      "man_guide_sign"
     ],
     "chapters": [
       "ch1"
@@ -212,7 +214,9 @@
     "objects": [
       "hq_banner",
       "language_chart",
-      "welcome_desk"
+      "welcome_desk",
+      "i_badge",
+      "teacher_desk"
     ],
     "chapters": [
       "ch1"
@@ -335,7 +339,13 @@
       "coat_rack",
       "umbrella_stand",
       "backpack",
-      "reception_mat"
+      "reception_mat",
+      "yes_nod_card",
+      "no_sign",
+      "thank_you_banner",
+      "name_tag",
+      "you_badge",
+      "woman_reception_sign"
     ],
     "chapters": [
       "ch1"
@@ -558,7 +568,8 @@
       "coat_rack",
       "shoe_rack",
       "wicker_basket",
-      "key"
+      "key",
+      "home_mat"
     ],
     "chapters": [
       "ch1"

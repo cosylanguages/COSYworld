@@ -161,7 +161,10 @@ export class GameEngine {
         const basePath = 'data';
         const dialogueKeys = [
             'james_york_town_entrance',
+            'james_york_cosylanguages_hq',
             'receptionist_reception',
+            'james_york_reception',
+            'james_york_hallway',
             'james_york_apartment_living',
             'james_york_apartment_bedroom',
             'james_york_apartment_entrance',

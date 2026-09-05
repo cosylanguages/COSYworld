@@ -44,6 +44,17 @@
     }
   },
   {
+    "id": "ach_ch1_first_steps",
+    "title": "👣 First Steps",
+    "description": "Complete Chapter 1 end-to-end: introduce yourself, pick up your key, and unlock your apartment.",
+    "category": "chapter_1",
+    "icon": "👣",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch1_open_apartment"
+    }
+  },
+  {
     "id": "ach_apartment_explorer",
     "title": "🏠 Apartment Explorer",
     "description": "Explore all five rooms in your apartment.",

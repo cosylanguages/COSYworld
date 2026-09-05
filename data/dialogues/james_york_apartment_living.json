@@ -5,21 +5,72 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "There is a sofa in the living room and a bed in the bedroom.",
+      "npcLine": "🛋️ Welcome home! I am James York. This is your new living room and home!",
       "emotion": "happy",
-      "gestures": ["point_furniture", "point_room"],
-      "highlights": ["sofa", "bed", "desk"],
+      "gestures": ["wave", "point_furniture"],
+      "highlights": ["sofa", "coffee_table"],
       "speechRate": 0.65,
-      "grammarCheck": "Existential placement (There is)",
-      "visualAction": "🛋️ Living Room Tour",
+      "grammarCheck": "Existential Placement & Possessives ('This is your home')",
+      "visualAction": "🛋️ Living Room Welcome",
       "playerOptions": [
         {
-          "text": "🛋️ Look around the living room!",
-          "nextNodeId": null,
-          "vocabId": "sofa",
+          "text": "🛋️ Thank you James! I am happy to be home.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_home",
           "grammarId": "gt_there_is",
           "rewardXP": 20,
+          "friendshipGain": 10
+        },
+        {
+          "text": "🔍 What objects are in this room?",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_sofa",
+          "grammarId": "gt_this",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🎉 You completed Chapter 1! You met your friend James, talked to the receptionist, got your key, and unlocked your home!",
+      "emotion": "excited",
+      "gestures": ["wave"],
+      "highlights": ["window"],
+      "speechRate": 0.65,
+      "grammarCheck": "Chapter 1 Graduation & Review",
+      "visualAction": "🏆 Chapter 1 Mastery",
+      "playerOptions": [
+        {
+          "text": "🏡 Thank you! Goodbye for now!",
+          "nextNodeId": null,
+          "vocabId": "vocab_goodbye",
+          "grammarId": "gt_greetings",
+          "rewardXP": 25,
           "friendshipGain": 10,
+          "rewardQuestId": "q_ch1_open_apartment"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🛋️ There is a sofa, a table, a television, and a lamp. Explore every room in Chapter 2!",
+      "emotion": "happy",
+      "gestures": ["point_furniture"],
+      "highlights": ["tv", "lamp", "bookshelf"],
+      "speechRate": 0.65,
+      "grammarCheck": "Existential Placement ('There is a...')",
+      "visualAction": "🛋️ Furniture Overview",
+      "playerOptions": [
+        {
+          "text": "🏠 Let's explore every room!",
+          "nextNodeId": null,
+          "vocabId": "vocab_living_room",
+          "grammarId": "gt_there_is",
+          "rewardXP": 20,
           "rewardQuestId": "q_ch2_explore_rooms"
         }
       ],

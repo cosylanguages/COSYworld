@@ -1,0 +1,51 @@
+{
+  "npcId": "james_york",
+  "sceneId": "hallway",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🚶 Hello! This is the residential hallway. I am James. Your apartment entrance is right ahead!",
+      "emotion": "happy",
+      "gestures": ["wave", "point_right"],
+      "highlights": ["door_number_101"],
+      "speechRate": 0.65,
+      "grammarCheck": "Demonstratives & Possessives ('This is the hallway... Your apartment')",
+      "visualAction": "🚪 Corridor Guide",
+      "playerOptions": [
+        {
+          "text": "🔑 I have my key ready!",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_key",
+          "grammarId": "gt_my_your",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🔑 Great! Use your key on door number 101 to open your apartment!",
+      "emotion": "excited",
+      "gestures": ["point_right"],
+      "highlights": ["hallway_carpet"],
+      "speechRate": 0.65,
+      "grammarCheck": "Imperatives ('Use your key')",
+      "visualAction": "🔓 Unlock Prompt",
+      "playerOptions": [
+        {
+          "text": "🚪 Step forward to the apartment door!",
+          "nextNodeId": null,
+          "vocabId": "vocab_door",
+          "grammarId": "gt_articles",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch1_open_apartment"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}
