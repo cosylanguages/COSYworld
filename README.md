@@ -65,10 +65,20 @@ COSYworld/
 │   └── icons/            # SVG icons and emojis
 └── docs/
     ├── architecture.md   # Core engine technical architecture
+    ├── auxiliary_apps_architecture.md # COSYtools architecture & separation guide
     ├── contributing.md   # Detailed developer contribution guidelines
-    ├── game_design.md   # Inductive direct immersion design manifesto
-    └── migration_report.md # Repository separation audit log
+    └── game_design.md   # Inductive direct immersion design manifesto
 ```
+
+---
+
+## 🧰 COSY Ecosystem & Auxiliary Tools
+
+In addition to the RPG immersion engine in `COSYworld`, auxiliary language tools (such as verb conjugation trainers, grammatical gender practice tools, and verb reference matrices) are maintained in a dedicated companion repository:
+
+- **COSYtools**: [https://github.com/cosylanguages/COSYtools](https://github.com/cosylanguages/COSYtools)
+
+For architectural details on how `COSYworld` integrates with `COSYtools`, see [`docs/auxiliary_apps_architecture.md`](docs/auxiliary_apps_architecture.md).
 
 ---
 

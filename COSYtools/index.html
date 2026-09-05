@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYtools — Auxiliary Web Apps Suite</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <header>
+    <h1>🧰 COSYtools Hub</h1>
+    <p>Standalone micro-applications for language learning, verb conjugation, grammatical gender, and vocabulary practice.</p>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="index.html" class="nav-brand">🧰 COSYtools</a>
+    <div class="nav-links">
+      <a href="apps/conjugation/index.html">Conjugation Trainer</a>
+      <a href="apps/gender/index.html">Gender Classifier</a>
+      <a href="apps/verb-tables/index.html">Verb Tables</a>
+      <a href="apps/vocab-explorer/index.html">Vocabulary Explorer</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section>
+      <h2>Select a Micro-App</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Choose a practice tool below. These micro-apps operate independently and seamlessly integrate with COSY World.</p>
+
+      <div class="tools-grid">
+        <!-- Conjugation Trainer Card -->
+        <article class="tool-card">
+          <div>
+            <div class="tool-icon">🗣️</div>
+            <h3 class="tool-title">Conjugation Trainer</h3>
+            <p class="tool-desc">Master verb tense forms and endings across target languages with interactive conjugation drills.</p>
+          </div>
+          <a href="apps/conjugation/index.html" class="btn">Launch App</a>
+        </article>
+
+        <!-- Grammatical Gender Classifier Card -->
+        <article class="tool-card">
+          <div>
+            <div class="tool-icon">🏷️</div>
+            <h3 class="tool-title">Gender Classifier</h3>
+            <p class="tool-desc">Identify grammatical gender, practice definite & indefinite articles, and learn gender ending rules.</p>
+          </div>
+          <a href="apps/gender/index.html" class="btn">Launch App</a>
+        </article>
+
+        <!-- Verb Tables Card -->
+        <article class="tool-card">
+          <div>
+            <div class="tool-icon">📊</div>
+            <h3 class="tool-title">Verb & Declension Tables</h3>
+            <p class="tool-desc">Search and inspect complete tense matrix tables for standard and irregular verbs.</p>
+          </div>
+          <a href="apps/verb-tables/index.html" class="btn">Launch App</a>
+        </article>
+
+        <!-- Vocabulary Explorer Card -->
+        <article class="tool-card">
+          <div>
+            <div class="tool-icon">🔍</div>
+            <h3 class="tool-title">Vocabulary Explorer</h3>
+            <p class="tool-desc">Explore COSY's monolingual vocabulary database with audio, CEFR levels, and contextual examples.</p>
+          </div>
+          <a href="apps/vocab-explorer/index.html" class="btn">Launch App</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Part of the 🌍 <a href="https://github.com/cosylanguages/COSYworld" target="_blank">COSY World</a> Ecosystem | <a href="https://github.com/cosylanguages/COSYtools" target="_blank">GitHub Repository</a></p>
+  </footer>
+
+  <script src="js/hub.js" type="module"></script>
+</body>
+</html>
