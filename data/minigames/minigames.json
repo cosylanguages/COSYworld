@@ -307,5 +307,21 @@
       "timeLimitSeconds": 60,
       "targetObjects": ["football_ball", "swimming_goggles", "basketball_hoop"]
     }
+  },
+  {
+    "id": "mg_pack_luggage_1",
+    "type": "object_hunt",
+    "title": "🧳 Prepare Travel Luggage Challenge",
+    "description": "Pack essential travel items into your suitcase before departure (passport, suitcase, hotel key card, city map).",
+    "difficulty": "A1+",
+    "reward": {
+      "xp": 90,
+      "vocabulary": ["passport", "suitcase", "key", "map"],
+      "grammar": "gt_going_to_future"
+    },
+    "content": {
+      "timeLimitSeconds": 45,
+      "targetObjects": ["travel_passport", "travel_suitcase", "hotel_key_card", "tourist_guide_map"]
+    }
   }
 ]

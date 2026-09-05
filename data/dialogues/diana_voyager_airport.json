@@ -1,0 +1,87 @@
+{
+  "npcId": "diana_voyager",
+  "sceneId": "airport",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "✈️ Welcome to the airport! I am going to travel around the world! What are your travel plans?",
+      "emotion": "excited",
+      "gestures": ["welcome"],
+      "highlights": ["travel_passport", "travel_suitcase"],
+      "speechRate": 0.8,
+      "grammarCheck": "Expressing Future Plans ('going to')",
+      "visualAction": "✈️ ➔ 🧳 ➔ 🏨",
+      "playerOptions": [
+        {
+          "text": "🏨 I am going to check in at the hotel!",
+          "nextNodeId": "node_1",
+          "vocabId": "hotel_key_card",
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch12_hotel_checkin"
+        },
+        {
+          "text": "🧳 I am going to pack my travel suitcase!",
+          "nextNodeId": "node_2",
+          "vocabId": "travel_suitcase",
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch12_prepare_travel"
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🏨 Excellent! After checking in at the hotel, I am going to ask for information at the tourist office!",
+      "emotion": "happy",
+      "gestures": ["smile"],
+      "highlights": ["hotel_key_card"],
+      "speechRate": 0.8,
+      "grammarCheck": "Future Intentions with 'going to'",
+      "visualAction": "🏨 ➔ 🗺️",
+      "playerOptions": [
+        {
+          "text": "🗺️ I am going to get a city map from the tourist office!",
+          "nextNodeId": "node_3",
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🧳 Remember to pack your passport and flight tickets! Are you ready for departure?",
+      "emotion": "excited",
+      "gestures": ["nod"],
+      "highlights": ["travel_passport"],
+      "speechRate": 0.8,
+      "grammarCheck": "Travel Preparation",
+      "visualAction": "🛂 + 🎫 ➔ ✈️",
+      "playerOptions": [
+        {
+          "text": "🛂 Yes! I am going to show my passport at security!",
+          "nextNodeId": "node_3",
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🌍 Bon voyage! Your polyglot journey across COSY Town is a complete success!",
+      "emotion": "happy",
+      "gestures": ["wave"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Polyglot Voyage Capstone",
+      "visualAction": "🌍 ➔ 🏆",
+      "playerOptions": [
+        {
+          "text": "🏆 Thank you, Diana! I am a Citizen of the World!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    }
+  ]
+}

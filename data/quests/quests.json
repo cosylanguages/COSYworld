@@ -2468,6 +2468,230 @@
         "locationId": "yoga_studio",
         "action": "enter"
       }
+    ],
+    "nextQuestId": "q_ch12_prepare_travel"
+  },
+  {
+    "id": "q_ch12_prepare_travel",
+    "chapter": "ch12",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🧳 Prepare Luggage & Travel Info",
+    "description": "Pack essential travel items into your suitcase and inspect the tourist guide map.",
+    "difficulty": "A1+",
+    "NPC": "diana_voyager",
+    "requirements": {
+      "prerequisiteQuest": "q_ch11_health_champion",
+      "targetObjects": [
+        "travel_passport",
+        "travel_suitcase",
+        "tourist_guide_map"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch11_health_champion"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect passport (`travel_passport`), suitcase (`travel_suitcase`), and tourist guide map (`tourist_guide_map`)",
+        "target": "travel_passport"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect travel_passport, travel_suitcase, and tourist_guide_map",
+        "targetObjects": [
+          "travel_passport",
+          "travel_suitcase",
+          "tourist_guide_map"
+        ],
+        "requiredCount": 3
+      }
+    ],
+    "reward": {
+      "xp": 90,
+      "vocabulary": [
+        "passport",
+        "suitcase",
+        "map",
+        "flight"
+      ],
+      "grammar": "gt_going_to_future"
+    },
+    "rewards": {
+      "xp": 90,
+      "vocabulary": [
+        "passport",
+        "suitcase",
+        "map",
+        "flight"
+      ],
+      "grammar": "gt_going_to_future"
+    },
+    "dialogues": {
+      "start": "Prepare your travel luggage and check the city map at the tourist office!",
+      "progress": "Inspect passport, suitcase, and tourist guide map.",
+      "complete": "Luggage packed and travel info ready!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "diana_voyager",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "airport",
+        "hotspotId": "travel_passport",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch12_hotel_checkin"
+  },
+  {
+    "id": "q_ch12_hotel_checkin",
+    "chapter": "ch12",
+    "category": "conversation",
+    "type": "conversation",
+    "title": "🏨 Hotel Check-in & Future Plans",
+    "description": "Check in at the hotel (`hotel`) and discuss future travel plans ('going to') with Diana Voyager.",
+    "difficulty": "A1+",
+    "NPC": "diana_voyager",
+    "requirements": {
+      "prerequisiteQuest": "q_ch12_prepare_travel",
+      "targetObjects": [
+        "hotel_key_card"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch12_prepare_travel"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect hotel key card (`hotel_key_card`) and converse with Diana Voyager about future travel plans",
+        "target": "hotel_key_card"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "conversation",
+        "description": "Check in at hotel and converse with Diana Voyager",
+        "targetNpc": "diana_voyager",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": [
+        "hotel",
+        "reservation",
+        "checkin",
+        "voyage"
+      ],
+      "grammar": "gt_going_to_future"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": [
+        "hotel",
+        "reservation",
+        "checkin",
+        "voyage"
+      ],
+      "grammar": "gt_going_to_future"
+    },
+    "dialogues": {
+      "start": "Visit the hotel lobby to check in and share your future travel plans!",
+      "progress": "Inspect the hotel key card and discuss travel plans.",
+      "complete": "Hotel check-in complete!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "diana_voyager",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "hotel",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch12_citizen_of_world"
+  },
+  {
+    "id": "q_ch12_citizen_of_world",
+    "chapter": "ch12",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🌍 Citizen of the World Capstone",
+    "description": "Reunite with James York at the airport for the final grand narrative bookend, completing COSY Town's 12-chapter polyglot journey!",
+    "difficulty": "A1+",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch12_hotel_checkin",
+      "targetLocation": "airport"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch12_hotel_checkin"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Meet James York at the airport (`airport`) for the final capstone reunion",
+        "target": "airport"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Complete final capstone reunion with James York at airport",
+        "targetLocation": "airport",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 150,
+      "vocabulary": [
+        "citizen",
+        "world",
+        "journey",
+        "master"
+      ],
+      "grammar": "gt_going_to_future"
+    },
+    "rewards": {
+      "xp": 150,
+      "vocabulary": [
+        "citizen",
+        "world",
+        "journey",
+        "master"
+      ],
+      "grammar": "gt_going_to_future"
+    },
+    "dialogues": {
+      "start": "Meet James York at the airport for your final capstone graduation!",
+      "progress": "Converse with James York at the airport.",
+      "complete": "Congratulations! You completed all 12 chapters and earned Citizen of the World status!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "airport",
+        "action": "enter"
+      }
     ]
   },
   {

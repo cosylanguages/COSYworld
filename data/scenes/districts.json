@@ -2392,17 +2392,23 @@
         "npcId": "diana_voyager",
         "x": 400,
         "y": 300
+      },
+      {
+        "npcId": "james_york",
+        "x": 580,
+        "y": 290
       }
     ],
     "npcs": [
-      "diana_voyager"
+      "diana_voyager",
+      "james_york"
     ],
     "objects": [
+      "travel_passport",
+      "travel_suitcase",
       "desk",
       "window",
-      "lamp",
-      "bench",
-      "clock_tower"
+      "bench"
     ],
     "chapters": [
       "ch12"
@@ -2595,10 +2601,10 @@
       "diana_voyager"
     ],
     "objects": [
+      "hotel_key_card",
       "desk",
       "lamp",
       "window",
-      "plant",
       "sofa"
     ],
     "chapters": [
@@ -5301,11 +5307,10 @@
       "diana_voyager"
     ],
     "objects": [
+      "tourist_guide_map",
       "desk",
       "bookshelf",
-      "window",
-      "lamp",
-      "plant"
+      "lamp"
     ],
     "chapters": [
       "ch12"

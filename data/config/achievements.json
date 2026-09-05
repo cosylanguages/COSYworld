@@ -240,5 +240,16 @@
     "unlockCondition": {
       "questId": "q_ch11_health_champion"
     }
+  },
+  {
+    "id": "ach_ch12_citizen_of_world",
+    "title": "🌍 Citizen of the World",
+    "description": "Master all 12 chapters in COSY Town, pack luggage, express future plans with 'going to', and complete the grand polyglot journey!",
+    "category": "chapter_12",
+    "icon": "🌍",
+    "xpReward": 200,
+    "unlockCondition": {
+      "questId": "q_ch12_citizen_of_world"
+    }
   }
 ]

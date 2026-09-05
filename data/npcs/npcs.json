@@ -275,7 +275,7 @@
     "personality": "curious",
     "currentMood": "curious",
     "relationshipLevel": 1,
-    "friendshipPoints": 0,
+    "friendshipPoints": 10,
     "favoriteCafe": "hotel",
     "favoritePark": "tourist_office",
     "position3D": {
@@ -303,36 +303,67 @@
     ],
     "conversationHistory": [],
     "questHistory": [
-      "q_diana_mystery"
+      "q_ch12_prepare_travel"
     ],
     "shopInventory": [],
     "quests": [
-      "q_diana_mystery",
-      "q_directions_bakery"
+      "q_ch12_prepare_travel",
+      "q_ch12_hotel_checkin",
+      "q_ch12_citizen_of_world"
     ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "👩‍🎨 Every corner of COSY Town holds a secret... 🗝️ Shall we unravel it together?",
-          "visualAction": "👩‍🎨 ➔ 📖 ➔ 🌟",
-          "grammarCheck": "Modal Auxiliaries (Shall we, Could you, Would you)",
+          "text": "✈️ Welcome to the airport! I am going to travel around the world! What are your travel plans?",
+          "visualAction": "✈️ ➔ 🧳 ➔ 🏨",
+          "grammarCheck": "Expressing Future Plans ('going to')",
           "options": [
             {
-              "label": "🗝️ Listen to Diana's traveler story!",
+              "label": "🏨 I am going to check in at the hotel!",
               "next": 1,
-              "rewardXP": 25,
-              "questId": "q_diana_mystery"
+              "rewardXP": 15,
+              "questId": "q_ch12_hotel_checkin"
+            },
+            {
+              "label": "🧳 I am going to pack my travel suitcase!",
+              "next": 2,
+              "rewardXP": 15,
+              "questId": "q_ch12_prepare_travel"
             }
           ]
         },
         {
           "id": 1,
-          "text": "🌟 Words are like keys. The more words you discover, the wider the world opens before you!",
-          "visualAction": "🗝️ ➔ 🌍 ➔ 🔓",
+          "text": "🏨 Excellent! After checking in at the hotel, I am going to ask for information at the tourist office!",
+          "visualAction": "🏨 ➔ 🗺️",
           "options": [
             {
-              "label": "🌍 Continue my voyage!",
+              "label": "🗺️ I am going to get a city map from the tourist office!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🧳 Remember to pack your passport and flight tickets! Are you ready for departure?",
+          "visualAction": "Control + 🎫 ➔ ✈️",
+          "options": [
+            {
+              "label": "🛂 Yes! I am going to show my passport at security!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🌍 Bon voyage! Your polyglot journey across COSY Town is a complete success!",
+          "visualAction": "🌍 ➔ 🏆",
+          "options": [
+            {
+              "label": "🏆 Thank you, Diana! I am a Citizen of the World!",
               "next": 0
             }
           ]

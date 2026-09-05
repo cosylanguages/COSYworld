@@ -1,0 +1,41 @@
+{
+  "npcId": "james_york",
+  "sceneId": "airport",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👨‍💼 Look how far you have come! Do you remember when you first arrived at COSY Town in Chapter 1?",
+      "emotion": "happy",
+      "gestures": ["smile"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Narrative Bookend (Chapter 1 to Chapter 12 Capstone)",
+      "visualAction": "🏙️ (Ch1) ➔ ✈️ (Ch12)",
+      "playerOptions": [
+        {
+          "text": "🔑 Yes! You showed me Headquarters and helped me open my apartment!",
+          "nextNodeId": "node_1",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch12_citizen_of_world"
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🏆 Exactly! From introducing yourself to mastering shopping, directions, dining, and future travel plans — you are now a Citizen of the World!",
+      "emotion": "excited",
+      "gestures": ["clap"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Master Polyglot Capstone Recognition",
+      "visualAction": "🎓 ➔ 🌍 ➔ 🏆",
+      "playerOptions": [
+        {
+          "text": "🌍 Thank you, James! I am ready to explore the world!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    }
+  ]
+}
