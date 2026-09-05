@@ -1143,7 +1143,8 @@
         "locationId": "apartment_living",
         "action": "inspect"
       }
-    ]
+    ],
+    "nextQuestId": "q_directions_bakery"
   },
   {
     "id": "q_photo_fountain",
@@ -1420,55 +1421,84 @@
     "chapter": "ch4",
     "category": "travel",
     "type": "directions",
-    "title": "🧭 Navigate to the Bakery",
-    "description": "Follow town directions to travel from Town Square into the Bakery.",
+    "title": "🧭 Give Directions to the Bakery",
+    "description": "An traveler at the crosswalk asks for directions to the bakery using imperatives: go, turn left, turn right, next to, behind, between.",
     "difficulty": "A1",
-    "NPC": "lucas_baker",
+    "NPC": "diana_voyager",
     "requirements": {
-      "level": 1,
-      "targetLocation": "bakery"
+      "prerequisiteQuest": "q_grammar_imperative",
+      "targetLocation": "bakery",
+      "targetObjects": [
+        "direction_sign",
+        "crosswalk_stripes"
+      ]
     },
     "unlockConditions": {
-      "level": 1
+      "prerequisiteQuest": "q_grammar_imperative"
     },
     "steps": [
       {
         "id": "step_1",
-        "description": "Travel from Town Square to the Bakery",
+        "description": "Meet Diana Voyager at the crosswalk and give directions using imperatives",
+        "target": "diana_voyager"
+      },
+      {
+        "id": "step_2",
+        "description": "Navigate using direction signs to reach the bakery",
         "target": "bakery"
       }
     ],
     "objectives": [
       {
         "id": "obj_1",
-        "type": "travel",
-        "description": "Travel to bakery",
+        "type": "directions",
+        "description": "Navigate to bakery using imperatives and direction signs",
         "targetLocation": "bakery",
-        "requiredCount": 1
+        "targetObjects": [
+          "direction_sign",
+          "crosswalk_stripes"
+        ],
+        "requiredCount": 2
       }
     ],
     "reward": {
-      "xp": 65,
+      "xp": 85,
       "vocabulary": [
-        "baguette"
+        "go",
+        "turn left",
+        "turn right",
+        "next to",
+        "behind",
+        "between"
       ],
-      "grammar": "gt_likes"
+      "grammar": "gt_prepositions",
+      "features": [
+        "city_map"
+      ]
     },
     "rewards": {
-      "xp": 65,
+      "xp": 85,
       "vocabulary": [
-        "baguette"
+        "go",
+        "turn left",
+        "turn right",
+        "next to",
+        "behind",
+        "between"
       ],
-      "grammar": "gt_likes"
+      "grammar": "gt_prepositions",
+      "features": [
+        "city_map"
+      ]
     },
     "dialogues": {
-      "start": "Head east along Central Avenue to reach the Bakery.",
-      "progress": "Walk into the Bakery.",
-      "complete": "You have arrived at Lucas's Bakery!"
+      "start": "Excuse me! Could you give me directions to the bakery? Go straight, turn left next to the crosswalk!",
+      "progress": "Follow the direction signs and navigate to the bakery.",
+      "complete": "Thank you! You gave perfect directions and unlocked the City Map!"
     },
     "npcTriggers": [
       {
-        "npcId": "lucas_baker",
+        "npcId": "diana_voyager",
         "action": "talk"
       }
     ],
@@ -1478,7 +1508,7 @@
         "action": "enter"
       }
     ],
-    "nextQuestId": "q_shop_baguette"
+    "nextQuestId": "q_ch4_city_map_master"
   },
   {
     "id": "q_shop_baguette",
@@ -1761,5 +1791,74 @@
         "action": "enter"
       }
     ]
+  },
+  {
+    "id": "q_ch4_city_map_master",
+    "chapter": "ch4",
+    "category": "travel",
+    "type": "exploration",
+    "title": "🗺️ City Map Navigator",
+    "description": "Open the interactive World Map to navigate between neighbourhood locations: crosswalk, post office, pharmacy, and bakery.",
+    "difficulty": "A1",
+    "NPC": "diana_voyager",
+    "requirements": {
+      "prerequisiteQuest": "q_directions_bakery",
+      "targetLocation": "post_office"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_directions_bakery"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the post office and use the City Map",
+        "target": "post_office"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Navigate to post_office using city map",
+        "targetLocation": "post_office",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": [
+        "map",
+        "street",
+        "neighbourhood"
+      ],
+      "grammar": "gt_prepositions"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": [
+        "map",
+        "street",
+        "neighbourhood"
+      ],
+      "grammar": "gt_prepositions"
+    },
+    "dialogues": {
+      "start": "Use your new City Map to explore the neighbourhood!",
+      "progress": "Open the map to travel to the post office.",
+      "complete": "Chapter 4 Complete! You are a master neighbourhood navigator!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "diana_voyager",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "post_office",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_shop_baguette"
   }
 ]

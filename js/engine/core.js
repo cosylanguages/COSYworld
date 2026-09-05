@@ -171,6 +171,7 @@ export class GameEngine {
             'james_york_apartment_entrance',
             'james_york_street',
             'commuter_sam_bus_stop',
+            'diana_voyager_crosswalk',
             'ella_baker_bakery',
             'lucas_baker_bakery',
             'dylan_chef_restaurant',

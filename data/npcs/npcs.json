@@ -236,7 +236,8 @@
     ],
     "shopInventory": [],
     "quests": [
-      "q_diana_mystery"
+      "q_diana_mystery",
+      "q_directions_bakery"
     ],
     "dialogues": {
       "en": [

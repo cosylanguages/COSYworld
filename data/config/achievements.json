@@ -152,5 +152,16 @@
     "unlockCondition": {
       "questId": "q_ch3_morning_routine"
     }
+  },
+  {
+    "id": "ach_city_navigator",
+    "title": "🧭 Master Navigator",
+    "description": "Give directions using imperatives and prepositions to unlock the interactive City Map.",
+    "category": "chapter_4",
+    "icon": "🗺️",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_directions_bakery"
+    }
   }
 ]

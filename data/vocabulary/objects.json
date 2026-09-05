@@ -2712,5 +2712,289 @@
       "de": "Uhr",
       "ru": "Часы"
     }
+  },
+  "crosswalk_stripes": {
+    "id": "crosswalk_stripes",
+    "type": "structure",
+    "locationId": "crosswalk",
+    "emoji": "🚸",
+    "x": 200,
+    "y": 320,
+    "width": 400,
+    "height": 100,
+    "labelX": 400,
+    "labelY": 310,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_imperatives",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "traffic_light",
+      "actionIcon": "🚦 Look at Signal"
+    },
+    "words": {
+      "en": "Crosswalk Markings",
+      "fr": "Passage piéton",
+      "it": "Strisce pedonali",
+      "es": "Paso de peatones",
+      "de": "Zebrastreifen",
+      "ru": "Пешеходный переход"
+    },
+    "visualSequence": "🚸 Pedestrian Crossing ➔ 🚦 Check Traffic Light ➔ 🚶 Cross Safely"
+  },
+  "traffic_light": {
+    "id": "traffic_light",
+    "type": "appliance",
+    "locationId": "crosswalk",
+    "emoji": "🚦",
+    "x": 620,
+    "y": 120,
+    "width": 60,
+    "height": 140,
+    "labelX": 650,
+    "labelY": 110,
+    "vocabId": "vocab_lamp",
+    "grammarId": "gt_imperatives",
+    "soundCue": "chime",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "direction_sign",
+      "actionIcon": "🪧 Read Direction Sign"
+    },
+    "words": {
+      "en": "Traffic Light",
+      "fr": "Feu de circulation",
+      "it": "Semaforo",
+      "es": "Semáforo",
+      "de": "Ampel",
+      "ru": "Светофор"
+    }
+  },
+  "direction_sign": {
+    "id": "direction_sign",
+    "type": "structure",
+    "locationId": "crosswalk",
+    "emoji": "🪧",
+    "x": 120,
+    "y": 140,
+    "width": 80,
+    "height": 120,
+    "labelX": 160,
+    "labelY": 130,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_prepositions",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "crosswalk_stripes",
+      "actionIcon": "🚸 Cross the Street"
+    },
+    "words": {
+      "en": "Direction Sign",
+      "fr": "Panneau de direction",
+      "it": "Cartello stradale",
+      "es": "Señal de dirección",
+      "de": "Wegweiser",
+      "ru": "Указатель направления"
+    },
+    "visualSequence": "🪧 Turn Left ➔ 🥐 Bakery 100m ➔ 📮 Post Office Right"
+  },
+  "post_box": {
+    "id": "post_box",
+    "type": "structure",
+    "locationId": "post_office",
+    "emoji": "📮",
+    "x": 160,
+    "y": 200,
+    "width": 80,
+    "height": 120,
+    "labelX": 200,
+    "labelY": 190,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_imperatives",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "stamps",
+      "actionIcon": "✉️ Buy Postage Stamps"
+    },
+    "words": {
+      "en": "Post Box",
+      "fr": "Boîte aux lettres",
+      "it": "Cassetta postale",
+      "es": "Buzón de correos",
+      "de": "Briefkasten",
+      "ru": "Почтовый ящик"
+    }
+  },
+  "stamps": {
+    "id": "stamps",
+    "type": "item",
+    "locationId": "post_office",
+    "emoji": "✉️",
+    "x": 420,
+    "y": 220,
+    "width": 60,
+    "height": 60,
+    "labelX": 450,
+    "labelY": 210,
+    "vocabId": "vocab_name",
+    "grammarId": "gt_prepositions",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "post_counter",
+      "actionIcon": "📮 Post Counter"
+    },
+    "words": {
+      "en": "Postage Stamps",
+      "fr": "Timbres postaux",
+      "it": "Francobolli",
+      "es": "Sellos de correos",
+      "de": "Briefmarken",
+      "ru": "Почтовые марки"
+    }
+  },
+  "post_counter": {
+    "id": "post_counter",
+    "type": "furniture",
+    "locationId": "post_office",
+    "emoji": "🏢",
+    "x": 320,
+    "y": 180,
+    "width": 240,
+    "height": 120,
+    "labelX": 440,
+    "labelY": 170,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_prepositions",
+    "soundCue": "desk_tap",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "words": {
+      "en": "Post Office Counter",
+      "fr": "Guichet de poste",
+      "it": "Sportello postale",
+      "es": "Mostrador de correos",
+      "de": "Postschalter",
+      "ru": "Почтовая стойка"
+    }
+  },
+  "pharmacy_counter": {
+    "id": "pharmacy_counter",
+    "type": "furniture",
+    "locationId": "pharmacy",
+    "emoji": "💊",
+    "x": 280,
+    "y": 180,
+    "width": 280,
+    "height": 120,
+    "labelX": 420,
+    "labelY": 170,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_prepositions",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "medicine_shelf",
+      "actionIcon": "🩺 Medicine Shelf"
+    },
+    "words": {
+      "en": "Pharmacy Counter",
+      "fr": "Comptoir de pharmacie",
+      "it": "Banco farmacia",
+      "es": "Mostrador de farmacia",
+      "de": "Apothekentheke",
+      "ru": "Аптечная стойка"
+    }
+  },
+  "medicine_shelf": {
+    "id": "medicine_shelf",
+    "type": "furniture",
+    "locationId": "pharmacy",
+    "emoji": "🩺",
+    "x": 600,
+    "y": 140,
+    "width": 120,
+    "height": 200,
+    "labelX": 660,
+    "labelY": 130,
+    "vocabId": "vocab_book",
+    "grammarId": "gt_prepositions",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "first_aid_box",
+      "actionIcon": "🩹 First Aid Kit"
+    },
+    "words": {
+      "en": "Medicine Shelf",
+      "fr": "Étagère à médicaments",
+      "it": "Scaffale medicinali",
+      "es": "Estante de medicinas",
+      "de": "Medikamentenregal",
+      "ru": "Полка с лекарствами"
+    }
+  },
+  "first_aid_box": {
+    "id": "first_aid_box",
+    "type": "item",
+    "locationId": "pharmacy",
+    "emoji": "🩹",
+    "x": 180,
+    "y": 240,
+    "width": 60,
+    "height": 60,
+    "labelX": 210,
+    "labelY": 230,
+    "vocabId": "vocab_soap",
+    "grammarId": "gt_prepositions",
+    "soundCue": "chime",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "words": {
+      "en": "First Aid Kit",
+      "fr": "Trousse de secours",
+      "it": "Kit di primo soccorso",
+      "es": "Botiquín de primeros auxilios",
+      "de": "Erste-Hilfe-Set",
+      "ru": "Аптечка"
+    }
+  },
+  "oven": {
+    "id": "oven",
+    "type": "appliance",
+    "locationId": "bakery",
+    "emoji": "🧑‍🍳",
+    "x": 520,
+    "y": 160,
+    "width": 140,
+    "height": 140,
+    "labelX": 590,
+    "labelY": 150,
+    "vocabId": "vocab_bread",
+    "grammarId": "gt_imperatives",
+    "soundCue": "kettle_whistle",
+    "animation": "glow",
+    "interaction": "inspect",
+    "actionChain": {
+      "nextObject": "baguette",
+      "actionIcon": "🥖 Fresh Baguette"
+    },
+    "words": {
+      "en": "Bakery Oven",
+      "fr": "Four à pain",
+      "it": "Forno da panettiere",
+      "es": "Horno de panadería",
+      "de": "Backofen",
+      "ru": "Пекарская печь"
+    }
   }
 }

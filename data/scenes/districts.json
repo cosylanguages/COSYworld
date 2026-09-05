@@ -1201,10 +1201,12 @@
       "street_clock",
       "street_lamp",
       "work",
-      "afternoon"
+      "afternoon",
+      "direction_sign"
     ],
     "chapters": [
-      "ch3"
+      "ch3",
+      "ch4"
     ]
   },
   "bus_stop": {
@@ -1296,7 +1298,8 @@
     "objects": [
       "bus_stop_sign",
       "bus_timetable_board",
-      "evening"
+      "evening",
+      "bench"
     ],
     "chapters": [
       "ch3",
@@ -1540,7 +1543,8 @@
     ],
     "objects": [
       "baguette",
-      "croissant"
+      "croissant",
+      "oven"
     ],
     "chapters": [
       "ch4",
@@ -1634,10 +1638,14 @@
       "window",
       "plant",
       "lamp",
-      "bookshelf"
+      "bookshelf",
+      "pharmacy_counter",
+      "medicine_shelf",
+      "first_aid_box"
     ],
     "chapters": [
-      "ch5"
+      "ch5",
+      "ch4"
     ]
   },
   "crosswalk": {
@@ -1699,12 +1707,23 @@
         }
       }
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "diana_voyager",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "diana_voyager"
+    ],
     "objects": [
       "street_lamp",
       "street_clock",
-      "bench"
+      "bench",
+      "crosswalk_stripes",
+      "traffic_light",
+      "direction_sign"
     ],
     "chapters": [
       "ch4"
@@ -1776,10 +1795,14 @@
       "bookshelf",
       "lamp",
       "window",
-      "plant"
+      "plant",
+      "post_box",
+      "stamps",
+      "post_counter"
     ],
     "chapters": [
-      "ch5"
+      "ch5",
+      "ch4"
     ]
   },
   "supermarket": {
