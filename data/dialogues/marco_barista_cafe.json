@@ -5,40 +5,108 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "☕ Fresh espresso! ♨️ Hot!",
+      "npcLine": "☕ Welcome to COSY Café! What would you like to drink today?",
       "emotion": "happy",
-      "gestures": [],
-      "highlights": [],
+      "gestures": ["welcome"],
+      "highlights": ["espresso_machine", "coffee_cup", "cappuccino"],
       "speechRate": 0.8,
-      "grammarCheck": "Polite Requests (Please, May I have)",
-      "visualAction": "☕ ➔ ♨️",
+      "grammarCheck": "Polite Ordering ('Would like' & 'Can I have...')",
+      "visualAction": "☕ ➔ 🫖 ➔ 😋",
       "playerOptions": [
         {
-          "text": "☕ Sip fresh coffee!",
+          "text": "☕ I would like an espresso, please!",
           "nextNodeId": "node_1",
+          "vocabId": "coffee_cup",
+          "grammarId": "gt_likes",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch6_cafe_order"
+        },
+        {
+          "text": "🥛 Can I have a frothy cappuccino?",
+          "nextNodeId": "node_2",
+          "vocabId": "cappuccino",
+          "grammarId": "gt_likes",
           "rewardXP": 15
+        },
+        {
+          "text": "🍽️ Can I help serve customers as a waiter?",
+          "nextNodeId": "node_3",
+          "vocabId": "cup",
+          "grammarId": "gt_likes",
+          "rewardXP": 20
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     },
     {
       "id": "node_1",
-      "npcLine": "☕ Rich and aromatic! The best coffee in COSY Town!",
+      "npcLine": "☕ Rich and fresh espresso coming right up for 3 coins! Anything else?",
       "emotion": "happy",
-      "gestures": [],
-      "highlights": [],
+      "gestures": ["brew_coffee"],
+      "highlights": ["espresso_machine"],
       "speechRate": 0.8,
-      "grammarCheck": "Superlatives & Adjectives",
-      "visualAction": "☕ ➔ 😊",
+      "grammarCheck": "Ordering Drinks & Polite Form",
+      "visualAction": "☕ ➔ 🪙 3",
       "playerOptions": [
         {
-          "text": "☕ Grazie Marco!",
+          "text": "🍰 I would also like a slice of fruit cake!",
+          "nextNodeId": "node_4",
+          "vocabId": "dessert_cake",
+          "rewardXP": 15
+        },
+        {
+          "text": "🙏 That is all, thank you Marco!",
           "nextNodeId": "node_0"
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "☕ Certainly! One cappuccino with extra foam for 4 coins!",
+      "emotion": "excited",
+      "gestures": ["brew_coffee"],
+      "highlights": ["cappuccino"],
+      "speechRate": 0.8,
+      "grammarCheck": "Can I have + Noun",
+      "visualAction": "☕ ➔ 🪙 4",
+      "playerOptions": [
+        {
+          "text": "☕ Thank you, Marco!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🍽️ Fantastic! Put on your apron — our terrace customers would like their drinks!",
+      "emotion": "happy",
+      "gestures": ["hand_apron"],
+      "highlights": ["cutlery_set"],
+      "speechRate": 0.8,
+      "grammarCheck": "Server Role Play (Waiter / Customer)",
+      "visualAction": "🍽️ ➔ 📋",
+      "playerOptions": [
+        {
+          "text": "📋 Take orders from terrace customers!",
+          "nextNodeId": "node_0",
+          "rewardXP": 25
+        }
+      ]
+    },
+    {
+      "id": "node_4",
+      "npcLine": "🍰 Fruit cake paired with fresh coffee is delicious! Enjoy your break on the outdoor terrace!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": ["dessert_cake"],
+      "speechRate": 0.8,
+      "grammarCheck": "Pairing Food and Drinks",
+      "visualAction": "☕ + 🍰 ➔ 😋",
+      "playerOptions": [
+        {
+          "text": "⛱️ Head out to the outdoor terrace!",
+          "nextNodeId": "node_0"
+        }
+      ]
     }
   ]
 }

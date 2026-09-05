@@ -7008,7 +7008,8 @@
     "worldWidth": 800,
     "worldHeight": 500,
     "neighbors": [
-      "town_square"
+      "town_square",
+      "outdoor_terrace"
     ],
     "name": {
       "en": "Restaurant",
@@ -7052,6 +7053,18 @@
           "en": "Town Square 🏛️",
           "fr": "Place de la ville 🏛️"
         }
+      },
+      {
+        "targetId": "outdoor_terrace",
+        "x": 710,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Outdoor Terrace ⛱️",
+          "fr": "Terrasse extérieure ⛱️"
+        }
       }
     ],
     "catalog": [
@@ -7076,13 +7089,22 @@
       "water",
       "waiter"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "dylan_chef",
+        "x": 300,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "dylan_chef"
+    ],
     "objects": [
-      "coffee_table",
-      "coffee_cup",
-      "plant",
-      "lamp"
+      "soup_bowl",
+      "pasta_plate",
+      "menu_card",
+      "cutlery_set",
+      "coffee_table"
     ],
     "chapters": [
       "ch6"
@@ -7102,7 +7124,8 @@
     "worldWidth": 800,
     "worldHeight": 500,
     "neighbors": [
-      "town_square"
+      "town_square",
+      "outdoor_terrace"
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
@@ -7156,6 +7179,18 @@
           "de": "Stadtplatz 🏛️",
           "ru": "Площадь 🏛️"
         }
+      },
+      {
+        "targetId": "outdoor_terrace",
+        "x": 710,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Outdoor Terrace ⛱️",
+          "fr": "Terrasse extérieure ⛱️"
+        }
       }
     ],
     "npcSpawns": [
@@ -7170,11 +7205,121 @@
     ],
     "objects": [
       "espresso_machine",
-      "coffee_cup"
+      "coffee_cup",
+      "cappuccino",
+      "tea_pot",
+      "menu_card"
     ],
     "chapters": [
       "ch5",
+      "ch6",
       "ch7"
+    ]
+  },
+  "outdoor_terrace": {
+    "id": "outdoor_terrace",
+    "district": "City Centre",
+    "level": "A0",
+    "icon": "⛱️",
+    "weather": "clear",
+    "music": "cafe",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": 1200,
+    "worldY": 500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": [
+      "cafe",
+      "restaurant"
+    ],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "Outdoor Terrace",
+      "fr": "Terrasse extérieure",
+      "it": "Terrazza all'aperto",
+      "es": "Terraza al aire libre",
+      "de": "Außenterrasse",
+      "ru": "Открытая терраса"
+    },
+    "viewBox": "0 0 800 500",
+    "backgroundImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=82",
+    "roads": [
+      {
+        "x": 0,
+        "y": 340,
+        "width": 800,
+        "height": 160,
+        "type": "stone_patio"
+      }
+    ],
+    "buildings": [
+      {
+        "id": "terrace_seating",
+        "x": 120,
+        "y": 140,
+        "width": 560,
+        "height": 200,
+        "color": "#0ea5e9",
+        "label": "Terrace Seating ⛱️"
+      }
+    ],
+    "doors": [
+      {
+        "targetId": "cafe",
+        "x": 20,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Cafe ☕",
+          "fr": "Café ☕"
+        }
+      },
+      {
+        "targetId": "restaurant",
+        "x": 710,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Restaurant 🍽️",
+          "fr": "Restaurant 🍽️"
+        }
+      }
+    ],
+    "npcSpawns": [
+      {
+        "npcId": "marco_barista",
+        "x": 250,
+        "y": 300
+      },
+      {
+        "npcId": "dylan_chef",
+        "x": 550,
+        "y": 300
+      }
+    ],
+    "npcs": [
+      "marco_barista",
+      "dylan_chef"
+    ],
+    "objects": [
+      "terrace_table",
+      "terrace_umbrella",
+      "dessert_cake",
+      "coffee_cup",
+      "cutlery_set"
+    ],
+    "chapters": [
+      "ch6"
     ]
   }
 }

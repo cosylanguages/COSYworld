@@ -1830,6 +1830,222 @@
         "hotspotId": "oven",
         "action": "cook"
       }
+    ],
+    "nextQuestId": "q_ch6_cafe_order"
+  },
+  {
+    "id": "q_ch6_cafe_order",
+    "chapter": "ch6",
+    "category": "shopping",
+    "type": "shopping",
+    "title": "☕ Order at the Café",
+    "description": "Order an espresso or cappuccino at COSY Café using 'I would like...' or 'Can I have...'",
+    "difficulty": "A1",
+    "NPC": "marco_barista",
+    "requirements": {
+      "prerequisiteQuest": "q_cooking_bread",
+      "targetObjects": [
+        "coffee_cup"
+      ]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_cooking_bread"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Order coffee at the Café from Marco",
+        "target": "coffee_cup"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "shopping",
+        "description": "Order coffee at cafe",
+        "targetObjects": [
+          "coffee_cup"
+        ],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 85,
+      "vocabulary": [
+        "coffee",
+        "cappuccino",
+        "tea"
+      ],
+      "grammar": "gt_likes"
+    },
+    "rewards": {
+      "xp": 85,
+      "vocabulary": [
+        "coffee",
+        "cappuccino",
+        "tea"
+      ],
+      "grammar": "gt_likes"
+    },
+    "dialogues": {
+      "start": "Step into COSY Café and order a fresh coffee from Marco!",
+      "progress": "Order an espresso using 'I would like...' or 'Can I have...'",
+      "complete": "Enjoy your fresh coffee! Recipe unlocked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "marco_barista",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "cafe",
+        "hotspotId": "coffee_cup",
+        "action": "buy"
+      }
+    ],
+    "nextQuestId": "q_ch6_server_challenge"
+  },
+  {
+    "id": "q_ch6_server_challenge",
+    "chapter": "ch6",
+    "category": "conversation",
+    "type": "conversation",
+    "title": "🍽️ Serve COSY Town Customers",
+    "description": "Put on an apron and play server at the restaurant and outdoor terrace to fulfill customer orders.",
+    "difficulty": "A1",
+    "NPC": "dylan_chef",
+    "requirements": {
+      "prerequisiteQuest": "q_ch6_cafe_order",
+      "targetNpc": "dylan_chef"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch6_cafe_order"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with Dylan Chef and fulfill server orders",
+        "target": "dylan_chef"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "conversation",
+        "description": "Complete server roleplay with Dylan Chef",
+        "targetNpc": "dylan_chef",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 95,
+      "vocabulary": [
+        "waiter",
+        "customer",
+        "menu",
+        "plate"
+      ],
+      "grammar": "gt_likes"
+    },
+    "rewards": {
+      "xp": 95,
+      "vocabulary": [
+        "waiter",
+        "customer",
+        "menu",
+        "plate"
+      ],
+      "grammar": "gt_likes"
+    },
+    "dialogues": {
+      "start": "Talk to Dylan Chef and help serve customers on the outdoor terrace!",
+      "progress": "Deliver orders and menus to tables.",
+      "complete": "Great job serving customers in the dining room!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "dylan_chef",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "restaurant",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch6_culinary_master"
+  },
+  {
+    "id": "q_ch6_culinary_master",
+    "chapter": "ch6",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🍰 Master Culinary Explorer",
+    "description": "Enjoy a meal on the outdoor terrace to complete Chapter 6 and unlock culinary recipes.",
+    "difficulty": "A1",
+    "NPC": "dylan_chef",
+    "requirements": {
+      "prerequisiteQuest": "q_ch6_server_challenge",
+      "targetLocation": "outdoor_terrace"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch6_server_challenge"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit the outdoor terrace and inspect terrace table and cake",
+        "target": "outdoor_terrace"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter outdoor terrace",
+        "targetLocation": "outdoor_terrace",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "soup",
+        "pasta",
+        "cake",
+        "terrace"
+      ],
+      "grammar": "gt_likes"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "soup",
+        "pasta",
+        "cake",
+        "terrace"
+      ],
+      "grammar": "gt_likes"
+    },
+    "dialogues": {
+      "start": "Head out to the outdoor terrace to enjoy a relaxed meal!",
+      "progress": "Sit at a terrace table.",
+      "complete": "Chapter 6 Complete! You master culinary dining in COSY Town!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "dylan_chef",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "outdoor_terrace",
+        "action": "enter"
+      }
     ]
   },
   {

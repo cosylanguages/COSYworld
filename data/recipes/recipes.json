@@ -1,0 +1,42 @@
+[
+  {
+    "id": "recipe_baguette",
+    "title": "🥖 Artisan Warm Baguette",
+    "description": "Traditional French organic wheat flour baguette baked in stone ovens.",
+    "category": "bakery",
+    "ingredients": ["flour", "water", "yeast", "salt"],
+    "icon": "🥖",
+    "sourceNPC": "lucas_baker",
+    "unlockedByQuest": "q_shop_baguette"
+  },
+  {
+    "id": "recipe_espresso",
+    "title": "☕ Rich Italian Espresso",
+    "description": "Double shot roasted coffee brew served hot in porcelain cups.",
+    "category": "cafe",
+    "ingredients": ["coffee beans", "hot water"],
+    "icon": "☕",
+    "sourceNPC": "marco_barista",
+    "unlockedByQuest": "q_ch6_cafe_order"
+  },
+  {
+    "id": "recipe_vegetable_soup",
+    "title": "🍲 Chef Dylan's Vegetable Soup",
+    "description": "Hearty broth simmered with fresh farm vegetables and herbs.",
+    "category": "restaurant",
+    "ingredients": ["carrots", "potatoes", "tomatoes", "broth"],
+    "icon": "🍲",
+    "sourceNPC": "dylan_chef",
+    "unlockedByQuest": "q_dylan_menu"
+  },
+  {
+    "id": "recipe_artisan_pasta",
+    "title": "🍝 Handmade Italian Pasta",
+    "description": "Fresh wheat pasta tossed in tomato sauce and basil leaves.",
+    "category": "restaurant",
+    "ingredients": ["pasta dough", "tomato sauce", "fresh basil"],
+    "icon": "🍝",
+    "sourceNPC": "dylan_chef",
+    "unlockedByQuest": "q_ch6_culinary_master"
+  }
+]

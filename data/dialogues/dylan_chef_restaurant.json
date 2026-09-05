@@ -5,66 +5,104 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "👨‍🍳 Welcome to my restaurant! 🍲 Today's special is fresh vegetable soup with 🥖 warm baguette!",
+      "npcLine": "👨‍🍳 Welcome to my dining room! Would you like to order food or try our daily chef recommendations?",
       "emotion": "happy",
-      "gestures": [],
-      "highlights": [],
+      "gestures": ["welcome"],
+      "highlights": ["soup_bowl", "pasta_plate", "menu_card"],
       "speechRate": 0.8,
-      "grammarCheck": "Subject + Verb + Direct Object (I order soup)",
-      "visualAction": "👨‍🍳 ➔ 🍲 ➔ 😋",
+      "grammarCheck": "Polite Food Requests ('Would like', 'Can I have...')",
+      "visualAction": "👨‍🍳 ➔ 🍲 ➔ 🍝",
       "playerOptions": [
         {
-          "text": "🍲 Order today's special!",
+          "text": "🍲 What dishes do you recommend today, Dylan?",
           "nextNodeId": "node_1",
           "vocabId": "soup",
-          "rewardXP": 20,
+          "grammarId": "gt_likes",
+          "rewardXP": 15,
           "rewardQuestId": "q_dylan_menu"
         },
         {
-          "text": "🥖 Inspect fresh baguette recipe",
+          "text": "🍝 Can I have the artisan pasta plate?",
           "nextNodeId": "node_2",
-          "vocabId": "baguette",
-          "rewardXP": 15
+          "vocabId": "pasta_plate",
+          "grammarId": "gt_likes",
+          "rewardXP": 20
+        },
+        {
+          "text": "🍽️ I can serve tables as a waiter tonight!",
+          "nextNodeId": "node_3",
+          "vocabId": "cutlery_set",
+          "grammarId": "gt_likes",
+          "rewardXP": 20
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     },
     {
       "id": "node_1",
-      "npcLine": "🍲 Excellent choice! One warm bowl of vegetable soup coming right up!",
-      "emotion": "happy",
-      "gestures": [],
-      "highlights": [],
+      "npcLine": "🍲 I highly recommend our warm vegetable soup (12 coins) made with farm fresh carrots!",
+      "emotion": "excited",
+      "gestures": ["recommend"],
+      "highlights": ["soup_bowl"],
       "speechRate": 0.8,
-      "grammarCheck": "Ordering food",
-      "visualAction": "🍲 ➔ 😋",
+      "grammarCheck": "Dish Recommendations & Food Qualities",
+      "visualAction": "🍲 ➔ 🪙 12",
       "playerOptions": [
         {
-          "text": "😋 Yum! Thank you Dylan!",
-          "nextNodeId": "node_0"
+          "text": "🍲 I would like a bowl of vegetable soup, please!",
+          "nextNodeId": "node_4",
+          "vocabId": "soup_bowl",
+          "rewardXP": 20
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     },
     {
       "id": "node_2",
-      "npcLine": "🥖 Our baguette uses organic wheat from Thomas's farm!",
+      "npcLine": "🍝 Excellent choice! Handmade pasta with organic basil for 18 coins!",
       "emotion": "happy",
-      "gestures": [],
-      "highlights": [],
+      "gestures": ["cook"],
+      "highlights": ["pasta_plate"],
       "speechRate": 0.8,
-      "grammarCheck": "Possessives & Origins",
-      "visualAction": "🌾 ➔ 🥖",
+      "grammarCheck": "Polite Request Confirmation",
+      "visualAction": "🍝 ➔ 🪙 18",
       "playerOptions": [
         {
-          "text": "🌾 Learn about Thomas's farm",
+          "text": "😋 Looks delicious! Thank you, Chef Dylan!",
           "nextNodeId": "node_0"
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🍽️ Wonderful! Take this menu and cutlery to Table 2 on the terrace!",
+      "emotion": "happy",
+      "gestures": ["hand_tray"],
+      "highlights": ["menu_card", "cutlery_set"],
+      "speechRate": 0.8,
+      "grammarCheck": "Waiter / Customer Interaction Roleplay",
+      "visualAction": "📋 ➔ 🪑",
+      "playerOptions": [
+        {
+          "text": "🍽️ Serve the terrace guests now!",
+          "nextNodeId": "node_0",
+          "rewardXP": 25
+        }
+      ]
+    },
+    {
+      "id": "node_4",
+      "npcLine": "🍲 One hot bowl of vegetable soup coming right up! Bon appétit!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": ["soup_bowl"],
+      "speechRate": 0.8,
+      "grammarCheck": "Serving Confirmation",
+      "visualAction": "🍲 ➔ 😋",
+      "playerOptions": [
+        {
+          "text": "😋 Thank you Chef!",
+          "nextNodeId": "node_0"
+        }
+      ]
     }
   ]
 }

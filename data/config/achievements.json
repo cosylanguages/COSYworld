@@ -174,5 +174,16 @@
     "unlockCondition": {
       "questId": "q_ch5_master_shopper"
     }
+  },
+  {
+    "id": "ach_ch6_culinary_master",
+    "title": "👨‍🍳 Culinary Master",
+    "description": "Order food and drinks using polite forms, serve customers as a waiter, unlock culinary recipes, and complete Chapter 6.",
+    "category": "chapter_6",
+    "icon": "👨‍🍳",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch6_culinary_master"
+    }
   }
 ]

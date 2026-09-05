@@ -212,5 +212,26 @@
       "options": ["Two lamps and three cups", "One lamp and four cups", "Five lamps"],
       "correctOption": 0
     }
+  },
+  {
+    "id": "mg_cafe_server_1",
+    "type": "dialogue",
+    "title": "🍽️ Café & Restaurant Server Challenge",
+    "description": "Play the role of server/waiter and take NPC customer orders politely using 'Would like' and 'Can I have...'",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["waiter", "customer", "coffee", "soup"]
+    },
+    "content": {
+      "npcId": "dylan_chef",
+      "prompt": "Customer says: 'Excuse me! Could I please order a warm vegetable soup and an espresso?' How do you respond as the server?",
+      "options": [
+        "Certainly! One warm vegetable soup and one fresh espresso coming right up!",
+        "No soup today.",
+        "Go get it yourself."
+      ],
+      "targetChoice": 0
+    }
   }
 ]
