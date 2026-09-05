@@ -120,22 +120,23 @@
       "ru": "Рецепция"
     },
     "viewBox": "0 0 800 500",
+    "backgroundImage": "assets/images/scenes/reception.webp",
     "roads": [
       { "x": 0, "y": 340, "width": 800, "height": 160, "type": "carpet_floor" }
     ],
     "buildings": [
-      { "id": "reception_counter", "x": 220, "y": 180, "width": 360, "height": 140, "color": "#0d9488", "label": "Reception Desk 🛎️" }
+      { "id": "reception_counter", "x": 220, "y": 180, "width": 360, "height": 140, "color": "transparent", "label": "Reception Desk 🛎️" }
     ],
     "doors": [
       { "targetId": "cosylanguages_hq", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "HQ Atrium 🏫", "fr": "Atrium QG 🏫", "it": "Atrio HQ 🏫", "es": "Atrio HQ 🏫", "de": "Atrium 🏫", "ru": "Атриум 🏫" } },
       { "targetId": "hallway", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Hallway 🚶", "fr": "Couloir 🚶", "it": "Corridoio 🚶", "es": "Pasillo 🚶", "de": "Flur 🚶", "ru": "Коридор 🚶" } }
     ],
     "npcSpawns": [
-      { "npcId": "receptionist", "x": 380, "y": 280 },
-      { "npcId": "james_york", "x": 180, "y": 300 }
+      { "npcId": "james_york", "x": 576, "y": 275 },
+      { "npcId": "receptionist", "x": 520, "y": 200 }
     ],
     "npcs": ["receptionist", "james_york"],
-    "objects": ["reception_desk", "apartment_key", "registration_form"]
+    "objects": ["reception_desk", "apartment_key", "sofa", "reception_coffee_table", "indoor_plant", "reception_bookshelf", "staircase", "wall_clock", "elevator", "notice_board", "coat_rack", "umbrella_stand", "backpack", "reception_mat"]
   },
   "hallway": {
     "id": "hallway",
