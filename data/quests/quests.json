@@ -2184,16 +2184,19 @@
     "steps": [
       {
         "id": "step_1",
-        "description": "Visit community garden (`community_garden`) and inspect weather indicator (`weather_indicator`)",
-        "target": "community_garden"
+        "description": "Visit the farm (`farm`) and inspect the weather indicator (`weather_indicator`)",
+        "target": "farm"
       }
     ],
     "objectives": [
       {
         "id": "obj_1",
         "type": "exploration",
-        "description": "Explore community garden and check weather state",
-        "targetLocation": "community_garden",
+        "description": "Check the weather indicator at the farm",
+        "targetLocation": "farm",
+        "targetObjects": [
+          "weather_indicator"
+        ],
         "requiredCount": 1
       }
     ],
@@ -2230,8 +2233,9 @@
     ],
     "sceneTriggers": [
       {
-        "locationId": "community_garden",
-        "action": "enter"
+        "locationId": "farm",
+        "hotspotId": "weather_indicator",
+        "action": "inspect"
       }
     ],
     "nextQuestId": "q_ch11_doctor_visit"
@@ -2552,7 +2556,7 @@
     "NPC": "diana_voyager",
     "requirements": {
       "prerequisiteQuest": "q_grammar_imperative",
-      "targetLocation": "bakery",
+      "targetLocation": "crosswalk",
       "targetObjects": [
         "direction_sign",
         "crosswalk_stripes"
@@ -2578,7 +2582,7 @@
         "id": "obj_1",
         "type": "directions",
         "description": "Navigate to bakery using imperatives and direction signs",
-        "targetLocation": "bakery",
+        "targetLocation": "crosswalk",
         "targetObjects": [
           "direction_sign",
           "crosswalk_stripes"
@@ -2629,7 +2633,7 @@
     ],
     "sceneTriggers": [
       {
-        "locationId": "bakery",
+        "locationId": "crosswalk",
         "action": "enter"
       }
     ],
@@ -2894,14 +2898,14 @@
     "difficulty": "A1",
     "NPC": "lucas_baker",
     "requirements": {
-      "prerequisiteQuest": "q_shop_baguette",
+      "prerequisiteQuest": "q_ch5_master_shopper",
       "targetObjects": [
         "oven",
         "flour"
       ]
     },
     "unlockConditions": {
-      "prerequisiteQuest": "q_shop_baguette"
+      "prerequisiteQuest": "q_ch5_master_shopper"
     },
     "steps": [
       {

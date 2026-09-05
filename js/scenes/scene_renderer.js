@@ -150,14 +150,18 @@ export class SceneRenderer {
             const offsetX = (dist.worldX ?? 0) - (loc.worldX ?? 0);
             const offsetY = (dist.worldY ?? 0) - (loc.worldY ?? 0);
 
-            html += `<g id="district-group-${dist.id}" transform="translate(${offsetX}, ${offsetY})" opacity="${isCurrent ? '1' : '0.85'}">`;
+            const hasRasterBackground = Boolean(dist.backgroundImage);
+            const sceneClass = hasRasterBackground ? 'cw-raster-scene' : '';
+            html += `<g id="district-group-${dist.id}" class="${sceneClass}" transform="translate(${offsetX}, ${offsetY})" opacity="${isCurrent ? '1' : '0.85'}">`;
 
             // Background Wall & Base Floor
-            html += `
-                <rect x="0" y="0" width="800" height="340" fill="var(--scene-wall, #f2e7d5)" />
-                <rect x="0" y="340" width="800" height="160" fill="var(--scene-floor, #d8c4a8)" />
-                <line x1="0" y1="340" x2="800" y2="340" stroke="var(--scene-line, #bca98f)" stroke-width="4" />
-            `;
+            if (!hasRasterBackground) {
+                html += `
+                    <rect x="0" y="0" width="800" height="340" fill="var(--scene-wall, #f2e7d5)" />
+                    <rect x="0" y="340" width="800" height="160" fill="var(--scene-floor, #d8c4a8)" />
+                    <line x1="0" y1="340" x2="800" y2="340" stroke="var(--scene-line, #bca98f)" stroke-width="4" />
+                `;
+            }
 
             if (dist.backgroundImage) {
                 const backgroundImage = dist.backgroundImage.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
@@ -183,8 +187,8 @@ export class SceneRenderer {
                     });
             }
 
-            // Render Roads dynamically from JSON
-            if (dist.roads) {
+            // Procedural roads are only a fallback for scenes without an image.
+            if (!hasRasterBackground && dist.roads) {
                 dist.roads.forEach(r => {
                     const roadFills = {
                         cobblestone: '#d1d5db',
@@ -199,7 +203,7 @@ export class SceneRenderer {
             }
 
             // Render Buildings dynamically from JSON
-            if (dist.buildings) {
+            if (!hasRasterBackground && dist.buildings) {
                 dist.buildings.forEach(b => {
                     const hasBuildingSystem = buildingManager && buildingManager.getBuilding(b.id);
                     const clickableAttr = hasBuildingSystem
@@ -236,9 +240,11 @@ export class SceneRenderer {
                     const doorLabel = (d.labels && (d.labels[lang] || d.labels.en)) || d.label || 'Door';
                     html += `
                         <g class="cw-door-portal" tabindex="0" role="button" aria-label="Enter ${doorLabel}" onclick="COSY_WORLD.switchLocation('${d.targetId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.switchLocation('${d.targetId}');}">
-                            <rect x="${d.x}" y="${d.y}" width="${d.width}" height="${d.height}" rx="6" />
-                            <rect x="${d.x + 5}" y="${d.labelY || d.y - 25}" width="${d.width - 10}" height="22" rx="4" fill="var(--text-main, #2f302b)" />
-                            <text x="${d.x + d.width / 2}" y="${(d.labelY || d.y - 25) + 15}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${doorLabel}</text>
+                            <rect class="hit-box" x="${d.x}" y="${d.y}" width="${d.width}" height="${d.height}" rx="6" />
+                            ${hasRasterBackground ? '' : `
+                                <rect x="${d.x + 5}" y="${d.labelY || d.y - 25}" width="${d.width - 10}" height="22" rx="4" fill="var(--text-main, #2f302b)" />
+                                <text x="${d.x + d.width / 2}" y="${(d.labelY || d.y - 25) + 15}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${doorLabel}</text>
+                            `}
                         </g>
                     `;
                 });
@@ -256,14 +262,16 @@ export class SceneRenderer {
                     html += `
                         <g class="cw-obj-hotspot ${animClass}" tabindex="0" role="button" aria-label="Inspect ${word}" onclick="COSY_WORLD.inspectObject('${objId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.inspectObject('${objId}');}">
                             <rect class="hit-box" x="${obj.x}" y="${obj.y}" width="${obj.width}" height="${obj.height}" />
-                            <text x="${obj.x + obj.width / 2}" y="${obj.y + obj.height / 2 + 8}" font-size="28" text-anchor="middle">${obj.emoji}</text>
+                            ${hasRasterBackground ? '' : `<text x="${obj.x + obj.width / 2}" y="${obj.y + obj.height / 2 + 8}" font-size="28" text-anchor="middle">${obj.emoji}</text>`}
 
                             ${state.showGuidePointers && idx === 0 && !isDiscovered ? `
                                 <text x="${obj.x + obj.width / 2}" y="${obj.y - 12}" font-size="20" text-anchor="middle" class="cw-hand-pointer">👇</text>
                             ` : ''}
 
-                            <rect x="${obj.labelX - word.length * 4 - 8}" y="${obj.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
-                            <text x="${obj.labelX}" y="${obj.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
+                            ${hasRasterBackground ? '' : `
+                                <rect x="${obj.labelX - word.length * 4 - 8}" y="${obj.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
+                                <text x="${obj.labelX}" y="${obj.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
+                            `}
                         </g>
                     `;
                 });

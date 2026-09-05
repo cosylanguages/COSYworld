@@ -31,7 +31,7 @@
       "ru": "Вход в город"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "assets/images/scenes/town_entrance.webp",
+    "backgroundImage": "assets/images/scenes/town_entrance.jpg",
     "roads": [
       {
         "x": 0,
@@ -146,7 +146,7 @@
       "ru": "Главный офис COSYlanguages"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/cosylanguages_hq.jpg",
     "roads": [
       {
         "x": 0,
@@ -383,7 +383,7 @@
       "ru": "Коридор"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/hallway.jpg",
     "roads": [
       {
         "x": 0,
@@ -625,7 +625,7 @@
       "ru": "Гостиная в квартире"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/apartment_living.jpg",
     "roads": [
       {
         "x": 0,
@@ -763,7 +763,7 @@
       "ru": "Кухня"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/apartment_kitchen.jpg",
     "imageLayers": [
       {
         "id": "background",
@@ -874,7 +874,7 @@
       "ru": "Спальня"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/apartment_bedroom.jpg",
     "roads": [
       {
         "x": 0,
@@ -981,7 +981,7 @@
       "ru": "Ванная комната"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/apartment_bathroom.jpg",
     "roads": [
       {
         "x": 0,
@@ -1065,7 +1065,7 @@
       "ru": "Балкон"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/apartment_balcony.jpg",
     "roads": [
       {
         "x": 0,
@@ -1146,7 +1146,7 @@
       "ru": "Улица"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/street.jpg",
     "roads": [
       {
         "x": 0,
@@ -1255,7 +1255,7 @@
       "ru": "Автобусная остановка"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/bus_stop.jpg",
     "roads": [
       {
         "x": 0,
@@ -1508,7 +1508,7 @@
       "ru": "Пекарня"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/bakery.jpg",
     "roads": [
       {
         "x": 0,
@@ -1560,7 +1560,8 @@
     "objects": [
       "baguette",
       "croissant",
-      "oven"
+      "oven",
+      "flour"
     ],
     "chapters": [
       "ch4",
@@ -1592,7 +1593,7 @@
       "ru": "Аптека"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1585435557343-3b092031a786?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/pharmacy.jpg",
     "roads": [
       {
         "x": 0,
@@ -1689,7 +1690,7 @@
       "ru": "Пешеходный переход"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/crosswalk.jpg",
     "roads": [
       {
         "x": 0,
@@ -1770,7 +1771,7 @@
       "ru": "Почта"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/post_office.jpg",
     "roads": [
       {
         "x": 0,
@@ -1846,7 +1847,7 @@
       "ru": "Супермаркет"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/supermarket.jpg",
     "roads": [
       {
         "x": 0,
@@ -1948,7 +1949,7 @@
       "ru": "Фруктовый рынок"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/fruit_market.jpg",
     "roads": [
       {
         "x": 0,
@@ -2144,7 +2145,7 @@
       "ru": "Книжный магазин"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1526243741027-444d633d7365?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/bookshop.jpg",
     "roads": [
       {
         "x": 0,
@@ -2333,7 +2334,7 @@
       "ru": "Аэропорт"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/airport.jpg",
     "roads": [
       {
         "x": 0,
@@ -2534,7 +2535,7 @@
       "ru": "Отель"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/hotel.jpg",
     "roads": [
       {
         "x": 0,
@@ -2608,7 +2609,8 @@
       "plant",
       "sofa",
       "hotel_reception",
-      "hotel_key"
+      "hotel_key",
+      "breakfast"
     ],
     "chapters": [
       "ch12"
@@ -3109,7 +3111,7 @@
       "ru": "Больница"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/hospital.jpg",
     "roads": [
       {
         "x": 0,
@@ -3211,7 +3213,7 @@
       "ru": "Кабинет врача"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1516841273335-e39b37888115?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/doctor_office.jpg",
     "roads": [
       {
         "x": 0,
@@ -3407,7 +3409,7 @@
       "ru": "Бассейн"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/swimming_pool.jpg",
     "roads": [
       {
         "x": 0,
@@ -3500,7 +3502,7 @@
       "ru": "Футбольное поле"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/football_field.jpg",
     "roads": [
       {
         "x": 0,
@@ -3593,7 +3595,7 @@
       "ru": "Баскетбольная площадка"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/basketball_court.jpg",
     "roads": [
       {
         "x": 0,
@@ -3685,7 +3687,7 @@
       "ru": "Студия йоги"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/yoga_studio.jpg",
     "roads": [
       {
         "x": 0,
@@ -3778,7 +3780,7 @@
       "ru": "Лес"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/forest.jpg",
     "roads": [
       {
         "x": 0,
@@ -3873,7 +3875,7 @@
       "ru": "Озеро"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/lake.jpg",
     "roads": [
       {
         "x": 0,
@@ -4063,7 +4065,7 @@
       "ru": "Ферма"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/farm.jpg",
     "roads": [
       {
         "x": 0,
@@ -4732,7 +4734,7 @@
       "ru": "Музей"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/museum.jpg",
     "roads": [
       {
         "x": 0,
@@ -4834,7 +4836,7 @@
       "ru": "Кинотеатр"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/cinema.jpg",
     "roads": [
       {
         "x": 0,
@@ -4936,7 +4938,7 @@
       "ru": "Ратуша"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/town_hall.jpg",
     "roads": [
       {
         "x": 0,
@@ -5038,7 +5040,7 @@
       "ru": "Вокзал"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/train_station.jpg",
     "roads": [
       {
         "x": 0,
@@ -5242,7 +5244,7 @@
       "ru": "Туристический офис"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/tourist_office.jpg",
     "roads": [
       {
         "x": 0,
@@ -5632,7 +5634,7 @@
       "ru": "Школа"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/school.jpg",
     "roads": [
       {
         "x": 0,
@@ -5740,7 +5742,7 @@
       "ru": "Школьная библиотека"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/school_library.jpg",
     "roads": [
       {
         "x": 0,
@@ -5843,7 +5845,7 @@
       "ru": "Компьютерный класс"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/computer_lab.jpg",
     "roads": [
       {
         "x": 0,
@@ -6039,7 +6041,7 @@
       "ru": "Языковой класс"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/language_classroom.jpg",
     "roads": [
       {
         "x": 0,
@@ -6432,7 +6434,7 @@
       "ru": "Квартира Эллы"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/ella_apartment.jpg",
     "roads": [
       {
         "x": 0,
@@ -6535,7 +6537,7 @@
       "ru": "Квартира Анны"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/anna_apartment.jpg",
     "roads": [
       {
         "x": 0,
@@ -6639,7 +6641,7 @@
       "ru": "Общественный сад"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/community_garden.jpg",
     "roads": [
       {
         "x": 0,
@@ -6733,7 +6735,7 @@
       "ru": "Место для пикника"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/picnic_area.jpg",
     "roads": [
       {
         "x": 0,
@@ -6919,7 +6921,7 @@
       "ru": "Разговорный уголок"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/conversation_corner.jpg",
     "roads": [
       {
         "x": 0,
@@ -7125,7 +7127,7 @@
       "ru": "Ресторан"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/restaurant.jpg",
     "roads": [
       {
         "x": 0,
@@ -7247,7 +7249,7 @@
       "ru": "Кафе"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/cafe.jpg",
     "roads": [
       {
         "x": 0,
@@ -7353,7 +7355,7 @@
       "ru": "Открытая терраса"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/outdoor_terrace.jpg",
     "roads": [
       {
         "x": 0,

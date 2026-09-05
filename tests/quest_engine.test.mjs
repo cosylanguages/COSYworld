@@ -38,6 +38,73 @@ test('QuestEngine - JSON dataset covers all 10 required categories', () => {
     });
 });
 
+test('QuestEngine - chapter manifest covers the complete campaign', () => {
+    const quests = JSON.parse(fs.readFileSync(path.resolve('data/quests/quests.json'), 'utf8'));
+    const chapterData = JSON.parse(fs.readFileSync(path.resolve('data/config/chapters.json'), 'utf8'));
+    const engine = new QuestEngine({ quests });
+    engine.registerChapters(chapterData);
+
+    assert.equal(engine.chapters.length, 12);
+    for (const chapter of engine.chapters) {
+        assert.match(chapter.id, /^ch(?:[1-9]|1[0-2])$/);
+        assert.ok(engine.getQuest(chapter.startQuestId), `${chapter.id} start quest is missing`);
+        assert.ok(engine.getQuest(chapter.completionQuestId), `${chapter.id} completion quest is missing`);
+        assert.equal(engine.getQuest(chapter.completionQuestId).chapter, chapter.id);
+    }
+
+    const state = { completedQuests: new Set(['q_ch1_open_apartment']) };
+    const progress = engine.getChapterProgress('ch1', state);
+    assert.equal(progress.completed, true);
+    assert.equal(progress.completionQuestId, 'q_ch1_open_apartment');
+
+    const transitionState = {
+        currentChapter: 'ch1',
+        activeQuests: new Set(['q_ch1_open_apartment']),
+        completedQuests: new Set(),
+        discoveredObjects: new Set(),
+        unlockedGrammar: new Set()
+    };
+    engine.completeQuest('q_ch1_open_apartment', transitionState);
+    assert.equal(transitionState.currentChapter, 'ch2');
+});
+
+test('Pedagogical data - quest and dialogue references resolve', () => {
+    const quests = JSON.parse(fs.readFileSync(path.resolve('data/quests/quests.json'), 'utf8'));
+    const objects = JSON.parse(fs.readFileSync(path.resolve('data/vocabulary/objects.json'), 'utf8'));
+    const vocabulary = JSON.parse(fs.readFileSync(path.resolve('data/vocabulary/vocabulary_database.json'), 'utf8'));
+    const grammar = Object.fromEntries(JSON.parse(fs.readFileSync(path.resolve('data/grammar/grammar.json'), 'utf8')).map(entry => [entry.id, entry]));
+    const sceneIds = new Set(Object.keys(JSON.parse(fs.readFileSync(path.resolve('data/scenes/districts.json'), 'utf8'))));
+
+    for (const quest of quests) {
+        assert.ok(['A0', 'A1'].includes(quest.difficulty), `${quest.id} exceeds the A0-A1 quest scope`);
+        for (const objective of quest.objectives || []) {
+            for (const objectId of objective.targetObjects || []) {
+                assert.ok(objects[objectId], `${quest.id} references missing object ${objectId}`);
+                if (objective.targetLocation) {
+                    assert.equal(
+                        objects[objectId].locationId,
+                        objective.targetLocation,
+                        `${quest.id}/${objectId} is outside target scene ${objective.targetLocation}`
+                    );
+                }
+            }
+            if (objective.targetLocation) assert.ok(sceneIds.has(objective.targetLocation), `${quest.id} references missing scene ${objective.targetLocation}`);
+            if (objective.targetGrammarId) assert.ok(grammar[objective.targetGrammarId], `${quest.id} references missing grammar ${objective.targetGrammarId}`);
+        }
+    }
+
+    const dialogueFiles = fs.readdirSync(path.resolve('data/dialogues')).filter(file => file.endsWith('.json'));
+    for (const file of dialogueFiles) {
+        const dialogue = JSON.parse(fs.readFileSync(path.resolve('data/dialogues', file), 'utf8'));
+        for (const node of dialogue.nodes || []) {
+            for (const option of node.playerOptions || []) {
+                if (option.vocabId) assert.ok(vocabulary[option.vocabId] || objects[option.vocabId], `${file} references missing vocabulary ${option.vocabId}`);
+                if (option.grammarId) assert.ok(grammar[option.grammarId], `${file} references missing grammar ${option.grammarId}`);
+            }
+        }
+    }
+});
+
 test('QuestEngine - supports requirements, steps, objectives, rewards, dialogues, npcTriggers, and sceneTriggers', () => {
     const rawData = JSON.parse(fs.readFileSync(path.resolve('data/quests/quests.json'), 'utf8'));
     const engine = new QuestEngine({ quests: rawData });

@@ -8,6 +8,7 @@ test('SaveManager - returns default initial state', () => {
 
     assert.equal(state.currentLocationId, 'apartment_living');
     assert.equal(state.currentLang, 'en');
+    assert.equal(state.currentChapter, 'ch1');
     assert.ok(state.discoveredObjects instanceof Set);
     assert.ok(state.completedQuests instanceof Set);
 });
@@ -23,12 +24,14 @@ test('SaveManager - saves and loads state correctly with mock LocalStorage', () 
     const mgr = new SaveManager({ storageKey: 'TEST_SAVE_KEY' });
     const state = mgr.getDefaultState();
     state.xp = 150;
+    state.currentChapter = 'ch4';
     state.discoveredObjects.add('key');
 
     mgr.saveState(state);
 
     const loaded = mgr.loadInitialState();
     assert.equal(loaded.xp, 150);
+    assert.equal(loaded.currentChapter, 'ch4');
     assert.ok(loaded.discoveredObjects.has('key'));
 
     mgr.resetState();

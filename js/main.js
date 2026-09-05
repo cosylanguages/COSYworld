@@ -17,8 +17,7 @@ window.COSY_WORLD.dialogueManager = engine.dialogueManager;
 window.COSY_WORLD.enterBuilding = (buildingId, entranceId) => engine.enterBuilding(buildingId, entranceId);
 window.COSY_WORLD.exitBuilding = () => engine.exitBuilding();
 window.COSY_WORLD.loadDLCFolder = async (folderPath) => {
-    const res = await engine.worldBuilder.loadDLC(folderPath);
-    engine.data.districts = engine.worldBuilder.exportDistrictsObject();
+    const res = await engine.loadDLC(folderPath);
     engine.showToast(`DLC Loaded: ${folderPath} 📦`);
     return res;
 };

@@ -16,7 +16,7 @@
         {
           "text": "🍲 What dishes do you recommend today, Dylan?",
           "nextNodeId": "node_1",
-          "vocabId": "soup",
+          "vocabId": "soup_bowl",
           "grammarId": "gt_likes",
           "rewardXP": 15,
           "rewardQuestId": "q_dylan_menu"

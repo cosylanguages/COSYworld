@@ -16,7 +16,7 @@
         {
           "text": "🔑 Unlock and enter apartment!",
           "nextNodeId": null,
-          "vocabId": "door",
+          "vocabId": "apartment_door",
           "grammarId": "gt_articles",
           "rewardXP": 20,
           "rewardQuestId": "q_ch1_open_apartment"

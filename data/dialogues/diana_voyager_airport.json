@@ -10,8 +10,8 @@
       "highlights": ["airport_check_in", "passport"],
       "grammarCheck": "Going to for future plans",
       "playerOptions": [
-        { "text": "I am going to check in and show my passport.", "nextNodeId": "node_1", "vocabId": "vocab_passport", "grammarId": "gt_going_to_future", "rewardXP": 20, "rewardQuestId": "q_ch12_prepare_luggage" },
-        { "text": "I am going to pack my suitcase first.", "nextNodeId": "node_2", "vocabId": "vocab_suitcase", "grammarId": "gt_going_to_future", "rewardXP": 15 }
+        { "text": "I am going to check in and show my passport.", "nextNodeId": "node_1", "vocabId": "passport", "grammarId": "gt_going_to_future", "rewardXP": 20, "rewardQuestId": "q_ch12_prepare_luggage" },
+        { "text": "I am going to pack my suitcase first.", "nextNodeId": "node_2", "vocabId": "luggage", "grammarId": "gt_going_to_future", "rewardXP": 15 }
       ]
     },
     {

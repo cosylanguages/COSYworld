@@ -10,8 +10,8 @@
       "highlights": ["tourist_map", "information_desk"],
       "grammarCheck": "Going to and future destinations",
       "playerOptions": [
-        { "text": "I am going to visit the museum and the lake.", "nextNodeId": "node_1", "vocabId": "vocab_visit", "grammarId": "gt_going_to_future", "rewardXP": 20 },
-        { "text": "Can you give me a map, please?", "nextNodeId": "node_2", "vocabId": "vocab_map", "rewardXP": 15 }
+        { "text": "I am going to visit the museum and the lake.", "nextNodeId": "node_1", "vocabId": "tourist_map", "grammarId": "gt_going_to_future", "rewardXP": 20 },
+        { "text": "Can you give me a map, please?", "nextNodeId": "node_2", "vocabId": "tourist_map", "rewardXP": 15 }
       ]
     },
     {

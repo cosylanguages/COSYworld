@@ -65,7 +65,8 @@ export class HUDManager {
                 'timed challenge': '⚡'
             };
 
-            body.innerHTML = envHeaderHtml + gameData.quests.map(q => {
+            const chapters = Array.isArray(gameData.chapters) ? gameData.chapters : [];
+            const renderQuestCards = (quests) => quests.map(q => {
                 const isDone = state.completedQuests && state.completedQuests.has(q.id);
                 const isActive = state.activeQuests && state.activeQuests.has(q.id);
                 const typeIcon = typeIcons[q.type] || '📜';
@@ -115,6 +116,30 @@ export class HUDManager {
                     </div>
                 `;
             }).join('');
+
+            const chapterSections = chapters.map(chapter => {
+                const chapterQuests = gameData.quests.filter(quest => quest.chapter === chapter.id);
+                if (chapterQuests.length === 0) return '';
+                const completedCount = chapterQuests.filter(quest => state.completedQuests?.has(quest.id)).length;
+                const isCurrent = state.currentChapter === chapter.id;
+                const chapterComplete = chapter.completionQuestId && state.completedQuests?.has(chapter.completionQuestId);
+
+                return `
+                    <section style="margin-bottom:1.25rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.5rem; padding-bottom:0.45rem; border-bottom:2px solid ${isCurrent ? 'var(--accent-amber)' : 'var(--border-subtle)'};">
+                            <div>
+                                <div style="font-weight:800; color:var(--blue-primary);">Chapter ${chapter.number}: ${chapter.title}</div>
+                                <div style="font-size:0.76rem; color:var(--text-muted);">${chapter.focus}</div>
+                            </div>
+                            <span style="font-size:0.72rem; white-space:nowrap; color:${chapterComplete ? '#065f46' : 'var(--text-muted)'};">${chapterComplete ? '✅ Complete' : `${completedCount}/${chapterQuests.length}`}</span>
+                        </div>
+                        ${renderQuestCards(chapterQuests)}
+                    </section>
+                `;
+            }).join('');
+
+            const ungroupedQuests = gameData.quests.filter(quest => !chapters.some(chapter => chapter.id === quest.chapter));
+            body.innerHTML = envHeaderHtml + chapterSections + (ungroupedQuests.length ? renderQuestCards(ungroupedQuests) : '');
         } else if (state.activeTab === 'vocab') {
             const disc = Array.from(state.discoveredObjects || []);
             if (disc.length === 0) {

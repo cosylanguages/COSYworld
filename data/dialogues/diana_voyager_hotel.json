@@ -10,8 +10,8 @@
       "highlights": ["hotel_reception", "hotel_key"],
       "grammarCheck": "Going to for travel plans",
       "playerOptions": [
-        { "text": "Yes, I am going to book a room for one night.", "nextNodeId": "node_1", "vocabId": "vocab_hotel", "grammarId": "gt_going_to_future", "rewardXP": 20 },
-        { "text": "I am going to ask about breakfast first.", "nextNodeId": "node_2", "vocabId": "vocab_breakfast", "grammarId": "gt_going_to_future", "rewardXP": 15 }
+        { "text": "Yes, I am going to book a room for one night.", "nextNodeId": "node_1", "vocabId": "hotel_reception", "grammarId": "gt_going_to_future", "rewardXP": 20 },
+        { "text": "I am going to ask about breakfast first.", "nextNodeId": "node_2", "vocabId": "breakfast", "grammarId": "gt_going_to_future", "rewardXP": 15 }
       ]
     },
     {

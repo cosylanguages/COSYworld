@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "chapters": [
+    { "id": "ch1", "number": 1, "title": "Welcome to COSY Town", "focus": "Greetings, introductions, and finding a home", "startQuestId": "q_ch1_follow_james", "completionQuestId": "q_ch1_open_apartment" },
+    { "id": "ch2", "number": 2, "title": "My Home", "focus": "Rooms, furniture, and everyday objects", "startQuestId": "q_ch2_explore_rooms", "completionQuestId": "q_ch2_unlock_furniture" },
+    { "id": "ch3", "number": 3, "title": "Daily Life", "focus": "Routines, time, transport, and schedules", "startQuestId": "q_ch3_morning_routine", "completionQuestId": "q_ch3_unlock_routine" },
+    { "id": "ch4", "number": 4, "title": "My Neighbourhood", "focus": "Directions, places, and local services", "startQuestId": "q_grammar_imperative", "completionQuestId": "q_ch4_city_map_master" },
+    { "id": "ch5", "number": 5, "title": "Shopping", "focus": "Food, prices, clothing, and books", "startQuestId": "q_shop_baguette", "completionQuestId": "q_ch5_master_shopper" },
+    { "id": "ch6", "number": 6, "title": "Cafe and Restaurant", "focus": "Ordering, cooking, and serving food", "startQuestId": "q_cooking_bread", "completionQuestId": "q_ch6_culinary_master" },
+    { "id": "ch7", "number": 7, "title": "Friends and Family", "focus": "Neighbours, relationships, and conversation", "startQuestId": "q_convo_ella", "completionQuestId": "q_ch7_family_reunion" },
+    { "id": "ch8", "number": 8, "title": "School and Learning", "focus": "School life, study, and abilities", "startQuestId": "q_ch8_school_tour", "completionQuestId": "q_ch8_study_together" },
+    { "id": "ch9", "number": 9, "title": "Exploring the City", "focus": "Landmarks, tickets, and the past", "startQuestId": "q_ch9_buy_tickets", "completionQuestId": "q_ch9_city_historian" },
+    { "id": "ch10", "number": 10, "title": "Nature and Animals", "focus": "Weather, farming, wildlife, and nature", "startQuestId": "q_ch10_farm_animals", "completionQuestId": "q_ch10_nature_master" },
+    { "id": "ch11", "number": 11, "title": "Health and Sports", "focus": "Health, exercise, and wellbeing", "startQuestId": "q_ch11_doctor_visit", "completionQuestId": "q_ch11_health_champion" },
+    { "id": "ch12", "number": 12, "title": "Travel", "focus": "Luggage, airports, hotels, and the wider world", "startQuestId": "q_ch12_prepare_luggage", "completionQuestId": "q_ch12_first_journey" }
+  ]
+}

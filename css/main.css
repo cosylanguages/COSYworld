@@ -276,6 +276,21 @@ body.game-standalone {
   transition: fill 180ms ease, stroke 180ms ease;
 }
 
+.cw-raster-scene .cw-obj-hotspot .hit-box,
+.cw-raster-scene .cw-door-portal .hit-box {
+  fill: transparent;
+  stroke: transparent;
+  stroke-dasharray: none;
+}
+
+.cw-raster-scene .cw-obj-hotspot:hover .hit-box,
+.cw-raster-scene .cw-obj-hotspot:focus .hit-box,
+.cw-raster-scene .cw-door-portal:hover .hit-box {
+  fill: rgba(216, 135, 74, 0.14);
+  stroke: var(--accent-amber);
+  stroke-width: 2;
+}
+
 .cw-obj-hotspot:hover .hit-box,
 .cw-obj-hotspot:focus .hit-box {
   fill: rgba(216, 135, 74, 0.18);

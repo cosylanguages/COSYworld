@@ -11,6 +11,7 @@ export class QuestEngine {
         this.eventBus = options.eventBus || null;
         this.questsMap = new Map();
         this.quests = [];
+        this.chapters = [];
 
         if (options.quests) {
             this.registerQuests(options.quests);
@@ -76,6 +77,16 @@ export class QuestEngine {
             this.quests.push(normalized);
             this.questsMap.set(normalized.id, normalized);
         });
+    }
+
+    /**
+     * Register the ordered chapter manifest used by the quest journal.
+     */
+    registerChapters(chaptersData) {
+        const chapters = Array.isArray(chaptersData) ? chaptersData : chaptersData?.chapters;
+        this.chapters = Array.isArray(chapters)
+            ? chapters.slice().sort((first, second) => (first.number || 0) - (second.number || 0))
+            : [];
     }
 
     /**
@@ -232,6 +243,7 @@ export class QuestEngine {
 
         return {
             id,
+            chapter: raw.chapter || null,
             category,
             type: rawType,
             title,
@@ -275,6 +287,34 @@ export class QuestEngine {
     getQuestsByCategory(category) {
         const normCategory = QuestEngine.normalizeCategory(category);
         return this.quests.filter(q => q.category === normCategory);
+    }
+
+    /**
+     * Get all quests assigned to a chapter, including optional side quests.
+     */
+    getQuestsByChapter(chapterId) {
+        return this.quests.filter(quest => quest.chapter === chapterId);
+    }
+
+    /**
+     * Return completion data for one chapter's canonical completion quest.
+     */
+    getChapterProgress(chapterId, state) {
+        const chapter = this.chapters.find(item => item.id === chapterId);
+        const quests = this.getQuestsByChapter(chapterId);
+        const completedQuests = state?.completedQuests;
+        const isCompleted = (questId) => Boolean(completedQuests && (
+            completedQuests.has ? completedQuests.has(questId) : completedQuests.includes(questId)
+        ));
+        const completedCount = quests.filter(quest => isCompleted(quest.id)).length;
+
+        return {
+            chapterId,
+            completed: Boolean(chapter?.completionQuestId && isCompleted(chapter.completionQuestId)),
+            completedCount,
+            questCount: quests.length,
+            completionQuestId: chapter?.completionQuestId || null
+        };
     }
 
     /**
@@ -491,6 +531,11 @@ export class QuestEngine {
             completedObjectives: quest.objectives.map(o => o.id),
             completionTime: Date.now()
         };
+
+        const completedChapterIndex = this.chapters.findIndex(chapter => chapter.completionQuestId === questId);
+        if (completedChapterIndex !== -1 && this.chapters[completedChapterIndex + 1]) {
+            state.currentChapter = this.chapters[completedChapterIndex + 1].id;
+        }
 
         // 1. Rewards: XP
         const rewards = quest.rewards || quest.reward || {};

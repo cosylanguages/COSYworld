@@ -90,6 +90,9 @@ export class GameEngine {
             objects: {},
             npcs: {},
             quests: [],
+            chapters: [],
+            dialogueTrees: {},
+            dialogues: {},
             grammarTree: []
         };
 
@@ -156,6 +159,90 @@ export class GameEngine {
         this.eventBus.emit(event, payload);
     }
 
+    /**
+     * Load a DLC package and merge its optional educational content into the game.
+     * Districts remain handled by WorldBuilder for backwards compatibility.
+     */
+    async loadDLC(folderPath) {
+        const result = await this.worldBuilder.loadDLC(folderPath);
+        if (!result.loaded) return result;
+
+        const content = result.manifest.content || {};
+        const cleanPath = folderPath.replace(/\/$/, '');
+        const resolvePath = (filePath) => filePath.startsWith('data/') || filePath.startsWith('/')
+            ? filePath
+            : `${cleanPath}/${filePath}`;
+        const loadRefs = async (refs = []) => Promise.all(refs.map(ref => {
+            const filePath = typeof ref === 'string' ? ref : ref?.path;
+            return filePath ? this.assetManager.loadJson(resolvePath(filePath)) : null;
+        }));
+        const mergeDictionary = (target, source, label) => {
+            for (const [id, value] of Object.entries(source || {})) {
+                if (Object.prototype.hasOwnProperty.call(target, id)) {
+                    throw new Error(`DLC ${result.dlcId} collides with existing ${label} ID: ${id}`);
+                }
+                target[id] = value;
+            }
+        };
+
+        const [objects, npcs, buildings, rooms, quests, chapters] = await Promise.all([
+            loadRefs(content.objects),
+            loadRefs(content.npcs),
+            loadRefs(content.buildings),
+            loadRefs(content.rooms),
+            loadRefs(content.quests),
+            loadRefs(content.chapters || content.levels)
+        ]);
+
+        objects.forEach(data => mergeDictionary(this.data.objects, data, 'object'));
+        npcs.forEach(data => {
+            mergeDictionary(this.data.npcs, data, 'NPC');
+            this.npcAIEngine.registerNPCsDict(data);
+        });
+        buildings.forEach(data => this.buildingManager.registerBuildings(data));
+        rooms.forEach(data => this.interiorEngine.registerRooms(data));
+
+        const questAdditions = quests.flatMap(data => Array.isArray(data) ? data : (data?.quests || []));
+        if (questAdditions.length > 0) {
+            const existingQuestIds = new Set(this.data.quests.map(quest => quest.id));
+            questAdditions.forEach(quest => {
+                if (!quest?.id || existingQuestIds.has(quest.id)) {
+                    throw new Error(`DLC ${result.dlcId} has an invalid or colliding quest ID: ${quest?.id || 'missing'}`);
+                }
+                existingQuestIds.add(quest.id);
+            });
+            this.data.quests = [...this.data.quests, ...questAdditions];
+            this.questEngine.registerQuests(this.data.quests);
+        }
+
+        const chapterAdditions = chapters.flatMap(data => Array.isArray(data) ? data : (data?.chapters || []));
+        if (chapterAdditions.length > 0) {
+            const existingChapterIds = new Set(this.data.chapters.map(chapter => chapter.id));
+            chapterAdditions.forEach(chapter => {
+                if (!chapter?.id || existingChapterIds.has(chapter.id)) {
+                    throw new Error(`DLC ${result.dlcId} has an invalid or colliding chapter ID: ${chapter?.id || 'missing'}`);
+                }
+                existingChapterIds.add(chapter.id);
+            });
+            this.data.chapters = [...this.data.chapters, ...chapterAdditions];
+            this.questEngine.registerChapters(this.data.chapters);
+        }
+
+        const dialogueRefs = content.dialogues || [];
+        for (const ref of dialogueRefs) {
+            const filePath = typeof ref === 'string' ? ref : ref?.path;
+            if (!filePath) continue;
+            const dialogue = await this.assetManager.loadJson(resolvePath(filePath));
+            const key = (typeof ref === 'object' && ref.key) || filePath.split('/').pop().replace(/\.json$/, '');
+            this.data.dialogueTrees[key] = dialogue;
+            this.data.dialogues[key] = dialogue;
+        }
+
+        this.data.districts = this.worldBuilder.exportDistrictsObject();
+        this.emit('dlcContentLoaded', { dlcId: result.dlcId, manifest: result.manifest });
+        return result;
+    }
+
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
@@ -182,7 +269,7 @@ export class GameEngine {
             'marco_barista_cafe'
         ];
 
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes, grammarPatternsRes, situationsRes, ...loadedDialogueTrees] = await Promise.all([
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes, grammarPatternsRes, situationsRes, chaptersRes, ...loadedDialogueTrees] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`).catch(() => ({})),
@@ -196,6 +283,7 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/world/world_simulation.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/grammar_patterns/grammar_patterns.json`).catch(() => ([])),
             this.assetManager.loadJson(`${basePath}/situations/situations.json`).catch(() => ({})),
+            this.assetManager.loadJson(`${basePath}/config/chapters.json`).catch(() => ({ chapters: [] })),
             ...dialogueKeys.map(k => this.assetManager.loadJson(`${basePath}/dialogues/${k}.json`).catch(() => null))
         ]);
 
@@ -238,7 +326,9 @@ export class GameEngine {
         this.data.dialogues = dialogueTreesDict;
         this.data.grammarPatterns = grammarPatternsRes;
         this.data.situations = situationsRes;
+        this.data.chapters = chaptersRes?.chapters || [];
         this.questEngine.loadQuestsFromJson(questsRes);
+        this.questEngine.registerChapters(this.data.chapters);
         this.data.grammarTree = grammarRes;
 
         if (minigamesJsonRes) {
