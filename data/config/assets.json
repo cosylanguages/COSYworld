@@ -19,7 +19,7 @@
       "logo": "assets/icons/logo.svg"
     },
     "images": {
-      "town_entrance_background": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1920&q=82",
+      "town_entrance_background": "assets/images/scenes/town_entrance.webp",
       "cosylanguages_hq_background": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=82",
       "hallway_background": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=82",
       "apartment_living_background": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1920&q=82",

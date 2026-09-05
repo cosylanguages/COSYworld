@@ -28,22 +28,22 @@
       "ru": "Вход в город"
     },
     "viewBox": "0 0 800 500",
-    "backgroundImage": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1920&q=82",
+    "backgroundImage": "assets/images/scenes/town_entrance.webp",
     "roads": [
       { "x": 0, "y": 320, "width": 800, "height": 180, "type": "cobblestone" }
     ],
     "buildings": [
-      { "id": "welcome_sign_bldg", "x": 100, "y": 120, "width": 180, "height": 200, "color": "#0284c7", "label": "Welcome Sign 🪧" },
-      { "id": "hq_facade", "x": 450, "y": 80, "width": 260, "height": 240, "color": "#4f46e5", "label": "COSYlanguages HQ 🏫" }
+      { "id": "welcome_sign_bldg", "x": 100, "y": 120, "width": 180, "height": 200, "color": "transparent", "label": "Welcome Sign 🪧" },
+      { "id": "hq_facade", "x": 450, "y": 80, "width": 260, "height": 240, "color": "transparent", "label": "COSYlanguages HQ 🏫" }
     ],
     "doors": [
       { "targetId": "cosylanguages_hq", "x": 520, "y": 180, "width": 100, "height": 140, "labelY": 160, "labels": { "en": "COSYlanguages HQ 🏫", "fr": "QG COSYlanguages 🏫", "it": "HQ COSYlanguages 🏫", "es": "Sede COSYlanguages 🏫", "de": "COSYlanguages Zentrale 🏫", "ru": "Штаб-квартира COSYlanguages 🏫" } }
     ],
     "npcSpawns": [
-      { "npcId": "james_york", "x": 240, "y": 300 }
+      { "npcId": "james_york", "x": 160, "y": 280 }
     ],
     "npcs": ["james_york"],
-    "objects": ["welcome_sign", "town_gate", "flower_bed"]
+    "objects": ["welcome_sign", "street_lamp", "signpost", "welcome_arch", "mailbox", "cat", "entrance_fountain", "entrance_bench", "dog", "pigeons", "trash_bin", "bicycle_rack", "bus_stop_shelter", "parked_car", "map_stand", "flower_bed", "tree"]
   },
   "cosylanguages_hq": {
     "id": "cosylanguages_hq",
