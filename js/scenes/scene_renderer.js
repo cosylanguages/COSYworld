@@ -88,6 +88,19 @@ export class SceneRenderer {
                 });
             }
 
+            if (room.exits) {
+                room.exits.forEach(exit => {
+                    roomHtml += `
+                        <g class="cw-door-portal" tabindex="0" role="button" aria-label="Enter ${exit.label || exit.targetRoomId}"
+                           onclick="COSY_WORLD.switchBuildingRoom('${exit.targetRoomId}')"
+                           onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.switchBuildingRoom('${exit.targetRoomId}');}">
+                            <rect x="${exit.x}" y="${exit.y}" width="${exit.width}" height="${exit.height}" rx="6" fill="#475569" />
+                            <text x="${exit.x + exit.width / 2}" y="${exit.y - 8}" fill="#1e293b" font-size="11" font-weight="bold" text-anchor="middle">${exit.label || exit.targetRoomId}</text>
+                        </g>
+                    `;
+                });
+            }
+
             // NPCs in room
             if (room.npcSpawns) {
                 room.npcSpawns.forEach(spawn => {

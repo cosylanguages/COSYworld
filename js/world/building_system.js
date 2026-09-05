@@ -212,6 +212,15 @@ export class BuildingManager {
         return this.activeBuildingState;
     }
 
+    switchRoom(roomId) {
+        if (!this.activeBuildingState) return null;
+        const room = this.loadRoom(this.activeBuildingState.buildingId, roomId);
+        if (!room) return null;
+        this.activeBuildingState = { ...this.activeBuildingState, currentRoomId: room.id, room };
+        if (this.eventBus) this.eventBus.emit('roomChanged', { buildingId: this.activeBuildingState.buildingId, room });
+        return this.activeBuildingState;
+    }
+
     /**
      * Leave a building interior and return to district exterior seamlessly.
      * @returns {Object|null}

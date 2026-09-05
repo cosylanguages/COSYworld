@@ -11,8 +11,10 @@ test('BuildingManager - registers and normalizes raw building JSON data', () => 
     const manager = new BuildingManager();
     manager.registerBuildings(mockBuildingsData);
 
-    assert.equal(manager.buildings.size, 2);
+    assert.equal(manager.buildings.size, 4);
     assert.ok(manager.getBuilding('bakery_facade'));
+    assert.ok(manager.getBuilding('school'));
+    assert.ok(manager.getBuilding('hospital'));
 
     const bakery = manager.getBuilding('bakery_facade');
     assert.equal(bakery.id, 'bakery_facade');
@@ -37,6 +39,19 @@ test('BuildingManager - enters building and loads interior room independently', 
     assert.equal(activeState.currentRoomId, 'bakery_interior');
     assert.ok(activeState.room);
     assert.equal(activeState.room.ambientAudio, 'piano');
+});
+
+test('BuildingManager - switches school rooms without leaving the building', () => {
+    const manager = new BuildingManager();
+    manager.registerBuildings(mockBuildingsData);
+
+    manager.enterBuilding('school');
+    assert.equal(manager.getActiveBuildingState().currentRoomId, 'school_library');
+    manager.switchRoom('computer_lab');
+    assert.equal(manager.getActiveBuildingState().currentRoomId, 'computer_lab');
+    manager.switchRoom('teacher_office');
+    assert.equal(manager.getActiveBuildingState().currentRoomId, 'teacher_office');
+    assert.equal(manager.getActiveBuildingState().isInterior, true);
 });
 
 test('BuildingManager - memory optimization purges distant rooms', () => {

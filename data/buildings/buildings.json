@@ -112,5 +112,31 @@
     "npcs": ["marco_barista"],
     "interactiveObjects": ["espresso_machine", "coffee_cup"],
     "quests": ["q_coffee_break"]
+  },
+  "school": {
+    "id": "school",
+    "name": { "en": "School", "fr": "École" },
+    "image": "🏫",
+    "districtId": "school",
+    "ambientAudio": "piano",
+    "exterior": { "x": 100, "y": 100, "width": 600, "height": 240, "color": "#1d4ed8", "label": "School Hall 🏫" },
+    "entrances": [{ "id": "school_main_entrance", "label": "School Entrance", "targetRoomId": "school_library", "x": 360, "y": 280, "width": 70, "height": 40 }],
+    "rooms": [
+      { "id": "school_library", "templateId": "school_library", "exits": [{ "targetRoomId": "computer_lab", "label": "Computer Lab", "x": 700, "y": 180, "width": 70, "height": 180 }] },
+      { "id": "computer_lab", "templateId": "computer_lab", "exits": [{ "targetRoomId": "school_library", "label": "Library", "x": 20, "y": 180, "width": 70, "height": 180 }, { "targetRoomId": "teacher_office", "label": "Teacher Office", "x": 700, "y": 180, "width": 70, "height": 180 }] },
+      { "id": "teacher_office", "templateId": "teacher_office", "exits": [{ "targetRoomId": "computer_lab", "label": "Computer Lab", "x": 20, "y": 180, "width": 70, "height": 180 }] }
+    ],
+    "npcs": ["ella_bronx", "james_york"]
+  },
+  "hospital": {
+    "id": "hospital",
+    "name": { "en": "Hospital", "fr": "Hôpital" },
+    "image": "🏥",
+    "districtId": "hospital",
+    "ambientAudio": "piano",
+    "exterior": { "x": 100, "y": 100, "width": 600, "height": 240, "color": "#0f766e", "label": "Hospital Lobby 🏥" },
+    "entrances": [{ "id": "hospital_main_entrance", "label": "Hospital Entrance", "targetRoomId": "hospital_lobby", "x": 360, "y": 280, "width": 70, "height": 40 }],
+    "rooms": [{ "id": "hospital_lobby", "templateId": "hospital", "exits": [{ "targetRoomId": "doctor_office", "label": "Doctor Office", "x": 700, "y": 180, "width": 70, "height": 180 }] }, { "id": "doctor_office", "templateId": "doctor_office" }],
+    "npcs": ["doctor_chloe"]
   }
 }

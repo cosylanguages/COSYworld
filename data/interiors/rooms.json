@@ -180,6 +180,61 @@
     "ambientSounds": ["nature"],
     "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
   },
+  "school_library": {
+    "id": "school_library",
+    "type": "school_library",
+    "name": { "en": "School Library", "fr": "Bibliothèque scolaire" },
+    "image": "📚",
+    "background": { "wallColor": "#f8fafc", "floorColor": "#92400e", "dividerColor": "#78350f" },
+    "interactiveObjects": ["bookshelf", "novel_stack", "dictionary_book"],
+    "npcs": ["ella_bronx"],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "computer_lab": {
+    "id": "computer_lab",
+    "type": "computer_lab",
+    "name": { "en": "Computer Lab", "fr": "Salle informatique" },
+    "image": "💻",
+    "background": { "wallColor": "#e2e8f0", "floorColor": "#334155", "dividerColor": "#1e293b" },
+    "interactiveObjects": ["computer_terminal", "desk", "chair"],
+    "npcs": ["james_york"],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "cool_daylight", "color": "rgba(125, 211, 252, 0.08)", "opacity": 0.08 }
+  },
+  "teacher_office": {
+    "id": "teacher_office",
+    "type": "teacher_office",
+    "name": { "en": "Teacher Office", "fr": "Bureau des enseignants" },
+    "image": "🧑‍🏫",
+    "background": { "wallColor": "#fef3c7", "floorColor": "#78350f", "dividerColor": "#451a03" },
+    "interactiveObjects": ["desk", "bookshelf", "lamp"],
+    "npcs": ["ella_bronx"],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm_indoor", "color": "rgba(251, 191, 36, 0.12)", "opacity": 0.12 }
+  },
+  "hospital_lobby": {
+    "id": "hospital_lobby",
+    "type": "hospital_lobby",
+    "name": { "en": "Hospital Lobby", "fr": "Hall de l'hôpital" },
+    "image": "🏥",
+    "background": { "wallColor": "#ecfeff", "floorColor": "#0f766e", "dividerColor": "#115e59" },
+    "interactiveObjects": ["stethoscope_tool", "thermometer_item"],
+    "npcs": ["doctor_chloe"],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "bright_indoor", "color": "rgba(20, 184, 166, 0.08)", "opacity": 0.08 }
+  },
+  "doctor_office": {
+    "id": "doctor_office",
+    "type": "doctor_office",
+    "name": { "en": "Doctor Office", "fr": "Cabinet médical" },
+    "image": "🩺",
+    "background": { "wallColor": "#f0fdf4", "floorColor": "#64748b", "dividerColor": "#475569" },
+    "interactiveObjects": ["stethoscope_tool", "thermometer_item", "desk"],
+    "npcs": ["doctor_chloe"],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "clinical", "color": "rgba(255, 255, 255, 0.08)", "opacity": 0.08 }
+  },
   "street": {
     "id": "street",
     "type": "street",

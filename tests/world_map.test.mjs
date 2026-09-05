@@ -37,6 +37,20 @@ test('WorldMap - visited location evaluation', () => {
     assert.equal(map.isVisited('bakery', state), false);
 });
 
+test('WorldMap - unlocks the city map and computes compass routes', () => {
+    const map = new WorldMap();
+    const districts = JSON.parse(fs.readFileSync(path.resolve('data/scenes/districts.json'), 'utf8'));
+    const locked = { completedQuests: new Set() };
+    const unlocked = { completedQuests: new Set(['q_ch4_city_map_master']) };
+
+    assert.equal(map.isUnlocked(locked), false);
+    assert.equal(map.isUnlocked(unlocked), true);
+    assert.deepEqual(map.findRoute('apartment_living', 'airport', { districts }), [
+        'apartment_living', 'town_square', 'street', 'bus_stop', 'bus_station', 'airport'
+    ]);
+    assert.equal(map.getCompassDirection('town_square', 'airport', { districts }), 'south-east');
+});
+
 test('WorldMap - retrieves topology, NPCs, and quest markers per location', () => {
     const districtsData = JSON.parse(fs.readFileSync(path.resolve('data/scenes/districts.json'), 'utf8'));
     const npcsData = JSON.parse(fs.readFileSync(path.resolve('data/npcs/npcs.json'), 'utf8'));

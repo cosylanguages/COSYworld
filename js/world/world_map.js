@@ -27,6 +27,45 @@ export class WorldMap {
         return state.visitedLocations.has ? state.visitedLocations.has(locationId) : state.visitedLocations.includes(locationId);
     }
 
+    isUnlocked(state) {
+        if (!state) return false;
+        if (state.mapUnlocked === true) return true;
+        const completed = state.completedQuests;
+        return completed && (completed.has
+            ? (completed.has('q_directions_bakery') || completed.has('q_ch4_city_map_master'))
+            : (completed.includes('q_directions_bakery') || completed.includes('q_ch4_city_map_master')));
+    }
+
+    getCompassDirection(fromLocationId, toLocationId, gameData) {
+        const from = gameData?.districts?.[fromLocationId];
+        const to = gameData?.districts?.[toLocationId];
+        if (!from || !to) return null;
+        const dx = (to.worldX || 0) - (from.worldX || 0);
+        const dy = (to.worldY || 0) - (from.worldY || 0);
+        if (dx === 0 && dy === 0) return 'here';
+        const horizontal = dx > 0 ? 'east' : dx < 0 ? 'west' : '';
+        const vertical = dy > 0 ? 'south' : dy < 0 ? 'north' : '';
+        return [vertical, horizontal].filter(Boolean).join('-');
+    }
+
+    findRoute(fromLocationId, toLocationId, gameData) {
+        if (!gameData?.districts?.[fromLocationId] || !gameData?.districts?.[toLocationId]) return [];
+        const queue = [[fromLocationId]];
+        const visited = new Set([fromLocationId]);
+        while (queue.length) {
+            const route = queue.shift();
+            const current = gameData.districts[route[route.length - 1]];
+            if (route[route.length - 1] === toLocationId) return route;
+            for (const neighbor of current.neighbors || []) {
+                if (!visited.has(neighbor) && gameData.districts[neighbor]) {
+                    visited.add(neighbor);
+                    queue.push([...route, neighbor]);
+                }
+            }
+        }
+        return [];
+    }
+
     /**
      * Zoom controls
      */

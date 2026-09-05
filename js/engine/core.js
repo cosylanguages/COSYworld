@@ -460,6 +460,15 @@ export class GameEngine {
         this.showToast(`Stepped Outside 🌤️`);
     }
 
+    async switchBuildingRoom(roomId) {
+        const activeState = this.buildingManager.switchRoom(roomId);
+        if (!activeState) return;
+        this.audioManager.setDistrictAudio(activeState.room.ambientAudio);
+        await this.renderWorldViewport();
+        const roomName = this.localizationManager.getText(activeState.room.name);
+        this.showToast(`Entered ${roomName} 🚪`);
+    }
+
     async renderWorldViewport() {
         await this.sceneManager.render(this.state, this.data, this.buildingManager);
     }
@@ -557,6 +566,10 @@ export class GameEngine {
             (msg) => this.showToast(msg),
             this.grammarEngine
         );
+        if (questId === 'q_directions_bakery' || questId === 'q_ch4_city_map_master') {
+            this.state.mapUnlocked = true;
+            this.saveState();
+        }
     }
 
     checkQuests(eventType = 'general', payload = {}) {
@@ -572,6 +585,10 @@ export class GameEngine {
     /* Interactive World Map & Fast Travel Methods */
     openWorldMap() {
         if (typeof document === 'undefined') return;
+        if (!this.worldMap.isUnlocked(this.state)) {
+            this.showToast('Complete the neighbourhood directions quest to unlock the City Map.');
+            return;
+        }
         const body = document.getElementById('cw-modal-body');
         if (!body) return;
 

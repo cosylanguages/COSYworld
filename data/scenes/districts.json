@@ -1237,7 +1237,8 @@
     "worldWidth": 800,
     "worldHeight": 500,
     "neighbors": [
-      "street"
+      "street",
+      "bus_station"
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
@@ -1336,7 +1337,8 @@
     "neighbors": [
       "apartment_living",
       "bakery",
-      "cafe"
+      "cafe",
+      "street"
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
@@ -1578,7 +1580,8 @@
     "worldWidth": 800,
     "worldHeight": 500,
     "neighbors": [
-      "street"
+      "street",
+      "bus_station"
     ],
     "name": {
       "en": "Pharmacy",
@@ -3118,7 +3121,7 @@
     ],
     "buildings": [
       {
-        "id": "hospital_lobby",
+        "id": "hospital",
         "x": 100,
         "y": 100,
         "width": 600,
@@ -5641,7 +5644,7 @@
     ],
     "buildings": [
       {
-        "id": "school_hall",
+        "id": "school",
         "x": 100,
         "y": 100,
         "width": 600,
