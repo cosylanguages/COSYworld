@@ -1,5 +1,730 @@
 [
   {
+    "id": "q_ch1_follow_james",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🚶 Follow James York",
+    "description": "Follow James York from the Town Entrance to COSYlanguages Headquarters.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "level": 1,
+      "targetLocation": "cosylanguages_hq"
+    },
+    "unlockConditions": {
+      "level": 1
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Walk with James York into COSYlanguages Headquarters",
+        "target": "cosylanguages_hq"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter cosylanguages_hq",
+        "targetLocation": "cosylanguages_hq",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["hello", "friend", "teacher"],
+      "grammar": "gt_to_be"
+    },
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["hello", "friend", "teacher"],
+      "grammar": "gt_to_be"
+    },
+    "dialogues": {
+      "start": "Welcome to COSY Town! Follow me to COSYlanguages Headquarters.",
+      "progress": "Head inside COSYlanguages Headquarters with James.",
+      "complete": "You made it to Headquarters!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "cosylanguages_hq",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch1_meet_receptionist"
+  },
+  {
+    "id": "q_ch1_meet_receptionist",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "💁 Meet the Receptionist",
+    "description": "Enter the Reception area and approach the receptionist.",
+    "difficulty": "A0",
+    "NPC": "receptionist",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_follow_james",
+      "targetLocation": "reception"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_follow_james"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Enter the Reception room",
+        "target": "reception"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter reception room",
+        "targetLocation": "reception",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 50,
+      "vocabulary": ["please", "thank you", "woman"],
+      "grammar": "gt_this_is"
+    },
+    "rewards": {
+      "xp": 50,
+      "vocabulary": ["please", "thank you", "woman"],
+      "grammar": "gt_this_is"
+    },
+    "dialogues": {
+      "start": "Go meet the receptionist at the front desk.",
+      "progress": "Walk into the Reception area.",
+      "complete": "You met the receptionist!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "receptionist",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "reception",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch1_first_dialogue"
+  },
+  {
+    "id": "q_ch1_first_dialogue",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "💬 Complete Your First Dialogue",
+    "description": "Introduce yourself and say your name to the receptionist.",
+    "difficulty": "A0",
+    "NPC": "receptionist",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_meet_receptionist",
+      "targetNpc": "receptionist"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_meet_receptionist"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with the receptionist and introduce yourself",
+        "target": "receptionist"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Converse with receptionist",
+        "targetNpc": "receptionist",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["name", "I", "you", "yes", "no"],
+      "grammar": "gt_personal_pronouns"
+    },
+    "rewards": {
+      "xp": 60,
+      "vocabulary": ["name", "I", "you", "yes", "no"],
+      "grammar": "gt_personal_pronouns"
+    },
+    "dialogues": {
+      "start": "Introduce yourself to the receptionist!",
+      "progress": "Say your name to the receptionist.",
+      "complete": "First dialogue completed successfully!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "receptionist",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "reception",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch1_pick_up_key"
+  },
+  {
+    "id": "q_ch1_pick_up_key",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🔑 Pick Up Your Key",
+    "description": "Pick up your apartment key from the reception desk.",
+    "difficulty": "A0",
+    "NPC": "receptionist",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_first_dialogue",
+      "targetObjects": ["apartment_key"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_first_dialogue"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Collect your key at reception",
+        "target": "apartment_key"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Collect apartment_key",
+        "targetObjects": ["apartment_key"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 60,
+      "vocabulary": ["key", "my", "your"],
+      "grammar": "gt_my_your"
+    },
+    "rewards": {
+      "xp": 60,
+      "vocabulary": ["key", "my", "your"],
+      "grammar": "gt_my_your"
+    },
+    "dialogues": {
+      "start": "Pick up your new apartment key!",
+      "progress": "Inspect the key on the desk.",
+      "complete": "You picked up your apartment key!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "receptionist",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "reception",
+        "hotspotId": "apartment_key",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch1_open_apartment"
+  },
+  {
+    "id": "q_ch1_open_apartment",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🚪 Open Your Apartment",
+    "description": "Walk through the hallway to your apartment door and unlock it.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_pick_up_key",
+      "targetLocation": "apartment_living"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_pick_up_key"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Unlock and enter your apartment living room",
+        "target": "apartment_living"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter apartment_living",
+        "targetLocation": "apartment_living",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": ["door", "house", "home", "goodbye"],
+      "grammar": "gt_articles"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": ["door", "house", "home", "goodbye"],
+      "grammar": "gt_articles"
+    },
+    "dialogues": {
+      "start": "Head through the hallway and open your apartment door!",
+      "progress": "Unlock your apartment door.",
+      "complete": "Welcome home! Chapter 1 Complete!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch2_explore_rooms"
+  },
+  {
+    "id": "q_ch2_explore_rooms",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🏠 Explore Every Room",
+    "description": "Explore all five rooms in your apartment: Living room, Kitchen, Bedroom, Bathroom, and Balcony.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch1_open_apartment",
+      "targetLocation": "apartment_balcony"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch1_open_apartment"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Visit living room, kitchen, bedroom, bathroom, and balcony",
+        "target": "apartment_balcony"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Explore balcony room",
+        "targetLocation": "apartment_balcony",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 75,
+      "vocabulary": ["living room", "kitchen", "bedroom", "bathroom", "balcony"],
+      "grammar": "gt_there_is"
+    },
+    "rewards": {
+      "xp": 75,
+      "vocabulary": ["living room", "kitchen", "bedroom", "bathroom", "balcony"],
+      "grammar": "gt_there_is"
+    },
+    "dialogues": {
+      "start": "Explore every room in your new home!",
+      "progress": "Walk into all 5 apartment rooms.",
+      "complete": "You explored every room!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_balcony",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch2_interact_objects"
+  },
+  {
+    "id": "q_ch2_interact_objects",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🔍 Find and Interact with Objects",
+    "description": "Find and interact with household objects and electronics across your apartment.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_explore_rooms",
+      "targetObjects": ["desk"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_explore_rooms"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Interact with objects in your apartment",
+        "target": "desk"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect desk",
+        "targetObjects": ["desk"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["television", "lamp", "fridge", "kettle", "towel", "soap"],
+      "grammar": "gt_there_are"
+    },
+    "rewards": {
+      "xp": 80,
+      "vocabulary": ["television", "lamp", "fridge", "kettle", "towel", "soap"],
+      "grammar": "gt_there_are"
+    },
+    "dialogues": {
+      "start": "Interact with every object in your apartment!",
+      "progress": "Inspect items in the rooms.",
+      "complete": "Objects discovered!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_bedroom",
+        "hotspotId": "desk",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch2_organize_apartment"
+  },
+  {
+    "id": "q_ch2_organize_apartment",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "🧹 Help James Organize the Apartment",
+    "description": "Talk to James York and help him arrange and organize the apartment.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_interact_objects",
+      "targetNpc": "james_york"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_interact_objects"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with James about organizing the apartment",
+        "target": "james_york"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Talk to James York",
+        "targetNpc": "james_york",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"],
+      "grammar": "gt_this"
+    },
+    "rewards": {
+      "xp": 85,
+      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"],
+      "grammar": "gt_this"
+    },
+    "dialogues": {
+      "start": "Help James organize your apartment furniture and objects!",
+      "progress": "Talk with James about object placement.",
+      "complete": "Apartment organized!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_living",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch2_unlock_furniture"
+  },
+  {
+    "id": "q_ch2_unlock_furniture",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🪑 Unlock Furniture Vocabulary",
+    "description": "Inspect all furniture items to master furniture, numbers, and demonstratives.",
+    "difficulty": "A0",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_organize_apartment",
+      "targetObjects": ["balcony_chair"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_organize_apartment"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Inspect balcony furniture to complete Chapter 2",
+        "target": "balcony_chair"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect balcony_chair",
+        "targetObjects": ["balcony_chair"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": ["sofa", "table", "chair", "bed", "desk", "one", "two", "three", "four", "five"],
+      "grammar": "gt_that"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": ["sofa", "table", "chair", "bed", "desk", "one", "two", "three", "four", "five"],
+      "grammar": "gt_that"
+    },
+    "dialogues": {
+      "start": "Inspect balcony furniture to unlock full furniture vocabulary!",
+      "progress": "Inspect the chair on the balcony.",
+      "complete": "Chapter 2 Complete! You mastered your home!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_balcony",
+        "hotspotId": "balcony_chair",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch3_morning_routine"
+  },
+  {
+    "id": "q_ch3_morning_routine",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🌅 Complete Your Morning Routine",
+    "description": "Wake up, brush your teeth, and check the alarm clock in your morning routine.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_unlock_furniture",
+      "targetObjects": ["alarm_clock"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_unlock_furniture"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Check the alarm clock in the bedroom to start your morning routine",
+        "target": "alarm_clock"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect alarm_clock",
+        "targetObjects": ["alarm_clock"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 90,
+      "vocabulary": ["wake up", "brush", "wash", "eat", "drink", "cook", "clock", "morning"],
+      "grammar": "gt_present_simple"
+    },
+    "rewards": {
+      "xp": 90,
+      "vocabulary": ["wake up", "brush", "wash", "eat", "drink", "cook", "clock", "morning"],
+      "grammar": "gt_present_simple"
+    },
+    "dialogues": {
+      "start": "Start your morning routine by checking the alarm clock!",
+      "progress": "Check the alarm clock.",
+      "complete": "Morning routine completed!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_bedroom",
+        "hotspotId": "alarm_clock",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch3_daily_schedule"
+  },
+  {
+    "id": "q_ch3_daily_schedule",
+    "category": "travel",
+    "type": "directions",
+    "title": "📅 Follow a Daily Schedule",
+    "description": "Walk out to the street and check the street clock to follow your daily schedule.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch3_morning_routine",
+      "targetObjects": ["street_clock"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch3_morning_routine"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Walk out to the street and inspect the street clock",
+        "target": "street_clock"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect street_clock",
+        "targetObjects": ["street_clock"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 95,
+      "vocabulary": ["work", "study", "afternoon", "evening"],
+      "grammar": "gt_time"
+    },
+    "rewards": {
+      "xp": 95,
+      "vocabulary": ["work", "study", "afternoon", "evening"],
+      "grammar": "gt_time"
+    },
+    "dialogues": {
+      "start": "Walk out to the street and check the clock to follow your daily schedule!",
+      "progress": "Check the street clock.",
+      "complete": "Daily schedule tracked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "street",
+        "hotspotId": "street_clock",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch3_unlock_routine"
+  },
+  {
+    "id": "q_ch3_unlock_routine",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🚌 Unlock Routine Achievements",
+    "description": "Reach the bus stop and check the bus schedule to unlock routine achievements and complete Chapter 3.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch3_daily_schedule",
+      "targetLocation": "bus_stop"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch3_daily_schedule"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Travel to the bus stop and inspect the bus stop sign",
+        "target": "bus_stop"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter bus_stop",
+        "targetLocation": "bus_stop",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": ["always", "usually", "never", "sleep"],
+      "grammar": "gt_frequency"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": ["always", "usually", "never", "sleep"],
+      "grammar": "gt_frequency"
+    },
+    "dialogues": {
+      "start": "Head to the bus stop to complete your daily routine voyage!",
+      "progress": "Wait at the bus stop.",
+      "complete": "Chapter 3 Complete! Routine achievements unlocked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bus_stop",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_explore_living"
+  },
+  {
     "id": "q_explore_living",
     "category": "exploration",
     "type": "exploration",

@@ -161,6 +161,110 @@
     "ambientSounds": ["piano"],
     "lightingProfile": { "type": "modern_office", "color": "rgba(203, 213, 225, 0.1)", "opacity": 0.1 }
   },
+  "balcony": {
+    "id": "balcony",
+    "type": "balcony",
+    "name": { "en": "Balcony", "fr": "Balcon", "it": "Balcone", "es": "Balcón", "de": "Balkon", "ru": "Балкон" },
+    "image": "🌿",
+    "background": {
+      "wallColor": "#dcfce7",
+      "floorColor": "#15803d",
+      "dividerColor": "#166534"
+    },
+    "hotspots": [
+      { "id": "balcony_garden_zone", "label": "Balcony Garden", "x": 200, "y": 180, "width": 400, "height": 100 }
+    ],
+    "interactiveObjects": ["balcony_chair", "balcony_plant"],
+    "npcs": [],
+    "npcSpawns": [],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "street": {
+    "id": "street",
+    "type": "street",
+    "name": { "en": "Street", "fr": "Rue", "it": "Strada", "es": "Calle", "de": "Straße", "ru": "Улица" },
+    "image": "🛣️",
+    "background": {
+      "wallColor": "#cbd5e1",
+      "floorColor": "#334155",
+      "dividerColor": "#1e293b"
+    },
+    "hotspots": [
+      { "id": "street_walk_zone", "label": "Pedestrian Street", "x": 100, "y": 180, "width": 600, "height": 120 }
+    ],
+    "interactiveObjects": ["street_clock", "street_lamp"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 400, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_day", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "bus_stop": {
+    "id": "bus_stop",
+    "type": "bus_stop",
+    "name": { "en": "Bus Stop", "fr": "Arrêt de bus", "it": "Fermata dell'autobus", "es": "Parada de autobús", "de": "Bushaltestelle", "ru": "Автобусная остановка" },
+    "image": "🚌",
+    "background": {
+      "wallColor": "#bae6fd",
+      "floorColor": "#0284c7",
+      "dividerColor": "#0369a1"
+    },
+    "hotspots": [
+      { "id": "bus_shelter_zone", "label": "Bus Stop Shelter", "x": 200, "y": 180, "width": 400, "height": 120 }
+    ],
+    "interactiveObjects": ["bus_stop_sign", "bus_timetable_board"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0)", "opacity": 0 }
+  },
+  "reception": {
+    "id": "reception",
+    "type": "reception",
+    "name": { "en": "Reception", "fr": "Réception", "it": "Reception", "es": "Recepción", "de": "Empfang", "ru": "Рецепция" },
+    "image": "💁",
+    "background": {
+      "wallColor": "#ccfbf1",
+      "floorColor": "#0d9488",
+      "dividerColor": "#0f766e"
+    },
+    "hotspots": [
+      { "id": "reception_desk_zone", "label": "Reception Desk", "x": 220, "y": 180, "width": 360, "height": 140 }
+    ],
+    "interactiveObjects": ["reception_desk", "apartment_key", "registration_form"],
+    "npcs": ["receptionist", "james_york"],
+    "npcSpawns": [
+      { "npcId": "receptionist", "x": 380, "y": 280 },
+      { "npcId": "james_york", "x": 180, "y": 300 }
+    ],
+    "ambientSounds": ["cafe"],
+    "lightingProfile": { "type": "bright_indoor", "color": "rgba(20, 184, 166, 0.1)", "opacity": 0.1 }
+  },
+  "hallway": {
+    "id": "hallway",
+    "type": "hallway",
+    "name": { "en": "Hallway", "fr": "Couloir", "it": "Corridoio", "es": "Pasillo", "de": "Flur", "ru": "Коридор" },
+    "image": "🚶",
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#b45309",
+      "dividerColor": "#78350f"
+    },
+    "hotspots": [
+      { "id": "corridor_zone", "label": "Apartment Corridor", "x": 200, "y": 180, "width": 400, "height": 100 }
+    ],
+    "interactiveObjects": ["hallway_light", "door_number_101", "hallway_carpet"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 250, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm", "color": "rgba(245, 158, 11, 0.15)", "opacity": 0.15 }
+  },
   "hospital": {
     "id": "hospital",
     "type": "hospital",

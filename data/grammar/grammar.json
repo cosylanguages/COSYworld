@@ -1,5 +1,235 @@
 [
   {
+    "id": "gt_to_be",
+    "title": "Verb 'To Be' (Identity & State) 👤",
+    "difficulty": "A0",
+    "rule": "The verb 'to be' connects a subject to a name, identity, or state. [Subject] + [am/is/are] + [Name/Noun].",
+    "examples": [
+      {
+        "text": "I am James.",
+        "targetLang": {
+          "en": "I am James.",
+          "fr": "Je suis James.",
+          "es": "Yo soy James.",
+          "it": "Io sono James.",
+          "de": "Ich bin James.",
+          "ru": "Я Джеймс."
+        },
+        "context": "Introducing yourself to someone."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_to_be_1",
+        "type": "multiple_choice",
+        "question": "Choose the correct form: 'I ___ a teacher.'",
+        "options": ["am", "is", "are"],
+        "correct": 0,
+        "explanation": "Use 'am' with 'I'.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "Hello! I am James York.",
+        "grammarUsage": "Introducing oneself using 'to be'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "town_entrance",
+      "objects": ["welcome_sign"],
+      "npcs": ["james_york"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "To be verb usage." },
+    "unlockRequirements": { "quests": ["q_ch1_follow_james"], "level": 1, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_personal_pronouns",
+    "title": "Personal Pronouns (I / You / He / She) 👥",
+    "difficulty": "A0",
+    "rule": "Personal pronouns replace specific nouns to refer to speakers, listeners, or others. Example: 'I', 'You'.",
+    "examples": [
+      {
+        "text": "I am a friend. You are a teacher.",
+        "targetLang": {
+          "en": "I am a friend. You are a teacher.",
+          "fr": "Je suis un ami. Tu es un professeur.",
+          "es": "Yo soy un amigo. Tú eres un maestro.",
+          "it": "Io sono un amico. Tu sei un insegnante.",
+          "de": "Ich bin ein Freund. Du bist ein Lehrer.",
+          "ru": "Я друг. Ты учитель."
+        },
+        "context": "Identifying participants in dialogue."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_pronouns_1",
+        "type": "multiple_choice",
+        "question": "Which pronoun refers to yourself?",
+        "options": ["I", "You", "He"],
+        "correct": 0,
+        "explanation": "'I' is the first-person singular pronoun.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "receptionist",
+        "prompt": "I am the receptionist. Who are you?",
+        "grammarUsage": "Using personal pronouns in dialogue."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "reception",
+      "objects": ["reception_desk"],
+      "npcs": ["receptionist"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Personal pronouns." },
+    "unlockRequirements": { "quests": ["q_ch1_meet_receptionist"], "level": 1, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_this_is",
+    "title": "Demonstrative 'This is' 👈",
+    "difficulty": "A0",
+    "rule": "Use 'This is' to introduce people, places, or objects close to you. [This is] + [a/an/my] + [Noun].",
+    "examples": [
+      {
+        "text": "This is COSYlanguages Headquarters.",
+        "targetLang": {
+          "en": "This is COSYlanguages Headquarters.",
+          "fr": "C'est le siège de COSYlanguages.",
+          "es": "Esta es la sede de COSYlanguages.",
+          "it": "Questa è la sede di COSYlanguages.",
+          "de": "Das ist die COSYlanguages-Zentrale.",
+          "ru": "Это штаб-квартира COSYlanguages."
+        },
+        "context": "Introducing a location."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_this_is_1",
+        "type": "multiple_choice",
+        "question": "How do you introduce your friend?",
+        "options": ["This is my friend", "This am my friend", "This are my friend"],
+        "correct": 0,
+        "explanation": "Use 'This is' for singular introductions.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "This is the reception desk!",
+        "grammarUsage": "Introducing places and items."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "cosylanguages_hq",
+      "objects": ["welcome_desk"],
+      "npcs": ["james_york"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "This is introductions." },
+    "unlockRequirements": { "quests": ["q_ch1_follow_james"], "level": 1, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_my_your",
+    "title": "Possessive Adjectives (My / Your) 🔑",
+    "difficulty": "A0",
+    "rule": "Possessives show ownership or relationship. [My/Your] + [Noun]. Example: 'My name', 'Your key'.",
+    "examples": [
+      {
+        "text": "Here is your key.",
+        "targetLang": {
+          "en": "Here is your key.",
+          "fr": "Voici votre clé.",
+          "es": "Aquí está tu llave.",
+          "it": "Ecco la tua chiave.",
+          "de": "Hier ist Ihr Schlüssel.",
+          "ru": "Вот ваш ключ."
+        },
+        "context": "Handing an item to someone."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_my_your_1",
+        "type": "multiple_choice",
+        "question": "Complete the sentence: 'What is ___ name?'",
+        "options": ["your", "my", "you"],
+        "correct": 0,
+        "explanation": "Use 'your' when asking someone about their name.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "receptionist",
+        "prompt": "Here is your key for your new apartment!",
+        "grammarUsage": "Using possessives in item handoffs."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "reception",
+      "objects": ["apartment_key"],
+      "npcs": ["receptionist"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Possessives my and your." },
+    "unlockRequirements": { "quests": ["q_ch1_pick_up_key"], "level": 1, "discoveredObjects": ["apartment_key"] }
+  },
+  {
+    "id": "gt_articles",
+    "title": "Indefinite Articles (A / An) 🚪",
+    "difficulty": "A0",
+    "rule": "Use 'a' before consonant sounds and 'an' before vowel sounds for singular countable nouns. [a/an] + [Noun].",
+    "examples": [
+      {
+        "text": "This is a key. This is an apartment.",
+        "targetLang": {
+          "en": "This is a key. This is an apartment.",
+          "fr": "C'est une clé. C'est un appartement.",
+          "es": "Esta es una llave. Este es un apartamento.",
+          "it": "Questa è una chiave. Questo è un appartamento.",
+          "de": "Das ist ein Schlüssel. Das ist eine Wohnung.",
+          "ru": "Это ключ. Это квартира."
+        },
+        "context": "Describing objects and places."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_articles_1",
+        "type": "multiple_choice",
+        "question": "Which is correct before 'apartment'?",
+        "options": ["an apartment", "a apartment", "the an apartment"],
+        "correct": 0,
+        "explanation": "'Apartment' starts with a vowel sound, so use 'an'.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "This is a door to an apartment!",
+        "grammarUsage": "Using a vs an."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_entrance",
+      "objects": ["apartment_door"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Articles a and an." },
+    "unlockRequirements": { "quests": ["q_ch1_open_apartment"], "level": 1, "discoveredObjects": ["apartment_door"] }
+  },
+  {
     "id": "gt_greetings",
     "title": "Greetings & Imperative Actions 👋",
     "difficulty": "A0",
@@ -77,40 +307,28 @@
   },
   {
     "id": "gt_there_is",
-    "title": "Existential Placement & Identification 🛋️",
+    "title": "Existential Placement & Identification (There is) 🛋️",
     "difficulty": "A0",
-    "rule": "Existential Statements: Use 'There is' (+ singular) or 'There are' (+ plural) to point out the presence of objects in a scene. Pattern: [There is/are] + [Article] + [Noun] + [Location].",
+    "rule": "Use 'There is' (+ singular noun) to point out the presence of one item. Pattern: [There is] + [a/an] + [Noun].",
     "examples": [
       {
-        "text": "🛋️ There is a comfortable sofa in the living room.",
+        "text": "There is a sofa in the living room.",
         "targetLang": {
-          "en": "🛋️ There is a comfortable sofa in the living room.",
-          "fr": "🛋️ Il y a un canapé confortable dans le salon.",
-          "es": "🛋️ Hay un sofá cómodo en el salón.",
-          "it": "🛋️ C'è un divano comodo nel salotto.",
-          "de": "🛋️ Es gibt ein bequemes Sofa im Wohnzimmer.",
-          "ru": "🛋️ В гостиной есть удобный диван."
+          "en": "There is a sofa in the living room.",
+          "fr": "Il y a un canapé dans le salon.",
+          "es": "Hay un sofá en el salón.",
+          "it": "C'è un divano nel salotto.",
+          "de": "Es gibt ein Sofa im Wohnzimmer.",
+          "ru": "В гостиной есть диван."
         },
-        "context": "Identifying furniture in residential spaces."
-      },
-      {
-        "text": "☕ There is a hot espresso on the table.",
-        "targetLang": {
-          "en": "☕ There is a hot espresso on the table.",
-          "fr": "☕ Il y a un café chaud sur la table.",
-          "es": "☕ Hay un café caliente sobre la mesa.",
-          "it": "☕ C'è un caffè caldo sul tavolo.",
-          "de": "☕ Es gibt einen heißen Kaffee auf dem Tisch.",
-          "ru": "☕ На столе стоит горячий эспрессо."
-        },
-        "context": "Observing items on surfaces."
+        "context": "Describing rooms and furniture."
       }
     ],
     "interactiveExercises": [
       {
         "id": "ex_there_is_1",
         "type": "multiple_choice",
-        "question": "Choose the correct phrase to identify one object on the table:",
+        "question": "Choose the correct phrase to identify one object:",
         "options": ["There is a key on the table", "There are a key on table", "Key is there table"],
         "correct": 0,
         "explanation": "Use 'There is' for singular items.",
@@ -119,95 +337,295 @@
     ],
     "dialogues": [
       {
-        "npcId": "ella_bronx",
-        "prompt": "👂 Listen... 🗣️ There is a fountain in the town square!",
-        "grammarUsage": "Pointing out landmarks using existential verbs."
+        "npcId": "james_york",
+        "prompt": "There is a lamp in the living room!",
+        "grammarUsage": "Pointing out singular objects in a room."
       }
     ],
     "sceneIntegration": {
       "locationId": "apartment_living",
       "objects": ["sofa", "coffee_table", "lamp"],
-      "npcs": ["ella_bronx"],
+      "npcs": ["james_york"],
       "district": "Residential District"
     },
-    "voice": {
-      "lang": "en",
-      "rate": 0.9,
-      "pitch": 1.0,
-      "audioPrompt": "Existential placement structures."
+    "voice": { "lang": "en", "rate": 0.9, "pitch": 1.0, "audioPrompt": "Existential placement structures." },
+    "unlockRequirements": { "quests": ["q_ch2_explore_rooms"], "level": 1, "discoveredObjects": ["sofa"] }
+  },
+  {
+    "id": "gt_there_are",
+    "title": "Plural Existential Placement (There are) 📚",
+    "difficulty": "A0",
+    "rule": "Use 'There are' (+ plural noun/number) to point out multiple items. Pattern: [There are] + [Number/Plural Noun].",
+    "examples": [
+      {
+        "text": "There are three cups in the kitchen.",
+        "targetLang": {
+          "en": "There are three cups in the kitchen.",
+          "fr": "Il y a trois tasses dans la cuisine.",
+          "es": "Hay tres tazas en la cocina.",
+          "it": "Ci sono tre tazze in cucina.",
+          "de": "Es gibt drei Tassen in der Küche.",
+          "ru": "На кухне есть три чашки."
+        },
+        "context": "Counting and pointing out plural objects."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_there_are_1",
+        "type": "multiple_choice",
+        "question": "How do you state the presence of multiple chairs?",
+        "options": ["There are two chairs", "There is two chairs", "There be two chairs"],
+        "correct": 0,
+        "explanation": "Use 'There are' with plural nouns.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "There are two lamps in the bedroom!",
+        "grammarUsage": "Stating plural objects in a room."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_bedroom",
+      "objects": ["bed", "desk"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
     },
-    "unlockRequirements": {
-      "quests": ["q2_pronunciation"],
-      "level": 1,
-      "discoveredObjects": ["sofa"]
-    }
+    "voice": { "lang": "en", "rate": 0.9, "pitch": 1.0, "audioPrompt": "There are plural structures." },
+    "unlockRequirements": { "quests": ["q_ch2_interact_objects"], "level": 1, "discoveredObjects": ["bed"] }
+  },
+  {
+    "id": "gt_this",
+    "title": "Demonstrative Pronoun 'This' 👈",
+    "difficulty": "A0",
+    "rule": "Use 'This' for a singular item close to the speaker. Pattern: [This] + [is] + [a/an/my] + [Noun].",
+    "examples": [
+      {
+        "text": "This is my desk.",
+        "targetLang": {
+          "en": "This is my desk.",
+          "fr": "C'est mon bureau.",
+          "es": "Este es mi escritorio.",
+          "it": "Questa è la mia scrivania.",
+          "de": "Das ist mein Schreibtisch.",
+          "ru": "Это мой письменный стол."
+        },
+        "context": "Pointing out nearby objects."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_this_1",
+        "type": "multiple_choice",
+        "question": "Which word identifies a nearby item?",
+        "options": ["This", "That", "Those"],
+        "correct": 0,
+        "explanation": "'This' refers to singular nearby items.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "This is a red sofa!",
+        "grammarUsage": "Identifying nearby object."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_living",
+      "objects": ["sofa", "desk"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Demonstrative this." },
+    "unlockRequirements": { "quests": ["q_ch2_interact_objects"], "level": 1, "discoveredObjects": ["desk"] }
+  },
+  {
+    "id": "gt_that",
+    "title": "Demonstrative Pronoun 'That' 👉",
+    "difficulty": "A0",
+    "rule": "Use 'That' for a singular item at a distance. Pattern: [That] + [is] + [a/an/your] + [Noun].",
+    "examples": [
+      {
+        "text": "That is a blue bed.",
+        "targetLang": {
+          "en": "That is a blue bed.",
+          "fr": "C'est un lit bleu.",
+          "es": "Esa es una cama azul.",
+          "it": "Quello è un letto blu.",
+          "de": "Das ist ein blaues Bett.",
+          "ru": "То синяя кровать."
+        },
+        "context": "Pointing out distant items."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_that_1",
+        "type": "multiple_choice",
+        "question": "Which word points to an object further away?",
+        "options": ["That", "This", "These"],
+        "correct": 0,
+        "explanation": "'That' refers to singular distant objects.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "That is the balcony over there!",
+        "grammarUsage": "Pointing out distant items."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "apartment_balcony",
+      "objects": ["balcony_chair", "balcony_plant"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Demonstrative that." },
+    "unlockRequirements": { "quests": ["q_ch2_organize_apartment"], "level": 1, "discoveredObjects": ["balcony_chair"] }
   },
   {
     "id": "gt_present_simple",
-    "title": "Daily Actions & Habitual Routines 🏃",
+    "title": "Daily Actions & Habitual Routines (Present Simple) 🏃",
     "difficulty": "A1",
-    "rule": "Present Simple Tense: Used for habitual routines and direct current states. Structure: [Subject] + [Base Verb/S-form]. Example: 'I walk to the town square every morning'.",
+    "rule": "Present Simple Tense: Used for habitual routines and direct current states. Structure: [Subject] + [Base Verb]. Example: 'I wake up at seven o'clock'.",
     "examples": [
       {
-        "text": "🏃 I explore COSY Town every day.",
+        "text": "I wake up and brush my teeth every morning.",
         "targetLang": {
-          "en": "🏃 I explore COSY Town every day.",
-          "fr": "🏃 J'explore COSY Town chaque jour.",
-          "es": "🏃 Exploro COSY Town todos los días.",
-          "it": "🏃 Esploro COSY Town ogni giorno.",
-          "de": "🏃 Ich erkunde COSY Town jeden Tag.",
-          "ru": "🏃 Я исследую COSY Town каждый день."
+          "en": "I wake up and brush my teeth every morning.",
+          "fr": "Je me réveille et me brosse les dents chaque matin.",
+          "es": "Me despierto y me cepillo los dientes cada mañana.",
+          "it": "Mi sveglio e mi lavo i denti ogni mattina.",
+          "de": "Ich wache auf und putze mir jeden Morgen die Zähne.",
+          "ru": "Я просыпаюсь и чищу зубы каждое утро."
         },
-        "context": "Expressing daily learning habits."
-      },
-      {
-        "text": "☕ Lucas bakes fresh baguettes in the morning.",
-        "targetLang": {
-          "en": "☕ Lucas bakes fresh baguettes in the morning.",
-          "fr": "☕ Lucas cuit des baguettes fraîches le matin.",
-          "es": "☕ Lucas hornea baguettes frescas por la mañana.",
-          "it": "☕ Lucas prepara baguette fresche la mattina.",
-          "de": "☕ Lucas bäckt morgens frische Baguettes.",
-          "ru": "☕ Лукас печет свежие багеты по утрам."
-        },
-        "context": "Describing NPC schedules."
+        "context": "Describing morning routine."
       }
     ],
     "interactiveExercises": [
       {
         "id": "ex_present_simple_1",
         "type": "multiple_choice",
-        "question": "Which sentence correctly describes finding 3 objects?",
-        "options": ["I discover three objects in the city", "I discovers three objects", "I discovering three objects"],
+        "question": "Which sentence correctly describes a morning habit?",
+        "options": ["I wake up at seven o'clock", "I wakes up at seven o'clock", "I waking up seven o'clock"],
         "correct": 0,
-        "explanation": "First person singular 'I' uses the base verb form without 's'.",
+        "explanation": "First person singular 'I' uses base verb form.",
         "xpReward": 30
       }
     ],
     "dialogues": [
       {
-        "npcId": "anna",
-        "prompt": "⚡ I discover items quickly! How many can you find?",
-        "grammarUsage": "Present simple challenge dialogue."
+        "npcId": "james_york",
+        "prompt": "I wake up early and study every morning!",
+        "grammarUsage": "Expressing daily routines."
       }
     ],
     "sceneIntegration": {
-      "locationId": "town_square",
-      "objects": ["clock_tower", "fountain"],
-      "npcs": ["anna"],
+      "locationId": "apartment_bedroom",
+      "objects": ["alarm_clock", "bed"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Present simple tense actions." },
+    "unlockRequirements": { "quests": ["q_ch3_morning_routine"], "level": 2, "discoveredObjects": ["alarm_clock"] }
+  },
+  {
+    "id": "gt_time",
+    "title": "Telling Time & Time of Day 🕒",
+    "difficulty": "A1",
+    "rule": "Use 'at [time]' and time of day expressions: 'in the morning', 'in the afternoon', 'in the evening'. Pattern: [at + time] / [in the + time_of_day].",
+    "examples": [
+      {
+        "text": "What time is it? It is eight o'clock in the morning.",
+        "targetLang": {
+          "en": "What time is it? It is eight o'clock in the morning.",
+          "fr": "Quelle heure est-il ? Il est huit heures du matin.",
+          "es": "¿Qué hora es? Son las ocho de la mañana.",
+          "it": "Che ora è? Sono le otto del mattino.",
+          "de": "Wie spät ist es? Es ist acht Uhr morgens.",
+          "ru": "Который час? Восемь часов утра."
+        },
+        "context": "Asking and telling time."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_time_1",
+        "type": "multiple_choice",
+        "question": "How do you ask someone the current time?",
+        "options": ["What time is it?", "When time is?", "How clock is it?"],
+        "correct": 0,
+        "explanation": "Use 'What time is it?' to ask the time.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "It is eight o'clock in the morning! Time for breakfast!",
+        "grammarUsage": "Stating current time and period of day."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "street",
+      "objects": ["street_clock", "alarm_clock"],
+      "npcs": ["james_york"],
       "district": "City Centre"
     },
-    "voice": {
-      "lang": "en",
-      "rate": 1.0,
-      "pitch": 1.0,
-      "audioPrompt": "Present simple tense actions."
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Time telling structures." },
+    "unlockRequirements": { "quests": ["q_ch3_daily_schedule"], "level": 2, "discoveredObjects": ["street_clock"] }
+  },
+  {
+    "id": "gt_frequency",
+    "title": "Adverbs of Frequency (Always / Usually / Never) 🔄",
+    "difficulty": "A1",
+    "rule": "Place frequency adverbs before main verbs or after 'to be'. Pattern: [Subject] + [always/usually/sometimes/never] + [Verb].",
+    "examples": [
+      {
+        "text": "I always brush my teeth in the morning. I am never late.",
+        "targetLang": {
+          "en": "I always brush my teeth in the morning. I am never late.",
+          "fr": "Je me brosse toujours les dents le matin. Je ne suis jamais en retard.",
+          "es": "Siempre me cepillo los dientes por la mañana. Nunca llego tarde.",
+          "it": "Lavo sempre i denti la mattina. Non sono mai in ritardo.",
+          "de": "Ich putze mir morgens immer die Zähne. Ich bin nie zu spät.",
+          "ru": "Я всегда чищу зубы по утрам. Я никогда не опаздываю."
+        },
+        "context": "Expressing frequency of habits."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_frequency_1",
+        "type": "multiple_choice",
+        "question": "Which word means 100% of the time?",
+        "options": ["always", "sometimes", "never"],
+        "correct": 0,
+        "explanation": "'Always' expresses 100% frequency.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "I always take the bus at eight o'clock!",
+        "grammarUsage": "Expressing habitual frequency."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "bus_stop",
+      "objects": ["bus_stop_sign", "bus_timetable_board"],
+      "npcs": ["james_york"],
+      "district": "City Centre"
     },
-    "unlockRequirements": {
-      "quests": ["q3_anna_challenge"],
-      "level": 2,
-      "discoveredObjects": ["clock_tower"]
-    }
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Frequency adverbs." },
+    "unlockRequirements": { "quests": ["q_ch3_unlock_routine"], "level": 2, "discoveredObjects": ["bus_stop_sign"] }
   },
   {
     "id": "gt_likes",

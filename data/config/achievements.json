@@ -1,0 +1,123 @@
+[
+  {
+    "id": "ach_welcome_town",
+    "title": "🏙️ Welcome to COSY Town",
+    "description": "Arrive in COSY Town and complete your first journey with James York.",
+    "category": "chapter_1",
+    "icon": "🏙️",
+    "xpReward": 50,
+    "unlockCondition": {
+      "questId": "q_ch1_follow_james"
+    }
+  },
+  {
+    "id": "ach_first_introduction",
+    "title": "🤝 First Introductions",
+    "description": "Introduce yourself and say your name to the receptionist.",
+    "category": "chapter_1",
+    "icon": "🗣️",
+    "xpReward": 50,
+    "unlockCondition": {
+      "questId": "q_ch1_first_dialogue"
+    }
+  },
+  {
+    "id": "ach_key_collector",
+    "title": "🔑 Key Holder",
+    "description": "Pick up your apartment key from the reception desk.",
+    "category": "chapter_1",
+    "icon": "🔑",
+    "xpReward": 50,
+    "unlockCondition": {
+      "questId": "q_ch1_pick_up_key"
+    }
+  },
+  {
+    "id": "ach_home_sweet_home",
+    "title": "🏡 Home Sweet Home",
+    "description": "Unlock and enter your new apartment to complete Chapter 1.",
+    "category": "chapter_1",
+    "icon": "🛋️",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch1_open_apartment"
+    }
+  },
+  {
+    "id": "ach_apartment_explorer",
+    "title": "🏠 Apartment Explorer",
+    "description": "Explore all five rooms in your apartment.",
+    "category": "chapter_2",
+    "icon": "🚪",
+    "xpReward": 75,
+    "unlockCondition": {
+      "questId": "q_ch2_explore_rooms"
+    }
+  },
+  {
+    "id": "ach_object_finder",
+    "title": "🔍 Object Finder",
+    "description": "Find and interact with objects in every room.",
+    "category": "chapter_2",
+    "icon": "🔍",
+    "xpReward": 80,
+    "unlockCondition": {
+      "questId": "q_ch2_interact_objects"
+    }
+  },
+  {
+    "id": "ach_home_organizer",
+    "title": "🧹 Home Organizer",
+    "description": "Help James organize the apartment furniture.",
+    "category": "chapter_2",
+    "icon": "🧹",
+    "xpReward": 85,
+    "unlockCondition": {
+      "questId": "q_ch2_organize_apartment"
+    }
+  },
+  {
+    "id": "ach_furniture_master",
+    "title": "🪑 Furniture Master",
+    "description": "Master all furniture, color, and number vocabulary in Chapter 2.",
+    "category": "chapter_2",
+    "icon": "🪑",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch2_unlock_furniture"
+    }
+  },
+  {
+    "id": "ach_morning_master",
+    "title": "🌅 Early Bird",
+    "description": "Complete your full morning routine from bedroom to kitchen.",
+    "category": "chapter_3",
+    "icon": "🌅",
+    "xpReward": 90,
+    "unlockCondition": {
+      "questId": "q_ch3_morning_routine"
+    }
+  },
+  {
+    "id": "ach_schedule_tracker",
+    "title": "📅 Schedule Tracker",
+    "description": "Follow a daily schedule across town and tell the time.",
+    "category": "chapter_3",
+    "icon": "🕒",
+    "xpReward": 95,
+    "unlockCondition": {
+      "questId": "q_ch3_daily_schedule"
+    }
+  },
+  {
+    "id": "ach_routine_habit_master",
+    "title": "🚌 Habit Master",
+    "description": "Master routine verbs, time, and adverbs of frequency in Chapter 3.",
+    "category": "chapter_3",
+    "icon": "🚌",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch3_unlock_routine"
+    }
+  }
+]

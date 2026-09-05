@@ -1,5 +1,40 @@
 [
   {
+    "id": "gp_to_be_intro",
+    "pattern": "I am {name}.",
+    "cefr": "A0",
+    "visualClue": "wave_gesture",
+    "examples": ["I am James.", "I am a teacher."]
+  },
+  {
+    "id": "gp_this_is",
+    "pattern": "This is {noun}.",
+    "cefr": "A0",
+    "visualClue": "point_gesture",
+    "examples": ["This is my friend.", "This is a key."]
+  },
+  {
+    "id": "gp_asking_name",
+    "pattern": "What is your name?",
+    "cefr": "A0",
+    "visualClue": "curious_expression",
+    "examples": ["Hello, what is your name?"]
+  },
+  {
+    "id": "gp_there_is_are",
+    "pattern": "There is {singular_object} in the {room}.",
+    "cefr": "A0",
+    "visualClue": "point_object",
+    "examples": ["There is a sofa in the living room.", "There are two lamps in the bedroom."]
+  },
+  {
+    "id": "gp_where_is",
+    "pattern": "Where is the {object}?",
+    "cefr": "A0",
+    "visualClue": "search_gesture",
+    "examples": ["Where is the key?", "Where is the desk?"]
+  },
+  {
     "id": "gp_present_simple_A0",
     "pattern": "I eat {food}.",
     "cefr": "A0",

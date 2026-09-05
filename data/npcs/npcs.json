@@ -147,6 +147,62 @@
       ]
     }
   },
+  "receptionist": {
+    "id": "receptionist",
+    "name": "Receptionist",
+    "portrait": "👩‍💼",
+    "avatar": "👩‍💼",
+    "role": "COSYlanguages HQ Receptionist",
+    "occupation": "Receptionist",
+    "teachingRole": "Greetings & Introductions Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "town_square",
+    "position3D": { "x": 380, "y": 280, "z": 0 },
+    "voice": "en-US-Standard-E",
+    "dailySchedule": [
+      { "time": "08:00", "location": "reception", "activity": "Welcoming new students" },
+      { "time": "13:00", "location": "cafe", "activity": "Lunch break" },
+      { "time": "15:00", "location": "reception", "activity": "Managing student registrations" }
+    ],
+    "conversationHistory": [],
+    "questHistory": ["q_ch1_meet_receptionist", "q_ch1_first_dialogue", "q_ch1_pick_up_key"],
+    "quests": ["q_ch1_meet_receptionist", "q_ch1_first_dialogue", "q_ch1_pick_up_key"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "emotion": "happy",
+          "text": "👋 Hello! Welcome to COSYlanguages Headquarters! What is your name?",
+          "visualAction": "👋 Welcome",
+          "grammarCheck": "Asking name & introduces self",
+          "options": [
+            { "label": "👋 Hello! I am a new student.", "next": 1, "rewardXP": 15, "questId": "q_ch1_first_dialogue" },
+            { "label": "🔑 Pick up apartment key", "next": 2, "rewardXP": 15, "questId": "q_ch1_pick_up_key" }
+          ]
+        },
+        {
+          "id": 1,
+          "emotion": "excited",
+          "text": "😊 Pleased to meet you! I am the receptionist here.",
+          "visualAction": "📝 Registration",
+          "options": [
+            { "label": "🔑 Take apartment key", "next": 2, "rewardXP": 15, "questId": "q_ch1_pick_up_key" }
+          ]
+        },
+        {
+          "id": 2,
+          "emotion": "happy",
+          "text": "🗝️ Here is your key! Head down the hallway to your apartment!",
+          "visualAction": "🔑 Key Handoff",
+          "options": [{ "label": "🙏 Thank you!", "next": 0 }]
+        }
+      ]
+    }
+  },
   "james_york": {
     "id": "james_york",
     "name": "James York",
@@ -164,46 +220,53 @@
     "position3D": { "x": 200, "y": 300, "z": 0 },
     "voice": "en-US-Standard-C",
     "dailySchedule": [
-      { "time": "09:00", "location": "apartment_living", "activity": "Mentoring new residents" },
-      { "time": "14:00", "location": "town_square", "activity": "Checking town square notice board" }
+      { "time": "07:00", "location": "apartment_bedroom", "activity": "Waking up and stretching" },
+      { "time": "07:30", "location": "apartment_bathroom", "activity": "Brushing teeth and washing face" },
+      { "time": "08:00", "location": "apartment_kitchen", "activity": "Cooking breakfast and drinking tea" },
+      { "time": "08:30", "location": "street", "activity": "Walking along City Avenue to work" },
+      { "time": "09:00", "location": "bus_stop", "activity": "Waiting for the morning bus" },
+      { "time": "12:00", "location": "apartment_living", "activity": "Midday rest in living room" },
+      { "time": "18:00", "location": "street", "activity": "Evening stroll" }
     ],
     "conversationHistory": [],
-    "questHistory": ["q1_key_door"],
+    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
+    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
     "dialogues": {
       "en": [
         {
           "id": 0,
           "emotion": "happy",
-          "text": "👋 Look! 👉 🔑 Key ➔ 🚪 Door ➔ 🔓 Open!",
-          "visualAction": "🔑 ➔ 🚪",
-          "grammarCheck": "Imperative Action Verbs (Look, Open, Turn)",
+          "text": "⏰ Good morning! What time is it? I always start my day at seven o'clock!",
+          "visualAction": "⏰ Morning Routine",
+          "grammarCheck": "Present Simple & Time & Frequency",
           "options": [
-            { "label": "👉 Try opening door!", "next": 1, "rewardXP": 15, "friendshipGain": 10, "questId": "q1_key_door" },
-            { "label": "❓ Ask James for help", "next": 2, "rewardXP": 10, "friendshipGain": 5 }
+            { "label": "🌅 Complete morning routine!", "next": 1, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_morning_routine" },
+            { "label": "📅 Follow daily schedule", "next": 2, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_daily_schedule" }
           ]
         },
         {
           "id": 1,
           "emotion": "excited",
-          "text": "🎉 Excellent! Cause and effect is the essence of direct language learning!",
-          "visualAction": "🔓 ➔ 🎉",
-          "options": [{ "label": "🚀 Continue exploring!", "next": 0 }]
+          "text": "🪥 First wake up, brush your teeth, wash, and eat breakfast in the kitchen!",
+          "visualAction": "🪥 Routine Actions",
+          "options": [{ "label": "🚌 Walk to the bus stop!", "next": 0, "questId": "q_ch3_unlock_routine" }]
         },
         {
           "id": 2,
           "emotion": "curious",
-          "text": "💡 Simply inspect objects around the room to discover their visual cause-and-effect chains!",
-          "options": [{ "label": "👍 Got it, thanks James!", "next": 0 }]
+          "text": "🚌 I usually take the bus in the morning and work in the afternoon!",
+          "visualAction": "🚌 Schedule Check",
+          "options": [{ "label": "⏰ Ask the time and habits!", "next": 0 }]
         }
       ],
       "fr": [
         {
           "id": 0,
           "emotion": "happy",
-          "text": "👋 Regardez! 👉 🔑 Clé ➔ 🚪 Porte ➔ 🔓 Ouvrir!",
-          "visualAction": "🔑 ➔ 🚪",
+          "text": "👋 Bonjour! Bienvenue à COSY Town! Je suis James York. Suivez-moi!",
+          "visualAction": "👋 Bienvenue",
           "options": [
-            { "label": "👉 Essayer d'ouvrir la porte!", "next": 1, "rewardXP": 15, "friendshipGain": 10, "questId": "q1_key_door" }
+            { "label": "🚶 Suivre James!", "next": 1, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch1_follow_james" }
           ]
         }
       ]
