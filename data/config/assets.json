@@ -28,9 +28,22 @@
     "dialogues/dylan_chef_restaurant.json",
     "dialogues/thomas_farmer_town_square.json",
     "dialogues/diana_voyager_town_square.json",
+    "dialogues/commuter_sam_bus_stop.json",
+    "dialogues/diana_voyager_crosswalk.json",
+    "dialogues/diana_voyager_town_hall.json",
+    "dialogues/diana_voyager_airport.json",
+    "dialogues/diana_voyager_hotel.json",
+    "dialogues/diana_voyager_tourist_office.json",
+    "dialogues/doctor_chloe_hospital.json",
     "dialogues/ella_bronx_town_square.json",
+    "dialogues/ella_bronx_school.json",
     "dialogues/anna_town_square.json",
-    "dialogues/marco_barista_cafe.json"
+    "dialogues/marco_barista_cafe.json",
+    "dialogues/neighbour_clara_hallway.json",
+    "dialogues/neighbour_leo_apartment_entrance.json",
+    "dialogues/shopkeeper_maya_fruit_market.json",
+    "dialogues/thomas_farmer_farm.json",
+    "dialogues/ticket_clerk_oliver_museum.json"
   ],
   "assetManifest": {
     "icons": {

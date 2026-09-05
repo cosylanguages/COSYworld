@@ -240,5 +240,29 @@
     "unlockCondition": {
       "questId": "q_ch11_health_champion"
     }
+  },
+  {
+    "id": "ach_ch12_world_traveler",
+    "title": "🌍 Citizen of the World",
+    "description": "Complete the first journey and connect your arrival in COSY Town with the wider world.",
+    "category": "chapter_12",
+    "icon": "🌍",
+    "xpReward": 150,
+    "unlockCondition": {
+      "questId": "q_ch12_first_journey",
+      "requiredAchievements": [
+        "ach_ch1_first_steps",
+        "ach_ch2_master_home",
+        "ach_early_riser",
+        "ach_city_navigator",
+        "ach_ch5_master_shopper",
+        "ach_ch6_culinary_master",
+        "ach_ch7_social_butterfly",
+        "ach_ch8_master_scholar",
+        "ach_ch9_city_explorer",
+        "ach_ch10_nature_master",
+        "ach_ch11_health_champion"
+      ]
+    }
   }
 ]

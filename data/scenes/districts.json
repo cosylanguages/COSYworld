@@ -2402,7 +2402,11 @@
       "window",
       "lamp",
       "bench",
-      "clock_tower"
+      "clock_tower",
+      "airport_check_in",
+      "passport",
+      "luggage",
+      "airport_ticket"
     ],
     "chapters": [
       "ch12"
@@ -2599,7 +2603,9 @@
       "lamp",
       "window",
       "plant",
-      "sofa"
+      "sofa",
+      "hotel_reception",
+      "hotel_key"
     ],
     "chapters": [
       "ch12"
@@ -5305,7 +5311,9 @@
       "bookshelf",
       "window",
       "lamp",
-      "plant"
+      "plant",
+      "information_desk",
+      "tourist_map"
     ],
     "chapters": [
       "ch12"

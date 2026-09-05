@@ -3378,5 +3378,48 @@
       }
     ],
     "nextQuestId": "q_shop_baguette"
+  },
+  {
+    "id": "q_ch12_prepare_luggage",
+    "chapter": "ch12",
+    "category": "travel",
+    "type": "object hunt",
+    "title": "🧳 Prepare Your Luggage",
+    "description": "Pack the essentials for your first journey: a passport, ticket, and clothes.",
+    "difficulty": "A1",
+    "NPC": "diana_voyager",
+    "requirements": { "targetObjects": ["passport", "airport_ticket", "jacket"] },
+    "unlockConditions": { "prerequisiteQuest": "q_ch11_health_champion" },
+    "steps": [
+      { "id": "step_1", "description": "Find the passport, ticket, and jacket", "target": "travel_luggage" }
+    ],
+    "objectives": [
+      { "id": "obj_1", "type": "object_hunt", "description": "Pack three travel essentials", "targetObjects": ["passport", "airport_ticket", "jacket"], "requiredCount": 3 }
+    ],
+    "reward": { "xp": 100, "vocabulary": ["passport", "luggage", "airport_ticket"], "grammar": "gt_going_to_future" },
+    "rewards": { "xp": 100, "vocabulary": ["passport", "luggage", "airport_ticket"], "grammar": "gt_going_to_future" },
+    "dialogues": { "start": "Diana is helping you prepare for your first journey.", "progress": "Pack your passport, ticket, and clothes.", "complete": "Your luggage is ready!" },
+    "npcTriggers": [{ "npcId": "diana_voyager", "action": "talk" }],
+    "sceneTriggers": [{ "locationId": "airport", "action": "enter" }],
+    "nextQuestId": "q_ch12_first_journey"
+  },
+  {
+    "id": "q_ch12_first_journey",
+    "chapter": "ch12",
+    "category": "travel",
+    "type": "exploration",
+    "title": "✈️ First Journey",
+    "description": "Check in at the airport and begin the journey that started when James welcomed you to COSY Town.",
+    "difficulty": "A1",
+    "NPC": "diana_voyager",
+    "requirements": { "prerequisiteQuest": "q_ch12_prepare_luggage", "targetLocation": "airport" },
+    "unlockConditions": { "prerequisiteQuest": "q_ch12_prepare_luggage" },
+    "steps": [{ "id": "step_1", "description": "Check in and find your gate", "target": "airport" }],
+    "objectives": [{ "id": "obj_1", "type": "exploration", "description": "Complete airport check-in", "targetLocation": "airport", "requiredCount": 1 }],
+    "reward": { "xp": 150, "grammar": "gt_going_to_future", "achievementId": "ach_ch12_world_traveler" },
+    "rewards": { "xp": 150, "grammar": "gt_going_to_future", "achievementId": "ach_ch12_world_traveler" },
+    "dialogues": { "start": "Diana is waiting at the airport check-in desk.", "progress": "Show your passport and find your gate.", "complete": "Your first journey begins!" },
+    "npcTriggers": [{ "npcId": "diana_voyager", "action": "talk" }],
+    "sceneTriggers": [{ "locationId": "airport", "hotspotId": "airport_check_in", "action": "inspect" }]
   }
 ]

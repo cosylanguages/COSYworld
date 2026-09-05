@@ -1,0 +1,35 @@
+{
+  "npcId": "diana_voyager",
+  "sceneId": "airport",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "Welcome to the airport! I am going to help you prepare your first journey.",
+      "emotion": "happy",
+      "highlights": ["airport_check_in", "passport"],
+      "grammarCheck": "Going to for future plans",
+      "playerOptions": [
+        { "text": "I am going to check in and show my passport.", "nextNodeId": "node_1", "vocabId": "vocab_passport", "grammarId": "gt_going_to_future", "rewardXP": 20, "rewardQuestId": "q_ch12_prepare_luggage" },
+        { "text": "I am going to pack my suitcase first.", "nextNodeId": "node_2", "vocabId": "vocab_suitcase", "grammarId": "gt_going_to_future", "rewardXP": 15 }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "Great! Your passport and ticket are ready. James York will be proud of your first journey.",
+      "emotion": "excited",
+      "playerOptions": [
+        { "text": "I am going to find my gate. Thank you, Diana!", "nextNodeId": null, "grammarId": "gt_going_to_future", "rewardXP": 25, "rewardQuestId": "q_ch12_first_journey" }
+      ],
+      "endConditions": ["q_ch12_prepare_luggage_complete"]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "Good plan. Pack your passport, ticket, and one change of clothes in your suitcase.",
+      "emotion": "curious",
+      "playerOptions": [
+        { "text": "I am going to pack everything carefully.", "nextNodeId": "node_0", "grammarId": "gt_going_to_future", "rewardXP": 15 }
+      ]
+    }
+  ]
+}

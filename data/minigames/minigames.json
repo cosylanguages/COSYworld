@@ -214,6 +214,21 @@
     }
   },
   {
+    "id": "mg_prepare_luggage_1",
+    "type": "object_hunt",
+    "title": "🧳 Prepare Your Luggage",
+    "description": "Pack a passport, ticket, and one change of clothes before your first journey.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 90,
+      "vocabulary": ["passport", "luggage", "airport_ticket", "jacket"]
+    },
+    "content": {
+      "timeLimitSeconds": 90,
+      "targetObjects": ["passport", "airport_ticket", "jacket"]
+    }
+  },
+  {
     "id": "mg_cafe_server_1",
     "type": "dialogue",
     "title": "🍽️ Café & Restaurant Server Challenge",

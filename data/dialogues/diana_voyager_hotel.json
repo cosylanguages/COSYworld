@@ -1,0 +1,34 @@
+{
+  "npcId": "diana_voyager",
+  "sceneId": "hotel",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "Hello! Are you going to stay at the hotel tonight?",
+      "emotion": "curious",
+      "highlights": ["hotel_reception", "hotel_key"],
+      "grammarCheck": "Going to for travel plans",
+      "playerOptions": [
+        { "text": "Yes, I am going to book a room for one night.", "nextNodeId": "node_1", "vocabId": "vocab_hotel", "grammarId": "gt_going_to_future", "rewardXP": 20 },
+        { "text": "I am going to ask about breakfast first.", "nextNodeId": "node_2", "vocabId": "vocab_breakfast", "grammarId": "gt_going_to_future", "rewardXP": 15 }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "Your room is ready. Here is your key. Have a wonderful holiday!",
+      "emotion": "happy",
+      "playerOptions": [
+        { "text": "Thank you. I am going to check in now.", "nextNodeId": null, "grammarId": "gt_going_to_future", "rewardXP": 20, "rewardQuestId": "q_ch12_first_journey" }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "Breakfast starts at seven. The dining room is next to the lobby.",
+      "emotion": "neutral",
+      "playerOptions": [
+        { "text": "Thank you for the information.", "nextNodeId": null, "rewardXP": 10 }
+      ]
+    }
+  ]
+}
