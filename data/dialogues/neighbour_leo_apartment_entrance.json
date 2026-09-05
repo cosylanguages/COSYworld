@@ -1,0 +1,43 @@
+{
+  "npcId": "neighbour_leo",
+  "sceneId": "apartment_entrance",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🙋 Hi! I am Leo. I am currently walking to the picnic area!",
+      "emotion": "happy",
+      "gestures": ["wave"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Present Continuous Tense (I am walking...)",
+      "visualAction": "🚶 ➔ 🧺",
+      "playerOptions": [
+        {
+          "text": "🙋 Hello Leo! I am exploring the neighbourhood!",
+          "nextNodeId": "node_1",
+          "rewardXP": 15,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch7_meet_neighbours"
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🧺 Great! My sister and I are eating lunch at the park right now!",
+      "emotion": "happy",
+      "gestures": ["smile"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Present Continuous & Family (My sister and I)",
+      "visualAction": "🧺 ➔ 😋",
+      "playerOptions": [
+        {
+          "text": "🧺 Enjoy your lunch, Leo!",
+          "nextNodeId": "node_0",
+          "friendshipGain": 10
+        }
+      ]
+    }
+  ]
+}

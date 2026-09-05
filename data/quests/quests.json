@@ -1343,6 +1343,215 @@
         "locationId": "town_square",
         "action": "speak"
       }
+    ],
+    "nextQuestId": "q_ch7_meet_neighbours"
+  },
+  {
+    "id": "q_ch7_meet_neighbours",
+    "chapter": "ch7",
+    "category": "conversation",
+    "type": "conversation",
+    "title": "🙋 Meet Your Neighbours",
+    "description": "Introduce yourself to neighbour Clara and neighbour Leo near your apartment hallway and entrance.",
+    "difficulty": "A1",
+    "NPC": "neighbour_clara",
+    "requirements": {
+      "prerequisiteQuest": "q_pronunciation_ella",
+      "targetNpc": "neighbour_clara"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_pronunciation_ella"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Converse with Clara or Leo in the hallway / entrance",
+        "target": "neighbour_clara"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "conversation",
+        "description": "Meet neighbours in hallway or apartment entrance",
+        "targetNpc": "neighbour_clara",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 80,
+      "vocabulary": [
+        "neighbour",
+        "friend",
+        "hallway"
+      ],
+      "grammar": "gt_present_continuous"
+    },
+    "rewards": {
+      "xp": 80,
+      "vocabulary": [
+        "neighbour",
+        "friend",
+        "hallway"
+      ],
+      "grammar": "gt_present_continuous"
+    },
+    "dialogues": {
+      "start": "Step out into the hallway and meet your new neighbours Clara and Leo!",
+      "progress": "Say hello to Clara or Leo.",
+      "complete": "You made great new neighbour acquaintances!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "neighbour_clara",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "hallway",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch7_friendship_bond"
+  },
+  {
+    "id": "q_ch7_friendship_bond",
+    "chapter": "ch7",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "💛 Build Friendship with Ella & Anna",
+    "description": "Increase your friendship score (20+ FP) with Ella Bronx to unlock her private conversation corner invitation.",
+    "difficulty": "A1",
+    "NPC": "ella_bronx",
+    "requirements": {
+      "prerequisiteQuest": "q_ch7_meet_neighbours",
+      "targetNpc": "ella_bronx"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch7_meet_neighbours"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Build 20+ friendship score with Ella Bronx and accept her invitation",
+        "target": "ella_bronx"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Unlock Ella's gated friendship invitation node at 20+ FP",
+        "targetNpc": "ella_bronx",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": [
+        "love",
+        "hate",
+        "invitation"
+      ],
+      "grammar": "gt_present_continuous"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": [
+        "love",
+        "hate",
+        "invitation"
+      ],
+      "grammar": "gt_present_continuous"
+    },
+    "dialogues": {
+      "start": "Talk with Ella and build your friendship score to unlock special invitations!",
+      "progress": "Gain friendship points through positive conversation.",
+      "complete": "Friendship bond leveled up! Ella invited you to the conversation corner!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "ella_bronx",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "conversation_corner",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch7_family_reunion"
+  },
+  {
+    "id": "q_ch7_family_reunion",
+    "chapter": "ch7",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "👨‍👩‍👧‍👦 Family & Friends Reunion",
+    "description": "Meet Anna's family and neighbours at the picnic area or conversation corner, completing Chapter 7.",
+    "difficulty": "A1",
+    "NPC": "anna",
+    "requirements": {
+      "prerequisiteQuest": "q_ch7_friendship_bond",
+      "targetLocation": "picnic_area"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch7_friendship_bond"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Gather with friends and family at the picnic area or conversation corner",
+        "target": "picnic_area"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Reunite with friends and family at picnic area",
+        "targetLocation": "picnic_area",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": [
+        "brother",
+        "sister",
+        "family",
+        "picnic"
+      ],
+      "grammar": "gt_present_continuous"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": [
+        "brother",
+        "sister",
+        "family",
+        "picnic"
+      ],
+      "grammar": "gt_present_continuous"
+    },
+    "dialogues": {
+      "start": "Meet Anna's visiting family and friends at the park picnic area!",
+      "progress": "Join the family reunion at picnic area.",
+      "complete": "Chapter 7 Complete! You are a true social butterfly in COSY Town!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "anna",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "picnic_area",
+        "action": "enter"
+      }
     ]
   },
   {

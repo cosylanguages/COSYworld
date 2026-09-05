@@ -1161,6 +1161,148 @@
       ]
     }
   },
+  "neighbour_clara": {
+    "id": "neighbour_clara",
+    "name": "Clara",
+    "portrait": "👩‍🦱",
+    "avatar": "👩‍🦱",
+    "role": "Apartment Neighbour",
+    "occupation": "Neighbour",
+    "teachingRole": "Family & Neighbourhood Greetings Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "conversation_corner",
+    "position3D": {
+      "x": 300,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-C",
+    "dailySchedule": [
+      {
+        "time": "08:00",
+        "location": "hallway",
+        "activity": "Greeting neighbours in the hallway"
+      },
+      {
+        "time": "14:00",
+        "location": "conversation_corner",
+        "activity": "Chatting at conversation corner"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch7_meet_neighbours"
+    ],
+    "quests": [
+      "q_ch7_meet_neighbours"
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👋 Hello neighbour! I am Clara from Apartment 102. Are you enjoying COSY Town?",
+          "visualAction": "👋 ➔ 🛋️",
+          "grammarCheck": "Greetings & Introducing Neighbours",
+          "options": [
+            {
+              "label": "👋 Hello Clara! Nice to meet my neighbour!",
+              "next": 1,
+              "rewardXP": 15,
+              "friendshipGain": 10,
+              "questId": "q_ch7_meet_neighbours"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "😊 We are having a small gathering at the conversation corner later. Would you like to come?",
+          "visualAction": "💬 ➔ ❤️",
+          "options": [
+            {
+              "label": "💬 I would love to join you!",
+              "next": 0,
+              "friendshipGain": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "neighbour_leo": {
+    "id": "neighbour_leo",
+    "name": "Leo",
+    "portrait": "👨‍🦰",
+    "avatar": "👨‍🦰",
+    "role": "Apartment Neighbour",
+    "occupation": "Neighbour",
+    "teachingRole": "Present Continuous & Friendship Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "picnic_area",
+    "position3D": {
+      "x": 420,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-D",
+    "dailySchedule": [
+      {
+        "time": "09:00",
+        "location": "apartment_entrance",
+        "activity": "Checking mail at entrance"
+      },
+      {
+        "time": "15:00",
+        "location": "picnic_area",
+        "activity": "Relaxing at picnic area"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch7_meet_neighbours"
+    ],
+    "quests": [
+      "q_ch7_meet_neighbours"
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🙋 Hi! I am Leo. I am currently walking to the picnic area!",
+          "visualAction": "🚶 ➔ 🧺",
+          "grammarCheck": "Present Continuous Tense (I am walking...)",
+          "options": [
+            {
+              "label": "🙋 Hello Leo! I am exploring the neighbourhood!",
+              "next": 1,
+              "rewardXP": 15,
+              "friendshipGain": 10,
+              "questId": "q_ch7_meet_neighbours"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🧺 Great! My sister and I are eating lunch at the park right now!",
+          "visualAction": "🧺 ➔ 😋",
+          "options": [
+            {
+              "label": "🧺 Enjoy your lunch, Leo!",
+              "next": 0,
+              "friendshipGain": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
   "commuter_sam": {
     "id": "commuter_sam",
     "name": "Sam",

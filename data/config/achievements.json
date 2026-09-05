@@ -185,5 +185,16 @@
     "unlockCondition": {
       "questId": "q_ch6_culinary_master"
     }
+  },
+  {
+    "id": "ach_ch7_social_butterfly",
+    "title": "🦋 Social Butterfly",
+    "description": "Meet neighbours Clara & Leo, build friendship levels with Ella & Anna, master Present Continuous, and complete Chapter 7.",
+    "category": "chapter_7",
+    "icon": "🦋",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch7_family_reunion"
+    }
   }
 ]

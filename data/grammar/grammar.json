@@ -1201,6 +1201,52 @@
     "unlockRequirements": { "quests": [], "level": 2, "discoveredObjects": [] }
   },
   {
+    "id": "gt_present_continuous",
+    "title": "Present Continuous Tense (Action in Progress) 🔄",
+    "difficulty": "A1",
+    "rule": "Use Present Continuous to describe actions happening right now at the time of speaking. Pattern: [Subject] + [am/is/are] + [Verb-ing]. Example: 'I am drinking coffee', 'She is walking in the park'.",
+    "examples": [
+      {
+        "text": "I am drinking coffee with Ella. She is talking to her friend.",
+        "targetLang": {
+          "en": "I am drinking coffee with Ella. She is talking to her friend.",
+          "fr": "Je bois du café avec Ella. Elle parle à son amie.",
+          "es": "Estoy bebiendo café con Ella. Ella está hablando con su amiga.",
+          "it": "Sto bevendo un caffè con Ella. Sta parlando con la sua amica.",
+          "de": "Ich trinke Kaffee mit Ella. Sie spricht mit ihrer Freundin.",
+          "ru": "Я пью кофе с Эллой. Она разговаривает со своей подругой."
+        },
+        "context": "Describing active conversations and current actions."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_present_continuous_1",
+        "type": "multiple_choice",
+        "question": "Choose the correct present continuous form: 'He ___ in the park right now.'",
+        "options": ["is walking", "walks", "walked"],
+        "correct": 0,
+        "explanation": "Use 'is' + verb-ing for third-person continuous action happening now.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "ella_bronx",
+        "prompt": "I am practicing English pronunciation right now!",
+        "grammarUsage": "Expressing actions in progress."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "conversation_corner",
+      "objects": ["sofa"],
+      "npcs": ["ella_bronx", "anna"],
+      "district": "Community Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Present continuous tense." },
+    "unlockRequirements": { "quests": ["q_convo_ella"], "level": 2, "discoveredObjects": [] }
+  },
+  {
     "id": "gt_going_to_future",
     "title": "Expressing Future Plans ('Going to') ✈️",
     "difficulty": "A1+",

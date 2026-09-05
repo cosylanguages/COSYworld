@@ -443,10 +443,16 @@
         "npcId": "james_york",
         "x": 250,
         "y": 300
+      },
+      {
+        "npcId": "neighbour_clara",
+        "x": 480,
+        "y": 290
       }
     ],
     "npcs": [
-      "james_york"
+      "james_york",
+      "neighbour_clara"
     ],
     "objects": [
       "hallway_light",
@@ -455,7 +461,8 @@
       "key"
     ],
     "chapters": [
-      "ch1"
+      "ch1",
+      "ch7"
     ]
   },
   "apartment_entrance": {
@@ -550,10 +557,16 @@
         "npcId": "james_york",
         "x": 480,
         "y": 275
+      },
+      {
+        "npcId": "neighbour_leo",
+        "x": 220,
+        "y": 290
       }
     ],
     "npcs": [
-      "james_york"
+      "james_york",
+      "neighbour_leo"
     ],
     "objects": [
       "apartment_door",
@@ -573,7 +586,8 @@
       "dress"
     ],
     "chapters": [
-      "ch1"
+      "ch1",
+      "ch7"
     ]
   },
   "apartment_living": {
