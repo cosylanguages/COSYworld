@@ -1,12 +1,12 @@
 # 🛠️ Auxiliary Apps Architecture & Repository Separation Strategy
 
 ## Executive Summary
-This document outlines the architectural recommendation and separation roadmap for modular web tools (Conjugation Trainer, Grammatical Gender Trainer, and other micro-learning applications) in the COSY ecosystem.
+This document outlines the architectural recommendation and migration strategy for modular web tools (Conjugation Trainer, Grammatical Gender Trainer, and other micro-learning applications) in the COSY ecosystem.
 
 ---
 
 ## 🎯 Strategic Objective
-Separate standalone web apps and utility tools from the core `COSYworld` RPG repository into **1 dedicated shared auxiliary applications repository** (e.g., `cosy-tools` or `cosy-apps`).
+Separate standalone web apps and utility tools from the core `COSYworld` RPG repository into **1 dedicated shared auxiliary applications repository** (`cosy-tools`).
 
 ---
 
@@ -42,10 +42,13 @@ cosy-tools/
 ├── shared/
 │   ├── js/
 │   │   ├── tts_helper.js       # Shared Web Speech API voice synthesis
+│   │   ├── widget_wrapper.js   # Shared Custom Element / iframe widget wrapper
 │   │   └── storage.js          # Shared state & progress management
 │   └── data/                   # Shared datasets across tools & target languages
 │       ├── conjugations.json   # Verb conjugation tables (14 target languages)
 │       └── genders.json        # Noun gender datasets with visual cues
+├── manifest.json               # Web App Manifest for device installability
+├── sw.js                       # Service Worker for offline accessibility
 └── README.md                   # Setup & developer contribution guide
 ```
 
@@ -57,17 +60,36 @@ cosy-tools/
    - `COSYworld` NPC dialogues or minigames can link directly to specific tools with contextual parameters:
    - Example: `https://tools.cosylanguages.com/conjugation?lang=es&verb=hablar`
 
-2. **Monolingual Direct Immersion Principles**:
+2. **Embeddable Widget Architecture**:
+   - Web apps in `cosy-tools` can be embedded into the main website or third-party platforms as lightweight widgets (via Custom Web Components or `<iframe>` embeds).
+
+3. **Offline Accessibility & Device Installability**:
+   - Equipped with Progressive Web App (PWA) manifests and Service Worker caching (`sw.js`) so users can install apps to home screens and practice offline across devices.
+
+4. **Monolingual Direct Immersion Principles**:
    - All auxiliary apps maintain COSY's core **Monolingual Learning Architecture** (no translation cards, direct visual/auditory context, 14 supported target languages).
 
-3. **Unified Progress & XP Synchronization**:
+5. **Unified Progress & XP Synchronization**:
    - Share LocalStorage keys (`cosy_player_progress`, `cosy_vocabulary_mastery`) so practice in `cosy-tools` can reward XP and unlock achievements in `COSYworld`.
 
 ---
 
-## 🚀 Migration Steps & Next Actions
+## 🚀 Migration Strategy & Execution Plan
 
-1. **Initialize `cosy-tools` Repository**: Create new Git repository with shared COSY CSS tokens.
-2. **Extract Conjugation & Gender Modules**: Move conjugation and gender practice utilities into dedicated app folders.
-3. **Harmonize Data Schemas**: Standardize JSON schemas for verbs, conjugations, and noun genders across 14 target languages.
-4. **Update Web Navigation & Links**: Connect the main COSY website and RPG game HUD to `cosy-tools` apps.
+1. **Phase 1: Repository Initialization (`cosy-tools`)**:
+   - Create the `cosy-tools` standalone Git repository.
+   - Import shared COSY CSS tokens and UI components.
+
+2. **Phase 2: App Extraction & Modularity**:
+   - Extract Conjugation and Grammatical Gender modules into `/apps/conjugation` and `/apps/gender`.
+   - Build central tools directory at `index.html`.
+
+3. **Phase 3: Dataset Harmonization**:
+   - Consolidate conjugation tables and noun gender metadata across all 14 target languages under `/shared/data`.
+
+4. **Phase 4: Widget & PWA Offline Enablement**:
+   - Add `widget_wrapper.js` for web widget embedding.
+   - Configure `sw.js` and `manifest.json` for offline installation on mobile and desktop.
+
+5. **Phase 5: Website Navigation & Cross-Links**:
+   - Link `COSYworld` HUD and main site header to the new `cosy-tools` portal.
