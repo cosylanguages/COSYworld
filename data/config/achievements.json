@@ -229,5 +229,16 @@
     "unlockCondition": {
       "questId": "q_ch10_nature_master"
     }
+  },
+  {
+    "id": "ach_ch11_health_champion",
+    "title": "🩺 Health & Sports Champion",
+    "description": "Visit Doctor Chloe, express health symptoms with Have got/Need/Feel, complete the sports circuit, and complete Chapter 11.",
+    "category": "chapter_11",
+    "icon": "🩺",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch11_health_champion"
+    }
   }
 ]
