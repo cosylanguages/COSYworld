@@ -540,6 +540,188 @@
         "action": "inspect"
       }
     ],
+    "nextQuestId": "q_ch3_morning_routine"
+  },
+  {
+    "id": "q_ch3_morning_routine",
+    "category": "vocabulary",
+    "type": "collect",
+    "title": "🌅 Complete Your Morning Routine",
+    "description": "Wake up, brush your teeth, and check the alarm clock in your morning routine.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch2_unlock_furniture",
+      "targetObjects": ["alarm_clock"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch2_unlock_furniture"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Check the alarm clock in the bedroom to start your morning routine",
+        "target": "alarm_clock"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect alarm_clock",
+        "targetObjects": ["alarm_clock"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 90,
+      "vocabulary": ["wake up", "brush", "wash", "eat", "drink", "cook", "clock", "morning"],
+      "grammar": "gt_present_simple"
+    },
+    "rewards": {
+      "xp": 90,
+      "vocabulary": ["wake up", "brush", "wash", "eat", "drink", "cook", "clock", "morning"],
+      "grammar": "gt_present_simple"
+    },
+    "dialogues": {
+      "start": "Start your morning routine by checking the alarm clock!",
+      "progress": "Check the alarm clock.",
+      "complete": "Morning routine completed!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "apartment_bedroom",
+        "hotspotId": "alarm_clock",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch3_daily_schedule"
+  },
+  {
+    "id": "q_ch3_daily_schedule",
+    "category": "travel",
+    "type": "directions",
+    "title": "📅 Follow a Daily Schedule",
+    "description": "Walk out to the street and check the street clock to follow your daily schedule.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch3_morning_routine",
+      "targetObjects": ["street_clock"]
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch3_morning_routine"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Walk out to the street and inspect the street clock",
+        "target": "street_clock"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "vocabulary",
+        "description": "Inspect street_clock",
+        "targetObjects": ["street_clock"],
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 95,
+      "vocabulary": ["work", "study", "afternoon", "evening"],
+      "grammar": "gt_time"
+    },
+    "rewards": {
+      "xp": 95,
+      "vocabulary": ["work", "study", "afternoon", "evening"],
+      "grammar": "gt_time"
+    },
+    "dialogues": {
+      "start": "Walk out to the street and check the clock to follow your daily schedule!",
+      "progress": "Check the street clock.",
+      "complete": "Daily schedule tracked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "street",
+        "hotspotId": "street_clock",
+        "action": "inspect"
+      }
+    ],
+    "nextQuestId": "q_ch3_unlock_routine"
+  },
+  {
+    "id": "q_ch3_unlock_routine",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🚌 Unlock Routine Achievements",
+    "description": "Reach the bus stop and check the bus schedule to unlock routine achievements and complete Chapter 3.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch3_daily_schedule",
+      "targetLocation": "bus_stop"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch3_daily_schedule"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Travel to the bus stop and inspect the bus stop sign",
+        "target": "bus_stop"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter bus_stop",
+        "targetLocation": "bus_stop",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 100,
+      "vocabulary": ["always", "usually", "never", "sleep"],
+      "grammar": "gt_frequency"
+    },
+    "rewards": {
+      "xp": 100,
+      "vocabulary": ["always", "usually", "never", "sleep"],
+      "grammar": "gt_frequency"
+    },
+    "dialogues": {
+      "start": "Head to the bus stop to complete your daily routine voyage!",
+      "progress": "Wait at the bus stop.",
+      "complete": "Chapter 3 Complete! Routine achievements unlocked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "bus_stop",
+        "action": "enter"
+      }
+    ],
     "nextQuestId": "q_explore_living"
   },
   {

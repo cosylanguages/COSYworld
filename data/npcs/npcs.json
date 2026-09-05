@@ -220,42 +220,43 @@
     "position3D": { "x": 200, "y": 300, "z": 0 },
     "voice": "en-US-Standard-C",
     "dailySchedule": [
-      { "time": "08:00", "location": "town_entrance", "activity": "Greeting arriving visitors at Town Entrance" },
-      { "time": "10:00", "location": "cosylanguages_hq", "activity": "Guiding students through HQ Atrium" },
-      { "time": "12:00", "location": "apartment_living", "activity": "Helping organize the apartment" },
-      { "time": "14:00", "location": "apartment_kitchen", "activity": "Checking kitchen household objects" },
-      { "time": "16:00", "location": "apartment_bedroom", "activity": "Inspecting bedroom furniture" },
-      { "time": "18:00", "location": "apartment_balcony", "activity": "Enjoying balcony view" }
+      { "time": "07:00", "location": "apartment_bedroom", "activity": "Waking up and stretching" },
+      { "time": "07:30", "location": "apartment_bathroom", "activity": "Brushing teeth and washing face" },
+      { "time": "08:00", "location": "apartment_kitchen", "activity": "Cooking breakfast and drinking tea" },
+      { "time": "08:30", "location": "street", "activity": "Walking along City Avenue to work" },
+      { "time": "09:00", "location": "bus_stop", "activity": "Waiting for the morning bus" },
+      { "time": "12:00", "location": "apartment_living", "activity": "Midday rest in living room" },
+      { "time": "18:00", "location": "street", "activity": "Evening stroll" }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture"],
-    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture"],
+    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
+    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
     "dialogues": {
       "en": [
         {
           "id": 0,
           "emotion": "happy",
-          "text": "🏠 Welcome to your home! Let's explore every room and organize the apartment together!",
-          "visualAction": "🏠 Apartment Tour",
-          "grammarCheck": "There is / There are / Demonstratives",
+          "text": "⏰ Good morning! What time is it? I always start my day at seven o'clock!",
+          "visualAction": "⏰ Morning Routine",
+          "grammarCheck": "Present Simple & Time & Frequency",
           "options": [
-            { "label": "🛋️ Describe your room & explore!", "next": 1, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch2_explore_rooms" },
-            { "label": "🧹 Help James organize apartment", "next": 2, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch2_organize_apartment" }
+            { "label": "🌅 Complete morning routine!", "next": 1, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_morning_routine" },
+            { "label": "📅 Follow daily schedule", "next": 2, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_daily_schedule" }
           ]
         },
         {
           "id": 1,
           "emotion": "excited",
-          "text": "✨ There is a red sofa in the living room and a green plant on the balcony!",
-          "visualAction": "🛋️ Room Description",
-          "options": [{ "label": "🔍 Find objects in every room!", "next": 0, "questId": "q_ch2_interact_objects" }]
+          "text": "🪥 First wake up, brush your teeth, wash, and eat breakfast in the kitchen!",
+          "visualAction": "🪥 Routine Actions",
+          "options": [{ "label": "🚌 Walk to the bus stop!", "next": 0, "questId": "q_ch3_unlock_routine" }]
         },
         {
           "id": 2,
           "emotion": "curious",
-          "text": "❓ Where is the desk? That desk belongs in the bedroom next to the bed!",
-          "visualAction": "🔍 Organize Furniture",
-          "options": [{ "label": "🪑 Unlock furniture vocabulary!", "next": 0, "questId": "q_ch2_unlock_furniture" }]
+          "text": "🚌 I usually take the bus in the morning and work in the afternoon!",
+          "visualAction": "🚌 Schedule Check",
+          "options": [{ "label": "⏰ Ask the time and habits!", "next": 0 }]
         }
       ],
       "fr": [

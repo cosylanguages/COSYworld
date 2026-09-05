@@ -413,6 +413,81 @@
     "npcs": [],
     "objects": ["balcony_chair", "balcony_plant"]
   },
+  "street": {
+    "id": "street",
+    "district": "City Centre",
+    "level": "A1",
+    "icon": "🛣️",
+    "weather": "clear",
+    "music": "nature",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": -800,
+    "worldY": 1000,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["town_square", "bus_stop"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Street", "fr": "Rue", "it": "Strada", "es": "Calle", "de": "Straße", "ru": "Улица" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 320, "width": 800, "height": 180, "type": "asphalt" }
+    ],
+    "buildings": [
+      { "id": "street_shops", "x": 150, "y": 100, "width": 500, "height": 220, "color": "#475569", "label": "City Avenue 🏢" }
+    ],
+    "doors": [
+      { "targetId": "town_square", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Town Square 🏛️", "fr": "Place 🏛️", "it": "Piazza 🏛️", "es": "Plaza 🏛️", "de": "Stadtplatz 🏛️", "ru": "Площадь 🏛️" } },
+      { "targetId": "bus_stop", "x": 710, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Bus Stop 🚌", "fr": "Arrêt de bus 🚌", "it": "Fermata autobus 🚌", "es": "Parada de autobús 🚌", "de": "Bushaltestelle 🚌", "ru": "Автобусная остановка 🚌" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 400, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["street_clock", "street_lamp"]
+  },
+  "bus_stop": {
+    "id": "bus_stop",
+    "district": "City Centre",
+    "level": "A1",
+    "icon": "🚌",
+    "weather": "clear",
+    "music": "nature",
+    "timeOfDay": "morning",
+    "transition": "seamless",
+    "worldX": 0,
+    "worldY": 1000,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": ["street"],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": { "en": "Bus Stop", "fr": "Arrêt de bus", "it": "Fermata dell'autobus", "es": "Parada de autobús", "de": "Bushaltestelle", "ru": "Автобусная остановка" },
+    "viewBox": "0 0 800 500",
+    "roads": [
+      { "x": 0, "y": 320, "width": 800, "height": 180, "type": "asphalt" }
+    ],
+    "buildings": [
+      { "id": "bus_shelter", "x": 240, "y": 140, "width": 320, "height": 180, "color": "#0284c7", "label": "Bus Shelter 🚏" }
+    ],
+    "doors": [
+      { "targetId": "street", "x": 20, "y": 180, "width": 70, "height": 220, "labelY": 160, "labels": { "en": "Street 🛣️", "fr": "Rue 🛣️", "it": "Strada 🛣️", "es": "Calle 🛣️", "de": "Straße 🛣️", "ru": "Улица 🛣️" } }
+    ],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "npcs": ["james_york"],
+    "objects": ["bus_stop_sign", "bus_timetable_board"]
+  },
   "town_square": {
     "id": "town_square",
     "district": "City Centre",

@@ -491,70 +491,141 @@
   },
   {
     "id": "gt_present_simple",
-    "title": "Daily Actions & Habitual Routines 🏃",
+    "title": "Daily Actions & Habitual Routines (Present Simple) 🏃",
     "difficulty": "A1",
-    "rule": "Present Simple Tense: Used for habitual routines and direct current states. Structure: [Subject] + [Base Verb/S-form]. Example: 'I walk to the town square every morning'.",
+    "rule": "Present Simple Tense: Used for habitual routines and direct current states. Structure: [Subject] + [Base Verb]. Example: 'I wake up at seven o'clock'.",
     "examples": [
       {
-        "text": "🏃 I explore COSY Town every day.",
+        "text": "I wake up and brush my teeth every morning.",
         "targetLang": {
-          "en": "🏃 I explore COSY Town every day.",
-          "fr": "🏃 J'explore COSY Town chaque jour.",
-          "es": "🏃 Exploro COSY Town todos los días.",
-          "it": "🏃 Esploro COSY Town ogni giorno.",
-          "de": "🏃 Ich erkunde COSY Town jeden Tag.",
-          "ru": "🏃 Я исследую COSY Town каждый день."
+          "en": "I wake up and brush my teeth every morning.",
+          "fr": "Je me réveille et me brosse les dents chaque matin.",
+          "es": "Me despierto y me cepillo los dientes cada mañana.",
+          "it": "Mi sveglio e mi lavo i denti ogni mattina.",
+          "de": "Ich wache auf und putze mir jeden Morgen die Zähne.",
+          "ru": "Я просыпаюсь и чищу зубы каждое утро."
         },
-        "context": "Expressing daily learning habits."
-      },
-      {
-        "text": "☕ Lucas bakes fresh baguettes in the morning.",
-        "targetLang": {
-          "en": "☕ Lucas bakes fresh baguettes in the morning.",
-          "fr": "☕ Lucas cuit des baguettes fraîches le matin.",
-          "es": "☕ Lucas hornea baguettes frescas por la mañana.",
-          "it": "☕ Lucas prepara baguette fresche la mattina.",
-          "de": "☕ Lucas bäckt morgens frische Baguettes.",
-          "ru": "☕ Лукас печет свежие багеты по утрам."
-        },
-        "context": "Describing NPC schedules."
+        "context": "Describing morning routine."
       }
     ],
     "interactiveExercises": [
       {
         "id": "ex_present_simple_1",
         "type": "multiple_choice",
-        "question": "Which sentence correctly describes finding 3 objects?",
-        "options": ["I discover three objects in the city", "I discovers three objects", "I discovering three objects"],
+        "question": "Which sentence correctly describes a morning habit?",
+        "options": ["I wake up at seven o'clock", "I wakes up at seven o'clock", "I waking up seven o'clock"],
         "correct": 0,
-        "explanation": "First person singular 'I' uses the base verb form without 's'.",
+        "explanation": "First person singular 'I' uses base verb form.",
         "xpReward": 30
       }
     ],
     "dialogues": [
       {
-        "npcId": "anna",
-        "prompt": "⚡ I discover items quickly! How many can you find?",
-        "grammarUsage": "Present simple challenge dialogue."
+        "npcId": "james_york",
+        "prompt": "I wake up early and study every morning!",
+        "grammarUsage": "Expressing daily routines."
       }
     ],
     "sceneIntegration": {
-      "locationId": "town_square",
-      "objects": ["clock_tower", "fountain"],
-      "npcs": ["anna"],
+      "locationId": "apartment_bedroom",
+      "objects": ["alarm_clock", "bed"],
+      "npcs": ["james_york"],
+      "district": "Residential District"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Present simple tense actions." },
+    "unlockRequirements": { "quests": ["q_ch3_morning_routine"], "level": 2, "discoveredObjects": ["alarm_clock"] }
+  },
+  {
+    "id": "gt_time",
+    "title": "Telling Time & Time of Day 🕒",
+    "difficulty": "A1",
+    "rule": "Use 'at [time]' and time of day expressions: 'in the morning', 'in the afternoon', 'in the evening'. Pattern: [at + time] / [in the + time_of_day].",
+    "examples": [
+      {
+        "text": "What time is it? It is eight o'clock in the morning.",
+        "targetLang": {
+          "en": "What time is it? It is eight o'clock in the morning.",
+          "fr": "Quelle heure est-il ? Il est huit heures du matin.",
+          "es": "¿Qué hora es? Son las ocho de la mañana.",
+          "it": "Che ora è? Sono le otto del mattino.",
+          "de": "Wie spät ist es? Es ist acht Uhr morgens.",
+          "ru": "Который час? Восемь часов утра."
+        },
+        "context": "Asking and telling time."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_time_1",
+        "type": "multiple_choice",
+        "question": "How do you ask someone the current time?",
+        "options": ["What time is it?", "When time is?", "How clock is it?"],
+        "correct": 0,
+        "explanation": "Use 'What time is it?' to ask the time.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "It is eight o'clock in the morning! Time for breakfast!",
+        "grammarUsage": "Stating current time and period of day."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "street",
+      "objects": ["street_clock", "alarm_clock"],
+      "npcs": ["james_york"],
       "district": "City Centre"
     },
-    "voice": {
-      "lang": "en",
-      "rate": 1.0,
-      "pitch": 1.0,
-      "audioPrompt": "Present simple tense actions."
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Time telling structures." },
+    "unlockRequirements": { "quests": ["q_ch3_daily_schedule"], "level": 2, "discoveredObjects": ["street_clock"] }
+  },
+  {
+    "id": "gt_frequency",
+    "title": "Adverbs of Frequency (Always / Usually / Never) 🔄",
+    "difficulty": "A1",
+    "rule": "Place frequency adverbs before main verbs or after 'to be'. Pattern: [Subject] + [always/usually/sometimes/never] + [Verb].",
+    "examples": [
+      {
+        "text": "I always brush my teeth in the morning. I am never late.",
+        "targetLang": {
+          "en": "I always brush my teeth in the morning. I am never late.",
+          "fr": "Je me brosse toujours les dents le matin. Je ne suis jamais en retard.",
+          "es": "Siempre me cepillo los dientes por la mañana. Nunca llego tarde.",
+          "it": "Lavo sempre i denti la mattina. Non sono mai in ritardo.",
+          "de": "Ich putze mir morgens immer die Zähne. Ich bin nie zu spät.",
+          "ru": "Я всегда чищу зубы по утрам. Я никогда не опаздываю."
+        },
+        "context": "Expressing frequency of habits."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_frequency_1",
+        "type": "multiple_choice",
+        "question": "Which word means 100% of the time?",
+        "options": ["always", "sometimes", "never"],
+        "correct": 0,
+        "explanation": "'Always' expresses 100% frequency.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "I always take the bus at eight o'clock!",
+        "grammarUsage": "Expressing habitual frequency."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "bus_stop",
+      "objects": ["bus_stop_sign", "bus_timetable_board"],
+      "npcs": ["james_york"],
+      "district": "City Centre"
     },
-    "unlockRequirements": {
-      "quests": ["q3_anna_challenge"],
-      "level": 2,
-      "discoveredObjects": ["clock_tower"]
-    }
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Frequency adverbs." },
+    "unlockRequirements": { "quests": ["q_ch3_unlock_routine"], "level": 2, "discoveredObjects": ["bus_stop_sign"] }
   },
   {
     "id": "gt_likes",

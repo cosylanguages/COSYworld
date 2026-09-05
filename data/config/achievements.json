@@ -86,5 +86,38 @@
     "unlockCondition": {
       "questId": "q_ch2_unlock_furniture"
     }
+  },
+  {
+    "id": "ach_morning_master",
+    "title": "🌅 Early Bird",
+    "description": "Complete your full morning routine from bedroom to kitchen.",
+    "category": "chapter_3",
+    "icon": "🌅",
+    "xpReward": 90,
+    "unlockCondition": {
+      "questId": "q_ch3_morning_routine"
+    }
+  },
+  {
+    "id": "ach_schedule_tracker",
+    "title": "📅 Schedule Tracker",
+    "description": "Follow a daily schedule across town and tell the time.",
+    "category": "chapter_3",
+    "icon": "🕒",
+    "xpReward": 95,
+    "unlockCondition": {
+      "questId": "q_ch3_daily_schedule"
+    }
+  },
+  {
+    "id": "ach_routine_habit_master",
+    "title": "🚌 Habit Master",
+    "description": "Master routine verbs, time, and adverbs of frequency in Chapter 3.",
+    "category": "chapter_3",
+    "icon": "🚌",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch3_unlock_routine"
+    }
   }
 ]

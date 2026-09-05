@@ -180,6 +180,48 @@
     "ambientSounds": ["nature"],
     "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
   },
+  "street": {
+    "id": "street",
+    "type": "street",
+    "name": { "en": "Street", "fr": "Rue", "it": "Strada", "es": "Calle", "de": "Straße", "ru": "Улица" },
+    "image": "🛣️",
+    "background": {
+      "wallColor": "#cbd5e1",
+      "floorColor": "#334155",
+      "dividerColor": "#1e293b"
+    },
+    "hotspots": [
+      { "id": "street_walk_zone", "label": "Pedestrian Street", "x": 100, "y": 180, "width": 600, "height": 120 }
+    ],
+    "interactiveObjects": ["street_clock", "street_lamp"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 400, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_day", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "bus_stop": {
+    "id": "bus_stop",
+    "type": "bus_stop",
+    "name": { "en": "Bus Stop", "fr": "Arrêt de bus", "it": "Fermata dell'autobus", "es": "Parada de autobús", "de": "Bushaltestelle", "ru": "Автобусная остановка" },
+    "image": "🚌",
+    "background": {
+      "wallColor": "#bae6fd",
+      "floorColor": "#0284c7",
+      "dividerColor": "#0369a1"
+    },
+    "hotspots": [
+      { "id": "bus_shelter_zone", "label": "Bus Stop Shelter", "x": 200, "y": 180, "width": 400, "height": 120 }
+    ],
+    "interactiveObjects": ["bus_stop_sign", "bus_timetable_board"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0)", "opacity": 0 }
+  },
   "reception": {
     "id": "reception",
     "type": "reception",
