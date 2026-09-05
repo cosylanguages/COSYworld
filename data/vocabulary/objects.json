@@ -15,8 +15,26 @@
     "soundCue": "key_clink",
     "animation": "glow",
     "interaction": "inspect",
-    "actionChain": { "nextObject": "door_lock", "actionIcon": "🔓 Open Door" },
-    "words": { "en": "Key", "fr": "Clé", "it": "Chiave", "es": "Llave", "de": "Schlüssel", "ru": "Ключ", "el": "Κλειδί", "pt": "Chave", "hy": "Բանալի", "ka": "გასაღები", "br": "Alc'hwez", "tt": "Төп", "ba": "Асҡос", "cv": "Уҫӑ" },
+    "actionChain": {
+      "nextObject": "door_lock",
+      "actionIcon": "🔓 Open Door"
+    },
+    "words": {
+      "en": "Key",
+      "fr": "Clé",
+      "it": "Chiave",
+      "es": "Llave",
+      "de": "Schlüssel",
+      "ru": "Ключ",
+      "el": "Κλειδί",
+      "pt": "Chave",
+      "hy": "Բանալի",
+      "ka": "გასაღები",
+      "br": "Alc'hwez",
+      "tt": "Төп",
+      "ba": "Асҡос",
+      "cv": "Уҫӑ"
+    },
     "visualSequence": "🔑 Key ➔ Inserts into Lock ➔ 🚪 Unlocks Door"
   },
   "door_lock": {
@@ -35,7 +53,22 @@
     "soundCue": "door_open",
     "animation": "pulse",
     "interaction": "transition",
-    "words": { "en": "Door", "fr": "Porte", "it": "Porta", "es": "Puerta", "de": "Tür", "ru": "Дверь", "el": "Πόρτα", "pt": "Porta", "hy": "Դուռ", "ka": "კარი", "br": "Dor", "tt": "Ишек", "ba": "Ишек", "cv": "Алак" },
+    "words": {
+      "en": "Door",
+      "fr": "Porte",
+      "it": "Porta",
+      "es": "Puerta",
+      "de": "Tür",
+      "ru": "Дверь",
+      "el": "Πόρτα",
+      "pt": "Porta",
+      "hy": "Դուռ",
+      "ka": "კარი",
+      "br": "Dor",
+      "tt": "Ишек",
+      "ba": "Ишек",
+      "cv": "Алак"
+    },
     "visualSequence": "🚪 Closed Door ➔ Turn Handle ➔ 🔓 Open"
   },
   "sofa": {
@@ -54,7 +87,22 @@
     "soundCue": "soft_cushion",
     "animation": "float",
     "interaction": "sit",
-    "words": { "en": "Sofa", "fr": "Canapé", "it": "Divano", "es": "Sofá", "de": "Sofa", "ru": "Диван", "el": "Καναπές", "pt": "Sofá", "hy": "Բազմոց", "ka": "დიվანი", "br": "Kador-vras", "tt": "Диван", "ba": "Диван", "cv": "Диван" },
+    "words": {
+      "en": "Sofa",
+      "fr": "Canapé",
+      "it": "Divano",
+      "es": "Sofá",
+      "de": "Sofa",
+      "ru": "Диван",
+      "el": "Καναπές",
+      "pt": "Sofá",
+      "hy": "Բազմոց",
+      "ka": "დიվანი",
+      "br": "Kador-vras",
+      "tt": "Диван",
+      "ba": "Диван",
+      "cv": "Диван"
+    },
     "visualSequence": "🛋️ Sofa ➔ Walk over ➔ 🧘 Sit & Rest"
   },
   "coffee_table": {
@@ -73,7 +121,14 @@
     "soundCue": "wood_tap",
     "animation": "glow",
     "interaction": "inspect",
-    "words": { "en": "Table", "fr": "Table basse", "it": "Tavolino", "es": "Mesa de centro", "de": "Couchtisch", "ru": "Журнальный столик" }
+    "words": {
+      "en": "Table",
+      "fr": "Table basse",
+      "it": "Tavolino",
+      "es": "Mesa de centro",
+      "de": "Couchtisch",
+      "ru": "Журнальный столик"
+    }
   },
   "tv": {
     "id": "tv",
@@ -91,7 +146,14 @@
     "soundCue": "tv_chime",
     "animation": "pulse",
     "interaction": "watch",
-    "words": { "en": "Television", "fr": "Télévision", "it": "Televisione", "es": "Televisión", "de": "Fernseher", "ru": "Телевизор" }
+    "words": {
+      "en": "Television",
+      "fr": "Télévision",
+      "it": "Televisione",
+      "es": "Televisión",
+      "de": "Fernseher",
+      "ru": "Телевизор"
+    }
   },
   "bookshelf": {
     "id": "bookshelf",
@@ -109,7 +171,14 @@
     "soundCue": "page_turn",
     "animation": "glow",
     "interaction": "read",
-    "words": { "en": "Book / Bookshelf", "fr": "Livre / Bibliothèque", "it": "Libro / Libreria", "es": "Libro / Estantería", "de": "Buch / Bücherregal", "ru": "Книга / Полка" }
+    "words": {
+      "en": "Book / Bookshelf",
+      "fr": "Livre / Bibliothèque",
+      "it": "Libro / Libreria",
+      "es": "Libro / Estantería",
+      "de": "Buch / Bücherregal",
+      "ru": "Книга / Полка"
+    }
   },
   "plant": {
     "id": "plant",
@@ -127,7 +196,14 @@
     "soundCue": "leaf_rustle",
     "animation": "float",
     "interaction": "water",
-    "words": { "en": "Plant", "fr": "Plante", "it": "Pianta", "es": "Planta", "de": "Pflanze", "ru": "Растение" }
+    "words": {
+      "en": "Plant",
+      "fr": "Plante",
+      "it": "Pianta",
+      "es": "Planta",
+      "de": "Pflanze",
+      "ru": "Растение"
+    }
   },
   "window": {
     "id": "window",
@@ -145,7 +221,14 @@
     "soundCue": "breeze",
     "animation": "pulse",
     "interaction": "look_out",
-    "words": { "en": "Window", "fr": "Fenêtre", "it": "Finestra", "es": "Ventana", "de": "Fenster", "ru": "Окно" }
+    "words": {
+      "en": "Window",
+      "fr": "Fenêtre",
+      "it": "Finestra",
+      "es": "Ventana",
+      "de": "Fenster",
+      "ru": "Окно"
+    }
   },
   "lamp": {
     "id": "lamp",
@@ -163,7 +246,14 @@
     "soundCue": "click_switch",
     "animation": "glow",
     "interaction": "toggle_light",
-    "words": { "en": "Lamp", "fr": "Lampe", "it": "Lampada", "es": "Lámpara", "de": "Lampe", "ru": "Лампа" }
+    "words": {
+      "en": "Lamp",
+      "fr": "Lampe",
+      "it": "Lampada",
+      "es": "Lámpara",
+      "de": "Lampe",
+      "ru": "Лампа"
+    }
   },
   "fridge": {
     "id": "fridge",
@@ -181,7 +271,14 @@
     "soundCue": "fridge_hum",
     "animation": "glow",
     "interaction": "open",
-    "words": { "en": "Refrigerator", "fr": "Réfrigérateur", "it": "Frigorifero", "es": "Refrigerador", "de": "Kühlschrank", "ru": "Холодильник" }
+    "words": {
+      "en": "Refrigerator",
+      "fr": "Réfrigérateur",
+      "it": "Frigorifero",
+      "es": "Refrigerador",
+      "de": "Kühlschrank",
+      "ru": "Холодильник"
+    }
   },
   "kettle": {
     "id": "kettle",
@@ -199,7 +296,14 @@
     "soundCue": "kettle_whistle",
     "animation": "pulse",
     "interaction": "boil",
-    "words": { "en": "Kettle", "fr": "Bouilloire", "it": "Bollitore", "es": "Hervidor", "de": "Wasserkocher", "ru": "Чайник" }
+    "words": {
+      "en": "Kettle",
+      "fr": "Bouilloire",
+      "it": "Bollitore",
+      "es": "Hervidor",
+      "de": "Wasserkocher",
+      "ru": "Чайник"
+    }
   },
   "cup": {
     "id": "cup",
@@ -217,7 +321,14 @@
     "soundCue": "cup_clink",
     "animation": "glow",
     "interaction": "drink",
-    "words": { "en": "Cup", "fr": "Tasse", "it": "Tazza", "es": "Taza", "de": "Tasse", "ru": "Чашка" }
+    "words": {
+      "en": "Cup",
+      "fr": "Tasse",
+      "it": "Tazza",
+      "es": "Taza",
+      "de": "Tasse",
+      "ru": "Чашка"
+    }
   },
   "clock_tower": {
     "id": "clock_tower",
@@ -235,7 +346,14 @@
     "soundCue": "clock_chime",
     "animation": "pulse",
     "interaction": "check_time",
-    "words": { "en": "Clock Tower", "fr": "Tour de l'horloge", "it": "Torre dell'orologio", "es": "Torre del reloj", "de": "Uhrturm", "ru": "Башня с часами" }
+    "words": {
+      "en": "Clock Tower",
+      "fr": "Tour de l'horloge",
+      "it": "Torre dell'orologio",
+      "es": "Torre del reloj",
+      "de": "Uhrturm",
+      "ru": "Башня с часами"
+    }
   },
   "fountain": {
     "id": "fountain",
@@ -253,7 +371,14 @@
     "soundCue": "water_splash",
     "animation": "float",
     "interaction": "toss_coin",
-    "words": { "en": "Fountain", "fr": "Fontaine", "it": "Fontana", "es": "Fuente", "de": "Brunnen", "ru": "Фонтан" }
+    "words": {
+      "en": "Fountain",
+      "fr": "Fontaine",
+      "it": "Fontana",
+      "es": "Fuente",
+      "de": "Brunnen",
+      "ru": "Фонтан"
+    }
   },
   "bench": {
     "id": "bench",
@@ -271,7 +396,14 @@
     "soundCue": "wood_tap",
     "animation": "glow",
     "interaction": "sit",
-    "words": { "en": "Bench", "fr": "Banc", "it": "Panchina", "es": "Banco", "de": "Bank", "ru": "Скамейка" }
+    "words": {
+      "en": "Bench",
+      "fr": "Banc",
+      "it": "Panchina",
+      "es": "Banco",
+      "de": "Bank",
+      "ru": "Скамейка"
+    }
   },
   "baguette": {
     "id": "baguette",
@@ -289,7 +421,14 @@
     "soundCue": "bread_crunch",
     "animation": "glow",
     "interaction": "buy",
-    "words": { "en": "Baguette", "fr": "Baguette", "it": "Baguette", "es": "Barra de pan", "de": "Baguette", "ru": "Багет" }
+    "words": {
+      "en": "Baguette",
+      "fr": "Baguette",
+      "it": "Baguette",
+      "es": "Barra de pan",
+      "de": "Baguette",
+      "ru": "Багет"
+    }
   },
   "croissant": {
     "id": "croissant",
@@ -307,7 +446,14 @@
     "soundCue": "bread_crunch",
     "animation": "glow",
     "interaction": "eat",
-    "words": { "en": "Croissant", "fr": "Croissant", "it": "Cornetto", "es": "Cruasán", "de": "Croissant", "ru": "Круассан" }
+    "words": {
+      "en": "Croissant",
+      "fr": "Croissant",
+      "it": "Cornetto",
+      "es": "Cruasán",
+      "de": "Croissant",
+      "ru": "Круассан"
+    }
   },
   "espresso_machine": {
     "id": "espresso_machine",
@@ -325,7 +471,14 @@
     "soundCue": "coffee_brew",
     "animation": "pulse",
     "interaction": "brew",
-    "words": { "en": "Coffee Machine", "fr": "Machine à café", "it": "Macchina del caffè", "es": "Cafetera", "de": "Kaffeemaschine", "ru": "Кофемашина" }
+    "words": {
+      "en": "Coffee Machine",
+      "fr": "Machine à café",
+      "it": "Macchina del caffè",
+      "es": "Cafetera",
+      "de": "Kaffeemaschine",
+      "ru": "Кофемашина"
+    }
   },
   "coffee_cup": {
     "id": "coffee_cup",
@@ -343,7 +496,14 @@
     "soundCue": "cup_clink",
     "animation": "glow",
     "interaction": "sip",
-    "words": { "en": "Coffee Cup", "fr": "Tasse de café", "it": "Tazzina", "es": "Taza de café", "de": "Kaffeetasse", "ru": "Чашка кофе" }
+    "words": {
+      "en": "Coffee Cup",
+      "fr": "Tasse de café",
+      "it": "Tazzina",
+      "es": "Taza de café",
+      "de": "Kaffeetasse",
+      "ru": "Чашка кофе"
+    }
   },
   "welcome_sign": {
     "id": "welcome_sign",
@@ -361,25 +521,418 @@
     "soundCue": "chime",
     "animation": "glow",
     "interaction": "read",
-    "words": { "en": "Welcome Sign", "fr": "Panneau de bienvenue", "it": "Cartello di benvenuto", "es": "Cartel de bienvenida", "de": "Willkommensschild", "ru": "Приветственный знак" }
+    "words": {
+      "en": "Welcome Sign",
+      "fr": "Panneau de bienvenue",
+      "it": "Cartello di benvenuto",
+      "es": "Cartel de bienvenida",
+      "de": "Willkommensschild",
+      "ru": "Приветственный знак",
+      "el": "Πινακίδα υποδοχής",
+      "pt": "Placa de boas-vindas",
+      "hy": "Ողջույնի ցուցանակ",
+      "ka": "მისասալմებელი ნიშანი",
+      "br": "Panell degemer",
+      "tt": "Рәхим итегез билгесе",
+      "ba": "Рәхим итегеҙ билдәһе",
+      "cv": "Сиплӗ паллӑ"
+    }
   },
   "reception_desk": {
     "id": "reception_desk",
     "type": "furniture",
     "locationId": "reception",
     "emoji": "🛎️",
-    "x": 260,
-    "y": 200,
-    "width": 280,
-    "height": 110,
-    "labelX": 400,
-    "labelY": 190,
+    "x": 480,
+    "y": 220,
+    "width": 120,
+    "height": 90,
+    "labelX": 540,
+    "labelY": 210,
     "vocabId": "vocab_please",
     "grammarId": "gt_this_is",
     "soundCue": "bell_ring",
     "animation": "pulse",
     "interaction": "talk",
-    "words": { "en": "Reception Desk", "fr": "Comptoir de réception", "it": "Banco reception", "es": "Mostrador de recepción", "de": "Empfangstresen", "ru": "Стойка рецепции" }
+    "words": {
+      "en": "Reception Desk",
+      "fr": "Comptoir de réception",
+      "it": "Banco reception",
+      "es": "Mostrador de recepción",
+      "de": "Empfangstresen",
+      "ru": "Стойка рецепции",
+      "el": "Γραφείο υποδοχής",
+      "pt": "Balcão de recepção",
+      "hy": "Ընդունարանի սեղան",
+      "ka": "მისაღები მაგიდა",
+      "br": "Taol degemer",
+      "tt": "Рецепция өстәле",
+      "ba": "Рецепция өҫтәле",
+      "cv": "Рецепци сӑтелӗ"
+    }
+  },
+  "reception_coffee_table": {
+    "id": "reception_coffee_table",
+    "type": "furniture",
+    "locationId": "reception",
+    "emoji": "🪑",
+    "x": 280,
+    "y": 325,
+    "width": 70,
+    "height": 60,
+    "labelX": 315,
+    "labelY": 315,
+    "vocabId": "vocab_table",
+    "grammarId": "gt_there_is",
+    "soundCue": "wood_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Coffee Table",
+      "fr": "Table basse",
+      "it": "Tavolino da caffè",
+      "es": "Mesa de centro",
+      "de": "Couchtisch",
+      "ru": "Журнальный столик",
+      "el": "Τραπεζάκι σαλονιού",
+      "pt": "Mesa de centro",
+      "hy": "Սուրճի սեղան",
+      "ka": "ყავის მაგიდა",
+      "br": "Taol-gavana",
+      "tt": "Кофе өстәле",
+      "ba": "Кофе өҫтәле",
+      "cv": "Кофе сӑтелӗ"
+    }
+  },
+  "indoor_plant": {
+    "id": "indoor_plant",
+    "type": "nature",
+    "locationId": "reception",
+    "emoji": "🪴",
+    "x": 24,
+    "y": 375,
+    "width": 70,
+    "height": 80,
+    "labelX": 59,
+    "labelY": 365,
+    "vocabId": "vocab_plant",
+    "grammarId": "gt_there_is",
+    "soundCue": "leaf_rustle",
+    "animation": "float",
+    "interaction": "water",
+    "words": {
+      "en": "Indoor Plant",
+      "fr": "Plante d'intérieur",
+      "it": "Pianta da interno",
+      "es": "Planta de interior",
+      "de": "Zimmerpflanze",
+      "ru": "Комнатное растение",
+      "el": "Φυτό εσωτερικού χώρου",
+      "pt": "Planta de interior",
+      "hy": "Սենյակային բույս",
+      "ka": "ოთახის მცენარე",
+      "br": "Baoed ti",
+      "tt": "Өй үсемлеге",
+      "ba": "Өй үҫемлеге",
+      "cv": "Ҫурт ӳсентӑранӗ"
+    }
+  },
+  "reception_bookshelf": {
+    "id": "reception_bookshelf",
+    "type": "furniture",
+    "locationId": "reception",
+    "emoji": "📚",
+    "x": 160,
+    "y": 175,
+    "width": 70,
+    "height": 90,
+    "labelX": 195,
+    "labelY": 165,
+    "vocabId": "vocab_book",
+    "grammarId": "gt_likes",
+    "soundCue": "page_turn",
+    "animation": "glow",
+    "interaction": "read",
+    "words": {
+      "en": "Bookshelf",
+      "fr": "Bibliothèque",
+      "it": "Libreria",
+      "es": "Estantería",
+      "de": "Bücherregal",
+      "ru": "Книжная полка",
+      "el": "Βιβλιοθήκη",
+      "pt": "Estante de livros",
+      "hy": "Գրապահարան",
+      "ka": "წიგნების თარო",
+      "br": "Livrraoueg",
+      "tt": "Китап киштәсе",
+      "ba": "Китап кәштәһе",
+      "cv": "Кӗнеке кӑшталӑкӗ"
+    }
+  },
+  "staircase": {
+    "id": "staircase",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "🪜",
+    "x": 280,
+    "y": 100,
+    "width": 80,
+    "height": 90,
+    "labelX": 320,
+    "labelY": 90,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Staircase",
+      "fr": "Escalier",
+      "it": "Scalinata",
+      "es": "Escalera",
+      "de": "Treppe",
+      "ru": "Лестница",
+      "el": "Σκάλα",
+      "pt": "Escada",
+      "hy": "Աստիճաններ",
+      "ka": "კიბე",
+      "br": "Skeul-noaz",
+      "tt": "Баскыч",
+      "ba": "Баҫҡыс",
+      "cv": "Каршалка"
+    }
+  },
+  "wall_clock": {
+    "id": "wall_clock",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "🕒",
+    "x": 496,
+    "y": 90,
+    "width": 60,
+    "height": 60,
+    "labelX": 526,
+    "labelY": 80,
+    "vocabId": "vocab_clock",
+    "grammarId": "gt_present_simple",
+    "soundCue": "clock_chime",
+    "animation": "glow",
+    "interaction": "check_time",
+    "words": {
+      "en": "Wall Clock",
+      "fr": "Horloge murale",
+      "it": "Orologio da parete",
+      "es": "Reloj de pared",
+      "de": "Wanduhr",
+      "ru": "Настенные часы",
+      "el": "Ρολόι τοίχου",
+      "pt": "Relógio de parede",
+      "hy": "Պատի ժամացույց",
+      "ka": "კედლის საათი",
+      "br": "Horolaj mur",
+      "tt": "Дивар сәгате",
+      "ba": "Диуар сәғәте",
+      "cv": "Хӳме сехечӗ"
+    }
+  },
+  "elevator": {
+    "id": "elevator",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "🛗",
+    "x": 424,
+    "y": 175,
+    "width": 70,
+    "height": 90,
+    "labelX": 459,
+    "labelY": 165,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "bell_ring",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "words": {
+      "en": "Elevator",
+      "fr": "Ascenseur",
+      "it": "Ascensore",
+      "es": "Ascensor",
+      "de": "Aufzug",
+      "ru": "Лифт",
+      "el": "Ανελκυστήρας",
+      "pt": "Elevador",
+      "hy": "Վերելակ",
+      "ka": "ლიფტი",
+      "br": "Lamm-uhel",
+      "tt": "Лифт",
+      "ba": "Лифт",
+      "cv": "Лифт"
+    }
+  },
+  "notice_board": {
+    "id": "notice_board",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "📌",
+    "x": 720,
+    "y": 75,
+    "width": 70,
+    "height": 70,
+    "labelX": 755,
+    "labelY": 65,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_this_is",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "read",
+    "words": {
+      "en": "Notice Board",
+      "fr": "Tableau d'affichage",
+      "it": "Bacheca",
+      "es": "Tablón de anuncios",
+      "de": "Pinnwand",
+      "ru": "Доска объявлений",
+      "el": "Πίνακας ανακοινώσεων",
+      "pt": "Mural de avisos",
+      "hy": "Հայտարարությունների տախտակ",
+      "ka": "განცხადებების დაფა",
+      "br": "Taolenn embann",
+      "tt": "Билгеләр тактасы",
+      "ba": "Белдереүҙәр таҡтаһы",
+      "cv": "Пӗлтерӳ хӑми"
+    }
+  },
+  "coat_rack": {
+    "id": "coat_rack",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "🧥",
+    "x": 744,
+    "y": 150,
+    "width": 50,
+    "height": 90,
+    "labelX": 769,
+    "labelY": 140,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Coat Rack",
+      "fr": "Porte-manteau",
+      "it": "Appendiabiti",
+      "es": "Perchero",
+      "de": "Garderobe",
+      "ru": "Вешалка для пальто",
+      "el": "Kρεμάστρα",
+      "pt": "Cabideiro",
+      "hy": "Կախիչ",
+      "ka": "საკიდი",
+      "br": "Peur-dilhad",
+      "tt": "Кем-кимәл элгече",
+      "ba": "Кейем элеүес",
+      "cv": "Тӑхӑнмалӑх ретӗ"
+    }
+  },
+  "umbrella_stand": {
+    "id": "umbrella_stand",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "☂️",
+    "x": 760,
+    "y": 325,
+    "width": 40,
+    "height": 70,
+    "labelX": 780,
+    "labelY": 315,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Umbrella Stand",
+      "fr": "Porte-parapluie",
+      "it": "Portaombrelli",
+      "es": "Paragüero",
+      "de": "Schirmständer",
+      "ru": "Подставка для зонтов",
+      "el": "Βάση ομπρέλας",
+      "pt": "Porta-guarda-chuva",
+      "hy": "Հովանոցների կանգնակ",
+      "ka": "ქოლგის სადგამი",
+      "br": "Stal glav-disglav",
+      "tt": "Зонт подставкасы",
+      "ba": "Зонт подставкаһы",
+      "cv": "Зонтик ларткӑчӗ"
+    }
+  },
+  "backpack": {
+    "id": "backpack",
+    "type": "item",
+    "locationId": "reception",
+    "emoji": "🎒",
+    "x": 224,
+    "y": 375,
+    "width": 50,
+    "height": 60,
+    "labelX": 249,
+    "labelY": 365,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_my_your",
+    "soundCue": "cloth_fold",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Backpack",
+      "fr": "Sac à dos",
+      "it": "Zaino",
+      "es": "Mochila",
+      "de": "Rucksack",
+      "ru": "Рюкзак",
+      "el": "Σακίδιο",
+      "pt": "Mochila",
+      "hy": "Ուսապարկ",
+      "ka": "ზურგჩანთა",
+      "br": "Sac'h kein",
+      "tt": "Рюкзак",
+      "ba": "Рюкзак",
+      "cv": "Рюкзак"
+    }
+  },
+  "reception_mat": {
+    "id": "reception_mat",
+    "type": "structure",
+    "locationId": "reception",
+    "emoji": "🚪",
+    "x": 440,
+    "y": 425,
+    "width": 80,
+    "height": 50,
+    "labelX": 480,
+    "labelY": 415,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "soft_cushion",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Welcome Mat",
+      "fr": "Paillasson de bienvenue",
+      "it": "Zerbino di benvenuto",
+      "es": "Felpudo de bienvenida",
+      "de": "Fussmatte",
+      "ru": "Приветственный коврик",
+      "el": "Πατάκι υποδοχής",
+      "pt": "Capacho de boas-vindas",
+      "hy": "Ողջույնի փորվածք",
+      "ka": "მისასალმებელი ხალიჩა",
+      "br": "Tapis degemer",
+      "tt": "Каршы алу келәме",
+      "ba": "Ҡаршы алыу келәме",
+      "cv": "Кӗрӗш коврӗ"
+    }
   },
   "apartment_key": {
     "id": "apartment_key",
@@ -397,8 +950,18 @@
     "soundCue": "key_clink",
     "animation": "glow",
     "interaction": "collect",
-    "actionChain": { "nextObject": "apartment_door", "actionIcon": "🔑 Open Apartment" },
-    "words": { "en": "Apartment Key", "fr": "Clé d'appartement", "it": "Chiave appartamento", "es": "Llave del apartamento", "de": "Wohnungsschlüssel", "ru": "Ключ от квартиры" }
+    "actionChain": {
+      "nextObject": "apartment_door",
+      "actionIcon": "🔑 Open Apartment"
+    },
+    "words": {
+      "en": "Apartment Key",
+      "fr": "Clé d'appartement",
+      "it": "Chiave appartamento",
+      "es": "Llave del apartamento",
+      "de": "Wohnungsschlüssel",
+      "ru": "Ключ от квартиры"
+    }
   },
   "apartment_door": {
     "id": "apartment_door",
@@ -416,7 +979,14 @@
     "soundCue": "door_open",
     "animation": "pulse",
     "interaction": "transition",
-    "words": { "en": "Apartment Door", "fr": "Porte de l'appartement", "it": "Porta dell'appartamento", "es": "Puerta del apartamento", "de": "Wohnungstür", "ru": "Дверь квартиры" }
+    "words": {
+      "en": "Apartment Door",
+      "fr": "Porte de l'appartement",
+      "it": "Porta dell'appartamento",
+      "es": "Puerta del apartamento",
+      "de": "Wohnungstür",
+      "ru": "Дверь квартиры"
+    }
   },
   "bed": {
     "id": "bed",
@@ -434,7 +1004,14 @@
     "soundCue": "bed_rustle",
     "animation": "glow",
     "interaction": "rest",
-    "words": { "en": "Bed", "fr": "Lit", "it": "Letto", "es": "Cama", "de": "Bett", "ru": "Кровать" }
+    "words": {
+      "en": "Bed",
+      "fr": "Lit",
+      "it": "Letto",
+      "es": "Cama",
+      "de": "Bett",
+      "ru": "Кровать"
+    }
   },
   "desk": {
     "id": "desk",
@@ -452,7 +1029,14 @@
     "soundCue": "desk_tap",
     "animation": "glow",
     "interaction": "inspect",
-    "words": { "en": "Desk", "fr": "Bureau", "it": "Scrivania", "es": "Escritorio", "de": "Schreibtisch", "ru": "Письменный стол" }
+    "words": {
+      "en": "Desk",
+      "fr": "Bureau",
+      "it": "Scrivania",
+      "es": "Escritorio",
+      "de": "Schreibtisch",
+      "ru": "Письменный стол"
+    }
   },
   "towel": {
     "id": "towel",
@@ -470,7 +1054,14 @@
     "soundCue": "cloth_fold",
     "animation": "glow",
     "interaction": "dry",
-    "words": { "en": "Towel", "fr": "Serviette", "it": "Asciugamano", "es": "Toalla", "de": "Handtuch", "ru": "Полотенце" }
+    "words": {
+      "en": "Towel",
+      "fr": "Serviette",
+      "it": "Asciugamano",
+      "es": "Toalla",
+      "de": "Handtuch",
+      "ru": "Полотенце"
+    }
   },
   "soap": {
     "id": "soap",
@@ -488,7 +1079,14 @@
     "soundCue": "water_splash",
     "animation": "pulse",
     "interaction": "wash",
-    "words": { "en": "Soap", "fr": "Savon", "it": "Sapone", "es": "Jabón", "de": "Seife", "ru": "Мыло" }
+    "words": {
+      "en": "Soap",
+      "fr": "Savon",
+      "it": "Sapone",
+      "es": "Jabón",
+      "de": "Seife",
+      "ru": "Мыло"
+    }
   },
   "bathroom_mirror": {
     "id": "bathroom_mirror",
@@ -506,7 +1104,14 @@
     "soundCue": "shine",
     "animation": "glow",
     "interaction": "look",
-    "words": { "en": "Mirror", "fr": "Miroir", "it": "Specchio", "es": "Espejo", "de": "Spiegel", "ru": "Зеркало" }
+    "words": {
+      "en": "Mirror",
+      "fr": "Miroir",
+      "it": "Specchio",
+      "es": "Espejo",
+      "de": "Spiegel",
+      "ru": "Зеркало"
+    }
   },
   "balcony_chair": {
     "id": "balcony_chair",
@@ -524,7 +1129,14 @@
     "soundCue": "chair_sit",
     "animation": "glow",
     "interaction": "sit",
-    "words": { "en": "Chair", "fr": "Chaise", "it": "Sedia", "es": "Silla", "de": "Stuhl", "ru": "Стул" }
+    "words": {
+      "en": "Chair",
+      "fr": "Chaise",
+      "it": "Sedia",
+      "es": "Silla",
+      "de": "Stuhl",
+      "ru": "Стул"
+    }
   },
   "balcony_plant": {
     "id": "balcony_plant",
@@ -542,7 +1154,14 @@
     "soundCue": "leaf_rustle",
     "animation": "pulse",
     "interaction": "water",
-    "words": { "en": "Balcony Plant", "fr": "Plante de balcon", "it": "Pianta del balcone", "es": "Planta de balcón", "de": "Balkonpflanze", "ru": "Балконное растение" }
+    "words": {
+      "en": "Balcony Plant",
+      "fr": "Plante de balcon",
+      "it": "Pianta del balcone",
+      "es": "Planta de balcón",
+      "de": "Balkonpflanze",
+      "ru": "Балконное растение"
+    }
   },
   "alarm_clock": {
     "id": "alarm_clock",
@@ -560,7 +1179,14 @@
     "soundCue": "alarm_ring",
     "animation": "pulse",
     "interaction": "check_time",
-    "words": { "en": "Alarm Clock", "fr": "Réveil", "it": "Sveglia", "es": "Despertador", "de": "Wecker", "ru": "Будильник" }
+    "words": {
+      "en": "Alarm Clock",
+      "fr": "Réveil",
+      "it": "Sveglia",
+      "es": "Despertador",
+      "de": "Wecker",
+      "ru": "Будильник"
+    }
   },
   "street_clock": {
     "id": "street_clock",
@@ -578,7 +1204,14 @@
     "soundCue": "clock_chime",
     "animation": "glow",
     "interaction": "check_time",
-    "words": { "en": "Street Clock", "fr": "Horloge de rue", "it": "Orologio da strada", "es": "Reloj de calle", "de": "Straßenuhr", "ru": "Уличные часы" }
+    "words": {
+      "en": "Street Clock",
+      "fr": "Horloge de rue",
+      "it": "Orologio da strada",
+      "es": "Reloj de calle",
+      "de": "Straßenuhr",
+      "ru": "Уличные часы"
+    }
   },
   "bus_stop_sign": {
     "id": "bus_stop_sign",
@@ -596,7 +1229,14 @@
     "soundCue": "bus_horn",
     "animation": "pulse",
     "interaction": "wait_bus",
-    "words": { "en": "Bus Stop Sign", "fr": "Panneau d'arrêt de bus", "it": "Cartello fermata autobus", "es": "Señal de parada de autobús", "de": "Haltestellenschild", "ru": "Знак автобусной остановки" }
+    "words": {
+      "en": "Bus Stop Sign",
+      "fr": "Panneau d'arrêt de bus",
+      "it": "Cartello fermata autobus",
+      "es": "Señal de parada de autobús",
+      "de": "Haltestellenschild",
+      "ru": "Знак автобусной остановки"
+    }
   },
   "bus_timetable_board": {
     "id": "bus_timetable_board",
@@ -614,6 +1254,541 @@
     "soundCue": "paper_flip",
     "animation": "glow",
     "interaction": "read",
-    "words": { "en": "Bus Schedule Board", "fr": "Horaires de bus", "it": "Tabellone orari autobus", "es": "Horario de autobuses", "de": "Fahrplan", "ru": "Расписание автобусов" }
+    "words": {
+      "en": "Bus Schedule Board",
+      "fr": "Horaires de bus",
+      "it": "Tabellone orari autobus",
+      "es": "Horario de autobuses",
+      "de": "Fahrplan",
+      "ru": "Расписание автобусов"
+    }
+  },
+  "street_lamp": {
+    "id": "street_lamp",
+    "type": "appliance",
+    "locationId": "town_entrance",
+    "emoji": "💡",
+    "x": 40,
+    "y": 200,
+    "width": 70,
+    "height": 80,
+    "labelX": 75,
+    "labelY": 190,
+    "vocabId": "vocab_lamp",
+    "grammarId": "gt_there_is",
+    "soundCue": "click_switch",
+    "animation": "glow",
+    "interaction": "toggle_light",
+    "words": {
+      "en": "Street Lamp",
+      "fr": "Lampadaire",
+      "it": "Lampione",
+      "es": "Farola",
+      "de": "Straßenlaterne",
+      "ru": "Уличный фонарь",
+      "el": "Φανοστάτης",
+      "pt": "Poste de luz",
+      "hy": "Փողոցային լապտեր",
+      "ka": "ქուչის ფանარი",
+      "br": "Lufer straed",
+      "tt": "Урам чырагы",
+      "ba": "Урам сырағы",
+      "cv": "Урам чирӑкӗ"
+    }
+  },
+  "signpost": {
+    "id": "signpost",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🪧",
+    "x": 136,
+    "y": 120,
+    "width": 70,
+    "height": 80,
+    "labelX": 171,
+    "labelY": 110,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_this_is",
+    "soundCue": "chime",
+    "animation": "glow",
+    "interaction": "read",
+    "words": {
+      "en": "Signpost",
+      "fr": "Poteau indicateur",
+      "it": "Cartello stradale",
+      "es": "Poste de señales",
+      "de": "Wegweiser",
+      "ru": "Указатель",
+      "el": "Πινακίδα",
+      "pt": "Placa de sinalização",
+      "hy": "Ցուցանակ",
+      "ka": "საგზაო ნიშანი",
+      "br": "Peul-galleg",
+      "tt": "Нарат күрсәткече",
+      "ba": "Юл күрһәткесе",
+      "cv": "Ҫул кӑтартакӗ"
+    }
+  },
+  "welcome_arch": {
+    "id": "welcome_arch",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🏛️",
+    "x": 384,
+    "y": 140,
+    "width": 80,
+    "height": 80,
+    "labelX": 424,
+    "labelY": 130,
+    "vocabId": "vocab_hello",
+    "grammarId": "gt_to_be",
+    "soundCue": "chime",
+    "animation": "pulse",
+    "interaction": "inspect",
+    "words": {
+      "en": "Welcome Arch",
+      "fr": "Arche de bienvenue",
+      "it": "Arco di benvenuto",
+      "es": "Arco de bienvenida",
+      "de": "Willkommensbogen",
+      "ru": "Приветственная арка",
+      "el": "Αψίδα υποδοχής",
+      "pt": "Arco de boas-vindas",
+      "hy": "Ողջույնի կամար",
+      "ka": "მისասალმებელი თაღი",
+      "br": "Arc'h degemer",
+      "tt": "Рәхим итегез аркасы",
+      "ba": "Рәхим итегеҙ аркаһы",
+      "cv": "Сиплӗ арка"
+    }
+  },
+  "mailbox": {
+    "id": "mailbox",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "📮",
+    "x": 80,
+    "y": 310,
+    "width": 60,
+    "height": 70,
+    "labelX": 110,
+    "labelY": 300,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Mailbox",
+      "fr": "Boîte aux lettres",
+      "it": "Cassetta della posta",
+      "es": "Buzón de correo",
+      "de": "Briefkasten",
+      "ru": "Почтовый ящик",
+      "el": "Ταχυδρομικό κουτί",
+      "pt": "Caixa de correio",
+      "hy": "Փոստարկղ",
+      "ka": "საფოსტო ყუთի",
+      "br": "Boest-lizhiri",
+      "tt": "Почта ящигы",
+      "ba": "Почта йәшниге",
+      "cv": "Почта ящикӗ"
+    }
+  },
+  "cat": {
+    "id": "cat",
+    "type": "nature",
+    "locationId": "town_entrance",
+    "emoji": "🐱",
+    "x": 104,
+    "y": 380,
+    "width": 60,
+    "height": 60,
+    "labelX": 134,
+    "labelY": 370,
+    "vocabId": "vocab_friend",
+    "grammarId": "gt_likes",
+    "soundCue": "soft_cushion",
+    "animation": "float",
+    "interaction": "inspect",
+    "words": {
+      "en": "Cat",
+      "fr": "Chat",
+      "it": "Gatto",
+      "es": "Gato",
+      "de": "Katze",
+      "ru": "Кот",
+      "el": "Γάτα",
+      "pt": "Gato",
+      "hy": "Կատու",
+      "ka": "կատա",
+      "br": "Kazh",
+      "tt": "Песи",
+      "ba": "Бесәй",
+      "cv": "Кушак"
+    }
+  },
+  "entrance_fountain": {
+    "id": "entrance_fountain",
+    "type": "nature",
+    "locationId": "town_entrance",
+    "emoji": "⛲",
+    "x": 400,
+    "y": 230,
+    "width": 80,
+    "height": 80,
+    "labelX": 440,
+    "labelY": 220,
+    "vocabId": "vocab_fountain",
+    "grammarId": "gt_there_is",
+    "soundCue": "water_splash",
+    "animation": "float",
+    "interaction": "toss_coin",
+    "words": {
+      "en": "Fountain",
+      "fr": "Fontaine",
+      "it": "Fontana",
+      "es": "Fuente",
+      "de": "Brunnen",
+      "ru": "Фонтан",
+      "el": "Σιντριβάνι",
+      "pt": "Fonte",
+      "hy": "Աղբյուր",
+      "ka": "შადრევანი",
+      "br": "Feunteun",
+      "tt": "Фонтан",
+      "ba": "Фонтан",
+      "cv": "Фонтан"
+    }
+  },
+  "entrance_bench": {
+    "id": "entrance_bench",
+    "type": "furniture",
+    "locationId": "town_entrance",
+    "emoji": "🪑",
+    "x": 360,
+    "y": 280,
+    "width": 80,
+    "height": 60,
+    "labelX": 400,
+    "labelY": 270,
+    "vocabId": "vocab_bench",
+    "grammarId": "gt_there_is",
+    "soundCue": "wood_tap",
+    "animation": "glow",
+    "interaction": "sit",
+    "words": {
+      "en": "Bench",
+      "fr": "Banc",
+      "it": "Panchina",
+      "es": "Banco",
+      "de": "Bank",
+      "ru": "Скамейка",
+      "el": "Παγκάκι",
+      "pt": "Banco",
+      "hy": "Նստարան",
+      "ka": "სկամი",
+      "br": "Kador-goad",
+      "tt": "Скамейка",
+      "ba": "Скамейка",
+      "cv": "Скамейка"
+    }
+  },
+  "dog": {
+    "id": "dog",
+    "type": "nature",
+    "locationId": "town_entrance",
+    "emoji": "🐶",
+    "x": 464,
+    "y": 360,
+    "width": 60,
+    "height": 60,
+    "labelX": 494,
+    "labelY": 350,
+    "vocabId": "vocab_friend",
+    "grammarId": "gt_likes",
+    "soundCue": "soft_cushion",
+    "animation": "float",
+    "interaction": "inspect",
+    "words": {
+      "en": "Dog",
+      "fr": "Chien",
+      "it": "Cane",
+      "es": "Perro",
+      "de": "Hund",
+      "ru": "Собака",
+      "el": "Σκύλος",
+      "pt": "Cão",
+      "hy": "Շուն",
+      "ka": "ძაღლი",
+      "br": "Ki",
+      "tt": "Ит",
+      "ba": "Ит",
+      "cv": "Йытӑ"
+    }
+  },
+  "pigeons": {
+    "id": "pigeons",
+    "type": "nature",
+    "locationId": "town_entrance",
+    "emoji": "🐦",
+    "x": 280,
+    "y": 420,
+    "width": 70,
+    "height": 60,
+    "labelX": 315,
+    "labelY": 410,
+    "vocabId": "vocab_friend",
+    "grammarId": "gt_there_are",
+    "soundCue": "leaf_rustle",
+    "animation": "float",
+    "interaction": "inspect",
+    "words": {
+      "en": "Pigeons",
+      "fr": "Pigeons",
+      "it": "Piccioni",
+      "es": "Palomas",
+      "de": "Tauben",
+      "ru": "Голуби",
+      "el": "Περιστέρια",
+      "pt": "Pombos",
+      "hy": "Աղավնիներ",
+      "ka": "მტრედები",
+      "br": "Koulmied",
+      "tt": "Күгәрченнәр",
+      "ba": "Күгәрсендәр",
+      "cv": "Кӑвакарчӑнсем"
+    }
+  },
+  "trash_bin": {
+    "id": "trash_bin",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🗑️",
+    "x": 496,
+    "y": 310,
+    "width": 60,
+    "height": 70,
+    "labelX": 526,
+    "labelY": 300,
+    "vocabId": "vocab_house",
+    "grammarId": "gt_there_is",
+    "soundCue": "wood_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Trash Bin",
+      "fr": "Poubelle",
+      "it": "Cestino",
+      "es": "Papelera",
+      "de": "Mülleimer",
+      "ru": "Мусорный бак",
+      "el": "Κάδος απορριμμάτων",
+      "pt": "Lixeira",
+      "hy": "Աղբաման",
+      "ka": "ურნა",
+      "br": "Boest-dilhad",
+      "tt": "Чүп ящигы",
+      "ba": "Ҡүп йәшниге",
+      "cv": "Ҫуп-ҫап ящикӗ"
+    }
+  },
+  "bicycle_rack": {
+    "id": "bicycle_rack",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🚲",
+    "x": 576,
+    "y": 270,
+    "width": 80,
+    "height": 70,
+    "labelX": 616,
+    "labelY": 260,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_there_is",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Bicycle Rack",
+      "fr": "Râtelier à vélos",
+      "it": "Rastrelliera per biciclette",
+      "es": "Aparcabicicletas",
+      "de": "Fahrradständer",
+      "ru": "Велопарковка",
+      "el": "Βάση ποδηλάτων",
+      "pt": "Bicicletário",
+      "hy": "Հեծանվային կանգառ",
+      "ka": "ველოსիպედის სადგომი",
+      "br": "Porzh-bicyclette",
+      "tt": "Велосипед парковкасы",
+      "ba": "Велосипед парковкаһы",
+      "cv": "Велосипед парковки"
+    }
+  },
+  "bus_stop_shelter": {
+    "id": "bus_stop_shelter",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🚏",
+    "x": 640,
+    "y": 220,
+    "width": 80,
+    "height": 80,
+    "labelX": 680,
+    "labelY": 210,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_present_simple",
+    "soundCue": "bus_horn",
+    "animation": "pulse",
+    "interaction": "wait_bus",
+    "words": {
+      "en": "Bus Stop Shelter",
+      "fr": "Abribus",
+      "it": "Pensilina dell'autobus",
+      "es": "Marquesina de autobús",
+      "de": "Bushaltestelle",
+      "ru": "Автобусный навес",
+      "el": "Στέγαστρο στάσης",
+      "pt": "Abrigo de ônibus",
+      "hy": "Ծածկով կանգառ",
+      "ka": "ავտობუსის მოსაცდელი",
+      "br": "Goudor bus",
+      "tt": "Автобус навесы",
+      "ba": "Автобус навесы",
+      "cv": "Автобус навесӗ"
+    }
+  },
+  "parked_car": {
+    "id": "parked_car",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🚗",
+    "x": 720,
+    "y": 250,
+    "width": 80,
+    "height": 70,
+    "labelX": 760,
+    "labelY": 240,
+    "vocabId": "vocab_work",
+    "grammarId": "gt_there_is",
+    "soundCue": "desk_tap",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Parked Car",
+      "fr": "Voiture garée",
+      "it": "Auto parcheggiata",
+      "es": "Coche aparcado",
+      "de": "Parkendes Auto",
+      "ru": "Припаркована машина",
+      "el": "Παρκαρισμένο αυτοκίνητο",
+      "pt": "Carro estacionado",
+      "hy": "Կայանված մեքենա",
+      "ka": "გაჩერებული მანქანა",
+      "br": "Karr parket",
+      "tt": "Парковкадагы машина",
+      "ba": "Парковкалағы машина",
+      "cv": "Парковкари машина"
+    }
+  },
+  "map_stand": {
+    "id": "map_stand",
+    "type": "structure",
+    "locationId": "town_entrance",
+    "emoji": "🗺️",
+    "x": 696,
+    "y": 300,
+    "width": 70,
+    "height": 70,
+    "labelX": 731,
+    "labelY": 290,
+    "vocabId": "vocab_study",
+    "grammarId": "gt_this_is",
+    "soundCue": "paper_flip",
+    "animation": "glow",
+    "interaction": "inspect",
+    "words": {
+      "en": "Map Stand",
+      "fr": "Panneau d'information",
+      "it": "Mappa della città",
+      "es": "Stand de mapas",
+      "de": "Kartenständer",
+      "ru": "Стенд с картой",
+      "el": "Σταντ χάρτη",
+      "pt": "Stand de mapa",
+      "hy": "Քարտեզի ստենդ",
+      "ka": "რუკის სტენდი",
+      "br": "Taolienn gartenn",
+      "tt": "Карта стенды",
+      "ba": "Карта стенды",
+      "cv": "Карта стенчӗ"
+    }
+  },
+  "flower_bed": {
+    "id": "flower_bed",
+    "type": "nature",
+    "locationId": "town_entrance",
+    "emoji": "🌺",
+    "x": 720,
+    "y": 400,
+    "width": 80,
+    "height": 60,
+    "labelX": 760,
+    "labelY": 390,
+    "vocabId": "vocab_plant",
+    "grammarId": "gt_there_are",
+    "soundCue": "leaf_rustle",
+    "animation": "pulse",
+    "interaction": "water",
+    "words": {
+      "en": "Flower Bed",
+      "fr": "Parterre de fleurs",
+      "it": "Aiuola",
+      "es": "Parterre de flores",
+      "de": "Blumenbeet",
+      "ru": "Клумба",
+      "el": "Παρτέρι λουλουδιών",
+      "pt": "Canteiro de flores",
+      "hy": "Ծաղկանոց",
+      "ka": "ყვავილնარი",
+      "br": "Treustad bleuñv",
+      "tt": "Чәчәклек",
+      "ba": "Сәскәлек",
+      "cv": "Чӗчеклӗх"
+    }
+  },
+  "tree": {
+    "id": "tree",
+    "type": "nature",
+    "locationId": "town_entrance",
+    "emoji": "🌳",
+    "x": 680,
+    "y": 140,
+    "width": 80,
+    "height": 100,
+    "labelX": 720,
+    "labelY": 130,
+    "vocabId": "vocab_plant",
+    "grammarId": "gt_there_is",
+    "soundCue": "leaf_rustle",
+    "animation": "float",
+    "interaction": "inspect",
+    "words": {
+      "en": "Tree",
+      "fr": "Arbre",
+      "it": "Albero",
+      "es": "Árbol",
+      "de": "Baum",
+      "ru": "Дерево",
+      "el": "Δέντρο",
+      "pt": "Árvore",
+      "hy": "Ծառ",
+      "ka": "ხე",
+      "br": "Gwezenn",
+      "tt": "Агач",
+      "ba": "Ағас",
+      "cv": "Йывӑҫ"
+    }
   }
 }

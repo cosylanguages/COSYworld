@@ -149,7 +149,7 @@ export class SceneRenderer {
             if (dist.backgroundImage) {
                 const backgroundImage = dist.backgroundImage.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
                 html += `
-                    <image href="${backgroundImage}" x="0" y="0" width="800" height="500" preserveAspectRatio="xMidYMid slice" opacity="0.92" pointer-events="none" />
+                    <image href="${backgroundImage}" xlink:href="${backgroundImage}" x="0" y="0" width="800" height="500" preserveAspectRatio="xMidYMid slice" opacity="0.92" pointer-events="none" />
                     <rect x="0" y="0" width="800" height="500" fill="rgba(255, 248, 235, 0.16)" pointer-events="none" />
                 `;
             }
@@ -193,16 +193,26 @@ export class SceneRenderer {
                         ? `tabindex="0" role="button" aria-label="Enter ${b.label}" onclick="COSY_WORLD.enterBuilding('${b.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.enterBuilding('${b.id}');}" style="cursor:pointer;"`
                         : ``;
 
-                    html += `
-                        <g class="cw-building-group" ${clickableAttr}>
-                            <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="${b.color}" rx="8" opacity="0.85" stroke="#1e293b" stroke-width="2" />
-                            <text x="${b.x + b.width / 2}" y="${b.y + b.height / 2 - 10}" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">${b.label}</text>
-                            ${hasBuildingSystem ? `
-                                <rect x="${b.x + b.width / 2 - 20}" y="${b.y + b.height - 35}" width="40" height="30" fill="#1e293b" rx="4" />
-                                <text x="${b.x + b.width / 2}" y="${b.y + b.height - 16}" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">ENTER</text>
-                            ` : ''}
-                        </g>
-                    `;
+                    const isTransparent = b.color === 'transparent' || b.transparent;
+
+                    if (isTransparent) {
+                        html += `
+                            <g class="cw-building-group" ${clickableAttr}>
+                                <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="transparent" stroke="none" opacity="0" />
+                            </g>
+                        `;
+                    } else {
+                        html += `
+                            <g class="cw-building-group" ${clickableAttr}>
+                                <rect x="${b.x}" y="${b.y}" width="${b.width}" height="${b.height}" fill="${b.color}" rx="8" opacity="0.85" stroke="#1e293b" stroke-width="2" />
+                                <text x="${b.x + b.width / 2}" y="${b.y + b.height / 2 - 10}" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">${b.label}</text>
+                                ${hasBuildingSystem ? `
+                                    <rect x="${b.x + b.width / 2 - 20}" y="${b.y + b.height - 35}" width="40" height="30" fill="#1e293b" rx="4" />
+                                    <text x="${b.x + b.width / 2}" y="${b.y + b.height - 16}" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">ENTER</text>
+                                ` : ''}
+                            </g>
+                        `;
+                    }
                 });
             }
 
