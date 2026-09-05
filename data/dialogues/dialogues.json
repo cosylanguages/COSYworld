@@ -72,6 +72,33 @@
       "line": "Would you like fresh bread?",
       "gestures": ["offer_bread"],
       "speechRate": 0.8
+    },
+    {
+      "id": "dlg_ch4_ask_directions",
+      "npcId": "james_york",
+      "cefr": "A1",
+      "line": "Excuse me! Where is the post office? How do I get to the pharmacy?",
+      "gestures": ["search", "point_map"],
+      "highlights": ["post_office_building", "pharmacy_building"],
+      "speechRate": 0.75
+    },
+    {
+      "id": "dlg_ch4_give_directions",
+      "npcId": "james_york",
+      "cefr": "A1",
+      "line": "Go straight, turn left at the crosswalk, and turn right. The pharmacy is next to the bakery and behind the park.",
+      "gestures": ["point_directions", "turn_left", "turn_right"],
+      "highlights": ["pharmacy_building", "bakery_building", "park"],
+      "speechRate": 0.75
+    },
+    {
+      "id": "dlg_ch4_help_npc",
+      "npcId": "postmaster_sam",
+      "cefr": "A1",
+      "line": "Thank you for helping me find the post office! You unlocked the full city map of the neighbourhood!",
+      "gestures": ["thank", "show_map"],
+      "highlights": ["post_office_building"],
+      "speechRate": 0.75
     }
   ]
 }

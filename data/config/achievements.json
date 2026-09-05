@@ -119,5 +119,38 @@
     "unlockCondition": {
       "questId": "q_ch3_unlock_routine"
     }
+  },
+  {
+    "id": "ach_town_navigator",
+    "title": "🗺️ Town Navigator",
+    "description": "Navigate through City Streets, Crosswalk, and Park in Chapter 4.",
+    "category": "chapter_4",
+    "icon": "🛣️",
+    "xpReward": 110,
+    "unlockCondition": {
+      "questId": "q_ch4_navigate_town"
+    }
+  },
+  {
+    "id": "ach_helpful_guide",
+    "title": "🧭 Helpful Guide",
+    "description": "Help NPCs find places by asking for and giving directions.",
+    "category": "chapter_4",
+    "icon": "🧭",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch4_help_npc_directions"
+    }
+  },
+  {
+    "id": "ach_city_map_unlocked",
+    "title": "🗺️ Neighbourhood Map Master",
+    "description": "Master prepositions, directions, and unlock the full neighbourhood city map in Chapter 4.",
+    "category": "chapter_4",
+    "icon": "🗺️",
+    "xpReward": 150,
+    "unlockCondition": {
+      "questId": "q_ch4_unlock_city_map"
+    }
   }
 ]

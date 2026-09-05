@@ -216,7 +216,7 @@
     "relationshipLevel": 1,
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
-    "favoritePark": "town_square",
+    "favoritePark": "park",
     "position3D": { "x": 200, "y": 300, "z": 0 },
     "voice": "en-US-Standard-C",
     "dailySchedule": [
@@ -225,38 +225,47 @@
       { "time": "08:00", "location": "apartment_kitchen", "activity": "Cooking breakfast and drinking tea" },
       { "time": "08:30", "location": "street", "activity": "Walking along City Avenue to work" },
       { "time": "09:00", "location": "bus_stop", "activity": "Waiting for the morning bus" },
-      { "time": "12:00", "location": "apartment_living", "activity": "Midday rest in living room" },
+      { "time": "12:00", "location": "park", "activity": "Relaxing on a park bench" },
+      { "time": "15:00", "location": "crosswalk", "activity": "Walking across pedestrian crossing" },
       { "time": "18:00", "location": "street", "activity": "Evening stroll" }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
-    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
+    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine", "q_ch4_navigate_town", "q_ch4_help_npc_directions", "q_ch4_unlock_city_map"],
+    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine", "q_ch4_navigate_town", "q_ch4_help_npc_directions", "q_ch4_unlock_city_map"],
     "dialogues": {
       "en": [
         {
           "id": 0,
           "emotion": "happy",
-          "text": "⏰ Good morning! What time is it? I always start my day at seven o'clock!",
-          "visualAction": "⏰ Morning Routine",
-          "grammarCheck": "Present Simple & Time & Frequency",
+          "text": "🗺️ Welcome to Chapter 4: My Neighbourhood! Let's navigate the town together!",
+          "visualAction": "🗺️ Town Navigation",
+          "grammarCheck": "Prepositions & Directional Imperatives",
           "options": [
-            { "label": "🌅 Complete morning routine!", "next": 1, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_morning_routine" },
-            { "label": "📅 Follow daily schedule", "next": 2, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_daily_schedule" }
+            { "label": "🛣️ Navigate City Streets & Park!", "next": 1, "rewardXP": 30, "friendshipGain": 10, "questId": "q_ch4_navigate_town" },
+            { "label": "🧭 Ask and give directions!", "next": 2, "rewardXP": 30, "friendshipGain": 10, "questId": "q_ch4_help_npc_directions" },
+            { "label": "🗺️ Unlock full neighbourhood city map!", "next": 3, "rewardXP": 40, "friendshipGain": 10, "questId": "q_ch4_unlock_city_map" }
           ]
         },
         {
           "id": 1,
           "emotion": "excited",
-          "text": "🪥 First wake up, brush your teeth, wash, and eat breakfast in the kitchen!",
-          "visualAction": "🪥 Routine Actions",
-          "options": [{ "label": "🚌 Walk to the bus stop!", "next": 0, "questId": "q_ch3_unlock_routine" }]
+          "text": "🌳 Walk along City Streets, cross at the crosswalk, and explore the park!",
+          "visualAction": "🚶 Navigation Route",
+          "options": [{ "label": "🧭 Help NPCs find places!", "next": 2, "questId": "q_ch4_help_npc_directions" }]
         },
         {
           "id": 2,
           "emotion": "curious",
-          "text": "🚌 I usually take the bus in the morning and work in the afternoon!",
-          "visualAction": "🚌 Schedule Check",
-          "options": [{ "label": "⏰ Ask the time and habits!", "next": 0 }]
+          "text": "📍 Go straight, turn left, and turn right! The pharmacy is next to the bakery!",
+          "visualAction": "📍 Prepositions & Directions",
+          "options": [{ "label": "🗺️ Unlock city map!", "next": 3, "questId": "q_ch4_unlock_city_map" }]
+        },
+        {
+          "id": 3,
+          "emotion": "excited",
+          "text": "🎉 Congratulations! You navigated the neighbourhood, helped NPCs, and unlocked the full city map!",
+          "visualAction": "🎉 City Map Unlocked",
+          "options": [{ "label": "🌟 Chapter 4 Complete!", "next": 0 }]
         }
       ],
       "fr": [
@@ -436,6 +445,92 @@
           "text": "☕ Rich and aromatic! The best coffee in COSY Town!",
           "visualAction": "☕ ➔ 😊",
           "options": [{ "label": "☕ Grazie Marco!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "pharmacist_claire": {
+    "id": "pharmacist_claire",
+    "name": "Claire",
+    "portrait": "👩‍⚕️",
+    "avatar": "👩‍⚕️",
+    "role": "Neighbourhood Pharmacist",
+    "occupation": "Pharmacist",
+    "teachingRole": "Health, Wellness & Directions Specialist",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "park",
+    "position3D": { "x": 300, "y": 300, "z": 0 },
+    "voice": "en-US-Standard-E",
+    "dailySchedule": [
+      { "time": "08:30", "location": "pharmacy", "activity": "Opening pharmacy and organizing medicines" },
+      { "time": "13:00", "location": "park", "activity": "Taking a walk in the park" }
+    ],
+    "conversationHistory": [],
+    "questHistory": ["q_ch4_help_npc_directions"],
+    "quests": ["q_ch4_help_npc_directions"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "💊 Hello! Welcome to the pharmacy! The pharmacy is next to the bakery.",
+          "visualAction": "💊 Pharmacy Welcome",
+          "grammarCheck": "Prepositions of Place (Next to, Between)",
+          "options": [
+            { "label": "💊 Ask for directions to the post office!", "next": 1, "rewardXP": 20 }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🏣 Go straight, turn left at the crosswalk, and the post office is on the right!",
+          "visualAction": "🧭 Directional Guidance",
+          "options": [{ "label": "🙏 Thank you Claire!", "next": 0 }]
+        }
+      ]
+    }
+  },
+  "postmaster_sam": {
+    "id": "postmaster_sam",
+    "name": "Sam",
+    "portrait": "👨‍📬",
+    "avatar": "👨‍📬",
+    "role": "Town Postmaster",
+    "occupation": "Postmaster",
+    "teachingRole": "Postal & Mail Navigation Specialist",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "park",
+    "position3D": { "x": 300, "y": 300, "z": 0 },
+    "voice": "en-US-Standard-B",
+    "dailySchedule": [
+      { "time": "08:00", "location": "post_office", "activity": "Sorting mail and packages" },
+      { "time": "14:00", "location": "bus_stop", "activity": "Collecting mail from the bus line" }
+    ],
+    "conversationHistory": [],
+    "questHistory": ["q_ch4_unlock_city_map"],
+    "quests": ["q_ch4_unlock_city_map"],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🏣 Welcome to the post office! The post office is behind the park and next to the crosswalk.",
+          "visualAction": "🏣 Mail Handoff",
+          "grammarCheck": "Giving Directions & Spatial Identification",
+          "options": [
+            { "label": "📮 Ask about town navigation!", "next": 1, "rewardXP": 25 }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🗺️ Excellent work! You mastered giving directions and spatial prepositions. Here is the unlocked town map!",
+          "visualAction": "🗺️ Map Delivery",
+          "options": [{ "label": "🗺️ Open city map!", "next": 0 }]
         }
       ]
     }

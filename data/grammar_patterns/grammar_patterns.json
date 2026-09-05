@@ -42,6 +42,28 @@
     "examples": ["I eat an apple.", "I eat bread."]
   },
   {
+    "id": "gp_prepositions_place",
+    "pattern": "The {place} is {preposition} the {landmark}.",
+    "cefr": "A1",
+    "visualClue": "map_location_pin",
+    "examples": [
+      "The pharmacy is next to the bakery.",
+      "The park is behind the bus stop.",
+      "The pharmacy is between the bakery and the park."
+    ]
+  },
+  {
+    "id": "gp_directions_imperative",
+    "pattern": "{Action} {direction} at the {landmark}.",
+    "cefr": "A1",
+    "visualClue": "compass_arrow",
+    "examples": [
+      "Go straight and turn left.",
+      "Turn right at the crosswalk.",
+      "Come to the post office."
+    ]
+  },
+  {
     "id": "gp_past_simple_A1",
     "pattern": "I visited {place}.",
     "cefr": "A1",

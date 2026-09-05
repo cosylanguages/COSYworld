@@ -722,6 +722,186 @@
         "action": "enter"
       }
     ],
+    "nextQuestId": "q_ch4_navigate_town"
+  },
+  {
+    "id": "q_ch4_navigate_town",
+    "category": "travel",
+    "type": "directions",
+    "title": "🗺️ Navigate the Town",
+    "description": "Explore City Streets, cross the crosswalk, and visit the Park in your neighbourhood.",
+    "difficulty": "A1",
+    "NPC": "james_york",
+    "requirements": {
+      "prerequisiteQuest": "q_ch3_unlock_routine",
+      "targetLocation": "park"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch3_unlock_routine"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Navigate through City Streets and Crosswalk to enter the Park",
+        "target": "park"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "travel",
+        "description": "Travel to park",
+        "targetLocation": "park",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 110,
+      "vocabulary": ["park", "crosswalk", "pedestrian_crossing", "bench"],
+      "grammar": "gt_prepositions_place"
+    },
+    "rewards": {
+      "xp": 110,
+      "vocabulary": ["park", "crosswalk", "pedestrian_crossing", "bench"],
+      "grammar": "gt_prepositions_place"
+    },
+    "dialogues": {
+      "start": "Walk through City Streets, use the crosswalk, and arrive at the Park!",
+      "progress": "Walk into the Park.",
+      "complete": "Great job! You navigated to the Park!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "james_york",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "park",
+        "action": "enter"
+      }
+    ],
+    "nextQuestId": "q_ch4_help_npc_directions"
+  },
+  {
+    "id": "q_ch4_help_npc_directions",
+    "category": "speaking",
+    "type": "conversation",
+    "title": "🧭 Help NPCs Find Places",
+    "description": "Ask for and give directions to Claire at the Pharmacy using prepositions and directional commands.",
+    "difficulty": "A1",
+    "NPC": "pharmacist_claire",
+    "requirements": {
+      "prerequisiteQuest": "q_ch4_navigate_town",
+      "targetNpc": "pharmacist_claire"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch4_navigate_town"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Speak with Claire at the Pharmacy and give directions",
+        "target": "pharmacist_claire"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "speaking",
+        "description": "Converse with pharmacist_claire",
+        "targetNpc": "pharmacist_claire",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 120,
+      "vocabulary": ["left", "right", "straight", "turn", "pharmacy"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "rewards": {
+      "xp": 120,
+      "vocabulary": ["left", "right", "straight", "turn", "pharmacy"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "dialogues": {
+      "start": "Visit the Pharmacy and help Claire with neighbourhood directions!",
+      "progress": "Talk with Claire at the Pharmacy.",
+      "complete": "You helped Claire navigate the neighbourhood!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "pharmacist_claire",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "pharmacy",
+        "action": "speak"
+      }
+    ],
+    "nextQuestId": "q_ch4_unlock_city_map"
+  },
+  {
+    "id": "q_ch4_unlock_city_map",
+    "category": "exploration",
+    "type": "exploration",
+    "title": "🗺️ Unlock City Map",
+    "description": "Visit the Post Office and inspect the mailbox to unlock the full neighbourhood city map and complete Chapter 4.",
+    "difficulty": "A1",
+    "NPC": "postmaster_sam",
+    "requirements": {
+      "prerequisiteQuest": "q_ch4_help_npc_directions",
+      "targetLocation": "post_office"
+    },
+    "unlockConditions": {
+      "prerequisiteQuest": "q_ch4_help_npc_directions"
+    },
+    "steps": [
+      {
+        "id": "step_1",
+        "description": "Travel to the Post Office and inspect the mailbox",
+        "target": "post_office"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "obj_1",
+        "type": "exploration",
+        "description": "Enter post_office",
+        "targetLocation": "post_office",
+        "requiredCount": 1
+      }
+    ],
+    "reward": {
+      "xp": 150,
+      "vocabulary": ["post_office", "mailbox", "city_hall", "bus_stop"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "rewards": {
+      "xp": 150,
+      "vocabulary": ["post_office", "mailbox", "city_hall", "bus_stop"],
+      "grammar": "gt_imperatives_directions"
+    },
+    "dialogues": {
+      "start": "Head to the Post Office to claim the full Neighbourhood City Map!",
+      "progress": "Inspect the Post Office and talk to Sam.",
+      "complete": "Chapter 4 Complete! Neighbourhood City Map Unlocked!"
+    },
+    "npcTriggers": [
+      {
+        "npcId": "postmaster_sam",
+        "action": "talk"
+      }
+    ],
+    "sceneTriggers": [
+      {
+        "locationId": "post_office",
+        "action": "enter"
+      }
+    ],
     "nextQuestId": "q_explore_living"
   },
   {

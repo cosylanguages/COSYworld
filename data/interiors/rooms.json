@@ -98,6 +98,27 @@
     "ambientSounds": ["cafe"],
     "lightingProfile": { "type": "amber_warm", "color": "rgba(245, 158, 11, 0.2)", "opacity": 0.2 }
   },
+  "bakery": {
+    "id": "bakery",
+    "type": "bakery",
+    "name": { "en": "Bakery", "fr": "Boulangerie", "it": "Panetteria", "es": "Panadería", "de": "Bäckerei", "ru": "Пекарня" },
+    "image": "🥖",
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#d97706",
+      "dividerColor": "#b45309"
+    },
+    "hotspots": [
+      { "id": "bakery_display_zone", "label": "Bread Display Counter", "x": 220, "y": 180, "width": 260, "height": 120 }
+    ],
+    "interactiveObjects": ["bakery_building", "baguette", "croissant"],
+    "npcs": ["lucas_baker"],
+    "npcSpawns": [
+      { "npcId": "lucas_baker", "x": 200, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "warm", "color": "rgba(251, 191, 36, 0.15)", "opacity": 0.15 }
+  },
   "restaurant": {
     "id": "restaurant",
     "type": "restaurant",
@@ -183,7 +204,7 @@
   "street": {
     "id": "street",
     "type": "street",
-    "name": { "en": "Street", "fr": "Rue", "it": "Strada", "es": "Calle", "de": "Straße", "ru": "Улица" },
+    "name": { "en": "City Streets", "fr": "Rues de la ville", "it": "Vie della città", "es": "Calles de la ciudad", "de": "Straßen der Stadt", "ru": "Улицы города" },
     "image": "🛣️",
     "background": {
       "wallColor": "#cbd5e1",
@@ -191,9 +212,9 @@
       "dividerColor": "#1e293b"
     },
     "hotspots": [
-      { "id": "street_walk_zone", "label": "Pedestrian Street", "x": 100, "y": 180, "width": 600, "height": 120 }
+      { "id": "street_walk_zone", "label": "City Streets Avenue", "x": 100, "y": 180, "width": 600, "height": 120 }
     ],
-    "interactiveObjects": ["street_clock", "street_lamp"],
+    "interactiveObjects": ["street_clock", "street_lamp", "bench", "trash_can"],
     "npcs": ["james_york"],
     "npcSpawns": [
       { "npcId": "james_york", "x": 400, "y": 300 }
@@ -214,13 +235,97 @@
     "hotspots": [
       { "id": "bus_shelter_zone", "label": "Bus Stop Shelter", "x": 200, "y": 180, "width": 400, "height": 120 }
     ],
-    "interactiveObjects": ["bus_stop_sign", "bus_timetable_board"],
+    "interactiveObjects": ["bus_stop_sign", "bus_timetable_board", "bus", "street_lamp"],
     "npcs": ["james_york"],
     "npcSpawns": [
       { "npcId": "james_york", "x": 300, "y": 300 }
     ],
     "ambientSounds": ["nature"],
     "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0)", "opacity": 0 }
+  },
+  "park": {
+    "id": "park",
+    "type": "park",
+    "name": { "en": "Park", "fr": "Parc", "it": "Parco", "es": "Parque", "de": "Park", "ru": "Парк" },
+    "image": "🌳",
+    "background": {
+      "wallColor": "#dcfce7",
+      "floorColor": "#15803d",
+      "dividerColor": "#166534"
+    },
+    "hotspots": [
+      { "id": "park_zone", "label": "Park Promenade", "x": 150, "y": 180, "width": 500, "height": 120 }
+    ],
+    "interactiveObjects": ["bench", "fountain", "bicycle", "trash_can"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 200, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "pharmacy": {
+    "id": "pharmacy",
+    "type": "pharmacy",
+    "name": { "en": "Pharmacy", "fr": "Pharmacie", "it": "Farmacia", "es": "Farmacia", "de": "Apotheke", "ru": "Аптека" },
+    "image": "💊",
+    "background": {
+      "wallColor": "#d1fae5",
+      "floorColor": "#059669",
+      "dividerColor": "#047857"
+    },
+    "hotspots": [
+      { "id": "pharmacy_counter_zone", "label": "Pharmacy Counter", "x": 220, "y": 180, "width": 360, "height": 120 }
+    ],
+    "interactiveObjects": ["pharmacy_building", "first_aid_kit", "medicine_shelf"],
+    "npcs": ["pharmacist_claire"],
+    "npcSpawns": [
+      { "npcId": "pharmacist_claire", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "sterile_bright", "color": "rgba(240, 253, 250, 0.05)", "opacity": 0.05 }
+  },
+  "crosswalk": {
+    "id": "crosswalk",
+    "type": "crosswalk",
+    "name": { "en": "Crosswalk", "fr": "Passage piéton", "it": "Strisce pedonali", "es": "Paso de peatones", "de": "Zebrastreifen", "ru": "Пешеходный переход" },
+    "image": "🚸",
+    "background": {
+      "wallColor": "#e2e8f0",
+      "floorColor": "#334155",
+      "dividerColor": "#1e293b"
+    },
+    "hotspots": [
+      { "id": "crosswalk_zone", "label": "Pedestrian Crossing Zone", "x": 150, "y": 180, "width": 500, "height": 120 }
+    ],
+    "interactiveObjects": ["pedestrian_crossing", "traffic_light", "car"],
+    "npcs": ["james_york"],
+    "npcSpawns": [
+      { "npcId": "james_york", "x": 350, "y": 300 }
+    ],
+    "ambientSounds": ["nature"],
+    "lightingProfile": { "type": "outdoor_day", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+  },
+  "post_office": {
+    "id": "post_office",
+    "type": "post_office",
+    "name": { "en": "Post Office", "fr": "Bureau de poste", "it": "Ufficio postale", "es": "Oficina de correos", "de": "Postamt", "ru": "Почтовое отделение" },
+    "image": "🏣",
+    "background": {
+      "wallColor": "#ffedd5",
+      "floorColor": "#ea580c",
+      "dividerColor": "#c2410c"
+    },
+    "hotspots": [
+      { "id": "post_counter_zone", "label": "Post Office Desk", "x": 200, "y": 180, "width": 400, "height": 120 }
+    ],
+    "interactiveObjects": ["post_office_building", "mailbox", "letter"],
+    "npcs": ["postmaster_sam"],
+    "npcSpawns": [
+      { "npcId": "postmaster_sam", "x": 300, "y": 300 }
+    ],
+    "ambientSounds": ["piano"],
+    "lightingProfile": { "type": "bright_indoor", "color": "rgba(234, 88, 12, 0.1)", "opacity": 0.1 }
   },
   "reception": {
     "id": "reception",
