@@ -693,5 +693,557 @@
       "level": 2,
       "discoveredObjects": ["baguette"]
     }
+  },
+  {
+    "id": "gt_prepositions",
+    "title": "Spatial Prepositions (next to / behind / between) 📍",
+    "difficulty": "A1",
+    "rule": "Use prepositions to describe relative positions of places and objects: next to, behind, between, in front of. Pattern: [Subject] + [is/are] + [preposition] + [the + Object].",
+    "examples": [
+      {
+        "text": "The bakery is next to the cafe. The bus stop is in front of the street.",
+        "targetLang": {
+          "en": "The bakery is next to the cafe. The bus stop is in front of the street.",
+          "fr": "La boulangerie est à côté du café. L'arrêt de bus est devant la rue.",
+          "es": "La panadería está al lado del café. La parada de autobús está delante de la calle.",
+          "it": "La panetteria è accanto al caffè. La fermata dell'autobus è davanti alla strada.",
+          "de": "Die Bäckerei ist neben dem Café. Die Bushaltestelle ist vor der Straße.",
+          "ru": "Пекарня находится рядом с кафе. Автобусная остановка перед улицей."
+        },
+        "context": "Describing town locations relative to each other."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_prepositions_1",
+        "type": "multiple_choice",
+        "question": "Which preposition means 'beside' or 'at the side of'?",
+        "options": ["next to", "behind", "in front of"],
+        "correct": 0,
+        "explanation": "'Next to' indicates position directly adjacent or beside an item.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "The bakery is next to the cafe in Town Square!",
+        "grammarUsage": "Using spatial prepositions."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "town_square",
+      "objects": ["bakery", "cafe"],
+      "npcs": ["lucas_baker"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Spatial prepositions." },
+    "unlockRequirements": { "quests": ["q_directions_bakery"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_imperatives",
+    "title": "Directional Imperatives (go / come / turn) 🧭",
+    "difficulty": "A1",
+    "rule": "Directional imperatives use base verbs to give directions: 'Go straight', 'Turn left', 'Turn right', 'Come here'. Pattern: [Base Verb] + [Direction].",
+    "examples": [
+      {
+        "text": "Go straight and turn left at the bakery.",
+        "targetLang": {
+          "en": "Go straight and turn left at the bakery.",
+          "fr": "Allez tout droit et tournez à gauche à la boulangerie.",
+          "es": "Sigue recto y gira a la izquierda en la panadería.",
+          "it": "Vai dritto e gira a sinistra alla panetteria.",
+          "de": "Gehen Sie geradeaus und biegen Sie an der Bäckerei links ab.",
+          "ru": "Идите прямо и поверните налево у пекарни."
+        },
+        "context": "Giving and following directions in town."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_imperatives_1",
+        "type": "multiple_choice",
+        "question": "Which verb phrase tells someone to change direction left?",
+        "options": ["Turn left", "Go straight", "Come here"],
+        "correct": 0,
+        "explanation": "'Turn left' directs someone to pivot leftward.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "james_york",
+        "prompt": "Turn right at the street clock to find the bus stop!",
+        "grammarUsage": "Directional imperatives."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "street",
+      "objects": ["street_clock"],
+      "npcs": ["james_york"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Directional imperatives." },
+    "unlockRequirements": { "quests": ["q_grammar_imperative"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_countable_uncountable",
+    "title": "Countable & Uncountable Nouns 🛒",
+    "difficulty": "A1",
+    "rule": "Countable nouns can be counted individually (apple -> apples). Uncountable nouns refer to substances or concepts (bread, water, milk, sugar). Pattern: [a/an/numbers + Countable Noun] vs [Uncountable Noun].",
+    "examples": [
+      {
+        "text": "I buy two apples and fresh bread.",
+        "targetLang": {
+          "en": "I buy two apples and fresh bread.",
+          "fr": "J'achète deux pommes et du pain frais.",
+          "es": "Compro dos manzanas y pan fresco.",
+          "it": "Compro due mele e pane fresco.",
+          "de": "Ich kaufe zwei Äpfel und frisches Brot.",
+          "ru": "Я покупаю два яблока и свежий хлеб."
+        },
+        "context": "Shopping for countable and uncountable groceries."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_countable_1",
+        "type": "multiple_choice",
+        "question": "Which item is an uncountable noun?",
+        "options": ["bread", "apple", "baguette"],
+        "correct": 0,
+        "explanation": "'Bread' is uncountable; individual loaves or baguettes are counted.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "We sell individual baguettes and fresh flour!",
+        "grammarUsage": "Countable vs uncountable items."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "bakery",
+      "objects": ["baguette"],
+      "npcs": ["lucas_baker"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Countable and uncountable nouns." },
+    "unlockRequirements": { "quests": ["q_shop_baguette"], "level": 2, "discoveredObjects": ["baguette"] }
+  },
+  {
+    "id": "gt_some_any",
+    "title": "Quantifiers 'Some' & 'Any' 🥖",
+    "difficulty": "A1",
+    "rule": "Use 'some' in positive statements with plural or uncountable nouns. Use 'any' in questions and negative statements. Pattern: [Subject + Verb + some + Noun] vs [Do you have any + Noun?].",
+    "examples": [
+      {
+        "text": "I have some fresh apples. Do you have any tea?",
+        "targetLang": {
+          "en": "I have some fresh apples. Do you have any tea?",
+          "fr": "J'ai des pommes fraîches. Avez-vous du thé ?",
+          "es": "Tengo algunas manzanas frescas. ¿Tienes té?",
+          "it": "Ho alcune mele fresche. Hai del tè?",
+          "de": "Ich habe einige frische Äpfel. Haben Sie Tee?",
+          "ru": "У меня есть немного свежих яблок. У вас есть чай?"
+        },
+        "context": "Offering and asking for quantities."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_some_any_1",
+        "type": "multiple_choice",
+        "question": "Which word fills the gap in a question: 'Do you have ___ water?'",
+        "options": ["any", "some", "a"],
+        "correct": 0,
+        "explanation": "Use 'any' in questions asking about availability.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "marco_barista",
+        "prompt": "Would you like some warm milk with your espresso?",
+        "grammarUsage": "Using 'some' in polite offers."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "cafe",
+      "objects": ["coffee_cup"],
+      "npcs": ["marco_barista"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Quantifiers some and any." },
+    "unlockRequirements": { "quests": ["q_shop_baguette"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_how_much_many",
+    "title": "Asking Quantities ('How much' / 'How many') 💰",
+    "difficulty": "A1",
+    "rule": "Use 'How many' with plural countable nouns. Use 'How much' with uncountable nouns or when asking prices. Pattern: [How many + Countable Plural] vs [How much + Uncountable / price].",
+    "examples": [
+      {
+        "text": "How many baguettes do you want? How much is the coffee?",
+        "targetLang": {
+          "en": "How many baguettes do you want? How much is the coffee?",
+          "fr": "Combien de baguettes voulez-vous ? Combien coûte le café ?",
+          "es": "¿Cuántas baguettes quieres? ¿Cuánto cuesta el café?",
+          "it": "Quante baguette vuoi? Quanto costa il caffè?",
+          "de": "Wie viele Baguettes möchten Sie? Wie viel kostet der Kaffee?",
+          "ru": "Сколько багетов вы хотите? Сколько стоит кофе?"
+        },
+        "context": "Inquiring about quantities and prices when shopping."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_how_much_many_1",
+        "type": "multiple_choice",
+        "question": "Which phrase asks about the cost of an item?",
+        "options": ["How much is it?", "How many is it?", "How price is it?"],
+        "correct": 0,
+        "explanation": "Use 'How much' to ask for prices.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "lucas_baker",
+        "prompt": "How many loaves of bread would you like today?",
+        "grammarUsage": "Asking quantity with 'How many'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "bakery",
+      "objects": ["baguette"],
+      "npcs": ["lucas_baker"],
+      "district": "City Centre"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "How much vs how many." },
+    "unlockRequirements": { "quests": ["q_shop_baguette"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_can_cant",
+    "title": "Modal Verbs 'Can' & 'Can't' (Ability & Permission) 🏫",
+    "difficulty": "A1",
+    "rule": "Use 'can' for ability or permission and 'can't' (cannot) for inability or prohibition. Pattern: [Subject] + [can / can't] + [Base Verb].",
+    "examples": [
+      {
+        "text": "I can speak English. You can study in the library.",
+        "targetLang": {
+          "en": "I can speak English. You can study in the library.",
+          "fr": "Je peux parler anglais. Vous pouvez étudier à la bibliothèque.",
+          "es": "Puedo hablar inglés. Puedes estudiar en la biblioteca.",
+          "it": "Posso parlare inglese. Puoi studiare in biblioteca.",
+          "de": "Ich kann Englisch sprechen. Du kannst in der Bibliothek lernen.",
+          "ru": "Я могу говорить по-английски. Вы можете заниматься в библиотеке."
+        },
+        "context": "Expressing language skills and allowed activities at school."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_can_cant_1",
+        "type": "multiple_choice",
+        "question": "Complete the ability sentence: 'She ___ read French books.'",
+        "options": ["can", "canning", "cans"],
+        "correct": 0,
+        "explanation": "Modal verb 'can' does not change form for third-person singular.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "ella_bronx",
+        "prompt": "You can practice pronunciation with me in the language classroom!",
+        "grammarUsage": "Expressing permission and opportunity with 'can'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "language_classroom",
+      "objects": ["bookshelf"],
+      "npcs": ["ella_bronx"],
+      "district": "Education Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Modal verbs can and cant." },
+    "unlockRequirements": { "quests": ["q_convo_ella"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_past_simple",
+    "title": "Past Simple Tense (Completed Past Actions) 📜",
+    "difficulty": "A1+",
+    "rule": "Use Past Simple to describe completed actions at a definite time in the past. Regular verbs add -ed (visited, walked). Irregular verbs change form (went, came, saw). Pattern: [Subject] + [Past Verb].",
+    "examples": [
+      {
+        "text": "I visited the town hall yesterday. James came to COSY Town.",
+        "targetLang": {
+          "en": "I visited the town hall yesterday. James came to COSY Town.",
+          "fr": "J'ai visité l'hôtel de ville hier. James est venu à COSY Town.",
+          "es": "Visité el ayuntamiento ayer. James vino a COSY Town.",
+          "it": "Ho visitato il municipio ieri. James è venuto a COSY Town.",
+          "de": "Ich habe gestern das Rathaus besucht. James kam nach COSY Town.",
+          "ru": "Я посетил ратушу вчера. Джеймс приехал в COSY Town."
+        },
+        "context": "Sharing historic events and recent activities."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_past_simple_1",
+        "type": "multiple_choice",
+        "question": "What is the past simple form of 'visit'?",
+        "options": ["visited", "visiting", "visits"],
+        "correct": 0,
+        "explanation": "Regular past simple verbs take the suffix '-ed'.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "diana_voyager",
+        "prompt": "I traveled across many cities before arriving in COSY Town!",
+        "grammarUsage": "Narrating past travels."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "museum",
+      "objects": ["clock_tower"],
+      "npcs": ["diana_voyager"],
+      "district": "Civic Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Past simple tense." },
+    "unlockRequirements": { "quests": ["q_timed_anna"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_time_expressions",
+    "title": "Past Time Expressions (yesterday / last / ago) ⏳",
+    "difficulty": "A1+",
+    "rule": "Time expressions specify when past actions occurred: 'yesterday', 'last week / month', '[time] ago'. Pattern: [Past Simple Clause] + [Time Expression].",
+    "examples": [
+      {
+        "text": "I saw the exhibit two days ago. We met last week.",
+        "targetLang": {
+          "en": "I saw the exhibit two days ago. We met last week.",
+          "fr": "J'ai vu l'exposition il y a deux jours. Nous nous sommes rencontrés la semaine dernière.",
+          "es": "Vi la exposición hace dos días. Nos conocimos la semana pasada.",
+          "it": "Ho visto la mostra due giorni fa. Ci siamo incontrati la settimana scorsa.",
+          "de": "Ich habe die Ausstellung vor zwei Tagen gesehen. Wir haben uns letzte Woche getroffen.",
+          "ru": "Я видел выставку два дня назад. Мы встретились на прошлой неделе."
+        },
+        "context": "Specifying precise timing of completed actions."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_time_expressions_1",
+        "type": "multiple_choice",
+        "question": "Which time word completes: 'I walked in the park two hours ___'?",
+        "options": ["ago", "yesterday", "last"],
+        "correct": 0,
+        "explanation": "Use 'ago' after a duration of time to indicate how far in the past it occurred.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "anna",
+        "prompt": "I completed the vocabulary challenge three days ago!",
+        "grammarUsage": "Using time expressions with 'ago'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "museum",
+      "objects": ["clock_tower"],
+      "npcs": ["anna"],
+      "district": "Civic Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Past time expressions." },
+    "unlockRequirements": { "quests": ["q_timed_anna"], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_comparatives",
+    "title": "Comparative Adjectives (-er / more) ⚖️",
+    "difficulty": "A1+",
+    "rule": "Compare two items using '-er than' for short adjectives (bigger than, taller than) and 'more ... than' for longer adjectives (more famous than). Pattern: [Noun A] + [is] + [Adj-er / more Adj] + [than] + [Noun B].",
+    "examples": [
+      {
+        "text": "The park is bigger than the garden. The museum is more famous than the cafe.",
+        "targetLang": {
+          "en": "The park is bigger than the garden. The museum is more famous than the cafe.",
+          "fr": "Le parc est plus grand que le jardin. Le musée est plus célèbre que le café.",
+          "es": "El parque es más grande que el jardín. El museo es más famoso que el café.",
+          "it": "Il parco è più grande del giardino. Il museo è più famoso del caffè.",
+          "de": "Der Park ist größer als der Garten. Das Museum ist berühmter als das Café.",
+          "ru": "Парк больше, чем сад. Музей более знаменит, чем кафе."
+        },
+        "context": "Comparing places and focal points in the community park area."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_comparatives_1",
+        "type": "multiple_choice",
+        "question": "Which sentence correctly compares two sizes?",
+        "options": ["The park is bigger than the square", "The park is more big than square", "The park is big than square"],
+        "correct": 0,
+        "explanation": "Short adjectives like 'big' take the '-er' suffix in comparatives (bigger).",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "anna",
+        "prompt": "The community garden is greener than the town square!",
+        "grammarUsage": "Comparing town features."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "community_garden",
+      "objects": ["flower_bed"],
+      "npcs": ["anna"],
+      "district": "Community Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Comparative adjectives." },
+    "unlockRequirements": { "quests": [], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_have_got",
+    "title": "Possession Expression ('Have Got') 🎒",
+    "difficulty": "A1",
+    "rule": "Use 'have got' / 'has got' to express possession or attributes in informal communication. Pattern: [Subject] + [have got / has got] + [Noun]. Negative: haven't got / hasn't got.",
+    "examples": [
+      {
+        "text": "I have got a green backpack. She has got a map.",
+        "targetLang": {
+          "en": "I have got a green backpack. She has got a map.",
+          "fr": "J'ai un sac à dos vert. Elle a une carte.",
+          "es": "Tengo una mochila verde. Ella tiene un mapa.",
+          "it": "Ho uno zaino verde. Lei ha una mappa.",
+          "de": "Ich habe einen grünen Rucksack. Sie hat eine Karte.",
+          "ru": "У меня есть зеленый рюкзак. У нее есть карта."
+        },
+        "context": "Discussing personal items and personal belongings."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_have_got_1",
+        "type": "multiple_choice",
+        "question": "Choose the correct phrase: 'He ___ a new key.'",
+        "options": ["has got", "have got", "having got"],
+        "correct": 0,
+        "explanation": "Third-person singular 'He' takes 'has got'.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "ella_bronx",
+        "prompt": "I have got many language flashcards in my apartment!",
+        "grammarUsage": "Expressing possession with 'have got'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "community_center",
+      "objects": ["desk"],
+      "npcs": ["ella_bronx"],
+      "district": "Community Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Have got possession." },
+    "unlockRequirements": { "quests": [], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_need_feel",
+    "title": "Verbs 'Need' & 'Feel' (Needs & Feelings) 💭",
+    "difficulty": "A1",
+    "rule": "Use 'need' (+ Noun / Infinitive) to express requirements and 'feel' (+ Adjective) to express emotional or physical states. Pattern: [I need + Noun] / [I feel + Adjective].",
+    "examples": [
+      {
+        "text": "I need a rest. I feel happy today.",
+        "targetLang": {
+          "en": "I need a rest. I feel happy today.",
+          "fr": "J'ai besoin de repos. Je me sens heureux aujourd'hui.",
+          "es": "Necesito un descanso. Me siento feliz hoy.",
+          "it": "Ho bisogno di riposo. Mi sento felice oggi.",
+          "de": "Ich brauche eine Pause. Ich fühle mich heute glücklich.",
+          "ru": "Мне нужен отдых. Я чувствую себя счастливым сегодня."
+        },
+        "context": "Expressing internal states and needs in social settings."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_need_feel_1",
+        "type": "multiple_choice",
+        "question": "Complete the sentence: 'I ___ tired after walking through town.'",
+        "options": ["feel", "need", "am needing"],
+        "correct": 0,
+        "explanation": "Use 'feel' before adjectives describing personal state.",
+        "xpReward": 25
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "anna",
+        "prompt": "I feel excited about exploring the park!",
+        "grammarUsage": "Expressing feeling with 'feel'."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "conversation_corner",
+      "objects": ["sofa"],
+      "npcs": ["anna"],
+      "district": "Community Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Need and feel verbs." },
+    "unlockRequirements": { "quests": [], "level": 2, "discoveredObjects": [] }
+  },
+  {
+    "id": "gt_going_to_future",
+    "title": "Expressing Future Plans ('Going to') ✈️",
+    "difficulty": "A1+",
+    "rule": "Use 'be going to' + base verb to express planned future intentions or travel predictions. Pattern: [Subject] + [am/is/are] + [going to] + [Base Verb].",
+    "examples": [
+      {
+        "text": "I am going to travel to the airport tomorrow.",
+        "targetLang": {
+          "en": "I am going to travel to the airport tomorrow.",
+          "fr": "Je vais voyager à l'aéroport demain.",
+          "es": "Voy a viajar al aeropuerto mañana.",
+          "it": "Sto per viaggiare all'aeroporto domani.",
+          "de": "Ich werde morgen zum Flughafen reisen.",
+          "ru": "Я собираюсь поехать в аэропорт завтра."
+        },
+        "context": "Planning travel and future explorations."
+      }
+    ],
+    "interactiveExercises": [
+      {
+        "id": "ex_going_to_1",
+        "type": "multiple_choice",
+        "question": "Which sentence expresses a future intention?",
+        "options": ["I am going to visit the hotel", "I went to hotel yesterday", "I am visit hotel"],
+        "correct": 0,
+        "explanation": "Structure [am/is/are + going to + verb] expresses future intentions.",
+        "xpReward": 30
+      }
+    ],
+    "dialogues": [
+      {
+        "npcId": "diana_voyager",
+        "prompt": "I am going to visit the tourist office next!",
+        "grammarUsage": "Expressing future travel plans."
+      }
+    ],
+    "sceneIntegration": {
+      "locationId": "tourist_office",
+      "objects": ["desk"],
+      "npcs": ["diana_voyager"],
+      "district": "Civic Quarter"
+    },
+    "voice": { "lang": "en", "rate": 1.0, "pitch": 1.0, "audioPrompt": "Going to future plans." },
+    "unlockRequirements": { "quests": [], "level": 2, "discoveredObjects": [] }
   }
 ]

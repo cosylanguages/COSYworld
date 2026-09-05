@@ -1,0 +1,30 @@
+{
+  "npcId": "james_york",
+  "sceneId": "street",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "What time is it? It is eight o'clock in the morning. I usually take the bus to work.",
+      "emotion": "happy",
+      "gestures": ["check_watch", "point_bus"],
+      "highlights": ["street_clock", "bus_stop_sign"],
+      "speechRate": 0.75,
+      "grammarCheck": "Telling Time & Time of Day",
+      "visualAction": "🕒 Check Time",
+      "playerOptions": [
+        {
+          "text": "📅 Check the street clock schedule!",
+          "nextNodeId": null,
+          "vocabId": "street_clock",
+          "grammarId": "gt_time",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch3_daily_schedule"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

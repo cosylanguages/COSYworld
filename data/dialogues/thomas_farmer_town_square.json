@@ -1,0 +1,46 @@
+{
+  "npcId": "thomas_farmer",
+  "sceneId": "town_square",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👨‍🌾 Good day! 🍎 Fresh apples & 🥛 organic milk straight from the green pastures!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Plural Nouns (Apples, Fields, Crops)",
+      "visualAction": "👨‍🌾 ➔ 🍎 ➔ 🚜",
+      "playerOptions": [
+        {
+          "text": "🍎 Taste farm apple!",
+          "nextNodeId": "node_1",
+          "vocabId": "apple",
+          "rewardXP": 20,
+          "rewardQuestId": "q_thomas_harvest"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🍎 Crisp and sweet! Grown with fresh rainwater and sunshine!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Adjectives (Crisp, Sweet, Fresh)",
+      "visualAction": "☀️ ➔ 🌧️ ➔ 🍎",
+      "playerOptions": [
+        {
+          "text": "👍 Thank you Thomas!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "npcId": "dylan_chef",
+  "sceneId": "restaurant",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👨‍🍳 Welcome to my restaurant! 🍲 Today's special is fresh vegetable soup with 🥖 warm baguette!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Subject + Verb + Direct Object (I order soup)",
+      "visualAction": "👨‍🍳 ➔ 🍲 ➔ 😋",
+      "playerOptions": [
+        {
+          "text": "🍲 Order today's special!",
+          "nextNodeId": "node_1",
+          "vocabId": "soup",
+          "rewardXP": 20,
+          "rewardQuestId": "q_dylan_menu"
+        },
+        {
+          "text": "🥖 Inspect fresh baguette recipe",
+          "nextNodeId": "node_2",
+          "vocabId": "baguette",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🍲 Excellent choice! One warm bowl of vegetable soup coming right up!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Ordering food",
+      "visualAction": "🍲 ➔ 😋",
+      "playerOptions": [
+        {
+          "text": "😋 Yum! Thank you Dylan!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🥖 Our baguette uses organic wheat from Thomas's farm!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Possessives & Origins",
+      "visualAction": "🌾 ➔ 🥖",
+      "playerOptions": [
+        {
+          "text": "🌾 Learn about Thomas's farm",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

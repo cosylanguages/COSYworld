@@ -1,0 +1,44 @@
+{
+  "npcId": "marco_barista",
+  "sceneId": "cafe",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "☕ Fresh espresso! ♨️ Hot!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Polite Requests (Please, May I have)",
+      "visualAction": "☕ ➔ ♨️",
+      "playerOptions": [
+        {
+          "text": "☕ Sip fresh coffee!",
+          "nextNodeId": "node_1",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "☕ Rich and aromatic! The best coffee in COSY Town!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Superlatives & Adjectives",
+      "visualAction": "☕ ➔ 😊",
+      "playerOptions": [
+        {
+          "text": "☕ Grazie Marco!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

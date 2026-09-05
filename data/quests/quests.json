@@ -1,6 +1,7 @@
 [
   {
     "id": "q_ch1_follow_james",
+    "chapter": "ch1",
     "category": "exploration",
     "type": "exploration",
     "title": "🚶 Follow James York",
@@ -61,6 +62,7 @@
   },
   {
     "id": "q_ch1_meet_receptionist",
+    "chapter": "ch1",
     "category": "exploration",
     "type": "exploration",
     "title": "💁 Meet the Receptionist",
@@ -121,6 +123,7 @@
   },
   {
     "id": "q_ch1_first_dialogue",
+    "chapter": "ch1",
     "category": "speaking",
     "type": "conversation",
     "title": "💬 Complete Your First Dialogue",
@@ -181,6 +184,7 @@
   },
   {
     "id": "q_ch1_pick_up_key",
+    "chapter": "ch1",
     "category": "vocabulary",
     "type": "collect",
     "title": "🔑 Pick Up Your Key",
@@ -242,6 +246,7 @@
   },
   {
     "id": "q_ch1_open_apartment",
+    "chapter": "ch1",
     "category": "exploration",
     "type": "exploration",
     "title": "🚪 Open Your Apartment",
@@ -302,6 +307,7 @@
   },
   {
     "id": "q_ch2_explore_rooms",
+    "chapter": "ch2",
     "category": "exploration",
     "type": "exploration",
     "title": "🏠 Explore Every Room",
@@ -362,6 +368,7 @@
   },
   {
     "id": "q_ch2_interact_objects",
+    "chapter": "ch2",
     "category": "vocabulary",
     "type": "collect",
     "title": "🔍 Find and Interact with Objects",
@@ -423,6 +430,7 @@
   },
   {
     "id": "q_ch2_organize_apartment",
+    "chapter": "ch2",
     "category": "speaking",
     "type": "conversation",
     "title": "🧹 Help James Organize the Apartment",
@@ -483,6 +491,7 @@
   },
   {
     "id": "q_ch2_unlock_furniture",
+    "chapter": "ch2",
     "category": "vocabulary",
     "type": "collect",
     "title": "🪑 Unlock Furniture Vocabulary",
@@ -544,6 +553,7 @@
   },
   {
     "id": "q_ch3_morning_routine",
+    "chapter": "ch3",
     "category": "vocabulary",
     "type": "collect",
     "title": "🌅 Complete Your Morning Routine",
@@ -605,6 +615,7 @@
   },
   {
     "id": "q_ch3_daily_schedule",
+    "chapter": "ch3",
     "category": "travel",
     "type": "directions",
     "title": "📅 Follow a Daily Schedule",
@@ -666,6 +677,7 @@
   },
   {
     "id": "q_ch3_unlock_routine",
+    "chapter": "ch3",
     "category": "exploration",
     "type": "exploration",
     "title": "🚌 Unlock Routine Achievements",
@@ -726,6 +738,7 @@
   },
   {
     "id": "q_explore_living",
+    "chapter": "ch1",
     "category": "exploration",
     "type": "exploration",
     "title": "🛋️ Apartment Exploration",
@@ -786,6 +799,7 @@
   },
   {
     "id": "q_collect_key",
+    "chapter": "ch1",
     "category": "vocabulary",
     "type": "collect",
     "title": "🔑 Find the Table Key",
@@ -847,6 +861,7 @@
   },
   {
     "id": "q_grammar_imperative",
+    "chapter": "ch4",
     "category": "grammar",
     "type": "grammar",
     "title": "🧩 Master Imperatives",
@@ -908,6 +923,7 @@
   },
   {
     "id": "q_photo_fountain",
+    "chapter": "ch2",
     "category": "photography",
     "type": "photograph",
     "title": "📸 Photograph the Clock Tower",
@@ -968,6 +984,7 @@
   },
   {
     "id": "q_convo_ella",
+    "chapter": "ch7",
     "category": "speaking",
     "type": "conversation",
     "title": "💬 Meet Ella Bronx",
@@ -1027,6 +1044,7 @@
   },
   {
     "id": "q_pronunciation_ella",
+    "chapter": "ch7",
     "category": "speaking",
     "type": "pronunciation",
     "title": "🗣️ Speech Articulation Clinic",
@@ -1088,6 +1106,7 @@
   },
   {
     "id": "q_listening_fountain",
+    "chapter": "ch2",
     "category": "listening",
     "type": "listening",
     "title": "👂 Listen to Ambient Sounds",
@@ -1150,6 +1169,7 @@
   },
   {
     "id": "q_directions_bakery",
+    "chapter": "ch4",
     "category": "travel",
     "type": "directions",
     "title": "🧭 Navigate to the Bakery",
@@ -1210,6 +1230,7 @@
   },
   {
     "id": "q_shop_baguette",
+    "chapter": "ch5",
     "category": "shopping",
     "type": "shopping",
     "title": "🥖 Purchase Warm Baguette",
@@ -1271,6 +1292,7 @@
   },
   {
     "id": "q_cooking_bread",
+    "chapter": "ch6",
     "category": "cooking",
     "type": "cooking",
     "title": "🧑‍🍳 Bake Bakery Bread",
@@ -1331,6 +1353,7 @@
   },
   {
     "id": "q_reading_noticeboard",
+    "chapter": "ch1",
     "category": "reading",
     "type": "reading",
     "title": "📜 Read Town Announcements",
@@ -1391,6 +1414,7 @@
   },
   {
     "id": "q_timed_anna",
+    "chapter": "ch3",
     "category": "exploration",
     "type": "timed challenge",
     "title": "⚡ 60-Second Item Blitz",

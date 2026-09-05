@@ -1,0 +1,30 @@
+{
+  "npcId": "james_york",
+  "sceneId": "apartment_living",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "There is a sofa in the living room and a bed in the bedroom.",
+      "emotion": "happy",
+      "gestures": ["point_furniture", "point_room"],
+      "highlights": ["sofa", "bed", "desk"],
+      "speechRate": 0.65,
+      "grammarCheck": "Existential placement (There is)",
+      "visualAction": "🛋️ Living Room Tour",
+      "playerOptions": [
+        {
+          "text": "🛋️ Look around the living room!",
+          "nextNodeId": null,
+          "vocabId": "sofa",
+          "grammarId": "gt_there_is",
+          "rewardXP": 20,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch2_explore_rooms"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

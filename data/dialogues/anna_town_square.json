@@ -1,0 +1,45 @@
+{
+  "npcId": "anna",
+  "sceneId": "town_square",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "⚡ 🔑 + 🥖 = 2 objects! Can you find 3 objects in COSY Town?",
+      "emotion": "confident",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.85,
+      "grammarCheck": "Counting & Cardinal Numbers (1, 2, 3)",
+      "visualAction": "🔍 Find 3 items",
+      "playerOptions": [
+        {
+          "text": "⚡ Accept vocabulary challenge!",
+          "nextNodeId": "node_1",
+          "rewardXP": 25,
+          "rewardQuestId": "q3_anna_challenge"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🔥 Challenge accepted! Show me your visual encyclopedia progress!",
+      "emotion": "confident",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.85,
+      "grammarCheck": "Imperatives & Encouragement",
+      "visualAction": "📚 ➔ 🏆",
+      "playerOptions": [
+        {
+          "text": "🏆 Let's go!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

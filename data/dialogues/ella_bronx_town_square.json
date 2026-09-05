@@ -1,0 +1,45 @@
+{
+  "npcId": "ella_bronx",
+  "sceneId": "town_square",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👂 Listen... 🗣️ Repeat out loud!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Listen & Repeat Audio Mimicry",
+      "visualAction": "👂 ➔ 🗣️",
+      "playerOptions": [
+        {
+          "text": "🔊 Practice speaking out loud!",
+          "nextNodeId": "node_1",
+          "rewardXP": 20,
+          "rewardQuestId": "q2_pronunciation"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "👏 Clear articulation! Practice aloud every day to build speech confidence!",
+      "emotion": "happy",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Imperatives & Speech Confidence",
+      "visualAction": "🗣️ ➔ ⭐",
+      "playerOptions": [
+        {
+          "text": "👍 Thank you Ella!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

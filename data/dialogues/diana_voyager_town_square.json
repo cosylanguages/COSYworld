@@ -1,0 +1,45 @@
+{
+  "npcId": "diana_voyager",
+  "sceneId": "town_square",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👩‍🎨 Every corner of COSY Town holds a secret... 🗝️ Shall we unravel it together?",
+      "emotion": "curious",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.85,
+      "grammarCheck": "Modal Auxiliaries (Shall we, Could you, Would you)",
+      "visualAction": "👩‍🎨 ➔ 📖 ➔ 🌟",
+      "playerOptions": [
+        {
+          "text": "🗝️ Listen to Diana's traveler story!",
+          "nextNodeId": "node_1",
+          "rewardXP": 25,
+          "rewardQuestId": "q_diana_mystery"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🌟 Words are like keys. The more words you discover, the wider the world opens before you!",
+      "emotion": "curious",
+      "gestures": [],
+      "highlights": [],
+      "speechRate": 0.85,
+      "grammarCheck": "Comparatives & Metaphors",
+      "visualAction": "🗝️ ➔ 🌍 ➔ 🔓",
+      "playerOptions": [
+        {
+          "text": "🌍 Continue my voyage!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

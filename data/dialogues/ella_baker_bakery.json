@@ -1,0 +1,29 @@
+{
+  "npcId": "ella_baker",
+  "sceneId": "bakery",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "Would you like fresh bread?",
+      "emotion": "happy",
+      "gestures": ["offer_bread"],
+      "highlights": ["baguette"],
+      "speechRate": 0.8,
+      "grammarCheck": "Preferences & Requests",
+      "visualAction": "🥖 Fresh Bakery Bread",
+      "playerOptions": [
+        {
+          "text": "🥖 Yes, I would like fresh bread, please!",
+          "nextNodeId": null,
+          "vocabId": "baguette",
+          "grammarId": "gt_likes",
+          "rewardXP": 20,
+          "rewardQuestId": "q_shop_baguette"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

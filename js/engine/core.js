@@ -159,7 +159,24 @@ export class GameEngine {
     /* Asset & JSON Preloader using AssetManager & WorldBuilder */
     async loadData() {
         const basePath = 'data';
-        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes, dialoguesRes, grammarPatternsRes, situationsRes] = await Promise.all([
+        const dialogueKeys = [
+            'james_york_town_entrance',
+            'receptionist_reception',
+            'james_york_apartment_living',
+            'james_york_apartment_bedroom',
+            'james_york_apartment_entrance',
+            'james_york_street',
+            'ella_baker_bakery',
+            'lucas_baker_bakery',
+            'dylan_chef_restaurant',
+            'thomas_farmer_town_square',
+            'diana_voyager_town_square',
+            'ella_bronx_town_square',
+            'anna_town_square',
+            'marco_barista_cafe'
+        ];
+
+        const [languagesRes, districtsRes, objectsRes, npcsRes, questsRes, grammarRes, buildingsRes, roomsRes, vocabDbRes, minigamesJsonRes, worldSimRes, grammarPatternsRes, situationsRes, ...loadedDialogueTrees] = await Promise.all([
             this.assetManager.loadJson(`${basePath}/languages/languages.json`),
             this.assetManager.loadJson(`${basePath}/scenes/districts.json`),
             this.assetManager.loadJson(`${basePath}/vocabulary/objects.json`).catch(() => ({})),
@@ -171,9 +188,9 @@ export class GameEngine {
             this.assetManager.loadJson(`${basePath}/vocabulary/vocabulary_database.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/minigames/minigames.json`).catch(() => ([])),
             this.assetManager.loadJson(`${basePath}/world/world_simulation.json`).catch(() => ({})),
-            this.assetManager.loadJson(`${basePath}/dialogues/dialogues.json`).catch(() => ({})),
             this.assetManager.loadJson(`${basePath}/grammar_patterns/grammar_patterns.json`).catch(() => ([])),
-            this.assetManager.loadJson(`${basePath}/situations/situations.json`).catch(() => ({}))
+            this.assetManager.loadJson(`${basePath}/situations/situations.json`).catch(() => ({})),
+            ...dialogueKeys.map(k => this.assetManager.loadJson(`${basePath}/dialogues/${k}.json`).catch(() => null))
         ]);
 
         if (npcsRes) {
@@ -197,13 +214,22 @@ export class GameEngine {
             this.buildingManager.registerBuildings(buildingsRes);
         }
 
+        const dialogueTreesDict = {};
+        dialogueKeys.forEach((key, idx) => {
+            if (loadedDialogueTrees[idx]) {
+                dialogueTreesDict[key] = loadedDialogueTrees[idx];
+            }
+        });
+
+        this.data.assetManager = this.assetManager;
         this.data.languages = languagesRes;
         this.data.districts = this.worldBuilder.exportDistrictsObject();
         this.data.buildings = buildingsRes || {};
         this.data.objects = objectsRes || {};
         this.data.npcs = npcsRes;
         this.data.quests = questsRes;
-        this.data.dialogues = dialoguesRes;
+        this.data.dialogueTrees = dialogueTreesDict;
+        this.data.dialogues = dialogueTreesDict;
         this.data.grammarPatterns = grammarPatternsRes;
         this.data.situations = situationsRes;
         this.questEngine.loadQuestsFromJson(questsRes);

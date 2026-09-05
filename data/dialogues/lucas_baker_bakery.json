@@ -1,0 +1,47 @@
+{
+  "npcId": "lucas_baker",
+  "sceneId": "bakery",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🥖 Warm baguette! 😋 Do you like fresh bread?",
+      "emotion": "happy",
+      "gestures": ["offer_bread"],
+      "highlights": ["baguette"],
+      "speechRate": 0.8,
+      "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
+      "visualAction": "🥖 ➔ 😋",
+      "playerOptions": [
+        {
+          "text": "🥖 Take warm baguette!",
+          "nextNodeId": "node_1",
+          "vocabId": "baguette",
+          "grammarId": "gt_likes",
+          "rewardXP": 20,
+          "rewardQuestId": "q4_bakery_bread"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🥖 Baked fresh with organic flour! Enjoy your meal!",
+      "emotion": "happy",
+      "gestures": ["offer_bread"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Adjectives",
+      "visualAction": "😋 ➔ 👍",
+      "playerOptions": [
+        {
+          "text": "😋 Yum!",
+          "nextNodeId": "node_0"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}
