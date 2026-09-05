@@ -141,5 +141,16 @@
     "unlockCondition": {
       "questId": "q_ch3_unlock_routine"
     }
+  },
+  {
+    "id": "ach_early_riser",
+    "title": "⏰ Early Riser",
+    "description": "Complete the full morning routine in order: wake up, wash, eat, dress, and leave.",
+    "category": "chapter_3",
+    "icon": "⏰",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch3_morning_routine"
+    }
   }
 ]

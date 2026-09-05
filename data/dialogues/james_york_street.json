@@ -5,22 +5,90 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "What time is it? It is eight o'clock in the morning. I usually take the bus to work.",
+      "npcLine": "🕒 Good morning! What time is it? It is eight o'clock in the morning. I always wake up early and I usually take the bus to work!",
       "emotion": "happy",
-      "gestures": ["check_watch", "point_bus"],
-      "highlights": ["street_clock", "bus_stop_sign"],
+      "gestures": [
+        "check_watch",
+        "point_bus"
+      ],
+      "highlights": [
+        "street_clock",
+        "bus_stop_sign"
+      ],
       "speechRate": 0.75,
-      "grammarCheck": "Telling Time & Time of Day",
-      "visualAction": "🕒 Check Time",
+      "grammarCheck": "Telling Time & Frequency Adverbs ('always', 'usually', 'never')",
+      "visualAction": "🕒 Daily Routine Check",
+      "playerOptions": [
+        {
+          "text": "🌅 I always wake up at seven o'clock and eat breakfast!",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_always",
+          "grammarId": "gt_frequency",
+          "rewardXP": 20,
+          "friendshipGain": 5
+        },
+        {
+          "text": "🚌 I usually walk to work, but I never miss the bus!",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_usually",
+          "grammarId": "gt_frequency",
+          "rewardXP": 20,
+          "friendshipGain": 5
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🌅 Excellent routine! Having a good morning routine keeps you energized all day. I usually study in the afternoon and rest in the evening.",
+      "emotion": "excited",
+      "gestures": [
+        "nod",
+        "thumbs_up"
+      ],
+      "highlights": [
+        "street_clock"
+      ],
+      "speechRate": 0.75,
+      "grammarCheck": "Daily Habits & Times of Day ('morning', 'afternoon', 'evening')",
+      "visualAction": "🌅 Morning Energy",
       "playerOptions": [
         {
           "text": "📅 Check the street clock schedule!",
           "nextNodeId": null,
-          "vocabId": "street_clock",
+          "vocabId": "vocab_clock",
           "grammarId": "gt_time",
           "rewardXP": 25,
           "friendshipGain": 10,
           "rewardQuestId": "q_ch3_daily_schedule"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🚌 Commuting by bus is great! I never arrive late when I check the timetable at the bus stop. Look at the clock, it is almost time for the bus!",
+      "emotion": "happy",
+      "gestures": [
+        "point_bus"
+      ],
+      "highlights": [
+        "bus_stop_sign"
+      ],
+      "speechRate": 0.75,
+      "grammarCheck": "Frequency Adverbs & Transit Schedules ('never late')",
+      "visualAction": "🚌 Bus Transit",
+      "playerOptions": [
+        {
+          "text": "🚌 Walk to the bus stop and check the bus schedule!",
+          "nextNodeId": null,
+          "vocabId": "vocab_never",
+          "grammarId": "gt_frequency",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch3_unlock_routine"
         }
       ],
       "endConditions": null,

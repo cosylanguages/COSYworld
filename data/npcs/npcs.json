@@ -13,20 +13,50 @@
     "friendshipPoints": 0,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 300, "y": 280, "z": 0 },
+    "position3D": {
+      "x": 300,
+      "y": 280,
+      "z": 0
+    },
     "voice": "en-US-Standard-B",
     "dailySchedule": [
-      { "time": "08:00", "location": "cafe", "activity": "Sipping morning coffee" },
-      { "time": "12:00", "location": "restaurant", "activity": "Cooking lunch specials" },
-      { "time": "18:00", "location": "town_square", "activity": "Evening stroll in town square" }
+      {
+        "time": "08:00",
+        "location": "cafe",
+        "activity": "Sipping morning coffee"
+      },
+      {
+        "time": "12:00",
+        "location": "restaurant",
+        "activity": "Cooking lunch specials"
+      },
+      {
+        "time": "18:00",
+        "location": "town_square",
+        "activity": "Evening stroll in town square"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_dylan_menu"],
-    "shopInventory": [
-      { "id": "baguette", "name": "Baguette", "price": 10, "emoji": "🥖" },
-      { "id": "soup", "name": "Vegetable Soup", "price": 20, "emoji": "🍲" }
+    "questHistory": [
+      "q_dylan_menu"
     ],
-    "quests": ["q_dylan_menu"],
+    "shopInventory": [
+      {
+        "id": "baguette",
+        "name": "Baguette",
+        "price": 10,
+        "emoji": "🥖"
+      },
+      {
+        "id": "soup",
+        "name": "Vegetable Soup",
+        "price": 20,
+        "emoji": "🍲"
+      }
+    ],
+    "quests": [
+      "q_dylan_menu"
+    ],
     "dialogues": {
       "en": [
         {
@@ -35,21 +65,40 @@
           "visualAction": "👨‍🍳 ➔ 🍲 ➔ 😋",
           "grammarCheck": "Subject + Verb + Direct Object (I order soup)",
           "options": [
-            { "label": "🍲 Order today's special!", "next": 1, "rewardXP": 20, "questId": "q_dylan_menu" },
-            { "label": "🥖 Inspect fresh baguette recipe", "next": 2, "rewardXP": 15 }
+            {
+              "label": "🍲 Order today's special!",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q_dylan_menu"
+            },
+            {
+              "label": "🥖 Inspect fresh baguette recipe",
+              "next": 2,
+              "rewardXP": 15
+            }
           ]
         },
         {
           "id": 1,
           "text": "🍲 Excellent choice! One warm bowl of vegetable soup coming right up!",
           "visualAction": "🍲 ➔ 😋",
-          "options": [{ "label": "😋 Yum! Thank you Dylan!", "next": 0 }]
+          "options": [
+            {
+              "label": "😋 Yum! Thank you Dylan!",
+              "next": 0
+            }
+          ]
         },
         {
           "id": 2,
           "text": "🥖 Our baguette uses organic wheat from Thomas's farm!",
           "visualAction": "🌾 ➔ 🥖",
-          "options": [{ "label": "🌾 Learn about Thomas's farm", "next": 0 }]
+          "options": [
+            {
+              "label": "🌾 Learn about Thomas's farm",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -68,20 +117,50 @@
     "friendshipPoints": 0,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 150, "y": 310, "z": 0 },
+    "position3D": {
+      "x": 150,
+      "y": 310,
+      "z": 0
+    },
     "voice": "en-US-Standard-D",
     "dailySchedule": [
-      { "time": "06:00", "location": "town_square", "activity": "Tending crops & morning market" },
-      { "time": "12:00", "location": "cafe", "activity": "Drinking herbal tea" },
-      { "time": "18:00", "location": "town_square", "activity": "Surveying green pastures" }
+      {
+        "time": "06:00",
+        "location": "town_square",
+        "activity": "Tending crops & morning market"
+      },
+      {
+        "time": "12:00",
+        "location": "cafe",
+        "activity": "Drinking herbal tea"
+      },
+      {
+        "time": "18:00",
+        "location": "town_square",
+        "activity": "Surveying green pastures"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_thomas_harvest"],
-    "shopInventory": [
-      { "id": "apple", "name": "Fresh Apple", "price": 5, "emoji": "🍎" },
-      { "id": "milk", "name": "Organic Milk", "price": 12, "emoji": "🥛" }
+    "questHistory": [
+      "q_thomas_harvest"
     ],
-    "quests": ["q_thomas_harvest"],
+    "shopInventory": [
+      {
+        "id": "apple",
+        "name": "Fresh Apple",
+        "price": 5,
+        "emoji": "🍎"
+      },
+      {
+        "id": "milk",
+        "name": "Organic Milk",
+        "price": 12,
+        "emoji": "🥛"
+      }
+    ],
+    "quests": [
+      "q_thomas_harvest"
+    ],
     "dialogues": {
       "en": [
         {
@@ -90,14 +169,24 @@
           "visualAction": "👨‍🌾 ➔ 🍎 ➔ 🚜",
           "grammarCheck": "Plural Nouns (Apples, Fields, Crops)",
           "options": [
-            { "label": "🍎 Taste farm apple!", "next": 1, "rewardXP": 20, "questId": "q_thomas_harvest" }
+            {
+              "label": "🍎 Taste farm apple!",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q_thomas_harvest"
+            }
           ]
         },
         {
           "id": 1,
           "text": "🍎 Crisp and sweet! Grown with fresh rainwater and sunshine!",
           "visualAction": "☀️ ➔ 🌧️ ➔ 🍎",
-          "options": [{ "label": "👍 Thank you Thomas!", "next": 0 }]
+          "options": [
+            {
+              "label": "👍 Thank you Thomas!",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -118,17 +207,37 @@
     "friendshipPoints": 0,
     "favoriteCafe": "hotel",
     "favoritePark": "tourist_office",
-    "position3D": { "x": 650, "y": 290, "z": 0 },
+    "position3D": {
+      "x": 650,
+      "y": 290,
+      "z": 0
+    },
     "voice": "en-US-Standard-F",
     "dailySchedule": [
-      { "time": "08:00", "location": "airport", "activity": "Welcoming international travelers at airport" },
-      { "time": "13:00", "location": "tourist_office", "activity": "Providing travel guides & maps" },
-      { "time": "19:00", "location": "hotel", "activity": "Evening check-in at hotel lobby" }
+      {
+        "time": "08:00",
+        "location": "airport",
+        "activity": "Welcoming international travelers at airport"
+      },
+      {
+        "time": "13:00",
+        "location": "tourist_office",
+        "activity": "Providing travel guides & maps"
+      },
+      {
+        "time": "19:00",
+        "location": "hotel",
+        "activity": "Evening check-in at hotel lobby"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_diana_mystery"],
+    "questHistory": [
+      "q_diana_mystery"
+    ],
     "shopInventory": [],
-    "quests": ["q_diana_mystery"],
+    "quests": [
+      "q_diana_mystery"
+    ],
     "dialogues": {
       "en": [
         {
@@ -137,14 +246,24 @@
           "visualAction": "👩‍🎨 ➔ 📖 ➔ 🌟",
           "grammarCheck": "Modal Auxiliaries (Shall we, Could you, Would you)",
           "options": [
-            { "label": "🗝️ Listen to Diana's traveler story!", "next": 1, "rewardXP": 25, "questId": "q_diana_mystery" }
+            {
+              "label": "🗝️ Listen to Diana's traveler story!",
+              "next": 1,
+              "rewardXP": 25,
+              "questId": "q_diana_mystery"
+            }
           ]
         },
         {
           "id": 1,
           "text": "🌟 Words are like keys. The more words you discover, the wider the world opens before you!",
           "visualAction": "🗝️ ➔ 🌍 ➔ 🔓",
-          "options": [{ "label": "🌍 Continue my voyage!", "next": 0 }]
+          "options": [
+            {
+              "label": "🌍 Continue my voyage!",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -163,16 +282,40 @@
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 380, "y": 280, "z": 0 },
+    "position3D": {
+      "x": 380,
+      "y": 280,
+      "z": 0
+    },
     "voice": "en-US-Standard-E",
     "dailySchedule": [
-      { "time": "08:00", "location": "reception", "activity": "Welcoming new students" },
-      { "time": "13:00", "location": "cafe", "activity": "Lunch break" },
-      { "time": "15:00", "location": "reception", "activity": "Managing student registrations" }
+      {
+        "time": "08:00",
+        "location": "reception",
+        "activity": "Welcoming new students"
+      },
+      {
+        "time": "13:00",
+        "location": "cafe",
+        "activity": "Lunch break"
+      },
+      {
+        "time": "15:00",
+        "location": "reception",
+        "activity": "Managing student registrations"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_ch1_meet_receptionist", "q_ch1_first_dialogue", "q_ch1_pick_up_key"],
-    "quests": ["q_ch1_meet_receptionist", "q_ch1_first_dialogue", "q_ch1_pick_up_key"],
+    "questHistory": [
+      "q_ch1_meet_receptionist",
+      "q_ch1_first_dialogue",
+      "q_ch1_pick_up_key"
+    ],
+    "quests": [
+      "q_ch1_meet_receptionist",
+      "q_ch1_first_dialogue",
+      "q_ch1_pick_up_key"
+    ],
     "dialogues": {
       "en": [
         {
@@ -182,8 +325,18 @@
           "visualAction": "👋 Welcome",
           "grammarCheck": "Asking name & introduces self",
           "options": [
-            { "label": "👋 Hello! I am a new student.", "next": 1, "rewardXP": 15, "questId": "q_ch1_first_dialogue" },
-            { "label": "🔑 Pick up apartment key", "next": 2, "rewardXP": 15, "questId": "q_ch1_pick_up_key" }
+            {
+              "label": "👋 Hello! I am a new student.",
+              "next": 1,
+              "rewardXP": 15,
+              "questId": "q_ch1_first_dialogue"
+            },
+            {
+              "label": "🔑 Pick up apartment key",
+              "next": 2,
+              "rewardXP": 15,
+              "questId": "q_ch1_pick_up_key"
+            }
           ]
         },
         {
@@ -192,7 +345,12 @@
           "text": "😊 Pleased to meet you! I am the receptionist here.",
           "visualAction": "📝 Registration",
           "options": [
-            { "label": "🔑 Take apartment key", "next": 2, "rewardXP": 15, "questId": "q_ch1_pick_up_key" }
+            {
+              "label": "🔑 Take apartment key",
+              "next": 2,
+              "rewardXP": 15,
+              "questId": "q_ch1_pick_up_key"
+            }
           ]
         },
         {
@@ -200,7 +358,12 @@
           "emotion": "happy",
           "text": "🗝️ Here is your key! Head down the hallway to your apartment!",
           "visualAction": "🔑 Key Handoff",
-          "options": [{ "label": "🙏 Thank you!", "next": 0 }]
+          "options": [
+            {
+              "label": "🙏 Thank you!",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -235,20 +398,72 @@
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 200, "y": 300, "z": 0 },
+    "position3D": {
+      "x": 200,
+      "y": 300,
+      "z": 0
+    },
     "voice": "en-US-Standard-C",
     "dailySchedule": [
-      { "time": "07:00", "location": "apartment_bedroom", "activity": "Waking up and stretching" },
-      { "time": "07:30", "location": "apartment_bathroom", "activity": "Brushing teeth and washing face" },
-      { "time": "08:00", "location": "apartment_kitchen", "activity": "Cooking breakfast and drinking tea" },
-      { "time": "08:30", "location": "street", "activity": "Walking along City Avenue to work" },
-      { "time": "09:00", "location": "bus_stop", "activity": "Waiting for the morning bus" },
-      { "time": "12:00", "location": "apartment_living", "activity": "Midday rest in living room" },
-      { "time": "18:00", "location": "street", "activity": "Evening stroll" }
+      {
+        "time": "07:00",
+        "location": "apartment_bedroom",
+        "activity": "Waking up and stretching"
+      },
+      {
+        "time": "07:30",
+        "location": "apartment_bathroom",
+        "activity": "Brushing teeth and washing face"
+      },
+      {
+        "time": "08:00",
+        "location": "apartment_kitchen",
+        "activity": "Cooking breakfast and drinking tea"
+      },
+      {
+        "time": "08:30",
+        "location": "street",
+        "activity": "Walking along City Avenue to work"
+      },
+      {
+        "time": "09:00",
+        "location": "bus_stop",
+        "activity": "Waiting for the morning bus"
+      },
+      {
+        "time": "12:00",
+        "location": "apartment_living",
+        "activity": "Midday rest in living room"
+      },
+      {
+        "time": "18:00",
+        "location": "street",
+        "activity": "Evening stroll"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
-    "quests": ["q_ch1_follow_james", "q_ch1_open_apartment", "q_ch2_explore_rooms", "q_ch2_interact_objects", "q_ch2_organize_apartment", "q_ch2_unlock_furniture", "q_ch3_morning_routine", "q_ch3_daily_schedule", "q_ch3_unlock_routine"],
+    "questHistory": [
+      "q_ch1_follow_james",
+      "q_ch1_open_apartment",
+      "q_ch2_explore_rooms",
+      "q_ch2_interact_objects",
+      "q_ch2_organize_apartment",
+      "q_ch2_unlock_furniture",
+      "q_ch3_morning_routine",
+      "q_ch3_daily_schedule",
+      "q_ch3_unlock_routine"
+    ],
+    "quests": [
+      "q_ch1_follow_james",
+      "q_ch1_open_apartment",
+      "q_ch2_explore_rooms",
+      "q_ch2_interact_objects",
+      "q_ch2_organize_apartment",
+      "q_ch2_unlock_furniture",
+      "q_ch3_morning_routine",
+      "q_ch3_daily_schedule",
+      "q_ch3_unlock_routine"
+    ],
     "dialogues": {
       "en": [
         {
@@ -258,8 +473,20 @@
           "visualAction": "⏰ Morning Routine",
           "grammarCheck": "Present Simple & Time & Frequency",
           "options": [
-            { "label": "🌅 Complete morning routine!", "next": 1, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_morning_routine" },
-            { "label": "📅 Follow daily schedule", "next": 2, "rewardXP": 25, "friendshipGain": 10, "questId": "q_ch3_daily_schedule" }
+            {
+              "label": "🌅 Complete morning routine!",
+              "next": 1,
+              "rewardXP": 25,
+              "friendshipGain": 10,
+              "questId": "q_ch3_morning_routine"
+            },
+            {
+              "label": "📅 Follow daily schedule",
+              "next": 2,
+              "rewardXP": 25,
+              "friendshipGain": 10,
+              "questId": "q_ch3_daily_schedule"
+            }
           ]
         },
         {
@@ -267,14 +494,25 @@
           "emotion": "excited",
           "text": "🪥 First wake up, brush your teeth, wash, and eat breakfast in the kitchen!",
           "visualAction": "🪥 Routine Actions",
-          "options": [{ "label": "🚌 Walk to the bus stop!", "next": 0, "questId": "q_ch3_unlock_routine" }]
+          "options": [
+            {
+              "label": "🚌 Walk to the bus stop!",
+              "next": 0,
+              "questId": "q_ch3_unlock_routine"
+            }
+          ]
         },
         {
           "id": 2,
           "emotion": "curious",
           "text": "🚌 I usually take the bus in the morning and work in the afternoon!",
           "visualAction": "🚌 Schedule Check",
-          "options": [{ "label": "⏰ Ask the time and habits!", "next": 0 }]
+          "options": [
+            {
+              "label": "⏰ Ask the time and habits!",
+              "next": 0
+            }
+          ]
         }
       ],
       "fr": [
@@ -284,7 +522,13 @@
           "text": "👋 Bonjour! Bienvenue à COSY Town! Je suis James York. Suivez-moi!",
           "visualAction": "👋 Bienvenue",
           "options": [
-            { "label": "🚶 Suivre James!", "next": 1, "rewardXP": 20, "friendshipGain": 10, "questId": "q_ch1_follow_james" }
+            {
+              "label": "🚶 Suivre James!",
+              "next": 1,
+              "rewardXP": 20,
+              "friendshipGain": 10,
+              "questId": "q_ch1_follow_james"
+            }
           ]
         }
       ]
@@ -320,14 +564,28 @@
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 350, "y": 300, "z": 0 },
+    "position3D": {
+      "x": 350,
+      "y": 300,
+      "z": 0
+    },
     "voice": "en-US-Standard-E",
     "dailySchedule": [
-      { "time": "10:00", "location": "town_square", "activity": "Conducting pronunciation clinic" },
-      { "time": "15:00", "location": "cafe", "activity": "Listening to acoustic soundscapes" }
+      {
+        "time": "10:00",
+        "location": "town_square",
+        "activity": "Conducting pronunciation clinic"
+      },
+      {
+        "time": "15:00",
+        "location": "cafe",
+        "activity": "Listening to acoustic soundscapes"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q2_pronunciation"],
+    "questHistory": [
+      "q2_pronunciation"
+    ],
     "dialogues": {
       "en": [
         {
@@ -336,14 +594,24 @@
           "visualAction": "👂 ➔ 🗣️",
           "grammarCheck": "Listen & Repeat Audio Mimicry",
           "options": [
-            { "label": "🔊 Practice speaking out loud!", "next": 1, "rewardXP": 20, "questId": "q2_pronunciation" }
+            {
+              "label": "🔊 Practice speaking out loud!",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q2_pronunciation"
+            }
           ]
         },
         {
           "id": 1,
           "text": "👏 Clear articulation! Practice aloud every day to build speech confidence!",
           "visualAction": "🗣️ ➔ ⭐",
-          "options": [{ "label": "👍 Thank you Ella!", "next": 0 }]
+          "options": [
+            {
+              "label": "👍 Thank you Ella!",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -381,24 +649,73 @@
       "cooperative": "🤝"
     },
     "emotionalArc": [
-      { "stage": "rivalry", "emotion": "confident", "relationshipRange": [0, 20] },
-      { "stage": "challenge", "emotion": "challenging", "relationshipRange": [21, 40] },
-      { "stage": "curiosity", "emotion": "thoughtful", "relationshipRange": [41, 60] },
-      { "stage": "respect", "emotion": "amused", "relationshipRange": [61, 80] },
-      { "stage": "teamwork", "emotion": "cooperative", "relationshipRange": [81, 100] }
+      {
+        "stage": "rivalry",
+        "emotion": "confident",
+        "relationshipRange": [
+          0,
+          20
+        ]
+      },
+      {
+        "stage": "challenge",
+        "emotion": "challenging",
+        "relationshipRange": [
+          21,
+          40
+        ]
+      },
+      {
+        "stage": "curiosity",
+        "emotion": "thoughtful",
+        "relationshipRange": [
+          41,
+          60
+        ]
+      },
+      {
+        "stage": "respect",
+        "emotion": "amused",
+        "relationshipRange": [
+          61,
+          80
+        ]
+      },
+      {
+        "stage": "teamwork",
+        "emotion": "cooperative",
+        "relationshipRange": [
+          81,
+          100
+        ]
+      }
     ],
     "relationshipLevel": 1,
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 500, "y": 300, "z": 0 },
+    "position3D": {
+      "x": 500,
+      "y": 300,
+      "z": 0
+    },
     "voice": "en-US-Standard-G",
     "dailySchedule": [
-      { "time": "11:00", "location": "town_square", "activity": "Hosting item discovery challenges" },
-      { "time": "16:00", "location": "cafe", "activity": "Studying vocabulary flashcards" }
+      {
+        "time": "11:00",
+        "location": "town_square",
+        "activity": "Hosting item discovery challenges"
+      },
+      {
+        "time": "16:00",
+        "location": "cafe",
+        "activity": "Studying vocabulary flashcards"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q3_anna_challenge"],
+    "questHistory": [
+      "q3_anna_challenge"
+    ],
     "dialogues": {
       "en": [
         {
@@ -407,14 +724,24 @@
           "visualAction": "🔍 Find 3 items",
           "grammarCheck": "Counting & Cardinal Numbers (1, 2, 3)",
           "options": [
-            { "label": "⚡ Accept vocabulary challenge!", "next": 1, "rewardXP": 25, "questId": "q3_anna_challenge" }
+            {
+              "label": "⚡ Accept vocabulary challenge!",
+              "next": 1,
+              "rewardXP": 25,
+              "questId": "q3_anna_challenge"
+            }
           ]
         },
         {
           "id": 1,
           "text": "🔥 Challenge accepted! Show me your visual encyclopedia progress!",
           "visualAction": "📚 ➔ 🏆",
-          "options": [{ "label": "🏆 Let's go!", "next": 0 }]
+          "options": [
+            {
+              "label": "🏆 Let's go!",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -433,14 +760,28 @@
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 200, "y": 300, "z": 0 },
+    "position3D": {
+      "x": 200,
+      "y": 300,
+      "z": 0
+    },
     "voice": "en-US-Standard-A",
     "dailySchedule": [
-      { "time": "05:00", "location": "bakery", "activity": "Baking fresh bread" },
-      { "time": "13:00", "location": "town_square", "activity": "Delivering fresh pastries to market" }
+      {
+        "time": "05:00",
+        "location": "bakery",
+        "activity": "Baking fresh bread"
+      },
+      {
+        "time": "13:00",
+        "location": "town_square",
+        "activity": "Delivering fresh pastries to market"
+      }
     ],
     "conversationHistory": [],
-    "questHistory": ["q4_bakery_bread"],
+    "questHistory": [
+      "q4_bakery_bread"
+    ],
     "dialogues": {
       "en": [
         {
@@ -449,14 +790,24 @@
           "visualAction": "🥖 ➔ 😋",
           "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
           "options": [
-            { "label": "🥖 Take warm baguette!", "next": 1, "rewardXP": 20, "questId": "q4_bakery_bread" }
+            {
+              "label": "🥖 Take warm baguette!",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q4_bakery_bread"
+            }
           ]
         },
         {
           "id": 1,
           "text": "🥖 Baked fresh with organic flour! Enjoy your meal!",
           "visualAction": "😋 ➔ 👍",
-          "options": [{ "label": "😋 Yum!", "next": 0 }]
+          "options": [
+            {
+              "label": "😋 Yum!",
+              "next": 0
+            }
+          ]
         }
       ]
     }
@@ -475,11 +826,23 @@
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
     "favoritePark": "town_square",
-    "position3D": { "x": 200, "y": 300, "z": 0 },
+    "position3D": {
+      "x": 200,
+      "y": 300,
+      "z": 0
+    },
     "voice": "it-IT-Standard-A",
     "dailySchedule": [
-      { "time": "07:00", "location": "cafe", "activity": "Brewing morning espresso" },
-      { "time": "15:00", "location": "town_square", "activity": "Enjoying afternoon break in town square" }
+      {
+        "time": "07:00",
+        "location": "cafe",
+        "activity": "Brewing morning espresso"
+      },
+      {
+        "time": "15:00",
+        "location": "town_square",
+        "activity": "Enjoying afternoon break in town square"
+      }
     ],
     "conversationHistory": [],
     "questHistory": [],
@@ -491,14 +854,101 @@
           "visualAction": "☕ ➔ ♨️",
           "grammarCheck": "Polite Requests (Please, May I have)",
           "options": [
-            { "label": "☕ Sip fresh coffee!", "next": 1, "rewardXP": 15 }
+            {
+              "label": "☕ Sip fresh coffee!",
+              "next": 1,
+              "rewardXP": 15
+            }
           ]
         },
         {
           "id": 1,
           "text": "☕ Rich and aromatic! The best coffee in COSY Town!",
           "visualAction": "☕ ➔ 😊",
-          "options": [{ "label": "☕ Grazie Marco!", "next": 0 }]
+          "options": [
+            {
+              "label": "☕ Grazie Marco!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "commuter_sam": {
+    "id": "commuter_sam",
+    "name": "Sam",
+    "portrait": "👨‍💼",
+    "avatar": "👨‍💼",
+    "chapter": "ch3",
+    "homeChapter": "ch3",
+    "role": "Daily Bus Commuter",
+    "occupation": "Commuter",
+    "teachingRole": "Time, Schedules & Bus Transit Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "bus_stop",
+    "position3D": {
+      "x": 480,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-D",
+    "dailySchedule": [
+      {
+        "time": "08:00",
+        "location": "bus_stop",
+        "activity": "Waiting for morning bus to work"
+      },
+      {
+        "time": "12:00",
+        "location": "street",
+        "activity": "Walking along city avenue"
+      },
+      {
+        "time": "18:00",
+        "location": "bus_stop",
+        "activity": "Taking evening bus home"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch3_unlock_routine"
+    ],
+    "quests": [
+      "q_ch3_unlock_routine"
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "emotion": "happy",
+          "text": "🚏 Excuse me! What time is it? The morning bus usually arrives at 8:15!",
+          "visualAction": "🚏 Asking Time",
+          "grammarCheck": "Asking & Telling Time ('What time is it?')",
+          "options": [
+            {
+              "label": "🕒 It is eight o'clock in the morning!",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q_ch3_unlock_routine"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "emotion": "excited",
+          "text": "🚌 Thank you! I always check the timetable board so I am never late!",
+          "visualAction": "🚌 Bus Arrives",
+          "options": [
+            {
+              "label": "📋 Read the bus schedule board!",
+              "next": 0
+            }
+          ]
         }
       ]
     }

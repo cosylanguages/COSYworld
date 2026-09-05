@@ -569,7 +569,8 @@
       "shoe_rack",
       "wicker_basket",
       "key",
-      "home_mat"
+      "home_mat",
+      "dress"
     ],
     "chapters": [
       "ch1"
@@ -819,7 +820,10 @@
     "objects": [
       "fridge",
       "kettle",
-      "cup"
+      "cup",
+      "cook",
+      "eat",
+      "drink"
     ],
     "chapters": [
       "ch2"
@@ -920,7 +924,12 @@
       "bookshelf",
       "window",
       "plant",
-      "alarm_clock"
+      "alarm_clock",
+      "wake_up",
+      "sleep",
+      "study",
+      "morning",
+      "clock"
     ],
     "chapters": [
       "ch2",
@@ -1003,7 +1012,9 @@
       "towel",
       "soap",
       "bathroom_mirror",
-      "window"
+      "window",
+      "brush",
+      "wash"
     ],
     "chapters": [
       "ch2"
@@ -1188,7 +1199,9 @@
     ],
     "objects": [
       "street_clock",
-      "street_lamp"
+      "street_lamp",
+      "work",
+      "afternoon"
     ],
     "chapters": [
       "ch3"
@@ -1269,14 +1282,21 @@
         "npcId": "james_york",
         "x": 300,
         "y": 300
+      },
+      {
+        "npcId": "commuter_sam",
+        "x": 480,
+        "y": 280
       }
     ],
     "npcs": [
-      "james_york"
+      "james_york",
+      "commuter_sam"
     ],
     "objects": [
       "bus_stop_sign",
-      "bus_timetable_board"
+      "bus_timetable_board",
+      "evening"
     ],
     "chapters": [
       "ch3",
