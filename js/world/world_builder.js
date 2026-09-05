@@ -49,6 +49,8 @@ export class WorldBuilder {
             icon: rawData.icon || '🏙️',
             name: rawData.name || { en: districtId },
             viewBox: rawData.viewBox || '0 0 800 500',
+            backgroundImage: rawData.backgroundImage || null,
+            imageLayers: Array.isArray(rawData.imageLayers) ? rawData.imageLayers : [],
             worldX: rawData.worldX ?? 0,
             worldY: rawData.worldY ?? 0,
             worldWidth: rawData.worldWidth ?? 800,

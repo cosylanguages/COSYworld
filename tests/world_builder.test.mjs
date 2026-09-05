@@ -22,6 +22,9 @@ test('WorldBuilder - registers and normalizes raw district JSON data', () => {
     assert.ok(Array.isArray(living.connections));
     assert.equal(living.music, 'piano');
     assert.equal(living.weather, 'clear');
+
+    const townEntrance = builder.getDistrict('town_entrance');
+    assert.equal(townEntrance.backgroundImage, 'assets/images/scenes/town_entrance.jpg');
 });
 
 test('WorldBuilder - normalizes missing fields gracefully', () => {
