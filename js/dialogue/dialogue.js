@@ -92,23 +92,23 @@ export class DialogueManager {
         if (body) {
             body.innerHTML = `
                 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-                    <div class="cw-portrait-bounce" style="font-size:3rem; background:var(--tan-light); padding:0.5rem; border-radius:50%; border:2px solid var(--border);">
+                    <div class="cw-portrait-bounce" style="font-size:3rem; background:var(--bg-app); padding:0.5rem; border-radius:50%; border:2px solid var(--border-subtle);">
                         ${emotionEmoji} ${npc.portrait || npc.avatar}
                     </div>
                     <div style="flex:1;">
                         <div style="display:flex; align-items:center; justify-content:space-between;">
-                            <h2 style="font-family:'Fraunces',serif; font-size:1.5rem; color:var(--ink); margin:0;">${npc.name}</h2>
+                            <h2 style="font-family:'Fraunces',serif; font-size:1.5rem; color:var(--text-main); margin:0;">${npc.name}</h2>
                             <span style="font-size:0.8rem; background:#fef3c7; color:#b45309; padding:0.25rem 0.6rem; border-radius:12px; font-weight:700;">
                                 ❤️ Level ${currentLvl} (${currentFP} FP)
                             </span>
                         </div>
-                        <div style="font-size:0.85rem; color:var(--teal); font-weight:700; margin-top:0.2rem;">${npc.role || npc.occupation}</div>
-                        ${npc.teachingRole ? `<div style="font-size:0.8rem; color:var(--ink-muted);">🎓 ${npc.teachingRole}</div>` : ''}
+                        <div style="font-size:0.85rem; color:var(--accent-teal); font-weight:700; margin-top:0.2rem;">${npc.role || npc.occupation}</div>
+                        ${npc.teachingRole ? `<div style="font-size:0.8rem; color:var(--text-muted);">🎓 ${npc.teachingRole}</div>` : ''}
                     </div>
                 </div>
 
                 <!-- Speech Voice & Controls Bar -->
-                <div class="cw-speech-controls" style="display:flex; align-items:center; justify-content:space-between; background:var(--tan-light); padding:0.5rem 0.75rem; border-radius:12px; margin-bottom:0.75rem; font-size:0.85rem; border:1px solid var(--border);">
+                <div class="cw-speech-controls" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-app); padding:0.5rem 0.75rem; border-radius:12px; margin-bottom:0.75rem; font-size:0.85rem; border:1px solid var(--border-subtle);">
                     <div style="display:flex; gap:0.4rem; align-items:center;">
                         <button class="cw-btn-toggle" style="padding:0.2rem 0.6rem; font-size:0.8rem;" type="button" onclick="COSY_WORLD.repeatSpeech()">🔊 Repeat</button>
                         <button class="cw-btn-toggle" style="padding:0.2rem 0.6rem; font-size:0.8rem;" type="button" onclick="COSY_WORLD.toggleSlowSpeech()">🐢 Slow (0.7x)</button>
@@ -122,7 +122,7 @@ export class DialogueManager {
                 </div>
 
                 <!-- Typing Animation Text Container -->
-                <div class="cw-item-card" style="font-size:1.15rem; font-weight:600; line-height:1.5; color:var(--ink); margin-bottom:1rem; min-height:60px;">
+                <div class="cw-item-card" style="font-size:1.15rem; font-weight:600; line-height:1.5; color:var(--text-main); margin-bottom:1rem; min-height:60px;">
                     <span id="cw-typing-box"></span><span class="cw-typing-cursor">|</span>
                 </div>
 
@@ -149,11 +149,11 @@ export class DialogueManager {
                     <button class="cw-btn-toggle" style="width:100%; margin-top:0.4rem; font-size:0.85rem;" type="button" onclick="COSY_WORLD.startVoiceRecognition()">🎙️ Practice Voice Input (Speech Rec)</button>
                 </div>
 
-                <div id="cw-dialogue-history-panel" style="display:none; margin-top:1rem; max-height:160px; overflow-y:auto; background:var(--tan-light); padding:0.75rem; border-radius:12px; border:1px solid var(--border); font-size:0.85rem;">
+                <div id="cw-dialogue-history-panel" style="display:none; margin-top:1rem; max-height:160px; overflow-y:auto; background:var(--bg-app); padding:0.75rem; border-radius:12px; border:1px solid var(--border-subtle); font-size:0.85rem;">
                     <div style="font-weight:700; margin-bottom:0.5rem;">📜 Conversation History</div>
                     ${this.dialogueHistory.map(h => `
                         <div style="margin-bottom:0.4rem; border-bottom:1px solid #e5e7eb; padding-bottom:0.25rem;">
-                            <span style="font-weight:700; color:var(--teal);">${h.npcName}:</span> "${h.text}" <span style="font-size:0.75rem; color:var(--ink-muted);">(${h.timestamp})</span>
+                            <span style="font-weight:700; color:var(--accent-teal);">${h.npcName}:</span> "${h.text}" <span style="font-size:0.75rem; color:var(--text-muted);">(${h.timestamp})</span>
                         </div>
                     `).join('')}
                 </div>

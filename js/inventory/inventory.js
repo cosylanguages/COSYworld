@@ -36,15 +36,15 @@ export class InventoryManager {
             body.innerHTML = `
                 <div style="text-align:center;">
                     <div style="font-size:4rem; margin-bottom:0.5rem;">${obj.emoji}</div>
-                    <h2 style="font-family:'Fraunces',serif; font-size:2rem; color:var(--ink); margin-bottom:0.25rem;">${word}</h2>
+                    <h2 style="font-family:'Fraunces',serif; font-size:2rem; color:var(--text-main); margin-bottom:0.25rem;">${word}</h2>
 
                     <button class="btn-g-primary" type="button" style="margin-bottom:1rem; font-size:1.1rem; padding:0.6rem 1.25rem;" onclick="COSY_WORLD.speakText('${word.replace(/'/g, "\\'")}', '${lang}')">
                         🔊 Speak Target Word
                     </button>
 
-                    <div class="cw-item-card" style="text-align:left; background:var(--tan-light); padding:1rem; border-radius:14px; margin-bottom:1rem;">
-                        <div class="cw-item-title" style="font-size:1rem; color:var(--teal);">🎬 Visual Action Chain</div>
-                        <div style="font-size:1.1rem; font-weight:700; color:var(--ink); margin-top:0.4rem;">${sequence}</div>
+                    <div class="cw-item-card" style="text-align:left; background:var(--bg-app); padding:1rem; border-radius:14px; margin-bottom:1rem;">
+                        <div class="cw-item-title" style="font-size:1rem; color:var(--accent-teal);">🎬 Visual Action Chain</div>
+                        <div style="font-size:1.1rem; font-weight:700; color:var(--text-main); margin-top:0.4rem;">${sequence}</div>
                     </div>
 
                     ${vocabEntry ? `
@@ -72,7 +72,7 @@ export class InventoryManager {
                                 <div style="font-size:0.85rem; font-weight:700; color:${isUnlocked ? '#065f46' : '#92400e'};">
                                     🌳 Grammar Focus: ${gp.title} (${gp.difficulty || 'A0'})
                                 </div>
-                                <div style="font-size:0.8rem; color:var(--ink); margin-top:0.25rem;">
+                                <div style="font-size:0.8rem; color:var(--text-main); margin-top:0.25rem;">
                                     ${gp.rule}
                                 </div>
                                 ${isUnlocked && gp.interactiveExercises && gp.interactiveExercises.length > 0 ? `
@@ -91,7 +91,7 @@ export class InventoryManager {
                     ` : ''}
 
                     ${state.showTranslations && obj.words.en ? `
-                        <div style="font-size:0.85rem; color:var(--ink-muted); margin-top:1rem;">🌐 English Translation: ${obj.words.en}</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:1rem;">🌐 English Translation: ${obj.words.en}</div>
                     ` : ''}
                 </div>
             `;
