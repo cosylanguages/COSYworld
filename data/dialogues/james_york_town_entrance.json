@@ -1,0 +1,30 @@
+{
+  "npcId": "james_york",
+  "sceneId": "town_entrance",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "Hello! Welcome to COSY Town. I am James York.",
+      "emotion": "happy",
+      "gestures": ["wave", "point_hq"],
+      "highlights": ["welcome_sign"],
+      "speechRate": 0.65,
+      "grammarCheck": "Subject + Verb ('I am James')",
+      "visualAction": "👋 Welcome",
+      "playerOptions": [
+        {
+          "text": "👋 Hello James! Lead the way to Headquarters.",
+          "nextNodeId": null,
+          "vocabId": "hello",
+          "grammarId": "gt_to_be",
+          "rewardXP": 20,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch1_follow_james"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

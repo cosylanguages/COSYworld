@@ -1,0 +1,29 @@
+{
+  "npcId": "james_york",
+  "sceneId": "apartment_entrance",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "Open the door.",
+      "emotion": "happy",
+      "gestures": ["point_door"],
+      "highlights": ["door_lock"],
+      "speechRate": 0.65,
+      "grammarCheck": "Imperative Actions",
+      "visualAction": "🚪 Unlock Door",
+      "playerOptions": [
+        {
+          "text": "🔑 Unlock and enter apartment!",
+          "nextNodeId": null,
+          "vocabId": "door",
+          "grammarId": "gt_articles",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch1_open_apartment"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

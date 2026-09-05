@@ -1,0 +1,78 @@
+{
+  "npcId": "receptionist",
+  "sceneId": "reception",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👋 Hello! Welcome to COSYlanguages Headquarters! What is your name?",
+      "emotion": "happy",
+      "gestures": ["wave", "offer_key"],
+      "highlights": ["reception_desk", "apartment_key"],
+      "speechRate": 0.65,
+      "grammarCheck": "Asking name & introducing self",
+      "visualAction": "👋 Welcome",
+      "playerOptions": [
+        {
+          "text": "👋 Hello! I am a new student.",
+          "nextNodeId": "node_1",
+          "vocabId": "name",
+          "grammarId": "gt_personal_pronouns",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch1_first_dialogue"
+        },
+        {
+          "text": "🔑 Pick up apartment key",
+          "nextNodeId": "node_2",
+          "vocabId": "key",
+          "grammarId": "gt_my_your",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch1_pick_up_key"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "😊 Pleased to meet you! I am the receptionist here.",
+      "emotion": "excited",
+      "gestures": ["wave"],
+      "highlights": ["reception_desk"],
+      "speechRate": 0.65,
+      "grammarCheck": "Personal pronouns",
+      "visualAction": "📝 Registration",
+      "playerOptions": [
+        {
+          "text": "🔑 Take apartment key",
+          "nextNodeId": "node_2",
+          "vocabId": "key",
+          "grammarId": "gt_my_your",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch1_pick_up_key"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🗝️ Here is your key! Head down the hallway to your apartment!",
+      "emotion": "happy",
+      "gestures": ["offer_key"],
+      "highlights": ["apartment_key"],
+      "speechRate": 0.65,
+      "grammarCheck": "Possessive my / your",
+      "visualAction": "🔑 Key Handoff",
+      "playerOptions": [
+        {
+          "text": "🙏 Thank you!",
+          "nextNodeId": "node_0",
+          "rewardXP": 10
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": "q_ch1_pick_up_key"
+    }
+  ]
+}

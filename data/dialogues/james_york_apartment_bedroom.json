@@ -1,0 +1,51 @@
+{
+  "npcId": "james_york",
+  "sceneId": "apartment_bedroom",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "I wake up at seven o'clock in the morning. I always brush my teeth and eat breakfast.",
+      "emotion": "happy",
+      "gestures": ["stretch", "eat_breakfast"],
+      "highlights": ["alarm_clock", "kettle"],
+      "speechRate": 0.75,
+      "grammarCheck": "Daily Actions & Habitual Routines (Present Simple)",
+      "visualAction": "⏰ Morning Routine",
+      "playerOptions": [
+        {
+          "text": "🌅 Complete morning routine!",
+          "nextNodeId": "node_1",
+          "vocabId": "alarm_clock",
+          "grammarId": "gt_present_simple",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch3_morning_routine"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "Where is the key? This is the desk, and that is the bed.",
+      "emotion": "curious",
+      "gestures": ["search", "point"],
+      "highlights": ["desk", "bed", "key"],
+      "speechRate": 0.65,
+      "grammarCheck": "Demonstratives (This vs That)",
+      "visualAction": "🔍 Search Objects",
+      "playerOptions": [
+        {
+          "text": "🔑 Check the desk and bed!",
+          "nextNodeId": null,
+          "vocabId": "desk",
+          "grammarId": "gt_this",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}
