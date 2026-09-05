@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributing to COSY World 🤝</title>
+    <meta name="description" content="Developer contribution guidelines for COSY World.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Standalone CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/ui.css">
+</head>
+<body class="game-standalone">
+    <header class="cw-nav">
+      <a class="cw-logo" href="../index.html">
+        <span>🌍</span> COSY World
+      </a>
+      <div class="cw-nav-links">
+        <a href="../index.html">← Back to Game 🎮</a>
+        <a href="https://cosylanguages.github.io/COSYlanguages/index.html" target="_blank" rel="noopener">Official Website ↗</a>
+      </div>
+    </header>
+
+    <main class="cw-container" style="max-width: 860px; margin-top: 2rem;">
+      <div class="cw-hud-card" style="padding: 2.5rem;">
+        <h1 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--blue-primary); margin-bottom: 0.5rem;">
+          Contributing to COSY World 🤝
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+          Thank you for your interest in contributing to <strong>COSY World</strong>! We are building an open, peaceful, open-world language learning RPG designed around <strong>Inductive Direct Immersion</strong>.
+        </p>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin-bottom: 2rem;">
+
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main); margin-bottom: 1rem;">
+            🛠️ Contribution Guidelines
+          </h2>
+
+          <h3 style="font-size: 1.15rem; color: var(--blue-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
+            1. Allowed & Welcomed Contributions
+          </h3>
+          <p style="color: var(--text-muted); margin-bottom: 0.75rem;">You can freely submit Pull Requests for:</p>
+          <ul style="margin-left: 1.5rem; color: var(--text-main); line-height: 1.8;">
+            <li><strong>New Scenes:</strong> Add new town locations (e.g., market, library, train station) in <code>data/scenes/districts.json</code>.</li>
+            <li><strong>New Vocabulary & Objects:</strong> Expand interactive items with 14 target language terms in <code>data/vocabulary/objects.json</code>.</li>
+            <li><strong>New Dialogues & NPCs:</strong> Add characters with branching dialogue nodes in <code>data/npcs/npcs.json</code>.</li>
+            <li><strong>Language Translations:</strong> Fix or expand multilingual strings across target languages in <code>data/languages/languages.json</code>.</li>
+            <li><strong>UI & Bug Fixes:</strong> Improve CSS accessibility, responsive touch controls, or performance.</li>
+            <li><strong>Mini-Games:</strong> Add contextual practice interactions within scenes.</li>
+          </ul>
+
+          <h3 style="font-size: 1.15rem; color: var(--blue-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
+            2. Requiring Review & Maintainer Approval
+          </h3>
+          <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Please open an issue to discuss before submitting PRs that affect:</p>
+          <ul style="margin-left: 1.5rem; color: var(--text-main); line-height: 1.8;">
+            <li>Core engine architecture (<code>js/engine/core.js</code>).</li>
+            <li>Educational methodology or CEFR level structure.</li>
+            <li>Save system schema breaking changes (<code>js/save/save_system.js</code>).</li>
+          </ul>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin-bottom: 2rem;">
+
+        <section>
+          <h2 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main); margin-bottom: 1rem;">
+            📋 How to Submit a Pull Request
+          </h2>
+          <ol style="margin-left: 1.5rem; color: var(--text-main); line-height: 1.8;">
+            <li>Fork the <code>COSYworld</code> repository.</li>
+            <li>Create a feature branch (<code>git checkout -b feature/new-district-market</code>).</li>
+            <li>Validate your changes locally in your browser.</li>
+            <li>Ensure all JSON data files conform to valid JSON formatting.</li>
+            <li>Commit your changes with clear, descriptive commit messages.</li>
+            <li>Push to your fork and submit a Pull Request.</li>
+          </ol>
+        </section>
+
+        <div style="margin-top: 3rem; text-align: center;">
+          <a class="btn-g-primary" href="../index.html" style="text-decoration: none; display: inline-block;">
+            ← Return to COSY World Game
+          </a>
+        </div>
+      </div>
+    </main>
+</body>
+</html>
