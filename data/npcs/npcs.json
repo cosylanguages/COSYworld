@@ -12,7 +12,7 @@
     "relationshipLevel": 1,
     "friendshipPoints": 0,
     "favoriteCafe": "cafe",
-    "favoritePark": "town_square",
+    "favoritePark": "outdoor_terrace",
     "position3D": {
       "x": 300,
       "y": 280,
@@ -31,9 +31,9 @@
         "activity": "Cooking lunch specials"
       },
       {
-        "time": "18:00",
-        "location": "town_square",
-        "activity": "Evening stroll in town square"
+        "time": "17:00",
+        "location": "outdoor_terrace",
+        "activity": "Greeting dining guests on terrace"
       }
     ],
     "conversationHistory": [],
@@ -42,60 +42,96 @@
     ],
     "shopInventory": [
       {
-        "id": "baguette",
-        "name": "Baguette",
-        "price": 10,
-        "emoji": "🥖"
+        "id": "soup_bowl",
+        "name": "Vegetable Soup",
+        "price": 12,
+        "emoji": "🍲"
       },
       {
-        "id": "soup",
-        "name": "Vegetable Soup",
-        "price": 20,
-        "emoji": "🍲"
+        "id": "pasta_plate",
+        "name": "Artisan Pasta",
+        "price": 18,
+        "emoji": "🍝"
+      },
+      {
+        "id": "dessert_cake",
+        "name": "Fruit Cake",
+        "price": 8,
+        "emoji": "🍰"
       }
     ],
     "quests": [
-      "q_dylan_menu"
+      "q_dylan_menu",
+      "q_ch6_server_challenge"
     ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "👨‍🍳 Welcome to my restaurant! 🍲 Today's special is fresh vegetable soup with 🥖 warm baguette!",
-          "visualAction": "👨‍🍳 ➔ 🍲 ➔ 😋",
-          "grammarCheck": "Subject + Verb + Direct Object (I order soup)",
+          "text": "👨‍🍳 Welcome to my dining room! Would you like to order food or try our daily chef recommendations?",
+          "visualAction": "👨‍🍳 ➔ 🍲 ➔ 🍝",
+          "grammarCheck": "Polite Food Requests ('Would like', 'Can I have...')",
           "options": [
             {
-              "label": "🍲 Order today's special!",
+              "label": "🍲 What dishes do you recommend today, Dylan?",
               "next": 1,
-              "rewardXP": 20,
+              "rewardXP": 15,
               "questId": "q_dylan_menu"
             },
             {
-              "label": "🥖 Inspect fresh baguette recipe",
+              "label": "🍝 Can I have the artisan pasta plate?",
               "next": 2,
-              "rewardXP": 15
+              "rewardXP": 20
+            },
+            {
+              "label": "🍽️ I can serve tables as a waiter tonight!",
+              "next": 3,
+              "rewardXP": 20,
+              "questId": "q_ch6_server_challenge"
             }
           ]
         },
         {
           "id": 1,
-          "text": "🍲 Excellent choice! One warm bowl of vegetable soup coming right up!",
-          "visualAction": "🍲 ➔ 😋",
+          "text": "🍲 I highly recommend our warm vegetable soup (12 coins) made with farm fresh carrots!",
+          "visualAction": "🍲 ➔ 🪙 12",
           "options": [
             {
-              "label": "😋 Yum! Thank you Dylan!",
-              "next": 0
+              "label": "🍲 I would like a bowl of vegetable soup, please!",
+              "next": 4,
+              "rewardXP": 20
             }
           ]
         },
         {
           "id": 2,
-          "text": "🥖 Our baguette uses organic wheat from Thomas's farm!",
-          "visualAction": "🌾 ➔ 🥖",
+          "text": "🍝 Excellent choice! Handmade pasta with organic basil for 18 coins!",
+          "visualAction": "🍝 ➔ 🪙 18",
           "options": [
             {
-              "label": "🌾 Learn about Thomas's farm",
+              "label": "😋 Looks delicious! Thank you, Chef Dylan!",
+              "next": 0
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🍽️ Wonderful! Take this menu and cutlery to Table 2 on the terrace!",
+          "visualAction": "📋 ➔ 🪑",
+          "options": [
+            {
+              "label": "🍽️ Serve the terrace guests now!",
+              "next": 0
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "🍲 One hot bowl of vegetable soup coming right up! Bon appétit!",
+          "visualAction": "🍲 ➔ 😋",
+          "options": [
+            {
+              "label": "😋 Thank you Chef!",
               "next": 0
             }
           ]
@@ -110,24 +146,24 @@
     "avatar": "👨‍🌾",
     "role": "Farm Owner & Master Agriculturist",
     "occupation": "Master Agriculturist",
-    "teachingRole": "Nature, Agriculture & Seasons Teacher",
+    "teachingRole": "Nature, Agriculture & Comparatives Mentor",
     "personality": "friendly",
     "currentMood": "happy",
     "relationshipLevel": 1,
-    "friendshipPoints": 0,
+    "friendshipPoints": 10,
     "favoriteCafe": "cafe",
-    "favoritePark": "town_square",
+    "favoritePark": "farm",
     "position3D": {
-      "x": 150,
-      "y": 310,
+      "x": 300,
+      "y": 280,
       "z": 0
     },
     "voice": "en-US-Standard-D",
     "dailySchedule": [
       {
         "time": "06:00",
-        "location": "town_square",
-        "activity": "Tending crops & morning market"
+        "location": "farm",
+        "activity": "Feeding farm animals & tending crops"
       },
       {
         "time": "12:00",
@@ -136,55 +172,90 @@
       },
       {
         "time": "18:00",
-        "location": "town_square",
-        "activity": "Surveying green pastures"
+        "location": "community_garden",
+        "activity": "Watering garden beds"
       }
     ],
     "conversationHistory": [],
     "questHistory": [
-      "q_thomas_harvest"
+      "q_ch10_farm_animals"
     ],
     "shopInventory": [
       {
         "id": "apple",
         "name": "Fresh Apple",
-        "price": 5,
+        "price": 3,
         "emoji": "🍎"
       },
       {
         "id": "milk",
         "name": "Organic Milk",
-        "price": 12,
+        "price": 6,
         "emoji": "🥛"
       }
     ],
     "quests": [
-      "q_thomas_harvest"
+      "q_ch10_farm_animals"
     ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "👨‍🌾 Good day! 🍎 Fresh apples & 🥛 organic milk straight from the green pastures!",
-          "visualAction": "👨‍🌾 ➔ 🍎 ➔ 🚜",
-          "grammarCheck": "Plural Nouns (Apples, Fields, Crops)",
+          "text": "👨‍🌾 Welcome to the farm! The weather today is fresh! Look at my farm animals — the cow is bigger than the sheep!",
+          "visualAction": "🐄 > 🐑 ➔ 🌾",
+          "grammarCheck": "Comparative Adjectives (-er than / more than) & Live Weather",
           "options": [
             {
-              "label": "🍎 Taste farm apple!",
+              "label": "🐄 Yes! The cow is bigger than the sheep!",
               "next": 1,
-              "rewardXP": 20,
-              "questId": "q_thomas_harvest"
+              "rewardXP": 15,
+              "questId": "q_ch10_farm_animals"
+            },
+            {
+              "label": "🌾 Let's feed the farm animals together!",
+              "next": 2,
+              "rewardXP": 20
+            },
+            {
+              "label": "🌦️ How is the weather on the farm today?",
+              "next": 3,
+              "rewardXP": 15
             }
           ]
         },
         {
           "id": 1,
-          "text": "🍎 Crisp and sweet! Grown with fresh rainwater and sunshine!",
-          "visualAction": "☀️ ➔ 🌧️ ➔ 🍎",
+          "text": "🐄 Correct! And the horse is taller than the cow! Comparing animal sizes helps us give them proper care!",
+          "visualAction": "🐴 > 🐄 > 🐑",
           "options": [
             {
-              "label": "👍 Thank you Thomas!",
-              "next": 0
+              "label": "🌾 I can help feed the cow and sheep!",
+              "next": 2,
+              "rewardXP": 15
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🌾 Wonderful! Take this fresh hay to feed the animals. The bigger cow gets a larger portion than the sheep!",
+          "visualAction": "🌾 ➔ 🐄 + 🐑",
+          "options": [
+            {
+              "label": "👍 Feed the farm animals now!",
+              "next": 0,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🌦️ When the sky is clear, animals graze in green pastures! When it rains, they rest inside the barn!",
+          "visualAction": "☀️ ➔ 🐄 / 🌧️ ➔ 🛖",
+          "options": [
+            {
+              "label": "📸 I am going to photograph wild deer in the forest next!",
+              "next": 0,
+              "rewardXP": 15
             }
           ]
         }
@@ -398,7 +469,7 @@
     "relationshipLevel": 1,
     "friendshipPoints": 10,
     "favoriteCafe": "cafe",
-    "favoritePark": "town_square",
+    "favoritePark": "outdoor_terrace",
     "position3D": {
       "x": 200,
       "y": 300,
@@ -754,7 +825,7 @@
     "avatar": "👨‍🍳",
     "role": "Artisan Baker",
     "occupation": "Artisan Baker",
-    "teachingRole": "Food & Baking Terminology Master",
+    "teachingRole": "Food, Quantities & Shopping Mentor",
     "personality": "friendly",
     "currentMood": "happy",
     "relationshipLevel": 1,
@@ -781,31 +852,201 @@
     ],
     "conversationHistory": [],
     "questHistory": [
-      "q4_bakery_bread"
+      "q_shop_baguette"
+    ],
+    "quests": [
+      "q_shop_baguette"
+    ],
+    "shopInventory": [
+      {
+        "id": "baguette",
+        "name": "Warm Baguette",
+        "price": 10,
+        "emoji": "🥖"
+      },
+      {
+        "id": "croissant",
+        "name": "Butter Croissant",
+        "price": 5,
+        "emoji": "🥐"
+      }
     ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "🥖 Warm baguette! 😋 Yum!",
-          "visualAction": "🥖 ➔ 😋",
-          "grammarCheck": "Adjectives & Food Qualities (Warm, Fresh, Crispy)",
+          "text": "🥖 Welcome to my bakery! Fresh baguettes and croissants are right out of the oven!",
+          "visualAction": "🥖 ➔ 🥐 ➔ 😋",
+          "grammarCheck": "Countable vs Uncountable & Prices (How much is... / How many...)",
           "options": [
             {
-              "label": "🥖 Take warm baguette!",
+              "label": "🥖 How much is a warm baguette?",
               "next": 1,
-              "rewardXP": 20,
-              "questId": "q4_bakery_bread"
+              "rewardXP": 15,
+              "questId": "q_shop_baguette"
+            },
+            {
+              "label": "🥐 Do you have any croissants?",
+              "next": 2,
+              "rewardXP": 15
             }
           ]
         },
         {
           "id": 1,
-          "text": "🥖 Baked fresh with organic flour! Enjoy your meal!",
+          "text": "🪙 A warm baguette is 10 coins. How many baguettes would you like?",
+          "visualAction": "🥖 ➔ 🪙 10",
+          "options": [
+            {
+              "label": "🥖 I would like one baguette, please!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🥐 Yes! I have some fresh croissants for 5 coins each!",
+          "visualAction": "🥐 ➔ 🪙 5",
+          "options": [
+            {
+              "label": "🥐 I will take some croissants!",
+              "next": 3,
+              "rewardXP": 15
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🥖 Thank you! Enjoy your fresh baked goods!",
           "visualAction": "😋 ➔ 👍",
           "options": [
             {
-              "label": "😋 Yum!",
+              "label": "👍 Thank you Lucas!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "shopkeeper_maya": {
+    "id": "shopkeeper_maya",
+    "name": "Maya",
+    "portrait": "👩‍🌾",
+    "avatar": "👩‍🌾",
+    "role": "Market Shopkeeper",
+    "occupation": "Shopkeeper",
+    "teachingRole": "Shopping, Currency & Some/Any Quantifiers Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "fruit_market",
+    "position3D": {
+      "x": 350,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-F",
+    "dailySchedule": [
+      {
+        "time": "08:00",
+        "location": "supermarket",
+        "activity": "Managing market shelves"
+      },
+      {
+        "time": "12:00",
+        "location": "fruit_market",
+        "activity": "Selling fresh fruits & vegetables"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch5_shopping_list"
+    ],
+    "quests": [
+      "q_ch5_shopping_list"
+    ],
+    "shopInventory": [
+      {
+        "id": "apple",
+        "name": "Red Apple",
+        "price": 3,
+        "emoji": "🍎"
+      },
+      {
+        "id": "banana",
+        "name": "Yellow Banana",
+        "price": 4,
+        "emoji": "🍌"
+      },
+      {
+        "id": "milk",
+        "name": "Fresh Milk",
+        "price": 6,
+        "emoji": "🥛"
+      },
+      {
+        "id": "cheese",
+        "name": "Artisan Cheese",
+        "price": 12,
+        "emoji": "🧀"
+      }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🍎 Hello! Welcome to the market! Are you looking for any fresh produce or groceries today?",
+          "visualAction": "🍎 ➔ 🍌 ➔ 🥛",
+          "grammarCheck": "Quantifiers (Some / Any) & Asking Prices (How much / How many)",
+          "options": [
+            {
+              "label": "🛒 Do you have any fresh apples and bananas?",
+              "next": 1,
+              "rewardXP": 20,
+              "questId": "q_ch5_shopping_list"
+            },
+            {
+              "label": "💰 How much are the apples?",
+              "next": 2,
+              "rewardXP": 15
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🍎 Yes, I have some sweet red apples for 3 coins and yellow bananas for 4 coins! How many do you need?",
+          "visualAction": "🍎 🪙3 ➔ 🍌 🪙4",
+          "options": [
+            {
+              "label": "🛍️ I'll buy some apples and bananas!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "💰 Red apples are 3 coins each, and milk is 6 coins. How much money do you want to spend?",
+          "visualAction": "🪙 ➔ 🛒",
+          "options": [
+            {
+              "label": "🥛 I'll take some milk and cheese!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🛒 Here are your fresh groceries! Thank you for shopping at COSY Market!",
+          "visualAction": "🛍️ ➔ 😊",
+          "options": [
+            {
+              "label": "🙏 Thank you, Maya!",
               "next": 0
             }
           ]
@@ -840,36 +1081,380 @@
         "activity": "Brewing morning espresso"
       },
       {
-        "time": "15:00",
+        "time": "14:00",
+        "location": "outdoor_terrace",
+        "activity": "Serving coffee on terrace"
+      },
+      {
+        "time": "18:00",
         "location": "town_square",
-        "activity": "Enjoying afternoon break in town square"
+        "activity": "Enjoying evening break in town square"
       }
     ],
     "conversationHistory": [],
-    "questHistory": [],
+    "questHistory": [
+      "q_ch6_cafe_order"
+    ],
+    "quests": [
+      "q_ch6_cafe_order"
+    ],
+    "shopInventory": [
+      {
+        "id": "coffee_cup",
+        "name": "Espresso",
+        "price": 3,
+        "emoji": "☕"
+      },
+      {
+        "id": "cappuccino",
+        "name": "Cappuccino",
+        "price": 4,
+        "emoji": "☕"
+      },
+      {
+        "id": "tea_pot",
+        "name": "Herbal Tea Pot",
+        "price": 5,
+        "emoji": "🫖"
+      }
+    ],
     "dialogues": {
       "en": [
         {
           "id": 0,
-          "text": "☕ Fresh espresso! ♨️ Hot!",
-          "visualAction": "☕ ➔ ♨️",
-          "grammarCheck": "Polite Requests (Please, May I have)",
+          "text": "☕ Welcome to COSY Café! What would you like to drink today?",
+          "visualAction": "☕ ➔ 🫖 ➔ 😋",
+          "grammarCheck": "Polite Ordering ('Would like' & 'Can I have...')",
           "options": [
             {
-              "label": "☕ Sip fresh coffee!",
+              "label": "☕ I would like an espresso, please!",
               "next": 1,
+              "rewardXP": 15,
+              "questId": "q_ch6_cafe_order"
+            },
+            {
+              "label": "🥛 Can I have a frothy cappuccino?",
+              "next": 2,
               "rewardXP": 15
+            },
+            {
+              "label": "🍽️ Can I help serve customers as a waiter?",
+              "next": 3,
+              "rewardXP": 20
             }
           ]
         },
         {
           "id": 1,
-          "text": "☕ Rich and aromatic! The best coffee in COSY Town!",
-          "visualAction": "☕ ➔ 😊",
+          "text": "☕ Rich and fresh espresso coming right up for 3 coins! Anything else?",
+          "visualAction": "☕ ➔ 🪙 3",
           "options": [
             {
-              "label": "☕ Grazie Marco!",
+              "label": "🍰 I would also like a slice of fruit cake!",
+              "next": 4,
+              "rewardXP": 15
+            },
+            {
+              "label": "🙏 That is all, thank you Marco!",
               "next": 0
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "☕ Certainly! One cappuccino with extra foam for 4 coins!",
+          "visualAction": "☕ ➔ 🪙 4",
+          "options": [
+            {
+              "label": "☕ Thank you, Marco!",
+              "next": 0
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🍽️ Fantastic! Put on your apron — our terrace customers would like their drinks!",
+          "visualAction": "🍽️ ➔ 📋",
+          "options": [
+            {
+              "label": "📋 Take orders from terrace customers!",
+              "next": 0
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "text": "🍰 Fruit cake paired with fresh coffee is delicious! Enjoy your break on the outdoor terrace!",
+          "visualAction": "☕ + 🍰 ➔ 😋",
+          "options": [
+            {
+              "label": "⛱️ Head out to the outdoor terrace!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "neighbour_clara": {
+    "id": "neighbour_clara",
+    "name": "Clara",
+    "portrait": "👩‍🦱",
+    "avatar": "👩‍🦱",
+    "role": "Apartment Neighbour",
+    "occupation": "Neighbour",
+    "teachingRole": "Family & Neighbourhood Greetings Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "conversation_corner",
+    "position3D": {
+      "x": 300,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-C",
+    "dailySchedule": [
+      {
+        "time": "08:00",
+        "location": "hallway",
+        "activity": "Greeting neighbours in the hallway"
+      },
+      {
+        "time": "14:00",
+        "location": "conversation_corner",
+        "activity": "Chatting at conversation corner"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch7_meet_neighbours"
+    ],
+    "quests": [
+      "q_ch7_meet_neighbours"
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "👋 Hello neighbour! I am Clara from Apartment 102. Are you enjoying COSY Town?",
+          "visualAction": "👋 ➔ 🛋️",
+          "grammarCheck": "Greetings & Introducing Neighbours",
+          "options": [
+            {
+              "label": "👋 Hello Clara! Nice to meet my neighbour!",
+              "next": 1,
+              "rewardXP": 15,
+              "friendshipGain": 10,
+              "questId": "q_ch7_meet_neighbours"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "😊 We are having a small gathering at the conversation corner later. Would you like to come?",
+          "visualAction": "💬 ➔ ❤️",
+          "options": [
+            {
+              "label": "💬 I would love to join you!",
+              "next": 0,
+              "friendshipGain": 10
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "ticket_clerk_oliver": {
+    "id": "ticket_clerk_oliver",
+    "name": "Oliver",
+    "portrait": "👨‍✈️",
+    "avatar": "👨‍✈️",
+    "role": "City Guide & Ticket Clerk",
+    "occupation": "Ticket Clerk & Tour Guide",
+    "teachingRole": "Cultural Admission & Past Simple Narrative Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "public_square",
+    "position3D": {
+      "x": 350,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-B",
+    "dailySchedule": [
+      {
+        "time": "09:00",
+        "location": "museum",
+        "activity": "Selling museum tickets & giving tours"
+      },
+      {
+        "time": "14:00",
+        "location": "cinema",
+        "activity": "Managing cinema ticket box office"
+      },
+      {
+        "time": "18:00",
+        "location": "train_station",
+        "activity": "Assisting train passengers"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch9_buy_tickets"
+    ],
+    "quests": [
+      "q_ch9_buy_tickets"
+    ],
+    "shopInventory": [
+      {
+        "id": "museum_ticket",
+        "name": "Museum Ticket",
+        "price": 15,
+        "emoji": "🎟️"
+      },
+      {
+        "id": "cinema_ticket",
+        "name": "Cinema Ticket",
+        "price": 12,
+        "emoji": "🎟️"
+      },
+      {
+        "id": "train_ticket",
+        "name": "Train Ticket",
+        "price": 20,
+        "emoji": "🎫"
+      }
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🎟️ Welcome! I am Oliver. Opening hours are 9:00 to 18:00! Would you like to buy an admission ticket?",
+          "visualAction": "🎟️ ➔ 🪙",
+          "grammarCheck": "Past Simple & Ticket Purchasing",
+          "options": [
+            {
+              "label": "🎟️ How much is a museum admission ticket?",
+              "next": 1,
+              "rewardXP": 15,
+              "questId": "q_ch9_buy_tickets"
+            },
+            {
+              "label": "📜 Tell me about the city's history!",
+              "next": 2,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🎟️ Museum tickets are 15 coins and cinema tickets are 12 coins! Yesterday, many visitors visited our historic exhibits!",
+          "visualAction": "🏛️ 🪙 15 ➔ 🎬 🪙 12",
+          "options": [
+            {
+              "label": "🎟️ I will buy a museum ticket, please!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "text": "🏛️ Our town hall opened in 1895, and the train station opened 50 years ago! Yesterday, a voyager arrived on the morning train!",
+          "visualAction": "🏛️ 1895 ➔ 🚆 50 years ago",
+          "options": [
+            {
+              "label": "🚆 I visited the town hall archives earlier!",
+              "next": 3,
+              "rewardXP": 20
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "text": "🎫 Here is your admission ticket! Enjoy exploring COSY Town's historic landmarks!",
+          "visualAction": "🎫 ➔ ⭐",
+          "options": [
+            {
+              "label": "🙏 Thank you, Oliver!",
+              "next": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "neighbour_leo": {
+    "id": "neighbour_leo",
+    "name": "Leo",
+    "portrait": "👨‍🦰",
+    "avatar": "👨‍🦰",
+    "role": "Apartment Neighbour",
+    "occupation": "Neighbour",
+    "teachingRole": "Present Continuous & Friendship Mentor",
+    "personality": "friendly",
+    "currentMood": "happy",
+    "relationshipLevel": 1,
+    "friendshipPoints": 10,
+    "favoriteCafe": "cafe",
+    "favoritePark": "picnic_area",
+    "position3D": {
+      "x": 420,
+      "y": 280,
+      "z": 0
+    },
+    "voice": "en-US-Standard-D",
+    "dailySchedule": [
+      {
+        "time": "09:00",
+        "location": "apartment_entrance",
+        "activity": "Checking mail at entrance"
+      },
+      {
+        "time": "15:00",
+        "location": "picnic_area",
+        "activity": "Relaxing at picnic area"
+      }
+    ],
+    "conversationHistory": [],
+    "questHistory": [
+      "q_ch7_meet_neighbours"
+    ],
+    "quests": [
+      "q_ch7_meet_neighbours"
+    ],
+    "dialogues": {
+      "en": [
+        {
+          "id": 0,
+          "text": "🙋 Hi! I am Leo. I am currently walking to the picnic area!",
+          "visualAction": "🚶 ➔ 🧺",
+          "grammarCheck": "Present Continuous Tense (I am walking...)",
+          "options": [
+            {
+              "label": "🙋 Hello Leo! I am exploring the neighbourhood!",
+              "next": 1,
+              "rewardXP": 15,
+              "friendshipGain": 10,
+              "questId": "q_ch7_meet_neighbours"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "text": "🧺 Great! My sister and I are eating lunch at the park right now!",
+          "visualAction": "🧺 ➔ 😋",
+          "options": [
+            {
+              "label": "🧺 Enjoy your lunch, Leo!",
+              "next": 0,
+              "friendshipGain": 10
             }
           ]
         }

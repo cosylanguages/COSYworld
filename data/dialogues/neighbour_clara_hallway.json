@@ -1,0 +1,43 @@
+{
+  "npcId": "neighbour_clara",
+  "sceneId": "hallway",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👋 Hello neighbour! I am Clara from Apartment 102. Are you enjoying COSY Town?",
+      "emotion": "happy",
+      "gestures": ["wave"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Greetings & Introducing Neighbours",
+      "visualAction": "👋 ➔ 🛋️",
+      "playerOptions": [
+        {
+          "text": "👋 Hello Clara! Nice to meet my neighbour!",
+          "nextNodeId": "node_1",
+          "rewardXP": 15,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch7_meet_neighbours"
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "😊 We are having a small gathering at the conversation corner later. Would you like to come?",
+      "emotion": "happy",
+      "gestures": ["invite"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Invitations (Would you like to come?)",
+      "visualAction": "💬 ➔ ❤️",
+      "playerOptions": [
+        {
+          "text": "💬 I would love to join you!",
+          "nextNodeId": "node_0",
+          "friendshipGain": 10
+        }
+      ]
+    }
+  ]
+}

@@ -5,41 +5,65 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "⚡ 🔑 + 🥖 = 2 objects! Can you find 3 objects in COSY Town?",
+      "npcLine": "⚡ Hi! I am studying new vocabulary cards right now. Are you ready for a conversation?",
       "emotion": "confident",
-      "gestures": [],
+      "gestures": ["smile"],
       "highlights": [],
-      "speechRate": 0.85,
-      "grammarCheck": "Counting & Cardinal Numbers (1, 2, 3)",
-      "visualAction": "🔍 Find 3 items",
+      "speechRate": 0.8,
+      "grammarCheck": "Present Continuous & Expressing Preferences",
+      "visualAction": "📚 ➔ 💬",
       "playerOptions": [
         {
-          "text": "⚡ Accept vocabulary challenge!",
+          "text": "📖 I am studying grammar in the park!",
           "nextNodeId": "node_1",
-          "rewardXP": 25,
-          "rewardQuestId": "q3_anna_challenge"
+          "grammarId": "gt_present_continuous",
+          "rewardXP": 15,
+          "friendshipGain": 10
+        },
+        {
+          "text": "💛 [Requires 20+ FP] Talk about family and introduce friends",
+          "nextNodeId": "node_2",
+          "minFriendship": 20,
+          "grammarId": "gt_present_continuous",
+          "rewardXP": 20,
+          "friendshipGain": 15,
+          "rewardQuestId": "q_ch7_family_reunion"
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     },
     {
       "id": "node_1",
-      "npcLine": "🔥 Challenge accepted! Show me your visual encyclopedia progress!",
-      "emotion": "confident",
-      "gestures": [],
+      "npcLine": "🔥 Good effort! I like challenging myself, but I hate making silly mistakes!",
+      "emotion": "happy",
+      "gestures": ["nod"],
       "highlights": [],
-      "speechRate": 0.85,
-      "grammarCheck": "Imperatives & Encouragement",
-      "visualAction": "📚 ➔ 🏆",
+      "speechRate": 0.8,
+      "grammarCheck": "Like / Love / Hate",
+      "visualAction": "🔥 ➔ 😊",
       "playerOptions": [
         {
-          "text": "🏆 Let's go!",
-          "nextNodeId": "node_0"
+          "text": "👍 Mistakes help us learn!",
+          "nextNodeId": "node_0",
+          "friendshipGain": 5
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "👨‍👩‍👧‍👦 This is my brother and my sister! They are visiting COSY Town this week!",
+      "emotion": "excited",
+      "gestures": ["introduce"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Family Introductions (This is my brother / sister)",
+      "visualAction": "👨‍👩‍👧‍👦 ➔ 👋",
+      "playerOptions": [
+        {
+          "text": "👋 Welcome to COSY Town! Pleased to meet your family!",
+          "nextNodeId": "node_0",
+          "friendshipGain": 15
+        }
+      ]
     }
   ]
 }

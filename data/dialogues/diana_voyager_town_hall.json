@@ -1,0 +1,64 @@
+{
+  "npcId": "diana_voyager",
+  "sceneId": "town_hall",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👩‍🎨 Greetings fellow traveler! Yesterday I arrived in COSY Town on the morning train!",
+      "emotion": "curious",
+      "gestures": ["wave"],
+      "highlights": ["town_archive_book"],
+      "speechRate": 0.8,
+      "grammarCheck": "Past Simple Narrative ('arrived', 'visited')",
+      "visualAction": "🚆 ➔ 🏛️",
+      "playerOptions": [
+        {
+          "text": "📜 Which landmarks did you visit yesterday?",
+          "nextNodeId": "node_1",
+          "grammarId": "gt_past_simple",
+          "rewardXP": 15
+        },
+        {
+          "text": "🚆 I bought a train ticket at the station!",
+          "nextNodeId": "node_2",
+          "grammarId": "gt_time_expressions",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🏛️ Two hours ago, I visited the town hall archives, and last night I saw a movie at the cinema!",
+      "emotion": "excited",
+      "gestures": ["smile"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Past Time Expressions ('two hours ago', 'last night')",
+      "visualAction": "🏛️ ➔ 🎬",
+      "playerOptions": [
+        {
+          "text": "🌍 I am discovering all the city landmarks too!",
+          "nextNodeId": "node_0",
+          "rewardXP": 15
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🎫 Wonderful! COSY Town has rich history and great transport connections!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Sharing Travel Experiences",
+      "visualAction": "🎫 ➔ ⭐",
+      "playerOptions": [
+        {
+          "text": "👍 Safe travels, Diana!",
+          "nextNodeId": "node_0"
+        }
+      ]
+    }
+  ]
+}

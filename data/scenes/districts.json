@@ -443,10 +443,16 @@
         "npcId": "james_york",
         "x": 250,
         "y": 300
+      },
+      {
+        "npcId": "neighbour_clara",
+        "x": 480,
+        "y": 290
       }
     ],
     "npcs": [
-      "james_york"
+      "james_york",
+      "neighbour_clara"
     ],
     "objects": [
       "hallway_light",
@@ -455,7 +461,8 @@
       "key"
     ],
     "chapters": [
-      "ch1"
+      "ch1",
+      "ch7"
     ]
   },
   "apartment_entrance": {
@@ -550,10 +557,16 @@
         "npcId": "james_york",
         "x": 480,
         "y": 275
+      },
+      {
+        "npcId": "neighbour_leo",
+        "x": 220,
+        "y": 290
       }
     ],
     "npcs": [
-      "james_york"
+      "james_york",
+      "neighbour_leo"
     ],
     "objects": [
       "apartment_door",
@@ -573,7 +586,8 @@
       "dress"
     ],
     "chapters": [
-      "ch1"
+      "ch1",
+      "ch7"
     ]
   },
   "apartment_living": {
@@ -1886,12 +1900,22 @@
       "bag",
       "scale"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "shopkeeper_maya",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "shopkeeper_maya"
+    ],
     "objects": [
-      "fridge",
-      "plant",
-      "bookshelf"
+      "shopping_basket",
+      "shopping_cart",
+      "milk",
+      "cheese",
+      "coins_purse"
     ],
     "chapters": [
       "ch5"
@@ -1978,13 +2002,22 @@
       "market stall",
       "paper bag"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "shopkeeper_maya",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "shopkeeper_maya"
+    ],
     "objects": [
+      "apple",
+      "banana",
+      "orange",
       "plant",
-      "balcony_plant",
-      "bench",
-      "flower_bed"
+      "bench"
     ],
     "chapters": [
       "ch5"
@@ -2074,10 +2107,11 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "shirt",
+      "dress_rack",
+      "jacket",
       "bathroom_mirror",
-      "lamp",
-      "plant",
-      "desk"
+      "lamp"
     ],
     "chapters": [
       "ch5"
@@ -2167,11 +2201,11 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "novel_stack",
+      "dictionary_book",
+      "paper_notebook",
       "bookshelf",
-      "desk",
-      "lamp",
-      "coffee_table",
-      "plant"
+      "desk"
     ],
     "chapters": [
       "ch5"
@@ -3783,13 +3817,14 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "forest_deer",
       "plant",
       "balcony_plant",
-      "flower_bed",
-      "bench"
+      "flower_bed"
     ],
     "chapters": [
-      "ch6"
+      "ch6",
+      "ch10"
     ]
   },
   "lake": {
@@ -3877,13 +3912,14 @@
     "npcSpawns": [],
     "npcs": [],
     "objects": [
+      "lake_duck",
       "bench",
       "plant",
-      "flower_bed",
-      "balcony_plant"
+      "flower_bed"
     ],
     "chapters": [
-      "ch6"
+      "ch6",
+      "ch10"
     ]
   },
   "camping_area": {
@@ -4063,16 +4099,26 @@
       "harvest",
       "weather"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "thomas_farmer",
+        "x": 300,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "thomas_farmer"
+    ],
     "objects": [
+      "farm_cow",
+      "farm_sheep",
+      "weather_indicator",
       "plant",
-      "flower_bed",
-      "bench",
-      "balcony_plant"
+      "flower_bed"
     ],
     "chapters": [
-      "ch6"
+      "ch6",
+      "ch10"
     ]
   },
   "stable": {
@@ -4722,14 +4768,21 @@
       "camera",
       "gift shop"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "ticket_clerk_oliver"
+    ],
     "objects": [
-      "clock_tower",
+      "museum_ticket",
+      "sculpture_statue",
       "bench",
-      "window",
-      "plant",
-      "bookshelf"
+      "window"
     ],
     "chapters": [
       "ch9"
@@ -4817,13 +4870,21 @@
       "audience",
       "exit"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "x": 350,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "ticket_clerk_oliver"
+    ],
     "objects": [
-      "coffee_table",
+      "cinema_ticket",
+      "movie_poster",
       "lamp",
-      "window",
-      "plant"
+      "window"
     ],
     "chapters": [
       "ch9"
@@ -4911,14 +4972,21 @@
       "notice board",
       "entrance"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "diana_voyager",
+        "x": 550,
+        "y": 290
+      }
+    ],
+    "npcs": [
+      "diana_voyager"
+    ],
     "objects": [
+      "town_archive_book",
       "desk",
       "lamp",
-      "window",
-      "bookshelf",
-      "clock_tower"
+      "window"
     ],
     "chapters": [
       "ch9"
@@ -5006,14 +5074,27 @@
       "shop",
       "departure"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ticket_clerk_oliver",
+        "x": 300,
+        "y": 280
+      },
+      {
+        "npcId": "diana_voyager",
+        "x": 520,
+        "y": 290
+      }
+    ],
+    "npcs": [
+      "ticket_clerk_oliver",
+      "diana_voyager"
+    ],
     "objects": [
+      "train_ticket",
+      "train_schedule_board",
       "bench",
-      "window",
-      "desk",
-      "lamp",
-      "clock_tower"
+      "window"
     ],
     "chapters": [
       "ch9",
@@ -5590,17 +5671,22 @@
         "npcId": "ella_bronx",
         "x": 350,
         "y": 300
+      },
+      {
+        "npcId": "james_york",
+        "x": 550,
+        "y": 300
       }
     ],
     "npcs": [
-      "ella_bronx"
+      "ella_bronx",
+      "james_york"
     ],
     "objects": [
+      "blackboard",
+      "student_desk",
       "window",
-      "desk",
-      "bookshelf",
-      "lamp",
-      "plant"
+      "lamp"
     ],
     "chapters": [
       "ch8"
@@ -5688,14 +5774,22 @@
       "return box",
       "reading room"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "ella_bronx",
+        "x": 250,
+        "y": 300
+      }
+    ],
+    "npcs": [
+      "ella_bronx"
+    ],
     "objects": [
+      "globe",
+      "novel_stack",
+      "dictionary_book",
       "bookshelf",
-      "desk",
-      "lamp",
-      "coffee_table",
-      "window"
+      "desk"
     ],
     "chapters": [
       "ch8"
@@ -5783,12 +5877,20 @@
       "microphone",
       "student"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "james_york",
+        "x": 400,
+        "y": 300
+      }
+    ],
+    "npcs": [
+      "james_york"
+    ],
     "objects": [
+      "computer_terminal",
       "desk",
       "lamp",
-      "window",
       "chair"
     ],
     "chapters": [
@@ -6988,7 +7090,8 @@
     "worldWidth": 800,
     "worldHeight": 500,
     "neighbors": [
-      "town_square"
+      "town_square",
+      "outdoor_terrace"
     ],
     "name": {
       "en": "Restaurant",
@@ -7032,6 +7135,18 @@
           "en": "Town Square 🏛️",
           "fr": "Place de la ville 🏛️"
         }
+      },
+      {
+        "targetId": "outdoor_terrace",
+        "x": 710,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Outdoor Terrace ⛱️",
+          "fr": "Terrasse extérieure ⛱️"
+        }
       }
     ],
     "catalog": [
@@ -7056,13 +7171,22 @@
       "water",
       "waiter"
     ],
-    "npcSpawns": [],
-    "npcs": [],
+    "npcSpawns": [
+      {
+        "npcId": "dylan_chef",
+        "x": 300,
+        "y": 280
+      }
+    ],
+    "npcs": [
+      "dylan_chef"
+    ],
     "objects": [
-      "coffee_table",
-      "coffee_cup",
-      "plant",
-      "lamp"
+      "soup_bowl",
+      "pasta_plate",
+      "menu_card",
+      "cutlery_set",
+      "coffee_table"
     ],
     "chapters": [
       "ch6"
@@ -7082,7 +7206,8 @@
     "worldWidth": 800,
     "worldHeight": 500,
     "neighbors": [
-      "town_square"
+      "town_square",
+      "outdoor_terrace"
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
@@ -7136,6 +7261,18 @@
           "de": "Stadtplatz 🏛️",
           "ru": "Площадь 🏛️"
         }
+      },
+      {
+        "targetId": "outdoor_terrace",
+        "x": 710,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Outdoor Terrace ⛱️",
+          "fr": "Terrasse extérieure ⛱️"
+        }
       }
     ],
     "npcSpawns": [
@@ -7150,11 +7287,121 @@
     ],
     "objects": [
       "espresso_machine",
-      "coffee_cup"
+      "coffee_cup",
+      "cappuccino",
+      "tea_pot",
+      "menu_card"
     ],
     "chapters": [
       "ch5",
+      "ch6",
       "ch7"
+    ]
+  },
+  "outdoor_terrace": {
+    "id": "outdoor_terrace",
+    "district": "City Centre",
+    "level": "A0",
+    "icon": "⛱️",
+    "weather": "clear",
+    "music": "cafe",
+    "timeOfDay": "afternoon",
+    "transition": "seamless",
+    "worldX": 1200,
+    "worldY": 500,
+    "worldWidth": 800,
+    "worldHeight": 500,
+    "neighbors": [
+      "cafe",
+      "restaurant"
+    ],
+    "assets": {
+      "scene": "data/scenes/districts.json",
+      "hotspots": "data/vocabulary/objects.json",
+      "npc": "data/npcs/npcs.json",
+      "quests": "data/quests/quests.json"
+    },
+    "name": {
+      "en": "Outdoor Terrace",
+      "fr": "Terrasse extérieure",
+      "it": "Terrazza all'aperto",
+      "es": "Terraza al aire libre",
+      "de": "Außenterrasse",
+      "ru": "Открытая терраса"
+    },
+    "viewBox": "0 0 800 500",
+    "backgroundImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=82",
+    "roads": [
+      {
+        "x": 0,
+        "y": 340,
+        "width": 800,
+        "height": 160,
+        "type": "stone_patio"
+      }
+    ],
+    "buildings": [
+      {
+        "id": "terrace_seating",
+        "x": 120,
+        "y": 140,
+        "width": 560,
+        "height": 200,
+        "color": "#0ea5e9",
+        "label": "Terrace Seating ⛱️"
+      }
+    ],
+    "doors": [
+      {
+        "targetId": "cafe",
+        "x": 20,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Cafe ☕",
+          "fr": "Café ☕"
+        }
+      },
+      {
+        "targetId": "restaurant",
+        "x": 710,
+        "y": 180,
+        "width": 70,
+        "height": 220,
+        "labelY": 160,
+        "labels": {
+          "en": "Restaurant 🍽️",
+          "fr": "Restaurant 🍽️"
+        }
+      }
+    ],
+    "npcSpawns": [
+      {
+        "npcId": "marco_barista",
+        "x": 250,
+        "y": 300
+      },
+      {
+        "npcId": "dylan_chef",
+        "x": 550,
+        "y": 300
+      }
+    ],
+    "npcs": [
+      "marco_barista",
+      "dylan_chef"
+    ],
+    "objects": [
+      "terrace_table",
+      "terrace_umbrella",
+      "dessert_cake",
+      "coffee_cup",
+      "cutlery_set"
+    ],
+    "chapters": [
+      "ch6"
     ]
   }
 }

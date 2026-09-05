@@ -163,5 +163,71 @@
     "unlockCondition": {
       "questId": "q_directions_bakery"
     }
+  },
+  {
+    "id": "ach_ch5_master_shopper",
+    "title": "🛍️ Master Shopper",
+    "description": "Complete your shopping list across shops, master asking prices and quantifiers, and complete Chapter 5.",
+    "category": "chapter_5",
+    "icon": "🛍️",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch5_master_shopper"
+    }
+  },
+  {
+    "id": "ach_ch6_culinary_master",
+    "title": "👨‍🍳 Culinary Master",
+    "description": "Order food and drinks using polite forms, serve customers as a waiter, unlock culinary recipes, and complete Chapter 6.",
+    "category": "chapter_6",
+    "icon": "👨‍🍳",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch6_culinary_master"
+    }
+  },
+  {
+    "id": "ach_ch7_social_butterfly",
+    "title": "🦋 Social Butterfly",
+    "description": "Meet neighbours Clara & Leo, build friendship levels with Ella & Anna, master Present Continuous, and complete Chapter 7.",
+    "category": "chapter_7",
+    "icon": "🦋",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch7_family_reunion"
+    }
+  },
+  {
+    "id": "ach_ch8_master_scholar",
+    "title": "🎓 Master Scholar",
+    "description": "Tour the school and library, master Can and Can't modal verbs, study together with Ella & James, and complete Chapter 8.",
+    "category": "chapter_8",
+    "icon": "🎓",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch8_study_together"
+    }
+  },
+  {
+    "id": "ach_ch9_city_explorer",
+    "title": "🏛️ City Explorer & Historian",
+    "description": "Buy admission tickets, discover historic civic landmarks, master Past Simple and time expressions, and complete Chapter 9.",
+    "category": "chapter_9",
+    "icon": "🏛️",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch9_city_historian"
+    }
+  },
+  {
+    "id": "ach_ch10_nature_master",
+    "title": "🌾 Wildlife Explorer & Photographer",
+    "description": "Feed farm animals using comparative adjectives, complete the wildlife photography album, check weather gauges, and complete Chapter 10.",
+    "category": "chapter_10",
+    "icon": "🌾",
+    "xpReward": 120,
+    "unlockCondition": {
+      "questId": "q_ch10_nature_master"
+    }
   }
 ]

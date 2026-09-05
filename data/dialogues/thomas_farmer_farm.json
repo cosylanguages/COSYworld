@@ -1,0 +1,89 @@
+{
+  "npcId": "thomas_farmer",
+  "sceneId": "farm",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👨‍🌾 Welcome to the farm! The weather today is fresh! Look at my farm animals — the cow is bigger than the sheep!",
+      "emotion": "happy",
+      "gestures": ["welcome"],
+      "highlights": ["farm_cow", "farm_sheep", "weather_indicator"],
+      "speechRate": 0.8,
+      "grammarCheck": "Comparative Adjectives (-er than / more than) & Live Weather",
+      "visualAction": "🐄 > 🐑 ➔ 🌾",
+      "playerOptions": [
+        {
+          "text": "🐄 Yes! The cow is bigger than the sheep!",
+          "nextNodeId": "node_1",
+          "grammarId": "gt_comparatives",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch10_farm_animals"
+        },
+        {
+          "text": "🌾 Let's feed the farm animals together!",
+          "nextNodeId": "node_2",
+          "grammarId": "gt_comparatives",
+          "rewardXP": 20
+        },
+        {
+          "text": "🌦️ How is the weather on the farm today?",
+          "nextNodeId": "node_3",
+          "vocabId": "weather_indicator",
+          "rewardXP": 15
+        }
+      ]
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🐄 Correct! And the horse is taller than the cow! Comparing animal sizes helps us give them proper care!",
+      "emotion": "excited",
+      "gestures": ["smile"],
+      "highlights": ["farm_cow"],
+      "speechRate": 0.8,
+      "grammarCheck": "Comparative Adjectives ('taller than', 'bigger than')",
+      "visualAction": "🐴 > 🐄 > 🐑",
+      "playerOptions": [
+        {
+          "text": "🌾 I can help feed the cow and sheep!",
+          "nextNodeId": "node_2",
+          "rewardXP": 15
+        }
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🌾 Wonderful! Take this fresh hay to feed the animals. The bigger cow gets a larger portion than the sheep!",
+      "emotion": "happy",
+      "gestures": ["hand_hay"],
+      "highlights": ["farm_cow", "farm_sheep"],
+      "speechRate": 0.8,
+      "grammarCheck": "Comparing Quantities ('larger portion than')",
+      "visualAction": "🌾 ➔ 🐄 + 🐑",
+      "playerOptions": [
+        {
+          "text": "👍 Feed the farm animals now!",
+          "nextNodeId": "node_0",
+          "rewardXP": 20
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🌦️ When the sky is clear, animals graze in green pastures! When it rains, they rest inside the barn!",
+      "emotion": "happy",
+      "gestures": ["look_sky"],
+      "highlights": ["weather_indicator"],
+      "speechRate": 0.8,
+      "grammarCheck": "Weather Context & Nature Adjectives",
+      "visualAction": "☀️ ➔ 🐄 / 🌧️ ➔ 🛖",
+      "playerOptions": [
+        {
+          "text": "📸 I am going to photograph wild deer in the forest next!",
+          "nextNodeId": "node_0",
+          "rewardXP": 15
+        }
+      ]
+    }
+  ]
+}

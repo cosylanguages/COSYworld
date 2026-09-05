@@ -212,5 +212,85 @@
       "options": ["Two lamps and three cups", "One lamp and four cups", "Five lamps"],
       "correctOption": 0
     }
+  },
+  {
+    "id": "mg_cafe_server_1",
+    "type": "dialogue",
+    "title": "🍽️ Café & Restaurant Server Challenge",
+    "description": "Play the role of server/waiter and take NPC customer orders politely using 'Would like' and 'Can I have...'",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["waiter", "customer", "coffee", "soup"]
+    },
+    "content": {
+      "npcId": "dylan_chef",
+      "prompt": "Customer says: 'Excuse me! Could I please order a warm vegetable soup and an espresso?' How do you respond as the server?",
+      "options": [
+        "Certainly! One warm vegetable soup and one fresh espresso coming right up!",
+        "No soup today.",
+        "Go get it yourself."
+      ],
+      "targetChoice": 0
+    }
+  },
+  {
+    "id": "mg_study_together_1",
+    "type": "dialogue",
+    "title": "📚 Study Together Cooperative Challenge",
+    "description": "Cooperate with Ella Bronx and James York in the school library using 'Can' and 'Can't' to solve grammar questions.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["teacher", "student", "book", "desk"],
+      "grammar": "gt_can_cant"
+    },
+    "content": {
+      "npcId": "ella_bronx",
+      "prompt": "Ella says: 'James and I are studying together in the library. Can you help us find the grammar textbook?' How do you answer using modal verb 'can'?",
+      "options": [
+        "Yes, I can find the textbook on the bookshelf!",
+        "No, I can't speak words.",
+        "Goodbye."
+      ],
+      "targetChoice": 0
+    }
+  },
+  {
+    "id": "mg_wildlife_photo_1",
+    "type": "object_hunt",
+    "title": "📸 Wildlife Photography Challenge",
+    "description": "Snap photographs of wild deer in the forest and ducks at the lake to complete your wildlife album.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 85,
+      "vocabulary": ["deer", "duck", "forest", "lake"]
+    },
+    "content": {
+      "timeLimitSeconds": 60,
+      "targetObjects": ["forest_deer", "lake_duck"]
+    }
+  },
+  {
+    "id": "mg_feed_animals_1",
+    "type": "dialogue",
+    "title": "🌾 Feed Farm Animals Challenge",
+    "description": "Help Thomas Farmer feed the farm cow and sheep using comparative adjectives.",
+    "difficulty": "A1",
+    "reward": {
+      "xp": 80,
+      "vocabulary": ["cow", "sheep", "farm", "grass"],
+      "grammar": "gt_comparatives"
+    },
+    "content": {
+      "npcId": "thomas_farmer",
+      "prompt": "Thomas says: 'The cow is bigger than the sheep, so it needs more fresh hay! Which animal gets the larger portion?'",
+      "options": [
+        "The cow gets the larger portion because it is bigger than the sheep!",
+        "The sheep gets no food.",
+        "Animals do not eat."
+      ],
+      "targetChoice": 0
+    }
   }
 ]

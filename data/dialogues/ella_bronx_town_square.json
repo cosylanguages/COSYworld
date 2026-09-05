@@ -5,41 +5,88 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "👂 Listen... 🗣️ Repeat out loud!",
+      "npcLine": "👋 Hello! I am relaxing at the square today! What are you doing?",
       "emotion": "happy",
-      "gestures": [],
+      "gestures": ["wave"],
       "highlights": [],
       "speechRate": 0.8,
-      "grammarCheck": "Listen & Repeat Audio Mimicry",
-      "visualAction": "👂 ➔ 🗣️",
+      "grammarCheck": "Present Continuous & Likes/Loves/Hates",
+      "visualAction": "👋 ➔ 💬",
       "playerOptions": [
         {
-          "text": "🔊 Practice speaking out loud!",
+          "text": "🗣️ I am practicing English pronunciation!",
           "nextNodeId": "node_1",
+          "grammarId": "gt_present_continuous",
+          "rewardXP": 15,
+          "friendshipGain": 10
+        },
+        {
+          "text": "❤️ I love meeting friends in the park!",
+          "nextNodeId": "node_2",
+          "grammarId": "gt_likes",
+          "rewardXP": 15,
+          "friendshipGain": 10
+        },
+        {
+          "text": "💛 [Requires 20+ FP] Invite Ella to the conversation corner",
+          "nextNodeId": "node_3",
+          "minFriendship": 20,
+          "grammarId": "gt_present_continuous",
           "rewardXP": 20,
-          "rewardQuestId": "q2_pronunciation"
+          "friendshipGain": 15,
+          "rewardQuestId": "q_ch7_friendship_bond"
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
     },
     {
       "id": "node_1",
-      "npcLine": "👏 Clear articulation! Practice aloud every day to build speech confidence!",
-      "emotion": "happy",
-      "gestures": [],
+      "npcLine": "🗣️ Wonderful! You are speaking very clearly! I love hearing you practice!",
+      "emotion": "excited",
+      "gestures": ["smile"],
       "highlights": [],
       "speechRate": 0.8,
-      "grammarCheck": "Imperatives & Speech Confidence",
+      "grammarCheck": "Continuous Action & Positive Feedback",
       "visualAction": "🗣️ ➔ ⭐",
       "playerOptions": [
         {
           "text": "👍 Thank you Ella!",
           "nextNodeId": "node_0"
         }
-      ],
-      "endConditions": null,
-      "rewardQuestId": null
+      ]
+    },
+    {
+      "id": "node_2",
+      "npcLine": "❤️ Me too! I love spending time outside, but I hate when it rains!",
+      "emotion": "happy",
+      "gestures": ["nod"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Verbs of Preference (Love vs Hate)",
+      "visualAction": "❤️ ➔ 🌧️ ➔ ❌",
+      "playerOptions": [
+        {
+          "text": "👥 Let's invite Anna to join us!",
+          "nextNodeId": "node_0",
+          "friendshipGain": 5
+        }
+      ]
+    },
+    {
+      "id": "node_3",
+      "npcLine": "🎉 I would love to come! This is my friend Anna — she is coming with us right now!",
+      "emotion": "excited",
+      "gestures": ["wave"],
+      "highlights": [],
+      "speechRate": 0.8,
+      "grammarCheck": "Invitations & Introductions (This is my friend)",
+      "visualAction": "🤝 ➔ 💬",
+      "playerOptions": [
+        {
+          "text": "👥 Great! Let's all meet at the conversation corner!",
+          "nextNodeId": "node_0",
+          "friendshipGain": 10
+        }
+      ]
     }
   ]
 }

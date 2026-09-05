@@ -237,16 +237,34 @@ export class HUDManager {
                     </div>
                 `;
             }).join('');
-        } else if (state.activeTab === 'npcs') {
+        } else if (state.activeTab === 'npcs' || state.activeTab === 'friends') {
             body.innerHTML = Object.keys(gameData.npcs).map(npcId => {
                 const npc = gameData.npcs[npcId];
+                const fp = (state.npcRelationships && state.npcRelationships[npcId] !== undefined)
+                    ? state.npcRelationships[npcId]
+                    : (npc.friendshipPoints || 0);
+
+                let relationshipTitle = 'Acquaintance';
+                if (fp >= 80) relationshipTitle = 'Best Friend ❤️';
+                else if (fp >= 50) relationshipTitle = 'Good Friend 💛';
+                else if (fp >= 20) relationshipTitle = 'Friend 😊';
+
+                const primaryLocation = (npc.dailySchedule && npc.dailySchedule[0] && npc.dailySchedule[0].location) || 'town_square';
+
                 return `
-                    <div class="cw-item-card" style="cursor:pointer;" onclick="COSY_WORLD.switchLocation('town_square')">
-                        <div class="cw-item-title">
-                            <span>${npc.avatar} ${npc.name}</span>
-                            <span style="font-size:0.8rem; color:var(--blue-primary);">Talk 💬</span>
+                    <div class="cw-item-card" style="cursor:pointer;" onclick="COSY_WORLD.switchLocation('${primaryLocation}')">
+                        <div class="cw-item-title" style="display:flex; justify-content:space-between; align-items:center;">
+                            <span>${npc.avatar || '👤'} ${npc.name}</span>
+                            <span style="font-size:0.75rem; background:#fef2f2; color:#be123c; padding:0.2rem 0.5rem; border-radius:10px; font-weight:700;">
+                                ❤️ ${fp} FP (${relationshipTitle})
+                            </span>
                         </div>
-                        <div class="cw-item-desc">${npc.role}</div>
+                        <div class="cw-item-desc" style="margin-top:0.4rem;">
+                            <strong>Role:</strong> ${npc.role}
+                        </div>
+                        <div style="margin-top:0.4rem; font-size:0.75rem; color:var(--blue-primary); font-weight:600;">
+                            📍 Primary Location: ${primaryLocation} ➔
+                        </div>
                     </div>
                 `;
             }).join('');
