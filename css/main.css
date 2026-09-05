@@ -1,44 +1,46 @@
 /* COSY World — Modern Responsive UI Stylesheet */
 
 :root {
-  /* Warm life-sim palette: sage, paper, terracotta and ink */
-  --blue-primary: #356859;
-  --blue-hover: #274c3a;
-  --blue-light: #eef4ed;
-  --blue-soft: #dcebdd;
-  --blue-border: #b8ceb8;
+  /* Fears to Fathom — VHS Analog Horror Dark Palette */
+  --blue-primary: #00ff66;
+  --blue-hover: #00cc52;
+  --blue-light: #0d2818;
+  --blue-soft: #163820;
+  --blue-border: #1b4d27;
 
-  --bg-app: #f2eee6;
-  --surface: #fffdf8;
-  --surface-glass: rgba(255, 253, 248, 0.86);
-  --border-glass: rgba(255, 253, 248, 0.7);
-  --border-subtle: #ded8cb;
+  --bg-app: #07080a;
+  --surface: #101216;
+  --surface-glass: rgba(16, 18, 22, 0.92);
+  --border-glass: rgba(0, 255, 102, 0.25);
+  --border-subtle: #1e232e;
 
-  --text-main: #2f302b;
-  --text-muted: #756f63;
-  --text-inverse: #ffffff;
+  --text-main: #e2e8f0;
+  --text-muted: #8a99ad;
+  --text-inverse: #000000;
 
-  --accent-teal: #5c8d78;
-  --accent-amber: #d8874a;
-  --accent-rose: #c96a58;
-  --scene-wall: #f2e7d5;
-  --scene-floor: #d8c4a8;
-  --scene-line: #bca98f;
+  --accent-crt: #00ff66;
+  --accent-vhs-red: #ff3333;
+  --accent-amber: #ffb703;
+  --accent-rose: #ff4d4d;
+  --scene-wall: #12141a;
+  --scene-floor: #0b0c10;
+  --scene-line: #222633;
 
   /* Typography */
-  --font-heading: 'Fraunces', -apple-system, BlinkMacSystemFont, Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Consolas', 'Courier New', Courier, monospace;
+  --font-osd: 'Consolas', 'Courier New', Courier, monospace;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Modern Geometry & Soft Layered Shadows */
-  --radius-xl: 18px;
-  --radius-lg: 14px;
-  --radius-md: 10px;
+  /* Geometry & CRT Shadows */
+  --radius-xl: 12px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
   --radius-pill: 9999px;
 
-  --shadow-sm: 0 2px 8px rgba(70, 58, 42, 0.06);
-  --shadow-card: 0 14px 30px -8px rgba(70, 58, 42, 0.13), 0 3px 10px rgba(70, 58, 42, 0.05);
-  --shadow-hover: 0 20px 40px -10px rgba(70, 58, 42, 0.2), 0 8px 16px -4px rgba(70, 58, 42, 0.08);
-  --shadow-modal: 0 25px 50px -12px rgba(47, 48, 43, 0.28);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 15px rgba(0, 255, 102, 0.05);
+  --shadow-hover: 0 12px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 255, 102, 0.15);
+  --shadow-modal: 0 25px 50px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 255, 102, 0.2);
 }
 
 * {
@@ -50,15 +52,39 @@
 body.game-standalone {
   background-color: var(--bg-app);
   background-image:
-    linear-gradient(rgba(255, 253, 248, 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(126, 111, 87, 0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
+    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.6) 0%, rgba(7, 8, 10, 0.98) 100%),
+    linear-gradient(rgba(0, 255, 102, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 4px;
   background-attachment: fixed;
   color: var(--text-main);
   font-family: var(--font-body);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* CRT Scanlines Overlay Filter */
+body.game-standalone::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%);
+  background-size: 100% 4px;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+/* CRT Vignette Overlay */
+body.game-standalone::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.85);
+  z-index: 99998;
+  pointer-events: none;
 }
 
 /* Glassmorphism Header Bar */
@@ -196,15 +222,78 @@ body.game-standalone {
   letter-spacing: -0.01em;
 }
 
-/* SVG Stage Viewport */
+/* SVG Stage Viewport Container & VHS Overlay */
+.vhs-viewport-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glass);
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 255, 102, 0.15);
+}
+
 .cw-svg-view {
   width: 100%;
   height: auto;
   aspect-ratio: 8 / 5;
-  background: #ece6d9;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
-  box-shadow: inset 0 2px 8px rgba(70, 58, 42, 0.1), 0 8px 20px rgba(70, 58, 42, 0.08);
+  background: #090a0f;
+  display: block;
+}
+
+/* VHS Camcorder On-Screen Display (OSD) Overlay */
+.vhs-osd-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-osd);
+  font-size: 0.82rem;
+  color: var(--accent-crt);
+  text-shadow: 0 0 6px rgba(0, 255, 102, 0.8), 0 0 12px rgba(0, 255, 102, 0.4);
+  z-index: 10;
+}
+
+.vhs-osd-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vhs-osd-rec {
+  color: var(--accent-vhs-red);
+  text-shadow: 0 0 8px rgba(255, 51, 51, 0.9);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.vhs-rec-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-vhs-red);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-vhs-red);
+  animation: vhsRecBlink 1.2s infinite ease-in-out;
+}
+
+@keyframes vhsRecBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.vhs-osd-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.vhs-osd-time {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
 }
 
 /* Hotspots & Interactivity */

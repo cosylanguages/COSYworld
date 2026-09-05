@@ -209,7 +209,7 @@ export class AudioEngine {
         try {
             const osc = this.audioCtx.createOscillator();
             const gain = this.audioCtx.createGain();
-            const frequencies = { piano: 261.63, acoustic: 329.63, jazz: 220.0, relaxing: 196.0 };
+            const frequencies = { piano: 261.63, acoustic: 329.63, jazz: 220.0, relaxing: 196.0, drone: 65.0 };
 
             osc.type = 'triangle';
             osc.frequency.setValueAtTime(frequencies[newTrackId] || 220, this.audioCtx.currentTime);
@@ -257,7 +257,7 @@ export class AudioEngine {
         try {
             const osc = this.audioCtx.createOscillator();
             const gain = this.audioCtx.createGain();
-            const frequencies = { cafe: 293.66, nature: 174.61, rain: 130.81, ocean: 110.0 };
+            const frequencies = { cafe: 293.66, nature: 174.61, rain: 130.81, ocean: 110.0, drone: 55.0 };
 
             osc.type = 'sine';
             osc.frequency.setValueAtTime(frequencies[newType] || 174.61, this.audioCtx.currentTime);
@@ -281,6 +281,32 @@ export class AudioEngine {
             }
         } catch (e) {
             console.warn('Crossfade ambience synthesis failed:', e);
+        }
+    }
+
+    /* VHS Mechanical Tape Click / Pop SFX */
+    playVhsClick() {
+        if (this.getEffectiveVolume('sfx') <= 0 || !this.audioCtx) return;
+
+        try {
+            const now = this.audioCtx.currentTime;
+            const osc = this.audioCtx.createOscillator();
+            const gain = this.audioCtx.createGain();
+
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(800, now);
+            osc.frequency.exponentialRampToValueAtTime(80, now + 0.04);
+
+            const vol = this.getEffectiveVolume('sfx') * 0.12;
+            gain.gain.setValueAtTime(vol, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+
+            osc.connect(gain);
+            gain.connect(this.audioCtx.destination);
+            osc.start(now);
+            osc.stop(now + 0.04);
+        } catch (e) {
+            /* Web Audio not active or blocked */
         }
     }
 

@@ -383,6 +383,18 @@ export class SceneRenderer {
         const lightingFill = (state.worldSim && state.worldSim.lightingRgba) ? state.worldSim.lightingRgba : (timeOfDayColors[loc.timeOfDay] || 'rgba(0,0,0,0)');
         html += `<rect x="0" y="0" width="800" height="500" fill="${lightingFill}" pointer-events="none" />`;
 
+        // Analog Horror Flashlight & Vignette SVG Overlay
+        html += `
+            <defs>
+                <radialGradient id="vhs-flashlight" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
+                    <stop offset="60%" stop-color="#000000" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#000000" stop-opacity="0.7" />
+                </radialGradient>
+            </defs>
+            <rect x="0" y="0" width="800" height="500" fill="url(#vhs-flashlight)" pointer-events="none" />
+        `;
+
         svg.innerHTML = html;
         svg.style.opacity = '1';
     }
