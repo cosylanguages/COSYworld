@@ -5,22 +5,74 @@
   "nodes": [
     {
       "id": "node_0",
-      "npcLine": "There is a sofa in the living room and a bed in the bedroom.",
+      "npcLine": "🛋️ Welcome to your living room! I am James. Let's organize your apartment! There is a red sofa near the window. Is this your sofa?",
       "emotion": "happy",
-      "gestures": ["point_furniture", "point_room"],
-      "highlights": ["sofa", "bed", "desk"],
+      "gestures": ["point_furniture"],
+      "highlights": ["sofa", "coffee_table"],
       "speechRate": 0.65,
-      "grammarCheck": "Existential placement (There is)",
-      "visualAction": "🛋️ Living Room Tour",
+      "grammarCheck": "Existential Placement & Demonstratives ('There is a... Is this your...')",
+      "visualAction": "🛋️ Sofa & Furniture Placement",
       "playerOptions": [
         {
-          "text": "🛋️ Look around the living room!",
+          "text": "🛋️ Yes, that is my sofa! What else is in this living room?",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_sofa",
+          "grammarId": "gt_this",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        },
+        {
+          "text": "📺 Is that your television on the desk?",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_tv",
+          "grammarId": "gt_that",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🛋️ This is my red sofa and that is your coffee table. There are two lamps on the side tables! Let's organize the bedroom next!",
+      "emotion": "excited",
+      "gestures": ["point_furniture"],
+      "highlights": ["lamp", "coffee_table"],
+      "speechRate": 0.65,
+      "grammarCheck": "Plural Existential Placement ('There are two lamps')",
+      "visualAction": "🛋️ Organizes Living Room",
+      "playerOptions": [
+        {
+          "text": "🛏️ Let me check my bedroom next!",
           "nextNodeId": null,
-          "vocabId": "sofa",
-          "grammarId": "gt_there_is",
+          "vocabId": "vocab_living_room",
+          "grammarId": "gt_there_are",
           "rewardXP": 20,
           "friendshipGain": 10,
           "rewardQuestId": "q_ch2_explore_rooms"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "📺 Yes, that is my television! There are books on my bookshelf too. Everything is in its place!",
+      "emotion": "happy",
+      "gestures": ["point_furniture"],
+      "highlights": ["tv", "bookshelf"],
+      "speechRate": 0.65,
+      "grammarCheck": "Possessive Adjectives ('my television, my bookshelf')",
+      "visualAction": "🧹 Living Room Complete",
+      "playerOptions": [
+        {
+          "text": "🧹 Thank you James! Our living room is organized!",
+          "nextNodeId": null,
+          "vocabId": "vocab_table",
+          "grammarId": "gt_my_your",
+          "rewardXP": 20,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch2_organize_apartment"
         }
       ],
       "endConditions": null,

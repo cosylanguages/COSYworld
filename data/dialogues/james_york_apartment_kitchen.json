@@ -1,0 +1,59 @@
+{
+  "npcId": "james_york",
+  "sceneId": "apartment_kitchen",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "🍳 This is your kitchen! There is a fridge and there are three cups on the counter. Is this your kettle?",
+      "emotion": "happy",
+      "gestures": ["point_furniture"],
+      "highlights": ["fridge", "kettle", "cup"],
+      "speechRate": 0.65,
+      "grammarCheck": "Demonstratives & Quantities ('This is... There are three...')",
+      "visualAction": "🍳 Kitchen Inspection",
+      "playerOptions": [
+        {
+          "text": "🫖 Yes, that is my kettle! And that is your fridge.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_kettle",
+          "grammarId": "gt_that",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        },
+        {
+          "text": "☕ There are three cups on my counter.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_cup",
+          "grammarId": "gt_there_are",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "☕ Excellent! Your kitchen has everything. Water in the kettle and cold drinks in the fridge!",
+      "emotion": "excited",
+      "gestures": ["wave"],
+      "highlights": ["fridge", "kettle"],
+      "speechRate": 0.65,
+      "grammarCheck": "Possessive Adjectives ('Your kitchen... My kettle')",
+      "visualAction": "☕ Kitchen Complete",
+      "playerOptions": [
+        {
+          "text": "😋 Thank you James! Our home is completely organized!",
+          "nextNodeId": null,
+          "vocabId": "vocab_kitchen",
+          "grammarId": "gt_my_your",
+          "rewardXP": 25,
+          "friendshipGain": 10,
+          "rewardQuestId": "q_ch2_unlock_furniture"
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

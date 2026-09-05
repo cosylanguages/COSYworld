@@ -1,0 +1,78 @@
+{
+  "npcId": "james_york",
+  "sceneId": "reception",
+  "initialNodeId": "node_0",
+  "nodes": [
+    {
+      "id": "node_0",
+      "npcLine": "👋 Hello again! I am James York. Have you met the receptionist?",
+      "emotion": "happy",
+      "gestures": ["wave"],
+      "highlights": ["reception_desk"],
+      "speechRate": 0.65,
+      "grammarCheck": "Personal Pronouns & Identity ('I am James')",
+      "visualAction": "👋 Reception Meeting",
+      "playerOptions": [
+        {
+          "text": "👍 Yes! I introduced myself and got my key.",
+          "nextNodeId": "node_1",
+          "vocabId": "vocab_yes",
+          "grammarId": "gt_my_your",
+          "rewardXP": 15,
+          "friendshipGain": 5
+        },
+        {
+          "text": "🔑 Where do I go with my key?",
+          "nextNodeId": "node_2",
+          "vocabId": "vocab_key",
+          "grammarId": "gt_articles",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_1",
+      "npcLine": "🎉 Excellent! That is your apartment key. Walk through the hallway to open your door!",
+      "emotion": "excited",
+      "gestures": ["point_right"],
+      "highlights": ["staircase"],
+      "speechRate": 0.65,
+      "grammarCheck": "Articles & Demonstratives ('That is your key')",
+      "visualAction": "🚪 Hallway Directions",
+      "playerOptions": [
+        {
+          "text": "🚶 Thank you, James! Goodbye for now!",
+          "nextNodeId": null,
+          "vocabId": "vocab_goodbye",
+          "grammarId": "gt_greetings",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    },
+    {
+      "id": "node_2",
+      "npcLine": "🚶 Follow the hallway door to your new apartment home!",
+      "emotion": "happy",
+      "gestures": ["point_right"],
+      "highlights": ["elevator"],
+      "speechRate": 0.65,
+      "grammarCheck": "Imperative Actions ('Follow the hallway')",
+      "visualAction": "🚶 Direction Pointer",
+      "playerOptions": [
+        {
+          "text": "🚪 I am walking to the hallway!",
+          "nextNodeId": null,
+          "vocabId": "vocab_door",
+          "grammarId": "gt_articles",
+          "rewardXP": 15
+        }
+      ],
+      "endConditions": null,
+      "rewardQuestId": null
+    }
+  ]
+}

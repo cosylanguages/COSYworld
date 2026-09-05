@@ -173,5 +173,44 @@
       "words": ["is", "the", "Where", "bakery?"],
       "correctOrder": ["Where", "is", "the", "bakery?"]
     }
+  },
+  {
+    "id": "mg_color_match_1",
+    "type": "drag_drop",
+    "title": "🎨 Name the Color Challenge",
+    "description": "Match color words (red, blue, green, yellow, white, black) to room items.",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 70,
+      "vocabulary": ["red", "blue", "green", "yellow", "white", "black"]
+    },
+    "content": {
+      "items": [
+        { "id": "color_red", "label": "Red Sofa", "targetZone": "living_room" },
+        { "id": "color_blue", "label": "Blue Bed", "targetZone": "bedroom" },
+        { "id": "color_green", "label": "Green Plant", "targetZone": "balcony" }
+      ],
+      "matches": {
+        "color_red": "living_room",
+        "color_blue": "bedroom",
+        "color_green": "balcony"
+      }
+    }
+  },
+  {
+    "id": "mg_counting_1",
+    "type": "listening",
+    "title": "🔢 Count the Objects Challenge",
+    "description": "Listen and count the furniture and items across your apartment rooms (one, two, three, four, five).",
+    "difficulty": "A0",
+    "reward": {
+      "xp": 70,
+      "vocabulary": ["one", "two", "three", "four", "five"]
+    },
+    "content": {
+      "audioText": "There are two lamps in the bedroom and three cups in the kitchen.",
+      "options": ["Two lamps and three cups", "One lamp and four cups", "Five lamps"],
+      "correctOption": 0
+    }
   }
 ]

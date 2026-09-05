@@ -44,6 +44,17 @@
     }
   },
   {
+    "id": "ach_ch1_first_steps",
+    "title": "👣 First Steps",
+    "description": "Complete Chapter 1 end-to-end: introduce yourself, pick up your key, and unlock your apartment.",
+    "category": "chapter_1",
+    "icon": "👣",
+    "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch1_open_apartment"
+    }
+  },
+  {
     "id": "ach_apartment_explorer",
     "title": "🏠 Apartment Explorer",
     "description": "Explore all five rooms in your apartment.",
@@ -83,6 +94,17 @@
     "category": "chapter_2",
     "icon": "🪑",
     "xpReward": 100,
+    "unlockCondition": {
+      "questId": "q_ch2_unlock_furniture"
+    }
+  },
+  {
+    "id": "ach_ch2_master_home",
+    "title": "🏠 Master of the House",
+    "description": "Explore every room, organize furniture with James, and complete Chapter 2 end-to-end.",
+    "category": "chapter_2",
+    "icon": "🏠",
+    "xpReward": 120,
     "unlockCondition": {
       "questId": "q_ch2_unlock_furniture"
     }
