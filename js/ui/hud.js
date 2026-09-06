@@ -3,6 +3,23 @@
  * Sidebar HUD tabs (Quests, Vocabulary Encyclopedia, Grammar Tree, NPCs) and toast messaging.
  */
 
+/**
+ * Helper to generate outbound handoff URLs for COSYtools and COSYgames.
+ */
+function buildHandoffUrl(targetApp, lang = 'en', level = 'A1', topic = '') {
+    const baseUrl = targetApp === 'COSYgames'
+        ? 'https://cosylanguages.github.io/COSYgames/'
+        : 'https://cosylanguages.github.io/COSYtools/';
+    const params = new URLSearchParams();
+    if (lang) params.set('lang', lang);
+    if (level) params.set('level', level);
+    if (topic) {
+        const cleanTopic = topic.replace(/^gt_/, '');
+        params.set('topic', cleanTopic);
+    }
+    return `${baseUrl}?${params.toString()}`;
+}
+
 export class HUDManager {
     static switchTab(tabName, btnEl, state, renderHudFn) {
         state.activeTab = tabName;
@@ -43,6 +60,14 @@ export class HUDManager {
             <div style="background:var(--blue-light); border:1px solid var(--border-subtle); padding:0.6rem 0.8rem; border-radius:12px; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; font-weight:700; color:var(--text-main);">
                 <div>⏰ ${worldSim.timeString || '08:00'} (${simIcons[worldSim.timeOfDay] || '🌅 Morning'})</div>
                 <div>${seasonIcons[worldSim.season] || '🌸 Spring'} • ${weatherIcons[worldSim.weather] || '☀️ Clear'}</div>
+            </div>
+            <div style="background:#f8fafc; border:1px solid var(--border-subtle); padding:0.6rem 0.8rem; border-radius:12px; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <div style="font-size:0.8rem; font-weight:700; color:var(--text-main);">📘 COSY Passport</div>
+                <div style="display:flex; gap:0.4rem;">
+                    <button class="cw-btn-toggle" type="button" style="padding:0.35rem 0.75rem; font-size:0.8rem; min-height:44px;" onclick="COSY_WORLD.exportPassport()">📥 Export</button>
+                    <button class="cw-btn-toggle" type="button" style="padding:0.35rem 0.75rem; font-size:0.8rem; min-height:44px;" onclick="document.getElementById('cw-passport-file-input').click()">📤 Import</button>
+                    <input type="file" id="cw-passport-file-input" accept=".json" style="display:none;" onchange="COSY_WORLD.importPassport(event)">
+                </div>
             </div>
         `;
 
@@ -108,6 +133,13 @@ export class HUDManager {
                             ${grammarReward ? `<span style="background:#f0fdf4; color:#15803d; padding:0.2rem 0.5rem; border-radius:8px;">🌳 Unlocks Grammar</span>` : ''}
                         </div>
 
+                        ${grammarReward ? `
+                            <div style="margin-top:0.5rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+                                <a href="${buildHandoffUrl('COSYtools', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🧰 COSYtools Reference ↗</a>
+                                <a href="${buildHandoffUrl('COSYgames', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🎮 Practice Game ↗</a>
+                            </div>
+                        ` : ''}
+
                         ${nextQuest ? `
                             <div style="margin-top:0.5rem; font-size:0.75rem; color:var(--blue-primary); font-weight:600;">
                                 🔗 Quest Chain: Leads to "${nextQuest.title}"
@@ -131,7 +163,7 @@ export class HUDManager {
                                 <div style="font-weight:800; color:var(--blue-primary);">Chapter ${chapter.number}: ${chapter.title}</div>
                                 <div style="font-size:0.76rem; color:var(--text-muted);">${chapter.focus}</div>
                             </div>
-                            <span style="font-size:0.72rem; white-space:nowrap; color:${chapterComplete ? '#065f46' : 'var(--text-muted)'};">${chapterComplete ? '✅ Complete' : `${completedCount}/${chapterQuests.length}`}</span>
+                            <span style="font-size:0.75rem; white-space:nowrap; color:${chapterComplete ? '#065f46' : 'var(--text-muted)'};">${chapterComplete ? '✅ Complete' : `${completedCount}/${chapterQuests.length}`}</span>
                         </div>
                         ${renderQuestCards(chapterQuests)}
                     </section>
@@ -231,7 +263,7 @@ export class HUDManager {
                                 <div style="font-weight:700; color:var(--blue-primary); margin-bottom:0.2rem;">💬 Example:</div>
                                 <div style="display:flex; justify-content:space-between; align-items:center;">
                                     <span>${g.examples[0].text}</span>
-                                    <button type="button" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem;" onclick="COSY_WORLD.speakGrammarExample('${g.examples[0].text.replace(/'/g, "\\'")}', '${state.currentLang}')">🔊</button>
+                                    <button type="button" class="cw-btn-toggle" style="padding:0.25rem 0.5rem; font-size:0.8rem; min-height:44px;" onclick="COSY_WORLD.speakGrammarExample('${g.examples[0].text.replace(/'/g, "\\'")}', '${state.currentLang}')">🔊</button>
                                 </div>
                                 ${g.examples[0].targetLang && g.examples[0].targetLang[lang] ? `
                                     <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.28rem;">${g.examples[0].targetLang[lang]}</div>
@@ -245,6 +277,13 @@ export class HUDManager {
                                 <button type="button" class="btn-g-primary" style="padding:0.25rem 0.6rem; font-size:0.8rem;" onclick="COSY_WORLD.openGrammarExercise('${g.interactiveExercises[0].id}')">
                                     🧩 Practice Exercise
                                 </button>
+                            </div>
+                        ` : ''}
+
+                        ${isUnlocked ? `
+                            <div style="margin-top:0.6rem; display:flex; gap:0.4rem; flex-wrap:wrap; border-top:1px dashed var(--border-subtle); padding-top:0.5rem;">
+                                <a href="${buildHandoffUrl('COSYtools', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🧰 Reference Engine ↗</a>
+                                <a href="${buildHandoffUrl('COSYgames', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🎮 Practice Minigame ↗</a>
                             </div>
                         ` : ''}
 

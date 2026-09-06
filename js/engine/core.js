@@ -29,6 +29,7 @@ import { QuestManager } from '../quests/quest_manager.js';
 import { GrammarEngine } from '../grammar/grammar_engine.js';
 import { ModalManager } from '../ui/modal.js';
 import { HUDManager } from '../ui/hud.js';
+import { PassportManager } from '../passport/passport_manager.js';
 import { checkCollision as checkAABBCollision } from '../utils/math.js';
 
 export class GameEngine {
@@ -912,5 +913,35 @@ export class GameEngine {
 
     showToast(msg) {
         HUDManager.showToast(msg);
+    }
+
+    exportPassport() {
+        try {
+            PassportManager.exportCOSYWorldPassport(this.state);
+            this.showToast('COSY Passport exported! 📥');
+        } catch (e) {
+            console.error('Failed to export COSY Passport:', e);
+            this.showToast('Failed to export passport ❌');
+        }
+    }
+
+    async importPassport(event) {
+        const file = event?.target?.files?.[0];
+        if (!file) return;
+
+        try {
+            const res = await PassportManager.importCOSYWorldPassport(file, this.state);
+            this.saveState();
+            this.updatePlayerStats();
+            this.renderHudTab();
+            this.showToast(`Passport imported! Level ${this.state.citizenLvl}, ${res.importedQuestsCount} quests synced 📤`);
+        } catch (e) {
+            console.error('Failed to import COSY Passport:', e);
+            this.showToast(`Import error: ${e.message} ❌`);
+        } finally {
+            if (event?.target) {
+                event.target.value = '';
+            }
+        }
     }
 }
