@@ -44,6 +44,14 @@ export class HUDManager {
                 <div>⏰ ${worldSim.timeString || '08:00'} (${simIcons[worldSim.timeOfDay] || '🌅 Morning'})</div>
                 <div>${seasonIcons[worldSim.season] || '🌸 Spring'} • ${weatherIcons[worldSim.weather] || '☀️ Clear'}</div>
             </div>
+            <div style="background:#f8fafc; border:1px solid var(--border-subtle); padding:0.6rem 0.8rem; border-radius:12px; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+                <div style="font-size:0.8rem; font-weight:700; color:var(--text-main);">📘 COSY Passport</div>
+                <div style="display:flex; gap:0.4rem;">
+                    <button class="cw-btn-toggle" type="button" style="padding:0.25rem 0.6rem; font-size:0.75rem;" onclick="COSY_WORLD.exportPassport()">📥 Export</button>
+                    <button class="cw-btn-toggle" type="button" style="padding:0.25rem 0.6rem; font-size:0.75rem;" onclick="document.getElementById('cw-passport-file-input').click()">📤 Import</button>
+                    <input type="file" id="cw-passport-file-input" accept=".json" style="display:none;" onchange="COSY_WORLD.importPassport(event)">
+                </div>
+            </div>
         `;
 
         if (state.activeTab === 'quests') {

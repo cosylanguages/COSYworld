@@ -87,6 +87,15 @@ COSYworld/
 
 ---
 
+## 📘 COSY Passport Integration
+
+COSY World supports the universal **COSY Passport** standard (`docs/passport-schema.md`). You can export and backup your progress (Citizen Level, XP, and completed quests) as a standardized JSON passport file, or import progress from another device or COSY app.
+
+- **Exporting**: Click **"📥 Export"** in the HUD sidebar to download your `cosy-passport-world.json`.
+- **Importing**: Click **"📤 Import"** in the HUD sidebar to load an existing passport file. COSY World safely updates your Citizen Level, XP, and quest records with entries created by `COSYworld` without modifying progress from other COSY apps.
+
+---
+
 ## 🧰 COSY Ecosystem & Auxiliary Tools
 
 In addition to the RPG immersion engine in `COSYworld`, auxiliary language tools (such as verb conjugation trainers, grammatical gender practice tools, and verb reference matrices) are maintained in a dedicated companion repository:
