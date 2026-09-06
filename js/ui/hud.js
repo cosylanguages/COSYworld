@@ -64,8 +64,8 @@ export class HUDManager {
             <div style="background:#f8fafc; border:1px solid var(--border-subtle); padding:0.6rem 0.8rem; border-radius:12px; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; gap:0.5rem; flex-wrap:wrap;">
                 <div style="font-size:0.8rem; font-weight:700; color:var(--text-main);">📘 COSY Passport</div>
                 <div style="display:flex; gap:0.4rem;">
-                    <button class="cw-btn-toggle" type="button" style="padding:0.25rem 0.6rem; font-size:0.75rem;" onclick="COSY_WORLD.exportPassport()">📥 Export</button>
-                    <button class="cw-btn-toggle" type="button" style="padding:0.25rem 0.6rem; font-size:0.75rem;" onclick="document.getElementById('cw-passport-file-input').click()">📤 Import</button>
+                    <button class="cw-btn-toggle" type="button" style="padding:0.35rem 0.75rem; font-size:0.8rem; min-height:44px;" onclick="COSY_WORLD.exportPassport()">📥 Export</button>
+                    <button class="cw-btn-toggle" type="button" style="padding:0.35rem 0.75rem; font-size:0.8rem; min-height:44px;" onclick="document.getElementById('cw-passport-file-input').click()">📤 Import</button>
                     <input type="file" id="cw-passport-file-input" accept=".json" style="display:none;" onchange="COSY_WORLD.importPassport(event)">
                 </div>
             </div>
@@ -135,8 +135,8 @@ export class HUDManager {
 
                         ${grammarReward ? `
                             <div style="margin-top:0.5rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
-                                <a href="${buildHandoffUrl('COSYtools', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem; text-decoration:none;">🧰 COSYtools Reference ↗</a>
-                                <a href="${buildHandoffUrl('COSYgames', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem; text-decoration:none;">🎮 Practice Game ↗</a>
+                                <a href="${buildHandoffUrl('COSYtools', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🧰 COSYtools Reference ↗</a>
+                                <a href="${buildHandoffUrl('COSYgames', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🎮 Practice Game ↗</a>
                             </div>
                         ` : ''}
 
@@ -163,7 +163,7 @@ export class HUDManager {
                                 <div style="font-weight:800; color:var(--blue-primary);">Chapter ${chapter.number}: ${chapter.title}</div>
                                 <div style="font-size:0.76rem; color:var(--text-muted);">${chapter.focus}</div>
                             </div>
-                            <span style="font-size:0.72rem; white-space:nowrap; color:${chapterComplete ? '#065f46' : 'var(--text-muted)'};">${chapterComplete ? '✅ Complete' : `${completedCount}/${chapterQuests.length}`}</span>
+                            <span style="font-size:0.75rem; white-space:nowrap; color:${chapterComplete ? '#065f46' : 'var(--text-muted)'};">${chapterComplete ? '✅ Complete' : `${completedCount}/${chapterQuests.length}`}</span>
                         </div>
                         ${renderQuestCards(chapterQuests)}
                     </section>
@@ -263,7 +263,7 @@ export class HUDManager {
                                 <div style="font-weight:700; color:var(--blue-primary); margin-bottom:0.2rem;">💬 Example:</div>
                                 <div style="display:flex; justify-content:space-between; align-items:center;">
                                     <span>${g.examples[0].text}</span>
-                                    <button type="button" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem;" onclick="COSY_WORLD.speakGrammarExample('${g.examples[0].text.replace(/'/g, "\\'")}', '${state.currentLang}')">🔊</button>
+                                    <button type="button" class="cw-btn-toggle" style="padding:0.25rem 0.5rem; font-size:0.8rem; min-height:44px;" onclick="COSY_WORLD.speakGrammarExample('${g.examples[0].text.replace(/'/g, "\\'")}', '${state.currentLang}')">🔊</button>
                                 </div>
                                 ${g.examples[0].targetLang && g.examples[0].targetLang[lang] ? `
                                     <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.28rem;">${g.examples[0].targetLang[lang]}</div>
@@ -282,8 +282,8 @@ export class HUDManager {
 
                         ${isUnlocked ? `
                             <div style="margin-top:0.6rem; display:flex; gap:0.4rem; flex-wrap:wrap; border-top:1px dashed var(--border-subtle); padding-top:0.5rem;">
-                                <a href="${buildHandoffUrl('COSYtools', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem; text-decoration:none;">🧰 Reference Engine ↗</a>
-                                <a href="${buildHandoffUrl('COSYgames', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem; text-decoration:none;">🎮 Practice Minigame ↗</a>
+                                <a href="${buildHandoffUrl('COSYtools', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🧰 Reference Engine ↗</a>
+                                <a href="${buildHandoffUrl('COSYgames', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.35rem 0.75rem; font-size:0.78rem; min-height:44px; text-decoration:none;">🎮 Practice Minigame ↗</a>
                             </div>
                         ` : ''}
 
