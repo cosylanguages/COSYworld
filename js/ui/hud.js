@@ -3,6 +3,23 @@
  * Sidebar HUD tabs (Quests, Vocabulary Encyclopedia, Grammar Tree, NPCs) and toast messaging.
  */
 
+/**
+ * Helper to generate outbound handoff URLs for COSYtools and COSYgames.
+ */
+function buildHandoffUrl(targetApp, lang = 'en', level = 'A1', topic = '') {
+    const baseUrl = targetApp === 'COSYgames'
+        ? 'https://cosylanguages.github.io/COSYgames/'
+        : 'https://cosylanguages.github.io/COSYtools/';
+    const params = new URLSearchParams();
+    if (lang) params.set('lang', lang);
+    if (level) params.set('level', level);
+    if (topic) {
+        const cleanTopic = topic.replace(/^gt_/, '');
+        params.set('topic', cleanTopic);
+    }
+    return `${baseUrl}?${params.toString()}`;
+}
+
 export class HUDManager {
     static switchTab(tabName, btnEl, state, renderHudFn) {
         state.activeTab = tabName;
@@ -115,6 +132,13 @@ export class HUDManager {
                             ${vocabReward > 0 ? `<span style="background:#eff6ff; color:#1d4ed8; padding:0.2rem 0.5rem; border-radius:8px;">📚 +${vocabReward} Vocab</span>` : ''}
                             ${grammarReward ? `<span style="background:#f0fdf4; color:#15803d; padding:0.2rem 0.5rem; border-radius:8px;">🌳 Unlocks Grammar</span>` : ''}
                         </div>
+
+                        ${grammarReward ? `
+                            <div style="margin-top:0.5rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+                                <a href="${buildHandoffUrl('COSYtools', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem; text-decoration:none;">🧰 COSYtools Reference ↗</a>
+                                <a href="${buildHandoffUrl('COSYgames', lang, q.difficulty || 'A1', grammarReward)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.15rem 0.4rem; font-size:0.7rem; text-decoration:none;">🎮 Practice Game ↗</a>
+                            </div>
+                        ` : ''}
 
                         ${nextQuest ? `
                             <div style="margin-top:0.5rem; font-size:0.75rem; color:var(--blue-primary); font-weight:600;">
@@ -253,6 +277,13 @@ export class HUDManager {
                                 <button type="button" class="btn-g-primary" style="padding:0.25rem 0.6rem; font-size:0.8rem;" onclick="COSY_WORLD.openGrammarExercise('${g.interactiveExercises[0].id}')">
                                     🧩 Practice Exercise
                                 </button>
+                            </div>
+                        ` : ''}
+
+                        ${isUnlocked ? `
+                            <div style="margin-top:0.6rem; display:flex; gap:0.4rem; flex-wrap:wrap; border-top:1px dashed var(--border-subtle); padding-top:0.5rem;">
+                                <a href="${buildHandoffUrl('COSYtools', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem; text-decoration:none;">🧰 Reference Engine ↗</a>
+                                <a href="${buildHandoffUrl('COSYgames', lang, cefrLevel, g.id)}" target="_blank" rel="noopener" class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem; text-decoration:none;">🎮 Practice Minigame ↗</a>
                             </div>
                         ` : ''}
 
