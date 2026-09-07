@@ -1,0 +1,258 @@
+/**
+ * COSYlanguages Master Design Tokens
+ * Location: css/cosy-tokens.css
+ *
+ * Central design tokens (colors, typography scale, spacing, border-radius, shadows)
+ * for COSYlanguages and ecosystem consumer applications.
+ *
+ * Consumer Repositories Policy:
+ * Consumer repos (e.g., COSYtools, COSYgames, COSYevents, COSYworld) MUST link
+ * this file via a raw.githubusercontent.com URL pinned to a specific commit or tag,
+ * and NEVER reference "main".
+ */
+
+:root {
+    /* ── 1. Premium Track Colors ────────────────────────────────────────── */
+    /* Track 1: General Course — Forest Green / Sage */
+    --cosy-track-general:                #416b49;
+    --cosy-track-general-light:          #e8f0e9;
+    --cosy-track-general-deep:           #233827;
+    --cosy-color-forest-green:           #416b49;
+    --cosy-color-sage:                   #416b49;
+    --cosy-color-sage-dark:              #375742;
+    --cosy-color-sage-deep:              #233827;
+    --cosy-color-sage-soft:              #6b9474;
+    --cosy-color-sage-mist:              #f0f5f1;
+    --cosy-color-sage-pale:              #e8f0e9;
+    --cosy-color-sage-light:             #e8f0e9;
+
+    /* Track 2: Spoken Course — Terracotta / Coral */
+    --cosy-track-spoken:                 #B84318;
+    --cosy-track-spoken-light:           #faeee8;
+    --cosy-color-terracotta:             #B84318;
+    --cosy-color-coral:                  #B84318;
+    --cosy-color-coral-light:            #faeee8;
+
+    /* Track 3: Professional Course — Credible Navy */
+    --cosy-track-professional:           #1e2f6b;
+    --cosy-track-professional-light:     #e8ecf5;
+    --cosy-color-credible-navy:          #1e2f6b;
+    --cosy-color-navy:                   #1e2f6b;
+    --cosy-color-navy-light:             #e8ecf5;
+
+    /* Track 4: Travelling Course — Practical Fresh Green */
+    --cosy-track-travelling:             #4a6b50;
+    --cosy-track-travelling-light:       #e5f4ec;
+    --cosy-color-practical-fresh-green:  #4a6b50;
+    --cosy-color-fresh-green:            #4a6b50;
+    --cosy-color-green:                  #4a6b50;
+    --cosy-color-green-light:            #e5f4ec;
+
+    /* Track 5: Relocation Course — Warm Rust / Amber */
+    --cosy-track-relocation:             #d66161;
+    --cosy-track-relocation-light:       #fcebeb;
+    --cosy-color-warm-rust:              #d66161;
+    --cosy-color-amber:                  #945e05;
+    --cosy-color-amber-dark:             #7d4d03;
+    --cosy-color-amber-pale:             #fff8e7;
+
+    /* Track 6: Exam Preparation — Scholarly Plum */
+    --cosy-track-exam:                   #7a5c3a;
+    --cosy-track-exam-light:             #f5ede0;
+    --cosy-color-scholarly-plum:         #7a5c3a;
+    --cosy-color-plum:                   #7a5c3a;
+    --cosy-color-plum-light:             #f5ede0;
+
+    /* ── 2. Neutral & Surface Palette ────────────────────────────────────── */
+    --cosy-color-cream:                  #fdfcf8;
+    --cosy-color-cream-dark:             #f5ede0;
+    --cosy-color-warm-white:             #FFFEFB;
+    --cosy-color-surface:                #FFFFFF;
+
+    --cosy-color-ink:                    #2a2a2a;
+    --cosy-color-ink-soft:               #4a4a4a;
+    --cosy-color-ink-muted:              #4a4a4a;
+    --cosy-color-ink-faint:              #5c5957;
+    --cosy-color-muted:                  #5c5957;
+
+    --cosy-color-border:                 rgba(74, 107, 80, 0.12);
+    --cosy-color-border-hover:           rgba(74, 107, 80, 0.25);
+
+    /* Auxiliary UI Colors */
+    --cosy-color-honey:                  #945e05;
+    --cosy-color-honey-dark:             #7d4d03;
+    --cosy-color-honey-pale:             #fff8e7;
+    --cosy-color-honey-mid:              #fef0c7;
+
+    --cosy-color-blue:                   #3a5298;
+    --cosy-color-blue-light:             #eef1fb;
+
+    --cosy-color-rose:                   #a32d2d;
+    --cosy-color-rose-light:             #fcebeb;
+
+    --cosy-color-accent:                 #d66161;
+
+    /* Accessibility Tag Colors */
+    --cosy-tag-a2-bg:                    #FAF0E6;
+    --cosy-tag-a2-color:                 #8A5200;
+    --cosy-tag-sensitive-bg:             #FFF5F5;
+    --cosy-tag-sensitive-color:          #B91C1C;
+
+    /* ── 3. Typography Scale ────────────────────────────────────────────── */
+    --cosy-font-sans:                    'Nunito', 'DM Sans', sans-serif;
+    --cosy-font-serif:                   'Fraunces', 'Lora', serif;
+    --cosy-font-mono:                    'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+    --cosy-font-size-xs:                 0.75rem;   /* 12px */
+    --cosy-font-size-sm:                 0.875rem;  /* 14px */
+    --cosy-font-size-base:               1rem;      /* 16px */
+    --cosy-font-size-lg:                 1.125rem;  /* 18px */
+    --cosy-font-size-xl:                 1.25rem;   /* 20px */
+    --cosy-font-size-2xl:                1.5rem;    /* 24px */
+    --cosy-font-size-3xl:                2rem;      /* 32px */
+    --cosy-font-size-4xl:                2.5rem;    /* 40px */
+
+    --cosy-font-weight-normal:           400;
+    --cosy-font-weight-medium:           500;
+    --cosy-font-weight-semibold:         600;
+    --cosy-font-weight-bold:             700;
+    --cosy-font-weight-extrabold:         800;
+
+    --cosy-line-height-tight:            1.2;
+    --cosy-line-height-snug:             1.375;
+    --cosy-line-height-normal:           1.5;
+    --cosy-line-height-relaxed:          1.625;
+    --cosy-line-height-loose:            1.7;
+
+    /* ── 4. Spacing Scale ────────────────────────────────────────────────── */
+    --cosy-space-xs:                     4px;
+    --cosy-space-sm:                     8px;
+    --cosy-space-md:                     16px;
+    --cosy-space-lg:                     24px;
+    --cosy-space-xl:                     32px;
+    --cosy-space-xxl:                    48px;
+
+    /* ── 5. Border Radius Scale ─────────────────────────────────────────── */
+    --cosy-radius-xs:                    4px;
+    --cosy-radius-sm:                    8px;
+    --cosy-radius-smm:                   10px;
+    --cosy-radius-md:                    14px;
+    --cosy-radius-base:                  18px;
+    --cosy-radius-lg:                    22px;
+    --cosy-radius-xl:                    32px;
+    --cosy-radius-full:                  100px;
+
+    /* Standard alias tokens for radius */
+    --cosy-r-sm:                         var(--cosy-radius-sm);
+    --cosy-r-md:                         var(--cosy-radius-md);
+    --cosy-r-lg:                         var(--cosy-radius-lg);
+    --cosy-r-xl:                         var(--cosy-radius-xl);
+
+    /* ── 6. Elevation & Shadows ────────────────────────────────────────── */
+    --cosy-shadow-sm:                    0 2px 12px rgba(46, 74, 51, 0.07);
+    --cosy-shadow-base:                  0 6px 28px rgba(46, 74, 51, 0.10);
+    --cosy-shadow-md:                    0 4px 14px rgba(46, 74, 51, 0.15);
+    --cosy-shadow-lg:                    0 6px 20px rgba(46, 74, 51, 0.25);
+
+    /* ── 7. Direct Alias Mappings for System Compatibility ───────────────── */
+    --sage:                              var(--cosy-color-sage);
+    --sage-dark:                         var(--cosy-color-sage-dark);
+    --sage-deep:                         var(--cosy-color-sage-deep);
+    --sage-soft:                         var(--cosy-color-sage-soft);
+    --sage-mist:                         var(--cosy-color-sage-mist);
+    --sage-pale:                         var(--cosy-color-sage-pale);
+    --sage-light:                        var(--cosy-color-sage-light);
+
+    --cream:                             var(--cosy-color-cream);
+    --cream-dark:                        var(--cosy-color-cream-dark);
+    --warm-white:                        var(--cosy-color-warm-white);
+
+    --ink:                               var(--cosy-color-ink);
+    --ink-soft:                          var(--cosy-color-ink-soft);
+    --ink-muted:                         var(--cosy-color-ink-muted);
+    --ink-faint:                         var(--cosy-color-ink-faint);
+    --muted:                             var(--cosy-color-muted);
+
+    --honey:                             var(--cosy-color-honey);
+    --honey-dark:                        var(--cosy-color-honey-dark);
+    --honey-pale:                        var(--cosy-color-honey-pale);
+    --honey-mid:                         var(--cosy-color-honey-mid);
+
+    --coral:                             var(--cosy-color-coral);
+    --coral-light:                       var(--cosy-color-coral-light);
+
+    --navy:                              var(--cosy-color-navy);
+    --navy-light:                        var(--cosy-color-navy-light);
+
+    --green:                             var(--cosy-color-green);
+    --green-light:                       var(--cosy-color-green-light);
+
+    --plum:                              var(--cosy-color-plum);
+    --plum-light:                        var(--cosy-color-plum-light);
+
+    --blue:                              var(--cosy-color-blue);
+    --blue-light:                        var(--cosy-color-blue-light);
+
+    --rose:                              var(--cosy-color-rose);
+    --rose-light:                        var(--cosy-color-rose-light);
+
+    --accent-color:                      var(--cosy-color-accent);
+
+    --font-sans:                         var(--cosy-font-sans);
+    --font-serif:                        var(--cosy-font-serif);
+    --font-mono:                         var(--cosy-font-mono);
+
+    --space-xs:                          var(--cosy-space-xs);
+    --space-sm:                          var(--cosy-space-sm);
+    --space-md:                          var(--cosy-space-md);
+    --space-lg:                          var(--cosy-space-lg);
+    --space-xl:                          var(--cosy-space-xl);
+    --space-xxl:                         var(--cosy-space-xxl);
+
+    --r-sm:                              var(--cosy-r-sm);
+    --r-md:                              var(--cosy-r-md);
+    --r-lg:                              var(--cosy-r-lg);
+    --r-xl:                              var(--cosy-r-xl);
+    --radius:                            var(--cosy-radius-base);
+    --radius-sm:                         var(--cosy-radius-smm);
+    --border-radius:                     var(--cosy-radius-base);
+
+    --shadow-sm:                          var(--cosy-shadow-sm);
+    --shadow:                            var(--cosy-shadow-base);
+    --box-shadow:                        var(--cosy-shadow-base);
+    --border:                            var(--cosy-color-border);
+    --border-hover:                      var(--cosy-color-border-hover);
+}
+
+/* ── 8. Dark Mode Theme Overrides ────────────────────────────────────────── */
+html[data-theme="dark"], body.theme-dark {
+    --cosy-color-cream:                  #1a1f1a;
+    --cosy-color-cream-dark:             #141914;
+    --cosy-color-warm-white:             #222b22;
+    --cosy-color-surface:                #222b22;
+
+    --cosy-color-ink:                    #e8f0e9;
+    --cosy-color-ink-soft:               #c8d8c9;
+    --cosy-color-ink-muted:              #c8d8c9;
+    --cosy-color-ink-faint:              #8a9e8b;
+    --cosy-color-muted:                  #8a9e8b;
+
+    --cosy-color-border:                 rgba(107, 143, 113, 0.2);
+    --cosy-color-border-hover:           rgba(107, 143, 113, 0.35);
+
+    --cosy-color-sage:                   #5a7a5f;
+    --cosy-color-sage-dark:              #8a9e8b;
+    --cosy-color-sage-deep:              #e8f0e9;
+    --cosy-color-sage-pale:              #222c23;
+    --cosy-color-sage-mist:              #1f2720;
+    --cosy-color-sage-light:             #222c23;
+
+    --cosy-color-honey-pale:             #2d2417;
+    --cosy-color-honey-mid:              #35291b;
+    --cosy-color-coral-light:            #2d1a15;
+    --cosy-color-plum-light:             #26201a;
+    --cosy-color-blue-light:             #1a202d;
+    --cosy-color-green-light:            #15241b;
+    --cosy-color-rose-light:             #2d1515;
+    --cosy-color-navy-light:             #141a29;
+}

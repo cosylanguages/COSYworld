@@ -8,7 +8,7 @@ import {
     importPassport,
     downloadPassport,
     loadPassportFromFile
-} from 'https://raw.githubusercontent.com/cosylanguages/COSYlanguages/1bfa1e032d2b1ec9703e5679a5509ba8661cb787/shared/js/passport.js';
+} from '../shared/passport.js';
 
 export class PassportManager {
     /**

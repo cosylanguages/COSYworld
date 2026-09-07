@@ -88,6 +88,11 @@ body.game-standalone {
   letter-spacing: -0.02em;
   transition: transform 0.2s ease;
 }
+.cw-logo .cw-logo-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: var(--blue-primary);
+}
 
 .cw-logo:hover {
   transform: translateY(-1px);
@@ -136,6 +141,10 @@ body.game-standalone {
   grid-template-columns: 1fr 400px;
   gap: 1.75rem;
   align-items: start;
+}
+
+.cw-viewport-layout > * {
+  min-width: 0;
 }
 
 @media (max-width: 1024px) {
@@ -201,6 +210,7 @@ body.game-standalone {
   width: 100%;
   height: auto;
   aspect-ratio: 8 / 5;
+  max-width: 100%;
   background: #ece6d9;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-subtle);
@@ -323,9 +333,28 @@ body.game-standalone {
 }
 
 /* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .cw-topbar-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .cw-nav {
     padding: 0.85rem 1.25rem;
+  }
+
+  .cw-nav-links {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .cw-nav-links a {
+    margin-left: 0;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.82rem;
   }
 
   .cw-container {
@@ -338,7 +367,51 @@ body.game-standalone {
     align-items: stretch;
   }
 
+  .cw-player-stats {
+    flex-wrap: wrap;
+  }
+
+  .cw-stat-badge {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .cw-xp-bar-wrap {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
   .cw-controls {
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cw-btn-toggle,
+  .cw-sel {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 0;
+    font-size: 0.82rem;
+    padding: 0.5rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .cw-controls > label {
+    flex: 1 1 100%;
+    margin-top: 0.35rem;
+  }
+
+  .cw-sel {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .cw-btn-toggle {
+    flex: 1 1 100%;
+  }
+  .cw-stage-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
 }

@@ -12,14 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:wght@400;500;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
 
     <!-- Standalone CSS -->
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/cosylanguages/COSYlanguages/2ba470ec7ca6da2a962a8f14277d8815e76317d9/css/cosy-tokens.css">
+    <link rel="stylesheet" href="css/cosy-tokens.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/cosy-icons.css">
 </head>
 <body class="game-standalone">
     <header class="cw-nav">
       <a class="cw-logo" href="index.html">
-        <span>🌍</span> COSY World
+        <span class="cosy-icon icon-globe cw-logo-icon" aria-hidden="true"></span> COSY World
       </a>
       <div class="cw-nav-links">
         <a href="https://cosylanguages.github.io/COSYlanguages/index.html" target="_blank" rel="noopener">Official Website ↗</a>
@@ -74,7 +75,17 @@
 
           <!-- SVG Canvas World Stage -->
           <svg class="cw-svg-view" id="cw-world-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="COSY World interactive viewport stage">
-            <!-- SVG elements generated dynamically in engine -->
+            <!-- Placeholder scene shown until the engine renders the active district -->
+            <g id="cw-scene-placeholder" pointer-events="none">
+              <rect x="0" y="0" width="800" height="340" fill="#f2e7d5" />
+              <rect x="0" y="340" width="800" height="160" fill="#d8c4a8" />
+              <line x1="0" y1="340" x2="800" y2="340" stroke="#bca98f" stroke-width="4" />
+              <rect x="120" y="120" width="150" height="180" rx="10" fill="#cdb89a" opacity="0.6" />
+              <rect x="500" y="150" width="120" height="150" rx="10" fill="#cdb89a" opacity="0.5" />
+              <circle cx="640" cy="90" r="34" fill="#e8d9b8" opacity="0.7" />
+              <text x="400" y="265" fill="#7a6a4f" font-family="Fraunces, Georgia, serif" font-size="30" font-style="italic" text-anchor="middle">COSY Town</text>
+              <text x="400" y="300" fill="#9a8a6f" font-family="DM Sans, sans-serif" font-size="15" text-anchor="middle">Loading the world…</text>
+            </g>
           </svg>
         </div>
 
