@@ -18,7 +18,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -112,7 +111,161 @@
     ],
     "chapters": [
       "ch1"
-    ]
+    ],
+    "hotspotPlacements": {
+      "welcome_sign": {
+        "x": 120,
+        "y": 140,
+        "width": 140,
+        "height": 120,
+        "labelX": 190,
+        "labelY": 130
+      },
+      "street_lamp": {
+        "x": 40,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 75,
+        "labelY": 190
+      },
+      "signpost": {
+        "x": 136,
+        "y": 120,
+        "width": 70,
+        "height": 80,
+        "labelX": 171,
+        "labelY": 110
+      },
+      "welcome_arch": {
+        "x": 384,
+        "y": 140,
+        "width": 80,
+        "height": 80,
+        "labelX": 424,
+        "labelY": 130
+      },
+      "mailbox": {
+        "x": 80,
+        "y": 310,
+        "width": 60,
+        "height": 70,
+        "labelX": 110,
+        "labelY": 300
+      },
+      "cat": {
+        "x": 104,
+        "y": 380,
+        "width": 60,
+        "height": 60,
+        "labelX": 134,
+        "labelY": 370
+      },
+      "entrance_fountain": {
+        "x": 400,
+        "y": 230,
+        "width": 80,
+        "height": 80,
+        "labelX": 440,
+        "labelY": 220
+      },
+      "entrance_bench": {
+        "x": 360,
+        "y": 280,
+        "width": 80,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 270
+      },
+      "dog": {
+        "x": 464,
+        "y": 360,
+        "width": 60,
+        "height": 60,
+        "labelX": 494,
+        "labelY": 350
+      },
+      "pigeons": {
+        "x": 280,
+        "y": 420,
+        "width": 70,
+        "height": 60,
+        "labelX": 315,
+        "labelY": 410
+      },
+      "trash_bin": {
+        "x": 496,
+        "y": 310,
+        "width": 60,
+        "height": 70,
+        "labelX": 526,
+        "labelY": 300
+      },
+      "bicycle_rack": {
+        "x": 576,
+        "y": 270,
+        "width": 80,
+        "height": 70,
+        "labelX": 616,
+        "labelY": 260
+      },
+      "bus_stop_shelter": {
+        "x": 640,
+        "y": 220,
+        "width": 80,
+        "height": 80,
+        "labelX": 680,
+        "labelY": 210
+      },
+      "parked_car": {
+        "x": 720,
+        "y": 250,
+        "width": 80,
+        "height": 70,
+        "labelX": 760,
+        "labelY": 240
+      },
+      "map_stand": {
+        "x": 696,
+        "y": 300,
+        "width": 70,
+        "height": 70,
+        "labelX": 731,
+        "labelY": 290
+      },
+      "flower_bed": {
+        "x": 720,
+        "y": 400,
+        "width": 80,
+        "height": 60,
+        "labelX": 760,
+        "labelY": 390
+      },
+      "tree": {
+        "x": 680,
+        "y": 140,
+        "width": 80,
+        "height": 100,
+        "labelX": 720,
+        "labelY": 130
+      },
+      "goodbye_sign": {
+        "x": 200,
+        "y": 140,
+        "width": 60,
+        "height": 60,
+        "labelX": 230,
+        "labelY": 130
+      },
+      "man_guide_sign": {
+        "x": 260,
+        "y": 200,
+        "width": 50,
+        "height": 60,
+        "labelX": 285,
+        "labelY": 190
+      }
+    }
   },
   "cosylanguages_hq": {
     "id": "cosylanguages_hq",
@@ -133,7 +286,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -220,7 +372,49 @@
     ],
     "chapters": [
       "ch1"
-    ]
+    ],
+    "hotspotPlacements": {
+      "hq_banner": {
+        "x": 120,
+        "y": 100,
+        "width": 180,
+        "height": 60,
+        "labelX": 210,
+        "labelY": 90
+      },
+      "language_chart": {
+        "x": 500,
+        "y": 120,
+        "width": 140,
+        "height": 100,
+        "labelX": 570,
+        "labelY": 110
+      },
+      "welcome_desk": {
+        "x": 320,
+        "y": 260,
+        "width": 180,
+        "height": 80,
+        "labelX": 410,
+        "labelY": 250
+      },
+      "i_badge": {
+        "x": 200,
+        "y": 220,
+        "width": 50,
+        "height": 50,
+        "labelX": 225,
+        "labelY": 210
+      },
+      "teacher_desk": {
+        "x": 400,
+        "y": 240,
+        "width": 120,
+        "height": 80,
+        "labelX": 460,
+        "labelY": 230
+      }
+    }
   },
   "reception": {
     "id": "reception",
@@ -241,7 +435,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -349,7 +542,169 @@
     ],
     "chapters": [
       "ch1"
-    ]
+    ],
+    "hotspotPlacements": {
+      "reception_desk": {
+        "x": 480,
+        "y": 220,
+        "width": 120,
+        "height": 90,
+        "labelX": 540,
+        "labelY": 210
+      },
+      "apartment_key": {
+        "x": 360,
+        "y": 220,
+        "width": 60,
+        "height": 50,
+        "labelX": 390,
+        "labelY": 210
+      },
+      "sofa": {
+        "x": 310,
+        "y": 200,
+        "width": 180,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "reception_coffee_table": {
+        "x": 280,
+        "y": 325,
+        "width": 70,
+        "height": 60,
+        "labelX": 315,
+        "labelY": 315
+      },
+      "indoor_plant": {
+        "x": 24,
+        "y": 375,
+        "width": 70,
+        "height": 80,
+        "labelX": 59,
+        "labelY": 365
+      },
+      "reception_bookshelf": {
+        "x": 160,
+        "y": 175,
+        "width": 70,
+        "height": 90,
+        "labelX": 195,
+        "labelY": 165
+      },
+      "staircase": {
+        "x": 280,
+        "y": 100,
+        "width": 80,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 90
+      },
+      "wall_clock": {
+        "x": 496,
+        "y": 90,
+        "width": 60,
+        "height": 60,
+        "labelX": 526,
+        "labelY": 80
+      },
+      "elevator": {
+        "x": 424,
+        "y": 175,
+        "width": 70,
+        "height": 90,
+        "labelX": 459,
+        "labelY": 165
+      },
+      "notice_board": {
+        "x": 720,
+        "y": 75,
+        "width": 70,
+        "height": 70,
+        "labelX": 755,
+        "labelY": 65
+      },
+      "coat_rack": {
+        "x": 744,
+        "y": 150,
+        "width": 50,
+        "height": 90,
+        "labelX": 769,
+        "labelY": 140
+      },
+      "umbrella_stand": {
+        "x": 760,
+        "y": 325,
+        "width": 40,
+        "height": 70,
+        "labelX": 780,
+        "labelY": 315
+      },
+      "backpack": {
+        "x": 224,
+        "y": 375,
+        "width": 50,
+        "height": 60,
+        "labelX": 249,
+        "labelY": 365
+      },
+      "reception_mat": {
+        "x": 440,
+        "y": 425,
+        "width": 80,
+        "height": 50,
+        "labelX": 480,
+        "labelY": 415
+      },
+      "yes_nod_card": {
+        "x": 300,
+        "y": 200,
+        "width": 50,
+        "height": 50,
+        "labelX": 325,
+        "labelY": 190
+      },
+      "no_sign": {
+        "x": 360,
+        "y": 200,
+        "width": 50,
+        "height": 50,
+        "labelX": 385,
+        "labelY": 190
+      },
+      "thank_you_banner": {
+        "x": 620,
+        "y": 100,
+        "width": 80,
+        "height": 60,
+        "labelX": 660,
+        "labelY": 90
+      },
+      "name_tag": {
+        "x": 450,
+        "y": 240,
+        "width": 40,
+        "height": 40,
+        "labelX": 470,
+        "labelY": 230
+      },
+      "you_badge": {
+        "x": 580,
+        "y": 220,
+        "width": 50,
+        "height": 50,
+        "labelX": 605,
+        "labelY": 210
+      },
+      "woman_reception_sign": {
+        "x": 640,
+        "y": 200,
+        "width": 50,
+        "height": 60,
+        "labelX": 665,
+        "labelY": 190
+      }
+    }
   },
   "hallway": {
     "id": "hallway",
@@ -370,7 +725,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -463,7 +817,41 @@
     "chapters": [
       "ch1",
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "hallway_light": {
+        "x": 380,
+        "y": 80,
+        "width": 60,
+        "height": 60,
+        "labelX": 410,
+        "labelY": 70
+      },
+      "door_number_101": {
+        "x": 550,
+        "y": 190,
+        "width": 70,
+        "height": 50,
+        "labelX": 585,
+        "labelY": 180
+      },
+      "hallway_carpet": {
+        "x": 180,
+        "y": 340,
+        "width": 440,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 330
+      },
+      "key": {
+        "x": 610,
+        "y": 200,
+        "width": 60,
+        "height": 50,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "apartment_entrance": {
     "id": "apartment_entrance",
@@ -484,7 +872,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -588,7 +975,129 @@
     "chapters": [
       "ch1",
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "apartment_door": {
+        "x": 350,
+        "y": 140,
+        "width": 100,
+        "height": 200,
+        "labelX": 400,
+        "labelY": 130
+      },
+      "keyhole": {
+        "x": 430,
+        "y": 250,
+        "width": 40,
+        "height": 40,
+        "labelX": 450,
+        "labelY": 240
+      },
+      "welcome_mat": {
+        "x": 300,
+        "y": 350,
+        "width": 180,
+        "height": 50,
+        "labelX": 390,
+        "labelY": 340
+      },
+      "wall_mailboxes": {
+        "x": 24,
+        "y": 175,
+        "width": 70,
+        "height": 80,
+        "labelX": 59,
+        "labelY": 165
+      },
+      "bicycles": {
+        "x": 104,
+        "y": 325,
+        "width": 80,
+        "height": 70,
+        "labelX": 144,
+        "labelY": 315
+      },
+      "staircase": {
+        "x": 104,
+        "y": 290,
+        "width": 80,
+        "height": 90,
+        "labelX": 144,
+        "labelY": 280
+      },
+      "elevator": {
+        "x": 237,
+        "y": 290,
+        "width": 70,
+        "height": 90,
+        "labelX": 272,
+        "labelY": 280
+      },
+      "security_camera": {
+        "x": 64,
+        "y": 25,
+        "width": 50,
+        "height": 50,
+        "labelX": 89,
+        "labelY": 15
+      },
+      "apartment_door_number": {
+        "x": 360,
+        "y": 225,
+        "width": 70,
+        "height": 140,
+        "labelX": 395,
+        "labelY": 215
+      },
+      "coat_rack": {
+        "x": 631,
+        "y": 290,
+        "width": 50,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 280
+      },
+      "shoe_rack": {
+        "x": 680,
+        "y": 375,
+        "width": 80,
+        "height": 60,
+        "labelX": 720,
+        "labelY": 365
+      },
+      "wicker_basket": {
+        "x": 640,
+        "y": 325,
+        "width": 60,
+        "height": 60,
+        "labelX": 670,
+        "labelY": 315
+      },
+      "key": {
+        "x": 480,
+        "y": 260,
+        "width": 60,
+        "height": 50,
+        "labelX": 510,
+        "labelY": 250
+      },
+      "home_mat": {
+        "x": 420,
+        "y": 320,
+        "width": 80,
+        "height": 50,
+        "labelX": 460,
+        "labelY": 310
+      },
+      "dress": {
+        "x": 600,
+        "y": 320,
+        "width": 60,
+        "height": 60,
+        "labelX": 630,
+        "labelY": 310
+      }
+    }
   },
   "apartment_living": {
     "id": "apartment_living",
@@ -612,7 +1121,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -729,7 +1237,81 @@
     "chapters": [
       "ch1",
       "ch2"
-    ]
+    ],
+    "hotspotPlacements": {
+      "key": {
+        "x": 114,
+        "y": 200,
+        "width": 60,
+        "height": 50,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "door_lock": {
+        "x": 360,
+        "y": 180,
+        "width": 80,
+        "height": 200,
+        "labelX": 400,
+        "labelY": 170
+      },
+      "sofa": {
+        "x": 220,
+        "y": 260,
+        "width": 180,
+        "height": 100,
+        "labelX": 310,
+        "labelY": 250
+      },
+      "coffee_table": {
+        "x": 250,
+        "y": 360,
+        "width": 120,
+        "height": 60,
+        "labelX": 310,
+        "labelY": 350
+      },
+      "tv": {
+        "x": 480,
+        "y": 180,
+        "width": 140,
+        "height": 90,
+        "labelX": 550,
+        "labelY": 170
+      },
+      "bookshelf": {
+        "x": 80,
+        "y": 150,
+        "width": 100,
+        "height": 220,
+        "labelX": 130,
+        "labelY": 140
+      },
+      "lamp": {
+        "x": 650,
+        "y": 220,
+        "width": 50,
+        "height": 120,
+        "labelX": 675,
+        "labelY": 210
+      },
+      "window": {
+        "x": 260,
+        "y": 100,
+        "width": 120,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 90
+      },
+      "plant": {
+        "x": 620,
+        "y": 300,
+        "width": 60,
+        "height": 90,
+        "labelX": 650,
+        "labelY": 290
+      }
+    }
   },
   "apartment_kitchen": {
     "id": "apartment_kitchen",
@@ -750,7 +1332,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -841,7 +1422,57 @@
     ],
     "chapters": [
       "ch2"
-    ]
+    ],
+    "hotspotPlacements": {
+      "fridge": {
+        "x": 100,
+        "y": 160,
+        "width": 110,
+        "height": 240,
+        "labelX": 155,
+        "labelY": 150
+      },
+      "kettle": {
+        "x": 320,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 350,
+        "labelY": 230
+      },
+      "cup": {
+        "x": 420,
+        "y": 250,
+        "width": 50,
+        "height": 50,
+        "labelX": 445,
+        "labelY": 240
+      },
+      "cook": {
+        "x": 220,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 210
+      },
+      "eat": {
+        "x": 360,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 390,
+        "labelY": 210
+      },
+      "drink": {
+        "x": 440,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 470,
+        "labelY": 210
+      }
+    }
   },
   "apartment_bedroom": {
     "id": "apartment_bedroom",
@@ -861,7 +1492,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -948,7 +1578,105 @@
     "chapters": [
       "ch2",
       "ch3"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bed": {
+        "x": 200,
+        "y": 200,
+        "width": 200,
+        "height": 140,
+        "labelX": 300,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 480,
+        "y": 220,
+        "width": 160,
+        "height": 100,
+        "labelX": 560,
+        "labelY": 210
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "window": {
+        "x": 596,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 114,
+        "y": 290,
+        "width": 60,
+        "height": 90,
+        "labelX": 144,
+        "labelY": 280
+      },
+      "alarm_clock": {
+        "x": 620,
+        "y": 200,
+        "width": 60,
+        "height": 60,
+        "labelX": 650,
+        "labelY": 190
+      },
+      "wake_up": {
+        "x": 280,
+        "y": 180,
+        "width": 60,
+        "height": 60,
+        "labelX": 310,
+        "labelY": 170
+      },
+      "sleep": {
+        "x": 220,
+        "y": 180,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 170
+      },
+      "study": {
+        "x": 540,
+        "y": 200,
+        "width": 60,
+        "height": 60,
+        "labelX": 570,
+        "labelY": 190
+      },
+      "morning": {
+        "x": 700,
+        "y": 200,
+        "width": 60,
+        "height": 60,
+        "labelX": 730,
+        "labelY": 190
+      },
+      "clock": {
+        "x": 660,
+        "y": 140,
+        "width": 50,
+        "height": 50,
+        "labelX": 685,
+        "labelY": 130
+      }
+    }
   },
   "apartment_bathroom": {
     "id": "apartment_bathroom",
@@ -968,7 +1696,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -1032,7 +1759,57 @@
     ],
     "chapters": [
       "ch2"
-    ]
+    ],
+    "hotspotPlacements": {
+      "towel": {
+        "x": 160,
+        "y": 200,
+        "width": 80,
+        "height": 90,
+        "labelX": 200,
+        "labelY": 190
+      },
+      "soap": {
+        "x": 380,
+        "y": 220,
+        "width": 60,
+        "height": 50,
+        "labelX": 410,
+        "labelY": 210
+      },
+      "bathroom_mirror": {
+        "x": 340,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "labelX": 390,
+        "labelY": 90
+      },
+      "window": {
+        "x": 468,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "brush": {
+        "x": 400,
+        "y": 180,
+        "width": 60,
+        "height": 60,
+        "labelX": 430,
+        "labelY": 170
+      },
+      "wash": {
+        "x": 320,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 350,
+        "labelY": 210
+      }
+    }
   },
   "apartment_balcony": {
     "id": "apartment_balcony",
@@ -1052,7 +1829,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -1112,7 +1888,25 @@
     ],
     "chapters": [
       "ch2"
-    ]
+    ],
+    "hotspotPlacements": {
+      "balcony_chair": {
+        "x": 200,
+        "y": 240,
+        "width": 90,
+        "height": 90,
+        "labelX": 245,
+        "labelY": 230
+      },
+      "balcony_plant": {
+        "x": 480,
+        "y": 220,
+        "width": 100,
+        "height": 120,
+        "labelX": 530,
+        "labelY": 210
+      }
+    }
   },
   "street": {
     "id": "street",
@@ -1133,7 +1927,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -1221,7 +2014,49 @@
     "chapters": [
       "ch3",
       "ch4"
-    ]
+    ],
+    "hotspotPlacements": {
+      "street_clock": {
+        "x": 380,
+        "y": 140,
+        "width": 80,
+        "height": 120,
+        "labelX": 420,
+        "labelY": 130
+      },
+      "street_lamp": {
+        "x": 237,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "work": {
+        "x": 480,
+        "y": 200,
+        "width": 60,
+        "height": 60,
+        "labelX": 510,
+        "labelY": 190
+      },
+      "afternoon": {
+        "x": 280,
+        "y": 140,
+        "width": 60,
+        "height": 60,
+        "labelX": 310,
+        "labelY": 130
+      },
+      "direction_sign": {
+        "x": 616,
+        "y": 200,
+        "width": 80,
+        "height": 120,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "bus_stop": {
     "id": "bus_stop",
@@ -1242,7 +2077,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -1319,7 +2153,41 @@
     "chapters": [
       "ch3",
       "ch4"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bus_stop_sign": {
+        "x": 180,
+        "y": 160,
+        "width": 80,
+        "height": 160,
+        "labelX": 220,
+        "labelY": 150
+      },
+      "bus_timetable_board": {
+        "x": 480,
+        "y": 180,
+        "width": 100,
+        "height": 120,
+        "labelX": 530,
+        "labelY": 170
+      },
+      "evening": {
+        "x": 600,
+        "y": 180,
+        "width": 60,
+        "height": 60,
+        "labelX": 630,
+        "labelY": 170
+      },
+      "bench": {
+        "x": 590,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "town_square": {
     "id": "town_square",
@@ -1342,7 +2210,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -1469,13 +2336,48 @@
     "objects": [
       "clock_tower",
       "fountain",
-      "bench"
+      "bench",
+      "notice_board"
     ],
     "chapters": [
       "ch2",
       "ch4",
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "clock_tower": {
+        "x": 350,
+        "y": 60,
+        "width": 100,
+        "height": 180,
+        "labelX": 400,
+        "labelY": 50
+      },
+      "fountain": {
+        "x": 550,
+        "y": 280,
+        "width": 120,
+        "height": 100,
+        "labelX": 610,
+        "labelY": 270
+      },
+      "bench": {
+        "x": 180,
+        "y": 320,
+        "width": 100,
+        "height": 60,
+        "labelX": 230,
+        "labelY": 310
+      },
+      "notice_board": {
+        "x": 605,
+        "y": 200,
+        "width": 70,
+        "height": 70,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "bakery": {
     "id": "bakery",
@@ -1495,7 +2397,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -1566,7 +2467,41 @@
     "chapters": [
       "ch4",
       "ch5"
-    ]
+    ],
+    "hotspotPlacements": {
+      "baguette": {
+        "x": 260,
+        "y": 240,
+        "width": 90,
+        "height": 40,
+        "labelX": 305,
+        "labelY": 230
+      },
+      "croissant": {
+        "x": 380,
+        "y": 240,
+        "width": 70,
+        "height": 50,
+        "labelX": 415,
+        "labelY": 230
+      },
+      "oven": {
+        "x": 520,
+        "y": 160,
+        "width": 140,
+        "height": 140,
+        "labelX": 590,
+        "labelY": 150
+      },
+      "flour": {
+        "x": 460,
+        "y": 280,
+        "width": 60,
+        "height": 60,
+        "labelX": 490,
+        "labelY": 270
+      }
+    }
   },
   "pharmacy": {
     "id": "pharmacy",
@@ -1664,7 +2599,65 @@
     "chapters": [
       "ch5",
       "ch4"
-    ]
+    ],
+    "hotspotPlacements": {
+      "window": {
+        "x": 84,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 242,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "pharmacy_counter": {
+        "x": 280,
+        "y": 180,
+        "width": 280,
+        "height": 120,
+        "labelX": 420,
+        "labelY": 170
+      },
+      "medicine_shelf": {
+        "x": 600,
+        "y": 140,
+        "width": 120,
+        "height": 200,
+        "labelX": 660,
+        "labelY": 130
+      },
+      "first_aid_box": {
+        "x": 180,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 210,
+        "labelY": 230
+      }
+    }
   },
   "crosswalk": {
     "id": "crosswalk",
@@ -1745,7 +2738,57 @@
     ],
     "chapters": [
       "ch4"
-    ]
+    ],
+    "hotspotPlacements": {
+      "street_lamp": {
+        "x": 109,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "street_clock": {
+        "x": 232,
+        "y": 200,
+        "width": 80,
+        "height": 120,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "crosswalk_stripes": {
+        "x": 200,
+        "y": 320,
+        "width": 400,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 310
+      },
+      "traffic_light": {
+        "x": 620,
+        "y": 120,
+        "width": 60,
+        "height": 140,
+        "labelX": 650,
+        "labelY": 110
+      },
+      "direction_sign": {
+        "x": 120,
+        "y": 140,
+        "width": 80,
+        "height": 120,
+        "labelX": 160,
+        "labelY": 130
+      }
+    }
   },
   "post_office": {
     "id": "post_office",
@@ -1821,7 +2864,73 @@
     "chapters": [
       "ch5",
       "ch4"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 468,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "post_box": {
+        "x": 160,
+        "y": 200,
+        "width": 80,
+        "height": 120,
+        "labelX": 200,
+        "labelY": 190
+      },
+      "stamps": {
+        "x": 420,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 450,
+        "labelY": 210
+      },
+      "post_counter": {
+        "x": 320,
+        "y": 180,
+        "width": 240,
+        "height": 120,
+        "labelX": 440,
+        "labelY": 170
+      }
+    }
   },
   "supermarket": {
     "id": "supermarket",
@@ -1923,7 +3032,49 @@
     ],
     "chapters": [
       "ch5"
-    ]
+    ],
+    "hotspotPlacements": {
+      "shopping_basket": {
+        "x": 160,
+        "y": 240,
+        "width": 70,
+        "height": 60,
+        "labelX": 195,
+        "labelY": 230
+      },
+      "shopping_cart": {
+        "x": 260,
+        "y": 240,
+        "width": 80,
+        "height": 70,
+        "labelX": 300,
+        "labelY": 230
+      },
+      "milk": {
+        "x": 380,
+        "y": 220,
+        "width": 50,
+        "height": 70,
+        "labelX": 405,
+        "labelY": 210
+      },
+      "cheese": {
+        "x": 480,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 510,
+        "labelY": 210
+      },
+      "coins_purse": {
+        "x": 600,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 630,
+        "labelY": 230
+      }
+    }
   },
   "fruit_market": {
     "id": "fruit_market",
@@ -2025,7 +3176,49 @@
     ],
     "chapters": [
       "ch5"
-    ]
+    ],
+    "hotspotPlacements": {
+      "apple": {
+        "x": 220,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 210
+      },
+      "banana": {
+        "x": 320,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 350,
+        "labelY": 210
+      },
+      "orange": {
+        "x": 420,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 450,
+        "labelY": 210
+      },
+      "plant": {
+        "x": 498,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 606,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "clothing_store": {
     "id": "clothing_store",
@@ -2119,7 +3312,49 @@
     ],
     "chapters": [
       "ch5"
-    ]
+    ],
+    "hotspotPlacements": {
+      "shirt": {
+        "x": 220,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 255,
+        "labelY": 190
+      },
+      "dress_rack": {
+        "x": 360,
+        "y": 180,
+        "width": 90,
+        "height": 120,
+        "labelX": 405,
+        "labelY": 170
+      },
+      "jacket": {
+        "x": 520,
+        "y": 180,
+        "width": 80,
+        "height": 100,
+        "labelX": 560,
+        "labelY": 170
+      },
+      "bathroom_mirror": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 100,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 631,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "bookshop": {
     "id": "bookshop",
@@ -2213,7 +3448,49 @@
     ],
     "chapters": [
       "ch5"
-    ]
+    ],
+    "hotspotPlacements": {
+      "novel_stack": {
+        "x": 220,
+        "y": 200,
+        "width": 80,
+        "height": 90,
+        "labelX": 260,
+        "labelY": 190
+      },
+      "dictionary_book": {
+        "x": 360,
+        "y": 220,
+        "width": 70,
+        "height": 80,
+        "labelX": 395,
+        "labelY": 210
+      },
+      "paper_notebook": {
+        "x": 500,
+        "y": 230,
+        "width": 60,
+        "height": 60,
+        "labelX": 530,
+        "labelY": 220
+      },
+      "bookshelf": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 576,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "flower_shop": {
     "id": "flower_shop",
@@ -2307,7 +3584,49 @@
     ],
     "chapters": [
       "ch5"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 114,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 360,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 468,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 606,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "airport": {
     "id": "airport",
@@ -2414,7 +3733,81 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "window": {
+        "x": 212,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "clock_tower": {
+        "x": 606,
+        "y": 200,
+        "width": 100,
+        "height": 180,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "airport_check_in": {
+        "x": 120,
+        "y": 160,
+        "width": 180,
+        "height": 120,
+        "labelX": 210,
+        "labelY": 150
+      },
+      "passport": {
+        "x": 260,
+        "y": 250,
+        "width": 70,
+        "height": 50,
+        "labelX": 295,
+        "labelY": 240
+      },
+      "luggage": {
+        "x": 560,
+        "y": 250,
+        "width": 80,
+        "height": 110,
+        "labelX": 600,
+        "labelY": 240
+      },
+      "airport_ticket": {
+        "x": 380,
+        "y": 250,
+        "width": 80,
+        "height": 45,
+        "labelX": 420,
+        "labelY": 240
+      }
+    }
   },
   "bus_station": {
     "id": "bus_station",
@@ -2508,7 +3901,41 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bus_stop_sign": {
+        "x": 120,
+        "y": 200,
+        "width": 80,
+        "height": 160,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "bus_timetable_board": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 560,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "hotel": {
     "id": "hotel",
@@ -2614,7 +4041,73 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 247,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "window": {
+        "x": 340,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 498,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "sofa": {
+        "x": 566,
+        "y": 200,
+        "width": 180,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "hotel_reception": {
+        "x": 180,
+        "y": 180,
+        "width": 260,
+        "height": 120,
+        "labelX": 310,
+        "labelY": 170
+      },
+      "hotel_key": {
+        "x": 350,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 380,
+        "labelY": 230
+      },
+      "breakfast": {
+        "x": 500,
+        "y": 240,
+        "width": 90,
+        "height": 70,
+        "labelX": 545,
+        "labelY": 230
+      }
+    }
   },
   "hostel": {
     "id": "hostel",
@@ -2709,7 +4202,49 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "sofa": {
+        "x": 54,
+        "y": 200,
+        "width": 180,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "coffee_table": {
+        "x": 212,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "window": {
+        "x": 596,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "beach": {
     "id": "beach",
@@ -2803,7 +4338,41 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 290,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 600,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "mountain_resort": {
     "id": "mountain_resort",
@@ -2897,7 +4466,41 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 290,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 455,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "camping_site": {
     "id": "camping_site",
@@ -2991,7 +4594,41 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 290,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 600,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "harbor": {
     "id": "harbor",
@@ -3084,7 +4721,41 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "street_lamp": {
+        "x": 285,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "window": {
+        "x": 420,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 610,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "hospital": {
     "id": "hospital",
@@ -3186,7 +4857,41 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "thermometer_item": {
+        "x": 360,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 390,
+        "labelY": 230
+      },
+      "desk": {
+        "x": 240,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "chair": {
+        "x": 445,
+        "y": 200,
+        "width": 70,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "doctor_office": {
     "id": "doctor_office",
@@ -3288,7 +4993,41 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "stethoscope_tool": {
+        "x": 220,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 230
+      },
+      "desk": {
+        "x": 240,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 455,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "dentist": {
     "id": "dentist",
@@ -3382,7 +5121,41 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bathroom_mirror": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 100,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 295,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 400,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "swimming_pool": {
     "id": "swimming_pool",
@@ -3475,7 +5248,33 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "swimming_goggles": {
+        "x": 380,
+        "y": 250,
+        "width": 60,
+        "height": 50,
+        "labelX": 410,
+        "labelY": 240
+      },
+      "bench": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 553,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 613,
+        "labelY": 190
+      }
+    }
   },
   "football_field": {
     "id": "football_field",
@@ -3568,7 +5367,33 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "football_ball": {
+        "x": 280,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 310,
+        "labelY": 230
+      },
+      "bench": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "street_lamp": {
+        "x": 578,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 613,
+        "labelY": 190
+      }
+    }
   },
   "basketball_court": {
     "id": "basketball_court",
@@ -3661,7 +5486,33 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "basketball_hoop": {
+        "x": 420,
+        "y": 140,
+        "width": 80,
+        "height": 100,
+        "labelX": 460,
+        "labelY": 130
+      },
+      "bench": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 553,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 613,
+        "labelY": 190
+      }
+    }
   },
   "yoga_studio": {
     "id": "yoga_studio",
@@ -3753,7 +5604,33 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "yoga_mat_item": {
+        "x": 320,
+        "y": 250,
+        "width": 80,
+        "height": 50,
+        "labelX": 360,
+        "labelY": 240
+      },
+      "plant": {
+        "x": 370,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 553,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 613,
+        "labelY": 190
+      }
+    }
   },
   "forest": {
     "id": "forest",
@@ -3848,7 +5725,41 @@
     "chapters": [
       "ch6",
       "ch10"
-    ]
+    ],
+    "hotspotPlacements": {
+      "forest_deer": {
+        "x": 280,
+        "y": 220,
+        "width": 80,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 210
+      },
+      "plant": {
+        "x": 290,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 600,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "lake": {
     "id": "lake",
@@ -3943,7 +5854,41 @@
     "chapters": [
       "ch6",
       "ch10"
-    ]
+    ],
+    "hotspotPlacements": {
+      "lake_duck": {
+        "x": 380,
+        "y": 260,
+        "width": 60,
+        "height": 60,
+        "labelX": 410,
+        "labelY": 250
+      },
+      "bench": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 450,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 600,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "camping_area": {
     "id": "camping_area",
@@ -4037,7 +5982,41 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 290,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 600,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "farm": {
     "id": "farm",
@@ -4142,7 +6121,49 @@
     "chapters": [
       "ch6",
       "ch10"
-    ]
+    ],
+    "hotspotPlacements": {
+      "farm_cow": {
+        "x": 220,
+        "y": 240,
+        "width": 90,
+        "height": 80,
+        "labelX": 265,
+        "labelY": 230
+      },
+      "farm_sheep": {
+        "x": 360,
+        "y": 250,
+        "width": 70,
+        "height": 70,
+        "labelX": 395,
+        "labelY": 240
+      },
+      "weather_indicator": {
+        "x": 500,
+        "y": 140,
+        "width": 80,
+        "height": 80,
+        "labelX": 540,
+        "labelY": 130
+      },
+      "plant": {
+        "x": 498,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 616,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "stable": {
     "id": "stable",
@@ -4236,7 +6257,41 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 130,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "window": {
+        "x": 420,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 615,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "vegetable_garden": {
     "id": "vegetable_garden",
@@ -4330,7 +6385,41 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 130,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 440,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 590,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "flower_garden": {
     "id": "flower_garden",
@@ -4424,7 +6513,41 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 130,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 440,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 590,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "greenhouse": {
     "id": "greenhouse",
@@ -4519,7 +6642,49 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 114,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "window": {
+        "x": 340,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 503,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 616,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "hiking_trail": {
     "id": "hiking_trail",
@@ -4614,7 +6779,41 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 130,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 440,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 590,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "waterfall": {
     "id": "waterfall",
@@ -4707,7 +6906,41 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "fountain": {
+        "x": 100,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 290,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 440,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 590,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "museum": {
     "id": "museum",
@@ -4809,7 +7042,41 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "museum_ticket": {
+        "x": 220,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 230
+      },
+      "sculpture_statue": {
+        "x": 420,
+        "y": 140,
+        "width": 80,
+        "height": 140,
+        "labelX": 460,
+        "labelY": 130
+      },
+      "bench": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "cinema": {
     "id": "cinema",
@@ -4911,7 +7178,41 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "cinema_ticket": {
+        "x": 220,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 230
+      },
+      "movie_poster": {
+        "x": 400,
+        "y": 140,
+        "width": 90,
+        "height": 120,
+        "labelX": 445,
+        "labelY": 130
+      },
+      "lamp": {
+        "x": 455,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "town_hall": {
     "id": "town_hall",
@@ -5013,7 +7314,41 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "town_archive_book": {
+        "x": 300,
+        "y": 220,
+        "width": 70,
+        "height": 70,
+        "labelX": 335,
+        "labelY": 210
+      },
+      "desk": {
+        "x": 240,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 455,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "train_station": {
     "id": "train_station",
@@ -5122,7 +7457,41 @@
     "chapters": [
       "ch9",
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "train_ticket": {
+        "x": 220,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 230
+      },
+      "train_schedule_board": {
+        "x": 420,
+        "y": 140,
+        "width": 100,
+        "height": 120,
+        "labelX": 470,
+        "labelY": 130
+      },
+      "bench": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "art_gallery": {
     "id": "art_gallery",
@@ -5217,7 +7586,49 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "window": {
+        "x": 84,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 242,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 606,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "tourist_office": {
     "id": "tourist_office",
@@ -5322,7 +7733,65 @@
     ],
     "chapters": [
       "ch12"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "window": {
+        "x": 340,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 503,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "information_desk": {
+        "x": 180,
+        "y": 180,
+        "width": 260,
+        "height": 120,
+        "labelX": 310,
+        "labelY": 170
+      },
+      "tourist_map": {
+        "x": 500,
+        "y": 220,
+        "width": 120,
+        "height": 90,
+        "labelX": 560,
+        "labelY": 210
+      }
+    }
   },
   "bridge": {
     "id": "bridge",
@@ -5416,7 +7885,41 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "street_lamp": {
+        "x": 285,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "window": {
+        "x": 420,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 610,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "river_walk": {
     "id": "river_walk",
@@ -5511,7 +8014,49 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 94,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "street_lamp": {
+        "x": 237,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 370,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 488,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "window": {
+        "x": 596,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "public_square": {
     "id": "public_square",
@@ -5607,7 +8152,49 @@
     ],
     "chapters": [
       "ch9"
-    ]
+    ],
+    "hotspotPlacements": {
+      "fountain": {
+        "x": 84,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "clock_tower": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 180,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "street_lamp": {
+        "x": 493,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 616,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "school": {
     "id": "school",
@@ -5715,7 +8302,41 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "blackboard": {
+        "x": 300,
+        "y": 100,
+        "width": 200,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 90
+      },
+      "student_desk": {
+        "x": 220,
+        "y": 240,
+        "width": 100,
+        "height": 70,
+        "labelX": 270,
+        "labelY": 230
+      },
+      "window": {
+        "x": 420,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 615,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "school_library": {
     "id": "school_library",
@@ -5818,7 +8439,49 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "globe": {
+        "x": 420,
+        "y": 220,
+        "width": 60,
+        "height": 60,
+        "labelX": 450,
+        "labelY": 210
+      },
+      "novel_stack": {
+        "x": 232,
+        "y": 200,
+        "width": 80,
+        "height": 90,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "dictionary_book": {
+        "x": 365,
+        "y": 200,
+        "width": 70,
+        "height": 80,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 478,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 576,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "computer_lab": {
     "id": "computer_lab",
@@ -5920,7 +8583,41 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "computer_terminal": {
+        "x": 300,
+        "y": 200,
+        "width": 90,
+        "height": 80,
+        "labelX": 345,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 240,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 455,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "chair": {
+        "x": 605,
+        "y": 200,
+        "width": 70,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "science_classroom": {
     "id": "science_classroom",
@@ -6014,7 +8711,41 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 130,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "window": {
+        "x": 260,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 400,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 615,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "language_classroom": {
     "id": "language_classroom",
@@ -6117,7 +8848,49 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "window": {
+        "x": 340,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 503,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "music_room": {
     "id": "music_room",
@@ -6211,7 +8984,41 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "coffee_table": {
+        "x": 100,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 295,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 430,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "window": {
+        "x": 580,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "gymnasium": {
     "id": "gymnasium",
@@ -6305,7 +9112,41 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 110,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "window": {
+        "x": 260,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 455,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 610,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "teacher_office": {
     "id": "teacher_office",
@@ -6408,7 +9249,49 @@
     ],
     "chapters": [
       "ch8"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 468,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "ella_apartment": {
     "id": "ella_apartment",
@@ -6511,7 +9394,57 @@
     ],
     "chapters": [
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "sofa": {
+        "x": 54,
+        "y": 200,
+        "width": 180,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "coffee_table": {
+        "x": 212,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 503,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "window": {
+        "x": 84,
+        "y": 290,
+        "width": 120,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 280
+      }
+    }
   },
   "anna_apartment": {
     "id": "anna_apartment",
@@ -6614,7 +9547,57 @@
     ],
     "chapters": [
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "sofa": {
+        "x": 54,
+        "y": 200,
+        "width": 180,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "coffee_table": {
+        "x": 212,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 503,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "window": {
+        "x": 84,
+        "y": 290,
+        "width": 120,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 280
+      }
+    }
   },
   "community_garden": {
     "id": "community_garden",
@@ -6708,7 +9691,41 @@
     ],
     "chapters": [
       "ch10"
-    ]
+    ],
+    "hotspotPlacements": {
+      "plant": {
+        "x": 130,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 160,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 270,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 190
+      },
+      "flower_bed": {
+        "x": 440,
+        "y": 200,
+        "width": 80,
+        "height": 60,
+        "labelX": 480,
+        "labelY": 190
+      },
+      "bench": {
+        "x": 590,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 640,
+        "labelY": 190
+      }
+    }
   },
   "picnic_area": {
     "id": "picnic_area",
@@ -6801,7 +9818,33 @@
     ],
     "chapters": [
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 137,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 187,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 370,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "coffee_table": {
+        "x": 553,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 613,
+        "labelY": 190
+      }
+    }
   },
   "playground": {
     "id": "playground",
@@ -6894,7 +9937,33 @@
     ],
     "chapters": [
       "ch10"
-    ]
+    ],
+    "hotspotPlacements": {
+      "bench": {
+        "x": 137,
+        "y": 200,
+        "width": 100,
+        "height": 60,
+        "labelX": 187,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 370,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "balcony_plant": {
+        "x": 563,
+        "y": 200,
+        "width": 100,
+        "height": 120,
+        "labelX": 613,
+        "labelY": 190
+      }
+    }
   },
   "conversation_corner": {
     "id": "conversation_corner",
@@ -7003,7 +10072,49 @@
     ],
     "chapters": [
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "sofa": {
+        "x": 54,
+        "y": 200,
+        "width": 180,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "coffee_table": {
+        "x": 212,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 498,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "window": {
+        "x": 596,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "community_center": {
     "id": "community_center",
@@ -7100,7 +10211,57 @@
     ],
     "chapters": [
       "ch11"
-    ]
+    ],
+    "hotspotPlacements": {
+      "desk": {
+        "x": 64,
+        "y": 200,
+        "width": 160,
+        "height": 100,
+        "labelX": 144,
+        "labelY": 190
+      },
+      "bookshelf": {
+        "x": 222,
+        "y": 200,
+        "width": 100,
+        "height": 220,
+        "labelX": 272,
+        "labelY": 190
+      },
+      "lamp": {
+        "x": 375,
+        "y": 200,
+        "width": 50,
+        "height": 120,
+        "labelX": 400,
+        "labelY": 190
+      },
+      "window": {
+        "x": 468,
+        "y": 200,
+        "width": 120,
+        "height": 100,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "plant": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 90,
+        "labelX": 656,
+        "labelY": 190
+      },
+      "coffee_table": {
+        "x": 84,
+        "y": 290,
+        "width": 120,
+        "height": 60,
+        "labelX": 144,
+        "labelY": 280
+      }
+    }
   },
   "restaurant": {
     "id": "restaurant",
@@ -7215,7 +10376,49 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "soup_bowl": {
+        "x": 280,
+        "y": 220,
+        "width": 70,
+        "height": 60,
+        "labelX": 315,
+        "labelY": 210
+      },
+      "pasta_plate": {
+        "x": 400,
+        "y": 220,
+        "width": 70,
+        "height": 60,
+        "labelX": 435,
+        "labelY": 210
+      },
+      "menu_card": {
+        "x": 180,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 210,
+        "labelY": 230
+      },
+      "cutlery_set": {
+        "x": 520,
+        "y": 240,
+        "width": 50,
+        "height": 50,
+        "labelX": 545,
+        "labelY": 230
+      },
+      "coffee_table": {
+        "x": 596,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "cafe": {
     "id": "cafe",
@@ -7236,7 +10439,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -7321,7 +10523,49 @@
       "ch5",
       "ch6",
       "ch7"
-    ]
+    ],
+    "hotspotPlacements": {
+      "espresso_machine": {
+        "x": 280,
+        "y": 200,
+        "width": 100,
+        "height": 90,
+        "labelX": 330,
+        "labelY": 190
+      },
+      "coffee_cup": {
+        "x": 420,
+        "y": 240,
+        "width": 50,
+        "height": 50,
+        "labelX": 445,
+        "labelY": 230
+      },
+      "cappuccino": {
+        "x": 500,
+        "y": 240,
+        "width": 50,
+        "height": 50,
+        "labelX": 525,
+        "labelY": 230
+      },
+      "tea_pot": {
+        "x": 580,
+        "y": 230,
+        "width": 60,
+        "height": 60,
+        "labelX": 610,
+        "labelY": 220
+      },
+      "menu_card": {
+        "x": 626,
+        "y": 200,
+        "width": 60,
+        "height": 60,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   },
   "outdoor_terrace": {
     "id": "outdoor_terrace",
@@ -7342,7 +10586,6 @@
     ],
     "assets": {
       "scene": "data/scenes/districts.json",
-      "hotspots": "data/vocabulary/objects.json",
       "npc": "data/npcs/npcs.json",
       "quests": "data/quests/quests.json"
     },
@@ -7427,6 +10670,48 @@
     ],
     "chapters": [
       "ch6"
-    ]
+    ],
+    "hotspotPlacements": {
+      "terrace_table": {
+        "x": 220,
+        "y": 240,
+        "width": 100,
+        "height": 70,
+        "labelX": 270,
+        "labelY": 230
+      },
+      "terrace_umbrella": {
+        "x": 380,
+        "y": 140,
+        "width": 100,
+        "height": 140,
+        "labelX": 430,
+        "labelY": 130
+      },
+      "dessert_cake": {
+        "x": 540,
+        "y": 230,
+        "width": 60,
+        "height": 60,
+        "labelX": 570,
+        "labelY": 220
+      },
+      "coffee_cup": {
+        "x": 503,
+        "y": 200,
+        "width": 50,
+        "height": 50,
+        "labelX": 528,
+        "labelY": 190
+      },
+      "cutlery_set": {
+        "x": 631,
+        "y": 200,
+        "width": 50,
+        "height": 50,
+        "labelX": 656,
+        "labelY": 190
+      }
+    }
   }
 }

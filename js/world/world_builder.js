@@ -74,6 +74,9 @@ export class WorldBuilder {
             neighbors: Array.isArray(rawData.neighbors) ? rawData.neighbors : [],
             doors: Array.isArray(rawData.doors) ? rawData.doors : [],
             objects: Array.isArray(rawData.objects) ? rawData.objects : [],
+            hotspotPlacements: (typeof rawData.hotspotPlacements === 'object' && rawData.hotspotPlacements !== null)
+                ? rawData.hotspotPlacements
+                : ((typeof rawData.hotspots === 'object' && rawData.hotspots !== null) ? rawData.hotspots : {}),
             assets: rawData.assets || {}
         };
 

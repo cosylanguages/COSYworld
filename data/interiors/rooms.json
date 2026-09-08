@@ -2,7 +2,14 @@
   "living_room": {
     "id": "living_room",
     "type": "living_room",
-    "name": { "en": "Living Room", "fr": "Salon", "it": "Salotto", "es": "Salón", "de": "Wohnzimmer", "ru": "Гостиная" },
+    "name": {
+      "en": "Living Room",
+      "fr": "Salon",
+      "it": "Salotto",
+      "es": "Salón",
+      "de": "Wohnzimmer",
+      "ru": "Гостиная"
+    },
     "image": "🛋️",
     "background": {
       "wallColor": "#fef3c7",
@@ -10,20 +17,94 @@
       "dividerColor": "#b45309"
     },
     "hotspots": [
-      { "id": "sofa_zone", "label": "Sofa Area", "x": 200, "y": 220, "width": 160, "height": 80 }
+      {
+        "id": "sofa_zone",
+        "label": "Sofa Area",
+        "x": 200,
+        "y": 220,
+        "width": 160,
+        "height": 80
+      }
     ],
-    "interactiveObjects": ["sofa", "tv", "coffee_table", "bookshelf", "lamp"],
-    "npcs": ["james_york"],
+    "interactiveObjects": [
+      "sofa",
+      "tv",
+      "coffee_table",
+      "bookshelf",
+      "lamp"
+    ],
+    "npcs": [
+      "james_york"
+    ],
     "npcSpawns": [
-      { "npcId": "james_york", "x": 200, "y": 300 }
+      {
+        "npcId": "james_york",
+        "x": 200,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "warm", "color": "rgba(251, 191, 36, 0.15)", "opacity": 0.15 }
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "warm",
+      "color": "rgba(251, 191, 36, 0.15)",
+      "opacity": 0.15
+    },
+    "hotspotPlacements": {
+      "sofa": {
+        "x": 150,
+        "y": 250,
+        "width": 180,
+        "height": 100,
+        "labelX": 240,
+        "labelY": 240
+      },
+      "tv": {
+        "x": 270,
+        "y": 250,
+        "width": 140,
+        "height": 90,
+        "labelX": 340,
+        "labelY": 240
+      },
+      "coffee_table": {
+        "x": 390,
+        "y": 250,
+        "width": 120,
+        "height": 60,
+        "labelX": 450,
+        "labelY": 240
+      },
+      "bookshelf": {
+        "x": 510,
+        "y": 250,
+        "width": 100,
+        "height": 220,
+        "labelX": 560,
+        "labelY": 240
+      },
+      "lamp": {
+        "x": 630,
+        "y": 250,
+        "width": 50,
+        "height": 120,
+        "labelX": 655,
+        "labelY": 240
+      }
+    }
   },
   "kitchen": {
     "id": "kitchen",
     "type": "kitchen",
-    "name": { "en": "Kitchen", "fr": "Cuisine", "it": "Cucina", "es": "Cocina", "de": "Küche", "ru": "Кухня" },
+    "name": {
+      "en": "Kitchen",
+      "fr": "Cuisine",
+      "it": "Cucina",
+      "es": "Cocina",
+      "de": "Küche",
+      "ru": "Кухня"
+    },
     "image": "🍳",
     "background": {
       "wallColor": "#f1f5f9",
@@ -31,18 +112,68 @@
       "dividerColor": "#64748b"
     },
     "hotspots": [
-      { "id": "counter_zone", "label": "Kitchen Counter", "x": 280, "y": 200, "width": 200, "height": 80 }
+      {
+        "id": "counter_zone",
+        "label": "Kitchen Counter",
+        "x": 280,
+        "y": 200,
+        "width": 200,
+        "height": 80
+      }
     ],
-    "interactiveObjects": ["fridge", "kettle", "cup"],
+    "interactiveObjects": [
+      "fridge",
+      "kettle",
+      "cup"
+    ],
     "npcs": [],
     "npcSpawns": [],
-    "ambientSounds": ["cafe"],
-    "lightingProfile": { "type": "bright", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+    "ambientSounds": [
+      "cafe"
+    ],
+    "lightingProfile": {
+      "type": "bright",
+      "color": "rgba(255, 255, 255, 0.05)",
+      "opacity": 0.05
+    },
+    "hotspotPlacements": {
+      "fridge": {
+        "x": 150,
+        "y": 250,
+        "width": 110,
+        "height": 240,
+        "labelX": 205,
+        "labelY": 240
+      },
+      "kettle": {
+        "x": 270,
+        "y": 250,
+        "width": 60,
+        "height": 60,
+        "labelX": 300,
+        "labelY": 240
+      },
+      "cup": {
+        "x": 390,
+        "y": 250,
+        "width": 50,
+        "height": 50,
+        "labelX": 415,
+        "labelY": 240
+      }
+    }
   },
   "bedroom": {
     "id": "bedroom",
     "type": "bedroom",
-    "name": { "en": "Bedroom", "fr": "Chambre", "it": "Camera", "es": "Dormitorio", "de": "Schlafzimmer", "ru": "Спальня" },
+    "name": {
+      "en": "Bedroom",
+      "fr": "Chambre",
+      "it": "Camera",
+      "es": "Dormitorio",
+      "de": "Schlafzimmer",
+      "ru": "Спальня"
+    },
     "image": "🛏️",
     "background": {
       "wallColor": "#e0e7ff",
@@ -50,18 +181,59 @@
       "dividerColor": "#4338ca"
     },
     "hotspots": [
-      { "id": "bed_zone", "label": "Sleeping Area", "x": 200, "y": 200, "width": 180, "height": 90 }
+      {
+        "id": "bed_zone",
+        "label": "Sleeping Area",
+        "x": 200,
+        "y": 200,
+        "width": 180,
+        "height": 90
+      }
     ],
-    "interactiveObjects": ["lamp", "bookshelf"],
+    "interactiveObjects": [
+      "lamp",
+      "bookshelf"
+    ],
     "npcs": [],
     "npcSpawns": [],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "cozy_night", "color": "rgba(30, 41, 59, 0.35)", "opacity": 0.35 }
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "cozy_night",
+      "color": "rgba(30, 41, 59, 0.35)",
+      "opacity": 0.35
+    },
+    "hotspotPlacements": {
+      "lamp": {
+        "x": 150,
+        "y": 250,
+        "width": 50,
+        "height": 120,
+        "labelX": 175,
+        "labelY": 240
+      },
+      "bookshelf": {
+        "x": 270,
+        "y": 250,
+        "width": 100,
+        "height": 220,
+        "labelX": 320,
+        "labelY": 240
+      }
+    }
   },
   "bathroom": {
     "id": "bathroom",
     "type": "bathroom",
-    "name": { "en": "Bathroom", "fr": "Salle de bain", "it": "Bagno", "es": "Baño", "de": "Badezimmer", "ru": "Ванная комната" },
+    "name": {
+      "en": "Bathroom",
+      "fr": "Salle de bain",
+      "it": "Bagno",
+      "es": "Baño",
+      "de": "Badezimmer",
+      "ru": "Ванная комната"
+    },
     "image": "🛁",
     "background": {
       "wallColor": "#ecfeff",
@@ -69,18 +241,59 @@
       "dividerColor": "#0891b2"
     },
     "hotspots": [
-      { "id": "sink_zone", "label": "Vanity Mirror", "x": 300, "y": 180, "width": 120, "height": 80 }
+      {
+        "id": "sink_zone",
+        "label": "Vanity Mirror",
+        "x": 300,
+        "y": 180,
+        "width": 120,
+        "height": 80
+      }
     ],
-    "interactiveObjects": ["towel", "soap"],
+    "interactiveObjects": [
+      "towel",
+      "soap"
+    ],
     "npcs": [],
     "npcSpawns": [],
-    "ambientSounds": ["rain"],
-    "lightingProfile": { "type": "cool", "color": "rgba(6, 182, 212, 0.1)", "opacity": 0.1 }
+    "ambientSounds": [
+      "rain"
+    ],
+    "lightingProfile": {
+      "type": "cool",
+      "color": "rgba(6, 182, 212, 0.1)",
+      "opacity": 0.1
+    },
+    "hotspotPlacements": {
+      "towel": {
+        "x": 150,
+        "y": 250,
+        "width": 80,
+        "height": 90,
+        "labelX": 190,
+        "labelY": 240
+      },
+      "soap": {
+        "x": 270,
+        "y": 250,
+        "width": 60,
+        "height": 50,
+        "labelX": 300,
+        "labelY": 240
+      }
+    }
   },
   "cafe": {
     "id": "cafe",
     "type": "cafe",
-    "name": { "en": "Coffee Shop Lounge", "fr": "Salon du café", "it": "Salone del caffè", "es": "Salón del café", "de": "Café Lounge", "ru": "Зал кафе" },
+    "name": {
+      "en": "Coffee Shop Lounge",
+      "fr": "Salon du café",
+      "it": "Salone del caffè",
+      "es": "Salón del café",
+      "de": "Café Lounge",
+      "ru": "Зал кафе"
+    },
     "image": "☕",
     "background": {
       "wallColor": "#fef3c7",
@@ -88,20 +301,67 @@
       "dividerColor": "#451a03"
     },
     "hotspots": [
-      { "id": "bar_counter_zone", "label": "Bar Counter", "x": 240, "y": 180, "width": 240, "height": 100 }
+      {
+        "id": "bar_counter_zone",
+        "label": "Bar Counter",
+        "x": 240,
+        "y": 180,
+        "width": 240,
+        "height": 100
+      }
     ],
-    "interactiveObjects": ["espresso_machine", "coffee_cup"],
-    "npcs": ["marco_barista"],
+    "interactiveObjects": [
+      "espresso_machine",
+      "coffee_cup"
+    ],
+    "npcs": [
+      "marco_barista"
+    ],
     "npcSpawns": [
-      { "npcId": "marco_barista", "x": 300, "y": 300 }
+      {
+        "npcId": "marco_barista",
+        "x": 300,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["cafe"],
-    "lightingProfile": { "type": "amber_warm", "color": "rgba(245, 158, 11, 0.2)", "opacity": 0.2 }
+    "ambientSounds": [
+      "cafe"
+    ],
+    "lightingProfile": {
+      "type": "amber_warm",
+      "color": "rgba(245, 158, 11, 0.2)",
+      "opacity": 0.2
+    },
+    "hotspotPlacements": {
+      "espresso_machine": {
+        "x": 280,
+        "y": 200,
+        "width": 100,
+        "height": 90,
+        "labelX": 330,
+        "labelY": 190
+      },
+      "coffee_cup": {
+        "x": 420,
+        "y": 240,
+        "width": 50,
+        "height": 50,
+        "labelX": 445,
+        "labelY": 230
+      }
+    }
   },
   "restaurant": {
     "id": "restaurant",
     "type": "restaurant",
-    "name": { "en": "Gourmet Restaurant", "fr": "Restaurant Gastronomique", "it": "Ristorante", "es": "Restaurante", "de": "Restaurant", "ru": "Ресторан" },
+    "name": {
+      "en": "Gourmet Restaurant",
+      "fr": "Restaurant Gastronomique",
+      "it": "Ristorante",
+      "es": "Restaurante",
+      "de": "Restaurant",
+      "ru": "Ресторан"
+    },
     "image": "🍽️",
     "background": {
       "wallColor": "#fdf2f8",
@@ -109,20 +369,67 @@
       "dividerColor": "#831843"
     },
     "hotspots": [
-      { "id": "dining_table_zone", "label": "Dining Table", "x": 250, "y": 200, "width": 200, "height": 100 }
+      {
+        "id": "dining_table_zone",
+        "label": "Dining Table",
+        "x": 250,
+        "y": 200,
+        "width": 200,
+        "height": 100
+      }
     ],
-    "interactiveObjects": ["menu_card", "wine_glass"],
-    "npcs": ["chef_pierre"],
+    "interactiveObjects": [
+      "menu_card",
+      "wine_glass"
+    ],
+    "npcs": [
+      "chef_pierre"
+    ],
     "npcSpawns": [
-      { "npcId": "chef_pierre", "x": 350, "y": 300 }
+      {
+        "npcId": "chef_pierre",
+        "x": 350,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["cafe"],
-    "lightingProfile": { "type": "intimate", "color": "rgba(157, 23, 77, 0.15)", "opacity": 0.15 }
+    "ambientSounds": [
+      "cafe"
+    ],
+    "lightingProfile": {
+      "type": "intimate",
+      "color": "rgba(157, 23, 77, 0.15)",
+      "opacity": 0.15
+    },
+    "hotspotPlacements": {
+      "menu_card": {
+        "x": 180,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 210,
+        "labelY": 230
+      },
+      "wine_glass": {
+        "x": 270,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 310,
+        "labelY": 240
+      }
+    }
   },
   "classroom": {
     "id": "classroom",
     "type": "classroom",
-    "name": { "en": "Language Classroom", "fr": "Salle de classe", "it": "Aula", "es": "Aula de idiomas", "de": "Klassenzimmer", "ru": "Учебный класс" },
+    "name": {
+      "en": "Language Classroom",
+      "fr": "Salle de classe",
+      "it": "Aula",
+      "es": "Aula de idiomas",
+      "de": "Klassenzimmer",
+      "ru": "Учебный класс"
+    },
     "image": "🏫",
     "background": {
       "wallColor": "#f0fdf4",
@@ -130,20 +437,67 @@
       "dividerColor": "#166534"
     },
     "hotspots": [
-      { "id": "blackboard_zone", "label": "Blackboard", "x": 200, "y": 100, "width": 300, "height": 120 }
+      {
+        "id": "blackboard_zone",
+        "label": "Blackboard",
+        "x": 200,
+        "y": 100,
+        "width": 300,
+        "height": 120
+      }
     ],
-    "interactiveObjects": ["blackboard", "textbook"],
-    "npcs": ["teacher_maria"],
+    "interactiveObjects": [
+      "blackboard",
+      "textbook"
+    ],
+    "npcs": [
+      "teacher_maria"
+    ],
     "npcSpawns": [
-      { "npcId": "teacher_maria", "x": 400, "y": 300 }
+      {
+        "npcId": "teacher_maria",
+        "x": 400,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0)", "opacity": 0 }
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "bright_daylight",
+      "color": "rgba(255, 255, 255, 0)",
+      "opacity": 0
+    },
+    "hotspotPlacements": {
+      "blackboard": {
+        "x": 150,
+        "y": 250,
+        "width": 200,
+        "height": 100,
+        "labelX": 250,
+        "labelY": 240
+      },
+      "textbook": {
+        "x": 270,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 310,
+        "labelY": 240
+      }
+    }
   },
   "office": {
     "id": "office",
     "type": "office",
-    "name": { "en": "Executive Office", "fr": "Bureau", "it": "Ufficio", "es": "Oficina", "de": "Büro", "ru": "Офис" },
+    "name": {
+      "en": "Executive Office",
+      "fr": "Bureau",
+      "it": "Ufficio",
+      "es": "Oficina",
+      "de": "Büro",
+      "ru": "Офис"
+    },
     "image": "💼",
     "background": {
       "wallColor": "#f1f5f9",
@@ -151,20 +505,67 @@
       "dividerColor": "#1e293b"
     },
     "hotspots": [
-      { "id": "desk_zone", "label": "Workstation Desk", "x": 260, "y": 180, "width": 200, "height": 90 }
+      {
+        "id": "desk_zone",
+        "label": "Workstation Desk",
+        "x": 260,
+        "y": 180,
+        "width": 200,
+        "height": 90
+      }
     ],
-    "interactiveObjects": ["laptop", "filing_cabinet"],
-    "npcs": ["manager_alex"],
+    "interactiveObjects": [
+      "laptop",
+      "filing_cabinet"
+    ],
+    "npcs": [
+      "manager_alex"
+    ],
     "npcSpawns": [
-      { "npcId": "manager_alex", "x": 360, "y": 300 }
+      {
+        "npcId": "manager_alex",
+        "x": 360,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "modern_office", "color": "rgba(203, 213, 225, 0.1)", "opacity": 0.1 }
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "modern_office",
+      "color": "rgba(203, 213, 225, 0.1)",
+      "opacity": 0.1
+    },
+    "hotspotPlacements": {
+      "laptop": {
+        "x": 150,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 190,
+        "labelY": 240
+      },
+      "filing_cabinet": {
+        "x": 270,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 310,
+        "labelY": 240
+      }
+    }
   },
   "balcony": {
     "id": "balcony",
     "type": "balcony",
-    "name": { "en": "Balcony", "fr": "Balcon", "it": "Balcone", "es": "Balcón", "de": "Balkon", "ru": "Балкон" },
+    "name": {
+      "en": "Balcony",
+      "fr": "Balcon",
+      "it": "Balcone",
+      "es": "Balcón",
+      "de": "Balkon",
+      "ru": "Балкон"
+    },
     "image": "🌿",
     "background": {
       "wallColor": "#dcfce7",
@@ -172,73 +573,330 @@
       "dividerColor": "#166534"
     },
     "hotspots": [
-      { "id": "balcony_garden_zone", "label": "Balcony Garden", "x": 200, "y": 180, "width": 400, "height": 100 }
+      {
+        "id": "balcony_garden_zone",
+        "label": "Balcony Garden",
+        "x": 200,
+        "y": 180,
+        "width": 400,
+        "height": 100
+      }
     ],
-    "interactiveObjects": ["balcony_chair", "balcony_plant"],
+    "interactiveObjects": [
+      "balcony_chair",
+      "balcony_plant"
+    ],
     "npcs": [],
     "npcSpawns": [],
-    "ambientSounds": ["nature"],
-    "lightingProfile": { "type": "outdoor_sunlight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+    "ambientSounds": [
+      "nature"
+    ],
+    "lightingProfile": {
+      "type": "outdoor_sunlight",
+      "color": "rgba(255, 255, 255, 0.05)",
+      "opacity": 0.05
+    },
+    "hotspotPlacements": {
+      "balcony_chair": {
+        "x": 150,
+        "y": 250,
+        "width": 90,
+        "height": 90,
+        "labelX": 195,
+        "labelY": 240
+      },
+      "balcony_plant": {
+        "x": 270,
+        "y": 250,
+        "width": 100,
+        "height": 120,
+        "labelX": 320,
+        "labelY": 240
+      }
+    }
   },
   "school_library": {
     "id": "school_library",
     "type": "school_library",
-    "name": { "en": "School Library", "fr": "Bibliothèque scolaire" },
+    "name": {
+      "en": "School Library",
+      "fr": "Bibliothèque scolaire"
+    },
     "image": "📚",
-    "background": { "wallColor": "#f8fafc", "floorColor": "#92400e", "dividerColor": "#78350f" },
-    "interactiveObjects": ["bookshelf", "novel_stack", "dictionary_book"],
-    "npcs": ["ella_bronx"],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+    "background": {
+      "wallColor": "#f8fafc",
+      "floorColor": "#92400e",
+      "dividerColor": "#78350f"
+    },
+    "interactiveObjects": [
+      "bookshelf",
+      "novel_stack",
+      "dictionary_book"
+    ],
+    "npcs": [
+      "ella_bronx"
+    ],
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "bright_daylight",
+      "color": "rgba(255, 255, 255, 0.05)",
+      "opacity": 0.05
+    },
+    "hotspotPlacements": {
+      "bookshelf": {
+        "x": 150,
+        "y": 250,
+        "width": 100,
+        "height": 220,
+        "labelX": 200,
+        "labelY": 240
+      },
+      "novel_stack": {
+        "x": 270,
+        "y": 250,
+        "width": 80,
+        "height": 90,
+        "labelX": 310,
+        "labelY": 240
+      },
+      "dictionary_book": {
+        "x": 390,
+        "y": 250,
+        "width": 70,
+        "height": 80,
+        "labelX": 425,
+        "labelY": 240
+      }
+    }
   },
   "computer_lab": {
     "id": "computer_lab",
     "type": "computer_lab",
-    "name": { "en": "Computer Lab", "fr": "Salle informatique" },
+    "name": {
+      "en": "Computer Lab",
+      "fr": "Salle informatique"
+    },
     "image": "💻",
-    "background": { "wallColor": "#e2e8f0", "floorColor": "#334155", "dividerColor": "#1e293b" },
-    "interactiveObjects": ["computer_terminal", "desk", "chair"],
-    "npcs": ["james_york"],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "cool_daylight", "color": "rgba(125, 211, 252, 0.08)", "opacity": 0.08 }
+    "background": {
+      "wallColor": "#e2e8f0",
+      "floorColor": "#334155",
+      "dividerColor": "#1e293b"
+    },
+    "interactiveObjects": [
+      "computer_terminal",
+      "desk",
+      "chair"
+    ],
+    "npcs": [
+      "james_york"
+    ],
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "cool_daylight",
+      "color": "rgba(125, 211, 252, 0.08)",
+      "opacity": 0.08
+    },
+    "hotspotPlacements": {
+      "computer_terminal": {
+        "x": 300,
+        "y": 200,
+        "width": 90,
+        "height": 80,
+        "labelX": 345,
+        "labelY": 190
+      },
+      "desk": {
+        "x": 270,
+        "y": 250,
+        "width": 160,
+        "height": 100,
+        "labelX": 350,
+        "labelY": 240
+      },
+      "chair": {
+        "x": 390,
+        "y": 250,
+        "width": 70,
+        "height": 100,
+        "labelX": 425,
+        "labelY": 240
+      }
+    }
   },
   "teacher_office": {
     "id": "teacher_office",
     "type": "teacher_office",
-    "name": { "en": "Teacher Office", "fr": "Bureau des enseignants" },
+    "name": {
+      "en": "Teacher Office",
+      "fr": "Bureau des enseignants"
+    },
     "image": "🧑‍🏫",
-    "background": { "wallColor": "#fef3c7", "floorColor": "#78350f", "dividerColor": "#451a03" },
-    "interactiveObjects": ["desk", "bookshelf", "lamp"],
-    "npcs": ["ella_bronx"],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "warm_indoor", "color": "rgba(251, 191, 36, 0.12)", "opacity": 0.12 }
+    "background": {
+      "wallColor": "#fef3c7",
+      "floorColor": "#78350f",
+      "dividerColor": "#451a03"
+    },
+    "interactiveObjects": [
+      "desk",
+      "bookshelf",
+      "lamp"
+    ],
+    "npcs": [
+      "ella_bronx"
+    ],
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "warm_indoor",
+      "color": "rgba(251, 191, 36, 0.12)",
+      "opacity": 0.12
+    },
+    "hotspotPlacements": {
+      "desk": {
+        "x": 150,
+        "y": 250,
+        "width": 160,
+        "height": 100,
+        "labelX": 230,
+        "labelY": 240
+      },
+      "bookshelf": {
+        "x": 270,
+        "y": 250,
+        "width": 100,
+        "height": 220,
+        "labelX": 320,
+        "labelY": 240
+      },
+      "lamp": {
+        "x": 390,
+        "y": 250,
+        "width": 50,
+        "height": 120,
+        "labelX": 415,
+        "labelY": 240
+      }
+    }
   },
   "hospital_lobby": {
     "id": "hospital_lobby",
     "type": "hospital_lobby",
-    "name": { "en": "Hospital Lobby", "fr": "Hall de l'hôpital" },
+    "name": {
+      "en": "Hospital Lobby",
+      "fr": "Hall de l'hôpital"
+    },
     "image": "🏥",
-    "background": { "wallColor": "#ecfeff", "floorColor": "#0f766e", "dividerColor": "#115e59" },
-    "interactiveObjects": ["stethoscope_tool", "thermometer_item"],
-    "npcs": ["doctor_chloe"],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "bright_indoor", "color": "rgba(20, 184, 166, 0.08)", "opacity": 0.08 }
+    "background": {
+      "wallColor": "#ecfeff",
+      "floorColor": "#0f766e",
+      "dividerColor": "#115e59"
+    },
+    "interactiveObjects": [
+      "stethoscope_tool",
+      "thermometer_item"
+    ],
+    "npcs": [
+      "doctor_chloe"
+    ],
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "bright_indoor",
+      "color": "rgba(20, 184, 166, 0.08)",
+      "opacity": 0.08
+    },
+    "hotspotPlacements": {
+      "stethoscope_tool": {
+        "x": 150,
+        "y": 250,
+        "width": 60,
+        "height": 60,
+        "labelX": 180,
+        "labelY": 240
+      },
+      "thermometer_item": {
+        "x": 270,
+        "y": 250,
+        "width": 60,
+        "height": 60,
+        "labelX": 300,
+        "labelY": 240
+      }
+    }
   },
   "doctor_office": {
     "id": "doctor_office",
     "type": "doctor_office",
-    "name": { "en": "Doctor Office", "fr": "Cabinet médical" },
+    "name": {
+      "en": "Doctor Office",
+      "fr": "Cabinet médical"
+    },
     "image": "🩺",
-    "background": { "wallColor": "#f0fdf4", "floorColor": "#64748b", "dividerColor": "#475569" },
-    "interactiveObjects": ["stethoscope_tool", "thermometer_item", "desk"],
-    "npcs": ["doctor_chloe"],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "clinical", "color": "rgba(255, 255, 255, 0.08)", "opacity": 0.08 }
+    "background": {
+      "wallColor": "#f0fdf4",
+      "floorColor": "#64748b",
+      "dividerColor": "#475569"
+    },
+    "interactiveObjects": [
+      "stethoscope_tool",
+      "thermometer_item",
+      "desk"
+    ],
+    "npcs": [
+      "doctor_chloe"
+    ],
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "clinical",
+      "color": "rgba(255, 255, 255, 0.08)",
+      "opacity": 0.08
+    },
+    "hotspotPlacements": {
+      "stethoscope_tool": {
+        "x": 220,
+        "y": 240,
+        "width": 60,
+        "height": 60,
+        "labelX": 250,
+        "labelY": 230
+      },
+      "thermometer_item": {
+        "x": 270,
+        "y": 250,
+        "width": 60,
+        "height": 60,
+        "labelX": 300,
+        "labelY": 240
+      },
+      "desk": {
+        "x": 390,
+        "y": 250,
+        "width": 160,
+        "height": 100,
+        "labelX": 470,
+        "labelY": 240
+      }
+    }
   },
   "street": {
     "id": "street",
     "type": "street",
-    "name": { "en": "Street", "fr": "Rue", "it": "Strada", "es": "Calle", "de": "Straße", "ru": "Улица" },
+    "name": {
+      "en": "Street",
+      "fr": "Rue",
+      "it": "Strada",
+      "es": "Calle",
+      "de": "Straße",
+      "ru": "Улица"
+    },
     "image": "🛣️",
     "background": {
       "wallColor": "#cbd5e1",
@@ -246,20 +904,67 @@
       "dividerColor": "#1e293b"
     },
     "hotspots": [
-      { "id": "street_walk_zone", "label": "Pedestrian Street", "x": 100, "y": 180, "width": 600, "height": 120 }
+      {
+        "id": "street_walk_zone",
+        "label": "Pedestrian Street",
+        "x": 100,
+        "y": 180,
+        "width": 600,
+        "height": 120
+      }
     ],
-    "interactiveObjects": ["street_clock", "street_lamp"],
-    "npcs": ["james_york"],
+    "interactiveObjects": [
+      "street_clock",
+      "street_lamp"
+    ],
+    "npcs": [
+      "james_york"
+    ],
     "npcSpawns": [
-      { "npcId": "james_york", "x": 400, "y": 300 }
+      {
+        "npcId": "james_york",
+        "x": 400,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["nature"],
-    "lightingProfile": { "type": "outdoor_day", "color": "rgba(255, 255, 255, 0.05)", "opacity": 0.05 }
+    "ambientSounds": [
+      "nature"
+    ],
+    "lightingProfile": {
+      "type": "outdoor_day",
+      "color": "rgba(255, 255, 255, 0.05)",
+      "opacity": 0.05
+    },
+    "hotspotPlacements": {
+      "street_clock": {
+        "x": 380,
+        "y": 140,
+        "width": 80,
+        "height": 120,
+        "labelX": 420,
+        "labelY": 130
+      },
+      "street_lamp": {
+        "x": 270,
+        "y": 250,
+        "width": 70,
+        "height": 80,
+        "labelX": 305,
+        "labelY": 240
+      }
+    }
   },
   "bus_stop": {
     "id": "bus_stop",
     "type": "bus_stop",
-    "name": { "en": "Bus Stop", "fr": "Arrêt de bus", "it": "Fermata dell'autobus", "es": "Parada de autobús", "de": "Bushaltestelle", "ru": "Автобусная остановка" },
+    "name": {
+      "en": "Bus Stop",
+      "fr": "Arrêt de bus",
+      "it": "Fermata dell'autobus",
+      "es": "Parada de autobús",
+      "de": "Bushaltestelle",
+      "ru": "Автобусная остановка"
+    },
     "image": "🚌",
     "background": {
       "wallColor": "#bae6fd",
@@ -267,20 +972,67 @@
       "dividerColor": "#0369a1"
     },
     "hotspots": [
-      { "id": "bus_shelter_zone", "label": "Bus Stop Shelter", "x": 200, "y": 180, "width": 400, "height": 120 }
+      {
+        "id": "bus_shelter_zone",
+        "label": "Bus Stop Shelter",
+        "x": 200,
+        "y": 180,
+        "width": 400,
+        "height": 120
+      }
     ],
-    "interactiveObjects": ["bus_stop_sign", "bus_timetable_board"],
-    "npcs": ["james_york"],
+    "interactiveObjects": [
+      "bus_stop_sign",
+      "bus_timetable_board"
+    ],
+    "npcs": [
+      "james_york"
+    ],
     "npcSpawns": [
-      { "npcId": "james_york", "x": 300, "y": 300 }
+      {
+        "npcId": "james_york",
+        "x": 300,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["nature"],
-    "lightingProfile": { "type": "bright_daylight", "color": "rgba(255, 255, 255, 0)", "opacity": 0 }
+    "ambientSounds": [
+      "nature"
+    ],
+    "lightingProfile": {
+      "type": "bright_daylight",
+      "color": "rgba(255, 255, 255, 0)",
+      "opacity": 0
+    },
+    "hotspotPlacements": {
+      "bus_stop_sign": {
+        "x": 180,
+        "y": 160,
+        "width": 80,
+        "height": 160,
+        "labelX": 220,
+        "labelY": 150
+      },
+      "bus_timetable_board": {
+        "x": 480,
+        "y": 180,
+        "width": 100,
+        "height": 120,
+        "labelX": 530,
+        "labelY": 170
+      }
+    }
   },
   "reception": {
     "id": "reception",
     "type": "reception",
-    "name": { "en": "Reception", "fr": "Réception", "it": "Reception", "es": "Recepción", "de": "Empfang", "ru": "Рецепция" },
+    "name": {
+      "en": "Reception",
+      "fr": "Réception",
+      "it": "Reception",
+      "es": "Recepción",
+      "de": "Empfang",
+      "ru": "Рецепция"
+    },
     "image": "💁",
     "background": {
       "wallColor": "#ccfbf1",
@@ -288,21 +1040,82 @@
       "dividerColor": "#0f766e"
     },
     "hotspots": [
-      { "id": "reception_desk_zone", "label": "Reception Desk", "x": 220, "y": 180, "width": 360, "height": 140 }
+      {
+        "id": "reception_desk_zone",
+        "label": "Reception Desk",
+        "x": 220,
+        "y": 180,
+        "width": 360,
+        "height": 140
+      }
     ],
-    "interactiveObjects": ["reception_desk", "apartment_key", "registration_form"],
-    "npcs": ["receptionist", "james_york"],
+    "interactiveObjects": [
+      "reception_desk",
+      "apartment_key",
+      "registration_form"
+    ],
+    "npcs": [
+      "receptionist",
+      "james_york"
+    ],
     "npcSpawns": [
-      { "npcId": "receptionist", "x": 380, "y": 280 },
-      { "npcId": "james_york", "x": 180, "y": 300 }
+      {
+        "npcId": "receptionist",
+        "x": 380,
+        "y": 280
+      },
+      {
+        "npcId": "james_york",
+        "x": 180,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["cafe"],
-    "lightingProfile": { "type": "bright_indoor", "color": "rgba(20, 184, 166, 0.1)", "opacity": 0.1 }
+    "ambientSounds": [
+      "cafe"
+    ],
+    "lightingProfile": {
+      "type": "bright_indoor",
+      "color": "rgba(20, 184, 166, 0.1)",
+      "opacity": 0.1
+    },
+    "hotspotPlacements": {
+      "reception_desk": {
+        "x": 480,
+        "y": 220,
+        "width": 120,
+        "height": 90,
+        "labelX": 540,
+        "labelY": 210
+      },
+      "apartment_key": {
+        "x": 360,
+        "y": 220,
+        "width": 60,
+        "height": 50,
+        "labelX": 390,
+        "labelY": 210
+      },
+      "registration_form": {
+        "x": 390,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 430,
+        "labelY": 240
+      }
+    }
   },
   "hallway": {
     "id": "hallway",
     "type": "hallway",
-    "name": { "en": "Hallway", "fr": "Couloir", "it": "Corridoio", "es": "Pasillo", "de": "Flur", "ru": "Коридор" },
+    "name": {
+      "en": "Hallway",
+      "fr": "Couloir",
+      "it": "Corridoio",
+      "es": "Pasillo",
+      "de": "Flur",
+      "ru": "Коридор"
+    },
     "image": "🚶",
     "background": {
       "wallColor": "#fef3c7",
@@ -310,20 +1123,76 @@
       "dividerColor": "#78350f"
     },
     "hotspots": [
-      { "id": "corridor_zone", "label": "Apartment Corridor", "x": 200, "y": 180, "width": 400, "height": 100 }
+      {
+        "id": "corridor_zone",
+        "label": "Apartment Corridor",
+        "x": 200,
+        "y": 180,
+        "width": 400,
+        "height": 100
+      }
     ],
-    "interactiveObjects": ["hallway_light", "door_number_101", "hallway_carpet"],
-    "npcs": ["james_york"],
+    "interactiveObjects": [
+      "hallway_light",
+      "door_number_101",
+      "hallway_carpet"
+    ],
+    "npcs": [
+      "james_york"
+    ],
     "npcSpawns": [
-      { "npcId": "james_york", "x": 250, "y": 300 }
+      {
+        "npcId": "james_york",
+        "x": 250,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["piano"],
-    "lightingProfile": { "type": "warm", "color": "rgba(245, 158, 11, 0.15)", "opacity": 0.15 }
+    "ambientSounds": [
+      "piano"
+    ],
+    "lightingProfile": {
+      "type": "warm",
+      "color": "rgba(245, 158, 11, 0.15)",
+      "opacity": 0.15
+    },
+    "hotspotPlacements": {
+      "hallway_light": {
+        "x": 380,
+        "y": 80,
+        "width": 60,
+        "height": 60,
+        "labelX": 410,
+        "labelY": 70
+      },
+      "door_number_101": {
+        "x": 550,
+        "y": 190,
+        "width": 70,
+        "height": 50,
+        "labelX": 585,
+        "labelY": 180
+      },
+      "hallway_carpet": {
+        "x": 180,
+        "y": 340,
+        "width": 440,
+        "height": 60,
+        "labelX": 400,
+        "labelY": 330
+      }
+    }
   },
   "hospital": {
     "id": "hospital",
     "type": "hospital",
-    "name": { "en": "Medical Center Ward", "fr": "Hôpital", "it": "Ospedale", "es": "Hospital", "de": "Krankenhaus", "ru": "Больничная палата" },
+    "name": {
+      "en": "Medical Center Ward",
+      "fr": "Hôpital",
+      "it": "Ospedale",
+      "es": "Hospital",
+      "de": "Krankenhaus",
+      "ru": "Больничная палата"
+    },
     "image": "🏥",
     "background": {
       "wallColor": "#f0fdfa",
@@ -331,20 +1200,67 @@
       "dividerColor": "#115e59"
     },
     "hotspots": [
-      { "id": "reception_desk_zone", "label": "Nurse Station", "x": 220, "y": 180, "width": 220, "height": 90 }
+      {
+        "id": "reception_desk_zone",
+        "label": "Nurse Station",
+        "x": 220,
+        "y": 180,
+        "width": 220,
+        "height": 90
+      }
     ],
-    "interactiveObjects": ["first_aid_kit", "stethoscope"],
-    "npcs": ["dr_sarah"],
+    "interactiveObjects": [
+      "first_aid_kit",
+      "stethoscope"
+    ],
+    "npcs": [
+      "dr_sarah"
+    ],
     "npcSpawns": [
-      { "npcId": "dr_sarah", "x": 320, "y": 300 }
+      {
+        "npcId": "dr_sarah",
+        "x": 320,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["nature"],
-    "lightingProfile": { "type": "sterile_bright", "color": "rgba(240, 253, 250, 0.05)", "opacity": 0.05 }
+    "ambientSounds": [
+      "nature"
+    ],
+    "lightingProfile": {
+      "type": "sterile_bright",
+      "color": "rgba(240, 253, 250, 0.05)",
+      "opacity": 0.05
+    },
+    "hotspotPlacements": {
+      "first_aid_kit": {
+        "x": 150,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 190,
+        "labelY": 240
+      },
+      "stethoscope": {
+        "x": 270,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 310,
+        "labelY": 240
+      }
+    }
   },
   "library": {
     "id": "library",
     "type": "library",
-    "name": { "en": "Town Library", "fr": "Bibliothèque", "it": "Biblioteca", "es": "Biblioteca", "de": "Bibliothek", "ru": "Библиотека" },
+    "name": {
+      "en": "Town Library",
+      "fr": "Bibliothèque",
+      "it": "Biblioteca",
+      "es": "Biblioteca",
+      "de": "Bibliothek",
+      "ru": "Библиотека"
+    },
     "image": "📚",
     "background": {
       "wallColor": "#fffbe3",
@@ -352,14 +1268,54 @@
       "dividerColor": "#713f12"
     },
     "hotspots": [
-      { "id": "reading_desk_zone", "label": "Quiet Reading Nook", "x": 240, "y": 180, "width": 200, "height": 90 }
+      {
+        "id": "reading_desk_zone",
+        "label": "Quiet Reading Nook",
+        "x": 240,
+        "y": 180,
+        "width": 200,
+        "height": 90
+      }
     ],
-    "interactiveObjects": ["dictionary", "reading_lamp"],
-    "npcs": ["librarian_clara"],
+    "interactiveObjects": [
+      "dictionary",
+      "reading_lamp"
+    ],
+    "npcs": [
+      "librarian_clara"
+    ],
     "npcSpawns": [
-      { "npcId": "librarian_clara", "x": 350, "y": 300 }
+      {
+        "npcId": "librarian_clara",
+        "x": 350,
+        "y": 300
+      }
     ],
-    "ambientSounds": ["nature"],
-    "lightingProfile": { "type": "warm_sepia", "color": "rgba(202, 138, 4, 0.12)", "opacity": 0.12 }
+    "ambientSounds": [
+      "nature"
+    ],
+    "lightingProfile": {
+      "type": "warm_sepia",
+      "color": "rgba(202, 138, 4, 0.12)",
+      "opacity": 0.12
+    },
+    "hotspotPlacements": {
+      "dictionary": {
+        "x": 150,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 190,
+        "labelY": 240
+      },
+      "reading_lamp": {
+        "x": 270,
+        "y": 250,
+        "width": 80,
+        "height": 80,
+        "labelX": 310,
+        "labelY": 240
+      }
+    }
   }
 }

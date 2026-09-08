@@ -71,18 +71,33 @@ export class SceneRenderer {
 
             // Interactive objects in room
             if (room.interactiveObjects) {
-                room.interactiveObjects.forEach(objId => {
+                room.interactiveObjects.forEach((objId, idx) => {
                     const obj = gameData.objects[objId];
-                    if (!obj) return;
-                    const word = obj.words[lang] || obj.words.en || objId;
+                    const placementsDict = room.hotspotPlacements || room.hotspots;
+                    const placement = (typeof placementsDict === 'object' && placementsDict !== null ? placementsDict[objId] : null) || (obj && typeof obj.x === 'number' ? {
+                        x: obj.x,
+                        y: obj.y,
+                        width: obj.width,
+                        height: obj.height,
+                        labelX: obj.labelX,
+                        labelY: obj.labelY
+                    } : null) || (() => {
+                        console.warn(`[SceneRenderer] Room ${room.id} missing placement for interactive object "${objId}". Falling back to default placement.`);
+                        const x = Math.round(150 + idx * 120);
+                        const y = 250;
+                        return { x, y, width: 80, height: 80, labelX: x + 40, labelY: y - 10 };
+                    })();
+
+                    const word = (obj && obj.words && (obj.words[lang] || obj.words.en)) || objId;
+                    const emoji = (obj && obj.emoji) || '📦';
                     const isDiscovered = state.discoveredObjects.has(objId);
 
                     roomHtml += `
                         <g class="cw-obj-hotspot" tabindex="0" role="button" aria-label="Inspect ${word}" onclick="COSY_WORLD.inspectObject('${objId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.inspectObject('${objId}');}">
-                            <rect class="hit-box" x="${obj.x}" y="${obj.y}" width="${obj.width}" height="${obj.height}" />
-                            <text x="${obj.x + obj.width / 2}" y="${obj.y + obj.height / 2 + 8}" font-size="28" text-anchor="middle">${obj.emoji}</text>
-                            <rect x="${obj.labelX - word.length * 4 - 8}" y="${obj.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
-                            <text x="${obj.labelX}" y="${obj.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
+                            <rect class="hit-box" x="${placement.x}" y="${placement.y}" width="${placement.width}" height="${placement.height}" />
+                            <text x="${placement.x + placement.width / 2}" y="${placement.y + placement.height / 2 + 8}" font-size="28" text-anchor="middle">${emoji}</text>
+                            <rect x="${placement.labelX - word.length * 4 - 8}" y="${placement.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
+                            <text x="${placement.labelX}" y="${placement.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
                         </g>
                     `;
                 });
@@ -254,23 +269,44 @@ export class SceneRenderer {
             if (dist.objects) {
                 dist.objects.forEach((objId, idx) => {
                     const obj = gameData.objects[objId];
-                    if (!obj) return;
-                    const word = obj.words[lang] || obj.words.en || objId;
+                    const placementsDict = dist.hotspotPlacements || dist.hotspots;
+                    const placement = (typeof placementsDict === 'object' && placementsDict !== null ? placementsDict[objId] : null) || (obj && typeof obj.x === 'number' ? {
+                        x: obj.x,
+                        y: obj.y,
+                        width: obj.width,
+                        height: obj.height,
+                        labelX: obj.labelX,
+                        labelY: obj.labelY
+                    } : null) || (() => {
+                        console.warn(`[SceneRenderer] District ${dist.id} missing placement for object "${objId}". Falling back to default placement.`);
+                        const cols = Math.min(dist.objects.length, 5);
+                        const col = idx % cols;
+                        const row = Math.floor(idx / cols);
+                        const marginX = 80;
+                        const spacingX = Math.floor((800 - 2 * marginX) / cols);
+                        const x = Math.round(marginX + col * spacingX);
+                        const y = Math.round(200 + row * 90);
+                        return { x, y, width: 80, height: 80, labelX: x + 40, labelY: y - 10 };
+                    })();
+
+                    const word = (obj && obj.words && (obj.words[lang] || obj.words.en)) || objId;
+                    const emoji = (obj && obj.emoji) || '📦';
+                    const anim = obj && obj.animation;
                     const isDiscovered = state.discoveredObjects.has(objId);
-                    const animClass = obj.animation === 'pulse' ? 'cw-hotspot-pulse' : (obj.animation === 'glow' ? 'cw-hotspot-glow' : '');
+                    const animClass = anim === 'pulse' ? 'cw-hotspot-pulse' : (anim === 'glow' ? 'cw-hotspot-glow' : '');
 
                     html += `
                         <g class="cw-obj-hotspot ${animClass}" tabindex="0" role="button" aria-label="Inspect ${word}" onclick="COSY_WORLD.inspectObject('${objId}')" onkeydown="if(event.key==='Enter'||event.key===' '){COSY_WORLD.inspectObject('${objId}');}">
-                            <rect class="hit-box" x="${obj.x}" y="${obj.y}" width="${obj.width}" height="${obj.height}" />
-                            ${hasRasterBackground ? '' : `<text x="${obj.x + obj.width / 2}" y="${obj.y + obj.height / 2 + 8}" font-size="28" text-anchor="middle">${obj.emoji}</text>`}
+                            <rect class="hit-box" x="${placement.x}" y="${placement.y}" width="${placement.width}" height="${placement.height}" />
+                            ${hasRasterBackground ? '' : `<text x="${placement.x + placement.width / 2}" y="${placement.y + placement.height / 2 + 8}" font-size="28" text-anchor="middle">${emoji}</text>`}
 
                             ${state.showGuidePointers && idx === 0 && !isDiscovered ? `
-                                <text x="${obj.x + obj.width / 2}" y="${obj.y - 12}" font-size="20" text-anchor="middle" class="cw-hand-pointer">👇</text>
+                                <text x="${placement.x + placement.width / 2}" y="${placement.y - 12}" font-size="20" text-anchor="middle" class="cw-hand-pointer">👇</text>
                             ` : ''}
 
                             ${hasRasterBackground ? '' : `
-                                <rect x="${obj.labelX - word.length * 4 - 8}" y="${obj.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
-                                <text x="${obj.labelX}" y="${obj.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
+                                <rect x="${placement.labelX - word.length * 4 - 8}" y="${placement.labelY - 14}" width="${word.length * 8 + 16}" height="20" rx="10" fill="${isDiscovered ? '#10b981' : '#1e293b'}" opacity="0.9" />
+                                <text x="${placement.labelX}" y="${placement.labelY}" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">${word}</text>
                             `}
                         </g>
                     `;
