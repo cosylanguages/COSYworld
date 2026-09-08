@@ -73,7 +73,8 @@ test('Pedagogical data - quest and dialogue references resolve', () => {
     const objects = JSON.parse(fs.readFileSync(path.resolve('data/vocabulary/objects.json'), 'utf8'));
     const vocabulary = JSON.parse(fs.readFileSync(path.resolve('data/vocabulary/vocabulary_database.json'), 'utf8'));
     const grammar = Object.fromEntries(JSON.parse(fs.readFileSync(path.resolve('data/grammar/grammar.json'), 'utf8')).map(entry => [entry.id, entry]));
-    const sceneIds = new Set(Object.keys(JSON.parse(fs.readFileSync(path.resolve('data/scenes/districts.json'), 'utf8'))));
+    const scenes = JSON.parse(fs.readFileSync(path.resolve('data/scenes/districts.json'), 'utf8'));
+    const sceneIds = new Set(Object.keys(scenes));
 
     for (const quest of quests) {
         assert.ok(['A0', 'A1'].includes(quest.difficulty), `${quest.id} exceeds the A0-A1 quest scope`);
@@ -81,10 +82,14 @@ test('Pedagogical data - quest and dialogue references resolve', () => {
             for (const objectId of objective.targetObjects || []) {
                 assert.ok(objects[objectId], `${quest.id} references missing object ${objectId}`);
                 if (objective.targetLocation) {
-                    assert.equal(
-                        objects[objectId].locationId,
-                        objective.targetLocation,
-                        `${quest.id}/${objectId} is outside target scene ${objective.targetLocation}`
+                    const scene = scenes[objective.targetLocation];
+                    const hasPlacement = scene && (
+                        (Array.isArray(scene.objects) && scene.objects.includes(objectId)) ||
+                        (scene.hotspotPlacements && scene.hotspotPlacements[objectId])
+                    );
+                    assert.ok(
+                        hasPlacement,
+                        `${quest.id}/${objectId} is missing placement in target scene ${objective.targetLocation}`
                     );
                 }
             }

@@ -46,18 +46,53 @@ test('Scene data - local raster scenes expose hotspots for every visible object'
         for (const objectId of scene.objects) {
             const object = objects[objectId];
             assert.ok(object, `${scene.id} references missing object ${objectId}`);
+            const placement = scene.hotspotPlacements?.[objectId] || scene.hotspots?.[objectId];
+            assert.ok(placement, `${scene.id}/${objectId} is missing district-scoped placement`);
             for (const property of ['x', 'y', 'width', 'height']) {
                 assert.equal(
-                    Number.isFinite(object[property]),
+                    Number.isFinite(placement[property]),
                     true,
                     `${scene.id}/${objectId} is missing hotspot ${property}`
                 );
             }
-            assert.ok(object.width > 0 && object.height > 0, `${scene.id}/${objectId} hotspot must be positive`);
+            assert.ok(placement.width > 0 && placement.height > 0, `${scene.id}/${objectId} hotspot must be positive`);
         }
 
         const backgroundPath = new URL(`../${scene.backgroundImage}`, import.meta.url);
         assert.equal(fs.existsSync(backgroundPath), true, `${scene.id} background file is missing`);
+    }
+});
+
+test('Scene data - every district object has an explicit scene-scoped hotspot placement', () => {
+    for (const scene of Object.values(scenes)) {
+        if (!Array.isArray(scene.objects) || scene.objects.length === 0) continue;
+        const placements = scene.hotspotPlacements || scene.hotspots;
+        assert.ok(
+            placements && typeof placements === 'object',
+            `District ${scene.id} must declare scene-scoped hotspot placements`
+        );
+        for (const objectId of scene.objects) {
+            assert.ok(
+                objects[objectId],
+                `District ${scene.id} references missing object vocabulary ${objectId}`
+            );
+            const placement = placements[objectId];
+            assert.ok(
+                placement,
+                `District ${scene.id} missing scene-scoped placement for object ${objectId}`
+            );
+            for (const property of ['x', 'y', 'width', 'height']) {
+                assert.equal(
+                    Number.isFinite(placement[property]),
+                    true,
+                    `District ${scene.id}/${objectId} placement property ${property} must be finite`
+                );
+            }
+            assert.ok(
+                placement.width > 0 && placement.height > 0,
+                `District ${scene.id}/${objectId} placement width and height must be positive`
+            );
+        }
     }
 });
 
