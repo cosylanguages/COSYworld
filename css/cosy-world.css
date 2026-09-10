@@ -1,0 +1,357 @@
+/* COSY World Main Game Stylesheet */
+
+:root {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-hover: #21262d;
+  --color-border: #30363d;
+  --color-primary: #58a6ff;
+  --color-primary-hover: #79c0ff;
+  --color-secondary: #238636;
+  --color-secondary-hover: #2ea043;
+  --color-accent: #f0883e;
+  --color-text: #c9d1d9;
+  --color-text-bright: #f0f6fc;
+  --color-text-muted: #8b949e;
+  --color-gold: #d29922;
+
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: "Georgia", "Times New Roman", serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* High Contrast Mode Override */
+body.high-contrast {
+  --color-bg: #000000;
+  --color-surface: #111111;
+  --color-surface-hover: #222222;
+  --color-border: #ffffff;
+  --color-primary: #ffff00;
+  --color-primary-hover: #ffffa0;
+  --color-text: #ffffff;
+  --color-text-bright: #ffffff;
+  --color-text-muted: #dddddd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  line-height: 1.6;
+}
+
+/* Common Layout Elements */
+header.cosy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-family: var(--font-family-heading);
+  font-weight: bold;
+  color: var(--color-text-bright);
+  text-decoration: none;
+}
+
+.brand-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+nav.main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav.main-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav.main-nav a:hover, nav.main-nav a.active {
+  color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, rgba(22,27,34,0.8) 0%, rgba(13,17,23,1) 100%), url('/shared/assets/district-commercial.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-title {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  color: var(--color-text-bright);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-primary-hover);
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  max-width: 650px;
+  margin: 0 auto 2rem auto;
+  color: var(--color-text-muted);
+}
+
+/* Character Selection Grid */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.character-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.character-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.character-card.selected {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 16px rgba(88, 166, 255, 0.4);
+}
+
+.character-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--color-border);
+}
+
+.character-name {
+  font-size: 1.5rem;
+  color: var(--color-text-bright);
+  margin-bottom: 0.5rem;
+}
+
+.character-traits {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.trait-tag {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--color-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+/* Language Selection Grid */
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.language-btn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.language-btn:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-primary);
+}
+
+.language-btn.selected {
+  border-color: var(--color-secondary);
+  background: rgba(35, 134, 54, 0.2);
+}
+
+.flag-icon {
+  font-size: 1.8rem;
+}
+
+/* Action Buttons */
+.btn-primary {
+  background: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-secondary-hover);
+}
+
+.btn-primary:disabled {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* HUD System */
+.hud-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-surface);
+  padding: 0.75rem 1.5rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.hud-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hud-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+}
+
+.xp-bar-container {
+  width: 150px;
+  height: 10px;
+  background: var(--color-border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: var(--color-gold);
+  width: 40%;
+}
+
+/* Game Canvas Container */
+.game-viewport {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 180px);
+  min-height: 500px;
+  background: #0b0e14;
+  overflow: hidden;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dialogue Box */
+.dialogue-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  background: rgba(22, 27, 34, 0.95);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.dialogue-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.speaker-name {
+  font-weight: bold;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.vocab-highlight {
+  color: var(--color-gold);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vocab-highlight:hover {
+  color: var(--color-primary-hover);
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+  .language-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
