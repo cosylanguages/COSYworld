@@ -1,137 +1,96 @@
-# 🌍 COSY World
+# 🌍 COSY World — Standalone Open-World Language Learning RPG
 
-> **Open-World Language Learning RPG** — Learn languages through direct immersion, interactive cause-and-effect chains, natural NPC dialogues, and realistic world exploration across 14 target languages.
-
----
-
-## 🌟 Project Vision
-
-COSY World is an independent, open-source language learning RPG built around **Inductive Direct Immersion ("Learn by Living, Not by Translating")**. Instead of flashcard memorization or text translation, players acquire language naturally by interacting with everyday objects, observing cause-and-effect visual sequences, conversing with local town NPCs, and completing contextual missions in COSY Town.
+> **Learn languages through direct immersion, interactive quest choices, natural NPC dialogues, and realistic world exploration across 14 target languages.**
 
 ---
 
-## 🚀 Getting Started
+## 🌟 Game Overview & Concept
 
-### Prerequisites
-COSY World runs 100% in modern browsers using native ES Modules, CSS3, and HTML5 SVG rendering. No build tools or Node.js servers are required to run or play the game.
-
-### Quick Start
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/cosylanguages/COSYworld.git
-   cd COSYworld
-   ```
-2. Serve the directory using any static web server:
-   ```bash
-   npx http-server -p 8080 .
-   # or
-   python3 -m http.server 8080
-   ```
-3. Open `http://localhost:8080` in your web browser.
+COSY World is a standalone open-world RPG designed around **Inductive Direct Immersion ("Learn by Living, Not by Translating")**. Instead of passive memorization or grammar drills, players explore COSY Town, interact with local residents (James York, Ella Bronx, Anna), purchase goods in commercial districts, order food in cafes, and complete contextual everyday quests.
 
 ---
 
-## 📂 Repository Structure
+## 🎮 How to Play Guide
 
-```
-COSYworld/
-├── index.html            # Main game entry point & DOM layout shell
-├── css/
-│   ├── main.css          # Design system tokens, stage card, SVG viewport
-│   └── ui.css            # HUD sidebar, modals, controls, stats badges
-├── js/
-│   ├── audio/            # Spatial audio, sound synthesis, multi-channel soundscape
-│   ├── camera/           # Viewport camera pan, zoom, and dynamic target tracking
-│   ├── dialogue/         # Branching tree dialogue engine & Web Speech TTS
-│   ├── engine/           # Core orchestrator, game loop, pub-sub event bus
-│   ├── grammar/          # Grammar tree unlocks & CEFR progression
-│   ├── input/            # Keyboard, touch, and pointer input handling
-│   ├── inventory/        # Discovered items & visual encyclopedia
-│   ├── localization/     # Dynamic target-language text resolution
-│   ├── minigames/        # Interactive mini-game framework and loaders
-│   ├── npc/              # NPC AI schedule system, rendering & gesture handlers
-│   ├── player/           # Citizen level, XP, statistics
-│   ├── quests/           # Mission evaluator & quest progression
-│   ├── save/             # LocalStorage persistence & save recovery
-│   ├── scenes/           # SVG scene & hotspot renderer
-│   ├── ui/               # HUD interface tabs, modals, and notifications
-│   ├── utils/            # Helper functions & geometry math
-│   ├── vocabulary/       # Object inspector & visual cause-effect chains
-│   └── world/            # World manager, district streaming, simulation & maps
-├── data/
-│   ├── buildings/        # Outdoor district building metadata and hotspots
-│   ├── config/           # Game configuration, achievements, and system settings
-│   ├── dialogues/        # Branching NPC dialogue tree datasets
-│   ├── dlc/              # Expansion packs and downloadable content manifests
-│   ├── grammar/          # Grammar node unlock definitions
-│   ├── grammar_patterns/ # Interactive grammar pattern exercise datasets
-│   ├── interiors/        # Modular interior room layouts and object placements
-│   ├── languages/        # Target language definitions & flags
-│   ├── minigames/        # Mini-game configuration and quiz question datasets
-│   ├── npcs/             # NPC profiles, schedules, expressions, and roles
-│   ├── quests/           # Story quests, rewards, and conditions
-│   ├── scenes/           # Spatial topology, SVG coordinates, door linkages
-│   ├── situations/       # Contextual real-world social interaction scenarios
-│   ├── vocabulary/       # Interactive object metadata across 14 languages
-│   └── world/            # Simulation settings, time, weather, and world state
-├── assets/
-│   ├── images/           # Scene backgrounds, custom graphics
-│   ├── audio/            # Ambient soundscapes, audio effects
-│   └── icons/            # SVG icons and emojis
-└── docs/
-    ├── architecture.md   # Core engine technical architecture
-    ├── auxiliary_apps_architecture.md # COSYtools architecture & separation guide
-    ├── contributing.md   # Detailed developer contribution guidelines
-    └── game_design.md   # Inductive direct immersion design manifesto
-```
+1. **Main Entry & Character Selection (`/index.html`)**:
+   - Choose your main character:
+     - **James York** (Town Explorer & Historian — Residential District)
+     - **Ella Bronx** (Local Artisan & Chef — Commercial District)
+     - **Anna** (Cultural Ambassador & Scholar — Cultural District)
+   - Select your target language among 14 supported languages.
+   - Click **"Start Adventure"** or **"Continue Game"** to load your saved state.
+
+2. **Town Map Exploration (`/game/town-map/index.html`)**:
+   - Interact with district hotspots: Residential, Commercial, Cultural.
+   - Use fast travel points and view active quest markers.
+   - Track your character's position across COSY Town.
+
+3. **Completing Quests & Dialogues**:
+   - Access beginner, intermediate, and advanced quests.
+   - Interact with dialogue lines featuring Text-to-Speech (TTS) pronunciation.
+   - Click highlighted vocabulary terms to view definitions and save them to your notebook.
+   - Access direct links to **COSYtools** for grammar references and **COSYgames** for mini-game practice.
+
+4. **Progress Tracking (`/progress/index.html`)**:
+   - Review Citizen Level, XP, time spent, completed quests, and acquired vocabulary.
+   - Export and backup your progress using the standardized **COSY Passport JSON schema**.
+   - Import save files to restore progress across devices or sessions.
 
 ---
 
-## 📘 COSY Passport Integration
+## 🌐 Supported 14 Target Languages
 
-COSY World supports the universal **COSY Passport** standard (`docs/passport-schema.md`). You can export and backup your progress (Citizen Level, XP, and completed quests) as a standardized JSON passport file, or import progress from another device or COSY app.
+COSY World natively supports 14 target languages with flag icons, speech synthesis, and vocabulary database integration:
 
-- **Exporting**: Click **"📥 Export"** in the HUD sidebar to download your `cosy-passport-world.json`.
-- **Importing**: Click **"📤 Import"** in the HUD sidebar to load an existing passport file. COSY World safely updates your Citizen Level, XP, and quest records with entries created by `COSYworld` without modifying progress from other COSY apps.
-
----
-
-## 🧰 COSY Ecosystem & Auxiliary Tools
-
-In addition to the RPG immersion engine in `COSYworld`, auxiliary language tools (such as verb conjugation trainers, grammatical gender practice tools, and verb reference matrices) are maintained in a dedicated companion repository:
-
-- **COSYtools**: [https://github.com/cosylanguages/COSYtools](https://github.com/cosylanguages/COSYtools)
-
-For architectural details on how `COSYworld` integrates with `COSYtools`, see [`docs/auxiliary_apps_architecture.md`](docs/auxiliary_apps_architecture.md).
-
----
-
-## 🤝 Contribution Guide
-
-We welcome contributions from game developers, language educators, translators, and open-source enthusiasts!
-
-### Allowed Contributions
-- 🏙️ **New Scenes & Districts**: Expand COSY Town with new locations (Market, Library, Park, Station).
-- 📚 **Vocabulary & Objects**: Add real-world items with 14-language translations and visual cause-effect chains.
-- 💬 **NPCs & Dialogues**: Author multi-node branching dialogue trees with voice reactions and quests.
-- 🌐 **Translations & Localization**: Improve or expand support across target languages.
-- 🐛 **Bug Fixes & Mini-Games**: Enhance engine performance, UI accessibility, or interactive mini-games.
-
-### Require Maintainer Approval
-- Engine core architecture modifications (`js/engine/core.js`).
-- Educational methodology or CEFR progression framework updates.
-- Save system schema breaking changes.
-
-Please refer to [`CONTRIBUTING.md`](CONTRIBUTING.md) for detailed guidelines.
+1. 🇬🇧 **English**
+2. 🇫🇷 **French**
+3. 🇮🇹 **Italian**
+4. 🇷🇺 **Russian**
+5. 🇬🇷 **Greek**
+6. 🇪🇸 **Spanish**
+7. 🇩🇪 **German**
+8. 🇵🇹 **Portuguese**
+9. 🇳🇱 **Dutch**
+10. 🇵🇱 **Polish**
+11. 🇹🇷 **Turkish**
+12. 🇸🇦 **Arabic**
+13. 🇨🇳 **Chinese**
+14. 🇯🇵 **Japanese**
 
 ---
 
-## 🗺️ Roadmap
+## 🗺️ Quest Roadmap
 
-- [x] Independent repository migration & standalone architecture
-- [x] Core 14-language Direct Immersion Engine
-- [x] Interactive SVG World Stage with Hotspots & NPCs
-- [x] Branching Dialogue Engine with Speech Synthesis TTS
-- [ ] District Expansion: City Market, Train Station, High School
-- [ ] Web Speech API Voice Recognition for Speech Practice
-- [ ] Offline PWA Service Worker caching
+- **Beginner Quests**:
+  - `meet-the-neighbors`: Neighborhood greetings and introduces character profiles in the Residential District.
+  - `grocery-shopping`: Market shopping, ordering bread/fruits, and price queries with Ella Bronx in the Commercial District.
+  - `cafe-conversation`: Ordering beverages, expressing gratitude, and polite social exchanges at the local coffee shop.
+- **Intermediate Quests**:
+  - Museum & History Tour, Directions & Transit, Neighborhood Park & Weather.
+- **Advanced Quests**:
+  - Debate & Cultural Philosophy, Social Events, Town Hall Diplomacy.
+
+---
+
+## 🔗 COSY Ecosystem Integration
+
+COSY World works standalone while offering integration with companion COSY repositories:
+
+- 📘 **COSYmanuals**: Structured curriculum & lesson plans for classroom and self-study paths.
+- 🧰 **COSYtools**: [https://cosylanguages.github.io/COSYtools/](https://cosylanguages.github.io/COSYtools/) — Interactive grammar tables, verb conjugation matrices, and gender practice.
+- 🎮 **COSYgames**: [https://cosylanguages.github.io/COSYgames/](https://cosylanguages.github.io/COSYgames/) — Quick vocabulary mini-games and quiz challenges.
+- 🌐 **COSYlanguages**: [https://cosylanguages.github.io/COSYlanguages/](https://cosylanguages.github.io/COSYlanguages/) — Main ecosystem portal.
+
+---
+
+## 🏗️ Technical Architecture & Local Development
+
+- **Tech Stack**: Vanilla ES6 Modules, HTML5 SVG graphics, CSS3, Web Speech API (TTS), LocalStorage persistence, Service Worker PWA.
+- **Zero Build Tools**: Runs directly in modern web browsers without Node compilation.
+- **Local Server**:
+  ```bash
+  python3 -m http.server 8080
+  # or
+  npx http-server -p 8080 .
+  ```
+- Open `http://localhost:8080` in your web browser.
