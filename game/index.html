@@ -3,46 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COSY World Canvas Game View</title>
+  <title>COSY World 🌍 - Main Interactive Game View</title>
+  <meta name="description" content="Explore COSY Town isometric districts, converse with NPCs, complete quests, and master 14 target languages.">
+  <link rel="icon" href="/shared/assets/icon-world.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="/css/cosy-tokens.css">
+  <link rel="stylesheet" href="/css/cosy-icons.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/ui.css">
   <link rel="stylesheet" href="/shared/styles/style.css">
   <link rel="stylesheet" href="/css/cosy-world.css">
 </head>
-<body>
+<body class="cw-app-body">
+
+  <!-- Top Ecosystem Navigation -->
   <header class="cosy-header">
     <a href="/index.html" class="brand-logo">
       <img src="/shared/assets/icon-world.svg" alt="COSY World Logo">
       <span>COSY World</span>
     </a>
     <nav class="main-nav">
+      <a href="https://cosylanguages.github.io/COSYlanguages/">Home ↗</a>
+      <a href="https://cosylanguages.github.io/COSYgames/">Games ↗</a>
       <a href="/game/town-map/index.html">Town Map</a>
       <a href="/progress/index.html">Progress</a>
+      <a href="https://cosylanguages.github.io/COSYtools/">Tools ↗</a>
     </nav>
   </header>
 
+  <!-- Game HUD Bar -->
   <div class="hud-bar">
     <div class="hud-player">
-      <img id="hud-avatar" src="/shared/assets/james-york.svg" class="hud-avatar" alt="Character">
+      <img id="cw-hud-avatar" src="/shared/assets/james-york.svg" class="hud-avatar" alt="Character Avatar">
       <div>
-        <div id="hud-name" style="font-weight: bold; color: var(--color-text-bright);">Player</div>
-        <div style="font-size: 0.85rem; color: var(--color-text-muted);">Level <span id="hud-level">1</span></div>
+        <div id="cw-hud-name" style="font-weight: bold; color: var(--color-text-bright, #f0f6fc);">James York</div>
+        <div style="font-size: 0.85rem; color: var(--color-text-muted, #8b949e);">Level <span id="cw-hud-level">1</span> Explorer</div>
       </div>
     </div>
-    <div>Location: <strong id="hud-location">Town Square</strong></div>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <label for="cw-lang-sel" style="font-size: 0.85rem; color: var(--color-text-muted);">Language:</label>
+      <select id="cw-lang-sel" class="cosy-btn" style="background: var(--color-surface, #161b22); color: var(--color-text-bright, #ffffff); padding: 0.4rem 0.8rem;" onchange="if(window.COSY_WORLD) window.COSY_WORLD.changeLanguage(this.value)">
+      </select>
+    </div>
+
+    <div>
+      <span>Location: </span><strong id="cw-hud-location">Town Square</strong>
+    </div>
   </div>
 
-  <main class="game-viewport">
-    <svg width="100%" height="100%" viewBox="0 0 800 600" style="background: #111827;">
-      <rect x="100" y="100" width="600" height="400" fill="#1f2937" rx="12" />
-      <text x="400" y="300" fill="#9ca3af" text-anchor="middle" font-size="20">Interactive Isometric Canvas View</text>
-      <circle cx="400" cy="350" r="16" fill="#3b82f6" />
-      <text x="400" y="380" fill="#ffffff" text-anchor="middle" font-size="14">You are here</text>
-    </svg>
+  <!-- Main Game Viewport with SVG Target -->
+  <main class="game-viewport" id="cw-viewport-container">
+    <div id="cw-viewport" style="width: 100%; height: 100%; position: relative;">
+      <svg id="cw-world-svg" width="100%" height="100%" viewBox="0 0 800 600" style="background: #0d1117;"></svg>
+    </div>
 
-    <div class="dialogue-overlay">
-      <div class="speaker-name">Guide NPC</div>
-      <p>Welcome to COSY World! Explore districts, speak to locals, and complete quests to master new languages.</p>
-      <a href="/game/town-map/index.html" class="btn-primary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Open Town Map</a>
+    <!-- Active Quest HUD Overlay -->
+    <div style="position: absolute; top: 20px; left: 20px; background: rgba(22, 27, 34, 0.9); border: 1px solid var(--color-border, #30363d); padding: 1rem; border-radius: 8px; max-width: 300px; backdrop-filter: blur(4px);">
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-primary, #58a6ff); font-weight: bold;">Active Quest</div>
+      <div id="cw-quest-title" style="font-weight: bold; font-size: 1rem; margin-top: 0.25rem;">Meet the Neighbors</div>
+      <div id="cw-quest-objective" style="font-size: 0.85rem; color: var(--color-text-muted, #8b949e); margin-top: 0.25rem;">Explore the Residential District and greet local residents.</div>
+    </div>
+
+    <!-- Interactive Dialogue Box Overlay -->
+    <div class="dialogue-overlay" id="cw-dialogue-box" style="display: none;">
+      <div class="dialogue-header">
+        <span class="speaker-name" id="cw-speaker-name">NPC Speaker</span>
+      </div>
+      <p id="cw-dialogue-text">Welcome to COSY Town!</p>
+      <div id="cw-dialogue-options" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;"></div>
     </div>
   </main>
+
+  <!-- HUD Tab Body Container -->
+  <div id="cw-hud-tab-body" style="padding: 1rem; max-width: 1200px; margin: 0 auto;"></div>
+
+  <!-- Modal Container -->
+  <div id="cw-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center;">
+    <div style="background: var(--color-surface, #161b22); border: 1px solid var(--color-border, #30363d); border-radius: 12px; padding: 2rem; max-width: 800px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative;">
+      <button onclick="if(window.COSY_WORLD) window.COSY_WORLD.closeModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">✕</button>
+      <div id="cw-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="cw-toast" style="position: fixed; bottom: 20px; right: 20px; background: var(--color-primary, #58a6ff); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 200;"></div>
+
+  <!-- Load Engine Module -->
+  <script type="module" src="/js/main.js"></script>
+
+  <script type="module">
+    import { gameEngine } from '/shared/engine/game-engine.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (gameEngine.state.characterId) {
+        const nameEl = document.getElementById('cw-hud-name');
+        const avatarEl = document.getElementById('cw-hud-avatar');
+        if (nameEl) nameEl.textContent = gameEngine.state.characterId.replace('-', ' ').toUpperCase();
+        if (avatarEl) avatarEl.src = `/shared/assets/${gameEngine.state.characterId}.svg`;
+      }
+    });
+  </script>
 </body>
 </html>
