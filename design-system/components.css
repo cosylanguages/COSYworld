@@ -1,0 +1,66 @@
+/* ==========================================================
+   COSYlanguages Design System - Components
+   ========================================================== */
+
+/* Buttons */
+.cosy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cosy-spacing-2, 0.5rem);
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.cosy-btn-primary {
+  background-color: var(--cosy-color-primary, #1d63ed);
+  color: white;
+}
+
+.cosy-btn-primary:hover {
+  background-color: var(--cosy-color-primary-dark, #0f40a8);
+}
+
+.cosy-btn-secondary {
+  background-color: transparent;
+  border-color: var(--cosy-color-primary, #1d63ed);
+  color: var(--cosy-color-primary, #1d63ed);
+}
+
+.cosy-btn-secondary:hover {
+  background-color: rgba(29, 99, 237, 0.1);
+}
+
+/* Cards */
+.cosy-card {
+  background: var(--cosy-color-bg-secondary, #f5f5f5);
+  border: 1px solid var(--cosy-color-border-light, #e2e8f0);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cosy-card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Badges */
+.cosy-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cosy-badge-english { background: rgba(37, 99, 235, 0.15); color: #2563eb; }
+.cosy-badge-french { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
+.cosy-badge-italian { background: rgba(249, 115, 22, 0.15); color: #f97316; }

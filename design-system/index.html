@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSYlanguages Design System Showcase</title>
+  <link rel="stylesheet" href="/design-system/colors.css">
+  <link rel="stylesheet" href="/design-system/typography.css">
+  <link rel="stylesheet" href="/design-system/spacing.css">
+  <link rel="stylesheet" href="/design-system/components.css">
+  <link rel="stylesheet" href="/design-system/animations.css">
+</head>
+<body style="padding: 2rem; background-color: var(--cosy-color-bg-primary); color: var(--cosy-color-text-primary);">
+  <div class="cosy-container">
+    <header style="border-bottom: 2px solid var(--cosy-color-border-light); padding-bottom: 1rem; margin-bottom: 2rem;">
+      <h1 style="font-size: var(--cosy-font-size-5xl); margin: 0;">COSYlanguages Design System</h1>
+      <p style="color: var(--cosy-color-text-secondary);">Unified Design System across COSYlanguages Repositories</p>
+    </header>
+
+    <section style="margin-bottom: 3rem;">
+      <h2>Color Palette</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <div style="background: var(--cosy-color-primary); color: white; padding: 1.5rem; border-radius: 8px; width: 150px;">Primary</div>
+        <div style="background: var(--cosy-color-secondary); color: white; padding: 1.5rem; border-radius: 8px; width: 150px;">Secondary</div>
+        <div style="background: var(--cosy-color-success); color: white; padding: 1.5rem; border-radius: 8px; width: 150px;">Success</div>
+        <div style="background: var(--cosy-color-warning); color: white; padding: 1.5rem; border-radius: 8px; width: 150px;">Warning</div>
+        <div style="background: var(--cosy-color-error); color: white; padding: 1.5rem; border-radius: 8px; width: 150px;">Error</div>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 3rem;">
+      <h2>Language Badges</h2>
+      <div style="display: flex; gap: 0.5rem;">
+        <span class="cosy-badge cosy-badge-english">English</span>
+        <span class="cosy-badge cosy-badge-french">French</span>
+        <span class="cosy-badge cosy-badge-italian">Italian</span>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 3rem;">
+      <h2>Components</h2>
+      <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+        <button class="cosy-btn cosy-btn-primary">Primary Button</button>
+        <button class="cosy-btn cosy-btn-secondary">Secondary Button</button>
+      </div>
+
+      <div class="cosy-card cosy-card-interactive" style="max-width: 400px;">
+        <h3>Interactive Card</h3>
+        <p style="color: var(--cosy-color-text-secondary);">Cards support hover elevation and smooth transitions.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
