@@ -1,0 +1,48 @@
+/* ==========================================================
+   COSYlanguages Design System - Animations & Transitions
+   ========================================================== */
+
+:root {
+  /* Timing Functions */
+  --cosy-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --cosy-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --cosy-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Durations */
+  --cosy-duration-fast: 150ms;
+  --cosy-duration-normal: 300ms;
+  --cosy-duration-slow: 500ms;
+}
+
+@keyframes cosyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cosySlideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes cosyBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes cosyShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.cosy-fade-in { animation: cosyFadeIn var(--cosy-duration-normal) var(--cosy-ease-out); }
+.cosy-slide-up { animation: cosySlideUp var(--cosy-duration-normal) var(--cosy-ease-out); }
+.cosy-bounce { animation: cosyBounce 0.6s var(--cosy-ease-in-out); }
+.cosy-shake { animation: cosyShake 0.4s var(--cosy-ease-in-out); }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

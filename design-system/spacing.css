@@ -1,0 +1,39 @@
+/* ==========================================================
+   COSYlanguages Design System - Spacing & Layout
+   ========================================================== */
+
+:root {
+  /* Spacing Scale (4px Base) */
+  --cosy-spacing-1: 0.25rem;  /* 4px */
+  --cosy-spacing-2: 0.5rem;   /* 8px */
+  --cosy-spacing-3: 0.75rem;  /* 12px */
+  --cosy-spacing-4: 1rem;     /* 16px */
+  --cosy-spacing-5: 1.25rem;  /* 20px */
+  --cosy-spacing-6: 1.5rem;   /* 24px */
+  --cosy-spacing-8: 2rem;     /* 32px */
+  --cosy-spacing-10: 2.5rem;  /* 40px */
+  --cosy-spacing-12: 3rem;    /* 48px */
+  --cosy-spacing-16: 4rem;    /* 64px */
+  --cosy-spacing-20: 5rem;    /* 80px */
+  --cosy-spacing-24: 6rem;    /* 96px */
+
+  /* Layout Guidelines */
+  --cosy-max-width: 1200px;
+  --cosy-container-padding-mobile: var(--cosy-spacing-4);
+  --cosy-container-padding-desktop: var(--cosy-spacing-8);
+}
+
+.cosy-container {
+  max-width: var(--cosy-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--cosy-container-padding-mobile);
+  padding-right: var(--cosy-container-padding-mobile);
+}
+
+@media (min-width: 1024px) {
+  .cosy-container {
+    padding-left: var(--cosy-container-padding-desktop);
+    padding-right: var(--cosy-container-padding-desktop);
+  }
+}

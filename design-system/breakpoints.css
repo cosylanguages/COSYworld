@@ -1,0 +1,16 @@
+/* ==========================================================
+   COSYlanguages Design System - Breakpoints
+   ========================================================== */
+
+/*
+   Mobile:        0 - 639px
+   Tablet:        640px - 1023px
+   Desktop:       1024px - 1439px
+   Large Desktop: 1440px+
+*/
+
+:root {
+  --cosy-breakpoint-mobile: 640px;
+  --cosy-breakpoint-tablet: 1024px;
+  --cosy-breakpoint-desktop: 1440px;
+}

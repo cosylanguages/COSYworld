@@ -1,0 +1,46 @@
+/* ==========================================================
+   COSYlanguages Design System - Typography
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Font Families */
+  --cosy-font-family-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --cosy-font-family-heading: 'Georgia', serif;
+  --cosy-font-family-mono: 'Fira Code', 'Courier New', monospace;
+
+  /* Font Sizes (Fluid Clamp / Rem Units) */
+  --cosy-font-size-xs: 0.75rem;
+  --cosy-font-size-sm: 0.875rem;
+  --cosy-font-size-base: 1rem;
+  --cosy-font-size-lg: 1.125rem;
+  --cosy-font-size-xl: 1.25rem;
+  --cosy-font-size-2xl: 1.5rem;
+  --cosy-font-size-3xl: 1.875rem;
+  --cosy-font-size-4xl: 2.25rem;
+  --cosy-font-size-5xl: clamp(2.25rem, 5vw, 3rem);
+
+  /* Font Weights */
+  --cosy-font-weight-regular: 400;
+  --cosy-font-weight-medium: 500;
+  --cosy-font-weight-semibold: 600;
+  --cosy-font-weight-bold: 700;
+
+  /* Line Heights */
+  --cosy-line-height-tight: 1.25;
+  --cosy-line-height-normal: 1.5;
+  --cosy-line-height-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --cosy-letter-spacing-tight: -0.025em;
+  --cosy-letter-spacing-normal: 0em;
+  --cosy-letter-spacing-wide: 0.025em;
+}
+
+body {
+  font-family: var(--cosy-font-family-primary);
+  font-size: var(--cosy-font-size-base);
+  line-height: var(--cosy-line-height-normal);
+  color: var(--cosy-color-text-primary);
+}
