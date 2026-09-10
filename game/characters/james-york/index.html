@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James York — Character Profile | COSY World 🌍</title>
+  <link rel="icon" href="/shared/assets/icon-world.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/styles/style.css">
+</head>
+<body>
+
+  <header class="cosy-nav">
+    <div class="cosy-brand">
+      <a href="/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+        <span class="cosy-brand-icon">🌍</span> COSY World
+      </a>
+    </div>
+    <nav class="cosy-links">
+      <a href="/index.html">Home</a>
+      <a href="/game/town-map/index.html">Town Map</a>
+      <a href="/progress/index.html">Progress</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="card" style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+      <img src="/shared/assets/james-york.svg" alt="James York" style="width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--primary); background: #334155;">
+      <div style="flex: 1; min-width: 280px;">
+        <span style="background: var(--primary); font-size: 0.8rem; padding: 2px 10px; border-radius: 12px; font-weight: 700;">Town Explorer & Historian</span>
+        <h1 style="font-family: var(--font-serif); font-size: 2.5rem; margin: 0.25rem 0;">James York</h1>
+        <p style="color: var(--text-muted); line-height: 1.6;">
+          Passionate about culture, city histories, and social dialogues. James loves guiding newcomers through COSY Town's residential streets and historic plazas, helping them practice everyday conversation.
+        </p>
+        <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" id="btn-select-james" onclick="selectCharacter('james-york')">Select James York</button>
+          <a href="/game/quests/beginner/meet-the-neighbors/index.html" class="btn btn-accent">Start Quest with James ▶</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Voice Lines & Dialogues -->
+    <div class="card">
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1rem;">🔊 Interactive Voice Lines</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Click any voice line to listen with speech synthesis in your target language.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <div class="dialogue-box" onclick="speakLine('Bonjour, bienvenue à COSY Town!')">
+          <span style="font-size: 1.5rem;">🔊</span>
+          <div>
+            <div class="dialogue-speaker">James York — Greeting</div>
+            <div style="font-size: 1.1rem; color: #fff;">"Bonjour, bienvenue à COSY Town!"</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Hello, welcome to COSY Town!</div>
+          </div>
+        </div>
+
+        <div class="dialogue-box" onclick="speakLine('Avez-vous besoin d\'aide pour trouver votre chemin?')">
+          <span style="font-size: 1.5rem;">🔊</span>
+          <div>
+            <div class="dialogue-speaker">James York — Assistance</div>
+            <div style="font-size: 1.1rem; color: #fff;">"Avez-vous besoin d'aide pour trouver votre chemin?"</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Do you need help finding your way?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quest Connections -->
+    <div class="card">
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1rem;">📜 Quest Connections</h2>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem;">
+        <li style="background: rgba(255,255,255,0.05); padding: 0.8rem 1.2rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong>Meet the Neighbors</strong>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Residential District • Beginner</div>
+          </div>
+          <a href="/game/quests/beginner/meet-the-neighbors/index.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.3rem 0.8rem;">View Quest</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Unlockable Content -->
+    <div class="card">
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1rem;">🔓 Unlockable Content & Outfits</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; border: 1px dashed var(--secondary); text-align: center;">
+          <div style="font-size: 2rem;">🧥</div>
+          <div style="font-weight: 700; margin: 0.25rem 0;">Classic Coat</div>
+          <div style="font-size: 0.8rem; color: var(--accent);">Unlocked at Level 1</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; border: 1px dashed var(--border-color); text-align: center; opacity: 0.6;">
+          <div style="font-size: 2rem;">🎓</div>
+          <div style="font-weight: 700; margin: 0.25rem 0;">Scholar Badge</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">Requires Level 5</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { gameEngine } from '/shared/engine/game-engine.js';
+
+    window.speakLine = function(text) {
+      gameEngine.speak(text);
+    };
+
+    window.selectCharacter = function(charId) {
+      gameEngine.selectCharacter(charId);
+      alert('Selected James York as your active character!');
+      window.location.href = '/game/town-map/index.html';
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      gameEngine.init();
+      if (gameEngine.state.characterId === 'james-york') {
+        const btn = document.getElementById('btn-select-james');
+        btn.textContent = 'Active Character ✓';
+        btn.classList.replace('btn-primary', 'btn-secondary');
+      }
+    });
+  </script>
+</body>
+</html>

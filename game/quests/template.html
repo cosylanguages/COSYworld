@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quest Template — COSY World 🌍</title>
+  <link rel="icon" href="/shared/assets/icon-world.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/styles/style.css">
+</head>
+<body>
+
+  <header class="cosy-nav">
+    <div class="cosy-brand">
+      <a href="/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+        <span class="cosy-brand-icon">🌍</span> COSY World
+      </a>
+    </div>
+    <nav class="cosy-links">
+      <a href="/index.html">Home</a>
+      <a href="/game/town-map/index.html">Town Map</a>
+      <a href="/progress/index.html">Progress</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Quest Header -->
+    <div class="card" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span style="background: var(--primary); padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8rem;">Quest Level: Beginner</span>
+          <h1 style="font-family: var(--font-serif); font-size: 2.2rem; margin: 0.5rem 0;" id="quest-title">Sample Quest Title</h1>
+          <p style="color: var(--text-muted);" id="quest-desc">Explore COSY Town, complete objectives, and learn vocabulary through natural dialogues.</p>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 0.85rem; color: var(--text-muted);">Reward</div>
+          <div style="font-size: 1.25rem; font-weight: 700; color: var(--accent);">+100 XP 🏆</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Objectives List -->
+    <div class="card">
+      <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem;">📋 Objectives</h2>
+      <div id="objectives-container" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <label style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.05); padding: 0.8rem 1rem; border-radius: 8px; cursor: pointer;">
+          <input type="checkbox" onchange="toggleObj('step1', this.checked)" style="width: 20px; height: 20px;">
+          <span id="obj-1-text">Objective 1: Practice greeting a town character</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.05); padding: 0.8rem 1rem; border-radius: 8px; cursor: pointer;">
+          <input type="checkbox" onchange="toggleObj('step2', this.checked)" style="width: 20px; height: 20px;">
+          <span id="obj-2-text">Objective 2: Identify 2 vocabulary items</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Interactive Dialogue Scene -->
+    <div class="card">
+      <h2 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem;">💬 Interactive Dialogue</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Click highlighted <span class="vocab-term">terms</span> for definitions & pronunciation!</p>
+
+      <div class="dialogue-box">
+        <img src="/shared/assets/james-york.svg" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--secondary);">
+        <div style="flex: 1;">
+          <div class="dialogue-speaker">James York</div>
+          <div style="font-size: 1.1rem; color: #fff; margin: 0.25rem 0;">
+            "<span class="vocab-term" onclick="showDef('Bonjour', 'Hello / Good day')">Bonjour</span>! Welcome to COSY Town. Would you like some <span class="vocab-term" onclick="showDef('Café', 'Coffee')">café</span>?"
+          </div>
+          <button class="btn btn-secondary" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.5rem;" onclick="speakLine('Bonjour! Welcome to COSY Town. Would you like some café?')">🔊 Listen Audio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grammar Notes & Ecosystem Integration -->
+    <div class="card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--secondary);">📘 Grammar Notes</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Learn basic greeting structures and polite requests. For structured conjugation matrices and grammar practice, check COSYtools.
+        </p>
+        <a href="https://cosylanguages.github.io/COSYtools/" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 1rem;">Open COSYtools Reference ↗</a>
+      </div>
+
+      <div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--accent);">🎮 Practice Mini-Games</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Reinforce vocabulary learned in this quest through interactive quick quizzes on COSYgames.
+        </p>
+        <a href="https://cosylanguages.github.io/COSYgames/" target="_blank" class="btn btn-accent" style="font-size: 0.85rem; padding: 0.4rem 1rem;">Play Vocabulary Game ↗</a>
+      </div>
+    </div>
+
+    <!-- Quest Completion & Navigation -->
+    <div class="card" style="text-align: center;">
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">Quest Status: <span id="quest-status-text" style="color: var(--accent);">In Progress</span></h3>
+      <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="completeCurrentQuest()">Complete Quest & Claim Rewards 🏆</button>
+        <a href="/game/town-map/index.html" class="btn btn-secondary">Return to Town Map 🗺️</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Definition Modal -->
+  <div id="def-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 2000; justify-content: center; align-items: center;">
+    <div style="background: var(--bg-card); border: 2px solid var(--secondary); border-radius: 12px; padding: 1.5rem; max-width: 400px; width: 90%; text-align: center;">
+      <h3 id="def-word" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem;">Word</h3>
+      <p id="def-trans" style="font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">Translation</p>
+      <div style="display: flex; gap: 0.5rem; justify-content: center;">
+        <button class="btn btn-primary" onclick="speakWord()">🔊 Pronounce</button>
+        <button class="btn btn-secondary" onclick="closeDef()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { gameEngine } from '/shared/engine/game-engine.js';
+
+    let currentWord = '';
+
+    window.showDef = function(word, translation) {
+      currentWord = word;
+      document.getElementById('def-word').textContent = word;
+      document.getElementById('def-trans').textContent = translation;
+      document.getElementById('def-modal').style.display = 'flex';
+      gameEngine.learnWord(word, translation);
+    };
+
+    window.closeDef = function() {
+      document.getElementById('def-modal').style.display = 'none';
+    };
+
+    window.speakWord = function() {
+      gameEngine.speak(currentWord);
+    };
+
+    window.speakLine = function(text) {
+      gameEngine.speak(text);
+    };
+
+    window.toggleObj = function(stepId, checked) {
+      if (checked) {
+        gameEngine.completeObjective('template_quest', stepId);
+      }
+    };
+
+    window.completeCurrentQuest = function() {
+      gameEngine.completeQuest('template_quest', 100);
+      document.getElementById('quest-status-text').textContent = 'Completed ✓';
+      document.getElementById('quest-status-text').style.color = '#10b981';
+      alert('Congratulations! Quest completed (+100 XP)');
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      gameEngine.init();
+    });
+  </script>
+</body>
+</html>
