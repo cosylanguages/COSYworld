@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grocery Shopping - COSY World</title>
+  <title>Grocery Shopping - COSY World Quest</title>
   <link rel="stylesheet" href="/shared/styles/style.css">
   <link rel="stylesheet" href="/css/cosy-world.css">
 </head>
@@ -20,21 +20,67 @@
   </header>
 
   <main style="max-width: 800px; margin: 2rem auto; padding: 1rem;">
-    <div style="background: var(--color-surface); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
-      <span class="trait-tag">Beginner Quest 2</span>
-      <h1 style="color: var(--color-text-bright); font-family: var(--font-family-heading);">Grocery Shopping</h1>
-      <p>Visit the Commercial District market, interact with Ella Bronx at the bakery, and acquire fresh ingredients.</p>
+    <div style="background: var(--color-surface, #161b22); padding: 2rem; border-radius: 12px; border: 1px solid var(--color-border, #30363d);">
+      <span class="trait-tag" style="background: rgba(88,166,255,0.15); color: #58a6ff; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.85rem;">Beginner Quest 2</span>
+      <h1 style="color: var(--color-text-bright, #ffffff); font-family: var(--font-family-heading);">Grocery Shopping</h1>
+      <p style="color: var(--color-text-muted);">Visit the Commercial District market, interact with Ella Bronx at the bakery, and acquire fresh ingredients.</p>
 
-      <hr style="border-color: var(--color-border); margin: 1.5rem 0;">
+      <hr style="border-color: var(--color-border, #30363d); margin: 1.5rem 0;">
 
-      <h3>Objectives</h3>
-      <ul>
-        <li><input type="checkbox" id="obj1"> <label for="obj1">Visit the Market Stall in the Commercial District</label></li>
-        <li><input type="checkbox" id="obj2"> <label for="obj2">Order "Pain" (Bread) or "Pomme" (Apple) from Ella Bronx</label></li>
+      <h3 style="color: var(--color-text-bright);">Quest Objectives</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 0.75rem;">
+          <input type="checkbox" id="obj1" onchange="updateObjective('obj1')">
+          <label for="obj1" style="margin-left: 0.5rem; color: var(--color-text);">Visit the Market Stall in the Commercial District</label>
+        </li>
+        <li style="margin-bottom: 0.75rem;">
+          <input type="checkbox" id="obj2" onchange="updateObjective('obj2')">
+          <label for="obj2" style="margin-left: 0.5rem; color: var(--color-text);">Order "Pain" (Bread) or "Pomme" (Apple) from Ella Bronx</label>
+        </li>
       </ul>
 
-      <a href="/game/town-map/index.html" class="btn-primary" style="margin-top: 1rem;">Return to Map</a>
+      <!-- Interactive Dialogue Scene -->
+      <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border, #30363d); margin-top: 1.5rem;">
+        <div style="font-weight: bold; color: var(--color-primary, #58a6ff); margin-bottom: 0.5rem;">🛒 Bakery Dialogue</div>
+        <p style="font-size: 1.1rem; color: var(--color-text-bright);">"Je voudrais une baguette s'il vous plaît!"</p>
+        <button class="btn-primary" onclick="speakText('Je voudrais une baguette s\'il vous plaît!')" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">🔊 Listen Pronunciation</button>
+      </div>
+
+      <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+        <button id="btn-complete" class="btn-primary" onclick="finishQuest()" disabled>Complete Quest (+100 XP)</button>
+        <a href="/game/town-map/index.html" class="btn-secondary" style="text-decoration: none; padding: 0.8rem 1.5rem;">Return to Map</a>
+      </div>
     </div>
   </main>
+
+  <script type="module">
+    import { gameEngine } from '/shared/engine/game-engine.js';
+
+    let completed = { obj1: false, obj2: false };
+
+    window.updateObjective = function(id) {
+      completed[id] = document.getElementById(id).checked;
+      const btn = document.getElementById('btn-complete');
+      if (completed.obj1 && completed.obj2) {
+        btn.removeAttribute('disabled');
+      } else {
+        btn.setAttribute('disabled', 'true');
+      }
+    };
+
+    window.speakText = function(text) {
+      if ('speechSynthesis' in window) {
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'fr-FR';
+        window.speechSynthesis.speak(u);
+      }
+    };
+
+    window.finishQuest = function() {
+      gameEngine.completeQuest('grocery-shopping');
+      alert('Quest Completed! +100 XP Earned! ⭐');
+      window.location.href = '/progress/index.html';
+    };
+  </script>
 </body>
 </html>

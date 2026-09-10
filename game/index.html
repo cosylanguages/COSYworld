@@ -18,7 +18,7 @@
 </head>
 <body class="cw-app-body">
 
-  <!-- Top Navigation & Ecosystem Links -->
+  <!-- Top Ecosystem Navigation -->
   <header class="cosy-header">
     <a href="/index.html" class="brand-logo">
       <img src="/shared/assets/icon-world.svg" alt="COSY World Logo">
@@ -46,7 +46,6 @@
     <div style="display: flex; align-items: center; gap: 1rem;">
       <label for="cw-lang-sel" style="font-size: 0.85rem; color: var(--color-text-muted);">Language:</label>
       <select id="cw-lang-sel" class="cosy-btn" style="background: var(--color-surface, #161b22); color: var(--color-text-bright, #ffffff); padding: 0.4rem 0.8rem;" onchange="if(window.COSY_WORLD) window.COSY_WORLD.changeLanguage(this.value)">
-        <!-- Language options populated dynamically -->
       </select>
     </div>
 
@@ -55,11 +54,10 @@
     </div>
   </div>
 
-  <!-- Game Canvas / World Viewport -->
+  <!-- Main Game Viewport with SVG Target -->
   <main class="game-viewport" id="cw-viewport-container">
     <div id="cw-viewport" style="width: 100%; height: 100%; position: relative;">
-      <!-- Canvas rendered dynamically by SceneManager and SceneRenderer -->
-      <canvas id="cw-game-canvas" width="800" height="600" style="width: 100%; height: 100%; object-fit: contain; background: #0d1117;"></canvas>
+      <svg id="cw-world-svg" width="100%" height="100%" viewBox="0 0 800 600" style="background: #0d1117;"></svg>
     </div>
 
     <!-- Active Quest HUD Overlay -->
@@ -74,12 +72,15 @@
       <div class="dialogue-header">
         <span class="speaker-name" id="cw-speaker-name">NPC Speaker</span>
       </div>
-      <p id="cw-dialogue-text">Welcome to COSY Town! Click highlighted words to inspect definitions and pronunciation.</p>
+      <p id="cw-dialogue-text">Welcome to COSY Town!</p>
       <div id="cw-dialogue-options" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;"></div>
     </div>
   </main>
 
-  <!-- Modal Container for Maps & Minigames -->
+  <!-- HUD Tab Body Container -->
+  <div id="cw-hud-tab-body" style="padding: 1rem; max-width: 1200px; margin: 0 auto;"></div>
+
+  <!-- Modal Container -->
   <div id="cw-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 100; align-items: center; justify-content: center;">
     <div style="background: var(--color-surface, #161b22); border: 1px solid var(--color-border, #30363d); border-radius: 12px; padding: 2rem; max-width: 800px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative;">
       <button onclick="if(window.COSY_WORLD) window.COSY_WORLD.closeModal()" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">✕</button>
@@ -90,14 +91,13 @@
   <!-- Toast Notification Container -->
   <div id="cw-toast" style="position: fixed; bottom: 20px; right: 20px; background: var(--color-primary, #58a6ff); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 200;"></div>
 
-  <!-- Load Core Engine Entry Module -->
+  <!-- Load Engine Module -->
   <script type="module" src="/js/main.js"></script>
 
   <script type="module">
     import { gameEngine } from '/shared/engine/game-engine.js';
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Sync Character UI State
       if (gameEngine.state.characterId) {
         const nameEl = document.getElementById('cw-hud-name');
         const avatarEl = document.getElementById('cw-hud-avatar');

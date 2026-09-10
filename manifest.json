@@ -1,0 +1,16 @@
+{
+  "name": "COSY World",
+  "short_name": "COSY World",
+  "description": "Open-World Language Learning RPG",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#161b22",
+  "icons": [
+    {
+      "src": "/shared/assets/icon-world.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
