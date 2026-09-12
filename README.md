@@ -72,14 +72,13 @@ COSY World natively supports 14 target languages with flag icons, speech synthes
 
 ---
 
-## 🔗 COSY Ecosystem Integration
+## 🌐 Part of the COSYlanguages Ecosystem
 
-COSY World works standalone while offering integration with companion COSY repositories:
+COSY World is part of the [COSYlanguages ecosystem](https://cosylanguages.github.io/COSYlanguages/), designed to operate standalone while offering rich integration with companion COSY resources:
 
-- 📘 **COSYmanuals**: Structured curriculum & lesson plans for classroom and self-study paths.
+- 🌐 **COSYlanguages**: [https://cosylanguages.github.io/COSYlanguages/](https://cosylanguages.github.io/COSYlanguages/) — Main ecosystem portal and open learning hub.
 - 🧰 **COSYtools**: [https://cosylanguages.github.io/COSYtools/](https://cosylanguages.github.io/COSYtools/) — Interactive grammar tables, verb conjugation matrices, and gender practice.
 - 🎮 **COSYgames**: [https://cosylanguages.github.io/COSYgames/](https://cosylanguages.github.io/COSYgames/) — Quick vocabulary mini-games and quiz challenges.
-- 🌐 **COSYlanguages**: [https://cosylanguages.github.io/COSYlanguages/](https://cosylanguages.github.io/COSYlanguages/) — Main ecosystem portal.
 
 ---
 
