@@ -106,7 +106,11 @@ export class DialogueManager {
         }
 
         if (!dlg) {
-            const dialogues = (npc.dialogues && (npc.dialogues[lang] || npc.dialogues.en)) || [];
+            // Dialogue trees may be target-language specific; never substitute English
+            // NPC dialogue when the requested language has no matching entry.
+            const dialogues = (npc.dialogues && Array.isArray(npc.dialogues[lang]))
+                ? npc.dialogues[lang]
+                : [];
             if (typeof nodeTarget === 'string') {
                 dlg = dialogues.find(n => n.id === nodeTarget || String(n.id) === nodeTarget);
             }
@@ -114,12 +118,39 @@ export class DialogueManager {
                 const idx = parseInt(nodeTarget, 10);
                 dlg = dialogues[idx];
             }
-            if (!dlg) {
-                dlg = dialogues[0] || { text: '👋 Hello!', options: [], emotion: 'happy' };
+            if (!dlg && dialogues.length > 0) {
+                dlg = dialogues[0];
             }
         }
 
-        const dlgText = dlg.npcLine || dlg.text || '👋 Hello!';
+        if (!dlg || !(dlg.npcLine || dlg.text)) {
+            const unavailableMessages = {
+                en: 'Dialogue is not available in this language yet.',
+                fr: 'Le dialogue n’est pas encore disponible dans cette langue.',
+                it: 'Il dialogo non è ancora disponibile in questa lingua.',
+                es: 'El diálogo todavía no está disponible en este idioma.',
+                de: 'Der Dialog ist in dieser Sprache noch nicht verfügbar.',
+                ru: 'Диалог пока недоступен на этом языке.',
+                el: 'Ο διάλογος δεν είναι ακόμη διαθέσιμος σε αυτή τη γλώσσα.',
+                pt: 'O diálogo ainda não está disponível neste idioma.',
+                hy: 'Երկխոսությունն այս լեզվով դեռ հասանելի չէ։',
+                ka: 'დიალოგი ამ ენაზე ჯერ ხელმისაწვდომი არ არის.',
+                br: 'Ar c’henel a zo dihegerz c’hoazh er yezh-mañ.',
+                tt: 'Бу телдә диалог әлегә юк.',
+                ba: 'Был телдә диалог әлегә юҡ.',
+                cv: 'Куҫҫӑн калаҫу кунта халӑха ҫук.'
+            };
+            this.currentDialogueText = '';
+            const body = typeof document !== 'undefined' ? document.getElementById('cw-modal-body') : null;
+            if (body) {
+                const message = unavailableMessages[lang] || '⚠️';
+                body.textContent = message;
+            }
+            if (openModalFn) openModalFn();
+            return;
+        }
+
+        const dlgText = dlg.npcLine || dlg.text;
         const options = dlg.playerOptions || dlg.options || [];
 
         // Determine emotion portrait (happy, excited, curious, busy, neutral)
@@ -135,8 +166,9 @@ export class DialogueManager {
 
         // Determine AI reaction greeting if at root node
         const isRoot = (nodeTarget === 0 || nodeTarget === 'node_0' || nodeTarget === (nodes[0]?.id));
-        const aiReaction = (isRoot && npcAIEngine) ? npcAIEngine.getReactionToPlayer(npcId, state) : null;
-        const dialogueText = (isRoot && aiReaction) ? `${aiReaction.greeting} ${dlgText}` : dlgText;
+        // AI greetings are currently generated in English; omit them from target-language
+        // dialogue until the generator can return verified localized content.
+        const dialogueText = dlgText;
 
         this.currentDialogueText = dialogueText;
 
