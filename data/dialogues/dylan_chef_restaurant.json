@@ -7,8 +7,14 @@
       "id": "node_0",
       "npcLine": "👨‍🍳 Welcome to my dining room! Would you like to order food or try our daily chef recommendations?",
       "emotion": "happy",
-      "gestures": ["welcome"],
-      "highlights": ["soup_bowl", "pasta_plate", "menu_card"],
+      "gestures": [
+        "welcome"
+      ],
+      "highlights": [
+        "soup_bowl",
+        "pasta_plate",
+        "menu_card"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Polite Food Requests ('Would like', 'Can I have...')",
       "visualAction": "👨‍🍳 ➔ 🍲 ➔ 🍝",
@@ -41,8 +47,12 @@
       "id": "node_1",
       "npcLine": "🍲 I highly recommend our warm vegetable soup (12 coins) made with farm fresh carrots!",
       "emotion": "excited",
-      "gestures": ["recommend"],
-      "highlights": ["soup_bowl"],
+      "gestures": [
+        "recommend"
+      ],
+      "highlights": [
+        "soup_bowl"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Dish Recommendations & Food Qualities",
       "visualAction": "🍲 ➔ 🪙 12",
@@ -59,8 +69,12 @@
       "id": "node_2",
       "npcLine": "🍝 Excellent choice! Handmade pasta with organic basil for 18 coins!",
       "emotion": "happy",
-      "gestures": ["cook"],
-      "highlights": ["pasta_plate"],
+      "gestures": [
+        "cook"
+      ],
+      "highlights": [
+        "pasta_plate"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Polite Request Confirmation",
       "visualAction": "🍝 ➔ 🪙 18",
@@ -75,8 +89,13 @@
       "id": "node_3",
       "npcLine": "🍽️ Wonderful! Take this menu and cutlery to Table 2 on the terrace!",
       "emotion": "happy",
-      "gestures": ["hand_tray"],
-      "highlights": ["menu_card", "cutlery_set"],
+      "gestures": [
+        "hand_tray"
+      ],
+      "highlights": [
+        "menu_card",
+        "cutlery_set"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Waiter / Customer Interaction Roleplay",
       "visualAction": "📋 ➔ 🪑",
@@ -92,8 +111,12 @@
       "id": "node_4",
       "npcLine": "🍲 One hot bowl of vegetable soup coming right up! Bon appétit!",
       "emotion": "happy",
-      "gestures": ["nod"],
-      "highlights": ["soup_bowl"],
+      "gestures": [
+        "nod"
+      ],
+      "highlights": [
+        "soup_bowl"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Serving Confirmation",
       "visualAction": "🍲 ➔ 😋",
@@ -104,5 +127,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
