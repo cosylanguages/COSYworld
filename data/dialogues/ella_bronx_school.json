@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "🏫 Welcome to class! Today we are studying together in the school library! Can you help me find the textbooks?",
       "emotion": "happy",
-      "gestures": ["welcome"],
-      "highlights": ["blackboard", "student_desk"],
+      "gestures": [
+        "welcome"
+      ],
+      "highlights": [
+        "blackboard",
+        "student_desk"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Modal Verbs 'Can' & 'Can't' (Ability & Permission)",
       "visualAction": "🏫 ➔ 📚 ➔ 🙋",
@@ -33,8 +38,12 @@
       "id": "node_1",
       "npcLine": "📖 Excellent! You can borrow books at the library card catalog desk! Remember, you can't make loud noise in the reading room!",
       "emotion": "excited",
-      "gestures": ["smile"],
-      "highlights": ["globe"],
+      "gestures": [
+        "smile"
+      ],
+      "highlights": [
+        "globe"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Expressing Ability & Prohibition (Can vs Can't)",
       "visualAction": "📖 ➔ 🤫",
@@ -51,7 +60,9 @@
       "id": "node_2",
       "npcLine": "🤝 Wonderful! Working together with James and me makes learning much faster!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Cooperative Study & Teamwork",
@@ -68,8 +79,12 @@
       "id": "node_3",
       "npcLine": "💻 Yes, you can! You can practice typing and research lessons on the computer terminal!",
       "emotion": "happy",
-      "gestures": ["nod"],
-      "highlights": ["computer_terminal"],
+      "gestures": [
+        "nod"
+      ],
+      "highlights": [
+        "computer_terminal"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Permission with 'Can'",
       "visualAction": "💻 ➔ 👍",
@@ -80,5 +95,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
