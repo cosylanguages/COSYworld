@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "👋 Hello! Welcome to COSY Town! I am James York. What is your name?",
       "emotion": "happy",
-      "gestures": ["wave", "point_hq"],
-      "highlights": ["welcome_sign"],
+      "gestures": [
+        "wave",
+        "point_hq"
+      ],
+      "highlights": [
+        "welcome_sign"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Greeting & Asking Name ('What is your name?')",
       "visualAction": "👋 Hello",
@@ -37,8 +42,13 @@
       "id": "node_1",
       "npcLine": "😊 Pleased to meet you! I am your guide and friend. Follow me to COSYlanguages Headquarters!",
       "emotion": "excited",
-      "gestures": ["wave", "point_hq"],
-      "highlights": ["welcome_arch"],
+      "gestures": [
+        "wave",
+        "point_hq"
+      ],
+      "highlights": [
+        "welcome_arch"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Introducing Self & Identity ('I am your guide')",
       "visualAction": "🏫 Lead Way",
@@ -60,8 +70,12 @@
       "id": "node_2",
       "npcLine": "🤝 Welcome, friend! I am James, a language teacher. Let's walk to COSYlanguages Headquarters!",
       "emotion": "happy",
-      "gestures": ["wave"],
-      "highlights": ["signpost"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "signpost"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Identity & Profession ('I am a teacher')",
       "visualAction": "👨‍🏫 Teacher Introduction",
@@ -79,5 +93,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }
