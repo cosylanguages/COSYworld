@@ -7,7 +7,9 @@
       "id": "node_0",
       "npcLine": "⚡ Hi! I am studying new vocabulary cards right now. Are you ready for a conversation?",
       "emotion": "confident",
-      "gestures": ["smile"],
+      "gestures": [
+        "smile"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Present Continuous & Expressing Preferences",
@@ -35,7 +37,9 @@
       "id": "node_1",
       "npcLine": "🔥 Good effort! I like challenging myself, but I hate making silly mistakes!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Like / Love / Hate",
@@ -52,7 +56,9 @@
       "id": "node_2",
       "npcLine": "👨‍👩‍👧‍👦 This is my brother and my sister! They are visiting COSY Town this week!",
       "emotion": "excited",
-      "gestures": ["introduce"],
+      "gestures": [
+        "introduce"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Family Introductions (This is my brother / sister)",
@@ -65,5 +71,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }

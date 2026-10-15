@@ -7,11 +7,25 @@
       "id": "node_0",
       "npcLine": "Welcome to the tourist office! Where are you going to travel?",
       "emotion": "happy",
-      "highlights": ["tourist_map", "information_desk"],
+      "highlights": [
+        "tourist_map",
+        "information_desk"
+      ],
       "grammarCheck": "Going to and future destinations",
       "playerOptions": [
-        { "text": "I am going to visit the museum and the lake.", "nextNodeId": "node_1", "vocabId": "tourist_map", "grammarId": "gt_going_to_future", "rewardXP": 20 },
-        { "text": "Can you give me a map, please?", "nextNodeId": "node_2", "vocabId": "tourist_map", "rewardXP": 15 }
+        {
+          "text": "I am going to visit the museum and the lake.",
+          "nextNodeId": "node_1",
+          "vocabId": "tourist_map",
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 20
+        },
+        {
+          "text": "Can you give me a map, please?",
+          "nextNodeId": "node_2",
+          "vocabId": "tourist_map",
+          "rewardXP": 15
+        }
       ]
     },
     {
@@ -19,7 +33,13 @@
       "npcLine": "Excellent choices. You are going to discover the best of COSY Town.",
       "emotion": "excited",
       "playerOptions": [
-        { "text": "I am going to start my journey today.", "nextNodeId": null, "grammarId": "gt_going_to_future", "rewardXP": 20, "rewardQuestId": "q_ch12_first_journey" }
+        {
+          "text": "I am going to start my journey today.",
+          "nextNodeId": null,
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 20,
+          "rewardQuestId": "q_ch12_first_journey"
+        }
       ]
     },
     {
@@ -27,8 +47,15 @@
       "npcLine": "Of course. Here is a map of COSY Town and the surrounding world.",
       "emotion": "happy",
       "playerOptions": [
-        { "text": "Thank you. I am going to plan my route.", "nextNodeId": null, "grammarId": "gt_going_to_future", "rewardXP": 15, "rewardQuestId": "q_ch12_prepare_luggage" }
+        {
+          "text": "Thank you. I am going to plan my route.",
+          "nextNodeId": null,
+          "grammarId": "gt_going_to_future",
+          "rewardXP": 15,
+          "rewardQuestId": "q_ch12_prepare_luggage"
+        }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }

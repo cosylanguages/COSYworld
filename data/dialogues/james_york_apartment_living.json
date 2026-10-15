@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "🛋️ Welcome to your living room! I am James. Let's organize your apartment! There is a red sofa near the window. Is this your sofa?",
       "emotion": "happy",
-      "gestures": ["point_furniture"],
-      "highlights": ["sofa", "coffee_table"],
+      "gestures": [
+        "point_furniture"
+      ],
+      "highlights": [
+        "sofa",
+        "coffee_table"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Existential Placement & Demonstratives ('There is a... Is this your...')",
       "visualAction": "🛋️ Sofa & Furniture Placement",
@@ -36,8 +41,13 @@
       "id": "node_1",
       "npcLine": "🛋️ This is my red sofa and that is your coffee table. There are two lamps on the side tables! Let's organize the bedroom next!",
       "emotion": "excited",
-      "gestures": ["point_furniture"],
-      "highlights": ["lamp", "coffee_table"],
+      "gestures": [
+        "point_furniture"
+      ],
+      "highlights": [
+        "lamp",
+        "coffee_table"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Plural Existential Placement ('There are two lamps')",
       "visualAction": "🛋️ Organizes Living Room",
@@ -59,8 +69,13 @@
       "id": "node_2",
       "npcLine": "📺 Yes, that is my television! There are books on my bookshelf too. Everything is in its place!",
       "emotion": "happy",
-      "gestures": ["point_furniture"],
-      "highlights": ["tv", "bookshelf"],
+      "gestures": [
+        "point_furniture"
+      ],
+      "highlights": [
+        "tv",
+        "bookshelf"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Possessive Adjectives ('my television, my bookshelf')",
       "visualAction": "🧹 Living Room Complete",
@@ -78,5 +93,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }

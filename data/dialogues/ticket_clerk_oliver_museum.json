@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "🎟️ Welcome! I am Oliver. Opening hours are 9:00 to 18:00! Would you like to buy an admission ticket?",
       "emotion": "happy",
-      "gestures": ["welcome"],
-      "highlights": ["museum_ticket", "sculpture_statue"],
+      "gestures": [
+        "welcome"
+      ],
+      "highlights": [
+        "museum_ticket",
+        "sculpture_statue"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Past Simple & Ticket Purchasing",
       "visualAction": "🎟️ ➔ 🪙",
@@ -34,8 +39,12 @@
       "id": "node_1",
       "npcLine": "🎟️ Museum tickets are 15 coins and cinema tickets are 12 coins! Yesterday, many visitors visited our historic exhibits!",
       "emotion": "excited",
-      "gestures": ["show_ticket"],
-      "highlights": ["museum_ticket"],
+      "gestures": [
+        "show_ticket"
+      ],
+      "highlights": [
+        "museum_ticket"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Past Simple & Time Expressions ('Yesterday', 'visited')",
       "visualAction": "🏛️ 🪙 15 ➔ 🎬 🪙 12",
@@ -52,8 +61,12 @@
       "id": "node_2",
       "npcLine": "🏛️ Our town hall opened in 1895, and the train station opened 50 years ago! Yesterday, a voyager arrived on the morning train!",
       "emotion": "happy",
-      "gestures": ["explain"],
-      "highlights": ["sculpture_statue"],
+      "gestures": [
+        "explain"
+      ],
+      "highlights": [
+        "sculpture_statue"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Past Simple Regular & Irregular Verbs ('opened', 'arrived')",
       "visualAction": "🏛️ 1895 ➔ 🚆 50 years ago",
@@ -70,7 +83,9 @@
       "id": "node_3",
       "npcLine": "🎫 Here is your admission ticket! Enjoy exploring COSY Town's historic landmarks!",
       "emotion": "happy",
-      "gestures": ["hand_ticket"],
+      "gestures": [
+        "hand_ticket"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Ticket Handoff Complete",
@@ -82,5 +97,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }

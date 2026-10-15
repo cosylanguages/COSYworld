@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "🚶 Hello! This is the residential hallway. I am James. Your apartment entrance is right ahead!",
       "emotion": "happy",
-      "gestures": ["wave", "point_right"],
-      "highlights": ["door_number_101"],
+      "gestures": [
+        "wave",
+        "point_right"
+      ],
+      "highlights": [
+        "door_number_101"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Demonstratives & Possessives ('This is the hallway... Your apartment')",
       "visualAction": "🚪 Corridor Guide",
@@ -29,8 +34,12 @@
       "id": "node_1",
       "npcLine": "🔑 Great! Use your key on door number 101 to open your apartment!",
       "emotion": "excited",
-      "gestures": ["point_right"],
-      "highlights": ["hallway_carpet"],
+      "gestures": [
+        "point_right"
+      ],
+      "highlights": [
+        "hallway_carpet"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Imperatives ('Use your key')",
       "visualAction": "🔓 Unlock Prompt",
@@ -47,5 +56,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }
