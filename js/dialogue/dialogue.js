@@ -89,6 +89,16 @@ export class DialogueManager {
         const lang = state ? (state.currentLang || 'en') : 'en';
         this.currentLanguage = lang;
 
+        // Legacy scene files have no language metadata and contain English text.
+        // They are valid for English learners only; never show them in another
+        // target language unless the dataset explicitly declares that language.
+        if (dialogueTree && lang !== 'en') {
+            const treeLanguage = dialogueTree.language || dialogueTree.lang || dialogueTree.languageCode;
+            if (!treeLanguage || String(treeLanguage).toLowerCase().split(/[-_]/)[0] !== String(lang).toLowerCase().split(/[-_]/)[0]) {
+                dialogueTree = null;
+            }
+        }
+
         // Keep learner-facing controls in the selected dialogue language. For
         // unsupported languages, use icon-only labels rather than English text.
         const controlLabels = {
@@ -336,9 +346,9 @@ export class DialogueManager {
         if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
         window.speechSynthesis.cancel();
 
-        const langCodes = { en: 'en-US', fr: 'fr-FR', it: 'it-IT', es: 'es-ES', de: 'de-DE', ru: 'ru-RU', el: 'el-GR' };
+        const langCodes = { en: 'en-US', fr: 'fr-FR', it: 'it-IT', es: 'es-ES', de: 'de-DE', ru: 'ru-RU', el: 'el-GR', pt: 'pt-PT' };
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = langCodes[lang] || 'en-US';
+        utterance.lang = langCodes[lang] || lang;
         utterance.rate = rate;
         window.speechSynthesis.speak(utterance);
     }
