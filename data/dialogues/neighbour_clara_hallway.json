@@ -7,7 +7,9 @@
       "id": "node_0",
       "npcLine": "👋 Hello neighbour! I am Clara from Apartment 102. Are you enjoying COSY Town?",
       "emotion": "happy",
-      "gestures": ["wave"],
+      "gestures": [
+        "wave"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Greetings & Introducing Neighbours",
@@ -26,7 +28,9 @@
       "id": "node_1",
       "npcLine": "😊 We are having a small gathering at the conversation corner later. Would you like to come?",
       "emotion": "happy",
-      "gestures": ["invite"],
+      "gestures": [
+        "invite"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Invitations (Would you like to come?)",
@@ -39,5 +43,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
