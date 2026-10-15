@@ -91,3 +91,27 @@ test('DialogueManager - speech recognition follows the selected target language'
         DialogueManager.currentLanguage = 'en';
     }
 });
+
+test('DialogueManager - rejects legacy English scene trees for non-English learners', async () => {
+    let modalOpened = false;
+    DialogueManager.currentDialogueText = 'previous dialogue';
+
+    await DialogueManager.interactNPC(
+        'test_npc',
+        { currentLang: 'fr', currentLocationId: 'town', npcRelationships: {} },
+        {
+            npcs: { test_npc: { name: 'Personnage', dialogues: { en: [{ text: 'Hello there!' }] } } },
+            assetManager: {
+                loadJson: async () => ({
+                    npcId: 'test_npc',
+                    sceneId: 'town',
+                    nodes: [{ id: 'node_0', npcLine: 'Hello from an English scene tree!' }]
+                })
+            }
+        },
+        () => { modalOpened = true; }
+    );
+
+    assert.equal(DialogueManager.currentDialogueText, '');
+    assert.equal(modalOpened, true);
+});
