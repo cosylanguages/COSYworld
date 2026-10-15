@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "👩‍⚕️ Hello! I am Doctor Chloe. How are you feeling today? What symptoms do you have?",
       "emotion": "happy",
-      "gestures": ["welcome"],
-      "highlights": ["stethoscope_tool", "thermometer_item"],
+      "gestures": [
+        "welcome"
+      ],
+      "highlights": [
+        "stethoscope_tool",
+        "thermometer_item"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Expressing Health & Symptoms (Have got / Need / Feel)",
       "visualAction": "🩺 ➔ 🌡️",
@@ -34,8 +39,12 @@
       "id": "node_1",
       "npcLine": "🌡️ Let me check your temperature! You have got a slight fever. You need to rest and drink water!",
       "emotion": "excited",
-      "gestures": ["check_temp"],
-      "highlights": ["thermometer_item"],
+      "gestures": [
+        "check_temp"
+      ],
+      "highlights": [
+        "thermometer_item"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Expressing Need & Possession ('have got', 'need')",
       "visualAction": "🌡️ ➔ 🛏️",
@@ -52,7 +61,9 @@
       "id": "node_2",
       "npcLine": "💊 Here is your prescription medicine! Regular exercise and rest will keep you healthy!",
       "emotion": "happy",
-      "gestures": ["hand_medicine"],
+      "gestures": [
+        "hand_medicine"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Medical Advice & Health Habits",
@@ -69,7 +80,9 @@
       "id": "node_3",
       "npcLine": "👩‍⚕️ Take good care of your health! Remember to balance exercise and rest!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Doctor Visit Complete",
@@ -81,5 +94,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
