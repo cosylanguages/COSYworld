@@ -1,7 +1,7 @@
 # Standardized Branching Dialogue-Tree Schema
 
 ## Overview
-This document defines the standardized JSON schema for per-scene, per-NPC dialogue trees in COSY World. Each dialogue file represents the interactive dialogue tree between a specific Non-Player Character (NPC) and the player in a given scene/location.
+This document defines the standardized JSON schema for per-scene, per-NPC dialogue trees in COSY World. Each dialogue file represents the interactive dialogue tree between a specific Non-Player Character (NPC) and the player in a given scene/location. The root `language` field identifies the language used by the NPC lines, player choices, and grammar notes; create separate language-specific trees when translations are available.
 
 Dialogue trees are stored under `data/dialogues/` using the naming convention:
 `data/dialogues/<npcId>_<sceneId>.json`
@@ -21,6 +21,7 @@ The root JSON object represents a dialogue tree for a specific NPC in a specific
 {
   "npcId": "james_york",
   "sceneId": "town_entrance",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {
@@ -60,6 +61,7 @@ The root JSON object represents a dialogue tree for a specific NPC in a specific
 |---|---|---|
 | `npcId` | `string` | Unique identifier matching the NPC ID in `data/npcs/npcs.json`. |
 | `sceneId` | `string` | District or scene location ID matching `data/scenes/districts.json`. |
+| `language` | `string` (recommended) | BCP 47 language tag for the text in this tree (e.g. `en`, `fr`, `pt-BR`). Unlabelled legacy trees are treated as English-only. |
 | `initialNodeId` | `string` | Node ID where the dialogue session starts. Defaults to the first node's `id`. |
 | `nodes` | `array` | Array of branching dialogue nodes. |
 
