@@ -16,6 +16,7 @@ export class DialogueManager {
     static typingInterval = null;
     static currentPlaybackRate = 1.0;
     static currentDialogueText = '';
+    static currentLanguage = 'en';
     static dialogueHistory = [];
 
     /**
@@ -86,6 +87,21 @@ export class DialogueManager {
         const currentLvl = Math.floor(currentFP / 50) + 1;
 
         const lang = state ? (state.currentLang || 'en') : 'en';
+        this.currentLanguage = lang;
+
+        // Keep learner-facing controls in the selected dialogue language. For
+        // unsupported languages, use icon-only labels rather than English text.
+        const controlLabels = {
+            en: { repeat: 'Repeat', slow: 'Slow', speed: 'Speed', grammar: 'Grammar Rule', history: 'View Dialogue History Log', voice: 'Practice Voice Input (Speech Rec)', historyTitle: 'Conversation History', voiceUnavailable: 'Voice recognition requires a compatible browser.', voiceRecognized: 'Speech recognized:' },
+            fr: { repeat: 'Répéter', slow: 'Lent', speed: 'Vitesse', grammar: 'Règle de grammaire', history: 'Voir l’historique du dialogue', voice: 'Pratiquer la reconnaissance vocale', historyTitle: 'Historique de la conversation', voiceUnavailable: 'La reconnaissance vocale nécessite un navigateur compatible.', voiceRecognized: 'Parole reconnue :' },
+            it: { repeat: 'Ripeti', slow: 'Lento', speed: 'Velocità', grammar: 'Regola grammaticale', history: 'Visualizza cronologia del dialogo', voice: 'Esercita il riconoscimento vocale', historyTitle: 'Cronologia della conversazione', voiceUnavailable: 'Il riconoscimento vocale richiede un browser compatibile.', voiceRecognized: 'Discorso riconosciuto:' },
+            es: { repeat: 'Repetir', slow: 'Lento', speed: 'Velocidad', grammar: 'Regla gramatical', history: 'Ver historial del diálogo', voice: 'Practicar reconocimiento de voz', historyTitle: 'Historial de conversación', voiceUnavailable: 'El reconocimiento de voz requiere un navegador compatible.', voiceRecognized: 'Habla reconocida:' },
+            de: { repeat: 'Wiederholen', slow: 'Langsam', speed: 'Geschwindigkeit', grammar: 'Grammatikregel', history: 'Dialogverlauf anzeigen', voice: 'Spracheingabe üben', historyTitle: 'Gesprächsverlauf', voiceUnavailable: 'Die Spracherkennung erfordert einen kompatiblen Browser.', voiceRecognized: 'Sprache erkannt:' },
+            ru: { repeat: 'Повторить', slow: 'Медленно', speed: 'Скорость', grammar: 'Правило грамматики', history: 'История диалога', voice: 'Практика распознавания речи', historyTitle: 'История разговора', voiceUnavailable: 'Для распознавания речи нужен совместимый браузер.', voiceRecognized: 'Речь распознана:' },
+            el: { repeat: 'Επανάληψη', slow: 'Αργά', speed: 'Ταχύτητα', grammar: 'Γραμματικός κανόνας', history: 'Ιστορικό διαλόγου', voice: 'Εξάσκηση φωνητικής εισόδου', historyTitle: 'Ιστορικό συνομιλίας', voiceUnavailable: 'Η αναγνώριση ομιλίας απαιτεί συμβατό πρόγραμμα περιήγησης.', voiceRecognized: 'Αναγνωρισμένη ομιλία:' },
+            pt: { repeat: 'Repetir', slow: 'Lento', speed: 'Velocidade', grammar: 'Regra gramatical', history: 'Ver histórico do diálogo', voice: 'Praticar reconhecimento de voz', historyTitle: 'Histórico da conversa', voiceUnavailable: 'O reconhecimento de voz requer um navegador compatível.', voiceRecognized: 'Fala reconhecida:' }
+        };
+        const labels = controlLabels[lang] || { repeat: '🔊', slow: '🐢', speed: '⏩', grammar: '🧩', history: '📜', voice: '🎙️', historyTitle: '📜', voiceUnavailable: '⚠️', voiceRecognized: '🎙️' };
 
         // Find dialogue node in per-scene tree or fallback to npc.dialogues
         let dlg = null;
@@ -204,11 +220,11 @@ export class DialogueManager {
                 <!-- Speech Voice & Controls Bar -->
                 <div class="cw-speech-controls" style="display:flex; align-items:center; justify-content:space-between; background:var(--bg-app); padding:0.5rem 0.75rem; border-radius:12px; margin-bottom:0.75rem; font-size:0.85rem; border:1px solid var(--border-subtle);">
                     <div style="display:flex; gap:0.4rem; align-items:center;">
-                        <button class="cw-btn-toggle" style="padding:0.2rem 0.6rem; font-size:0.8rem;" type="button" onclick="COSY_WORLD.repeatSpeech()">🔊 Repeat</button>
-                        <button class="cw-btn-toggle" style="padding:0.2rem 0.6rem; font-size:0.8rem;" type="button" onclick="COSY_WORLD.toggleSlowSpeech()">🐢 Slow (0.7x)</button>
+                        <button class="cw-btn-toggle" style="padding:0.2rem 0.6rem; font-size:0.8rem;" type="button" onclick="COSY_WORLD.repeatSpeech()">🔊 ${labels.repeat}</button>
+                        <button class="cw-btn-toggle" style="padding:0.2rem 0.6rem; font-size:0.8rem;" type="button" onclick="COSY_WORLD.toggleSlowSpeech()">🐢 ${labels.slow} (0.7x)</button>
                     </div>
                     <div style="display:flex; gap:0.3rem; align-items:center;">
-                        <span style="font-weight:700;">Speed:</span>
+                        <span style="font-weight:700;">${labels.speed}:</span>
                         <button class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem;" type="button" onclick="COSY_WORLD.setSpeechSpeed(0.8)">0.8x</button>
                         <button class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem;" type="button" onclick="COSY_WORLD.setSpeechSpeed(1.0)">1.0x</button>
                         <button class="cw-btn-toggle" style="padding:0.2rem 0.5rem; font-size:0.75rem;" type="button" onclick="COSY_WORLD.setSpeechSpeed(1.3)">1.3x</button>
@@ -222,7 +238,7 @@ export class DialogueManager {
 
                 ${dlg.grammarCheck ? `
                     <div style="font-size:0.85rem; background:#eff6ff; color:#1e40af; padding:0.5rem 0.75rem; border-radius:10px; margin-bottom:0.75rem; border:1px solid #bfdbfe;">
-                        🧩 Grammar Rule: <strong>${dlg.grammarCheck}</strong>
+                        ${labels.grammar}: <strong>${dlg.grammarCheck}</strong>
                     </div>
                 ` : ''}
 
@@ -244,12 +260,12 @@ export class DialogueManager {
                         </button>
                     `}).join('') : ''}
 
-                    <button class="cw-btn-toggle" style="width:100%; margin-top:0.5rem; font-size:0.85rem;" type="button" onclick="COSY_WORLD.toggleDialogueHistory()">📜 View Dialogue History Log</button>
-                    <button class="cw-btn-toggle" style="width:100%; margin-top:0.4rem; font-size:0.85rem;" type="button" onclick="COSY_WORLD.startVoiceRecognition()">🎙️ Practice Voice Input (Speech Rec)</button>
+                    <button class="cw-btn-toggle" style="width:100%; margin-top:0.5rem; font-size:0.85rem;" type="button" onclick="COSY_WORLD.toggleDialogueHistory()">📜 ${labels.history}</button>
+                    <button class="cw-btn-toggle" style="width:100%; margin-top:0.4rem; font-size:0.85rem;" type="button" onclick="COSY_WORLD.startVoiceRecognition()">🎙️ ${labels.voice}</button>
                 </div>
 
                 <div id="cw-dialogue-history-panel" style="display:none; margin-top:1rem; max-height:160px; overflow-y:auto; background:var(--bg-app); padding:0.75rem; border-radius:12px; border:1px solid var(--border-subtle); font-size:0.85rem;">
-                    <div style="font-weight:700; margin-bottom:0.5rem;">📜 Conversation History</div>
+                    <div style="font-weight:700; margin-bottom:0.5rem;">📜 ${labels.historyTitle}</div>
                     ${this.dialogueHistory.map(h => `
                         <div style="margin-bottom:0.4rem; border-bottom:1px solid #e5e7eb; padding-bottom:0.25rem;">
                             <span style="font-weight:700; color:var(--accent-teal);">${h.npcName}:</span> "${h.text}" <span style="font-size:0.75rem; color:var(--text-muted);">(${h.timestamp})</span>
@@ -327,18 +343,18 @@ export class DialogueManager {
         window.speechSynthesis.speak(utterance);
     }
 
-    static repeatSpeech(lang = 'en') {
+    static repeatSpeech(lang = this.currentLanguage) {
         if (this.currentDialogueText) {
             this.speakText(this.currentDialogueText, lang, this.currentPlaybackRate);
         }
     }
 
-    static toggleSlowSpeech(lang = 'en') {
+    static toggleSlowSpeech(lang = this.currentLanguage) {
         this.currentPlaybackRate = this.currentPlaybackRate === 0.7 ? 1.0 : 0.7;
         this.repeatSpeech(lang);
     }
 
-    static setSpeechSpeed(speed, lang = 'en') {
+    static setSpeechSpeed(speed, lang = this.currentLanguage) {
         this.currentPlaybackRate = speed;
         this.repeatSpeech(lang);
     }
@@ -354,17 +370,38 @@ export class DialogueManager {
         if (typeof window === 'undefined') return;
         const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (!SpeechRec) {
-            alert('Voice recognition speech input requires a Web Speech API compatible browser.');
+            const unavailable = {
+                en: 'Voice recognition requires a compatible browser.',
+                fr: 'La reconnaissance vocale nécessite un navigateur compatible.',
+                it: 'Il riconoscimento vocale richiede un browser compatibile.',
+                es: 'El reconocimiento de voz requiere un navegador compatible.',
+                de: 'Die Spracherkennung erfordert einen kompatiblen Browser.',
+                ru: 'Для распознавания речи нужен совместимый браузер.',
+                el: 'Η αναγνώριση ομιλίας απαιτεί συμβατό πρόγραμμα περιήγησης.',
+                pt: 'O reconhecimento de voz requer um navegador compatível.'
+            };
+            alert(unavailable[this.currentLanguage] || '⚠️');
             return;
         }
 
         const recognition = new SpeechRec();
-        recognition.lang = 'en-US';
+        const speechLangs = { en: 'en-US', fr: 'fr-FR', it: 'it-IT', es: 'es-ES', de: 'de-DE', ru: 'ru-RU', el: 'el-GR', pt: 'pt-PT' };
+        recognition.lang = speechLangs[this.currentLanguage] || this.currentLanguage;
         recognition.start();
 
         recognition.onresult = (event) => {
             const transcript = event.results[0][0].transcript;
-            alert(`🎙️ Speech Recognized: "${transcript}"! Great pronunciation effort! ⭐`);
+            const recognized = {
+                en: 'Speech recognized:',
+                fr: 'Parole reconnue :',
+                it: 'Discorso riconosciuto:',
+                es: 'Habla reconocida:',
+                de: 'Sprache erkannt:',
+                ru: 'Речь распознана:',
+                el: 'Αναγνωρισμένη ομιλία:',
+                pt: 'Fala reconhecida:'
+            };
+            alert(`🎙️ ${recognized[this.currentLanguage] || '🎙️'} "${transcript}" ⭐`);
         };
     }
 }
