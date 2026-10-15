@@ -61,3 +61,33 @@ test('DialogueManager - does not substitute English dialogue for a missing targe
     assert.equal(DialogueManager.currentDialogueText, '');
     assert.equal(modalOpened, true);
 });
+
+test('DialogueManager - speech recognition follows the selected target language', () => {
+    const previousWindow = globalThis.window;
+    const previousAlert = globalThis.alert;
+    let recognitionInstance;
+    const alerts = [];
+
+    globalThis.window = {
+        SpeechRecognition: class {
+            constructor() { recognitionInstance = this; }
+            start() {}
+        }
+    };
+    globalThis.alert = (message) => alerts.push(message);
+    DialogueManager.currentLanguage = 'fr';
+
+    try {
+        DialogueManager.startVoiceRecognition();
+        assert.equal(recognitionInstance.lang, 'fr-FR');
+        recognitionInstance.onresult({ results: [[{ transcript: 'Bonjour' }]] });
+        assert.match(alerts[0], /Parole reconnue/);
+        assert.match(alerts[0], /Bonjour/);
+    } finally {
+        if (previousWindow === undefined) delete globalThis.window;
+        else globalThis.window = previousWindow;
+        if (previousAlert === undefined) delete globalThis.alert;
+        else globalThis.alert = previousAlert;
+        DialogueManager.currentLanguage = 'en';
+    }
+});
