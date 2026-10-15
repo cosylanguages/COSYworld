@@ -46,3 +46,18 @@ test('DialogueManager - records conversation history and supports speech control
     DialogueManager.toggleSlowSpeech();
     assert.equal(DialogueManager.currentPlaybackRate, 0.7);
 });
+
+test('DialogueManager - does not substitute English dialogue for a missing target-language entry', async () => {
+    let modalOpened = false;
+    DialogueManager.currentDialogueText = 'previous dialogue';
+
+    await DialogueManager.interactNPC(
+        'test_npc',
+        { currentLang: 'fr', currentLocationId: 'town', npcRelationships: {} },
+        { npcs: { test_npc: { name: 'Personnage', dialogues: { en: [{ text: 'Hello there!' }] } } } },
+        () => { modalOpened = true; }
+    );
+
+    assert.equal(DialogueManager.currentDialogueText, '');
+    assert.equal(modalOpened, true);
+});
