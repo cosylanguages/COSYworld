@@ -7,8 +7,14 @@
       "id": "node_0",
       "npcLine": "🍎 Hello! Welcome to COSY Market! Are you looking for any fresh produce or groceries today?",
       "emotion": "happy",
-      "gestures": ["wave"],
-      "highlights": ["apple", "banana", "milk"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "apple",
+        "banana",
+        "milk"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Quantifiers (Some / Any) & Asking Prices (How much / How many)",
       "visualAction": "🍎 ➔ 🍌 ➔ 🥛",
@@ -34,8 +40,13 @@
       "id": "node_1",
       "npcLine": "🍎 Yes, I have some sweet red apples for 3 coins and yellow bananas for 4 coins! How many do you need?",
       "emotion": "excited",
-      "gestures": ["show_item"],
-      "highlights": ["apple", "banana"],
+      "gestures": [
+        "show_item"
+      ],
+      "highlights": [
+        "apple",
+        "banana"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "How many + Countable Nouns",
       "visualAction": "🍎 🪙3 ➔ 🍌 🪙4",
@@ -53,8 +64,13 @@
       "id": "node_2",
       "npcLine": "💰 Red apples are 3 coins each, and milk is 6 coins. How much money do you want to spend?",
       "emotion": "happy",
-      "gestures": ["explain"],
-      "highlights": ["apple", "milk"],
+      "gestures": [
+        "explain"
+      ],
+      "highlights": [
+        "apple",
+        "milk"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "How much + Price / Uncountable Nouns",
       "visualAction": "🪙 ➔ 🛒",
@@ -72,7 +88,9 @@
       "id": "node_3",
       "npcLine": "🛒 Here are your fresh groceries! Thank you for shopping at COSY Market!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Shopping Complete",
@@ -84,5 +102,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
