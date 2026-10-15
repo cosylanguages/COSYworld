@@ -7,8 +7,12 @@
       "id": "node_0",
       "npcLine": "🏫 Hello! This is COSYlanguages Headquarters. I am James York, your teacher. What is your name?",
       "emotion": "happy",
-      "gestures": ["point_hq"],
-      "highlights": ["welcome_desk"],
+      "gestures": [
+        "point_hq"
+      ],
+      "highlights": [
+        "welcome_desk"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Demonstratives & Introductions ('This is HQ')",
       "visualAction": "🏛️ HQ Atrium",
@@ -36,8 +40,12 @@
       "id": "node_1",
       "npcLine": "😊 Wonderful! I am a teacher here, and you are my new student. Head into Reception to meet the receptionist!",
       "emotion": "excited",
-      "gestures": ["wave"],
-      "highlights": ["language_chart"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "language_chart"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Personal Pronouns ('I am... You are...')",
       "visualAction": "🎓 Teacher Guidance",
@@ -58,8 +66,12 @@
       "id": "node_2",
       "npcLine": "👉 Right this way! The reception desk is through the door on your right.",
       "emotion": "happy",
-      "gestures": ["point_right"],
-      "highlights": ["welcome_desk"],
+      "gestures": [
+        "point_right"
+      ],
+      "highlights": [
+        "welcome_desk"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Directions & Place Placement",
       "visualAction": "👉 Pointer",
@@ -76,5 +88,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }
