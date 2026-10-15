@@ -7,8 +7,12 @@
       "id": "node_0",
       "npcLine": "👋 Hello again! I am James York. Have you met the receptionist?",
       "emotion": "happy",
-      "gestures": ["wave"],
-      "highlights": ["reception_desk"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "reception_desk"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Personal Pronouns & Identity ('I am James')",
       "visualAction": "👋 Reception Meeting",
@@ -36,8 +40,12 @@
       "id": "node_1",
       "npcLine": "🎉 Excellent! That is your apartment key. Walk through the hallway to open your door!",
       "emotion": "excited",
-      "gestures": ["point_right"],
-      "highlights": ["staircase"],
+      "gestures": [
+        "point_right"
+      ],
+      "highlights": [
+        "staircase"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Articles & Demonstratives ('That is your key')",
       "visualAction": "🚪 Hallway Directions",
@@ -57,8 +65,12 @@
       "id": "node_2",
       "npcLine": "🚶 Follow the hallway door to your new apartment home!",
       "emotion": "happy",
-      "gestures": ["point_right"],
-      "highlights": ["elevator"],
+      "gestures": [
+        "point_right"
+      ],
+      "highlights": [
+        "elevator"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Imperative Actions ('Follow the hallway')",
       "visualAction": "🚶 Direction Pointer",
@@ -74,5 +86,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }
