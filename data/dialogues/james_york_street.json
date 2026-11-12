@@ -1,6 +1,7 @@
 {
   "npcId": "james_york",
   "sceneId": "street",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

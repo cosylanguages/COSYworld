@@ -1,6 +1,7 @@
 {
   "npcId": "marco_barista",
   "sceneId": "cafe",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

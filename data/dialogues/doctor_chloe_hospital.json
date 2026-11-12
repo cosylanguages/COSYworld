@@ -1,6 +1,7 @@
 {
   "npcId": "doctor_chloe",
   "sceneId": "hospital",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

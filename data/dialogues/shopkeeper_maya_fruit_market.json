@@ -1,6 +1,7 @@
 {
   "npcId": "shopkeeper_maya",
   "sceneId": "fruit_market",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

@@ -1,6 +1,7 @@
 {
   "npcId": "receptionist",
   "sceneId": "reception",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

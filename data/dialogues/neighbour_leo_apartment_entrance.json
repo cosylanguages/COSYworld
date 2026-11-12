@@ -1,6 +1,7 @@
 {
   "npcId": "neighbour_leo",
   "sceneId": "apartment_entrance",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

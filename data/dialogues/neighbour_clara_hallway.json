@@ -1,6 +1,7 @@
 {
   "npcId": "neighbour_clara",
   "sceneId": "hallway",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

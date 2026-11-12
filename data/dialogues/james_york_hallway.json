@@ -1,6 +1,7 @@
 {
   "npcId": "james_york",
   "sceneId": "hallway",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

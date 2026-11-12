@@ -1,6 +1,7 @@
 {
   "npcId": "james_york",
   "sceneId": "reception",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

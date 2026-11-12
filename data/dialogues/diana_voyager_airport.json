@@ -1,6 +1,7 @@
 {
   "npcId": "diana_voyager",
   "sceneId": "airport",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

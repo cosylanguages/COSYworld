@@ -1,6 +1,7 @@
 {
   "npcId": "commuter_sam",
   "sceneId": "bus_stop",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

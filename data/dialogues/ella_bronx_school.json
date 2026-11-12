@@ -1,6 +1,7 @@
 {
   "npcId": "ella_bronx",
   "sceneId": "school",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

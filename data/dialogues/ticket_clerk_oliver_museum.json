@@ -1,6 +1,7 @@
 {
   "npcId": "ticket_clerk_oliver",
   "sceneId": "museum",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

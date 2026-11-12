@@ -1,6 +1,7 @@
 {
   "npcId": "diana_voyager",
   "sceneId": "tourist_office",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

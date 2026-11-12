@@ -1,6 +1,7 @@
 {
   "npcId": "ella_baker",
   "sceneId": "bakery",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

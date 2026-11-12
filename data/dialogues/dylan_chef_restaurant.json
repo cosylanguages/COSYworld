@@ -1,6 +1,7 @@
 {
   "npcId": "dylan_chef",
   "sceneId": "restaurant",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

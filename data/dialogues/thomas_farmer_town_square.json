@@ -1,6 +1,7 @@
 {
   "npcId": "thomas_farmer",
   "sceneId": "town_square",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {

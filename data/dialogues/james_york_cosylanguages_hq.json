@@ -1,6 +1,7 @@
 {
   "npcId": "james_york",
   "sceneId": "cosylanguages_hq",
+  "language": "en",
   "initialNodeId": "node_0",
   "nodes": [
     {
