@@ -46,3 +46,72 @@ test('DialogueManager - records conversation history and supports speech control
     DialogueManager.toggleSlowSpeech();
     assert.equal(DialogueManager.currentPlaybackRate, 0.7);
 });
+
+test('DialogueManager - does not substitute English dialogue for a missing target-language entry', async () => {
+    let modalOpened = false;
+    DialogueManager.currentDialogueText = 'previous dialogue';
+
+    await DialogueManager.interactNPC(
+        'test_npc',
+        { currentLang: 'fr', currentLocationId: 'town', npcRelationships: {} },
+        { npcs: { test_npc: { name: 'Personnage', dialogues: { en: [{ text: 'Hello there!' }] } } } },
+        () => { modalOpened = true; }
+    );
+
+    assert.equal(DialogueManager.currentDialogueText, '');
+    assert.equal(modalOpened, true);
+});
+
+test('DialogueManager - speech recognition follows the selected target language', () => {
+    const previousWindow = globalThis.window;
+    const previousAlert = globalThis.alert;
+    let recognitionInstance;
+    const alerts = [];
+
+    globalThis.window = {
+        SpeechRecognition: class {
+            constructor() { recognitionInstance = this; }
+            start() {}
+        }
+    };
+    globalThis.alert = (message) => alerts.push(message);
+    DialogueManager.currentLanguage = 'fr';
+
+    try {
+        DialogueManager.startVoiceRecognition();
+        assert.equal(recognitionInstance.lang, 'fr-FR');
+        recognitionInstance.onresult({ results: [[{ transcript: 'Bonjour' }]] });
+        assert.match(alerts[0], /Parole reconnue/);
+        assert.match(alerts[0], /Bonjour/);
+    } finally {
+        if (previousWindow === undefined) delete globalThis.window;
+        else globalThis.window = previousWindow;
+        if (previousAlert === undefined) delete globalThis.alert;
+        else globalThis.alert = previousAlert;
+        DialogueManager.currentLanguage = 'en';
+    }
+});
+
+test('DialogueManager - rejects legacy English scene trees for non-English learners', async () => {
+    let modalOpened = false;
+    DialogueManager.currentDialogueText = 'previous dialogue';
+
+    await DialogueManager.interactNPC(
+        'test_npc',
+        { currentLang: 'fr', currentLocationId: 'town', npcRelationships: {} },
+        {
+            npcs: { test_npc: { name: 'Personnage', dialogues: { en: [{ text: 'Hello there!' }] } } },
+            assetManager: {
+                loadJson: async () => ({
+                    npcId: 'test_npc',
+                    sceneId: 'town',
+                    nodes: [{ id: 'node_0', npcLine: 'Hello from an English scene tree!' }]
+                })
+            }
+        },
+        () => { modalOpened = true; }
+    );
+
+    assert.equal(DialogueManager.currentDialogueText, '');
+    assert.equal(modalOpened, true);
+});

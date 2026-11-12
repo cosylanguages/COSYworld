@@ -54,8 +54,9 @@ export class LocalizationManager {
     }
 
     /**
-     * Resolve target language string directly.
-     * Monolingual principle: No fallback to native language dictionaries or translations.
+     * Resolve text only in the active target language.
+     * Missing translations return an empty string so callers can render an
+     * unavailable-content state rather than silently switching languages.
      * @param {Object<string, string>|string} textObj
      * @param {string} [targetLang]
      * @returns {string}
@@ -65,17 +66,7 @@ export class LocalizationManager {
         if (!textObj || typeof textObj !== 'object') return '';
 
         const lang = targetLang || this.currentLanguage;
-
-        if (textObj[lang]) {
-            return textObj[lang];
-        }
-
-        if (textObj[this.defaultLanguage]) {
-            return textObj[this.defaultLanguage];
-        }
-
-        const keys = Object.keys(textObj);
-        return keys.length > 0 ? textObj[keys[0]] : '';
+        return typeof textObj[lang] === 'string' ? textObj[lang] : '';
     }
 
     /**

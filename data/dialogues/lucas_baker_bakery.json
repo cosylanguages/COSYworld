@@ -7,8 +7,13 @@
       "id": "node_0",
       "npcLine": "🥖 Welcome to my bakery! Fresh baguettes and croissants are right out of the oven!",
       "emotion": "happy",
-      "gestures": ["offer_bread"],
-      "highlights": ["baguette", "croissant"],
+      "gestures": [
+        "offer_bread"
+      ],
+      "highlights": [
+        "baguette",
+        "croissant"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Countable vs Uncountable & Asking Prices (How much / How many)",
       "visualAction": "🥖 ➔ 🥐 ➔ 😋",
@@ -34,8 +39,12 @@
       "id": "node_1",
       "npcLine": "🪙 A warm baguette is 10 coins. How many baguettes would you like?",
       "emotion": "happy",
-      "gestures": ["explain"],
-      "highlights": ["baguette"],
+      "gestures": [
+        "explain"
+      ],
+      "highlights": [
+        "baguette"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "How many baguettes (Countable Plural)",
       "visualAction": "🥖 ➔ 🪙 10",
@@ -53,8 +62,12 @@
       "id": "node_2",
       "npcLine": "🥐 Yes! I have some fresh croissants for 5 coins each!",
       "emotion": "happy",
-      "gestures": ["offer_bread"],
-      "highlights": ["croissant"],
+      "gestures": [
+        "offer_bread"
+      ],
+      "highlights": [
+        "croissant"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Quantifier 'some' with plural noun",
       "visualAction": "🥐 ➔ 🪙 5",
@@ -72,7 +85,9 @@
       "id": "node_3",
       "npcLine": "🥖 Thank you! Enjoy your fresh baked goods!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Polite Exchange",
@@ -84,5 +99,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }

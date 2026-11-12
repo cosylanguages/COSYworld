@@ -7,8 +7,14 @@
       "id": "node_0",
       "npcLine": "🛏️ Here is your bedroom! There is a blue bed and there are two lamps on your desk. Is that your alarm clock?",
       "emotion": "happy",
-      "gestures": ["point_furniture"],
-      "highlights": ["bed", "desk", "alarm_clock"],
+      "gestures": [
+        "point_furniture"
+      ],
+      "highlights": [
+        "bed",
+        "desk",
+        "alarm_clock"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "There is / There are & Possessive Adjectives ('There is a... There are two...')",
       "visualAction": "🛏️ Bedroom Setup",
@@ -36,8 +42,13 @@
       "id": "node_1",
       "npcLine": "⏰ Your bedroom looks great! There are books on the desk and my lamp is on the table. Let me know if you need anything else!",
       "emotion": "excited",
-      "gestures": ["wave"],
-      "highlights": ["lamp", "bookshelf"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "lamp",
+        "bookshelf"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Plural Placement & Possessives ('There are books... my lamp')",
       "visualAction": "🛏️ Bedroom Complete",
@@ -55,5 +66,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }

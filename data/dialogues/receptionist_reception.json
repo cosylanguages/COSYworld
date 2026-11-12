@@ -7,8 +7,14 @@
       "id": "node_0",
       "npcLine": "👋 Hello! Welcome to COSYlanguages Headquarters! I am the receptionist. What is your name?",
       "emotion": "happy",
-      "gestures": ["wave", "offer_key"],
-      "highlights": ["reception_desk", "apartment_key"],
+      "gestures": [
+        "wave",
+        "offer_key"
+      ],
+      "highlights": [
+        "reception_desk",
+        "apartment_key"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Greetings & Asking Name ('What is your name?')",
       "visualAction": "👋 Welcome Desk",
@@ -38,8 +44,12 @@
       "id": "node_1",
       "npcLine": "😊 Pleased to meet you! I am the receptionist here. Your name is on our student list!",
       "emotion": "excited",
-      "gestures": ["wave"],
-      "highlights": ["reception_desk"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "reception_desk"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Possessives & Identity ('My name is... Your name is...')",
       "visualAction": "📝 Registration Check",
@@ -61,8 +71,12 @@
       "id": "node_2",
       "npcLine": "🗝️ Here is your key! This is the key to your new home. Head down the hallway to your apartment door!",
       "emotion": "happy",
-      "gestures": ["offer_key"],
-      "highlights": ["apartment_key"],
+      "gestures": [
+        "offer_key"
+      ],
+      "highlights": [
+        "apartment_key"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Possessives & Demonstratives ('This is your key')",
       "visualAction": "🔑 Key Handoff",
@@ -80,5 +94,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }

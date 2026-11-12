@@ -7,8 +7,12 @@
       "id": "node_0",
       "npcLine": "Open the door.",
       "emotion": "happy",
-      "gestures": ["point_door"],
-      "highlights": ["door_lock"],
+      "gestures": [
+        "point_door"
+      ],
+      "highlights": [
+        "door_lock"
+      ],
       "speechRate": 0.65,
       "grammarCheck": "Imperative Actions",
       "visualAction": "🚪 Unlock Door",
@@ -25,5 +29,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }

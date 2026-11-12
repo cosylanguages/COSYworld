@@ -7,8 +7,14 @@
       "id": "node_0",
       "npcLine": "☕ Welcome to COSY Café! What would you like to drink today?",
       "emotion": "happy",
-      "gestures": ["welcome"],
-      "highlights": ["espresso_machine", "coffee_cup", "cappuccino"],
+      "gestures": [
+        "welcome"
+      ],
+      "highlights": [
+        "espresso_machine",
+        "coffee_cup",
+        "cappuccino"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Polite Ordering ('Would like' & 'Can I have...')",
       "visualAction": "☕ ➔ 🫖 ➔ 😋",
@@ -41,8 +47,12 @@
       "id": "node_1",
       "npcLine": "☕ Rich and fresh espresso coming right up for 3 coins! Anything else?",
       "emotion": "happy",
-      "gestures": ["brew_coffee"],
-      "highlights": ["espresso_machine"],
+      "gestures": [
+        "brew_coffee"
+      ],
+      "highlights": [
+        "espresso_machine"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Ordering Drinks & Polite Form",
       "visualAction": "☕ ➔ 🪙 3",
@@ -63,8 +73,12 @@
       "id": "node_2",
       "npcLine": "☕ Certainly! One cappuccino with extra foam for 4 coins!",
       "emotion": "excited",
-      "gestures": ["brew_coffee"],
-      "highlights": ["cappuccino"],
+      "gestures": [
+        "brew_coffee"
+      ],
+      "highlights": [
+        "cappuccino"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Can I have + Noun",
       "visualAction": "☕ ➔ 🪙 4",
@@ -79,8 +93,12 @@
       "id": "node_3",
       "npcLine": "🍽️ Fantastic! Put on your apron — our terrace customers would like their drinks!",
       "emotion": "happy",
-      "gestures": ["hand_apron"],
-      "highlights": ["cutlery_set"],
+      "gestures": [
+        "hand_apron"
+      ],
+      "highlights": [
+        "cutlery_set"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Server Role Play (Waiter / Customer)",
       "visualAction": "🍽️ ➔ 📋",
@@ -96,8 +114,12 @@
       "id": "node_4",
       "npcLine": "🍰 Fruit cake paired with fresh coffee is delicious! Enjoy your break on the outdoor terrace!",
       "emotion": "happy",
-      "gestures": ["nod"],
-      "highlights": ["dessert_cake"],
+      "gestures": [
+        "nod"
+      ],
+      "highlights": [
+        "dessert_cake"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Pairing Food and Drinks",
       "visualAction": "☕ + 🍰 ➔ 😋",
@@ -108,5 +130,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }

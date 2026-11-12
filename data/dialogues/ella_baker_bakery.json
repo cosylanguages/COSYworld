@@ -7,8 +7,12 @@
       "id": "node_0",
       "npcLine": "Would you like fresh bread?",
       "emotion": "happy",
-      "gestures": ["offer_bread"],
-      "highlights": ["baguette"],
+      "gestures": [
+        "offer_bread"
+      ],
+      "highlights": [
+        "baguette"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Preferences & Requests",
       "visualAction": "🥖 Fresh Bakery Bread",
@@ -25,5 +29,6 @@
       "endConditions": null,
       "rewardQuestId": null
     }
-  ]
+  ],
+  "language": "en"
 }

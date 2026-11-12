@@ -7,7 +7,9 @@
       "id": "node_0",
       "npcLine": "👋 Hello! I am relaxing at the square today! What are you doing?",
       "emotion": "happy",
-      "gestures": ["wave"],
+      "gestures": [
+        "wave"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Present Continuous & Likes/Loves/Hates",
@@ -42,7 +44,9 @@
       "id": "node_1",
       "npcLine": "🗣️ Wonderful! You are speaking very clearly! I love hearing you practice!",
       "emotion": "excited",
-      "gestures": ["smile"],
+      "gestures": [
+        "smile"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Continuous Action & Positive Feedback",
@@ -58,7 +62,9 @@
       "id": "node_2",
       "npcLine": "❤️ Me too! I love spending time outside, but I hate when it rains!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Verbs of Preference (Love vs Hate)",
@@ -75,7 +81,9 @@
       "id": "node_3",
       "npcLine": "🎉 I would love to come! This is my friend Anna — she is coming with us right now!",
       "emotion": "excited",
-      "gestures": ["wave"],
+      "gestures": [
+        "wave"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Invitations & Introductions (This is my friend)",
@@ -88,5 +96,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
