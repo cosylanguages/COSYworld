@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet the Neighbors - COSY World Quest</title>
-  <link rel="stylesheet" href="/shared/styles/style.css">
-  <link rel="stylesheet" href="/css/cosy-world.css">
+  <link rel="stylesheet" href="/COSYworld/shared/styles/style.css">
+  <link rel="stylesheet" href="/COSYworld/css/cosy-world.css">
 </head>
 <body>
   <header class="cosy-header">
-    <a href="/index.html" class="brand-logo">
-      <img src="/shared/assets/icon-world.svg" alt="Logo">
+    <a href="/COSYworld/index.html" class="brand-logo">
+      <img src="/COSYworld/shared/assets/icon-world.svg" alt="Logo">
       <span>COSY World</span>
     </a>
     <nav class="main-nav">
-      <a href="/game/town-map/index.html">Town Map</a>
-      <a href="/progress/index.html">Progress</a>
+      <a href="/COSYworld/game/town-map/index.html">Town Map</a>
+      <a href="/COSYworld/progress/index.html">Progress</a>
     </nav>
   </header>
 
   <main style="max-width: 800px; margin: 2rem auto; padding: 1rem;">
     <div style="background: var(--color-surface, #161b22); padding: 2rem; border-radius: 12px; border: 1px solid var(--color-border, #30363d);">
-      <span class="trait-tag" style="background: rgba(88,166,255,0.15); color: #58a6ff; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.85rem;">Beginner Quest 1</span>
+      <span class="trait-tag" style="background: rgba(88,166,255,0.15); color: var(--link-ink, var(--color-primary, #0969da)); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.85rem;">Beginner Quest 1</span>
       <h1 style="color: var(--color-text-bright, #ffffff); font-family: var(--font-family-heading);">Meet the Neighbors</h1>
       <p style="color: var(--color-text-muted);">Explore the Residential District, introduce yourself to residents, and master essential greeting phrases.</p>
 
@@ -40,15 +40,15 @@
       </ul>
 
       <!-- Interactive Dialogue Scene -->
-      <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border, #30363d); margin-top: 1.5rem;">
-        <div style="font-weight: bold; color: var(--color-primary, #58a6ff); margin-bottom: 0.5rem;">🗣️ Neighbor Dialogue</div>
+      <div style="background: var(--color-surface-hover, rgba(0,0,0,0.3)); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border, #30363d); margin-top: 1.5rem;">
+        <div style="font-weight: bold; color: var(--link-ink, var(--color-primary, #0969da)); margin-bottom: 0.5rem;">🗣️ Neighbor Dialogue</div>
         <p style="font-size: 1.1rem; color: var(--color-text-bright);">"Bonjour! Comment allez-vous aujourd'hui?"</p>
         <button class="btn-primary" onclick="speakText('Bonjour! Comment allez-vous aujourd\'hui?')" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;">🔊 Listen Pronunciation</button>
       </div>
 
       <div style="display: flex; gap: 1rem; margin-top: 2rem;">
         <button id="btn-complete" class="btn-primary" onclick="finishQuest()" disabled>Complete Quest (+100 XP)</button>
-        <a href="/game/town-map/index.html" class="btn-secondary" style="text-decoration: none; padding: 0.8rem 1.5rem;">Return to Map</a>
+        <a href="/COSYworld/game/town-map/index.html" class="btn-secondary" style="text-decoration: none; padding: 0.8rem 1.5rem;">Return to Map</a>
       </div>
     </div>
   </main>

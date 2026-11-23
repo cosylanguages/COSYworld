@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress Dashboard — COSY World 🌍</title>
-  <link rel="icon" href="/shared/assets/icon-world.svg" type="image/svg+xml">
+  <link rel="icon" href="/COSYworld/shared/assets/icon-world.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/shared/styles/style.css">
+  <link rel="stylesheet" href="/COSYworld/shared/styles/style.css">
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
 </head>
 <body>
@@ -17,14 +17,14 @@
 
   <header class="cosy-nav">
     <div class="cosy-brand">
-      <a href="/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+      <a href="/COSYworld/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
         <span class="cosy-brand-icon">🌍</span> COSY World
       </a>
     </div>
     <nav class="cosy-links">
-      <a href="/index.html">Home</a>
-      <a href="/game/town-map/index.html">Town Map</a>
-      <a href="/progress/index.html" class="active">Progress</a>
+      <a href="/COSYworld/index.html">Home</a>
+      <a href="/COSYworld/game/town-map/index.html">Town Map</a>
+      <a href="/COSYworld/progress/index.html" class="active">Progress</a>
       <a href="https://cosylanguages.github.io/COSYtools/" target="_blank">COSYtools ↗</a>
       <a href="https://cosylanguages.github.io/COSYgames/" target="_blank">COSYgames ↗</a>
     </nav>
@@ -33,13 +33,13 @@
   <main class="container">
     <!-- Header Summary -->
     <div class="card" style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
-      <img id="dash-avatar" src="/shared/assets/james-york.svg" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--primary); background: #334155;">
+      <img id="dash-avatar" src="/COSYworld/shared/assets/james-york.svg" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--primary); background: #334155;">
       <div style="flex: 1; min-width: 260px;">
         <h1 style="font-family: var(--font-serif); font-size: 2.2rem;" id="dash-char-name">James York</h1>
         <div style="display: flex; gap: 1rem; margin-top: 0.5rem; flex-wrap: wrap;">
           <span style="background: var(--bg-dark); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 20px; font-weight: 700;">🏛️ Citizen Level: <span id="dash-lvl" style="color: var(--secondary);">1</span></span>
           <span style="background: var(--bg-dark); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 20px; font-weight: 700;">⭐ XP: <span id="dash-xp" style="color: var(--accent);">0</span></span>
-          <span style="background: var(--bg-dark); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 20px; font-weight: 700;">⏱️ Time: <span id="dash-time" style="color: #cbd5e1;">0 min</span></span>
+          <span style="background: var(--bg-dark); border: 1px solid var(--border-color); padding: 4px 12px; border-radius: 20px; font-weight: 700;">⏱️ Time: <span id="dash-time" style="color: var(--text-muted, #52606f);">0 min</span></span>
         </div>
       </div>
       <div>
@@ -94,7 +94,7 @@
   </main>
 
   <footer style="text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-muted); margin-top: 3rem;">
-    <p>Part of the <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">COSYlanguages ecosystem</a></p>
+    <p>Part of the <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" style="color: var(--secondary, #0e7490); text-decoration: underline;">COSYlanguages ecosystem</a></p>
   </footer>
 
   <script type="module">
@@ -174,7 +174,7 @@
           <div class="lang-item ${isCurrent ? 'selected' : ''}">
             <span style="font-size: 1.2rem;">${l.flag}</span>
             <span>${l.name}</span>
-            ${isCurrent ? '<span style="margin-left: auto; font-size: 0.75rem; background: var(--accent); color: #0f172a; padding: 1px 6px; border-radius: 8px; font-weight: 700;">Active</span>' : ''}
+            ${isCurrent ? '<span style="margin-left: auto; font-size: 0.75rem; background: var(--accent); color: var(--on-accent, #fff); padding: 1px 6px; border-radius: 8px; font-weight: 700;">Active</span>' : ''}
           </div>
         `;
       }).join('');

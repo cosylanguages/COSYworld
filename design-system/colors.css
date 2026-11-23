@@ -1,7 +1,7 @@
-/* ==========================================================
-   COSYlanguages Design System - Colors
-   ========================================================== */
-
+/* The COSY World pages are dark-first (shared/styles/style.css paints the canvas
+   #0f172a), so the dark palette is the default here and light is the variant.
+   Without this the light tokens from this file landed on a dark canvas and left
+   #1a1a1a headings on #0f172a (1.03:1). */
 :root {
   /* A. Primary Colors */
   --cosy-color-primary: #1d63ed;
@@ -16,21 +16,28 @@
   /* C. Functional Colors */
   --cosy-color-success: #10b981;
   --cosy-color-warning: #f59e0b;
-  --cosy-color-error: #ef4444;
+  --cosy-color-error: #dc2626;
   --cosy-color-info: #3b82f6;
 
-  /* D. Neutral Colors */
-  --cosy-color-text-primary: #1a1a1a;
-  --cosy-color-text-secondary: #666666;
-  --cosy-color-text-muted: #999999;
+  color-scheme: dark;
 
-  --cosy-color-bg-primary: #ffffff;
-  --cosy-color-bg-secondary: #f5f5f5;
-  --cosy-color-bg-tertiary: #e0e0e0;
+  /* D. Neutral Colors (dark default) */
+    --cosy-color-text-primary: #f8fafc;
+    --cosy-color-text-secondary: #cbd5e1;
+    --cosy-color-text-muted: #94a3b8;
 
-  --cosy-color-border-light: #e2e8f0;
-  --cosy-color-border-medium: #cbd5e1;
-  --cosy-color-border-dark: #94a3b8;
+    --cosy-color-bg-primary: #0f172a;
+    --cosy-color-bg-secondary: #1e293b;
+    --cosy-color-bg-tertiary: #334155;
+
+    --cosy-color-border-light: #334155;
+    --cosy-color-border-medium: #475569;
+    --cosy-color-border-dark: #64748b;
+
+    --cosy-color-primary-ink: #4c85f6;
+  --cosy-badge-english-ink: #93c5fd;
+    --cosy-badge-french-ink: #c4b5fd;
+    --cosy-badge-italian-ink: #fdba74;
 
   /* E. Language-Specific Colors */
   --cosy-lang-english: #2563eb;
@@ -40,19 +47,51 @@
   --cosy-lang-greek: #0d9488;
 }
 
-/* Dark Mode Overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --cosy-color-text-primary: #f8fafc;
-    --cosy-color-text-secondary: #cbd5e1;
-    --cosy-color-text-muted: #64748b;
+/* Light Mode Overrides */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --cosy-color-text-primary: #1a1a1a;
+    --cosy-color-text-secondary: #4b5563;
+    --cosy-color-text-muted: #5f6368;
 
-    --cosy-color-bg-primary: #0f172a;
-    --cosy-color-bg-secondary: #1e293b;
-    --cosy-color-bg-tertiary: #334155;
+    --cosy-color-bg-primary: #ffffff;
+    --cosy-color-bg-secondary: #f5f5f5;
+    --cosy-color-bg-tertiary: #e0e0e0;
 
-    --cosy-color-border-light: #334155;
-    --cosy-color-border-medium: #475569;
-    --cosy-color-border-dark: #64748b;
+    --cosy-color-border-light: #e2e8f0;
+    --cosy-color-border-medium: #cbd5e1;
+    --cosy-color-border-dark: #94a3b8;
+
+    --cosy-color-primary-ink: #0f40a8;
+    --cosy-color-primary-ink: #0f40a8;
+    --cosy-badge-english-ink: #1d4ed8;
+    --cosy-badge-french-ink: #6d28d9;
+    --cosy-badge-italian-ink: #9a3412;
+
+    color-scheme: light;
   }
+}
+
+:root[data-theme="light"] {
+    --cosy-color-text-primary: #1a1a1a;
+    --cosy-color-text-secondary: #4b5563;
+    --cosy-color-text-muted: #5f6368;
+
+    --cosy-color-bg-primary: #ffffff;
+    --cosy-color-bg-secondary: #f5f5f5;
+    --cosy-color-bg-tertiary: #e0e0e0;
+
+    --cosy-color-border-light: #e2e8f0;
+    --cosy-color-border-medium: #cbd5e1;
+    --cosy-color-border-dark: #94a3b8;
+
+    --cosy-badge-english-ink: #1d4ed8;
+    --cosy-badge-french-ink: #6d28d9;
+    --cosy-badge-italian-ink: #9a3412;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }

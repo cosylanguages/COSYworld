@@ -5,30 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>COSY World 🌍 - Main Interactive Game View</title>
   <meta name="description" content="Explore COSY Town isometric districts, converse with NPCs, complete quests, and master 14 target languages.">
-  <link rel="icon" href="/shared/assets/icon-world.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/COSYworld/shared/assets/icon-world.svg" type="image/svg+xml">
+  <link rel="manifest" href="/COSYworld/manifest.json">
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="/css/cosy-tokens.css">
-  <link rel="stylesheet" href="/css/cosy-icons.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/ui.css">
-  <link rel="stylesheet" href="/shared/styles/style.css">
-  <link rel="stylesheet" href="/css/cosy-world.css">
+  <link rel="stylesheet" href="/COSYworld/css/cosy-tokens.css">
+  <link rel="stylesheet" href="/COSYworld/css/cosy-icons.css">
+  <link rel="stylesheet" href="/COSYworld/css/main.css">
+  <link rel="stylesheet" href="/COSYworld/css/ui.css">
+  <link rel="stylesheet" href="/COSYworld/shared/styles/style.css">
+  <link rel="stylesheet" href="/COSYworld/css/cosy-world.css">
 </head>
 <body class="cw-app-body">
 
   <!-- Top Ecosystem Navigation -->
   <header class="cosy-header">
-    <a href="/index.html" class="brand-logo">
-      <img src="/shared/assets/icon-world.svg" alt="COSY World Logo">
+    <a href="/COSYworld/index.html" class="brand-logo">
+      <img src="/COSYworld/shared/assets/icon-world.svg" alt="COSY World Logo">
       <span>COSY World</span>
     </a>
     <nav class="main-nav">
       <a href="https://cosylanguages.github.io/COSYlanguages/">Home ↗</a>
       <a href="https://cosylanguages.github.io/COSYgames/">Games ↗</a>
-      <a href="/game/town-map/index.html">Town Map</a>
-      <a href="/progress/index.html">Progress</a>
+      <a href="/COSYworld/game/town-map/index.html">Town Map</a>
+      <a href="/COSYworld/progress/index.html">Progress</a>
       <a href="https://cosylanguages.github.io/COSYtools/">Tools ↗</a>
     </nav>
   </header>
@@ -36,7 +36,7 @@
   <!-- Game HUD Bar -->
   <div class="hud-bar">
     <div class="hud-player">
-      <img id="cw-hud-avatar" src="/shared/assets/james-york.svg" class="hud-avatar" alt="Character Avatar">
+      <img id="cw-hud-avatar" src="/COSYworld/shared/assets/james-york.svg" class="hud-avatar" alt="Character Avatar">
       <div>
         <div id="cw-hud-name" style="font-weight: bold; color: var(--color-text-bright, #f0f6fc);">James York</div>
         <div style="font-size: 0.85rem; color: var(--color-text-muted, #8b949e);">Level <span id="cw-hud-level">1</span> Explorer</div>
@@ -62,7 +62,7 @@
 
     <!-- Active Quest HUD Overlay -->
     <div style="position: absolute; top: 20px; left: 20px; background: rgba(22, 27, 34, 0.9); border: 1px solid var(--color-border, #30363d); padding: 1rem; border-radius: 8px; max-width: 300px; backdrop-filter: blur(4px);">
-      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-primary, #58a6ff); font-weight: bold;">Active Quest</div>
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--link-ink, var(--color-primary, #0969da)); font-weight: bold;">Active Quest</div>
       <div id="cw-quest-title" style="font-weight: bold; font-size: 1rem; margin-top: 0.25rem;">Meet the Neighbors</div>
       <div id="cw-quest-objective" style="font-size: 0.85rem; color: var(--color-text-muted, #8b949e); margin-top: 0.25rem;">Explore the Residential District and greet local residents.</div>
     </div>
@@ -89,14 +89,14 @@
   </div>
 
   <!-- Toast Notification Container -->
-  <div id="cw-toast" style="position: fixed; bottom: 20px; right: 20px; background: var(--color-primary, #58a6ff); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 200;"></div>
+  <div id="cw-toast" style="position: fixed; bottom: 20px; right: 20px; background: var(--link-ink, var(--color-primary, #0969da)); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: bold; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 200;"></div>
 
   <footer style="text-align: center; padding: 1.5rem; border-top: 1px solid var(--color-border, #30363d); color: var(--color-text-muted, #8b949e); margin-top: 2rem;">
-    <p>Part of the <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" style="color: var(--color-primary, #58a6ff); text-decoration: underline;">COSYlanguages ecosystem</a></p>
+    <p>Part of the <a href="https://cosylanguages.github.io/COSYlanguages/" target="_blank" rel="noopener" style="color: var(--link-ink, var(--color-primary, #0969da)); text-decoration: underline;">COSYlanguages ecosystem</a></p>
   </footer>
 
   <!-- Load Engine Module -->
-  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/COSYworld/js/main.js"></script>
 
   <script type="module">
     import { gameEngine } from '/shared/engine/game-engine.js';

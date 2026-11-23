@@ -30,7 +30,7 @@
 .cosy-btn-secondary {
   background-color: transparent;
   border-color: var(--cosy-color-primary, #1d63ed);
-  color: var(--cosy-color-primary, #1d63ed);
+  color: var(--cosy-color-primary-ink, var(--cosy-color-primary, #1d63ed));
 }
 
 .cosy-btn-secondary:hover {
@@ -61,6 +61,6 @@
   text-transform: uppercase;
 }
 
-.cosy-badge-english { background: rgba(37, 99, 235, 0.15); color: #2563eb; }
-.cosy-badge-french { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
-.cosy-badge-italian { background: rgba(249, 115, 22, 0.15); color: #f97316; }
+.cosy-badge-english { background: rgba(37, 99, 235, 0.18); color: var(--cosy-badge-english-ink, #1d4ed8); }
+.cosy-badge-french { background: rgba(139, 92, 246, 0.18); color: var(--cosy-badge-french-ink, #6d28d9); }
+.cosy-badge-italian { background: rgba(249, 115, 22, 0.18); color: var(--cosy-badge-italian-ink, #c2410c); }

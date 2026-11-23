@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quest Template — COSY World 🌍</title>
-  <link rel="icon" href="/shared/assets/icon-world.svg" type="image/svg+xml">
+  <link rel="icon" href="/COSYworld/shared/assets/icon-world.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/shared/styles/style.css">
+  <link rel="stylesheet" href="/COSYworld/shared/styles/style.css">
   <link rel="stylesheet" href="https://cosylanguages.github.io/COSYlanguages/css/ecosystem-strip.css">
 </head>
 <body>
@@ -17,14 +17,14 @@
 
   <header class="cosy-nav">
     <div class="cosy-brand">
-      <a href="/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+      <a href="/COSYworld/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
         <span class="cosy-brand-icon">🌍</span> COSY World
       </a>
     </div>
     <nav class="cosy-links">
-      <a href="/index.html">Home</a>
-      <a href="/game/town-map/index.html">Town Map</a>
-      <a href="/progress/index.html">Progress</a>
+      <a href="/COSYworld/index.html">Home</a>
+      <a href="/COSYworld/game/town-map/index.html">Town Map</a>
+      <a href="/COSYworld/progress/index.html">Progress</a>
     </nav>
   </header>
 
@@ -33,7 +33,7 @@
     <div class="card" style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <span style="background: var(--primary); padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8rem;">Quest Level: Beginner</span>
+          <span style="background: var(--primary); color: #fff; padding: 2px 10px; border-radius: 12px; font-weight: 700; font-size: 0.8rem;">Quest Level: Beginner</span>
           <h1 style="font-family: var(--font-serif); font-size: 2.2rem; margin: 0.5rem 0;" id="quest-title">Sample Quest Title</h1>
           <p style="color: var(--text-muted);" id="quest-desc">Explore COSY Town, complete objectives, and learn vocabulary through natural dialogues.</p>
         </div>
@@ -65,10 +65,10 @@
       <p style="color: var(--text-muted); margin-bottom: 1rem;">Click highlighted <span class="vocab-term">terms</span> for definitions & pronunciation!</p>
 
       <div class="dialogue-box">
-        <img src="/shared/assets/james-york.svg" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--secondary);">
+        <img src="/COSYworld/shared/assets/james-york.svg" style="width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--secondary);">
         <div style="flex: 1;">
           <div class="dialogue-speaker">James York</div>
-          <div style="font-size: 1.1rem; color: #fff; margin: 0.25rem 0;">
+          <div style="font-size: 1.1rem; color: var(--text-main, #f8fafc); margin: 0.25rem 0;">
             "<span class="vocab-term" onclick="showDef('Bonjour', 'Hello / Good day')">Bonjour</span>! Welcome to COSY Town. Would you like some <span class="vocab-term" onclick="showDef('Café', 'Coffee')">café</span>?"
           </div>
           <button class="btn btn-secondary" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; margin-top: 0.5rem;" onclick="speakLine('Bonjour! Welcome to COSY Town. Would you like some café?')">🔊 Listen Audio</button>
@@ -100,7 +100,7 @@
       <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.5rem;">Quest Status: <span id="quest-status-text" style="color: var(--accent);">In Progress</span></h3>
       <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap;">
         <button class="btn btn-primary" onclick="completeCurrentQuest()">Complete Quest & Claim Rewards 🏆</button>
-        <a href="/game/town-map/index.html" class="btn btn-secondary">Return to Town Map 🗺️</a>
+        <a href="/COSYworld/game/town-map/index.html" class="btn btn-secondary">Return to Town Map 🗺️</a>
       </div>
     </div>
   </main>

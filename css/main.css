@@ -2,6 +2,7 @@
 
 :root {
   /* Warm life-sim palette: sage, paper, terracotta and ink */
+  color-scheme: light;
   --blue-primary: #356859;
   --blue-hover: #274c3a;
   --blue-light: #eef4ed;
@@ -38,6 +39,61 @@
   --shadow-sm: 0 2px 8px rgba(70, 58, 42, 0.06);
   --shadow-card: 0 14px 30px -8px rgba(70, 58, 42, 0.13), 0 3px 10px rgba(70, 58, 42, 0.05);
   --shadow-hover: 0 20px 40px -10px rgba(70, 58, 42, 0.2), 0 8px 16px -4px rgba(70, 58, 42, 0.08);
+
+/* Dark variant for the warm life-sim palette. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --blue-primary: #2f6f55;
+    --blue-hover: #3c8568;
+    --blue-light: #1f2a24;
+    --blue-soft: #24332b;
+    --blue-border: #3e5449;
+    --bg-app: #171a15;
+    --surface: #1f241d;
+    --surface-glass: rgba(31, 36, 29, 0.86);
+    --border-glass: rgba(31, 36, 29, 0.7);
+    --border-subtle: #333a31;
+    --text-main: #edefe7;
+    --text-muted: #a8afa1;
+    --text-inverse: #ffffff;
+    --accent-teal: #8fbfaa;
+    --accent-amber: #e0a46f;
+    --accent-rose: #e0907f;
+    --scene-wall: #2a2a22;
+    --scene-floor: #3a352a;
+    --scene-line: #4e4738;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 14px 30px -8px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.25);
+    --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.55), 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --blue-primary: #2f6f55;
+  --blue-hover: #3c8568;
+  --blue-light: #1f2a24;
+  --blue-soft: #24332b;
+  --blue-border: #3e5449;
+  --bg-app: #171a15;
+  --surface: #1f241d;
+  --surface-glass: rgba(31, 36, 29, 0.86);
+  --border-glass: rgba(31, 36, 29, 0.7);
+  --border-subtle: #333a31;
+  --text-main: #edefe7;
+  --text-muted: #a8afa1;
+  --text-inverse: #ffffff;
+  --accent-teal: #8fbfaa;
+  --accent-amber: #e0a46f;
+  --accent-rose: #e0907f;
+  --scene-wall: #2a2a22;
+  --scene-floor: #3a352a;
+  --scene-line: #4e4738;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 14px 30px -8px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.55), 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
   --shadow-modal: 0 25px 50px -12px rgba(47, 48, 43, 0.28);
 }
 

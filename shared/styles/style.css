@@ -14,9 +14,60 @@
   --border-color: #334155;
   --border-radius: 12px;
   --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(15, 23, 42, 0.9);
+  --on-accent: #3a2500;
+  --on-secondary: #04262b;
+  --link-ink: #a5b4fc;
   --font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Fraunces', Georgia, serif;
+  color-scheme: dark;
 }
+/* Light variant: the palette above is the dark default; without these values a
+   light-mode visitor got dark surfaces with dark ink. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --primary: #4338ca;
+    --primary-hover: #3730a3;
+    --secondary: #0e7490;
+    --accent: #b45309;
+    --bg-dark: #f6f8fb;
+    --bg-card: #ffffff;
+    --bg-card-light: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #52606f;
+    --text-dark: #0f172a;
+    --border-color: #dbe3ec;
+    --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --on-accent: #ffffff;
+    --on-secondary: #ffffff;
+    --link-ink: #4338ca;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --primary: #4338ca;
+  --primary-hover: #3730a3;
+  --secondary: #0e7490;
+  --accent: #b45309;
+  --bg-dark: #f6f8fb;
+  --bg-card: #ffffff;
+  --bg-card-light: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #52606f;
+  --text-dark: #0f172a;
+  --border-color: #dbe3ec;
+  --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --on-accent: #ffffff;
+  --on-secondary: #ffffff;
+  --link-ink: #4338ca;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] { color-scheme: dark; }
+
 
 * {
   box-sizing: border-box;
@@ -47,7 +98,7 @@ a:hover {
 
 /* Header & Nav */
 .cosy-nav {
-  background: rgba(15, 23, 42, 0.9);
+  background: var(--nav-bg, rgba(15, 23, 42, 0.9));
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 2rem;
@@ -63,7 +114,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-main);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -86,7 +137,7 @@ a:hover {
 }
 
 .cosy-links a:hover, .cosy-links a.active {
-  color: #fff;
+  color: var(--text-main);
 }
 
 /* Layout container */
@@ -252,7 +303,7 @@ a:hover {
 
 .btn-accent {
   background: var(--accent);
-  color: #0f172a;
+  color: var(--on-accent, #fff);
 }
 
 .btn-accent:hover {
@@ -278,9 +329,20 @@ a:hover {
   position: relative;
 }
 
+/* The town map artwork stays dark in both themes, so its labels stay light
+   (presentation attributes lose to this rule). */
+.map-container svg text,
+.map-container > div > h3 {
+  color: #e6edf3;
+}
+
+.map-container svg text {
+  fill: #e6edf3;
+}
+
 /* Quest / Dialogue UI */
 .dialogue-box {
-  background: #0f172a;
+  background: var(--bg-card);
   border: 2px solid var(--secondary);
   border-radius: var(--border-radius);
   padding: 1.25rem;
