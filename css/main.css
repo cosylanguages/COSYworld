@@ -4,6 +4,7 @@
   /* Warm life-sim palette: sage, paper, terracotta and ink */
   color-scheme: light;
   --blue-primary: #356859;
+  --blue-primary-text: #2b5748;
   --blue-hover: #274c3a;
   --blue-light: #eef4ed;
   --blue-soft: #dcebdd;
@@ -39,11 +40,14 @@
   --shadow-sm: 0 2px 8px rgba(70, 58, 42, 0.06);
   --shadow-card: 0 14px 30px -8px rgba(70, 58, 42, 0.13), 0 3px 10px rgba(70, 58, 42, 0.05);
   --shadow-hover: 0 20px 40px -10px rgba(70, 58, 42, 0.2), 0 8px 16px -4px rgba(70, 58, 42, 0.08);
+  --shadow-modal: 0 25px 50px -12px rgba(47, 48, 43, 0.28);
+}
 
 /* Dark variant for the warm life-sim palette. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --blue-primary: #2f6f55;
+    --blue-primary-text: #8fbfaa;
     --blue-hover: #3c8568;
     --blue-light: #1f2a24;
     --blue-soft: #24332b;
@@ -65,12 +69,14 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-card: 0 14px 30px -8px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.25);
     --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.55), 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+    --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
   --blue-primary: #2f6f55;
+  --blue-primary-text: #8fbfaa;
   --blue-hover: #3c8568;
   --blue-light: #1f2a24;
   --blue-soft: #24332b;
@@ -92,11 +98,9 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-card: 0 14px 30px -8px rgba(0, 0, 0, 0.45), 0 3px 10px rgba(0, 0, 0, 0.25);
   --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.55), 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   color-scheme: dark;
 }
-  --shadow-modal: 0 25px 50px -12px rgba(47, 48, 43, 0.28);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -136,7 +140,7 @@ body.game-standalone {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.45rem;
-  color: var(--blue-primary);
+  color: var(--blue-primary-text);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -147,7 +151,7 @@ body.game-standalone {
 .cw-logo .cw-logo-icon {
   width: 1.7rem;
   height: 1.7rem;
-  color: var(--blue-primary);
+  color: var(--blue-primary-text);
 }
 
 .cw-logo:hover {
@@ -166,7 +170,7 @@ body.game-standalone {
 }
 
 .cw-nav-links a:hover {
-  color: var(--blue-primary);
+  color: var(--blue-primary-text);
   background-color: var(--blue-light);
 }
 
@@ -257,7 +261,7 @@ body.game-standalone {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--blue-primary);
+  color: var(--blue-primary-text);
   letter-spacing: -0.01em;
 }
 
