@@ -8,8 +8,12 @@
       "id": "node_0",
       "npcLine": "👩‍🎨 Greetings fellow traveler! Yesterday I arrived in COSY Town on the morning train!",
       "emotion": "curious",
-      "gestures": ["wave"],
-      "highlights": ["town_archive_book"],
+      "gestures": [
+        "wave"
+      ],
+      "highlights": [
+        "town_archive_book"
+      ],
       "speechRate": 0.8,
       "grammarCheck": "Past Simple Narrative ('arrived', 'visited')",
       "visualAction": "🚆 ➔ 🏛️",
@@ -32,7 +36,9 @@
       "id": "node_1",
       "npcLine": "🏛️ Two hours ago, I visited the town hall archives, and last night I saw a movie at the cinema!",
       "emotion": "excited",
-      "gestures": ["smile"],
+      "gestures": [
+        "smile"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Past Time Expressions ('two hours ago', 'last night')",
@@ -49,7 +55,9 @@
       "id": "node_2",
       "npcLine": "🎫 Wonderful! COSY Town has rich history and great transport connections!",
       "emotion": "happy",
-      "gestures": ["nod"],
+      "gestures": [
+        "nod"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Sharing Travel Experiences",
@@ -61,5 +69,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }

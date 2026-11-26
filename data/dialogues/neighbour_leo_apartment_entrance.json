@@ -8,7 +8,9 @@
       "id": "node_0",
       "npcLine": "🙋 Hi! I am Leo. I am currently walking to the picnic area!",
       "emotion": "happy",
-      "gestures": ["wave"],
+      "gestures": [
+        "wave"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Present Continuous Tense (I am walking...)",
@@ -27,7 +29,9 @@
       "id": "node_1",
       "npcLine": "🧺 Great! My sister and I are eating lunch at the park right now!",
       "emotion": "happy",
-      "gestures": ["smile"],
+      "gestures": [
+        "smile"
+      ],
       "highlights": [],
       "speechRate": 0.8,
       "grammarCheck": "Present Continuous & Family (My sister and I)",
@@ -40,5 +44,6 @@
         }
       ]
     }
-  ]
+  ],
+  "language": "en"
 }
